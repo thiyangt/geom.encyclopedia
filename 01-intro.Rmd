@@ -1,0 +1,332 @@
+# Introduction
+
+
+# Grammar of Graphics
+
+
+# R packages
+
+```{r, comment=NA, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(GGally) # Matrix plots
+#devtools::install_github("EvaMaeRey/ggxmean")
+library(ggxmean)
+#devtools::install_github("davidsjoberg/ggsankey")
+library(ggsankey)
+```
+
+# Data sets
+
+```{r}
+#install_github("thiyangt/elephants")
+library(elephants)
+data("elephants")
+
+```
+
+# Small dataset
+
+```{r}
+elephants.subset.100 <- elephants |> sample_n(100)
+```
+
+
+# Geometris: `geom` - Qualitative data visualisation 
+
+## geom_bar
+
+```{r, echo=TRUE}
+ggplot(elephants, aes(y = Age_Category)) + 
+  geom_bar()
+
+```
+
+```{r, echo=TRUE}
+ggplot(elephants, aes(y = Age_Category, fill=Category)) + 
+  geom_bar()
+```
+
+```{r, echo=TRUE}
+ggplot(elephants, aes(y=Age_Category, fill = Category)) +
+  geom_bar(position = "dodge")
+```
+
+## geom_col
+
+Before using `geom_col`, you need to create a summary table of counts or you can apply `geom_col` for a summary table already given.
+
+```{r, echo=FALSE}
+elephants_counts <- elephants |> 
+  group_by(Age_Category) |> 
+  summarise(n = n())
+elephants_counts
+```
+
+
+
+```{r, echo=FALSE}
+ggplot(elephants_counts, aes(x = Age_Category, y=n)) + 
+  geom_col()
+```
+
+
+# Quantitative data visualisation
+
+## geom_histogram
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(x = Weight)) + 
+  geom_histogram(col="white")
+
+```
+
+
+## geom_density
+
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(x = Weight)) + 
+  geom_density()
+
+```
+
+
+## geom_boxplot
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight)) + 
+  geom_boxplot()
+
+```
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight)) + 
+geom_boxplot(outlier.colour="black", outlier.shape=16,
+             outlier.size=2, notch=TRUE)
+
+```
+
+
+
+
+
+
+# Qualitative and qualitative data visualisation
+
+## geom_boxplot
+
+```{r}
+ggplot(elephants, aes(y = Weight, x=Category)) + geom_boxplot()
+```
+
+## geom_signif
+
+```{r}
+ggplot(elephants, aes(y = Weight, x=Category)) + geom_boxplot() + ggsignif::geom_signif()
+```
+
+## geom_violin
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight, x=Category)) + 
+  geom_violin()
+
+```
+
+Without trimming
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight, x=Category)) + 
+  geom_violin(trim=FALSE)
+
+```
+
+
+Draw quantiles
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight, x=Category)) + 
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75))
+
+```
+
+# Quantitative and quantitative data visualisation
+
+## geom_point
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_point()
+
+```
+
+## geom_dl
+
+
+```{r, echo=FALSE}
+library(directlabels)
+ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
+  geom_point() +
+  geom_dl(aes(label=Category),method="smart.grid")
+```
+
+## geom_encircle
+
+```{r, echo=FALSE}
+library(ggalt)
+ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
+ geom_encircle(aes(fill =Category), s_shape=0.2, expand=0.01 , alpha=0.4) 
+```
+
+`geom_encircle` with `geom_point`
+
+```{r, echo=FALSE}
+library(ggalt)
+ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
+  geom_point() + geom_encircle(aes(fill =Category), s_shape=0.2, expand=0.01 , alpha=0.4) 
+```
+
+## geom_mark_circle
+
+```{r, echo=FALSE}
+library(ggforce)
+ggplot(elephants, aes(y = Height, x=Weight)) +
+  geom_mark_circle(aes(fill = Category, label = Category),
+                   con.cap = 0) 
+```
+
+With geom_point
+
+```{r, echo=FALSE}
+library(ggforce)
+ggplot(elephants, aes(y = Height, x=Weight)) +
+  geom_mark_circle(aes(fill = Category, label = Category),
+                   con.cap = 0) +
+  geom_point()
+
+
+```
+
+## geom_delaunay_tile
+
+```{r}
+ggplot(elephants.subset.100, aes(y = Height, x=Weight)) +
+  ggforce::geom_delaunay_tile(alpha = 0.5, colour = 'red')
+```
+
+## geom_label_repel
+
+```{r}
+ggplot(elephants.subset.100, aes(y = Height, x=Weight)) +
+  geom_point() +
+  ggrepel::geom_label_repel(aes(y = Height, x=Weight, 
+                                label = rownames(elephants.subset.100)),
+                                fontface = 'bold', color = 'red',
+                                box.padding = unit(0.40, "lines"),
+                                point.padding = unit(0.6, "lines"),
+                                segment.color = 'grey50'
+  )
+```
+
+## geom_smooth
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_smooth()
+
+```
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_smooth(method=lm)
+
+```
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_smooth(method = lm, formula = y ~ splines::bs(x, 4))
+
+```
+
+## geom_lm
+
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_lm()
+```
+
+
+## geom_density_2d
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_density_2d()
+
+```
+
+## geom_density_2d_filled
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_density_2d_filled()
+
+```
+
+
+
+## geom_density_ridges
+
+Here the `y` variable should be qualitative and the `x` variable should be quantitiative.
+
+
+```{r, echo=FALSE}
+library(ggridges)
+ggplot(elephants, aes(y=Category, x = Height)) + 
+    geom_density_ridges()
+
+```
+
+
+
+
+# Others
+
+## geom_function
+
+```{r}
+ggplot() + xlim(c(-1,1)) + geom_function(fun=cos, colour="red",lwd=1, linetype=1)
+
+```
+
+
+
+
+# Grammar of graphics extensions
+
+
+With all variables
+
+## ggpairs
+
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+GGally::ggpairs(elephants)
+```
+
+With only numeric variables
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+elephants.numeric <- elephants |> select_if(is.numeric)     
+GGally::ggpairs(elephants.numeric)
+```
+
+Colour the points according to category
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+elephants.numeric <- elephants |> select_if(is.numeric) 
+elephants.numeric$Category <- elephants$Category
+GGally::ggpairs(elephants.numeric, aes(col=Category))
+```
+
+
