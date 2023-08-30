@@ -1,1 +1,28 @@
-# A: geom_axxxxx
+# S: geom_s...
+
+
+## geom_signif
+
+```{r}
+ggplot(elephants, aes(y = Weight, x=Category)) + geom_boxplot() + ggsignif::geom_signif()
+```
+
+## geom_smooth
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_smooth()
+
+```
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_smooth(method=lm)
+
+```
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_smooth(method = lm, formula = y ~ splines::bs(x, 4))
+
+```

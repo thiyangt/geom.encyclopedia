@@ -1,1 +1,24 @@
-# A: geom_axxxxx
+# L: geom_l...
+
+## geom_label_repel
+
+```{r}
+ggplot(elephants.subset.100, aes(y = Height, x=Weight)) +
+  geom_point() +
+  ggrepel::geom_label_repel(aes(y = Height, x=Weight, 
+                                label = rownames(elephants.subset.100)),
+                                fontface = 'bold', color = 'red',
+                                box.padding = unit(0.40, "lines"),
+                                point.padding = unit(0.6, "lines"),
+                                segment.color = 'grey50'
+  )
+```
+
+
+## geom_lm
+
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_lm()
+```

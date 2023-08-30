@@ -1,1 +1,10 @@
-# A: geom_axxxxx
+# H: geom_h...
+
+
+## geom_histogram
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(x = Weight)) + 
+  geom_histogram(col="white")
+
+```

@@ -1,1 +1,21 @@
-# A: geom_axxxxx
+# E: geom_e...
+
+
+## geom_encircle
+
+
+Other related geoms: geom_mark_circle
+
+```{r, echo=FALSE}
+library(ggalt)
+ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
+ geom_encircle(aes(fill =Category), s_shape=0.2, expand=0.01 , alpha=0.4) 
+```
+
+`geom_encircle` with `geom_point`
+
+```{r, echo=FALSE}
+library(ggalt)
+ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
+  geom_point() + geom_encircle(aes(fill =Category), s_shape=0.2, expand=0.01 , alpha=0.4) 
+```

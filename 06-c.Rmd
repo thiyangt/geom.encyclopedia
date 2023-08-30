@@ -1,1 +1,20 @@
-# A: geom_axxxxx
+# C: geom_c...
+
+## geom_col
+
+Before using `geom_col`, you need to create a summary table of counts or you can apply `geom_col` for a summary table already given.
+
+```{r, echo=FALSE}
+elephants_counts <- elephants |> 
+  group_by(Age_Category) |> 
+  summarise(n = n())
+elephants_counts
+```
+
+
+
+```{r, echo=FALSE}
+ggplot(elephants_counts, aes(x = Age_Category, y=n)) + 
+  geom_col()
+```
+

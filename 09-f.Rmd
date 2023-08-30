@@ -1,1 +1,9 @@
-# A: geom_axxxxx
+# F: geom_f...
+
+## geom_function
+
+```{r}
+ggplot() + xlim(c(-1,1)) + geom_function(fun=cos, colour="red",lwd=1, linetype=1)
+
+```
+

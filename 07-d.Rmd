@@ -1,1 +1,63 @@
-# A: geom_axxxxx
+# D: geom_d...
+
+
+## geom_delaunay_tile
+
+```{r}
+ggplot(elephants.subset.100, aes(y = Height, x=Weight)) +
+  ggforce::geom_delaunay_tile(alpha = 0.5, colour = 'red')
+```
+
+
+
+## geom_density
+
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(x = Weight)) + 
+  geom_density()
+
+```
+
+## geom_density_2d
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_density_2d()
+
+```
+
+## geom_density_2d_filled
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Height, x=Weight)) + 
+  geom_density_2d_filled()
+
+```
+
+
+
+## geom_density_ridges
+
+Here the `y` variable should be qualitative and the `x` variable should be quantitiative.
+
+
+```{r, echo=FALSE}
+library(ggridges)
+ggplot(elephants, aes(y=Category, x = Height)) + 
+    geom_density_ridges()
+
+```
+
+
+
+
+## geom_dl
+
+
+```{r, echo=FALSE}
+library(directlabels)
+ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
+  geom_point() +
+  geom_dl(aes(label=Category),method="smart.grid")
+```

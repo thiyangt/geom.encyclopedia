@@ -1,3 +1,38 @@
-# B
+# B: geom_b...
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file. 
+## geom_bar
+
+```{r, echo=TRUE}
+ggplot(elephants, aes(y = Age_Category)) + 
+  geom_bar()
+
+```
+
+```{r, echo=TRUE}
+ggplot(elephants, aes(y = Age_Category, fill=Category)) + 
+  geom_bar()
+```
+
+```{r, echo=TRUE}
+ggplot(elephants, aes(y=Age_Category, fill = Category)) +
+  geom_bar(position = "dodge")
+```
+
+## geom_boxplot
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight)) + 
+  geom_boxplot()
+
+```
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight)) + 
+geom_boxplot(outlier.colour="black", outlier.shape=16,
+             outlier.size=2, notch=TRUE)
+
+```
+
+
+
+

@@ -1,1 +1,21 @@
-# A: geom_axxxxx
+# M: geom_m...
+
+
+## geom_mark_circle
+
+```{r, echo=FALSE}
+library(ggforce)
+ggplot(elephants, aes(y = Height, x=Weight)) +
+  geom_mark_circle(aes(fill = Category, label = Category),
+                   con.cap = 0) 
+```
+
+With geom_point
+
+```{r, echo=FALSE}
+library(ggforce)
+ggplot(elephants, aes(y = Height, x=Weight)) +
+  geom_mark_circle(aes(fill = Category, label = Category),
+                   con.cap = 0) +
+  geom_point()
+```
