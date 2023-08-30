@@ -16,6 +16,7 @@ large-dataset
 small-dataset
 packages-related-to-geom
 geom-extensions
+all-available-geom_-in-the-ggplot2-package
 a-geom_a
 geom_abline
 b-geom_b
@@ -64,3 +65,7 @@ a-geom_axxxxx-12
 a-geom_axxxxx-13
 others
 ggpairs
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
+glimpse-of-the-large-dataset
+glimpse-of-the-large-dataset-1
+glimpse-of-the-small-dataset

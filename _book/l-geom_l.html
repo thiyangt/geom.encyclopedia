@@ -164,6 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="r-packages.html"><a href="r-packages.html#packages-related-to-geom"><i class="fa fa-check"></i><b>4.3</b> Packages related to geom</a></li>
 <li class="chapter" data-level="4.4" data-path="r-packages.html"><a href="r-packages.html#geom-extensions"><i class="fa fa-check"></i><b>4.4</b> geom Extensions</a></li>
+<li class="chapter" data-level="4.5" data-path="r-packages.html"><a href="r-packages.html#all-available-geom_-in-the-ggplot2-package"><i class="fa fa-check"></i><b>4.5</b> All available geom_… in the ggplot2 package</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="a-geom_a.html"><a href="a-geom_a.html"><i class="fa fa-check"></i><b>5</b> A: geom_a…</a>
 <ul>
@@ -264,23 +265,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 16</span> L: geom_l…<a href="l-geom_l.html#l-geom_l" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="geom_label_repel" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> geom_label_repel<a href="l-geom_l.html#geom_label_repel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="l-geom_l.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
-<span id="cb20-2"><a href="l-geom_l.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb20-3"><a href="l-geom_l.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, </span>
-<span id="cb20-4"><a href="l-geom_l.html#cb20-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">label =</span> <span class="fu">rownames</span>(elephants.subset<span class="fl">.100</span>)),</span>
-<span id="cb20-5"><a href="l-geom_l.html#cb20-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fontface =</span> <span class="st">&#39;bold&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>,</span>
-<span id="cb20-6"><a href="l-geom_l.html#cb20-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">box.padding =</span> <span class="fu">unit</span>(<span class="fl">0.40</span>, <span class="st">&quot;lines&quot;</span>),</span>
-<span id="cb20-7"><a href="l-geom_l.html#cb20-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">point.padding =</span> <span class="fu">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;lines&quot;</span>),</span>
-<span id="cb20-8"><a href="l-geom_l.html#cb20-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">segment.color =</span> <span class="st">&#39;grey50&#39;</span></span>
-<span id="cb20-9"><a href="l-geom_l.html#cb20-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<pre><code>## Warning: ggrepel: 19 unlabeled data points
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="l-geom_l.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="l-geom_l.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-3"><a href="l-geom_l.html#cb22-3" aria-hidden="true" tabindex="-1"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, </span>
+<span id="cb22-4"><a href="l-geom_l.html#cb22-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">label =</span> <span class="fu">rownames</span>(elephants.subset<span class="fl">.100</span>)),</span>
+<span id="cb22-5"><a href="l-geom_l.html#cb22-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fontface =</span> <span class="st">&#39;bold&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>,</span>
+<span id="cb22-6"><a href="l-geom_l.html#cb22-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">box.padding =</span> <span class="fu">unit</span>(<span class="fl">0.40</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb22-7"><a href="l-geom_l.html#cb22-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">point.padding =</span> <span class="fu">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb22-8"><a href="l-geom_l.html#cb22-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">segment.color =</span> <span class="st">&#39;grey50&#39;</span></span>
+<span id="cb22-9"><a href="l-geom_l.html#cb22-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## Warning: ggrepel: 1 unlabeled data points
 ## (too many overlaps). Consider increasing
 ## max.overlaps</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 </div>
 <div id="geom_lm" class="section level2 hasAnchor" number="16.2">
 <h2><span class="header-section-number">16.2</span> geom_lm<a href="l-geom_l.html#geom_lm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 
 </div>
 </div>

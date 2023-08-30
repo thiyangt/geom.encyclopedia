@@ -164,6 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="r-packages.html"><a href="r-packages.html#packages-related-to-geom"><i class="fa fa-check"></i><b>4.3</b> Packages related to geom</a></li>
 <li class="chapter" data-level="4.4" data-path="r-packages.html"><a href="r-packages.html#geom-extensions"><i class="fa fa-check"></i><b>4.4</b> geom Extensions</a></li>
+<li class="chapter" data-level="4.5" data-path="r-packages.html"><a href="r-packages.html#all-available-geom_-in-the-ggplot2-package"><i class="fa fa-check"></i><b>4.5</b> All available geom_… in the ggplot2 package</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="a-geom_a.html"><a href="a-geom_a.html"><i class="fa fa-check"></i><b>5</b> A: geom_a…</a>
 <ul>
@@ -264,32 +265,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 8</span> D: geom_d…<a href="d-geom_d.html#d-geom_d" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="geom_delaunay_tile" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> geom_delaunay_tile<a href="d-geom_d.html#geom_delaunay_tile" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="d-geom_d.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="d-geom_d.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  ggforce<span class="sc">::</span><span class="fu">geom_delaunay_tile</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="d-geom_d.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="d-geom_d.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  ggforce<span class="sc">::</span><span class="fu">geom_delaunay_tile</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
 <pre><code>## Increasing madj from 31 to 38 and trying again.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre><code>## Increasing madj from 38 to 46 and trying again.</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 </div>
 <div id="geom_density" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> geom_density<a href="d-geom_d.html#geom_density" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 <div id="geom_density_2d" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> geom_density_2d<a href="d-geom_d.html#geom_density_2d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 </div>
 <div id="geom_density_2d_filled" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> geom_density_2d_filled<a href="d-geom_d.html#geom_density_2d_filled" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 <div id="geom_density_ridges" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> geom_density_ridges<a href="d-geom_d.html#geom_density_ridges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here the <code>y</code> variable should be qualitative and the <code>x</code> variable should be quantitiative.</p>
 <pre><code>## Picking joint bandwidth of 0.092</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 <div id="geom_dl" class="section level2 hasAnchor" number="8.6">
 <h2><span class="header-section-number">8.6</span> geom_dl<a href="d-geom_d.html#geom_dl" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 
 </div>
 </div>

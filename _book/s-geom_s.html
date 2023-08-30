@@ -164,6 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="r-packages.html"><a href="r-packages.html#packages-related-to-geom"><i class="fa fa-check"></i><b>4.3</b> Packages related to geom</a></li>
 <li class="chapter" data-level="4.4" data-path="r-packages.html"><a href="r-packages.html#geom-extensions"><i class="fa fa-check"></i><b>4.4</b> geom Extensions</a></li>
+<li class="chapter" data-level="4.5" data-path="r-packages.html"><a href="r-packages.html#all-available-geom_-in-the-ggplot2-package"><i class="fa fa-check"></i><b>4.5</b> All available geom_… in the ggplot2 package</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="a-geom_a.html"><a href="a-geom_a.html"><i class="fa fa-check"></i><b>5</b> A: geom_a…</a>
 <ul>
@@ -264,20 +265,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 23</span> S: geom_s…<a href="s-geom_s.html#s-geom_s" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="geom_signif" class="section level2 hasAnchor" number="23.1">
 <h2><span class="header-section-number">23.1</span> geom_signif<a href="s-geom_s.html#geom_signif" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="s-geom_s.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight, <span class="at">x=</span>Category)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> ggsignif<span class="sc">::</span><span class="fu">geom_signif</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="s-geom_s.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight, <span class="at">x=</span>Category)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> ggsignif<span class="sc">::</span><span class="fu">geom_signif</span>()</span></code></pre></div>
 <pre><code>## Warning: Computation failed in `stat_signif()`
 ## Caused by error in `$&lt;-.data.frame`:
 ## ! replacement has 1 row, data has 0</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 </div>
 <div id="geom_smooth" class="section level2 hasAnchor" number="23.2">
 <h2><span class="header-section-number">23.2</span> geom_smooth<a href="s-geom_s.html#geom_smooth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <pre><code>## `geom_smooth()` using method = &#39;gam&#39; and
 ## formula = &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 
 </div>
 </div>
