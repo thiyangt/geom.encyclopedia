@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Data Visualisation: geom Encyclopedia</title>
+  <title>Chapter 23 S: geom_s… | Data Visualisation: geom Encyclopedia</title>
   <meta name="description" content="Collection of geom." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Data Visualisation: geom Encyclopedia" />
+  <meta property="og:title" content="Chapter 23 S: geom_s… | Data Visualisation: geom Encyclopedia" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Collection of geom." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Data Visualisation: geom Encyclopedia" />
+  <meta name="twitter:title" content="Chapter 23 S: geom_s… | Data Visualisation: geom Encyclopedia" />
   
   <meta name="twitter:description" content="Collection of geom." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="others.html"/>
-
+<link rel="prev" href="a-geom_axxxxx-7.html"/>
+<link rel="next" href="a-geom_axxxxx-8.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,17 +260,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered hasAnchor">
-<h1>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="s-geom_s" class="section level1 hasAnchor" number="23">
+<h1><span class="header-section-number">Chapter 23</span> S: geom_s…<a href="s-geom_s.html#s-geom_s" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="geom_signif" class="section level2 hasAnchor" number="23.1">
+<h2><span class="header-section-number">23.1</span> geom_signif<a href="s-geom_s.html#geom_signif" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="s-geom_s.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight, <span class="at">x=</span>Category)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> ggsignif<span class="sc">::</span><span class="fu">geom_signif</span>()</span></code></pre></div>
+<pre><code>## Warning: Computation failed in `stat_signif()`
+## Caused by error in `$&lt;-.data.frame`:
+## ! replacement has 1 row, data has 0</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+</div>
+<div id="geom_smooth" class="section level2 hasAnchor" number="23.2">
+<h2><span class="header-section-number">23.2</span> geom_smooth<a href="s-geom_s.html#geom_smooth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>## `geom_smooth()` using method = &#39;gam&#39; and
+## formula = &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="others.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="a-geom_axxxxx-7.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-geom_axxxxx-8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -301,7 +318,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/31-references.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/22-s.Rmd",
 "text": "Edit"
 },
 "history": {
