@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 21 A: geom_axxxxx | Data Visualisation: geom Encyclopedia</title>
+  <title>Chapter 16 L: geom_l… | Data Visualisation: geom Encyclopedia</title>
   <meta name="description" content="Collection of geom." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 21 A: geom_axxxxx | Data Visualisation: geom Encyclopedia" />
+  <meta property="og:title" content="Chapter 16 L: geom_l… | Data Visualisation: geom Encyclopedia" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Collection of geom." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 21 A: geom_axxxxx | Data Visualisation: geom Encyclopedia" />
+  <meta name="twitter:title" content="Chapter 16 L: geom_l… | Data Visualisation: geom Encyclopedia" />
   
   <meta name="twitter:description" content="Collection of geom." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="p-geom_p.html"/>
-<link rel="next" href="a-geom_axxxxx-7.html"/>
+<link rel="prev" href="a-geom_axxxxx-3.html"/>
+<link rel="next" href="m-geom_m.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,17 +260,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="a-geom_axxxxx-6" class="section level1 hasAnchor" number="21">
-<h1><span class="header-section-number">Chapter 21</span> A: geom_axxxxx<a href="a-geom_axxxxx-6.html#a-geom_axxxxx-6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="l-geom_l" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">Chapter 16</span> L: geom_l…<a href="l-geom_l.html#l-geom_l" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="geom_label_repel" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> geom_label_repel<a href="l-geom_l.html#geom_label_repel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="l-geom_l.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="l-geom_l.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb20-3"><a href="l-geom_l.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, </span>
+<span id="cb20-4"><a href="l-geom_l.html#cb20-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">label =</span> <span class="fu">rownames</span>(elephants.subset<span class="fl">.100</span>)),</span>
+<span id="cb20-5"><a href="l-geom_l.html#cb20-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fontface =</span> <span class="st">&#39;bold&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>,</span>
+<span id="cb20-6"><a href="l-geom_l.html#cb20-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">box.padding =</span> <span class="fu">unit</span>(<span class="fl">0.40</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb20-7"><a href="l-geom_l.html#cb20-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">point.padding =</span> <span class="fu">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb20-8"><a href="l-geom_l.html#cb20-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">segment.color =</span> <span class="st">&#39;grey50&#39;</span></span>
+<span id="cb20-9"><a href="l-geom_l.html#cb20-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## Warning: ggrepel: 19 unlabeled data points
+## (too many overlaps). Consider increasing
+## max.overlaps</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+<div id="geom_lm" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> geom_lm<a href="l-geom_l.html#geom_lm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="p-geom_p.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="a-geom_axxxxx-7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-geom_axxxxx-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="m-geom_m.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -301,7 +321,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/20-q.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/15-l.Rmd",
 "text": "Edit"
 },
 "history": {

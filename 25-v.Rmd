@@ -1,1 +1,26 @@
-# A: geom_axxxxx
+# V: geom_v...
+
+## geom_violin
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight, x=Category)) + 
+  geom_violin()
+
+```
+
+Without trimming
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight, x=Category)) + 
+  geom_violin(trim=FALSE)
+
+```
+
+
+Draw quantiles
+
+```{r, echo=FALSE}
+ggplot(elephants, aes(y = Weight, x=Category)) + 
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75))
+
+```

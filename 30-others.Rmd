@@ -1,0 +1,25 @@
+# Others
+
+## ggpairs
+
+With all variables
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+GGally::ggpairs(elephants)
+```
+
+With only numeric variables
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+elephants.numeric <- elephants |> select_if(is.numeric)     
+GGally::ggpairs(elephants.numeric)
+```
+
+Colour the points according to category
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+elephants.numeric <- elephants |> select_if(is.numeric) 
+elephants.numeric$Category <- elephants$Category
+GGally::ggpairs(elephants.numeric, aes(col=Category))
+```
+
