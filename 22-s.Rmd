@@ -24,7 +24,7 @@ ggplot(elephants, aes(y = Height, x=Fore_Feet_Circumference)) +
 ```
 
 ```{r}
-ggplot(elephants, aes(y = Height, x=theme(aspect.ratio=1))) + 
+ggplot(elephants, aes(y = Height, x=Fore_Feet_Circumference)) + 
   geom_smooth(method = lm, formula = y ~ splines::bs(x, 4)) + theme(aspect.ratio=1)
 
 ```
