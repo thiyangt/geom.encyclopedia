@@ -70,9 +70,11 @@ srilanka_weekly_data
 ```{r}
 library(ggplot2)
 #devtools::install_github("EvaMaeRey/ggxmean")
-#library(gxmean)
-#devtools::install_github("davidsjoberg/ggsankey")
+# library(gxmean)
+# devtools::install_github("davidsjoberg/ggsankey")
 library(ggxmean)
+# install.packages("ggpattern")
+library(ggpattern)
 ```
 
 ## geom Extensions

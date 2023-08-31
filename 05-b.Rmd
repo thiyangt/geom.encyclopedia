@@ -49,7 +49,7 @@ ggplot(dfbar, aes(class, income)) +
 
 **Package: ** ggplot2 [@R-ggplot2]
 
-**Description: ** Divides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number ofobservations.
+**Description: ** Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number ofobservations.
 
 **Understandable aesthetics: ** x, y, fill, group
 
@@ -67,6 +67,27 @@ ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
 ```{r, fig.cap="Illustration of changing bins in geom_bin_2d"}
 ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
   geom_bin_2d(bins=20) + 
+  theme(aspect.ratio = 1)
+```
+
+## geom_bin2d_pattern
+
+**Package: ** ggpattern [@R-ggpattern]
+
+**Description: ** Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.
+
+**Understandable aesthetics: ** 
+
+pattern_fill (pattern_* - for mapping variables under aesthetics), pattern (to set a patten, for example pattern='stripe'), fill, colour
+
+**Statistics layer(s): ** 
+
+
+**See also: ** [geom_bin2d](#bin2d), [geom_point](#point)
+
+```{r, fig.cap="Illustration of using geom_bin_2d"}
+ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+  ggpattern::geom_bin2d_pattern(bins=5) + 
   theme(aspect.ratio = 1)
 ```
 
