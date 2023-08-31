@@ -155,7 +155,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Data Visualisation geom Encyclopedia</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
@@ -313,27 +313,35 @@ div.csl-indent {
 <div id="data-processing" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Data processing<a href="r-packages.html#data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="r-packages.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.4.3     ✔ purrr   1.0.2
+## ✔ tibble  3.2.1     ✔ dplyr   1.1.2
+## ✔ tidyr   1.3.0     ✔ stringr 1.5.0
+## ✔ readr   2.1.3     ✔ forcats 1.0.0
+## ── Conflicts ───── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 </div>
 <div id="graph-arrangement" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Graph arrangement<a href="r-packages.html#graph-arrangement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="r-packages.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="r-packages.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code></pre></div>
 </div>
 <div id="data-packages" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Data packages<a href="r-packages.html#data-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="cross-sectional-data" class="section level3 hasAnchor" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Cross sectional data<a href="r-packages.html#cross-sectional-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="r-packages.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install_github(&quot;thiyangt/elephants&quot;)</span></span>
-<span id="cb5-2"><a href="r-packages.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(elephants)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="r-packages.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install_github(&quot;thiyangt/elephants&quot;)</span></span>
+<span id="cb6-2"><a href="r-packages.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(elephants)</span></code></pre></div>
 </div>
 <div id="time-series-data" class="section level3 hasAnchor" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Time series data<a href="r-packages.html#time-series-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="r-packages.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install_github(&quot;denguedatahub&quot;)</span></span>
-<span id="cb6-2"><a href="r-packages.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(denguedatahub)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r-packages.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install_github(&quot;denguedatahub&quot;)</span></span>
+<span id="cb7-2"><a href="r-packages.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(denguedatahub)</span></code></pre></div>
 </div>
 </div>
 <div id="large-cross-sectional-dataset" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Large cross sectional dataset<a href="r-packages.html#large-cross-sectional-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r-packages.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;elephants&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="r-packages.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;elephants&quot;</span>)</span></code></pre></div>
 <div id="glimpse-of-the-large-dataset" class="section level3 hasAnchor" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> Glimpse of the large dataset<a href="r-packages.html#glimpse-of-the-large-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-9-1.png" width="1920" /></p>
@@ -341,8 +349,8 @@ div.csl-indent {
 </div>
 <div id="small-cross-sectional-dataset" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Small cross sectional dataset<a href="r-packages.html#small-cross-sectional-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="r-packages.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2023</span>)</span>
-<span id="cb8-2"><a href="r-packages.html#cb8-2" aria-hidden="true" tabindex="-1"></a>elephants.subset<span class="fl">.100</span> <span class="ot">&lt;-</span> elephants <span class="sc">|&gt;</span> <span class="fu">sample_n</span>(<span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="r-packages.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2023</span>)</span>
+<span id="cb9-2"><a href="r-packages.html#cb9-2" aria-hidden="true" tabindex="-1"></a>elephants.subset<span class="fl">.100</span> <span class="ot">&lt;-</span> elephants <span class="sc">|&gt;</span> <span class="fu">sample_n</span>(<span class="dv">100</span>)</span></code></pre></div>
 <div id="glimpse-of-the-small-cross-sectional-dataset" class="section level3 hasAnchor" number="4.5.1">
 <h3><span class="header-section-number">4.5.1</span> Glimpse of the small cross sectional dataset<a href="r-packages.html#glimpse-of-the-small-cross-sectional-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-11-1.png" width="1920" /></p>
@@ -350,8 +358,8 @@ div.csl-indent {
 </div>
 <div id="time-series-dataset" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Time series dataset<a href="r-packages.html#time-series-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="r-packages.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(denguedatahub)</span>
-<span id="cb9-2"><a href="r-packages.html#cb9-2" aria-hidden="true" tabindex="-1"></a>srilanka_weekly_data</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="r-packages.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(denguedatahub)</span>
+<span id="cb10-2"><a href="r-packages.html#cb10-2" aria-hidden="true" tabindex="-1"></a>srilanka_weekly_data</span></code></pre></div>
 <pre><code>## # A tibble: 21,934 × 6
 ##     year  week start.date end.date  
 ##  * &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;     &lt;date&gt;    
@@ -371,17 +379,17 @@ div.csl-indent {
 </div>
 <div id="packages-related-to-geom" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Packages related to geom<a href="r-packages.html#packages-related-to-geom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="r-packages.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb11-2"><a href="r-packages.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;EvaMaeRey/ggxmean&quot;)</span></span>
-<span id="cb11-3"><a href="r-packages.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(gxmean)</span></span>
-<span id="cb11-4"><a href="r-packages.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;davidsjoberg/ggsankey&quot;)</span></span>
-<span id="cb11-5"><a href="r-packages.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggxmean)</span>
-<span id="cb11-6"><a href="r-packages.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;ggpattern&quot;)</span></span>
-<span id="cb11-7"><a href="r-packages.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpattern)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="r-packages.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-2"><a href="r-packages.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;EvaMaeRey/ggxmean&quot;)</span></span>
+<span id="cb12-3"><a href="r-packages.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(gxmean)</span></span>
+<span id="cb12-4"><a href="r-packages.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;davidsjoberg/ggsankey&quot;)</span></span>
+<span id="cb12-5"><a href="r-packages.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggxmean)</span>
+<span id="cb12-6"><a href="r-packages.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;ggpattern&quot;)</span></span>
+<span id="cb12-7"><a href="r-packages.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpattern)</span></code></pre></div>
 </div>
 <div id="geom-extensions" class="section level2 hasAnchor" number="4.8">
 <h2><span class="header-section-number">4.8</span> geom Extensions<a href="r-packages.html#geom-extensions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="r-packages.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally) <span class="co"># Matrix plots</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="r-packages.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally) <span class="co"># Matrix plots</span></span></code></pre></div>
 </div>
 <div id="all-available-geom_-in-the-ggplot2-package" class="section level2 hasAnchor" number="4.9">
 <h2><span class="header-section-number">4.9</span> All available geom_… in the ggplot2 package<a href="r-packages.html#all-available-geom_-in-the-ggplot2-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>

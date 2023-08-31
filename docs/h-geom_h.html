@@ -155,7 +155,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Data Visualisation geom Encyclopedia</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
@@ -317,25 +317,25 @@ div.csl-indent {
 </div>
 <div id="hline" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">12.2</span> geom_hline<a href="h-geom_h.html#hline" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></p>
+<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Book: </strong></p>
 <p><strong>Description: </strong> Draw a horizontal line (<span class="math inline">\(Y=c\)</span>) for a given value of <span class="math inline">\(c\)</span>, which is known as <code>yintercept</code>.</p>
 <p><strong>Understandable aesthetics:</strong> alpha, colour, linetype, linewidth</p>
 <p><strong>Statistics layer(s):</strong></p>
 <p><strong>See also: </strong> <a href="p-geom_p.html#point">geom_point</a>, <a href="v-geom_v.html#vline">geom_vline</a>, <a href="h-geom_h.html#hline">geom_hline</a></p>
 <p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="h-geom_h.html#cb36-1" aria-hidden="true" tabindex="-1"></a>hline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
-<span id="cb36-2"><a href="h-geom_h.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;A: `geom_hline` only&quot;</span>) <span class="sc">+</span></span>
-<span id="cb36-3"><a href="h-geom_h.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb36-4"><a href="h-geom_h.html#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="h-geom_h.html#cb36-5" aria-hidden="true" tabindex="-1"></a>pointhline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
-<span id="cb36-6"><a href="h-geom_h.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb36-7"><a href="h-geom_h.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
-<span id="cb36-8"><a href="h-geom_h.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;B: `geom_point + geom_hline` both&quot;</span>) <span class="sc">+</span></span>
-<span id="cb36-9"><a href="h-geom_h.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb36-10"><a href="h-geom_h.html#cb36-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-11"><a href="h-geom_h.html#cb36-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-12"><a href="h-geom_h.html#cb36-12" aria-hidden="true" tabindex="-1"></a>hline <span class="sc">|</span> pointhline</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="h-geom_h.html#cb38-1" aria-hidden="true" tabindex="-1"></a>hline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
+<span id="cb38-2"><a href="h-geom_h.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;A: `geom_hline` only&quot;</span>) <span class="sc">+</span></span>
+<span id="cb38-3"><a href="h-geom_h.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb38-4"><a href="h-geom_h.html#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="h-geom_h.html#cb38-5" aria-hidden="true" tabindex="-1"></a>pointhline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
+<span id="cb38-6"><a href="h-geom_h.html#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb38-7"><a href="h-geom_h.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
+<span id="cb38-8"><a href="h-geom_h.html#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;B: `geom_point + geom_hline` both&quot;</span>) <span class="sc">+</span></span>
+<span id="cb38-9"><a href="h-geom_h.html#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb38-10"><a href="h-geom_h.html#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="h-geom_h.html#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="h-geom_h.html#cb38-12" aria-hidden="true" tabindex="-1"></a>hline <span class="sc">|</span> pointhline</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-41"></span>
 <img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-41-1.png" alt="Illustration of (A) geom_hline and (B) use of geom_point and geom_hline both" width="672" />
 <p class="caption">
@@ -348,7 +348,7 @@ Figure 12.1: Illustration of (A) geom_hline and (B) use of geom_point and geom_h
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-R-ggplot2" class="csl-entry">
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2023. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 </div>
             </section>

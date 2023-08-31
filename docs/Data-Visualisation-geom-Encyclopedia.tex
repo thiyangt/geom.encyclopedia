@@ -317,9 +317,11 @@ This chapter lists all the packages necessary for plotting
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(ggplot2)}
 \CommentTok{\#devtools::install\_github("EvaMaeRey/ggxmean")}
-\CommentTok{\#library(gxmean)}
-\CommentTok{\#devtools::install\_github("davidsjoberg/ggsankey")}
+\CommentTok{\# library(gxmean)}
+\CommentTok{\# devtools::install\_github("davidsjoberg/ggsankey")}
 \FunctionTok{library}\NormalTok{(ggxmean)}
+\CommentTok{\# install.packages("ggpattern")}
+\FunctionTok{library}\NormalTok{(ggpattern)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -459,6 +461,10 @@ geom\_vline\\
 
 \textbf{Description: } Draw a straight line (\(Y=mX+c\)) for a given slope (\(m\)) and intercept (\(c\)).
 
+\textbf{Understandable aesthetics:} alpha, colour, linetype, linewidth
+
+\textbf{Statistics layer(s):}
+
 \textbf{See also: } \protect\hyperlink{point}{geom\_point}, \protect\hyperlink{vline}{geom\_vline}, \protect\hyperlink{hline}{geom\_hline}
 
 \textbf{Example:}
@@ -493,7 +499,11 @@ geom\_vline\\
 
 \textbf{Description: }Create an area plot. This cover the space between x-axis and line that connects the data points.
 
-\textbf{See also: } \protect\hyperlink{line}{geom\_line}
+\textbf{Understandable aesthetics:} alpha, colour, linetype, linewidth
+
+\textbf{Statistics layer(s):}
+
+\textbf{See also: } \protect\hyperlink{line}{geom\_line}, \protect\hyperlink{ribbon}{geom\_ribbon}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -601,7 +611,7 @@ geom\_vline\\
 
 \textbf{Package: } ggplot2 \autocite{R-ggplot2}
 
-\textbf{Description: } Divides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number ofobservations.
+\textbf{Description: } Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number ofobservations.
 
 \textbf{Understandable aesthetics: } x, y, fill, group
 
@@ -637,6 +647,35 @@ geom\_vline\\
 \caption{\label{fig:unnamed-chunk-24}Illustration of changing bins in geom\_bin\_2d}
 \end{figure}
 
+\hypertarget{geom_bin2d_pattern}{%
+\section{geom\_bin2d\_pattern}\label{geom_bin2d_pattern}}
+
+\textbf{Package: } ggpattern \autocite{R-ggpattern}
+
+\textbf{Description: } Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.
+
+\textbf{Understandable aesthetics: }
+
+pattern\_fill (pattern\_* - for mapping variables under aesthetics), pattern (to set a patten, for example pattern=`stripe'), fill, colour
+
+\textbf{Statistics layer(s): }
+
+\textbf{See also: } \protect\hyperlink{bin2d}{geom\_bin2d}, \protect\hyperlink{point}{geom\_point}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(elephants.subset}\FloatTok{.100}\NormalTok{, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Height, }\AttributeTok{x=}\NormalTok{Fore\_Feet\_Circumference)) }\SpecialCharTok{+}
+\NormalTok{  ggpattern}\SpecialCharTok{::}\FunctionTok{geom\_bin2d\_pattern}\NormalTok{(}\AttributeTok{bins=}\DecValTok{5}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-25-1.pdf}
+\caption{\label{fig:unnamed-chunk-25}Illustration of using geom\_bin\_2d}
+\end{figure}
+
 \hypertarget{geom_bin2d}{%
 \section{geom\_bin2d}\label{geom_bin2d}}
 
@@ -662,8 +701,8 @@ geom\_vline\\
 
 \begin{figure}
 \centering
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-25-1.pdf}
-\caption{\label{fig:unnamed-chunk-25}Illustration of using geom\_bin\_2d}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-26-1.pdf}
+\caption{\label{fig:unnamed-chunk-26}Illustration of using geom\_bin\_2d}
 \end{figure}
 
 \hypertarget{geom_blank}{%
@@ -695,8 +734,8 @@ geom\_vline\\
 
 \begin{figure}
 \centering
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-26-1.pdf}
-\caption{\label{fig:unnamed-chunk-26}Illustration of using geom\_boxplot}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-27-1.pdf}
+\caption{\label{fig:unnamed-chunk-27}Illustration of using geom\_boxplot}
 \end{figure}
 
 \begin{Shaded}
@@ -709,8 +748,8 @@ geom\_vline\\
 
 \begin{figure}
 \centering
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-27-1.pdf}
-\caption{\label{fig:unnamed-chunk-27}Illustration of using geom\_boxplot with changing outliers and adding a notch to create notched box plot.}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-28-1.pdf}
+\caption{\label{fig:unnamed-chunk-28}Illustration of using geom\_boxplot with changing outliers and adding a notch to create notched box plot.}
 \end{figure}
 
 \hypertarget{c-geom_c}{%
@@ -730,7 +769,7 @@ Before using \texttt{geom\_col}, you need to create a summary table of counts or
 ## 3 less than 10 years      710
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-29-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-30-1.pdf}
 
 \hypertarget{d-geom_d}{%
 \chapter{D: geom\_d\ldots{}}\label{d-geom_d}}
@@ -754,7 +793,7 @@ Before using \texttt{geom\_col}, you need to create a summary table of counts or
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-30-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-31-1.pdf}
 
 \hypertarget{geom_density}{%
 \section{geom\_density}\label{geom_density}}
@@ -766,7 +805,7 @@ Before using \texttt{geom\_col}, you need to create a summary table of counts or
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-31-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-32-1.pdf}
 
 \hypertarget{geom_density_2d}{%
 \section{geom\_density\_2d}\label{geom_density_2d}}
@@ -778,7 +817,7 @@ Before using \texttt{geom\_col}, you need to create a summary table of counts or
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-32-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-33-1.pdf}
 
 \hypertarget{geom_density_2d_filled}{%
 \section{geom\_density\_2d\_filled}\label{geom_density_2d_filled}}
@@ -790,7 +829,7 @@ Before using \texttt{geom\_col}, you need to create a summary table of counts or
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-33-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-34-1.pdf}
 
 \hypertarget{geom_density_ridges}{%
 \section{geom\_density\_ridges}\label{geom_density_ridges}}
@@ -809,7 +848,7 @@ Here the \texttt{y} variable should be qualitative and the \texttt{x} variable s
 ## Picking joint bandwidth of 0.092
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-34-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-35-1.pdf}
 
 \hypertarget{geom_dl}{%
 \section{geom\_dl}\label{geom_dl}}
@@ -823,7 +862,7 @@ Here the \texttt{y} variable should be qualitative and the \texttt{x} variable s
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-35-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-36-1.pdf}
 
 \hypertarget{e-geom_e}{%
 \chapter{E: geom\_e\ldots{}}\label{e-geom_e}}
@@ -843,11 +882,11 @@ Other related geoms: geom\_mark\_circle
 ##   grobY.absoluteGrob      ggplot2
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-36-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-37-1.pdf}
 
 \texttt{geom\_encircle} with \texttt{geom\_point}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-37-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-38-1.pdf}
 
 \hypertarget{f-geom_f}{%
 \chapter{F: geom\_f\ldots{}}\label{f-geom_f}}
@@ -861,7 +900,7 @@ Other related geoms: geom\_mark\_circle
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-38-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-39-1.pdf}
 
 \hypertarget{a-geom_axxxxx}{%
 \chapter{A: geom\_axxxxx}\label{a-geom_axxxxx}}
@@ -876,7 +915,7 @@ Other related geoms: geom\_mark\_circle
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-39-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-40-1.pdf}
 
 \hypertarget{hline}{%
 \section{geom\_hline}\label{hline}}
@@ -886,6 +925,10 @@ Other related geoms: geom\_mark\_circle
 \textbf{Book: }
 
 \textbf{Description: } Draw a horizontal line (\(Y=c\)) for a given value of \(c\), which is known as \texttt{yintercept}.
+
+\textbf{Understandable aesthetics:} alpha, colour, linetype, linewidth
+
+\textbf{Statistics layer(s):}
 
 \textbf{See also: } \protect\hyperlink{point}{geom\_point}, \protect\hyperlink{vline}{geom\_vline}, \protect\hyperlink{hline}{geom\_hline}
 
@@ -910,8 +953,8 @@ Other related geoms: geom\_mark\_circle
 
 \begin{figure}
 \centering
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-40-1.pdf}
-\caption{\label{fig:unnamed-chunk-40}Illustration of (A) geom\_hline and (B) use of geom\_point and geom\_hline both}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-41-1.pdf}
+\caption{\label{fig:unnamed-chunk-41}Illustration of (A) geom\_hline and (B) use of geom\_point and geom\_hline both}
 \end{figure}
 
 \hypertarget{a-geom_axxxxx-1}{%
@@ -948,12 +991,12 @@ Other related geoms: geom\_mark\_circle
 ## increasing max.overlaps
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-41-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-42-1.pdf}
 
 \hypertarget{geom_lm}{%
 \section{geom\_lm}\label{geom_lm}}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-42-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-43-1.pdf}
 
 \hypertarget{m-geom_m}{%
 \chapter{M: geom\_m\ldots{}}\label{m-geom_m}}
@@ -969,11 +1012,11 @@ Other related geoms: geom\_mark\_circle
 ## generated.
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-43-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-44-1.pdf}
 
 With geom\_point
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-45-1.pdf}
 
 \hypertarget{a-geom_axxxxx-4}{%
 \chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-4}}
@@ -987,16 +1030,57 @@ With geom\_point
 \hypertarget{point}{%
 \section{geom\_point}\label{point}}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-45-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-46-1.pdf}
 
 \hypertarget{a-geom_axxxxx-6}{%
 \chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-6}}
 
-\hypertarget{a-geom_axxxxx-7}{%
-\chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-7}}
+\hypertarget{r-geom_r}{%
+\chapter{R: geom\_r\ldots{}}\label{r-geom_r}}
+
+\hypertarget{geom_ribbon}{%
+\section{geom\_ribbon}\label{geom_ribbon}}
+
+\textbf{Package: } ggplot2 \autocite{R-ggplot2}
+
+\textbf{Description: } Displays a interval according given the upper interval boundary(ymax or xmax) and lower interval boundary (ymin or xmin).
+
+\textbf{Understandable aesthetics:}
+
+Required aesthetics: x or y, ymin or xmin, ymax or xmax
+
+Other: alpha, colour, fill, group, linetype, linewidth
+
+\textbf{Statistics layer(s):}
+
+\textbf{See also: } \protect\hyperlink{area}{geom\_area}, \protect\hyperlink{line}{geom\_line}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{colombo21 }\OtherTok{\textless{}{-}}\NormalTok{ srilanka\_weekly\_data }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(district }\SpecialCharTok{==} \StringTok{"Colombo"} \SpecialCharTok{\&}\NormalTok{ year}\SpecialCharTok{==}\DecValTok{2021}\NormalTok{)}
+\NormalTok{ribbon }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{colombo21, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{start.date, }\AttributeTok{y=}\NormalTok{cases)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_ribbon}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =}\NormalTok{ cases }\SpecialCharTok{{-}} \DecValTok{50}\NormalTok{, }\AttributeTok{ymax =}\NormalTok{ cases }\SpecialCharTok{+} \DecValTok{50}\NormalTok{), }\AttributeTok{fill =} \StringTok{"grey70"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"A: \textasciigrave{}geom\_ribbon\textasciigrave{} only"}\NormalTok{)}
+
+\NormalTok{ribbonline }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{colombo21, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{start.date, }\AttributeTok{y=}\NormalTok{cases)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_ribbon}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =}\NormalTok{ cases }\SpecialCharTok{{-}} \DecValTok{50}\NormalTok{, }\AttributeTok{ymax =}\NormalTok{ cases }\SpecialCharTok{+} \DecValTok{50}\NormalTok{), }\AttributeTok{fill =} \StringTok{"grey70"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"B: \textasciigrave{}geom\_ribbon + geom\_line\textasciigrave{} both"}\NormalTok{)}
+
+\NormalTok{ribbon}\SpecialCharTok{|}\NormalTok{ribbonline}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-47-1.pdf}
+\caption{\label{fig:unnamed-chunk-47}Illustration of geom\_ribbon, A: geom\_ribbon only and B: geom\_ribbon + geom\_line}
+\end{figure}
 
 \hypertarget{s-geom_s}{%
 \chapter{S: geom\_s\ldots{}}\label{s-geom_s}}
+
+\hypertarget{geom_segment}{%
+\section{geom\_segment}\label{geom_segment}}
 
 \hypertarget{geom_signif}{%
 \section{geom\_signif}\label{geom_signif}}
@@ -1013,30 +1097,52 @@ With geom\_point
 ## ! replacement has 1 row, data has 0
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-46-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-48-1.pdf}
 
-\hypertarget{geom_smooth}{%
-\section{geom\_smooth}\label{geom_smooth}}
+\hypertarget{smooth}{%
+\section{geom\_smooth}\label{smooth}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(elephants, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Height, }\AttributeTok{x=}\NormalTok{Fore\_Feet\_Circumference)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{verbatim}
 ## `geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-47-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-49-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(elephants, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Height, }\AttributeTok{x=}\NormalTok{Fore\_Feet\_Circumference)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method=}\NormalTok{lm) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{verbatim}
 ## `geom_smooth()` using formula = 'y ~ x'
 \end{verbatim}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-48-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-50-1.pdf}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-49-1.pdf}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(elephants, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Height, }\AttributeTok{x=}\NormalTok{Fore\_Feet\_Circumference)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =}\NormalTok{ lm, }\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ splines}\SpecialCharTok{::}\FunctionTok{bs}\NormalTok{(x, }\DecValTok{4}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-51-1.pdf}
+
+\hypertarget{a-geom_axxxxx-7}{%
+\chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-7}}
 
 \hypertarget{a-geom_axxxxx-8}{%
 \chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-8}}
-
-\hypertarget{a-geom_axxxxx-9}{%
-\chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-9}}
 
 \hypertarget{v-geom_v}{%
 \chapter{V: geom\_v\ldots{}}\label{v-geom_v}}
@@ -1050,7 +1156,11 @@ With geom\_point
 
 \textbf{Description: } Draw a vertical line (\(X=c\)) for a given value of \(c\), which is known as \texttt{xintercept}.
 
-\textbf{See also: } \protect\hyperlink{point}{geom\_point}, \protect\hyperlink{vline}{geom\_vline}, \protect\hyperlink{hline}{geom\_hline}
+\textbf{Understandable aesthetics:} alpha, colour, linetype, linewidth
+
+\textbf{Statistics layer(s):}
+
+\textbf{See also: } \protect\hyperlink{point}{geom\_point}, , \protect\hyperlink{hline}{geom\_hline}, \protect\hyperlink{smooth}{geom\_smooth}, \protect\hyperlink{vline}{geom\_vline}
 
 \textbf{Example:}
 
@@ -1073,22 +1183,25 @@ With geom\_point
 
 \begin{figure}
 \centering
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-50-1.pdf}
-\caption{\label{fig:unnamed-chunk-50}Illustration of (A) geom\_vline and (B) use of geom\_point and geom\_vline both}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-52-1.pdf}
+\caption{\label{fig:unnamed-chunk-52}Illustration of (A) geom\_vline and (B) use of geom\_point and geom\_vline both}
 \end{figure}
 
 \hypertarget{geom_violin}{%
 \section{geom\_violin}\label{geom_violin}}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-51-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-53-1.pdf}
 
 Without trimming
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-52-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-54-1.pdf}
 
 Draw quantiles
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-53-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-55-1.pdf}
+
+\hypertarget{a-geom_axxxxx-9}{%
+\chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-9}}
 
 \hypertarget{a-geom_axxxxx-10}{%
 \chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-10}}
@@ -1098,9 +1211,6 @@ Draw quantiles
 
 \hypertarget{a-geom_axxxxx-12}{%
 \chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-12}}
-
-\hypertarget{a-geom_axxxxx-13}{%
-\chapter{A: geom\_axxxxx}\label{a-geom_axxxxx-13}}
 
 \hypertarget{others}{%
 \chapter{Others}\label{others}}
@@ -1116,7 +1226,7 @@ With all variables
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-54-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-56-1.pdf}
 
 With only numeric variables
 
@@ -1127,7 +1237,7 @@ With only numeric variables
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-55-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-57-1.pdf}
 
 Colour the points according to category
 
@@ -1139,7 +1249,7 @@ Colour the points according to category
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-56-1.pdf}
+\includegraphics{Data-Visualisation-geom-Encyclopedia_files/figure-latex/unnamed-chunk-58-1.pdf}
 
 \printbibliography
 

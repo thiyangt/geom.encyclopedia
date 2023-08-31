@@ -155,10 +155,10 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Data Visualisation geom Encyclopedia</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
@@ -311,7 +311,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 6</span> B: geom_b…<a href="b-geom_b.html#b-geom_b" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="geom_bar" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> geom_bar<a href="b-geom_b.html#geom_bar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></p>
+<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description: </strong> Draw a bar proportional to the specified number. For example, number of cases or user defined number.</p>
 <p><strong>Statistics layer(s): </strong></p>
 <p><code>stat_count</code> - This the default statistics layer. It counts number of cases in each group.</p>
@@ -319,34 +319,34 @@ div.csl-indent {
 <p><strong>See also: </strong> <a href="#col">geom_col</a></p>
 <div id="with-count" class="section level3 hasAnchor" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> With count<a href="b-geom_b.html#with-count" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="b-geom_b.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Age_Category)) <span class="sc">+</span> </span>
-<span id="cb1-2"><a href="b-geom_b.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-1-1.png" alt="Illustration of geom_bar to create a bar chart" width="672" />
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="b-geom_b.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Age_Category)) <span class="sc">+</span> </span>
+<span id="cb16-2"><a href="b-geom_b.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-18-1.png" alt="Illustration of geom_bar to create a bar chart" width="672" />
 <p class="caption">
 Figure 6.1: Illustration of geom_bar to create a bar chart
 </p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="b-geom_b.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Age_Category, <span class="at">fill=</span>Category)) <span class="sc">+</span> </span>
-<span id="cb2-2"><a href="b-geom_b.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-2-1.png" alt="Illustration of geom_bar to create a stacked bar chart" width="672" />
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="b-geom_b.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Age_Category, <span class="at">fill=</span>Category)) <span class="sc">+</span> </span>
+<span id="cb17-2"><a href="b-geom_b.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-19-1.png" alt="Illustration of geom_bar to create a stacked bar chart" width="672" />
 <p class="caption">
 Figure 6.2: Illustration of geom_bar to create a stacked bar chart
 </p>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="b-geom_b.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y=</span>Age_Category, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="b-geom_b.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-3-1.png" alt="Illustration of geom_bar to create a cluster bar chart" width="672" />
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="b-geom_b.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y=</span>Age_Category, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="b-geom_b.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-20-1.png" alt="Illustration of geom_bar to create a cluster bar chart" width="672" />
 <p class="caption">
 Figure 6.3: Illustration of geom_bar to create a cluster bar chart
 </p>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="b-geom_b.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y=</span>Age_Category, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="b-geom_b.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-4-1.png" alt="Illustration of geom_bar to create a cluster bar chart" width="672" />
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="b-geom_b.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y=</span>Age_Category, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="b-geom_b.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-21-1.png" alt="Illustration of geom_bar to create a cluster bar chart" width="672" />
 <p class="caption">
 Figure 6.4: Illustration of geom_bar to create a cluster bar chart
 </p>
@@ -354,33 +354,33 @@ Figure 6.4: Illustration of geom_bar to create a cluster bar chart
 </div>
 <div id="with-identity" class="section level3 hasAnchor" number="6.1.2">
 <h3><span class="header-section-number">6.1.2</span> With identity<a href="b-geom_b.html#with-identity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="b-geom_b.html#cb5-1" aria-hidden="true" tabindex="-1"></a>dfbar <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">class=</span><span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>),  <span class="at">income =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>))</span>
-<span id="cb5-2"><a href="b-geom_b.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dfbar, <span class="fu">aes</span>(class, income)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="b-geom_b.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)</span></code></pre></div>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="b-geom_b.html#cb20-1" aria-hidden="true" tabindex="-1"></a>dfbar <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">class=</span><span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>),  <span class="at">income =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>))</span>
+<span id="cb20-2"><a href="b-geom_b.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dfbar, <span class="fu">aes</span>(class, income)) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="b-geom_b.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)</span></code></pre></div>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 </div>
 <div id="geom_bin_2d" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> geom_bin_2d<a href="b-geom_b.html#geom_bin_2d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></p>
+<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description: </strong> Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number ofobservations.</p>
 <p><strong>Understandable aesthetics: </strong> x, y, fill, group</p>
 <p><strong>Statistics layer(s): </strong></p>
 <p><strong>See also: </strong> <a href="#bin2d">geom_bin2d</a>, <a href="p-geom_p.html#point">geom_point</a></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="b-geom_b.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="b-geom_b.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin_2d</span>() <span class="sc">+</span> </span>
-<span id="cb6-3"><a href="b-geom_b.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-6-1.png" alt="Illustration of using geom_bin_2d" width="672" />
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="b-geom_b.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="b-geom_b.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin_2d</span>() <span class="sc">+</span> </span>
+<span id="cb21-3"><a href="b-geom_b.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-23-1.png" alt="Illustration of using geom_bin_2d" width="672" />
 <p class="caption">
 Figure 6.5: Illustration of using geom_bin_2d
 </p>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="b-geom_b.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="b-geom_b.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin_2d</span>(<span class="at">bins=</span><span class="dv">20</span>) <span class="sc">+</span> </span>
-<span id="cb7-3"><a href="b-geom_b.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-7-1.png" alt="Illustration of changing bins in geom_bin_2d" width="672" />
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="b-geom_b.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="b-geom_b.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin_2d</span>(<span class="at">bins=</span><span class="dv">20</span>) <span class="sc">+</span> </span>
+<span id="cb22-3"><a href="b-geom_b.html#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-24-1.png" alt="Illustration of changing bins in geom_bin_2d" width="672" />
 <p class="caption">
 Figure 6.6: Illustration of changing bins in geom_bin_2d
 </p>
@@ -394,11 +394,11 @@ Figure 6.6: Illustration of changing bins in geom_bin_2d
 <p>pattern_fill (pattern_* - for mapping variables under aesthetics), pattern (to set a patten, for example pattern=‘stripe’), fill, colour</p>
 <p><strong>Statistics layer(s): </strong></p>
 <p><strong>See also: </strong> <a href="#bin2d">geom_bin2d</a>, <a href="p-geom_p.html#point">geom_point</a></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="b-geom_b.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="b-geom_b.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  ggpattern<span class="sc">::</span><span class="fu">geom_bin2d_pattern</span>(<span class="at">bins=</span><span class="dv">5</span>) <span class="sc">+</span> </span>
-<span id="cb8-3"><a href="b-geom_b.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-8-1.png" alt="Illustration of using geom_bin_2d" width="672" />
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="b-geom_b.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="b-geom_b.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  ggpattern<span class="sc">::</span><span class="fu">geom_bin2d_pattern</span>(<span class="at">bins=</span><span class="dv">5</span>) <span class="sc">+</span> </span>
+<span id="cb23-3"><a href="b-geom_b.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-25"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-25-1.png" alt="Illustration of using geom_bin_2d" width="672" />
 <p class="caption">
 Figure 6.7: Illustration of using geom_bin_2d
 </p>
@@ -406,17 +406,17 @@ Figure 6.7: Illustration of using geom_bin_2d
 </div>
 <div id="geom_bin2d" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> geom_bin2d<a href="b-geom_b.html#geom_bin2d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></p>
+<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description: </strong> Divides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number ofobservations.</p>
 <p><strong>Understandable aesthetics: </strong> x, y, fill, group</p>
 <p><strong>Statistics layer(s): </strong></p>
 <p><strong>See also: </strong> <a href="#bin_2d">geom_bin_2d</a>, <a href="p-geom_p.html#point">geom_point</a></p>
 <p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="b-geom_b.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="b-geom_b.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>() <span class="sc">+</span> </span>
-<span id="cb9-3"><a href="b-geom_b.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-9-1.png" alt="Illustration of using geom_bin_2d" width="672" />
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="b-geom_b.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="b-geom_b.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>() <span class="sc">+</span> </span>
+<span id="cb24-3"><a href="b-geom_b.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-26"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-26-1.png" alt="Illustration of using geom_bin_2d" width="672" />
 <p class="caption">
 Figure 6.8: Illustration of using geom_bin_2d
 </p>
@@ -424,29 +424,29 @@ Figure 6.8: Illustration of using geom_bin_2d
 </div>
 <div id="geom_blank" class="section level2 hasAnchor" number="6.5">
 <h2><span class="header-section-number">6.5</span> geom_blank<a href="b-geom_b.html#geom_blank" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></p>
+<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description: </strong> Draws nothing.</p>
 </div>
 <div id="geom_boxplot" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">6.6</span> geom_boxplot<a href="b-geom_b.html#geom_boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></p>
+<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description: </strong> Draw a bar proportional to the specified number. For example, number of cases or user defined number.</p>
 <p><strong>Statistics layer(s): </strong></p>
 <p><code>stat_boxplot</code> - This the default statistics layer. This computes minimum, maximum, median, first quartile (<span class="math inline">\(Q1\)</span>), third quartile (<span class="math inline">\(Q3\)</span>), upper whisker extends up to <span class="math inline">\(Q3 + 1.5 \times IQR\)</span> and lower whisker extends up to <span class="math inline">\(Q1 - 1.5 \times IQR\)</span>, where <span class="math inline">\(IQR = Q3 - Q1\)</span>. In a notched box plot, it creates 95% confidence interval for mean.</p>
 <p><strong>See also: </strong> <a href="#col">geom_col</a></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="b-geom_b.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight)) <span class="sc">+</span> </span>
-<span id="cb10-2"><a href="b-geom_b.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-10-1.png" alt="Illustration of using geom_boxplot" width="672" />
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="b-geom_b.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight)) <span class="sc">+</span> </span>
+<span id="cb25-2"><a href="b-geom_b.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-27"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-27-1.png" alt="Illustration of using geom_boxplot" width="672" />
 <p class="caption">
 Figure 6.9: Illustration of using geom_boxplot
 </p>
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="b-geom_b.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight)) <span class="sc">+</span> </span>
-<span id="cb11-2"><a href="b-geom_b.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_boxplot</span>(<span class="at">outlier.colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">outlier.shape=</span><span class="dv">16</span>,</span>
-<span id="cb11-3"><a href="b-geom_b.html#cb11-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">outlier.size=</span><span class="dv">2</span>, <span class="at">notch=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-11-1.png" alt="Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot." width="672" />
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="b-geom_b.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight)) <span class="sc">+</span> </span>
+<span id="cb26-2"><a href="b-geom_b.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_boxplot</span>(<span class="at">outlier.colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">outlier.shape=</span><span class="dv">16</span>,</span>
+<span id="cb26-3"><a href="b-geom_b.html#cb26-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">outlier.size=</span><span class="dv">2</span>, <span class="at">notch=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-28"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-28-1.png" alt="Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot." width="672" />
 <p class="caption">
 Figure 6.10: Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot.
 </p>
@@ -457,10 +457,10 @@ Figure 6.10: Illustration of using geom_boxplot with changing outliers and addin
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-R-ggpattern" class="csl-entry">
-FC, Mike, Trevor L Davis, and ggplot2 authors. 2022. <em>Ggpattern: Ggplot2 Pattern Geoms</em>. <a href="https://CRAN.R-project.org/package=ggpattern">https://CRAN.R-project.org/package=ggpattern</a>.
+FC, Mike, Trevor L Davis, and ggplot2 authors. 2022. <em>Ggpattern: ’Ggplot2’ Pattern Geoms</em>. <a href="https://CRAN.R-project.org/package=ggpattern">https://CRAN.R-project.org/package=ggpattern</a>.
 </div>
 <div id="ref-R-ggplot2" class="csl-entry">
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2023. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 </div>
             </section>

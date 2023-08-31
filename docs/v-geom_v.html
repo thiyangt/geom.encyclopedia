@@ -155,7 +155,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Data Visualisation geom Encyclopedia</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
@@ -311,25 +311,25 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 26</span> V: geom_v…<a href="v-geom_v.html#v-geom_v" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="vline" class="section level2 hasAnchor" number="26.1">
 <h2><span class="header-section-number">26.1</span> geom_vline<a href="v-geom_v.html#vline" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></p>
+<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Book: </strong></p>
 <p><strong>Description: </strong> Draw a vertical line (<span class="math inline">\(X=c\)</span>) for a given value of <span class="math inline">\(c\)</span>, which is known as <code>xintercept</code>.</p>
 <p><strong>Understandable aesthetics:</strong> alpha, colour, linetype, linewidth</p>
 <p><strong>Statistics layer(s):</strong></p>
 <p><strong>See also: </strong> <a href="p-geom_p.html#point">geom_point</a>, , <a href="h-geom_h.html#hline">geom_hline</a>, <a href="s-geom_s.html#smooth">geom_smooth</a>, <a href="v-geom_v.html#vline">geom_vline</a></p>
 <p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="v-geom_v.html#cb46-1" aria-hidden="true" tabindex="-1"></a>vline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.25</span>) <span class="sc">+</span> </span>
-<span id="cb46-2"><a href="v-geom_v.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;A: `geom_vline` only&quot;</span>) <span class="sc">+</span></span>
-<span id="cb46-3"><a href="v-geom_v.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb46-4"><a href="v-geom_v.html#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-5"><a href="v-geom_v.html#cb46-5" aria-hidden="true" tabindex="-1"></a>pointvline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
-<span id="cb46-6"><a href="v-geom_v.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb46-7"><a href="v-geom_v.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.25</span>) <span class="sc">+</span> </span>
-<span id="cb46-8"><a href="v-geom_v.html#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;B: `geom_point + geom_vline` both&quot;</span>) <span class="sc">+</span></span>
-<span id="cb46-9"><a href="v-geom_v.html#cb46-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb46-10"><a href="v-geom_v.html#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-11"><a href="v-geom_v.html#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb46-12"><a href="v-geom_v.html#cb46-12" aria-hidden="true" tabindex="-1"></a>vline <span class="sc">|</span> pointvline</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="v-geom_v.html#cb49-1" aria-hidden="true" tabindex="-1"></a>vline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.25</span>) <span class="sc">+</span> </span>
+<span id="cb49-2"><a href="v-geom_v.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;A: `geom_vline` only&quot;</span>) <span class="sc">+</span></span>
+<span id="cb49-3"><a href="v-geom_v.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb49-4"><a href="v-geom_v.html#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="v-geom_v.html#cb49-5" aria-hidden="true" tabindex="-1"></a>pointvline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
+<span id="cb49-6"><a href="v-geom_v.html#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb49-7"><a href="v-geom_v.html#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.25</span>) <span class="sc">+</span> </span>
+<span id="cb49-8"><a href="v-geom_v.html#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;B: `geom_point + geom_vline` both&quot;</span>) <span class="sc">+</span></span>
+<span id="cb49-9"><a href="v-geom_v.html#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb49-10"><a href="v-geom_v.html#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="v-geom_v.html#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb49-12"><a href="v-geom_v.html#cb49-12" aria-hidden="true" tabindex="-1"></a>vline <span class="sc">|</span> pointvline</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-52"></span>
 <img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-52-1.png" alt="Illustration of (A) geom_vline and (B) use of geom_point and geom_vline both" width="672" />
 <p class="caption">
@@ -350,7 +350,7 @@ Figure 26.1: Illustration of (A) geom_vline and (B) use of geom_point and geom_v
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-R-ggplot2" class="csl-entry">
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2023. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 </div>
             </section>
