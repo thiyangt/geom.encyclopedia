@@ -119,28 +119,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -174,7 +152,6 @@ div.csl-indent {
 <li class="chapter" data-level="3" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>3</b> Graph types</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>3.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="3.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.2</b> Captioned figures and tables</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="r-packages.html"><a href="r-packages.html"><i class="fa fa-check"></i><b>4</b> R Packages</a>
 <ul>
@@ -307,15 +284,15 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 16</span> L: geom_l…<a href="l-geom_l.html#l-geom_l" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="geom_label_repel" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> geom_label_repel<a href="l-geom_l.html#geom_label_repel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="l-geom_l.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
-<span id="cb39-2"><a href="l-geom_l.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb39-3"><a href="l-geom_l.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, </span>
-<span id="cb39-4"><a href="l-geom_l.html#cb39-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">label =</span> <span class="fu">rownames</span>(elephants.subset<span class="fl">.100</span>)),</span>
-<span id="cb39-5"><a href="l-geom_l.html#cb39-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fontface =</span> <span class="st">&#39;bold&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>,</span>
-<span id="cb39-6"><a href="l-geom_l.html#cb39-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">box.padding =</span> <span class="fu">unit</span>(<span class="fl">0.40</span>, <span class="st">&quot;lines&quot;</span>),</span>
-<span id="cb39-7"><a href="l-geom_l.html#cb39-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">point.padding =</span> <span class="fu">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;lines&quot;</span>),</span>
-<span id="cb39-8"><a href="l-geom_l.html#cb39-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">segment.color =</span> <span class="st">&#39;grey50&#39;</span></span>
-<span id="cb39-9"><a href="l-geom_l.html#cb39-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="l-geom_l.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
+<span id="cb38-2"><a href="l-geom_l.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb38-3"><a href="l-geom_l.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, </span>
+<span id="cb38-4"><a href="l-geom_l.html#cb38-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">label =</span> <span class="fu">rownames</span>(elephants.subset<span class="fl">.100</span>)),</span>
+<span id="cb38-5"><a href="l-geom_l.html#cb38-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fontface =</span> <span class="st">&#39;bold&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>,</span>
+<span id="cb38-6"><a href="l-geom_l.html#cb38-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">box.padding =</span> <span class="fu">unit</span>(<span class="fl">0.40</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb38-7"><a href="l-geom_l.html#cb38-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">point.padding =</span> <span class="fu">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb38-8"><a href="l-geom_l.html#cb38-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">segment.color =</span> <span class="st">&#39;grey50&#39;</span></span>
+<span id="cb38-9"><a href="l-geom_l.html#cb38-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 </div>
 <div id="geom_lm" class="section level2 hasAnchor" number="16.2">

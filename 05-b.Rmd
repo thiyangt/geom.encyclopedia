@@ -66,7 +66,7 @@ ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
 
 ```{r, fig.cap="Illustration of changing bins in geom_bin_2d"}
 ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
-  geom_bin_2d(bin=20) + 
+  geom_bin_2d(bins=20) + 
   theme(aspect.ratio = 1)
 ```
 

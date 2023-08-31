@@ -119,28 +119,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -174,7 +152,6 @@ div.csl-indent {
 <li class="chapter" data-level="3" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>3</b> Graph types</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>3.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="3.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.2</b> Captioned figures and tables</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="r-packages.html"><a href="r-packages.html"><i class="fa fa-check"></i><b>4</b> R Packages</a>
 <ul>
@@ -308,50 +285,50 @@ div.csl-indent {
 <div id="geom_delaunay_tile" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> geom_delaunay_tile<a href="d-geom_d.html#geom_delaunay_tile" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Description:</strong> The Delaunay triangulation is used to create a planar graph.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="d-geom_d.html#cb29-1" aria-hidden="true" tabindex="-1"></a>delaunay <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
-<span id="cb29-2"><a href="d-geom_d.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  ggforce<span class="sc">::</span><span class="fu">geom_delaunay_tile</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;geom_delaunay_tile&quot;</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb29-3"><a href="d-geom_d.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="d-geom_d.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to compare with geom_point</span></span>
-<span id="cb29-5"><a href="d-geom_d.html#cb29-5" aria-hidden="true" tabindex="-1"></a>point <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
-<span id="cb29-6"><a href="d-geom_d.html#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;geom_point&quot;</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb29-7"><a href="d-geom_d.html#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-8"><a href="d-geom_d.html#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb29-9"><a href="d-geom_d.html#cb29-9" aria-hidden="true" tabindex="-1"></a>delaunay<span class="sc">|</span>point</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="d-geom_d.html#cb27-1" aria-hidden="true" tabindex="-1"></a>delaunay <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="d-geom_d.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  ggforce<span class="sc">::</span><span class="fu">geom_delaunay_tile</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;geom_delaunay_tile&quot;</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb27-3"><a href="d-geom_d.html#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="d-geom_d.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to compare with geom_point</span></span>
+<span id="cb27-5"><a href="d-geom_d.html#cb27-5" aria-hidden="true" tabindex="-1"></a>point <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="d-geom_d.html#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;geom_point&quot;</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb27-7"><a href="d-geom_d.html#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="d-geom_d.html#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb27-9"><a href="d-geom_d.html#cb27-9" aria-hidden="true" tabindex="-1"></a>delaunay<span class="sc">|</span>point</span></code></pre></div>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 </div>
 <div id="geom_density" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> geom_density<a href="d-geom_d.html#geom_density" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="d-geom_d.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">x =</span> Weight)) <span class="sc">+</span> </span>
-<span id="cb30-2"><a href="d-geom_d.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="d-geom_d.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">x =</span> Weight)) <span class="sc">+</span> </span>
+<span id="cb28-2"><a href="d-geom_d.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 </div>
 <div id="geom_density_2d" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> geom_density_2d<a href="d-geom_d.html#geom_density_2d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="d-geom_d.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span> </span>
-<span id="cb31-2"><a href="d-geom_d.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="d-geom_d.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span> </span>
+<span id="cb29-2"><a href="d-geom_d.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d</span>()</span></code></pre></div>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 </div>
 <div id="geom_density_2d_filled" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> geom_density_2d_filled<a href="d-geom_d.html#geom_density_2d_filled" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="d-geom_d.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span> </span>
-<span id="cb32-2"><a href="d-geom_d.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d_filled</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="d-geom_d.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span> </span>
+<span id="cb30-2"><a href="d-geom_d.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d_filled</span>()</span></code></pre></div>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 </div>
 <div id="geom_density_ridges" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> geom_density_ridges<a href="d-geom_d.html#geom_density_ridges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here the <code>y</code> variable should be qualitative and the <code>x</code> variable should be quantitative.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="d-geom_d.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
-<span id="cb33-2"><a href="d-geom_d.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y=</span>Category, <span class="at">x =</span> Height)) <span class="sc">+</span> </span>
-<span id="cb33-3"><a href="d-geom_d.html#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density_ridges</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="d-geom_d.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb31-2"><a href="d-geom_d.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y=</span>Category, <span class="at">x =</span> Height)) <span class="sc">+</span> </span>
+<span id="cb31-3"><a href="d-geom_d.html#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density_ridges</span>()</span></code></pre></div>
 <pre><code>## Picking joint bandwidth of 0.092</code></pre>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 </div>
 <div id="geom_dl" class="section level2 hasAnchor" number="8.6">
 <h2><span class="header-section-number">8.6</span> geom_dl<a href="d-geom_d.html#geom_dl" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="d-geom_d.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(directlabels)</span>
-<span id="cb35-2"><a href="d-geom_d.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, <span class="at">col=</span>Category)) <span class="sc">+</span> </span>
-<span id="cb35-3"><a href="d-geom_d.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb35-4"><a href="d-geom_d.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dl</span>(<span class="fu">aes</span>(<span class="at">label=</span>Category),<span class="at">method=</span><span class="st">&quot;smart.grid&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="d-geom_d.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(directlabels)</span>
+<span id="cb33-2"><a href="d-geom_d.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, <span class="at">col=</span>Category)) <span class="sc">+</span> </span>
+<span id="cb33-3"><a href="d-geom_d.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb33-4"><a href="d-geom_d.html#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dl</span>(<span class="fu">aes</span>(<span class="at">label=</span>Category),<span class="at">method=</span><span class="st">&quot;smart.grid&quot;</span>)</span></code></pre></div>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 
 </div>
