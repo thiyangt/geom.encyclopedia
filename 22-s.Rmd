@@ -1,5 +1,6 @@
 # S: geom_s...
 
+## geom_segment
 
 ## geom_signif
 
@@ -7,22 +8,23 @@
 ggplot(elephants, aes(y = Weight, x=Category)) + geom_boxplot() + ggsignif::geom_signif()
 ```
 
-## geom_smooth
+## geom_smooth{#smooth}
 
-```{r, echo=FALSE}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
-  geom_smooth()
-
-```
-
-```{r, echo=FALSE}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
-  geom_smooth(method=lm)
+```{r}
+ggplot(elephants, aes(y = Height, x=Fore_Feet_Circumference)) + 
+  geom_smooth() + theme(aspect.ratio=1)
 
 ```
 
-```{r, echo=FALSE}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
-  geom_smooth(method = lm, formula = y ~ splines::bs(x, 4))
+```{r}
+ggplot(elephants, aes(y = Height, x=Fore_Feet_Circumference)) + 
+  geom_smooth(method=lm) + 
+  theme(aspect.ratio=1)
+
+```
+
+```{r}
+ggplot(elephants, aes(y = Height, x=theme(aspect.ratio=1))) + 
+  geom_smooth(method = lm, formula = y ~ splines::bs(x, 4)) + theme(aspect.ratio=1)
 
 ```

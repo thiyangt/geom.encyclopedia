@@ -8,6 +8,10 @@
 
 **Description: ** Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and intercept ($c$).
 
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
 **See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
 
 **Example:**
@@ -33,7 +37,13 @@ abline | pointabline
 
 **Description: **Create an area plot. This cover the space between x-axis and line that connects the data points.
 
-**See also: ** [geom_line](#line)
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
+
+
+**See also: ** [geom_line](#line), [geom_ribbon](#ribbon)
 
 ```{r, fig.cap="Illustration of geom_area"}
 colombo <- srilanka_weekly_data |>

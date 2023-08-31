@@ -18,6 +18,10 @@ ggplot(elephants, aes(x = Weight)) +
 
 **Description: ** Draw a horizontal line ($Y=c$) for a given value of $c$, which is known as `yintercept`.
 
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
 **See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
 
 **Example:**

@@ -1,1 +1,30 @@
-# A: geom_axxxxx
+# R: geom_r...
+
+## geom_ribbon
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: ** Displays a interval according given the upper interval boundary(ymax or xmax) and lower interval boundary (ymin or xmin).
+
+**Understandable aesthetics:** 
+
+  Required aesthetics: x or y, ymin or xmin, ymax or xmax
+
+  Other: alpha, colour, fill, group, linetype, linewidth
+
+**Statistics layer(s):**
+
+**See also: ** [geom_area](#area), [geom_line](#line)
+
+```{r, fig.cap="Illustration of geom_ribbon, A: geom_ribbon only and B: geom_ribbon + geom_line"}
+colombo21 <- srilanka_weekly_data |>
+  filter(district == "Colombo" & year==2021)
+ribbon <- ggplot(data=colombo21, aes(x=start.date, y=cases)) + 
+  geom_ribbon(aes(ymin = cases - 50, ymax = cases + 50), fill = "grey70") + labs(title = "A: `geom_ribbon` only")
+
+ribbonline <- ggplot(data=colombo21, aes(x=start.date, y=cases)) + 
+  geom_ribbon(aes(ymin = cases - 50, ymax = cases + 50), fill = "grey70") + geom_line() +
+  labs(title = "B: `geom_ribbon + geom_line` both")
+
+ribbon|ribbonline
+```

@@ -9,7 +9,11 @@
 
 **Description: ** Draw a vertical line ($X=c$) for a given value of $c$, which is known as `xintercept`.
 
-**See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
+**See also: ** [geom_point](#point), , [geom_hline](#hline), [geom_smooth](#smooth), [geom_vline](#vline)
 
 **Example:**
 

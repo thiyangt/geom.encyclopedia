@@ -190,6 +190,10 @@ ls(pattern = '^geom_', env = as.environment('package:ggplot2')) |> knitr::kable(
 
 **Description: ** Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and intercept ($c$).
 
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
 **See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
 
 **Example:**
@@ -215,7 +219,13 @@ abline | pointabline
 
 **Description: **Create an area plot. This cover the space between x-axis and line that connects the data points.
 
-**See also: ** [geom_line](#line)
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
+
+
+**See also: ** [geom_line](#line), [geom_ribbon](#ribbon)
 
 ```{r, fig.cap="Illustration of geom_area"}
 colombo <- srilanka_weekly_data |>
@@ -515,6 +525,10 @@ ggplot(elephants, aes(x = Weight)) +
 
 **Description: ** Draw a horizontal line ($Y=c$) for a given value of $c$, which is known as `yintercept`.
 
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
 **See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
 
 **Example:**
@@ -622,12 +636,42 @@ ggplot(elephants, aes(y = Height, x=Weight)) +
 
 <!--chapter:end:20-q.Rmd-->
 
-# A: geom_axxxxx
+# R: geom_r...
+
+## geom_ribbon
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: ** Displays a interval according given the upper interval boundary(ymax or xmax) and lower interval boundary (ymin or xmin).
+
+**Understandable aesthetics:** 
+
+  Required aesthetics: x or y, ymin or xmin, ymax or xmax
+
+  Other: alpha, colour, fill, group, linetype, linewidth
+
+**Statistics layer(s):**
+
+**See also: ** [geom_area](#area), [geom_line](#line)
+
+```{r, fig.cap="Illustration of geom_ribbon, A: geom_ribbon only and B: geom_ribbon + geom_line"}
+colombo21 <- srilanka_weekly_data |>
+  filter(district == "Colombo" & year==2021)
+ribbon <- ggplot(data=colombo21, aes(x=start.date, y=cases)) + 
+  geom_ribbon(aes(ymin = cases - 50, ymax = cases + 50), fill = "grey70") + labs(title = "A: `geom_ribbon` only")
+
+ribbonline <- ggplot(data=colombo21, aes(x=start.date, y=cases)) + 
+  geom_ribbon(aes(ymin = cases - 50, ymax = cases + 50), fill = "grey70") + geom_line() +
+  labs(title = "B: `geom_ribbon + geom_line` both")
+
+ribbon|ribbonline
+```
 
 <!--chapter:end:21-r.Rmd-->
 
 # S: geom_s...
 
+## geom_segment
 
 ## geom_signif
 
@@ -635,23 +679,24 @@ ggplot(elephants, aes(y = Height, x=Weight)) +
 ggplot(elephants, aes(y = Weight, x=Category)) + geom_boxplot() + ggsignif::geom_signif()
 ```
 
-## geom_smooth
+## geom_smooth{#smooth}
 
-```{r, echo=FALSE}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
-  geom_smooth()
-
-```
-
-```{r, echo=FALSE}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
-  geom_smooth(method=lm)
+```{r}
+ggplot(elephants, aes(y = Height, x=Fore_Feet_Circumference)) + 
+  geom_smooth() + theme(aspect.ratio=1)
 
 ```
 
-```{r, echo=FALSE}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
-  geom_smooth(method = lm, formula = y ~ splines::bs(x, 4))
+```{r}
+ggplot(elephants, aes(y = Height, x=Fore_Feet_Circumference)) + 
+  geom_smooth(method=lm) + 
+  theme(aspect.ratio=1)
+
+```
+
+```{r}
+ggplot(elephants, aes(y = Height, x=theme(aspect.ratio=1))) + 
+  geom_smooth(method = lm, formula = y ~ splines::bs(x, 4)) + theme(aspect.ratio=1)
 
 ```
 
@@ -676,7 +721,11 @@ ggplot(elephants, aes(y = Height, x=Weight)) +
 
 **Description: ** Draw a vertical line ($X=c$) for a given value of $c$, which is known as `xintercept`.
 
-**See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
+**See also: ** [geom_point](#point), , [geom_hline](#hline), [geom_smooth](#smooth), [geom_vline](#vline)
 
 **Example:**
 
