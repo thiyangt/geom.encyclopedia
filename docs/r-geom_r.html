@@ -210,9 +210,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1.2" data-path="b-geom_b.html"><a href="b-geom_b.html#with-identity"><i class="fa fa-check"></i><b>6.1.2</b> With identity</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin_2d"><i class="fa fa-check"></i><b>6.2</b> geom_bin_2d</a></li>
-<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d</a></li>
-<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.4</b> geom_blank</a></li>
-<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.5</b> geom_boxplot</a></li>
+<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d_pattern"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d_pattern</a></li>
+<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.4</b> geom_bin2d</a></li>
+<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.5</b> geom_blank</a></li>
+<li class="chapter" data-level="6.6" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.6</b> geom_boxplot</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="c-geom_c.html"><a href="c-geom_c.html"><i class="fa fa-check"></i><b>7</b> C: geom_c…</a>
 <ul>
@@ -317,18 +318,18 @@ div.csl-indent {
 <p>Other: alpha, colour, fill, group, linetype, linewidth</p>
 <p><strong>Statistics layer(s):</strong></p>
 <p><strong>See also: </strong> <a href="a-geom_a.html#area">geom_area</a>, <a href="#line">geom_line</a></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="r-geom_r.html#cb37-1" aria-hidden="true" tabindex="-1"></a>colombo21 <span class="ot">&lt;-</span> srilanka_weekly_data <span class="sc">|&gt;</span></span>
-<span id="cb37-2"><a href="r-geom_r.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(district <span class="sc">==</span> <span class="st">&quot;Colombo&quot;</span> <span class="sc">&amp;</span> year<span class="sc">==</span><span class="dv">2021</span>)</span>
-<span id="cb37-3"><a href="r-geom_r.html#cb37-3" aria-hidden="true" tabindex="-1"></a>ribbon <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>colombo21, <span class="fu">aes</span>(<span class="at">x=</span>start.date, <span class="at">y=</span>cases)) <span class="sc">+</span> </span>
-<span id="cb37-4"><a href="r-geom_r.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> cases <span class="sc">-</span> <span class="dv">50</span>, <span class="at">ymax =</span> cases <span class="sc">+</span> <span class="dv">50</span>), <span class="at">fill =</span> <span class="st">&quot;grey70&quot;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;A: `geom_ribbon` only&quot;</span>)</span>
-<span id="cb37-5"><a href="r-geom_r.html#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-6"><a href="r-geom_r.html#cb37-6" aria-hidden="true" tabindex="-1"></a>ribbonline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>colombo21, <span class="fu">aes</span>(<span class="at">x=</span>start.date, <span class="at">y=</span>cases)) <span class="sc">+</span> </span>
-<span id="cb37-7"><a href="r-geom_r.html#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> cases <span class="sc">-</span> <span class="dv">50</span>, <span class="at">ymax =</span> cases <span class="sc">+</span> <span class="dv">50</span>), <span class="at">fill =</span> <span class="st">&quot;grey70&quot;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb37-8"><a href="r-geom_r.html#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;B: `geom_ribbon + geom_line` both&quot;</span>)</span>
-<span id="cb37-9"><a href="r-geom_r.html#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-10"><a href="r-geom_r.html#cb37-10" aria-hidden="true" tabindex="-1"></a>ribbon<span class="sc">|</span>ribbonline</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-46"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-46-1.png" alt="Illustration of geom_ribbon, A: geom_ribbon only and B: geom_ribbon + geom_line" width="672" />
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="r-geom_r.html#cb38-1" aria-hidden="true" tabindex="-1"></a>colombo21 <span class="ot">&lt;-</span> srilanka_weekly_data <span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a href="r-geom_r.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(district <span class="sc">==</span> <span class="st">&quot;Colombo&quot;</span> <span class="sc">&amp;</span> year<span class="sc">==</span><span class="dv">2021</span>)</span>
+<span id="cb38-3"><a href="r-geom_r.html#cb38-3" aria-hidden="true" tabindex="-1"></a>ribbon <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>colombo21, <span class="fu">aes</span>(<span class="at">x=</span>start.date, <span class="at">y=</span>cases)) <span class="sc">+</span> </span>
+<span id="cb38-4"><a href="r-geom_r.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> cases <span class="sc">-</span> <span class="dv">50</span>, <span class="at">ymax =</span> cases <span class="sc">+</span> <span class="dv">50</span>), <span class="at">fill =</span> <span class="st">&quot;grey70&quot;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;A: `geom_ribbon` only&quot;</span>)</span>
+<span id="cb38-5"><a href="r-geom_r.html#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="r-geom_r.html#cb38-6" aria-hidden="true" tabindex="-1"></a>ribbonline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>colombo21, <span class="fu">aes</span>(<span class="at">x=</span>start.date, <span class="at">y=</span>cases)) <span class="sc">+</span> </span>
+<span id="cb38-7"><a href="r-geom_r.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> cases <span class="sc">-</span> <span class="dv">50</span>, <span class="at">ymax =</span> cases <span class="sc">+</span> <span class="dv">50</span>), <span class="at">fill =</span> <span class="st">&quot;grey70&quot;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb38-8"><a href="r-geom_r.html#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;B: `geom_ribbon + geom_line` both&quot;</span>)</span>
+<span id="cb38-9"><a href="r-geom_r.html#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="r-geom_r.html#cb38-10" aria-hidden="true" tabindex="-1"></a>ribbon<span class="sc">|</span>ribbonline</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-47"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-47-1.png" alt="Illustration of geom_ribbon, A: geom_ribbon only and B: geom_ribbon + geom_line" width="672" />
 <p class="caption">
 Figure 22.1: Illustration of geom_ribbon, A: geom_ribbon only and B: geom_ribbon + geom_line
 </p>

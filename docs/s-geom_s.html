@@ -210,9 +210,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1.2" data-path="b-geom_b.html"><a href="b-geom_b.html#with-identity"><i class="fa fa-check"></i><b>6.1.2</b> With identity</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin_2d"><i class="fa fa-check"></i><b>6.2</b> geom_bin_2d</a></li>
-<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d</a></li>
-<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.4</b> geom_blank</a></li>
-<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.5</b> geom_boxplot</a></li>
+<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d_pattern"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d_pattern</a></li>
+<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.4</b> geom_bin2d</a></li>
+<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.5</b> geom_blank</a></li>
+<li class="chapter" data-level="6.6" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.6</b> geom_boxplot</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="c-geom_c.html"><a href="c-geom_c.html"><i class="fa fa-check"></i><b>7</b> C: geom_c…</a>
 <ul>
@@ -313,27 +314,27 @@ div.csl-indent {
 </div>
 <div id="geom_signif" class="section level2 hasAnchor" number="23.2">
 <h2><span class="header-section-number">23.2</span> geom_signif<a href="s-geom_s.html#geom_signif" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="s-geom_s.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight, <span class="at">x=</span>Category)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> ggsignif<span class="sc">::</span><span class="fu">geom_signif</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="s-geom_s.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Weight, <span class="at">x=</span>Category)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> ggsignif<span class="sc">::</span><span class="fu">geom_signif</span>()</span></code></pre></div>
 <pre><code>## Warning: Computation failed in `stat_signif()`
 ## Caused by error in `$&lt;-.data.frame`:
 ## ! replacement has 1 row, data has 0</code></pre>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 </div>
 <div id="smooth" class="section level2 hasAnchor" number="23.3">
 <h2><span class="header-section-number">23.3</span> geom_smooth<a href="s-geom_s.html#smooth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="s-geom_s.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
-<span id="cb40-2"><a href="s-geom_s.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">aspect.ratio=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="s-geom_s.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
+<span id="cb41-2"><a href="s-geom_s.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">aspect.ratio=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;gam&#39; and
 ## formula = &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="s-geom_s.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
-<span id="cb42-2"><a href="s-geom_s.html#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm) <span class="sc">+</span> </span>
-<span id="cb42-3"><a href="s-geom_s.html#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio=</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="s-geom_s.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
-<span id="cb44-2"><a href="s-geom_s.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="dv">4</span>)) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">aspect.ratio=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="s-geom_s.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
+<span id="cb43-2"><a href="s-geom_s.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm) <span class="sc">+</span> </span>
+<span id="cb43-3"><a href="s-geom_s.html#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="s-geom_s.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
+<span id="cb45-2"><a href="s-geom_s.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="dv">4</span>)) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">aspect.ratio=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 
 </div>
 </div>

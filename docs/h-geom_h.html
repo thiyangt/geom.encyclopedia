@@ -210,9 +210,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1.2" data-path="b-geom_b.html"><a href="b-geom_b.html#with-identity"><i class="fa fa-check"></i><b>6.1.2</b> With identity</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin_2d"><i class="fa fa-check"></i><b>6.2</b> geom_bin_2d</a></li>
-<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d</a></li>
-<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.4</b> geom_blank</a></li>
-<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.5</b> geom_boxplot</a></li>
+<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d_pattern"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d_pattern</a></li>
+<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.4</b> geom_bin2d</a></li>
+<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.5</b> geom_blank</a></li>
+<li class="chapter" data-level="6.6" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.6</b> geom_boxplot</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="c-geom_c.html"><a href="c-geom_c.html"><i class="fa fa-check"></i><b>7</b> C: geom_c…</a>
 <ul>
@@ -312,7 +313,7 @@ div.csl-indent {
 <h2><span class="header-section-number">12.1</span> geom_histogram<a href="h-geom_h.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick
 ## better value with `binwidth`.</code></pre>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 </div>
 <div id="hline" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">12.2</span> geom_hline<a href="h-geom_h.html#hline" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -323,20 +324,20 @@ div.csl-indent {
 <p><strong>Statistics layer(s):</strong></p>
 <p><strong>See also: </strong> <a href="p-geom_p.html#point">geom_point</a>, <a href="v-geom_v.html#vline">geom_vline</a>, <a href="h-geom_h.html#hline">geom_hline</a></p>
 <p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="h-geom_h.html#cb35-1" aria-hidden="true" tabindex="-1"></a>hline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
-<span id="cb35-2"><a href="h-geom_h.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;A: `geom_hline` only&quot;</span>) <span class="sc">+</span></span>
-<span id="cb35-3"><a href="h-geom_h.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb35-4"><a href="h-geom_h.html#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="h-geom_h.html#cb35-5" aria-hidden="true" tabindex="-1"></a>pointhline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
-<span id="cb35-6"><a href="h-geom_h.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb35-7"><a href="h-geom_h.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
-<span id="cb35-8"><a href="h-geom_h.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;B: `geom_point + geom_hline` both&quot;</span>) <span class="sc">+</span></span>
-<span id="cb35-9"><a href="h-geom_h.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb35-10"><a href="h-geom_h.html#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-11"><a href="h-geom_h.html#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-12"><a href="h-geom_h.html#cb35-12" aria-hidden="true" tabindex="-1"></a>hline <span class="sc">|</span> pointhline</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-40"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-40-1.png" alt="Illustration of (A) geom_hline and (B) use of geom_point and geom_hline both" width="672" />
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="h-geom_h.html#cb36-1" aria-hidden="true" tabindex="-1"></a>hline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
+<span id="cb36-2"><a href="h-geom_h.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;A: `geom_hline` only&quot;</span>) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="h-geom_h.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb36-4"><a href="h-geom_h.html#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="h-geom_h.html#cb36-5" aria-hidden="true" tabindex="-1"></a>pointhline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
+<span id="cb36-6"><a href="h-geom_h.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb36-7"><a href="h-geom_h.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
+<span id="cb36-8"><a href="h-geom_h.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;B: `geom_point + geom_hline` both&quot;</span>) <span class="sc">+</span></span>
+<span id="cb36-9"><a href="h-geom_h.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb36-10"><a href="h-geom_h.html#cb36-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-11"><a href="h-geom_h.html#cb36-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-12"><a href="h-geom_h.html#cb36-12" aria-hidden="true" tabindex="-1"></a>hline <span class="sc">|</span> pointhline</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-41"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-41-1.png" alt="Illustration of (A) geom_hline and (B) use of geom_point and geom_hline both" width="672" />
 <p class="caption">
 Figure 12.1: Illustration of (A) geom_hline and (B) use of geom_point and geom_hline both
 </p>

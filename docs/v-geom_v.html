@@ -210,9 +210,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1.2" data-path="b-geom_b.html"><a href="b-geom_b.html#with-identity"><i class="fa fa-check"></i><b>6.1.2</b> With identity</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin_2d"><i class="fa fa-check"></i><b>6.2</b> geom_bin_2d</a></li>
-<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d</a></li>
-<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.4</b> geom_blank</a></li>
-<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.5</b> geom_boxplot</a></li>
+<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d_pattern"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d_pattern</a></li>
+<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.4</b> geom_bin2d</a></li>
+<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.5</b> geom_blank</a></li>
+<li class="chapter" data-level="6.6" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.6</b> geom_boxplot</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="c-geom_c.html"><a href="c-geom_c.html"><i class="fa fa-check"></i><b>7</b> C: geom_c…</a>
 <ul>
@@ -317,20 +318,20 @@ div.csl-indent {
 <p><strong>Statistics layer(s):</strong></p>
 <p><strong>See also: </strong> <a href="p-geom_p.html#point">geom_point</a>, , <a href="h-geom_h.html#hline">geom_hline</a>, <a href="s-geom_s.html#smooth">geom_smooth</a>, <a href="v-geom_v.html#vline">geom_vline</a></p>
 <p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="v-geom_v.html#cb45-1" aria-hidden="true" tabindex="-1"></a>vline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.25</span>) <span class="sc">+</span> </span>
-<span id="cb45-2"><a href="v-geom_v.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;A: `geom_vline` only&quot;</span>) <span class="sc">+</span></span>
-<span id="cb45-3"><a href="v-geom_v.html#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb45-4"><a href="v-geom_v.html#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-5"><a href="v-geom_v.html#cb45-5" aria-hidden="true" tabindex="-1"></a>pointvline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
-<span id="cb45-6"><a href="v-geom_v.html#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb45-7"><a href="v-geom_v.html#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.25</span>) <span class="sc">+</span> </span>
-<span id="cb45-8"><a href="v-geom_v.html#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;B: `geom_point + geom_vline` both&quot;</span>) <span class="sc">+</span></span>
-<span id="cb45-9"><a href="v-geom_v.html#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb45-10"><a href="v-geom_v.html#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-11"><a href="v-geom_v.html#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb45-12"><a href="v-geom_v.html#cb45-12" aria-hidden="true" tabindex="-1"></a>vline <span class="sc">|</span> pointvline</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-51"></span>
-<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-51-1.png" alt="Illustration of (A) geom_vline and (B) use of geom_point and geom_vline both" width="672" />
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="v-geom_v.html#cb46-1" aria-hidden="true" tabindex="-1"></a>vline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.25</span>) <span class="sc">+</span> </span>
+<span id="cb46-2"><a href="v-geom_v.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;A: `geom_vline` only&quot;</span>) <span class="sc">+</span></span>
+<span id="cb46-3"><a href="v-geom_v.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb46-4"><a href="v-geom_v.html#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="v-geom_v.html#cb46-5" aria-hidden="true" tabindex="-1"></a>pointvline <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Fore_Feet_Circumference)) <span class="sc">+</span> </span>
+<span id="cb46-6"><a href="v-geom_v.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb46-7"><a href="v-geom_v.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.25</span>) <span class="sc">+</span> </span>
+<span id="cb46-8"><a href="v-geom_v.html#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;B: `geom_point + geom_vline` both&quot;</span>) <span class="sc">+</span></span>
+<span id="cb46-9"><a href="v-geom_v.html#cb46-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
+<span id="cb46-10"><a href="v-geom_v.html#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="v-geom_v.html#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb46-12"><a href="v-geom_v.html#cb46-12" aria-hidden="true" tabindex="-1"></a>vline <span class="sc">|</span> pointvline</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-52"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-52-1.png" alt="Illustration of (A) geom_vline and (B) use of geom_point and geom_vline both" width="672" />
 <p class="caption">
 Figure 26.1: Illustration of (A) geom_vline and (B) use of geom_point and geom_vline both
 </p>
@@ -338,11 +339,11 @@ Figure 26.1: Illustration of (A) geom_vline and (B) use of geom_point and geom_v
 </div>
 <div id="geom_violin" class="section level2 hasAnchor" number="26.2">
 <h2><span class="header-section-number">26.2</span> geom_violin<a href="v-geom_v.html#geom_violin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
-<p>Without trimming</p>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
-<p>Draw quantiles</p>
+<p>Without trimming</p>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p>Draw quantiles</p>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 
 </div>
 </div>

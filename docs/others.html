@@ -210,9 +210,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1.2" data-path="b-geom_b.html"><a href="b-geom_b.html#with-identity"><i class="fa fa-check"></i><b>6.1.2</b> With identity</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin_2d"><i class="fa fa-check"></i><b>6.2</b> geom_bin_2d</a></li>
-<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d</a></li>
-<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.4</b> geom_blank</a></li>
-<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.5</b> geom_boxplot</a></li>
+<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d_pattern"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d_pattern</a></li>
+<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.4</b> geom_bin2d</a></li>
+<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.5</b> geom_blank</a></li>
+<li class="chapter" data-level="6.6" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.6</b> geom_boxplot</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="c-geom_c.html"><a href="c-geom_c.html"><i class="fa fa-check"></i><b>7</b> C: geom_c…</a>
 <ul>
@@ -311,17 +312,17 @@ div.csl-indent {
 <div id="ggpairs" class="section level2 hasAnchor" number="31.1">
 <h2><span class="header-section-number">31.1</span> ggpairs<a href="others.html#ggpairs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>With all variables</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="others.html#cb46-1" aria-hidden="true" tabindex="-1"></a>GGally<span class="sc">::</span><span class="fu">ggpairs</span>(elephants)</span></code></pre></div>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
-<p>With only numeric variables</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="others.html#cb47-1" aria-hidden="true" tabindex="-1"></a>elephants.numeric <span class="ot">&lt;-</span> elephants <span class="sc">|&gt;</span> <span class="fu">select_if</span>(is.numeric)     </span>
-<span id="cb47-2"><a href="others.html#cb47-2" aria-hidden="true" tabindex="-1"></a>GGally<span class="sc">::</span><span class="fu">ggpairs</span>(elephants.numeric)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="others.html#cb47-1" aria-hidden="true" tabindex="-1"></a>GGally<span class="sc">::</span><span class="fu">ggpairs</span>(elephants)</span></code></pre></div>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
-<p>Colour the points according to category</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="others.html#cb48-1" aria-hidden="true" tabindex="-1"></a>elephants.numeric <span class="ot">&lt;-</span> elephants <span class="sc">|&gt;</span> <span class="fu">select_if</span>(is.numeric) </span>
-<span id="cb48-2"><a href="others.html#cb48-2" aria-hidden="true" tabindex="-1"></a>elephants.numeric<span class="sc">$</span>Category <span class="ot">&lt;-</span> elephants<span class="sc">$</span>Category</span>
-<span id="cb48-3"><a href="others.html#cb48-3" aria-hidden="true" tabindex="-1"></a>GGally<span class="sc">::</span><span class="fu">ggpairs</span>(elephants.numeric, <span class="fu">aes</span>(<span class="at">col=</span>Category))</span></code></pre></div>
+<p>With only numeric variables</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="others.html#cb48-1" aria-hidden="true" tabindex="-1"></a>elephants.numeric <span class="ot">&lt;-</span> elephants <span class="sc">|&gt;</span> <span class="fu">select_if</span>(is.numeric)     </span>
+<span id="cb48-2"><a href="others.html#cb48-2" aria-hidden="true" tabindex="-1"></a>GGally<span class="sc">::</span><span class="fu">ggpairs</span>(elephants.numeric)</span></code></pre></div>
 <p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p>Colour the points according to category</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="others.html#cb49-1" aria-hidden="true" tabindex="-1"></a>elephants.numeric <span class="ot">&lt;-</span> elephants <span class="sc">|&gt;</span> <span class="fu">select_if</span>(is.numeric) </span>
+<span id="cb49-2"><a href="others.html#cb49-2" aria-hidden="true" tabindex="-1"></a>elephants.numeric<span class="sc">$</span>Category <span class="ot">&lt;-</span> elephants<span class="sc">$</span>Category</span>
+<span id="cb49-3"><a href="others.html#cb49-3" aria-hidden="true" tabindex="-1"></a>GGally<span class="sc">::</span><span class="fu">ggpairs</span>(elephants.numeric, <span class="fu">aes</span>(<span class="at">col=</span>Category))</span></code></pre></div>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 
 </div>
 </div>

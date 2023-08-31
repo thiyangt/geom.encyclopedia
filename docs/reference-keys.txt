@@ -9,9 +9,10 @@ fig:unnamed-chunk-24
 fig:unnamed-chunk-25
 fig:unnamed-chunk-26
 fig:unnamed-chunk-27
-fig:unnamed-chunk-40
-fig:unnamed-chunk-46
-fig:unnamed-chunk-51
+fig:unnamed-chunk-28
+fig:unnamed-chunk-41
+fig:unnamed-chunk-47
+fig:unnamed-chunk-52
 about
 usage
 render-book
@@ -42,6 +43,7 @@ geom_bar
 with-count
 with-identity
 geom_bin_2d
+geom_bin2d_pattern
 geom_bin2d
 geom_blank
 geom_boxplot
@@ -92,3 +94,14 @@ a-geom_axxxxx-11
 a-geom_axxxxx-12
 others
 ggpairs
+fig:unnamed-chunk-1
+fig:unnamed-chunk-2
+fig:unnamed-chunk-3
+fig:unnamed-chunk-4
+fig:unnamed-chunk-6
+fig:unnamed-chunk-7
+fig:unnamed-chunk-8
+fig:unnamed-chunk-9
+fig:unnamed-chunk-10
+fig:unnamed-chunk-11
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
