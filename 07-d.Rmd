@@ -3,9 +3,20 @@
 
 ## geom_delaunay_tile
 
+**Description:** The Delaunay triangulation is used to create a planar graph.
+
+
+
 ```{r}
-ggplot(elephants.subset.100, aes(y = Height, x=Weight)) +
-  ggforce::geom_delaunay_tile(alpha = 0.5, colour = 'red')
+delaunay <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+  ggforce::geom_delaunay_tile(alpha = 0.5, colour = 'black') + labs(title="geom_delaunay_tile") + theme(aspect.ratio = 1)
+
+# to compare with geom_point
+point <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+  geom_point(alpha = 0.5, colour = 'black') + labs(title="geom_point") + theme(aspect.ratio = 1)
+
+library(patchwork)
+delaunay|point
 ```
 
 
@@ -13,7 +24,7 @@ ggplot(elephants.subset.100, aes(y = Height, x=Weight)) +
 ## geom_density
 
 
-```{r, echo=FALSE}
+```{r}
 ggplot(elephants, aes(x = Weight)) + 
   geom_density()
 
@@ -21,7 +32,7 @@ ggplot(elephants, aes(x = Weight)) +
 
 ## geom_density_2d
 
-```{r, echo=FALSE}
+```{r}
 ggplot(elephants, aes(y = Height, x=Weight)) + 
   geom_density_2d()
 
@@ -29,7 +40,7 @@ ggplot(elephants, aes(y = Height, x=Weight)) +
 
 ## geom_density_2d_filled
 
-```{r, echo=FALSE}
+```{r}
 ggplot(elephants, aes(y = Height, x=Weight)) + 
   geom_density_2d_filled()
 
@@ -39,23 +50,19 @@ ggplot(elephants, aes(y = Height, x=Weight)) +
 
 ## geom_density_ridges
 
-Here the `y` variable should be qualitative and the `x` variable should be quantitiative.
+Here the `y` variable should be qualitative and the `x` variable should be quantitative.
 
 
-```{r, echo=FALSE}
+```{r}
 library(ggridges)
 ggplot(elephants, aes(y=Category, x = Height)) + 
     geom_density_ridges()
 
 ```
 
-
-
-
 ## geom_dl
 
-
-```{r, echo=FALSE}
+```{r}
 library(directlabels)
 ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
   geom_point() +

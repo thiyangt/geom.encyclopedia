@@ -1,6 +1,6 @@
 # P: geom_p...
 
-## geom_point
+## geom_point{#point}
 
 ```{r, echo=FALSE}
 ggplot(elephants, aes(y = Height, x=Weight)) + 

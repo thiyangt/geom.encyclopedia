@@ -8,14 +8,29 @@ This chapter lists all the packages necessary for plotting
 library(tidyverse)
 ```
 
+## Graph arrangement 
+
+```{r}
+library(patchwork)
+```
+
 ## Data packages
+
+### Cross sectional data
 
 ```{r}
 #install_github("thiyangt/elephants")
 library(elephants)
 ```
 
-## Large dataset
+### Time series data
+
+```{r}
+#install_github("denguedatahub")
+library(denguedatahub)
+```
+
+## Large cross sectional dataset
 
 ```{r}
 data("elephants")
@@ -28,20 +43,26 @@ GGally::ggpairs(elephants, aes(col=Gender)) +   scale_color_manual(values=c("mal
   scale_fill_manual(values=c("male"="#d95f02","female"="#1b9e77"))
 ```
 
-## Small dataset
+## Small cross sectional dataset
 
 ```{r}
 set.seed(2023)
 elephants.subset.100 <- elephants |> sample_n(100)
 ```
 
-### Glimpse of the small dataset
+### Glimpse of the small cross sectional dataset
 
 ```{r,echo=FALSE, message=FALSE, warning=FALSE,fig.width=20, fig.height=20}
 GGally::ggpairs(elephants.subset.100, aes(col=Category)) + scale_color_manual(values=c("male"="#d95f02","female"="#1b9e77")) + 
   scale_fill_manual(values=c("male"="#d95f02","female"="#1b9e77"))
 ```
 
+## Time series dataset
+
+```{r}
+library(denguedatahub)
+srilanka_weekly_data
+```
 
 
 ## Packages related to geom

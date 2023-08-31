@@ -1,13 +1,43 @@
 # A: geom_a...
 
-## geom_abline
+## geom_abline{#abline}
 
-**Package: ** ggplot2 @ggplot2
+**Package: ** ggplot2 [@R-ggplot2]
 
-**Description: ** Add a line with specified slope and intercept to the plot.
+**Book: **
+
+**Description: ** Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and intercept ($c$).
+
+**See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
 
 **Example:**
 
-```{r}
+```{r, fig.cap="Illustration of (A) geom_abline and (B) use of geom_point and geom_abline both"}
+abline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + geom_abline(intercept = 0.15, slope = 1.9) + 
+  labs(title="A: `geom_abline` only") +
+  theme(aspect.ratio = 1)
 
+pointabline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + 
+  geom_point() + 
+  geom_abline(intercept = 0.15, slope = 1.9) + 
+  labs(title="B: `geom_point + geom_abline` both") +
+  theme(aspect.ratio = 1)
+
+library(patchwork)
+abline | pointabline
+```
+
+## geom_area{#area}
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: **Create an area plot. This cover the space between x-axis and line that connects the data points.
+
+**See also: ** [geom_line](#line)
+
+```{r, fig.cap="Illustration of geom_area"}
+colombo <- srilanka_weekly_data |>
+  filter(district == "Colombo")
+ggplot(data=colombo, aes(x=start.date, y=cases)) + 
+  geom_area()
 ```

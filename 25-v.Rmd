@@ -1,5 +1,33 @@
 # V: geom_v...
 
+## geom_vline{#vline}
+
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Book: **
+
+**Description: ** Draw a vertical line ($X=c$) for a given value of $c$, which is known as `xintercept`.
+
+**See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+
+**Example:**
+
+```{r, fig.cap="Illustration of (A) geom_vline and (B) use of geom_point and geom_vline both"}
+vline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + geom_vline(xintercept = 1.25) + 
+  labs(title="A: `geom_vline` only") +
+  theme(aspect.ratio = 1)
+
+pointvline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + 
+  geom_point() + 
+  geom_vline(xintercept = 1.25) + 
+  labs(title="B: `geom_point + geom_vline` both") +
+  theme(aspect.ratio = 1)
+
+library(patchwork)
+vline | pointvline
+```
+
 ## geom_violin
 
 ```{r, echo=FALSE}

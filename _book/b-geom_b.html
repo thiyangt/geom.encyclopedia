@@ -23,7 +23,7 @@
 <meta name="author" content="Thiyanga S. Talagala" />
 
 
-<meta name="date" content="2023-08-30" />
+<meta name="date" content="2023-08-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -157,14 +157,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="r-packages.html"><a href="r-packages.html"><i class="fa fa-check"></i><b>4</b> R Packages</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="r-packages.html"><a href="r-packages.html#data-processing"><i class="fa fa-check"></i><b>4.1</b> Data processing</a></li>
-<li class="chapter" data-level="4.2" data-path="r-packages.html"><a href="r-packages.html#data-packages"><i class="fa fa-check"></i><b>4.2</b> Data packages</a>
+<li class="chapter" data-level="4.2" data-path="r-packages.html"><a href="r-packages.html#graph-arrangement"><i class="fa fa-check"></i><b>4.2</b> Graph arrangement</a></li>
+<li class="chapter" data-level="4.3" data-path="r-packages.html"><a href="r-packages.html#data-packages"><i class="fa fa-check"></i><b>4.3</b> Data packages</a></li>
+<li class="chapter" data-level="4.4" data-path="r-packages.html"><a href="r-packages.html#large-dataset"><i class="fa fa-check"></i><b>4.4</b> Large dataset</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="r-packages.html"><a href="r-packages.html#large-dataset"><i class="fa fa-check"></i><b>4.2.1</b> Large dataset</a></li>
-<li class="chapter" data-level="4.2.2" data-path="r-packages.html"><a href="r-packages.html#small-dataset"><i class="fa fa-check"></i><b>4.2.2</b> Small dataset</a></li>
+<li class="chapter" data-level="4.4.1" data-path="r-packages.html"><a href="r-packages.html#glimpse-of-the-large-dataset"><i class="fa fa-check"></i><b>4.4.1</b> Glimpse of the large dataset</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="r-packages.html"><a href="r-packages.html#packages-related-to-geom"><i class="fa fa-check"></i><b>4.3</b> Packages related to geom</a></li>
-<li class="chapter" data-level="4.4" data-path="r-packages.html"><a href="r-packages.html#geom-extensions"><i class="fa fa-check"></i><b>4.4</b> geom Extensions</a></li>
-<li class="chapter" data-level="4.5" data-path="r-packages.html"><a href="r-packages.html#all-available-geom_-in-the-ggplot2-package"><i class="fa fa-check"></i><b>4.5</b> All available geom_… in the ggplot2 package</a></li>
+<li class="chapter" data-level="4.5" data-path="r-packages.html"><a href="r-packages.html#small-dataset"><i class="fa fa-check"></i><b>4.5</b> Small dataset</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="r-packages.html"><a href="r-packages.html#glimpse-of-the-small-dataset"><i class="fa fa-check"></i><b>4.5.1</b> Glimpse of the small dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="r-packages.html"><a href="r-packages.html#packages-related-to-geom"><i class="fa fa-check"></i><b>4.6</b> Packages related to geom</a></li>
+<li class="chapter" data-level="4.7" data-path="r-packages.html"><a href="r-packages.html#geom-extensions"><i class="fa fa-check"></i><b>4.7</b> geom Extensions</a></li>
+<li class="chapter" data-level="4.8" data-path="r-packages.html"><a href="r-packages.html#all-available-geom_-in-the-ggplot2-package"><i class="fa fa-check"></i><b>4.8</b> All available geom_… in the ggplot2 package</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="a-geom_a.html"><a href="a-geom_a.html"><i class="fa fa-check"></i><b>5</b> A: geom_a…</a>
 <ul>
@@ -267,18 +272,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> geom_bar<a href="b-geom_b.html#geom_bar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="b-geom_b.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Age_Category)) <span class="sc">+</span> </span>
 <span id="cb12-2"><a href="b-geom_b.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="b-geom_b.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y =</span> Age_Category, <span class="at">fill=</span>Category)) <span class="sc">+</span> </span>
 <span id="cb13-2"><a href="b-geom_b.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="b-geom_b.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants, <span class="fu">aes</span>(<span class="at">y=</span>Age_Category, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
 <span id="cb14-2"><a href="b-geom_b.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="geom_boxplot" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> geom_boxplot<a href="b-geom_b.html#geom_boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 
 </div>
 </div>

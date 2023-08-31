@@ -1,10 +1,38 @@
 # H: geom_h...
 
 
-## geom_histogram
+## geom_histogram{#histogram}
 
 ```{r, echo=FALSE}
 ggplot(elephants, aes(x = Weight)) + 
   geom_histogram(col="white")
 
+```
+
+## geom_hline{#hline}
+
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Book: **
+
+**Description: ** Draw a horizontal line ($Y=c$) for a given value of $c$, which is known as `yintercept`.
+
+**See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+
+**Example:**
+
+```{r, fig.cap="Illustration of (A) geom_hline and (B) use of geom_point and geom_hline both"}
+hline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + geom_hline(yintercept = 2.5) + 
+  labs(title="A: `geom_hline` only") +
+  theme(aspect.ratio = 1)
+
+pointhline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + 
+  geom_point() + 
+  geom_hline(yintercept = 2.5) + 
+  labs(title="B: `geom_point + geom_hline` both") +
+  theme(aspect.ratio = 1)
+
+
+hline | pointhline
 ```

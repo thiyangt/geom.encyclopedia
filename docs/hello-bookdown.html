@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Hello bookdown | Data Visualisation geom Encyclopedia</title>
+  <meta name="description" content="Collection of geom for data visualisation." />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Hello bookdown | Data Visualisation geom Encyclopedia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Collection of geom for data visualisation." />
+  <meta name="github-repo" content="thiyangt/geom.encyclopedia" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Hello bookdown | Data Visualisation geom Encyclopedia" />
+  
+  <meta name="twitter:description" content="Collection of geom for data visualisation." />
+  
+
+<meta name="author" content="Thiyanga S. Talagala" />
+
+
+<meta name="date" content="2023-08-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="cross.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#a-section"><i class="fa fa-check"></i><b>2.1</b> A section</a>
+<ul>
+<li class="chapter" data-level="" data-path="hello-bookdown.html"><a href="hello-bookdown.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>3</b> Graph types</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>3.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="3.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-packages.html"><a href="r-packages.html"><i class="fa fa-check"></i><b>4</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="r-packages.html"><a href="r-packages.html#data-processing"><i class="fa fa-check"></i><b>4.1</b> Data processing</a></li>
+<li class="chapter" data-level="4.2" data-path="r-packages.html"><a href="r-packages.html#graph-arrangement"><i class="fa fa-check"></i><b>4.2</b> Graph arrangement</a></li>
+<li class="chapter" data-level="4.3" data-path="r-packages.html"><a href="r-packages.html#data-packages"><i class="fa fa-check"></i><b>4.3</b> Data packages</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="r-packages.html"><a href="r-packages.html#cross-sectional-data"><i class="fa fa-check"></i><b>4.3.1</b> Cross sectional data</a></li>
+<li class="chapter" data-level="4.3.2" data-path="r-packages.html"><a href="r-packages.html#time-series-data"><i class="fa fa-check"></i><b>4.3.2</b> Time series data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="r-packages.html"><a href="r-packages.html#large-cross-sectional-dataset"><i class="fa fa-check"></i><b>4.4</b> Large cross sectional dataset</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="r-packages.html"><a href="r-packages.html#glimpse-of-the-large-dataset"><i class="fa fa-check"></i><b>4.4.1</b> Glimpse of the large dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="r-packages.html"><a href="r-packages.html#small-cross-sectional-dataset"><i class="fa fa-check"></i><b>4.5</b> Small cross sectional dataset</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="r-packages.html"><a href="r-packages.html#glimpse-of-the-small-cross-sectional-dataset"><i class="fa fa-check"></i><b>4.5.1</b> Glimpse of the small cross sectional dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="r-packages.html"><a href="r-packages.html#time-series-dataset"><i class="fa fa-check"></i><b>4.6</b> Time series dataset</a></li>
+<li class="chapter" data-level="4.7" data-path="r-packages.html"><a href="r-packages.html#packages-related-to-geom"><i class="fa fa-check"></i><b>4.7</b> Packages related to geom</a></li>
+<li class="chapter" data-level="4.8" data-path="r-packages.html"><a href="r-packages.html#geom-extensions"><i class="fa fa-check"></i><b>4.8</b> geom Extensions</a></li>
+<li class="chapter" data-level="4.9" data-path="r-packages.html"><a href="r-packages.html#all-available-geom_-in-the-ggplot2-package"><i class="fa fa-check"></i><b>4.9</b> All available geom_… in the ggplot2 package</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="a-geom_a.html"><a href="a-geom_a.html"><i class="fa fa-check"></i><b>5</b> A: geom_a…</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="a-geom_a.html"><a href="a-geom_a.html#abline"><i class="fa fa-check"></i><b>5.1</b> geom_abline</a></li>
+<li class="chapter" data-level="5.2" data-path="a-geom_a.html"><a href="a-geom_a.html#area"><i class="fa fa-check"></i><b>5.2</b> geom_area</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="b-geom_b.html"><a href="b-geom_b.html"><i class="fa fa-check"></i><b>6</b> B: geom_b…</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bar"><i class="fa fa-check"></i><b>6.1</b> geom_bar</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="b-geom_b.html"><a href="b-geom_b.html#with-count"><i class="fa fa-check"></i><b>6.1.1</b> With count</a></li>
+<li class="chapter" data-level="6.1.2" data-path="b-geom_b.html"><a href="b-geom_b.html#with-identity"><i class="fa fa-check"></i><b>6.1.2</b> With identity</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin_2d"><i class="fa fa-check"></i><b>6.2</b> geom_bin_2d</a></li>
+<li class="chapter" data-level="6.3" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_bin2d"><i class="fa fa-check"></i><b>6.3</b> geom_bin2d</a></li>
+<li class="chapter" data-level="6.4" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_blank"><i class="fa fa-check"></i><b>6.4</b> geom_blank</a></li>
+<li class="chapter" data-level="6.5" data-path="b-geom_b.html"><a href="b-geom_b.html#geom_boxplot"><i class="fa fa-check"></i><b>6.5</b> geom_boxplot</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="c-geom_c.html"><a href="c-geom_c.html"><i class="fa fa-check"></i><b>7</b> C: geom_c…</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="c-geom_c.html"><a href="c-geom_c.html#geom_col"><i class="fa fa-check"></i><b>7.1</b> geom_col</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="d-geom_d.html"><a href="d-geom_d.html"><i class="fa fa-check"></i><b>8</b> D: geom_d…</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="d-geom_d.html"><a href="d-geom_d.html#geom_delaunay_tile"><i class="fa fa-check"></i><b>8.1</b> geom_delaunay_tile</a></li>
+<li class="chapter" data-level="8.2" data-path="d-geom_d.html"><a href="d-geom_d.html#geom_density"><i class="fa fa-check"></i><b>8.2</b> geom_density</a></li>
+<li class="chapter" data-level="8.3" data-path="d-geom_d.html"><a href="d-geom_d.html#geom_density_2d"><i class="fa fa-check"></i><b>8.3</b> geom_density_2d</a></li>
+<li class="chapter" data-level="8.4" data-path="d-geom_d.html"><a href="d-geom_d.html#geom_density_2d_filled"><i class="fa fa-check"></i><b>8.4</b> geom_density_2d_filled</a></li>
+<li class="chapter" data-level="8.5" data-path="d-geom_d.html"><a href="d-geom_d.html#geom_density_ridges"><i class="fa fa-check"></i><b>8.5</b> geom_density_ridges</a></li>
+<li class="chapter" data-level="8.6" data-path="d-geom_d.html"><a href="d-geom_d.html#geom_dl"><i class="fa fa-check"></i><b>8.6</b> geom_dl</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="e-geom_e.html"><a href="e-geom_e.html"><i class="fa fa-check"></i><b>9</b> E: geom_e…</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="e-geom_e.html"><a href="e-geom_e.html#geom_encircle"><i class="fa fa-check"></i><b>9.1</b> geom_encircle</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="f-geom_f.html"><a href="f-geom_f.html"><i class="fa fa-check"></i><b>10</b> F: geom_f…</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="f-geom_f.html"><a href="f-geom_f.html#geom_function"><i class="fa fa-check"></i><b>10.1</b> geom_function</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="a-geom_axxxxx.html"><a href="a-geom_axxxxx.html"><i class="fa fa-check"></i><b>11</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="12" data-path="h-geom_h.html"><a href="h-geom_h.html"><i class="fa fa-check"></i><b>12</b> H: geom_h…</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="h-geom_h.html"><a href="h-geom_h.html#histogram"><i class="fa fa-check"></i><b>12.1</b> geom_histogram</a></li>
+<li class="chapter" data-level="12.2" data-path="h-geom_h.html"><a href="h-geom_h.html#hline"><i class="fa fa-check"></i><b>12.2</b> geom_hline</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="a-geom_axxxxx-1.html"><a href="a-geom_axxxxx-1.html"><i class="fa fa-check"></i><b>13</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="14" data-path="a-geom_axxxxx-2.html"><a href="a-geom_axxxxx-2.html"><i class="fa fa-check"></i><b>14</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="15" data-path="a-geom_axxxxx-3.html"><a href="a-geom_axxxxx-3.html"><i class="fa fa-check"></i><b>15</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="16" data-path="l-geom_l.html"><a href="l-geom_l.html"><i class="fa fa-check"></i><b>16</b> L: geom_l…</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="l-geom_l.html"><a href="l-geom_l.html#geom_label_repel"><i class="fa fa-check"></i><b>16.1</b> geom_label_repel</a></li>
+<li class="chapter" data-level="16.2" data-path="l-geom_l.html"><a href="l-geom_l.html#geom_lm"><i class="fa fa-check"></i><b>16.2</b> geom_lm</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="m-geom_m.html"><a href="m-geom_m.html"><i class="fa fa-check"></i><b>17</b> M: geom_m…</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="m-geom_m.html"><a href="m-geom_m.html#geom_mark_circle"><i class="fa fa-check"></i><b>17.1</b> geom_mark_circle</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="a-geom_axxxxx-4.html"><a href="a-geom_axxxxx-4.html"><i class="fa fa-check"></i><b>18</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="19" data-path="a-geom_axxxxx-5.html"><a href="a-geom_axxxxx-5.html"><i class="fa fa-check"></i><b>19</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="20" data-path="p-geom_p.html"><a href="p-geom_p.html"><i class="fa fa-check"></i><b>20</b> P: geom_p…</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="p-geom_p.html"><a href="p-geom_p.html#point"><i class="fa fa-check"></i><b>20.1</b> geom_point</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="a-geom_axxxxx-6.html"><a href="a-geom_axxxxx-6.html"><i class="fa fa-check"></i><b>21</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="22" data-path="a-geom_axxxxx-7.html"><a href="a-geom_axxxxx-7.html"><i class="fa fa-check"></i><b>22</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="23" data-path="s-geom_s.html"><a href="s-geom_s.html"><i class="fa fa-check"></i><b>23</b> S: geom_s…</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="s-geom_s.html"><a href="s-geom_s.html#geom_signif"><i class="fa fa-check"></i><b>23.1</b> geom_signif</a></li>
+<li class="chapter" data-level="23.2" data-path="s-geom_s.html"><a href="s-geom_s.html#geom_smooth"><i class="fa fa-check"></i><b>23.2</b> geom_smooth</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="a-geom_axxxxx-8.html"><a href="a-geom_axxxxx-8.html"><i class="fa fa-check"></i><b>24</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="25" data-path="a-geom_axxxxx-9.html"><a href="a-geom_axxxxx-9.html"><i class="fa fa-check"></i><b>25</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="26" data-path="v-geom_v.html"><a href="v-geom_v.html"><i class="fa fa-check"></i><b>26</b> V: geom_v…</a>
+<ul>
+<li class="chapter" data-level="26.1" data-path="v-geom_v.html"><a href="v-geom_v.html#vline"><i class="fa fa-check"></i><b>26.1</b> geom_vline</a></li>
+<li class="chapter" data-level="26.2" data-path="v-geom_v.html"><a href="v-geom_v.html#geom_violin"><i class="fa fa-check"></i><b>26.2</b> geom_violin</a></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="a-geom_axxxxx-10.html"><a href="a-geom_axxxxx-10.html"><i class="fa fa-check"></i><b>27</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="28" data-path="a-geom_axxxxx-11.html"><a href="a-geom_axxxxx-11.html"><i class="fa fa-check"></i><b>28</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="29" data-path="a-geom_axxxxx-12.html"><a href="a-geom_axxxxx-12.html"><i class="fa fa-check"></i><b>29</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="30" data-path="a-geom_axxxxx-13.html"><a href="a-geom_axxxxx-13.html"><i class="fa fa-check"></i><b>30</b> A: geom_axxxxx</a></li>
+<li class="chapter" data-level="31" data-path="others.html"><a href="others.html"><i class="fa fa-check"></i><b>31</b> Others</a>
+<ul>
+<li class="chapter" data-level="31.1" data-path="others.html"><a href="others.html#ggpairs"><i class="fa fa-check"></i><b>31.1</b> ggpairs</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Visualisation <code>geom</code> Encyclopedia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hello-bookdown" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Hello bookdown<a href="hello-bookdown.html#hello-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (<code>#</code>) per .Rmd file.</p>
+<div id="a-section" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> A section<a href="hello-bookdown.html#a-section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All chapter sections start with a second-level (<code>##</code>) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.</p>
+<div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
+<h3>An unnumbered section<a href="hello-bookdown.html#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Chapters and sections are numbered by default. To un-number a heading, add a <code>{.unnumbered}</code> or the shorter <code>{-}</code> at the end of the heading, like in this section.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cross.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Data Visualisation geom Encyclopedia.pdf", "Data Visualisation geom Encyclopedia.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

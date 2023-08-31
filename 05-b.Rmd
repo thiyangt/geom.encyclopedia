@@ -2,31 +2,123 @@
 
 ## geom_bar
 
-```{r, echo=TRUE}
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: ** Draw a bar proportional to the specified number. For example, number of cases or user defined number.
+
+**Statistics layer(s): ** 
+
+  `stat_count` - This the default statistics layer. It counts number of cases in each group. 
+  
+  `stat_identify` - It plots the data as it is.
+
+**See also: ** [geom_col](#col)
+
+### With count 
+
+```{r, fig.cap="Illustration of geom_bar to create a bar chart"}
 ggplot(elephants, aes(y = Age_Category)) + 
   geom_bar()
 
 ```
 
-```{r, echo=TRUE}
+```{r, fig.cap="Illustration of geom_bar to create a stacked bar chart"}
 ggplot(elephants, aes(y = Age_Category, fill=Category)) + 
   geom_bar()
 ```
 
-```{r, echo=TRUE}
+```{r, fig.cap="Illustration of geom_bar to create a cluster bar chart"}
 ggplot(elephants, aes(y=Age_Category, fill = Category)) +
   geom_bar(position = "dodge")
 ```
 
-## geom_boxplot
-
-```{r, echo=FALSE}
-ggplot(elephants, aes(y = Weight)) + 
-  geom_boxplot()
-
+```{r, fig.cap="Illustration of geom_bar to create a cluster bar chart"}
+ggplot(elephants, aes(y=Age_Category, fill = Category)) +
+  geom_bar(position = "dodge")
 ```
 
-```{r, echo=FALSE}
+### With identity
+
+```{r}
+dfbar <- data.frame(class=c("A", "B"),  income = c(100, 200))
+ggplot(dfbar, aes(class, income)) +
+  geom_bar(stat="identity")
+```
+
+## geom_bin_2d
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: ** Divides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number ofobservations.
+
+**Understandable aesthetics: ** x, y, fill, group
+
+**Statistics layer(s): ** 
+
+
+**See also: ** [geom_bin2d](#bin2d), [geom_point](#point)
+
+```{r, fig.cap="Illustration of using geom_bin_2d"}
+ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+  geom_bin_2d() + 
+  theme(aspect.ratio = 1)
+```
+
+```{r, fig.cap="Illustration of changing bins in geom_bin_2d"}
+ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+  geom_bin_2d(bin=20) + 
+  theme(aspect.ratio = 1)
+```
+
+## geom_bin2d
+
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: ** Divides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number ofobservations.
+
+**Understandable aesthetics: ** x, y, fill, group
+
+**Statistics layer(s): ** 
+
+
+**See also: ** [geom_bin_2d](#bin_2d), [geom_point](#point)
+
+**Example:**
+
+```{r, fig.cap="Illustration of using geom_bin_2d"}
+ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+  geom_bin2d() + 
+  theme(aspect.ratio = 1)
+```
+
+
+## geom_blank
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: ** Draws nothing.
+
+## geom_boxplot
+
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: ** Draw a bar proportional to the specified number. For example, number of cases or user defined number.
+
+**Statistics layer(s): ** 
+
+  `stat_boxplot` - This the default statistics layer. This computes minimum, maximum, median, first quartile ($Q1$), third quartile ($Q3$), upper whisker extends up to $Q3 + 1.5 \times IQR$ and lower whisker extends up to $Q1 - 1.5 \times IQR$, where $IQR = Q3 - Q1$. In a notched box plot, it creates 95\% confidence interval for mean.
+  
+
+**See also: ** [geom_col](#col)
+
+```{r, fig.cap="Illustration of using geom_boxplot"}
+ggplot(elephants, aes(y = Weight)) + 
+  geom_boxplot()
+```
+
+```{r, fig.cap="Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot."}
 ggplot(elephants, aes(y = Weight)) + 
 geom_boxplot(outlier.colour="black", outlier.shape=16,
              outlier.size=2, notch=TRUE)

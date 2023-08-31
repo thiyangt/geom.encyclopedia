@@ -1,5 +1,5 @@
 --- 
-title: "Data Visualisation: geom Encyclopedia"
+title: "Data Visualisation `geom` Encyclopedia"
 author: "Thiyanga S. Talagala"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -8,9 +8,16 @@ bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  Collection of geom.
+  Collection of geom for data visualisation.
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: thiyangt/geom.encyclopedia
+output:
+  pdf_document:
+    citation_package: natbib
+  bookdown::pdf_book:
+    citation_package: biblatex
+  toc: yes #if you want to get the table of contents
+  fig_caption: true
 ---
 
 # About
