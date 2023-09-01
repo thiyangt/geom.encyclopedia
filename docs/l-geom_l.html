@@ -23,7 +23,7 @@
 <meta name="author" content="Thiyanga S. Talagala" />
 
 
-<meta name="date" content="2023-08-31" />
+<meta name="date" content="2023-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,7 +158,7 @@ div.csl-indent {
 <li><a href="./">Data Visualisation geom Encyclopedia</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
@@ -196,6 +196,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.7" data-path="r-packages.html"><a href="r-packages.html#packages-related-to-geom"><i class="fa fa-check"></i><b>4.7</b> Packages related to geom</a></li>
 <li class="chapter" data-level="4.8" data-path="r-packages.html"><a href="r-packages.html#geom-extensions"><i class="fa fa-check"></i><b>4.8</b> geom Extensions</a></li>
 <li class="chapter" data-level="4.9" data-path="r-packages.html"><a href="r-packages.html#all-available-geom_-in-the-ggplot2-package"><i class="fa fa-check"></i><b>4.9</b> All available geom_… in the ggplot2 package</a></li>
+<li class="chapter" data-level="4.10" data-path="r-packages.html"><a href="r-packages.html#packages-implements-geoms"><i class="fa fa-check"></i><b>4.10</b> Packages implements geoms</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="a-geom_a.html"><a href="a-geom_a.html"><i class="fa fa-check"></i><b>5</b> A: geom_a…</a>
 <ul>
@@ -218,6 +219,7 @@ div.csl-indent {
 <li class="chapter" data-level="7" data-path="c-geom_c.html"><a href="c-geom_c.html"><i class="fa fa-check"></i><b>7</b> C: geom_c…</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="c-geom_c.html"><a href="c-geom_c.html#geom_col"><i class="fa fa-check"></i><b>7.1</b> geom_col</a></li>
+<li class="chapter" data-level="7.2" data-path="c-geom_c.html"><a href="c-geom_c.html#col_pattern"><i class="fa fa-check"></i><b>7.2</b> geom_col_pattern</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="d-geom_d.html"><a href="d-geom_d.html"><i class="fa fa-check"></i><b>8</b> D: geom_d…</a>
 <ul>
@@ -247,8 +249,9 @@ div.csl-indent {
 <li class="chapter" data-level="15" data-path="a-geom_axxxxx-3.html"><a href="a-geom_axxxxx-3.html"><i class="fa fa-check"></i><b>15</b> A: geom_axxxxx</a></li>
 <li class="chapter" data-level="16" data-path="l-geom_l.html"><a href="l-geom_l.html"><i class="fa fa-check"></i><b>16</b> L: geom_l…</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="l-geom_l.html"><a href="l-geom_l.html#geom_label_repel"><i class="fa fa-check"></i><b>16.1</b> geom_label_repel</a></li>
-<li class="chapter" data-level="16.2" data-path="l-geom_l.html"><a href="l-geom_l.html#geom_lm"><i class="fa fa-check"></i><b>16.2</b> geom_lm</a></li>
+<li class="chapter" data-level="16.1" data-path="l-geom_l.html"><a href="l-geom_l.html#geom_label"><i class="fa fa-check"></i><b>16.1</b> geom_label</a></li>
+<li class="chapter" data-level="16.2" data-path="l-geom_l.html"><a href="l-geom_l.html#geom_label_repel"><i class="fa fa-check"></i><b>16.2</b> geom_label_repel</a></li>
+<li class="chapter" data-level="16.3" data-path="l-geom_l.html"><a href="l-geom_l.html#geom_lm"><i class="fa fa-check"></i><b>16.3</b> geom_lm</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="m-geom_m.html"><a href="m-geom_m.html"><i class="fa fa-check"></i><b>17</b> M: geom_m…</a>
 <ul>
@@ -309,23 +312,37 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="l-geom_l" class="section level1 hasAnchor" number="16">
 <h1><span class="header-section-number">Chapter 16</span> L: geom_l…<a href="l-geom_l.html#l-geom_l" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="geom_label_repel" class="section level2 hasAnchor" number="16.1">
-<h2><span class="header-section-number">16.1</span> geom_label_repel<a href="l-geom_l.html#geom_label_repel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="l-geom_l.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
-<span id="cb39-2"><a href="l-geom_l.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb39-3"><a href="l-geom_l.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, </span>
-<span id="cb39-4"><a href="l-geom_l.html#cb39-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">label =</span> <span class="fu">rownames</span>(elephants.subset<span class="fl">.100</span>)),</span>
-<span id="cb39-5"><a href="l-geom_l.html#cb39-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fontface =</span> <span class="st">&#39;bold&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>,</span>
-<span id="cb39-6"><a href="l-geom_l.html#cb39-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">box.padding =</span> <span class="fu">unit</span>(<span class="fl">0.40</span>, <span class="st">&quot;lines&quot;</span>),</span>
-<span id="cb39-7"><a href="l-geom_l.html#cb39-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">point.padding =</span> <span class="fu">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;lines&quot;</span>),</span>
-<span id="cb39-8"><a href="l-geom_l.html#cb39-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">segment.color =</span> <span class="st">&#39;grey50&#39;</span></span>
-<span id="cb39-9"><a href="l-geom_l.html#cb39-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<div id="geom_label" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> geom_label<a href="l-geom_l.html#geom_label" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Package: </strong> ggplot2 <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></p>
+<p><strong>Description: </strong> Thisis used to add labeled text to a plot. It allows you to annotate specific data points or regions in your plot with text labels. This also draws a rectangle around the text.</p>
+<p><strong>Understandable aesthetics:</strong> label, fill(controls the background colour of the label) , colour, fontface</p>
+<p><strong>Statistics layer(s):</strong> count</p>
+<p><strong>See also: </strong> <a href="#text">geom_text</a>, <a href="#label_repel">geom_label_repel</a></p>
 </div>
-<div id="geom_lm" class="section level2 hasAnchor" number="16.2">
-<h2><span class="header-section-number">16.2</span> geom_lm<a href="l-geom_l.html#geom_lm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<div id="geom_label_repel" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> geom_label_repel<a href="l-geom_l.html#geom_label_repel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="l-geom_l.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants.subset<span class="fl">.100</span>, <span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="l-geom_l.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb2-3"><a href="l-geom_l.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">y =</span> Height, <span class="at">x=</span>Weight, </span>
+<span id="cb2-4"><a href="l-geom_l.html#cb2-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">label =</span> <span class="fu">rownames</span>(elephants.subset<span class="fl">.100</span>)),</span>
+<span id="cb2-5"><a href="l-geom_l.html#cb2-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fontface =</span> <span class="st">&#39;bold&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>,</span>
+<span id="cb2-6"><a href="l-geom_l.html#cb2-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">box.padding =</span> <span class="fu">unit</span>(<span class="fl">0.40</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb2-7"><a href="l-geom_l.html#cb2-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">point.padding =</span> <span class="fu">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb2-8"><a href="l-geom_l.html#cb2-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">segment.color =</span> <span class="st">&#39;grey50&#39;</span></span>
+<span id="cb2-9"><a href="l-geom_l.html#cb2-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="geom_lm" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> geom_lm<a href="l-geom_l.html#geom_lm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-ggplot2" class="csl-entry">
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2023. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
 </div>
 </div>
             </section>
@@ -388,20 +405,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

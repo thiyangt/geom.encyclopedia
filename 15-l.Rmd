@@ -1,5 +1,22 @@
 # L: geom_l...
 
+## geom_label
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Description: **  Thisis used to add labeled text to a plot. It allows you to annotate specific data points or regions in your plot with text labels. This also draws a rectangle around the text.
+
+**Understandable aesthetics:** label, fill(controls the background colour of the label) , colour, fontface
+
+**Statistics layer(s):** count
+
+**See also: ** [geom_text](#text), [geom_label_repel](#label_repel)
+
+```{r, fig.cap="A basic example of how geom_label can be used."}
+
+```
+
+
 ## geom_label_repel
 
 ```{r}

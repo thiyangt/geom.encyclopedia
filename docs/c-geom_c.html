@@ -23,7 +23,7 @@
 <meta name="author" content="Thiyanga S. Talagala" />
 
 
-<meta name="date" content="2023-08-31" />
+<meta name="date" content="2023-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,6 +196,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.7" data-path="r-packages.html"><a href="r-packages.html#packages-related-to-geom"><i class="fa fa-check"></i><b>4.7</b> Packages related to geom</a></li>
 <li class="chapter" data-level="4.8" data-path="r-packages.html"><a href="r-packages.html#geom-extensions"><i class="fa fa-check"></i><b>4.8</b> geom Extensions</a></li>
 <li class="chapter" data-level="4.9" data-path="r-packages.html"><a href="r-packages.html#all-available-geom_-in-the-ggplot2-package"><i class="fa fa-check"></i><b>4.9</b> All available geom_… in the ggplot2 package</a></li>
+<li class="chapter" data-level="4.10" data-path="r-packages.html"><a href="r-packages.html#packages-implements-geoms"><i class="fa fa-check"></i><b>4.10</b> Packages implements geoms</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="a-geom_a.html"><a href="a-geom_a.html"><i class="fa fa-check"></i><b>5</b> A: geom_a…</a>
 <ul>
@@ -218,6 +219,7 @@ div.csl-indent {
 <li class="chapter" data-level="7" data-path="c-geom_c.html"><a href="c-geom_c.html"><i class="fa fa-check"></i><b>7</b> C: geom_c…</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="c-geom_c.html"><a href="c-geom_c.html#geom_col"><i class="fa fa-check"></i><b>7.1</b> geom_col</a></li>
+<li class="chapter" data-level="7.2" data-path="c-geom_c.html"><a href="c-geom_c.html#col_pattern"><i class="fa fa-check"></i><b>7.2</b> geom_col_pattern</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="d-geom_d.html"><a href="d-geom_d.html"><i class="fa fa-check"></i><b>8</b> D: geom_d…</a>
 <ul>
@@ -318,8 +320,45 @@ div.csl-indent {
 ## 1 10-20 years             560
 ## 2 greater than 20 years   430
 ## 3 less than 10 years      710</code></pre>
-<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+<div id="col_pattern" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> geom_col_pattern<a href="c-geom_c.html#col_pattern" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Package: </strong> ggpattern <span class="citation">(<a href="#ref-R-ggpattern" role="doc-biblioref">FC, Davis, and ggplot2 authors 2022</a>)</span></p>
+<p><strong>Description: </strong> Fill columns with a pattern. User can map a variable for pattern or set a pattern.</p>
+<p><strong>Understandable aesthetics:</strong> x, y, pattern, fill, colour</p>
+<p><strong>Statistics layer(s):</strong></p>
+<p><strong>See also: </strong> <a href="#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="c-geom_c.html#cb28-1" aria-hidden="true" tabindex="-1"></a>elephants_counts <span class="ot">&lt;-</span> elephants <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="c-geom_c.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Age_Category) <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a href="c-geom_c.html#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>())</span>
+<span id="cb28-4"><a href="c-geom_c.html#cb28-4" aria-hidden="true" tabindex="-1"></a>elephants_counts</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   Age_Category              n
+##   &lt;chr&gt;                 &lt;int&gt;
+## 1 10-20 years             560
+## 2 greater than 20 years   430
+## 3 less than 10 years      710</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="c-geom_c.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants_counts, <span class="fu">aes</span>(<span class="at">x =</span> Age_Category, <span class="at">y=</span>n)) <span class="sc">+</span> </span>
+<span id="cb30-2"><a href="c-geom_c.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col_pattern</span>( <span class="at">pattern =</span> <span class="st">&#39;stripe&#39;</span>,</span>
+<span id="cb30-3"><a href="c-geom_c.html#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill    =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb30-4"><a href="c-geom_c.html#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour  =</span> <span class="st">&#39;black&#39;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-32"></span>
+<img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-32-1.png" alt="Illustration of geom_col_pattern" width="672" />
+<p class="caption">
+Figure 7.1: Illustration of geom_col_pattern
+</p>
+</div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="c-geom_c.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elephants_counts, <span class="fu">aes</span>(<span class="at">x =</span> Age_Category, <span class="at">y=</span>n)) <span class="sc">+</span> </span>
+<span id="cb31-2"><a href="c-geom_c.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col_pattern</span>(<span class="fu">aes</span>(<span class="at">pattern=</span>Age_Category))</span></code></pre></div>
+<p><img src="Data-Visualisation-geom-Encyclopedia_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-ggpattern" class="csl-entry">
+FC, Mike, Trevor L Davis, and ggplot2 authors. 2022. <em>Ggpattern: ’Ggplot2’ Pattern Geoms</em>. <a href="https://CRAN.R-project.org/package=ggpattern">https://CRAN.R-project.org/package=ggpattern</a>.
 </div>
 </div>
             </section>

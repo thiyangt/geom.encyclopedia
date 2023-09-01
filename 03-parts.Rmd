@@ -88,3 +88,9 @@ library(GGally) # Matrix plots
 ```{r, echo=FALSE}
 ls(pattern = '^geom_', env = as.environment('package:ggplot2')) |> knitr::kable()
 ```
+
+## Packages implements geoms
+
+```{r, eval=FALSE,echo=FALSE}
+db <- tools::CRAN_package_db()[, c("Package", "Description")]
+```

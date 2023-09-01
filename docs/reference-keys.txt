@@ -1,19 +1,5 @@
-fig:unnamed-chunk-16
-fig:unnamed-chunk-17
-fig:unnamed-chunk-18
-fig:unnamed-chunk-19
-fig:unnamed-chunk-20
-fig:unnamed-chunk-21
-fig:unnamed-chunk-23
-fig:unnamed-chunk-24
-fig:unnamed-chunk-25
-fig:unnamed-chunk-26
-fig:unnamed-chunk-27
-fig:unnamed-chunk-28
-fig:unnamed-chunk-41
-fig:unnamed-chunk-47
-fig:unnamed-chunk-52
-about
+fig:unnamed-chunk-4
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
 usage
 render-book
 preview-book
@@ -35,6 +21,7 @@ time-series-dataset
 packages-related-to-geom
 geom-extensions
 all-available-geom_-in-the-ggplot2-package
+packages-implements-geoms
 a-geom_a
 abline
 area
@@ -49,6 +36,7 @@ geom_blank
 geom_boxplot
 c-geom_c
 geom_col
+col_pattern
 d-geom_d
 geom_delaunay_tile
 geom_density
@@ -68,6 +56,7 @@ a-geom_axxxxx-1
 a-geom_axxxxx-2
 a-geom_axxxxx-3
 l-geom_l
+geom_label
 geom_label_repel
 geom_lm
 m-geom_m
