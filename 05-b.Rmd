@@ -17,25 +17,31 @@
 ### With count 
 
 ```{r, fig.cap="Illustration of geom_bar to create a bar chart"}
-ggplot(elephants, aes(y = Age_Category)) + 
+worldbankdata |>
+  dplyr::select(c("Year", "Income")) |>
+  dplyr::filter(Year==2021) |>
+  ggplot(aes(x = Income)) + 
   geom_bar()
 
 ```
 
 ```{r, fig.cap="Illustration of geom_bar to create a stacked bar chart"}
-ggplot(elephants, aes(y = Age_Category, fill=Category)) + 
+worldbankdata |>
+  dplyr::select(c("Year", "Income", "Region")) |>
+  dplyr::filter(Year==2021) |>
+ggplot(aes(x = Income, fill=Region)) + 
   geom_bar()
 ```
 
 ```{r, fig.cap="Illustration of geom_bar to create a cluster bar chart"}
-ggplot(elephants, aes(y=Age_Category, fill = Category)) +
+worldbankdata |>
+  dplyr::select(c("Year", "Income", "Region")) |>
+  dplyr::filter(Year==2021) |>
+ggplot(aes(x = Income, fill=Region)) + 
   geom_bar(position = "dodge")
 ```
 
-```{r, fig.cap="Illustration of geom_bar to create a cluster bar chart"}
-ggplot(elephants, aes(y=Age_Category, fill = Category)) +
-  geom_bar(position = "dodge")
-```
+
 
 ### With identity
 
@@ -59,13 +65,13 @@ ggplot(dfbar, aes(class, income)) +
 **See also: ** [geom_bin2d](#bin2d), [geom_point](#point)
 
 ```{r, fig.cap="Illustration of using geom_bin_2d"}
-ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
   geom_bin_2d() + 
   theme(aspect.ratio = 1)
 ```
 
 ```{r, fig.cap="Illustration of changing bins in geom_bin_2d"}
-ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
   geom_bin_2d(bins=20) + 
   theme(aspect.ratio = 1)
 ```
@@ -86,8 +92,8 @@ pattern_fill (pattern_* - for mapping variables under aesthetics), pattern (to s
 **See also: ** [geom_bin2d](#bin2d), [geom_point](#point)
 
 ```{r, fig.cap="Illustration of using geom_bin_2d"}
-ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
-  ggpattern::geom_bin2d_pattern(bins=5) + 
+ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
+  ggpattern::geom_bin2d_pattern(bins=20) + 
   theme(aspect.ratio = 1)
 ```
 
@@ -108,7 +114,7 @@ ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
 **Example:**
 
 ```{r, fig.cap="Illustration of using geom_bin_2d"}
-ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
   geom_bin2d() + 
   theme(aspect.ratio = 1)
 ```
@@ -135,12 +141,18 @@ ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
 **See also: ** [geom_col](#col)
 
 ```{r, fig.cap="Illustration of using geom_boxplot"}
-ggplot(elephants, aes(y = Weight)) + 
+worldbankdata |>
+  dplyr::filter(Year == 2021) |>
+  dplyr::select(Cooking) |>
+ggplot(aes(y = Cooking)) + 
   geom_boxplot()
 ```
 
 ```{r, fig.cap="Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot."}
-ggplot(elephants, aes(y = Weight)) + 
+worldbankdata |>
+  dplyr::filter(Year == 2021) |>
+  dplyr::select(Cooking) |>
+ggplot(aes(y = Cooking)) +  
 geom_boxplot(outlier.colour="black", outlier.shape=16,
              outlier.size=2, notch=TRUE)
 

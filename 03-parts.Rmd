@@ -16,6 +16,11 @@ library(patchwork)
 
 ## Data packages
 
+```{r, drone}
+library(drone)
+data("worldbankdata")
+```
+
 ### Cross sectional data
 
 ```{r}
@@ -33,7 +38,8 @@ library(denguedatahub)
 ## Large cross sectional dataset
 
 ```{r}
-data("elephants")
+library(tibble)
+data(elephants)
 ```
 
 ### Glimpse of the large dataset

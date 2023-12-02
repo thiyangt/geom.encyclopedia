@@ -17,13 +17,13 @@
 **Example:**
 
 ```{r, fig.cap="Illustration of (A) geom_abline and (B) use of geom_point and geom_abline both"}
-abline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + geom_abline(intercept = 0.15, slope = 1.9) + 
+abline <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +  geom_abline(intercept = 0, slope = 1) + 
   labs(title="A: `geom_abline` only") +
   theme(aspect.ratio = 1)
 
-pointabline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + 
+pointabline <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
   geom_point() + 
-  geom_abline(intercept = 0.15, slope = 1.9) + 
+  geom_abline(intercept = 0, slope = 1) + 
   labs(title="B: `geom_point + geom_abline` both") +
   theme(aspect.ratio = 1)
 

@@ -7,12 +7,17 @@
 
 
 
-```{r}
-delaunay <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+```{r, eval=FALSE}
+worldbankdata |>
+  filter(Year==2021) |>
+ ggplot(aes(y = Cooking, x = Electricity)) +
   ggforce::geom_delaunay_tile(alpha = 0.5, colour = 'black') + labs(title="geom_delaunay_tile") + theme(aspect.ratio = 1)
+```
 
+
+```{r}
 # to compare with geom_point
-point <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) +
+point <- ggplot(worldbankdata, aes(y = Cooking, x= Electricity)) +
   geom_point(alpha = 0.5, colour = 'black') + labs(title="geom_point") + theme(aspect.ratio = 1)
 
 library(patchwork)
@@ -25,7 +30,9 @@ delaunay|point
 
 
 ```{r}
-ggplot(elephants, aes(x = Weight)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(x = Cooking)) + 
   geom_density()
 
 ```
@@ -33,7 +40,9 @@ ggplot(elephants, aes(x = Weight)) +
 ## geom_density_2d
 
 ```{r}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Electricity)) + 
   geom_density_2d()
 
 ```
@@ -41,7 +50,9 @@ ggplot(elephants, aes(y = Height, x=Weight)) +
 ## geom_density_2d_filled
 
 ```{r}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Electricity))  + 
   geom_density_2d_filled()
 
 ```
@@ -55,7 +66,9 @@ Here the `y` variable should be qualitative and the `x` variable should be quant
 
 ```{r}
 library(ggridges)
-ggplot(elephants, aes(y=Category, x = Height)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(y = Income, x=Cooking))  + 
     geom_density_ridges()
 
 ```
@@ -64,7 +77,9 @@ ggplot(elephants, aes(y=Category, x = Height)) +
 
 ```{r}
 library(directlabels)
-ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Electricity, col=Income)) + 
   geom_point() +
-  geom_dl(aes(label=Category),method="smart.grid")
+  geom_dl(aes(label=Income),method="smart.grid")
 ```
