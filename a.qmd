@@ -21,7 +21,7 @@ Create an area plot. This cover the space between x-axis and line that connects 
 
 ### Understandable aesthetics
 
-alpha, colour, linetype, linewidth
+`alpha`, `colour`, `linetype`, `linewidth`
 
 ### The statistical transformation to use on the data for this layer 
 
@@ -105,7 +105,7 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 
 ### Understandable aesthetics
 
-x, y, ymin, ymax, alpha, colour, fill, linetype, size, group (group is used internally; arguments are ignored)
+`x`, `y`, `ymin`, `ymax`, `alpha`, `colour`, `fill`, `linetype`, `size`, `group` (group is used internally; arguments are ignored)
 
 ### Statistics layer(s)
 
@@ -159,7 +159,7 @@ Draw a circle or a segment of a circle.
 
 **optional**
 
-color, linewidth, linetype, alpha, lineend
+`color`, `linewidth`, `linetype`, `alpha`, `lineend`
 
 ### The statistical transformation to use on the data for this layer
 
@@ -196,7 +196,7 @@ To draw pie chart and donut chart defining centre point, a radius and a start an
 
 **optional**
 
-color, linewidth, linetype, alpha, lineend
+`color`, `linewidth`, `linetype`, `alpha`, `lineend`
 
 ### The statistical transformation to use on the data for this layer
 
