@@ -1,10 +1,15 @@
 project:
   type: book
+  output-dir: _book
 
 book:
   title: "Data Visualisation `geom` Encyclopedia"
   author: "Thiyanga S. Talagala"
   date: "`r Sys.Date()`"
+  site-url: https://thiyangt.github.io/geom.encyclopedia/
+  repo-url: https://github.com/thiyangt/geom.encyclopedia
+  repo-branch: main
+  repo-actions: [edit, issue]
   chapters:
     - index.qmd
     - preface.qmd
