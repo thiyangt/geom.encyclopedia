@@ -25,7 +25,7 @@ alpha, colour, linetype, linewidth
 
 ### The statistical transformation to use on the data for this layer 
 
-- `stat_identity`: Uses the y-values directly to define the are
+`stat_align`
 
 ### See also
 
@@ -93,4 +93,134 @@ a2 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
 a1 | a2
 ```
 
+## geom_alluvium{#alluvium}
 
+### Package
+
+ggalluvial[@brunson2019package; @brunson2020ggalluvial]
+
+### Description
+
+Create alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories
+
+### Understandable aesthetics
+
+x, y, ymin, ymax, alpha, colour, fill, linetype, size, group (group is used internally; arguments are ignored)
+
+### Statistics layer(s)
+
+alluvium
+
+### See also
+
+[geom_stratum](#stratum), [geom_flow](#flow), [geom_lode](#lode)
+
+### Example
+
+```{r alluvial, fig.width=10,fig.height=10, warning=FALSE, message=FALSE}
+library(ggalluvial)
+freq.table <- worldbankdata |>
+  select(Country, Region, Year, Income) |>
+  filter(Year > 2015) |>
+  group_by(Region, Year, Income) |>
+  summarise(n = n()) |>
+  drop_na()
+freq.table 
+
+a1 <- freq.table |>
+  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +
+  geom_alluvium(aes(fill = Income), width = 1/12) + 
+  labs(title = "a1: geom_alluvium only")
+
+a2 <- freq.table |>
+  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +
+  geom_alluvium(aes(fill = Income), width = 1/12) + 
+  geom_stratum(width = 1/12, fill = "black", color = "grey") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  labs(title = "a2: geom_alluvium, \n geom_stratum and geom_label")
+a1/a2 
+```
+
+## geom_arc
+
+### Package
+
+ggforce[@ggforce]
+
+### Description
+
+Draw a circle or a segment of a circle.
+
+### Understandable aesthetic
+
+**required aesthetics**
+
+`x0` - starting coordinate of x-axis , `y0` - starting coordinate of x-axis, `r` - radius, `start`, `end`
+
+**optional**
+
+color, linewidth, linetype, alpha, lineend
+
+### The statistical transformation to use on the data for this layer
+
+`stat_arc`
+
+### See also
+
+[geom_arc2](#arc2), [geom_arc_bar](#arcbar)
+
+### Example
+
+```{r arc, warning=FALSE, message=FALSE}
+library(ggforce)
+ggplot() + 
+  geom_arc(aes(x0=0, y0=0, r=8, start=1, end=8)) + 
+  geom_arc(aes(x0=0, y0=0, r=8, start=1, end=5), col="red",size=2) + theme(aspect.ratio = 1)
+```
+
+## geom_arc_bar{#arcbar}
+
+### Package
+
+ggforce[@ggforce]
+
+### Description
+
+To draw pie chart and donut chart defining centre point, a radius and a start and end angle.
+
+### Understandable aesthetic
+
+**required aesthetics**
+
+`x0` - starting coordinate of x-axis , `y0` - starting coordinate of x-axis, `r` - radius, `start`, `end`
+
+**optional**
+
+color, linewidth, linetype, alpha, lineend
+
+### The statistical transformation to use on the data for this layer
+
+`stat_arc`
+
+### See also
+
+[geom_arc](#arc), [geom_arc_bar](#arcbar)
+
+### Example
+
+
+```{r, warning=FALSE, message=FALSE}
+df <- data.frame(
+    state = c('A', 'B', 'C', 
+              'D', 'E'),
+    focus = c(0.2, 0, 0, 0, 0),
+    start = c(0, 1, 2, 3, 4),
+    end = c(1, 2, 3, 4, 2*pi),
+    amount = c(4, 3, 1, 2, 5),
+    stringsAsFactors = FALSE
+)
+ggplot(df) + 
+    geom_arc_bar(aes(x0 = 0, y0 = 0, r0 = 0, r = 1, amount = amount, 
+                     fill = state, explode = focus), stat = 'pie') + 
+  theme(aspect.ratio = 1)
+```
