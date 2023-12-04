@@ -208,5 +208,12 @@
     "title": "References",
     "section": "",
     "text": "Brunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for\nAlluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package\n‘Ggalluvial’.”\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data\nAnalysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "parta.html",
+    "href": "parta.html",
+    "title": "A",
+    "section": "",
+    "text": "In this part of the book we will look at the geoms starts with letter “a” or “A”.\n\n\n\n\n\ngeom\nsection\n\n\n\n\ngeom_area\n3.1\n\n\ngeom_abline\n3.2\n\n\ngeom_alluvium\n3.3\n\n\ngeom_arc\n3.4\n\n\ngeom_arc_bar\n3.5"
   }
 ]
