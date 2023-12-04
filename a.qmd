@@ -34,46 +34,63 @@ alpha, colour, linetype, linewidth
 ### Example
 
 ```{r area, warning=FALSE, message=FALSE}
-area <- worldbankdata |>
+a1 <- worldbankdata |>
   filter(Country == "Bangladesh") |> 
   filter(Year >= 2013 & Year <= 2021) |>
   ggplot(aes(x=Year, y=Electricity)) + 
   geom_area(alpha=0.5) + 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
   scale_x_continuous(breaks = 2013:2021) + 
-  labs(title = "geom_area only")
+  labs(title = "a1: geom_area only")
 
-areapoint <- area + geom_point(col="red") + 
-  labs(title = "geom_area and geom_point")
-area | areapoint
+a2 <-  worldbankdata |>
+  filter(Country == "Bangladesh") |> 
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_area(alpha=0.5) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2013:2021)  + 
+  geom_point(col="red") + 
+  labs(title = "a2: geom_area \n and geom_point")
+a1 | a2
 ```
 
 
 ## geom_abline{#abline}
 
-**Package: ** ggplot2 [@R-ggplot2]
+### Package 
 
-**Book: **
+ggplot2 [@ggplot2]
 
-**Description: ** Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and intercept ($c$).
+### Description
 
-**Understandable aesthetics:** alpha, colour, linetype, linewidth
+Description Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and intercept ($c$).
 
-**Statistics layer(s):**
+### Understandable aesthetics
 
-**See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+Unlike most other geoms, `geom_abline` does not depend on the x and y variables that we map for the main plot. `geom_abline` has its own independent characteristics: `intercept` and `slope`.
 
-**Example:**
+### Statistics layer(s)
 
-```{r, fig.cap="Illustration of (A) geom_abline and (B) use of geom_point and geom_abline both",fig.height=5, fig.width=5}
-abline <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +  geom_abline(intercept = 0, slope = 1) + 
-  labs(title="A: `geom_abline` only") +
+None (`geom_abline` is independent from the data layer.)
+
+### See also: 
+
+ [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+
+### Example
+
+```{r, fig.height=8, fig.width=8, warning=FALSE, message=FALSE}
+a1 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
+  geom_abline(intercept = 0, slope = 1) + 
+  labs(title="a1: geom_abline only") +
   theme(aspect.ratio = 1)
-
-pointabline <- abline + 
+a2 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
+  geom_abline(intercept = 0, slope = 1) + 
   geom_point() + 
+  labs(title = "a2: geom_abline \n and geom_point") +
   theme(aspect.ratio = 1)
-
-library(patchwork)
-abline | pointabline
+a1 | a2
 ```
+
+

@@ -1,3 +1,48 @@
-# geom_a  {#sec-a}
+# geom_h  {#sec-h}
 
-## geom_abline
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+library(drone)
+library(tidyverse)
+library(patchwork)
+data(worldbankdata)
+```
+
+## geom_hline{#hline}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Draw a horizontal line ($Y=c$) for a given value of $c$, which is known as `yintercept`.
+
+### Understandable aesthetics
+
+Unlike most other geoms, `geom_hline` does not depend on the x and y variables that we map for the main plot. `geom_hline` has its own independent characteristics: `yintercept`.   The yintercept can be passed either as a arguments or aesthetic.
+
+### Statistics layer(s)
+
+None
+
+### See also
+
+[geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+
+### Example
+
+
+```{r hline2, fig.cap="Illustration of (A) geom_hline and (B) use of geom_point and geom_hline both", warning=FALSE,message=FALSE}
+a1 <- ggplot(worldbankdata, aes(y = Cooking, x= Electricity)) + geom_hline(yintercept = 50) + 
+  labs(title="a1: `geom_hline` only") +
+  theme(aspect.ratio = 1)
+
+a2 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
+  geom_point() + 
+  geom_hline(yintercept = 50) + 
+  labs(title="a2: `geom_point +\n geom_hline` both") +
+  theme(aspect.ratio = 1)
+a1 | a2
+```
+
