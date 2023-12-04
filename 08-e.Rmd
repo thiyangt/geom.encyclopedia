@@ -8,14 +8,18 @@ Other related geoms: geom_mark_circle
 
 ```{r, echo=FALSE}
 library(ggalt)
-ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
- geom_encircle(aes(fill =Category), s_shape=0.2, expand=0.01 , alpha=0.4) 
+worldbankdata |>
+  filter(Year==2021) |>
+ggplot(aes(y = Cooking, x=Electricity, col=Income)) + 
+ geom_encircle(aes(fill =Income), s_shape=0.2, expand=0.01 , alpha=0.4) 
 ```
 
 `geom_encircle` with `geom_point`
 
 ```{r, echo=FALSE}
 library(ggalt)
-ggplot(elephants, aes(y = Height, x=Weight, col=Category)) + 
-  geom_point() + geom_encircle(aes(fill =Category), s_shape=0.2, expand=0.01 , alpha=0.4) 
+worldbankdata |>
+  filter(Year==2021) |>
+ggplot(aes(y = Cooking, x=Electricity, col=Income)) + 
+  geom_point() + geom_encircle(aes(fill = Income), s_shape=0.2, expand=0.01 , alpha=0.4) 
 ```

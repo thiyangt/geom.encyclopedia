@@ -1,5 +1,11 @@
 # B: geom_b...
 
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+data("worldbankdata")
+```
+
 ## geom_bar
 
 **Package: ** ggplot2 [@R-ggplot2]
@@ -148,7 +154,7 @@ ggplot(aes(y = Cooking)) +
   geom_boxplot()
 ```
 
-```{r, fig.cap="Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot."}
+```{r geomboxparam, fig.cap="Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot."}
 worldbankdata |>
   dplyr::filter(Year == 2021) |>
   dplyr::select(Cooking) |>

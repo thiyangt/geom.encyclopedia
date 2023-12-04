@@ -18,13 +18,13 @@
 **Example:**
 
 ```{r, fig.cap="Illustration of (A) geom_vline and (B) use of geom_point and geom_vline both"}
-vline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + geom_vline(xintercept = 1.25) + 
+vline <- ggplot(worldbankdata, aes(y = Cooking, xb= Electricity)) + geom_vline(xintercept = 50) + 
   labs(title="A: `geom_vline` only") +
   theme(aspect.ratio = 1)
 
-pointvline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + 
+pointvline <- vline + 
   geom_point() + 
-  geom_vline(xintercept = 1.25) + 
+  geom_vline(xintercept = 50) + 
   labs(title="B: `geom_point + geom_vline` both") +
   theme(aspect.ratio = 1)
 
@@ -35,7 +35,9 @@ vline | pointvline
 ## geom_violin
 
 ```{r, echo=FALSE}
-ggplot(elephants, aes(y = Weight, x=Category)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Income)) + 
   geom_violin()
 
 ```
@@ -43,7 +45,9 @@ ggplot(elephants, aes(y = Weight, x=Category)) +
 Without trimming
 
 ```{r, echo=FALSE}
-ggplot(elephants, aes(y = Weight, x=Category)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Income)) +
   geom_violin(trim=FALSE)
 
 ```
@@ -52,7 +56,9 @@ ggplot(elephants, aes(y = Weight, x=Category)) +
 Draw quantiles
 
 ```{r, echo=FALSE}
-ggplot(elephants, aes(y = Weight, x=Category)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Income)) +
   geom_violin(draw_quantiles = c(0.25, 0.5, 0.75))
 
 ```

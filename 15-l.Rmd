@@ -20,10 +20,11 @@
 ## geom_label_repel
 
 ```{r}
-ggplot(elephants.subset.100, aes(y = Height, x=Weight)) +
+worldbankdata |>
+  filter(Year == 2017) |>
+ggplot(aes(y = Cooking, x=Electricity)) +
   geom_point() +
-  ggrepel::geom_label_repel(aes(y = Height, x=Weight, 
-                                label = rownames(elephants.subset.100)),
+  ggrepel::geom_label_repel(aes(y = Cooking, x=Electricity, label = Income),
                                 fontface = 'bold', color = 'red',
                                 box.padding = unit(0.40, "lines"),
                                 point.padding = unit(0.6, "lines"),
@@ -36,6 +37,8 @@ ggplot(elephants.subset.100, aes(y = Height, x=Weight)) +
 
 
 ```{r, echo=FALSE}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
+worldbankdata |>
+  filter(Year == 2017) |>
+ggplot(aes(y = Cooking, x=Electricity)) + 
   geom_lm()
 ```

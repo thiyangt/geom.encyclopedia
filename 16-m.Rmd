@@ -5,17 +5,22 @@
 
 ```{r, echo=FALSE}
 library(ggforce)
-ggplot(elephants, aes(y = Height, x=Weight)) +
-  geom_mark_circle(aes(fill = Category, label = Category),
+worldbankdata |>
+  filter(Year == 2021) |>
+  filter(Income %in% c("L", "H")) |>
+ggplot(aes(y = Cooking, x=Electricity)) +
+  geom_mark_circle(aes(fill = Income, label = Region),
                    con.cap = 0) 
 ```
 
 With geom_point
 
 ```{r, echo=FALSE}
-library(ggforce)
-ggplot(elephants, aes(y = Height, x=Weight)) +
-  geom_mark_circle(aes(fill = Category, label = Category),
+worldbankdata |>
+  filter(Year == 2021) |>
+  filter(Income %in% c("L", "H")) |>
+ggplot(aes(y = Cooking, x=Electricity)) +
+  geom_mark_circle(aes(fill = Income, label = Income),
                    con.cap = 0) +
-  geom_point()
+  geom_point(aes(col=Income))
 ```

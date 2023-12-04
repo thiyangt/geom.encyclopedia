@@ -4,7 +4,9 @@
 ## geom_histogram{#histogram}
 
 ```{r, echo=FALSE}
-ggplot(elephants, aes(x = Weight)) + 
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(x = Cooking)) + 
   geom_histogram(col="white")
 
 ```
@@ -27,13 +29,13 @@ ggplot(elephants, aes(x = Weight)) +
 **Example:**
 
 ```{r, fig.cap="Illustration of (A) geom_hline and (B) use of geom_point and geom_hline both"}
-hline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + geom_hline(yintercept = 2.5) + 
+hline <- ggplot(worldbankdata, aes(y = Cooking, x= Electricity)) + geom_hline(yintercept = 50) + 
   labs(title="A: `geom_hline` only") +
   theme(aspect.ratio = 1)
 
-pointhline <- ggplot(elephants.subset.100, aes(y = Height, x=Fore_Feet_Circumference)) + 
+pointhline <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
   geom_point() + 
-  geom_hline(yintercept = 2.5) + 
+  geom_hline(yintercept = 50) + 
   labs(title="B: `geom_point + geom_hline` both") +
   theme(aspect.ratio = 1)
 

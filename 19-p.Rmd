@@ -3,6 +3,6 @@
 ## geom_point{#point}
 
 ```{r, echo=FALSE}
-ggplot(elephants, aes(y = Height, x=Weight)) + 
+ggplot(worldbankdata, aes(y=Cooking, x=Electricity)) + 
   geom_point()
 ```

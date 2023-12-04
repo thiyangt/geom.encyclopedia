@@ -1,5 +1,11 @@
 # A: geom_a...
 
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+data("worldbankdata")
+```
+
 ## geom_abline{#abline}
 
 **Package: ** ggplot2 [@R-ggplot2]
