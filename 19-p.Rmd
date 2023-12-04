@@ -1,8 +1,0 @@
-# P: geom_p...
-
-## geom_point{#point}
-
-```{r, echo=FALSE}
-ggplot(worldbankdata, aes(y=Cooking, x=Electricity)) + 
-  geom_point()
-```

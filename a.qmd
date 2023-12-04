@@ -1,0 +1,79 @@
+# A: geom_a  {#sec-a}
+
+
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+data("worldbankdata")
+```
+
+
+## geom_area{#area}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Create an area plot. This cover the space between x-axis and line that connects the data points.
+
+### Understandable aesthetics
+
+alpha, colour, linetype, linewidth
+
+### The statistical transformation to use on the data for this layer 
+
+- `stat_identity`: Uses the y-values directly to define the are
+
+### See also
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+
+### Example
+
+```{r area, warning=FALSE, message=FALSE}
+area <- worldbankdata |>
+  filter(Country == "Bangladesh") |> 
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_area(alpha=0.5) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2013:2021) + 
+  labs(title = "geom_area only")
+
+areapoint <- area + geom_point(col="red") + 
+  labs(title = "geom_area and geom_point")
+area | areapoint
+```
+
+
+## geom_abline{#abline}
+
+**Package: ** ggplot2 [@R-ggplot2]
+
+**Book: **
+
+**Description: ** Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and intercept ($c$).
+
+**Understandable aesthetics:** alpha, colour, linetype, linewidth
+
+**Statistics layer(s):**
+
+**See also: ** [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+
+**Example:**
+
+```{r, fig.cap="Illustration of (A) geom_abline and (B) use of geom_point and geom_abline both",fig.height=5, fig.width=5}
+abline <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +  geom_abline(intercept = 0, slope = 1) + 
+  labs(title="A: `geom_abline` only") +
+  theme(aspect.ratio = 1)
+
+pointabline <- abline + 
+  geom_point() + 
+  theme(aspect.ratio = 1)
+
+library(patchwork)
+abline | pointabline
+```

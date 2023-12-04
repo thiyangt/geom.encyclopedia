@@ -1,0 +1,102 @@
+project:
+  type: book
+
+book:
+  title: "Data Visualisation `geom` Encyclopedia"
+  author: "Thiyanga S. Talagala"
+  date: "`r Sys.Date()`"
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - intro.qmd
+    - part: parta.qmd
+      chapters:
+        - a.qmd
+    - part: partb.qmd
+      chapters:
+        - b.qmd
+    - part: partc.qmd
+      chapters:
+        - c.qmd
+    - part: partd.qmd
+      chapters:
+        - d.qmd
+    - part: parte.qmd
+      chapters:
+        - e.qmd
+    - part: partf.qmd
+      chapters:
+        - f.qmd
+    - part: partg.qmd
+      chapters:
+        - g.qmd
+    - part: parth.qmd
+      chapters:
+        - h.qmd
+    - part: parti.qmd
+      chapters:
+        - i.qmd
+    - part: partj.qmd
+      chapters:
+        - j.qmd
+    - part: partk.qmd
+      chapters:
+        - k.qmd
+    - part: partl.qmd
+      chapters:
+        - l.qmd
+    - part: partm.qmd
+      chapters:
+        - m.qmd
+    - part: partn.qmd
+      chapters:
+        - n.qmd
+    - part: parto.qmd
+      chapters:
+        - o.qmd
+    - part: partp.qmd
+      chapters:
+        - p.qmd
+    - part: partq.qmd
+      chapters:
+        - q.qmd  
+    - part: partr.qmd
+      chapters:
+        - r.qmd
+    - part: parts.qmd
+      chapters:
+        - s.qmd
+    - part: partt.qmd
+      chapters:
+        - t.qmd  
+    - part: partu.qmd
+      chapters:
+        - u.qmd
+    - part: partv.qmd
+      chapters:
+        - v.qmd  
+    - part: partw.qmd
+      chapters:
+        - w.qmd
+    - part: partx.qmd
+      chapters:
+        - x.qmd  
+    - part: party.qmd
+      chapters:
+        - y.qmd 
+    - part: partz.qmd
+      chapters:
+        - z.qmd  
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

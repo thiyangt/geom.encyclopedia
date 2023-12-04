@@ -1,6 +1,0 @@
-# Graph types {#cross}
-
-
-
-## Chapters and sub-chapters
-

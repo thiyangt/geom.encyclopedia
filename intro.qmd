@@ -1,0 +1,50 @@
+# Introduction
+
+
+# Data wrnging
+
+```{r}
+library(tidyverse)
+```
+
+# Data
+
+```{r}
+library(drone)
+```
+
+```{r}
+library(tibble)
+data(worldbankdata)
+worldbankdata
+```
+
+## Data description
+
+```{r}
+library(visdat)
+vis_dat(worldbankdata)
+```
+
+```{r}
+library(naniar)
+gg_miss_upset(worldbankdata)
+```
+
+# Different formats of the dataset
+
+```{r, message=FALSE,warning=FALSE}
+library(tidyverse)
+```
+
+## Subset of datasets created from the `worldbankdata`
+
+```{r}
+wbd.M <- worldbankdata |>
+  filter(Income == "L")
+```
+
+```{r}
+wdb.Bangladesh <- worldbankdata |>
+  filter(Country == "Bangladesh") |> filter(Year != 2000)
+```
