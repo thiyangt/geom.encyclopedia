@@ -20,7 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -62,6 +115,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -584,7 +639,42 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#geom_" id="toc-geom_" class="nav-link active" data-scroll-target="#geom_"><span class="header-section-number">4.1</span> geom_</a></li>
+  <li><a href="#bar" id="toc-bar" class="nav-link active" data-scroll-target="#bar"><span class="header-section-number">4.1</span> geom_bar</a>
+  <ul class="collapse">
+  <li><a href="#package" id="toc-package" class="nav-link" data-scroll-target="#package"><span class="header-section-number">4.1.1</span> Package</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">4.1.2</span> Description</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">4.1.3</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">4.1.4</span> See also</a></li>
+  </ul></li>
+  <li><a href="#bin2d" id="toc-bin2d" class="nav-link" data-scroll-target="#bin2d"><span class="header-section-number">4.2</span> geom_bin_2d</a>
+  <ul class="collapse">
+  <li><a href="#package-1" id="toc-package-1" class="nav-link" data-scroll-target="#package-1"><span class="header-section-number">4.2.1</span> Package</a></li>
+  <li><a href="#description-1" id="toc-description-1" class="nav-link" data-scroll-target="#description-1"><span class="header-section-number">4.2.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics" id="toc-understandable-aesthetics" class="nav-link" data-scroll-target="#understandable-aesthetics"><span class="header-section-number">4.2.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-1" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-1" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-1"><span class="header-section-number">4.2.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-1" id="toc-see-also-1" class="nav-link" data-scroll-target="#see-also-1"><span class="header-section-number">4.2.5</span> See also</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">4.2.6</span> Example</a></li>
+  </ul></li>
+  <li><a href="#bin2dpattern" id="toc-bin2dpattern" class="nav-link" data-scroll-target="#bin2dpattern"><span class="header-section-number">4.3</span> geom_bin2d_pattern</a>
+  <ul class="collapse">
+  <li><a href="#package-2" id="toc-package-2" class="nav-link" data-scroll-target="#package-2"><span class="header-section-number">4.3.1</span> Package</a></li>
+  <li><a href="#description-2" id="toc-description-2" class="nav-link" data-scroll-target="#description-2"><span class="header-section-number">4.3.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-1" id="toc-understandable-aesthetics-1" class="nav-link" data-scroll-target="#understandable-aesthetics-1"><span class="header-section-number">4.3.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-2" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-2" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-2"><span class="header-section-number">4.3.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-2" id="toc-see-also-2" class="nav-link" data-scroll-target="#see-also-2"><span class="header-section-number">4.3.5</span> See also</a></li>
+  </ul></li>
+  <li><a href="#bin2d" id="toc-bin2d" class="nav-link" data-scroll-target="#bin2d"><span class="header-section-number">4.4</span> geom_bin2d</a>
+  <ul class="collapse">
+  <li><a href="#package-3" id="toc-package-3" class="nav-link" data-scroll-target="#package-3"><span class="header-section-number">4.4.1</span> Package</a></li>
+  <li><a href="#description-3" id="toc-description-3" class="nav-link" data-scroll-target="#description-3"><span class="header-section-number">4.4.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-2" id="toc-understandable-aesthetics-2" class="nav-link" data-scroll-target="#understandable-aesthetics-2"><span class="header-section-number">4.4.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-3" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-3" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-3"><span class="header-section-number">4.4.4</span> The statistical transformation to use on the data for this layer</a></li>
+  </ul></li>
+  <li><a href="#blank" id="toc-blank" class="nav-link" data-scroll-target="#blank"><span class="header-section-number">4.5</span> geom_blank</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">4.6</span> geom_boxplot</a>
+  <ul class="collapse">
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-4" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-4" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-4"><span class="header-section-number">4.6.1</span> The statistical transformation to use on the data for this layer</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/b.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -608,10 +698,277 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="geom_" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="geom_"><span class="header-section-number">4.1</span> geom_</h2>
+<section id="bar" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="bar"><span class="header-section-number">4.1</span> geom_bar</h2>
+<section id="package" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="package"><span class="header-section-number">4.1.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+</section>
+<section id="description" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="description"><span class="header-section-number">4.1.2</span> Description</h3>
+<p>Draw a bar proportional to the specified number. For example, number of cases or user defined number.</p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">4.1.3</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_count</code> - This the default statistics layer. It counts number of cases in each group.</p>
+<p><code>stat_identify</code> - It plots the data as it is.</p>
+</section>
+<section id="see-also" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="see-also"><span class="header-section-number">4.1.4</span> See also</h3>
+<p><a href="#col">geom_col</a></p>
+<section id="with-count" class="level4" data-number="4.1.4.1">
+<h4 data-number="4.1.4.1" class="anchored" data-anchor-id="with-count"><span class="header-section-number">4.1.4.1</span> With count</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"Year"</span>, <span class="st">"Income"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Year<span class="sc">==</span><span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Income)) <span class="sc">+</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of geom_bar to create a bar chart</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"Year"</span>, <span class="st">"Income"</span>, <span class="st">"Region"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Year<span class="sc">==</span><span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">fill=</span>Region)) <span class="sc">+</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of geom_bar to create a stacked bar chart</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"Year"</span>, <span class="st">"Income"</span>, <span class="st">"Region"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Year<span class="sc">==</span><span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">fill=</span>Region)) <span class="sc">+</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of geom_bar to create a cluster bar chart</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="with-identity" class="level4" data-number="4.1.4.2">
+<h4 data-number="4.1.4.2" class="anchored" data-anchor-id="with-identity"><span class="header-section-number">4.1.4.2</span> With identity</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dfbar <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">class=</span><span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>),  <span class="at">income =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dfbar, <span class="fu">aes</span>(class, income)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="b_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="bin2d" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="bin2d"><span class="header-section-number">4.2</span> geom_bin_2d</h2>
+<section id="package-1" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="package-1"><span class="header-section-number">4.2.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+</section>
+<section id="description-1" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="description-1"><span class="header-section-number">4.2.2</span> Description</h3>
+<p>Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.</p>
+</section>
+<section id="understandable-aesthetics" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="understandable-aesthetics"><span class="header-section-number">4.2.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x</code>, <code>y</code>,</p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>fill</code>, <code>group</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-1" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-1"><span class="header-section-number">4.2.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_bin2d</code></p>
+</section>
+<section id="see-also-1" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="see-also-1"><span class="header-section-number">4.2.5</span> See also</h3>
+<p><a href="#bin2d">geom_bin2d</a>, <a href="#point">geom_point</a></p>
+</section>
+<section id="example" class="level3" data-number="4.2.6">
+<h3 data-number="4.2.6" class="anchored" data-anchor-id="example"><span class="header-section-number">4.2.6</span> Example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span>Electricity)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin_2d</span>() <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>() <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of using geom_bin_2d</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span>Electricity)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin_2d</span>(<span class="at">bins=</span><span class="dv">20</span>) <span class="sc">+</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>() <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of changing bins in geom_bin_2d</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bin2dpattern" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="bin2dpattern"><span class="header-section-number">4.3</span> geom_bin2d_pattern</h2>
+<section id="package-2" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="package-2"><span class="header-section-number">4.3.1</span> Package</h3>
+<p>ggpattern<span class="citation" data-cites="ggpattern">(<a href="references.html#ref-ggpattern" role="doc-biblioref">FC, Davis, and ggplot2 authors 2023</a>)</span></p>
+</section>
+<section id="description-2" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="description-2"><span class="header-section-number">4.3.2</span> Description</h3>
+<p>Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.</p>
+</section>
+<section id="understandable-aesthetics-1" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="understandable-aesthetics-1"><span class="header-section-number">4.3.3</span> Understandable aesthetics</h3>
+<p><code>pattern_fill</code> (pattern_* - for mapping variables under aesthetics), <code>pattern</code> (to set a patten, for example pattern=‘stripe’), <code>fill</code>, <code>colour</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-2" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-2"><span class="header-section-number">4.3.4</span> The statistical transformation to use on the data for this layer</h3>
+</section>
+<section id="see-also-2" class="level3" data-number="4.3.5">
+<h3 data-number="4.3.5" class="anchored" data-anchor-id="see-also-2"><span class="header-section-number">4.3.5</span> See also</h3>
+<p><a href="#bin2d">geom_bin2d</a>, <a href="#point">geom_point</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span>Electricity)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  ggpattern<span class="sc">::</span><span class="fu">geom_bin2d_pattern</span>(<span class="at">bins=</span><span class="dv">20</span>) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  ggpattern<span class="sc">::</span><span class="fu">scale_pattern_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of using geom_bin_2d</figcaption>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 1
+ $ aspect.ratio: num 1
+ - attr(*, "class")= chr [1:2] "theme" "gg"
+ - attr(*, "complete")= logi FALSE
+ - attr(*, "validate")= logi TRUE</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="bin2d" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="bin2d"><span class="header-section-number">4.4</span> geom_bin2d</h2>
+<section id="package-3" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="package-3"><span class="header-section-number">4.4.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="R-ggplot2">(<a href="references.html#ref-R-ggplot2" role="doc-biblioref"><strong>R-ggplot2?</strong></a>)</span></p>
+</section>
+<section id="description-3" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="description-3"><span class="header-section-number">4.4.2</span> Description</h3>
+<p>Divides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.</p>
+</section>
+<section id="understandable-aesthetics-2" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="understandable-aesthetics-2"><span class="header-section-number">4.4.3</span> Understandable aesthetics</h3>
+<p><code>x</code>, <code>y</code>, <code>fill</code>, <code>group</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-3" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-3"><span class="header-section-number">4.4.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_bin_2d</code></p>
+<p><strong>See also: </strong> <a href="#bin_2d">geom_bin_2d</a>, <a href="#point">geom_point</a></p>
+<p><strong>Example:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span>Electricity)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>() <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of using geom_bin_2d</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="blank" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="blank"><span class="header-section-number">4.5</span> geom_blank</h2>
+<p><strong>Package: </strong> ggplot2 <span class="citation" data-cites="R-ggplot2">(<a href="references.html#ref-R-ggplot2" role="doc-biblioref"><strong>R-ggplot2?</strong></a>)</span></p>
+<p><strong>Description: </strong> Draws nothing.</p>
+</section>
+<section id="boxplot" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">4.6</span> geom_boxplot</h2>
+<p><strong>Package: </strong> ggplot2 <span class="citation" data-cites="R-ggplot2">(<a href="references.html#ref-R-ggplot2" role="doc-biblioref"><strong>R-ggplot2?</strong></a>)</span></p>
+<p><strong>Description: </strong> Draw a bar proportional to the specified number. For example, number of cases or user defined number.</p>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-4" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-4"><span class="header-section-number">4.6.1</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_boxplot</code> - This the default statistics layer. This computes minimum, maximum, median, first quartile (<span class="math inline">\(Q1\)</span>), third quartile (<span class="math inline">\(Q3\)</span>), upper whisker extends up to <span class="math inline">\(Q3 + 1.5 \times IQR\)</span> and lower whisker extends up to <span class="math inline">\(Q1 - 1.5 \times IQR\)</span>, where <span class="math inline">\(IQR = Q3 - Q1\)</span>. In a notched box plot, it creates 95% confidence interval for mean.</p>
+<p><strong>See also: </strong> <a href="#col">geom_col</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Cooking) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span><span class="fu">factor</span>(<span class="dv">0</span>))) <span class="sc">+</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x=</span><span class="fu">element_blank</span>(),<span class="at">axis.text.x=</span><span class="fu">element_blank</span>(),<span class="at">axis.ticks.x=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of using geom_boxplot</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Cooking) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span><span class="fu">factor</span>(<span class="dv">0</span>))) <span class="sc">+</span>  </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_boxplot</span>(<span class="at">outlier.colour=</span><span class="st">"black"</span>, <span class="at">outlier.shape=</span><span class="dv">16</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">outlier.size=</span><span class="dv">2</span>, <span class="at">notch=</span><span class="cn">TRUE</span>) <span class="sc">+</span> </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x=</span><span class="fu">element_blank</span>(),<span class="at">axis.text.x=</span><span class="fu">element_blank</span>(),<span class="at">axis.ticks.x=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="b_files/figure-html/geomboxparam-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ggpattern" class="csl-entry" role="listitem">
+FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. <em>Ggpattern: ’Ggplot2’ Pattern Geoms</em>.
+</div>
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

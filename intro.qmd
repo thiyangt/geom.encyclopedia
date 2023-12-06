@@ -48,3 +48,6 @@ wbd.M <- worldbankdata |>
 wdb.Bangladesh <- worldbankdata |>
   filter(Country == "Bangladesh") |> filter(Year != 2000)
 ```
+
+## R packages with geom implementation
+

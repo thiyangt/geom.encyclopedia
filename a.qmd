@@ -70,7 +70,7 @@ Description Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and interce
 
 Unlike most other geoms, `geom_abline` does not depend on the x and y variables that we map for the main plot. `geom_abline` has its own independent characteristics: `intercept` and `slope`.
 
-### Statistics layer(s)
+### The statistical transformation to use on the data for this layer
 
 None (`geom_abline` is independent from the data layer.)
 
@@ -107,7 +107,7 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 
 `x`, `y`, `ymin`, `ymax`, `alpha`, `colour`, `fill`, `linetype`, `size`, `group` (group is used internally; arguments are ignored)
 
-### Statistics layer(s)
+### The statistical transformation to use on the data for this layer
 
 alluvium
 
@@ -157,7 +157,7 @@ Draw a circle or a segment of a circle.
 
 `x0` - starting coordinate of x-axis , `y0` - starting coordinate of x-axis, `r` - radius, `start`, `end`
 
-**optional**
+**optional aesthetics**
 
 `color`, `linewidth`, `linetype`, `alpha`, `lineend`
 

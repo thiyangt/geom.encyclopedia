@@ -39,21 +39,21 @@
     "href": "a.html#abline",
     "title": "3  A: geom_a",
     "section": "3.2 geom_abline",
-    "text": "3.2 geom_abline\n\n3.2.1 Package\nggplot2 (Wickham 2016)\n\n\n3.2.2 Description\nDescription Draw a straight line (\\(Y=mX+c\\)) for a given slope (\\(m\\)) and intercept (\\(c\\)).\n\n\n3.2.3 Understandable aesthetics\nUnlike most other geoms, geom_abline does not depend on the x and y variables that we map for the main plot. geom_abline has its own independent characteristics: intercept and slope.\n\n\n3.2.4 Statistics layer(s)\nNone (geom_abline is independent from the data layer.)\n\n\n3.2.5 See also:\ngeom_point, geom_vline, geom_hline\n\n\n3.2.6 Example\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_abline(intercept = 0, slope = 1) + \n  labs(title=\"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_abline(intercept = 0, slope = 1) + \n  geom_point() + \n  labs(title = \"a2: geom_abline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2"
+    "text": "3.2 geom_abline\n\n3.2.1 Package\nggplot2 (Wickham 2016)\n\n\n3.2.2 Description\nDescription Draw a straight line (\\(Y=mX+c\\)) for a given slope (\\(m\\)) and intercept (\\(c\\)).\n\n\n3.2.3 Understandable aesthetics\nUnlike most other geoms, geom_abline does not depend on the x and y variables that we map for the main plot. geom_abline has its own independent characteristics: intercept and slope.\n\n\n3.2.4 The statistical transformation to use on the data for this layer\nNone (geom_abline is independent from the data layer.)\n\n\n3.2.5 See also:\ngeom_point, geom_vline, geom_hline\n\n\n3.2.6 Example\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_abline(intercept = 0, slope = 1) + \n  labs(title=\"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_abline(intercept = 0, slope = 1) + \n  geom_point() + \n  labs(title = \"a2: geom_abline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2"
   },
   {
     "objectID": "a.html#alluvium",
     "href": "a.html#alluvium",
     "title": "3  A: geom_a",
     "section": "3.3 geom_alluvium",
-    "text": "3.3 geom_alluvium\n\n3.3.1 Package\nggalluvial(Brunson and Read 2019; Brunson 2020)\n\n\n3.3.2 Description\nCreate alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories\n\n\n3.3.3 Understandable aesthetics\nx, y, ymin, ymax, alpha, colour, fill, linetype, size, group (group is used internally; arguments are ignored)\n\n\n3.3.4 Statistics layer(s)\nalluvium\n\n\n3.3.5 See also\ngeom_stratum, geom_flow, geom_lode\n\n\n3.3.6 Example\n\nlibrary(ggalluvial)\nfreq.table &lt;- worldbankdata |&gt;\n  select(Country, Region, Year, Income) |&gt;\n  filter(Year &gt; 2015) |&gt;\n  group_by(Region, Year, Income) |&gt;\n  summarise(n = n()) |&gt;\n  drop_na()\nfreq.table \n\n# A tibble: 153 × 4\n# Groups:   Region, Year [49]\n   Region               Year Income     n\n   &lt;fct&gt;               &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n 1 East Asia & Pacific  2016 LM        13\n 2 East Asia & Pacific  2016 UM        10\n 3 East Asia & Pacific  2016 H         14\n 4 East Asia & Pacific  2017 LM        13\n 5 East Asia & Pacific  2017 UM        10\n 6 East Asia & Pacific  2017 H         14\n 7 East Asia & Pacific  2018 LM        13\n 8 East Asia & Pacific  2018 UM        10\n 9 East Asia & Pacific  2018 H         14\n10 East Asia & Pacific  2019 LM        12\n# ℹ 143 more rows\n\na1 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1/12) + \n  labs(title = \"a1: geom_alluvium only\")\n\na2 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1/12) + \n  geom_stratum(width = 1/12, fill = \"black\", color = \"grey\") +\n  geom_label(stat = \"stratum\", aes(label = after_stat(stratum))) +\n  labs(title = \"a2: geom_alluvium, \\n geom_stratum and geom_label\")\na1/a2"
+    "text": "3.3 geom_alluvium\n\n3.3.1 Package\nggalluvial(Brunson and Read 2019; Brunson 2020)\n\n\n3.3.2 Description\nCreate alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories\n\n\n3.3.3 Understandable aesthetics\nx, y, ymin, ymax, alpha, colour, fill, linetype, size, group (group is used internally; arguments are ignored)\n\n\n3.3.4 The statistical transformation to use on the data for this layer\nalluvium\n\n\n3.3.5 See also\ngeom_stratum, geom_flow, geom_lode\n\n\n3.3.6 Example\n\nlibrary(ggalluvial)\nfreq.table &lt;- worldbankdata |&gt;\n  select(Country, Region, Year, Income) |&gt;\n  filter(Year &gt; 2015) |&gt;\n  group_by(Region, Year, Income) |&gt;\n  summarise(n = n()) |&gt;\n  drop_na()\nfreq.table \n\n# A tibble: 153 × 4\n# Groups:   Region, Year [49]\n   Region               Year Income     n\n   &lt;fct&gt;               &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n 1 East Asia & Pacific  2016 LM        13\n 2 East Asia & Pacific  2016 UM        10\n 3 East Asia & Pacific  2016 H         14\n 4 East Asia & Pacific  2017 LM        13\n 5 East Asia & Pacific  2017 UM        10\n 6 East Asia & Pacific  2017 H         14\n 7 East Asia & Pacific  2018 LM        13\n 8 East Asia & Pacific  2018 UM        10\n 9 East Asia & Pacific  2018 H         14\n10 East Asia & Pacific  2019 LM        12\n# ℹ 143 more rows\n\na1 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1/12) + \n  labs(title = \"a1: geom_alluvium only\")\n\na2 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1/12) + \n  geom_stratum(width = 1/12, fill = \"black\", color = \"grey\") +\n  geom_label(stat = \"stratum\", aes(label = after_stat(stratum))) +\n  labs(title = \"a2: geom_alluvium, \\n geom_stratum and geom_label\")\na1/a2"
   },
   {
     "objectID": "a.html#geom_arc",
     "href": "a.html#geom_arc",
     "title": "3  A: geom_a",
     "section": "3.4 geom_arc",
-    "text": "3.4 geom_arc\n\n3.4.1 Package\nggforce(Pedersen 2022)\n\n\n3.4.2 Description\nDraw a circle or a segment of a circle.\n\n\n3.4.3 Understandable aesthetic\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius, start, end\noptional\ncolor, linewidth, linetype, alpha, lineend\n\n\n3.4.4 The statistical transformation to use on the data for this layer\nstat_arc\n\n\n3.4.5 See also\ngeom_arc2, geom_arc_bar\n\n\n3.4.6 Example\n\nlibrary(ggforce)\nggplot() + \n  geom_arc(aes(x0=0, y0=0, r=8, start=1, end=8)) + \n  geom_arc(aes(x0=0, y0=0, r=8, start=1, end=5), col=\"red\",size=2) + theme(aspect.ratio = 1)"
+    "text": "3.4 geom_arc\n\n3.4.1 Package\nggforce(Pedersen 2022)\n\n\n3.4.2 Description\nDraw a circle or a segment of a circle.\n\n\n3.4.3 Understandable aesthetic\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius, start, end\noptional aesthetics\ncolor, linewidth, linetype, alpha, lineend\n\n\n3.4.4 The statistical transformation to use on the data for this layer\nstat_arc\n\n\n3.4.5 See also\ngeom_arc2, geom_arc_bar\n\n\n3.4.6 Example\n\nlibrary(ggforce)\nggplot() + \n  geom_arc(aes(x0=0, y0=0, r=8, start=1, end=8)) + \n  geom_arc(aes(x0=0, y0=0, r=8, start=1, end=5), col=\"red\",size=2) + theme(aspect.ratio = 1)"
   },
   {
     "objectID": "a.html#arcbar",
@@ -215,5 +215,68 @@
     "title": "A",
     "section": "",
     "text": "In this part of the book we will look at the geoms starts with letter “a” or “A”.\n\n\n\n\n\ngeom\nsection\n\n\n\n\ngeom_area\n3.1\n\n\ngeom_abline\n3.2\n\n\ngeom_alluvium\n3.3\n\n\ngeom_arc\n3.4\n\n\ngeom_arc_bar\n3.5"
+  },
+  {
+    "objectID": "b.html#bar",
+    "href": "b.html#bar",
+    "title": "4  geom_b",
+    "section": "4.1 geom_bar",
+    "text": "4.1 geom_bar\n\n4.1.1 Package\nggplot2 (Wickham 2016)\n\n\n4.1.2 Description\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\n\n\n4.1.3 The statistical transformation to use on the data for this layer\nstat_count - This the default statistics layer. It counts number of cases in each group.\nstat_identify - It plots the data as it is.\n\n\n4.1.4 See also\ngeom_col\n\n4.1.4.1 With count\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income)) + \n  geom_bar()\n\n\n\n\nIllustration of geom_bar to create a bar chart\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income, fill=Region)) + \n  geom_bar()\n\n\n\n\nIllustration of geom_bar to create a stacked bar chart\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income, fill=Region)) + \n  geom_bar(position = \"dodge\")\n\n\n\n\nIllustration of geom_bar to create a cluster bar chart\n\n\n\n\n\n\n4.1.4.2 With identity\n\ndfbar &lt;- data.frame(class=c(\"A\", \"B\"),  income = c(100, 200))\nggplot(dfbar, aes(class, income)) +\n  geom_bar(stat=\"identity\")"
+  },
+  {
+    "objectID": "b.html#bin2d",
+    "href": "b.html#bin2d",
+    "title": "4  geom_b",
+    "section": "4.4 geom_bin2d",
+    "text": "4.4 geom_bin2d\n\n4.4.1 Package\nggplot2 (R-ggplot2?)\n\n\n4.4.2 Description\nDivides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.\n\n\n4.4.3 Understandable aesthetics\nx, y, fill, group\n\n\n4.4.4 The statistical transformation to use on the data for this layer\nstat_bin_2d\nSee also:  geom_bin_2d, geom_point\nExample:\n\nggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +\n  geom_bin2d() + \n  theme(aspect.ratio = 1) +\n  scale_fill_viridis()\n\n\n\n\nIllustration of using geom_bin_2d"
+  },
+  {
+    "objectID": "b.html#bin2dpattern",
+    "href": "b.html#bin2dpattern",
+    "title": "4  geom_b",
+    "section": "4.3 geom_bin2d_pattern",
+    "text": "4.3 geom_bin2d_pattern\n\n4.3.1 Package\nggpattern(FC, Davis, and ggplot2 authors 2023)\n\n\n4.3.2 Description\nDivides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.\n\n\n4.3.3 Understandable aesthetics\npattern_fill (pattern_* - for mapping variables under aesthetics), pattern (to set a patten, for example pattern=‘stripe’), fill, colour\n\n\n4.3.4 The statistical transformation to use on the data for this layer\n\n\n4.3.5 See also\ngeom_bin2d, geom_point\n\nggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +\n  ggpattern::geom_bin2d_pattern(bins=20) + \n  ggpattern::scale_pattern_fill_viridis_c()\n\n\n\n\nIllustration of using geom_bin_2d\n\n\n\n  theme(aspect.ratio = 1)\n\nList of 1\n $ aspect.ratio: num 1\n - attr(*, \"class\")= chr [1:2] \"theme\" \"gg\"\n - attr(*, \"complete\")= logi FALSE\n - attr(*, \"validate\")= logi TRUE"
+  },
+  {
+    "objectID": "b.html#see-also-2",
+    "href": "b.html#see-also-2",
+    "title": "4  geom_b{#sec-b}",
+    "section": "4.4 See also",
+    "text": "4.4 See also\ngeom_bin2d, geom_point\n\nggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +\n  ggpattern::geom_bin2d_pattern(bins=20) + \n  theme(aspect.ratio = 1)\n\nWarning: Removed 6051 rows containing non-finite values (`stat_bin2d()`).\n\n\n\n\n\nIllustration of using geom_bin_2d"
+  },
+  {
+    "objectID": "b.html#blank",
+    "href": "b.html#blank",
+    "title": "4  geom_b",
+    "section": "4.5 geom_blank",
+    "text": "4.5 geom_blank\nPackage:  ggplot2 (R-ggplot2?)\nDescription:  Draws nothing."
+  },
+  {
+    "objectID": "b.html#geom_boxplot",
+    "href": "b.html#geom_boxplot",
+    "title": "4  geom_b{#sec-b}",
+    "section": "4.7 geom_boxplot",
+    "text": "4.7 geom_boxplot\nPackage:  ggplot2 (R-ggplot2?)\nDescription:  Draw a bar proportional to the specified number. For example, number of cases or user defined number.\n\n4.7.1 The statistical transformation to use on the data for this layer\nstat_boxplot - This the default statistics layer. This computes minimum, maximum, median, first quartile (\\(Q1\\)), third quartile (\\(Q3\\)), upper whisker extends up to \\(Q3 + 1.5 \\times IQR\\) and lower whisker extends up to \\(Q1 - 1.5 \\times IQR\\), where \\(IQR = Q3 - Q1\\). In a notched box plot, it creates 95% confidence interval for mean.\nSee also:  geom_col\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking)) + \n  geom_boxplot()\n\nWarning: Removed 37 rows containing non-finite values (`stat_boxplot()`).\n\n\n\n\n\nIllustration of using geom_boxplot\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking)) +  \ngeom_boxplot(outlier.colour=\"black\", outlier.shape=16,\n             outlier.size=2, notch=TRUE)\n\nWarning: Removed 37 rows containing non-finite values (`stat_boxplot()`).\n\n\n\n\n\nIllustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot.\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "b.html#boxplot",
+    "href": "b.html#boxplot",
+    "title": "4  geom_b",
+    "section": "4.6 geom_boxplot",
+    "text": "4.6 geom_boxplot\nPackage:  ggplot2 (R-ggplot2?)\nDescription:  Draw a bar proportional to the specified number. For example, number of cases or user defined number.\n\n4.6.1 The statistical transformation to use on the data for this layer\nstat_boxplot - This the default statistics layer. This computes minimum, maximum, median, first quartile (\\(Q1\\)), third quartile (\\(Q3\\)), upper whisker extends up to \\(Q3 + 1.5 \\times IQR\\) and lower whisker extends up to \\(Q1 - 1.5 \\times IQR\\), where \\(IQR = Q3 - Q1\\). In a notched box plot, it creates 95% confidence interval for mean.\nSee also:  geom_col\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking, x=factor(0))) + \n  geom_boxplot() + \n  theme(axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank())\n\n\n\n\nIllustration of using geom_boxplot\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking, x=factor(0))) +  \ngeom_boxplot(outlier.colour=\"black\", outlier.shape=16,\n             outlier.size=2, notch=TRUE) + \n  theme(axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank())\n\n\n\n\nIllustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot.\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "partb.html",
+    "href": "partb.html",
+    "title": "B",
+    "section": "",
+    "text": "In this part of the book we will look at the geoms starts with letter “b” or “B”.\n\n\n\n\n\ngeom\nsection\n\n\n\n\ngeom_bar\n4.1\n\n\ngeom_bin_2d\n4.2\n\n\ngeom_bin2d_pattern\n4.3\n\n\ngeom_bin2d\n4.4\n\n\ngeom_blank\n4.5\n\n\ngeom_boxplot\n4.6"
+  },
+  {
+    "objectID": "intro.html#r-packages-with-geom-implementation",
+    "href": "intro.html#r-packages-with-geom-implementation",
+    "title": "2  Introduction",
+    "section": "5.2 R packages with geom implementation",
+    "text": "5.2 R packages with geom implementation"
   }
 ]

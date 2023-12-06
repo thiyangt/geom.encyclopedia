@@ -1,1 +1,17 @@
 # B  {#sec-B.unnumbered}
+
+In this part of the book we will look at the geoms starts with letter "b" or "B".
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+geomb <- c('geom_bar',
+          'geom_bin_2d',
+          'geom_bin2d_pattern',
+          'geom_bin2d',
+          'geom_blank',
+          'geom_boxplot')
+sectionb <- c(4.1, 4.2, 4.3, 4.4, 4.5, 4.6)
+dfb <- data.frame(geom = geomb,
+                  section = sectionb)
+dfb |> knitr::kable(format = "html") |> kable_styling(full_width = F)
+```
