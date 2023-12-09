@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Visualisation geom Encyclopedia - 5&nbsp; geom_a</title>
+<title>Data Visualisation geom Encyclopedia - 5&nbsp; geom_c</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./partc.html">C</a></li><li class="breadcrumb-item"><a href="./c.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">geom_a</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./partc.html">C</a></li><li class="breadcrumb-item"><a href="./c.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">geom_c</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -166,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./c.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">geom_c</span></span></a>
   </div>
 </li>
       </ul>
@@ -584,7 +637,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#geom_abline" id="toc-geom_abline" class="nav-link active" data-scroll-target="#geom_abline"><span class="header-section-number">5.1</span> geom_abline</a></li>
+  <li><a href="#geom_col" id="toc-geom_col" class="nav-link active" data-scroll-target="#geom_col"><span class="header-section-number">5.1</span> geom_col</a>
+  <ul class="collapse">
+  <li><a href="#package" id="toc-package" class="nav-link" data-scroll-target="#package"><span class="header-section-number">5.1.1</span> Package</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">5.1.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics" id="toc-understandable-aesthetics" class="nav-link" data-scroll-target="#understandable-aesthetics"><span class="header-section-number">5.1.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">5.1.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">5.1.5</span> See also</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">5.1.6</span> Example</a></li>
+  </ul></li>
+  <li><a href="#col_pattern" id="toc-col_pattern" class="nav-link" data-scroll-target="#col_pattern"><span class="header-section-number">5.2</span> geom_col_pattern</a>
+  <ul class="collapse">
+  <li><a href="#package-1" id="toc-package-1" class="nav-link" data-scroll-target="#package-1"><span class="header-section-number">5.2.1</span> Package</a></li>
+  <li><a href="#description-1" id="toc-description-1" class="nav-link" data-scroll-target="#description-1"><span class="header-section-number">5.2.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-1" id="toc-understandable-aesthetics-1" class="nav-link" data-scroll-target="#understandable-aesthetics-1"><span class="header-section-number">5.2.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-1" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-1" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-1"><span class="header-section-number">5.2.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-1" id="toc-see-also-1" class="nav-link" data-scroll-target="#see-also-1"><span class="header-section-number">5.2.5</span> See also</a></li>
+  </ul></li>
+  <li><a href="#circle" id="toc-circle" class="nav-link" data-scroll-target="#circle"><span class="header-section-number">5.3</span> geom_circle</a>
+  <ul class="collapse">
+  <li><a href="#package-2" id="toc-package-2" class="nav-link" data-scroll-target="#package-2"><span class="header-section-number">5.3.1</span> Package</a></li>
+  <li><a href="#description-2" id="toc-description-2" class="nav-link" data-scroll-target="#description-2"><span class="header-section-number">5.3.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-2" id="toc-understandable-aesthetics-2" class="nav-link" data-scroll-target="#understandable-aesthetics-2"><span class="header-section-number">5.3.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-2" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-2" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-2"><span class="header-section-number">5.3.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-2" id="toc-see-also-2" class="nav-link" data-scroll-target="#see-also-2"><span class="header-section-number">5.3.5</span> See also</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/c.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -593,7 +670,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-a" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">geom_a</span></span></h1>
+<h1 class="title"><span id="sec-c" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">geom_c</span></span></h1>
 </div>
 
 
@@ -608,10 +685,127 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="geom_abline" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="geom_abline"><span class="header-section-number">5.1</span> geom_abline</h2>
+<section id="geom_col" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="geom_col"><span class="header-section-number">5.1</span> geom_col</h2>
+<section id="package" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="package"><span class="header-section-number">5.1.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+</section>
+<section id="description" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="description"><span class="header-section-number">5.1.2</span> Description</h3>
+<p>Create bar charts</p>
+</section>
+<section id="understandable-aesthetics" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="understandable-aesthetics"><span class="header-section-number">5.1.3</span> Understandable aesthetics</h3>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">5.1.4</span> The statistical transformation to use on the data for this layer</h3>
+<p>Before using <code>geom_col</code>, you need to create a summary table of counts/proportions or you can apply <code>geom_col</code> for a summary table already given.</p>
+<p><code>after_stat(count)</code></p>
+<p><code>after_stat(prop)</code></p>
+</section>
+<section id="see-also" class="level3" data-number="5.1.5">
+<h3 data-number="5.1.5" class="anchored" data-anchor-id="see-also"><span class="header-section-number">5.1.5</span> See also</h3>
+<p><a href="b.html#bar">geom_bar</a></p>
+</section>
+<section id="example" class="level3" data-number="5.1.6">
+<h3 data-number="5.1.6" class="anchored" data-anchor-id="example"><span class="header-section-number">5.1.6</span> Example</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="c_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="col_pattern" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="col_pattern"><span class="header-section-number">5.2</span> geom_col_pattern</h2>
+<section id="package-1" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="package-1"><span class="header-section-number">5.2.1</span> Package</h3>
+<p>ggpattern <span class="citation" data-cites="ggpattern">(<a href="references.html#ref-ggpattern" role="doc-biblioref">FC, Davis, and ggplot2 authors 2023</a>)</span></p>
+</section>
+<section id="description-1" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="description-1"><span class="header-section-number">5.2.2</span> Description</h3>
+<p>Fill columns with a pattern. User can map a variable for pattern or set a pattern.</p>
+</section>
+<section id="understandable-aesthetics-1" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="understandable-aesthetics-1"><span class="header-section-number">5.2.3</span> Understandable aesthetics</h3>
+<p><code>x</code>, <code>y</code>, <code>pattern</code>, <code>fill</code>, <code>colour</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-1" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-1"><span class="header-section-number">5.2.4</span> The statistical transformation to use on the data for this layer</h3>
+<p>None</p>
+</section>
+<section id="see-also-1" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="see-also-1"><span class="header-section-number">5.2.5</span> See also</h3>
+<p><a href="#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Income) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> n)) <span class="sc">+</span>   ggpattern<span class="sc">::</span><span class="fu">geom_col_pattern</span>( <span class="at">pattern =</span> <span class="st">'stripe'</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill    =</span> <span class="st">'white'</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour  =</span> <span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="c_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Illustration of geom_col_pattern</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="circle" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="circle"><span class="header-section-number">5.3</span> geom_circle</h2>
+<section id="package-2" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="package-2"><span class="header-section-number">5.3.1</span> Package</h3>
+<p>ggforce <span class="citation" data-cites="ggforce">(<a href="references.html#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p>
+</section>
+<section id="description-2" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="description-2"><span class="header-section-number">5.3.2</span> Description</h3>
+</section>
+<section id="understandable-aesthetics-2" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="understandable-aesthetics-2"><span class="header-section-number">5.3.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x0</code> - starting coordinate of x-axis , <code>y0</code> - starting coordinate of x-axis, <code>r</code> - radius</p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>color</code>, <code>fill</code>, <code>linewidth</code>, <code>linetype</code>, <code>alpha</code>, <code>lineend</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-2" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-2"><span class="header-section-number">5.3.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_align</code></p>
+</section>
+<section id="see-also-2" class="level3" data-number="5.3.5">
+<h3 data-number="5.3.5" class="anchored" data-anchor-id="see-also-2"><span class="header-section-number">5.3.5</span> See also</h3>
+<p><a href="#mark_circle">geom_mark_circle</a>, ### Example</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span>Electricity, <span class="at">col=</span>Income)) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  ggforce<span class="sc">::</span><span class="fu">geom_circle</span>(<span class="fu">aes</span>(<span class="at">x0 =</span> <span class="dv">26</span>, <span class="at">y0 =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">20</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="c_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ggpattern" class="csl-entry" role="listitem">
+FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. <em>Ggpattern: ’Ggplot2’ Pattern Geoms</em>.
+</div>
+<div id="ref-ggforce" class="csl-entry" role="listitem">
+Pedersen, Thomas Lin. 2022. <em>Ggforce: Accelerating ’Ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggforce">https://CRAN.R-project.org/package=ggforce</a>.
+</div>
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

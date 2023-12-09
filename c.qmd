@@ -1,3 +1,119 @@
-# geom_a  {#sec-a}
+# geom_c  {#sec-c}
 
-## geom_abline
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+
+## geom_col
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Create bar charts
+
+### Understandable aesthetics
+
+### The statistical transformation to use on the data for this layer
+
+Before using `geom_col`, you need to create a summary table of counts/proportions or you can apply `geom_col` for a summary table already given.
+
+`after_stat(count)`
+
+`after_stat(prop)`
+
+### See also
+
+[geom_bar](#bar)
+
+### Example
+
+```{r, echo=FALSE}
+worldbankdata |>
+  filter(Year == 2021) |>
+  group_by(Income) |>
+  summarise(n = n()) |>
+  ggplot(aes(x = Income, y = n)) +   geom_col()
+
+```
+
+
+## geom_col_pattern{#col_pattern}
+
+### Package
+
+ggpattern [@ggpattern]
+
+### Description
+
+Fill columns with a pattern. User can map a variable for pattern or set a pattern.
+
+### Understandable aesthetics
+
+`x`, `y`, `pattern`, `fill`, `colour`
+
+### The statistical transformation to use on the data for this layer
+
+None
+
+
+### See also
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+
+```{r, fig.cap="Illustration of geom_col_pattern"}
+worldbankdata |>
+  filter(Year == 2021) |>
+  group_by(Income) |>
+  summarise(n = n()) |>
+  ggplot(aes(x = Income, y = n)) +   ggpattern::geom_col_pattern( pattern = 'stripe',
+    fill    = 'white',
+    colour  = 'black')
+```
+
+
+## geom_circle{#circle}
+
+### Package
+
+ggforce [@ggforce]
+
+### Description
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x0` - starting coordinate of x-axis , `y0` - starting coordinate of x-axis, `r` - radius
+
+**optional aesthetics**
+
+`color`, `fill`, `linewidth`, `linetype`, `alpha`, `lineend`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_align`
+
+### See also
+
+[geom_mark_circle](#mark_circle), 
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+worldbankdata |>
+  filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Electricity, col=Income)) + 
+  geom_point() + 
+  ggforce::geom_circle(aes(x0 = 26, y0 = 5, r = 20),
+              inherit.aes = FALSE) + 
+  theme(aspect.ratio = 1)
+```
+

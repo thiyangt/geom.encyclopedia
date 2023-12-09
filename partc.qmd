@@ -1,1 +1,17 @@
 # C  {#sec-C.unnumbered}
+
+
+In this part of the book we will look at the geoms starts with letter "c" or "C".
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+geomc <- c('geom_col',
+          'geom_col_pattern')
+sectionc <- c(5.1, 5.2)
+dfc <- data.frame(geom = geomc,
+                  section = sectionc)
+dfc |> knitr::kable(format = "html") |> kable_styling(full_width = F)
+```
+

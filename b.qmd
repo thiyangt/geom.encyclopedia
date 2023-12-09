@@ -133,7 +133,7 @@ Divides the Cartesian plane created by x-variable and y-variable into rectangles
 ```{r, fig.cap="Illustration of using geom_bin_2d", message=FALSE, warning=FALSE}
 ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
   ggpattern::geom_bin2d_pattern(bins=20) + 
-  ggpattern::scale_pattern_fill_viridis_c()
+  scale_fill_viridis() +
   theme(aspect.ratio = 1)
 ```
 
@@ -194,7 +194,9 @@ worldbankdata |>
   dplyr::select(Cooking) |>
 ggplot(aes(y = Cooking, x=factor(0))) + 
   geom_boxplot() + 
-  theme(axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank())
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
 ```
 
 ```{r geomboxparam, fig.cap="Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot.", message=FALSE, warning=FALSE}
@@ -204,7 +206,9 @@ worldbankdata |>
 ggplot(aes(y = Cooking, x=factor(0))) +  
 geom_boxplot(outlier.colour="black", outlier.shape=16,
              outlier.size=2, notch=TRUE) + 
-  theme(axis.title.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank())
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
 
 ```
 
