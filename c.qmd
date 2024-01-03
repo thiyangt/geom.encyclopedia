@@ -35,7 +35,7 @@ Before using `geom_col`, you need to create a summary table of counts/proportion
 
 ### Example
 
-```{r, echo=FALSE}
+```{r}
 worldbankdata |>
   filter(Year == 2021) |>
   group_by(Income) |>
@@ -78,6 +78,46 @@ worldbankdata |>
     colour  = 'black')
 ```
 
+## geom_count{#count}
+
+### Package
+
+ggplo2t [@ggplot2]
+
+### Description
+
+Counts the observations at every point on the plot, and then maps the count with the size of the point.
+
+### Understandable aesthetics
+
+`x`, `y`, `pattern`, `fill`, `colour`
+
+### The statistical transformation to use on the data for this layer
+
+None
+
+
+### See also
+
+[geom_point](#point)
+
+### Example
+
+Here, both `geom_point` and `geom_count` are plotted to see the difference.
+
+```{r, warning=FALSE, message=FALSE}
+a1 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
+  geom_point(alpha = 0.5) + 
+  labs(title = "a1: geom_point") +
+  theme(aspect.ratio = 1)
+a2 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
+  geom_count() + 
+  labs(title = "a2: geom_count") +
+  theme(aspect.ratio = 1)
+a1 | a2
+```
+
+
 
 ## geom_circle{#circle}
 
@@ -117,3 +157,108 @@ ggplot(aes(y = Cooking, x=Electricity, col=Income)) +
   theme(aspect.ratio = 1)
 ```
 
+## geom_contour {#contour}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Create contour plots
+
+### Understandable aesthetics
+
+`x`, `y`, `alpha`, `colour`, `linetype`, `linewidth`, `group`, `weight`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_contour`
+
+### See also
+
+[geom_contour_filled](#contour_filled), [geom_tile](#tile), [geom_density_2d](#density_2d)
+  
+### Example
+
+
+
+## geom_contour_filled {#contour_filled}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Create contour plots
+
+### Understandable aesthetics
+
+`x`, `y`, `alpha`, `colour`, `linetype`, `linewidth`, `group`, `weight`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_contour`
+
+### See also
+
+[geom_contour](#contour), [geom_tile](#tile), [geom_density_2d](#density_2d)
+  
+### Example
+
+
+## geom_curve {#curve}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+`geom_segment()` draws a straight line between between two points. geom_curve draws a curved line.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`, `y`
+
+**optional aesthetics**
+
+
+`alpha`, `colour`, `linetype`, `linewidth`, `group`
+
+### The statistical transformation to use on the data for this layer 
+
+`identity`
+
+### See also
+
+[geom_segment](#segment)
+  
+### Examples
+
+
+```{r}
+df <- data.frame(x1 = 0, x2 = 100, y1 = 0, y2 = 100)
+ggplot(df) + 
+  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2))
+```
+
+```{r}
+df <- data.frame(x2 = c( 3, 4, 4, 3, -3, -4, -4, -3),
+                 y2 = c( 4, 3, -3, -4, -4, -3, 3, 3),
+                 x1 = rep(0, 8),
+                 y1 = rep(0, 8))
+
+ggplot(df) + 
+  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2),
+             curvature = 0.75, angle = -45,
+             arrow = arrow(length = unit(0.25,"cm"))) + 
+  coord_equal() +
+  xlim(-5, 5) + ylim(-5, 5)
+```
