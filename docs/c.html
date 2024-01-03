@@ -185,7 +185,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A: geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
   </div>
 </li>
       </ul>
@@ -698,6 +698,15 @@ div.csl-indent {
   <li><a href="#see-also-6" id="toc-see-also-6" class="nav-link" data-scroll-target="#see-also-6"><span class="header-section-number">5.7.5</span> See also</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">5.7.6</span> Examples</a></li>
   </ul></li>
+  <li><a href="#crossbar" id="toc-crossbar" class="nav-link" data-scroll-target="#crossbar"><span class="header-section-number">5.8</span> geom_crossbar</a>
+  <ul class="collapse">
+  <li><a href="#package-7" id="toc-package-7" class="nav-link" data-scroll-target="#package-7"><span class="header-section-number">5.8.1</span> Package</a></li>
+  <li><a href="#description-7" id="toc-description-7" class="nav-link" data-scroll-target="#description-7"><span class="header-section-number">5.8.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-7" id="toc-understandable-aesthetics-7" class="nav-link" data-scroll-target="#understandable-aesthetics-7"><span class="header-section-number">5.8.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-7" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-7" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-7"><span class="header-section-number">5.8.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-7" id="toc-see-also-7" class="nav-link" data-scroll-target="#see-also-7"><span class="header-section-number">5.8.5</span> See also</a></li>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">5.8.6</span> Examples</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/c.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -977,6 +986,46 @@ div.csl-indent {
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="c_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="crossbar" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="crossbar"><span class="header-section-number">5.8</span> geom_crossbar</h2>
+<section id="package-7" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="package-7"><span class="header-section-number">5.8.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+</section>
+<section id="description-7" class="level3" data-number="5.8.2">
+<h3 data-number="5.8.2" class="anchored" data-anchor-id="description-7"><span class="header-section-number">5.8.2</span> Description</h3>
+</section>
+<section id="understandable-aesthetics-7" class="level3" data-number="5.8.3">
+<h3 data-number="5.8.3" class="anchored" data-anchor-id="understandable-aesthetics-7"><span class="header-section-number">5.8.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x</code> or <code>y</code></p>
+<p><code>xmin</code> or <code>ymin</code></p>
+<p><code>xmax</code> or <code>ymax</code></p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>alpha</code>, <code>colour</code>, <code>linetype</code>, <code>linewidth</code>, <code>group</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-7" class="level3" data-number="5.8.4">
+<h3 data-number="5.8.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-7"><span class="header-section-number">5.8.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>identity</code></p>
+</section>
+<section id="see-also-7" class="level3" data-number="5.8.5">
+<h3 data-number="5.8.5" class="anchored" data-anchor-id="see-also-7"><span class="header-section-number">5.8.5</span> See also</h3>
+<p><a href="#segment">geom_segment</a></p>
+</section>
+<section id="examples-1" class="level3" data-number="5.8.6">
+<h3 data-number="5.8.6" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">5.8.6</span> Examples</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>summary.wb <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> Income, mean, <span class="at">data=</span>worldbankdata)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Electricity)) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_crossbar</span>(<span class="at">data=</span>summary.wb, <span class="fu">aes</span>(<span class="at">ymin =</span> Electricity, <span class="at">ymax =</span> Electricity),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">"red"</span>, <span class="at">width =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="c_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 

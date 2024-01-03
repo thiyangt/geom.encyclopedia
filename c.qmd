@@ -262,3 +262,48 @@ ggplot(df) +
   coord_equal() +
   xlim(-5, 5) + ylim(-5, 5)
 ```
+
+## geom_crossbar {#crossbar}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x` or `y`
+
+`xmin` or `ymin`
+
+`xmax` or `ymax`
+
+**optional aesthetics**
+
+
+`alpha`, `colour`, `linetype`, `linewidth`, `group`
+
+### The statistical transformation to use on the data for this layer 
+
+`identity`
+
+### See also
+
+[geom_segment](#segment)
+  
+### Examples
+
+```{r, warning=FALSE, message=FALSE}
+summary.wb <- aggregate(. ~ Income, mean, data=worldbankdata)
+ggplot(worldbankdata, aes(x = Income, y = Electricity)) + 
+  geom_point() + 
+  geom_crossbar(data=summary.wb, aes(ymin = Electricity, ymax = Electricity),
+                  size=1,col="red", width = .5)
+```
+
