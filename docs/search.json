@@ -271,5 +271,103 @@
     "title": "5  geom_c",
     "section": "5.8 geom_crossbar",
     "text": "5.8 geom_crossbar\n\n5.8.1 Package\nggplot2 (Wickham 2016)\n\n\n5.8.2 Description\n\n\n5.8.3 Understandable aesthetics\nrequired aesthetics\nx or y\nxmin or ymin\nxmax or ymax\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.8.4 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.8.5 See also\ngeom_segment\n\n\n5.8.6 Examples\n\nsummary.wb &lt;- aggregate(. ~ Income, mean, data=worldbankdata)\nggplot(worldbankdata, aes(x = Income, y = Electricity)) + \n  geom_point() + \n  geom_crossbar(data=summary.wb, aes(ymin = Electricity, ymax = Electricity),\n                  size=1,col=\"red\", width = .5)\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "d.html#geom_density",
+    "href": "d.html#geom_density",
+    "title": "6  geom_d",
+    "section": "6.1 geom_density",
+    "text": "6.1 geom_density\n\n6.1.1 Package\nggplot2 (Wickham 2016)\n\n\n6.1.2 Description\nComputes and draws kernel density estimation.\n\n\n6.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\n\n\n6.1.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.1.5 See also\ngeom_histofram\n\n\n6.1.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   geom_density(fill = \"#d95f02\")"
+  },
+  {
+    "objectID": "d.html#geom_density_2d",
+    "href": "d.html#geom_density_2d",
+    "title": "6  geom_d",
+    "section": "6.2 geom_density_2d",
+    "text": "6.2 geom_density_2d\n\n6.2.1 Package\nggplot2 (Wickham 2016)\n\n\n6.2.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with contours.\n\n\n6.2.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n6.2.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.2.5 See also\ngeom_histofram\n\n\n6.2.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity, col=group)) +   geom_density_2d(col = \"#d95f02\")\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "d.html#density",
+    "href": "d.html#density",
+    "title": "6  geom_d",
+    "section": "6.1 geom_density",
+    "text": "6.1 geom_density\n\n6.1.1 Package\nggplot2 (Wickham 2016)\n\n\n6.1.2 Description\nComputes and draws kernel density estimation.\n\n\n6.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\n\n\n6.1.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.1.5 See also\ngeom_histofram\n\n\n6.1.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   geom_density(fill = \"#d95f02\")"
+  },
+  {
+    "objectID": "d.html#density_2d",
+    "href": "d.html#density_2d",
+    "title": "6  geom_d",
+    "section": "6.2 geom_density_2d",
+    "text": "6.2 geom_density_2d\n\n6.2.1 Package\nggplot2 (Wickham 2016)\n\n\n6.2.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with contours.\n\n\n6.2.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n6.2.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.2.5 See also\ngeom_histofram\n\n\n6.2.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d() +\n  xlim(0, 100) +\n  ylim(0, 100) +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a1: geom_density_2d only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() +\n  geom_density_2d() +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d\") \n  \na1|a2"
+  },
+  {
+    "objectID": "d.html#density_2d_filled",
+    "href": "d.html#density_2d_filled",
+    "title": "6  geom_d",
+    "section": "6.4 geom_density_2d_filled",
+    "text": "6.4 geom_density_2d_filled\n\n6.4.1 Package\nggplot2 (Wickham 2016)\n\n\n6.4.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with filled contour bands.\n\n\n6.4.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, subgroup\n\n\n6.4.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.4.5 See also\ngeom_histogram\n\n\n6.4.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled() + \n  labs(title = \"a1: geom_density_2d_filled only\") + \n  theme(legend.position=\"none\", aspect.ratio = 1)\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() + \n  geom_density_2d_filled(alpha = 0.5) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d_filled\") + \n  theme(legend.position=\"none\", aspect.ratio = 1)\na1 | a2"
+  },
+  {
+    "objectID": "d.html#dl",
+    "href": "d.html#dl",
+    "title": "6  geom_d",
+    "section": "6.7 geom_dl",
+    "text": "6.7 geom_dl\n\n6.7.1 Package\ndirectlabels (Hocking 2023)\n\n\n6.7.2 Description\nDisplay direct labels on the plot.\n\n\n6.7.3 Understandable aesthetics\nlayer\n\n\n6.7.4 The statistical transformation to use on the data for this layer\nstat_identity\n\n\n6.7.5 See also\ngeom_text\n\n\n6.7.6 Example\n\nlibrary(directlabels)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point(aes(col=Income)) +\n  theme(aspect.ratio = 1) +\n  scale_color_brewer(palette = \"Set1\")\na1 +\n  geom_dl(aes(label=Income), method=\"smart.grid\")+\n  scale_shape_manual(values=c(H = 1, \n                              UM = 6,\n                              L = 3,\n                              LM = 2),\n                     guide=\"none\")"
+  },
+  {
+    "objectID": "d.html#dotplot",
+    "href": "d.html#dotplot",
+    "title": "6  geom_d",
+    "section": "6.8 geom_dotplot",
+    "text": "6.8 geom_dotplot\n\n6.8.1 Package\nggplot2 (Wickham 2016)\n\n\n6.8.2 Description\nCreate dotplot.\n\n\n6.8.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , group, linetype, stroke\n\n\n6.8.4 The statistical transformation to use on the data for this layer\nstat_identity\n\n\n6.8.5 See also\ngeom_histogram\n\n\n6.8.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x=Cooking)) +   \n  geom_dotplot(binwidth = 1) + \n  theme(legend.position=\"none\", aspect.ratio = 1)"
+  },
+  {
+    "objectID": "d.html#delaunay_tile",
+    "href": "d.html#delaunay_tile",
+    "title": "6  geom_d",
+    "section": "6.9 geom_delaunay_tile",
+    "text": "6.9 geom_delaunay_tile\n\n6.9.1 Package\nggplot2 (Pedersen 2022)\n\n\n6.9.2 Description\nDisplay voronoi tesselation and delaunay triangulation.\n\n\n6.9.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\n\n\n6.9.4 The statistical transformation to use on the data for this layer\ndelaunay_tile\n\n\n6.9.5 See also\ngeom_delaunay_segment\n\n\n6.9.6 Example\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_tile(alpha=0.5) + \n  labs(title = \"a1: geom_point only\") +\n  theme(aspect.ratio = 1)\n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_tile(alpha=0.5) + \n  labs(title = \"a2: geom_point and \\n geom_delaunay_tile\") +\n  theme(aspect.ratio = 1)\na1 | a2"
+  },
+  {
+    "objectID": "d.html#delaunay_segment",
+    "href": "d.html#delaunay_segment",
+    "title": "6  geom_d",
+    "section": "6.10 geom_delaunay_segment",
+    "text": "6.10 geom_delaunay_segment\n\n6.10.1 Package\nggplot2 (Pedersen 2022)\n\n\n6.10.2 Description\nDisplay voronoi tesselation and delaunay triangulation.\n\n\n6.10.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\n\n\n6.10.4 The statistical transformation to use on the data for this layer\ndelaunay_segment\n\n\n6.10.5 See also\ngeom_delaunay_tile\n\n\n6.10.6 Example\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\n\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_segment() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a1: geom_delaunay_segment only\") \n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_segment() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a2: geom_point and \\n geom_delaunay_segment\") \n\na1 | a2"
+  },
+  {
+    "objectID": "d.html#delaunay_segment2",
+    "href": "d.html#delaunay_segment2",
+    "title": "6  geom_d",
+    "section": "6.11 geom_delaunay_segment2",
+    "text": "6.11 geom_delaunay_segment2\n\n6.11.1 Package\nggplot2 (Pedersen 2022)\n\n\n6.11.2 Description\nDisplay voronoi tesselation and delaunay triangulation.\n\n\n6.11.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\n\n\n6.11.4 The statistical transformation to use on the data for this layer\ndelaunay_segment2\n\n\n6.11.5 See also\ngeom_delaunay_tile\n\n\n6.11.6 Example\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\n\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_segment2() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a1: geom_delaunay_segment2 only\") \n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_segment2() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a2: geom_point and \\n geom_delaunay_segment2\") \n\na1 | a2"
+  },
+  {
+    "objectID": "d.html#geom_density2d",
+    "href": "d.html#geom_density2d",
+    "title": "6  geom_d",
+    "section": "6.3 geom_density2d",
+    "text": "6.3 geom_density2d"
+  },
+  {
+    "objectID": "d.html#geom_density_ridges",
+    "href": "d.html#geom_density_ridges",
+    "title": "6  geom_d",
+    "section": "6.5 geom_density_ridges",
+    "text": "6.5 geom_density_ridges"
+  },
+  {
+    "objectID": "d.html#geom_density_ridges_gradient",
+    "href": "d.html#geom_density_ridges_gradient",
+    "title": "6  geom_d",
+    "section": "6.6 geom_density_ridges_gradient",
+    "text": "6.6 geom_density_ridges_gradient"
+  },
+  {
+    "objectID": "d.html#geom_dumbbell",
+    "href": "d.html#geom_dumbbell",
+    "title": "6  geom_d",
+    "section": "6.12 geom_dumbbell",
+    "text": "6.12 geom_dumbbell\n\nlibrary(ggalt)\n\nRegistered S3 methods overwritten by 'ggalt':\n  method                  from   \n  grid.draw.absoluteGrob  ggplot2\n  grobHeight.absoluteGrob ggplot2\n  grobWidth.absoluteGrob  ggplot2\n  grobX.absoluteGrob      ggplot2\n  grobY.absoluteGrob      ggplot2\n\n\n\n\n\n\nHocking, Toby Dylan. 2023. Directlabels: Direct Labels for Multicolor Plots. https://CRAN.R-project.org/package=directlabels.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   }
 ]

@@ -1,3 +1,430 @@
-# geom_a  {#sec-a}
+# geom_d  {#sec-d}
 
-## geom_abline
+
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+
+## geom_density {#density}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Computes and draws kernel density estimation.
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`, `weight`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`stat_density`
+
+
+### See also
+
+[geom_histofram](#hist)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+worldbankdata |>
+  ggplot(aes(x = Electricity)) +   geom_density(fill = "#d95f02")
+
+```
+
+## geom_density_2d {#density_2d}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Computes a 2D kernel density estimation using `MASS::kde2d()` and display the results with contours. 
+
+### Understandable aesthetics
+
+`stat_density`
+
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`stat_density`
+
+
+### See also
+
+[geom_histofram](#hist)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+a1 <- worldbankdata |>
+  ggplot(aes(y = Cooking, x=Electricity)) +   
+  geom_density_2d() +
+  xlim(0, 100) +
+  ylim(0, 100) +
+  theme(aspect.ratio = 1) + 
+  labs(title = "a1: geom_density_2d only")
+a2 <- worldbankdata |>
+  ggplot(aes(y = Cooking, x=Electricity)) +   
+  geom_point() +
+  geom_density_2d() +
+  theme(aspect.ratio = 1) + 
+  labs(title = "a2: geom_point and \n geom_density_2d") 
+  
+a1|a2
+```
+
+## geom_density2d
+
+## geom_density_2d_filled {#density_2d_filled}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Computes a 2D kernel density estimation using `MASS::kde2d()` and display the results with filled contour bands. 
+
+### Understandable aesthetics
+
+`stat_density`
+
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `group`, `linetype`, `linewidth`, `subgroup`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`stat_density`
+
+
+### See also
+
+[geom_histogram](#hist)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+a1 <- worldbankdata |>
+  ggplot(aes(y = Cooking, x=Electricity)) +   
+  geom_density_2d_filled() + 
+  labs(title = "a1: geom_density_2d_filled only") + 
+  theme(legend.position="none", aspect.ratio = 1)
+a2 <- worldbankdata |>
+  ggplot(aes(y = Cooking, x=Electricity)) +   
+  geom_point() + 
+  geom_density_2d_filled(alpha = 0.5) + 
+  labs(title = "a2: geom_point and \n geom_density_2d_filled") + 
+  theme(legend.position="none", aspect.ratio = 1)
+a1 | a2
+```
+
+## geom_density_ridges
+
+## geom_density_ridges_gradient
+
+
+## geom_dl {#dl}
+
+
+### Package
+
+directlabels [@directlabels]
+
+### Description
+
+Display direct labels on the plot.
+
+### Understandable aesthetics
+
+`layer`
+
+
+### The statistical transformation to use on the data for this layer
+
+`stat_identity`
+
+
+### See also
+
+[geom_text](#text)
+
+### Example
+
+
+```{r, warning=FALSE, message=FALSE}
+library(directlabels)
+a1 <- worldbankdata |>
+  ggplot(aes(y = Cooking, x=Electricity)) +   
+  geom_point(aes(col=Income)) +
+  theme(aspect.ratio = 1) +
+  scale_color_brewer(palette = "Set1")
+a1 +
+  geom_dl(aes(label=Income), method="smart.grid")+
+  scale_shape_manual(values=c(H = 1, 
+                              UM = 6,
+                              L = 3,
+                              LM = 2),
+                     guide="none")
+
+```
+
+
+## geom_dotplot {#dotplot}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Create dotplot.
+
+### Understandable aesthetics
+
+`stat_density`
+
+
+**required aesthetics**
+
+`x` or `y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill` , `group`, `linetype`, `stroke`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`stat_identity`
+
+
+### See also
+
+[geom_histogram](#hist)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+worldbankdata |>
+  ggplot(aes(x=Cooking)) +   
+  geom_dotplot(binwidth = 1) + 
+  theme(legend.position="none", aspect.ratio = 1)
+```
+
+## geom_delaunay_tile {#delaunay_tile}
+
+### Package
+
+ggplot2 [@ggforce]
+
+### Description
+
+Display voronoi tesselation and delaunay triangulation.
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x` or `y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill` , `linetype`, `size`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`delaunay_tile`
+
+
+### See also
+
+[geom_delaunay_segment](#delaunay_segment)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(ggforce)
+library(deldir) #to calculate delaunay triangulation
+a1 <- worldbankdata |>
+  filter(Income == "L") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_delaunay_tile(alpha=0.5) + 
+  labs(title = "a1: geom_point only") +
+  theme(aspect.ratio = 1)
+
+a2 <- worldbankdata |>
+  filter(Income == "L") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_point() +
+  geom_delaunay_tile(alpha=0.5) + 
+  labs(title = "a2: geom_point and \n geom_delaunay_tile") +
+  theme(aspect.ratio = 1)
+a1 | a2
+```
+
+## geom_delaunay_segment {#delaunay_segment}
+
+### Package
+
+ggplot2 [@ggforce]
+
+### Description
+
+Display voronoi tesselation and delaunay triangulation.
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x` or `y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill` , `linetype`, `size`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`delaunay_segment`
+
+
+### See also
+
+[geom_delaunay_tile](#delaunay_tile)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(ggforce)
+library(deldir) #to calculate delaunay triangulation
+
+a1 <- worldbankdata |>
+  filter(Income == "L") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_delaunay_segment() + 
+  theme(aspect.ratio = 1) +
+  labs(title = "a1: geom_delaunay_segment only") 
+
+a2 <- worldbankdata |>
+  filter(Income == "L") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_point() +
+  geom_delaunay_segment() + 
+  theme(aspect.ratio = 1) +
+  labs(title = "a2: geom_point and \n geom_delaunay_segment") 
+
+a1 | a2
+```
+
+## geom_delaunay_segment2 {#delaunay_segment2}
+
+### Package
+
+ggplot2 [@ggforce]
+
+### Description
+
+Display voronoi tesselation and delaunay triangulation.
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x` or `y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill` , `linetype`, `size`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`delaunay_segment2`
+
+
+### See also
+
+[geom_delaunay_tile](#delaunay_tile)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(ggforce)
+library(deldir) #to calculate delaunay triangulation
+
+a1 <- worldbankdata |>
+  filter(Income == "L") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_delaunay_segment2() + 
+  theme(aspect.ratio = 1) +
+  labs(title = "a1: geom_delaunay_segment2 only") 
+
+a2 <- worldbankdata |>
+  filter(Income == "L") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_point() +
+  geom_delaunay_segment2() + 
+  theme(aspect.ratio = 1) +
+  labs(title = "a2: geom_point and \n geom_delaunay_segment2") 
+
+a1 | a2
+```
+
+## geom_dumbbell
+
+```{r}
+library(ggalt)
+```
