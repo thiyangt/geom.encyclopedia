@@ -1020,11 +1020,11 @@ div.csl-indent {
 <section id="examples-1" class="level3" data-number="5.8.6">
 <h3 data-number="5.8.6" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">5.8.6</span> Examples</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Income) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">max =</span> <span class="fu">max</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">mean =</span> <span class="fu">mean</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Electricity)) <span class="sc">+</span> </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>summary.wb <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> Income, mean, <span class="at">data=</span>worldbankdata)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Electricity)) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_crossbar</span>(<span class="at">data=</span>summary.wb, <span class="fu">aes</span>(<span class="at">ymin =</span> Electricity, <span class="at">ymax =</span> Electricity),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">"red"</span>, <span class="at">width =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="c_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>

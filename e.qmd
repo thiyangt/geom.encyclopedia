@@ -16,7 +16,7 @@ ggplot2 [@ggplot2]
 
 ### Description
 
-Plot a vertical interval defined by x, ymin and ymax.
+Draws a vertical interval defined by x, ymin and ymax.
 
 ### Understandable aesthetics
 
@@ -67,7 +67,7 @@ ggplot2 [@ggplot2]
 
 ### Description
 
-Plot a vertical interval defined by x, ymin and ymax.
+Draws horizontal error bars, defined by an upper and lower value.
 
 ### Understandable aesthetics
 
@@ -98,13 +98,110 @@ df <- worldbankdata |>
   group_by(Income) |>
   summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE), mean = mean(Electricity, na.rm=TRUE))
 df
-a1 <- ggplot(data=df, aes(x=Income, ymin=min, ymax=max)) + 
+a1 <- ggplot(data=df, aes(y=Income, x=max, xmin=min, xmax=max)) + 
 geom_errorbarh(width=0.2, size=1, color="#d95f02") + 
-  labs(title = "a1: geom_errorbar only")
-
-a2 <- ggplot(data=df, aes(x=Income, ymin=min, ymax=max)) + 
+  labs(title = "a1: geom_errorbarh only")
+a2 <- ggplot(data=df, aes(y=Income, x=max, xmin=min, xmax=max)) + 
   geom_errorbarh(width=0.2, size=1, color="#d95f02") + 
-  geom_point(data=df, mapping=aes(x=Income, y=mean), size=4, shape=21, fill="#1b9e77") +
-  labs(title = "a2: geom_errorbar and geom_point")
+  geom_point(data=df, mapping=aes(y=Income, x=mean), size=4, shape=21, fill="#1b9e77") +
+  labs(title = "a2: geom_errorbarh and geom_point")
+a1|a2
+```
+
+## geom_encircle{#encircle}
+
+### Package
+
+ggalt [@ggalt]
+
+### Description
+
+Draws a polygon enclosing all the points.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x` or `y`
+
+ 
+
+**optional aesthetics**
+
+`alpha`, `colour`, `group`, `linetype`, `linewidth`, `s_shape`, `expand`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_identity`
+
+### See also
+
+[geom_circle](#circle)
+
+### Example
+
+
+```{r, warning=FALSE, message=FALSE}
+library(ggalt)
+a1 <- worldbankdata |>
+  filter(Income == "L") |>
+ggplot(aes(y = Cooking, x=Electricity)) + 
+  geom_point() + 
+  geom_encircle() + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "a1: with default setting")
+a2 <- worldbankdata |>
+  filter(Income == "L") |>
+ggplot(aes(y = Cooking, x=Electricity)) + 
+  geom_point() + 
+  geom_encircle(s_shape=0.2, expand=0.01,fill="Red",alpha=0.4) + 
+  theme(aspect.ratio = 1) + labs(title = "a2: without default settings")
+a1|a2
+
+```
+
+## geom_emoji
+
+### Package
+
+emoGG [@emoGG]
+
+Installation
+
+```
+install.packages("remotes")
+remotes::install_github("dill/emoGG")
+```
+
+### Description
+
+Plot emojis on the plot instead of points
+
+### Understandable aesthetics
+
+`emoji`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_identity`
+
+### See also
+
+[geom_point](#point)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(emoGG)
+a1 <- worldbankdata |>
+  filter(Income == "LM") |>
+ggplot(aes(y=Cooking, x=Electricity)) +
+  geom_emoji(emoji = "1f600") + 
+   theme(aspect.ratio = 1) + labs("a1: using emoji")
+a2 <- worldbankdata |>
+  filter(Income == "LM") |>
+ggplot(aes(y=Cooking, x=Electricity)) +
+  geom_point() + 
+   theme(aspect.ratio = 1) + labs("a2: using points")
 a1|a2
 ```
