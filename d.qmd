@@ -42,7 +42,7 @@ Computes and draws kernel density estimation.
 
 ### See also
 
-[geom_histofram](#hist)
+[geom_histogram](#hist)
 
 ### Example
 
