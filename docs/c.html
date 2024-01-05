@@ -236,7 +236,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">geom_d</span></span></a>
   </div>
 </li>
       </ul>
@@ -253,7 +253,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./e.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_e</span></span></a>
   </div>
 </li>
       </ul>
@@ -905,7 +905,7 @@ div.csl-indent {
 </section>
 <section id="see-also-4" class="level3" data-number="5.5.5">
 <h3 data-number="5.5.5" class="anchored" data-anchor-id="see-also-4"><span class="header-section-number">5.5.5</span> See also</h3>
-<p><a href="#contour_filled">geom_contour_filled</a>, <a href="#tile">geom_tile</a>, <a href="#density_2d">geom_density_2d</a></p>
+<p><a href="#contour_filled">geom_contour_filled</a>, <a href="#tile">geom_tile</a>, <a href="d.html#density_2d">geom_density_2d</a></p>
 </section>
 <section id="example-2" class="level3" data-number="5.5.6">
 <h3 data-number="5.5.6" class="anchored" data-anchor-id="example-2"><span class="header-section-number">5.5.6</span> Example</h3>
@@ -931,7 +931,7 @@ div.csl-indent {
 </section>
 <section id="see-also-5" class="level3" data-number="5.6.5">
 <h3 data-number="5.6.5" class="anchored" data-anchor-id="see-also-5"><span class="header-section-number">5.6.5</span> See also</h3>
-<p><a href="#contour">geom_contour</a>, <a href="#tile">geom_tile</a>, <a href="#density_2d">geom_density_2d</a></p>
+<p><a href="#contour">geom_contour</a>, <a href="#tile">geom_tile</a>, <a href="d.html#density_2d">geom_density_2d</a></p>
 </section>
 <section id="example-3" class="level3" data-number="5.6.6">
 <h3 data-number="5.6.6" class="anchored" data-anchor-id="example-3"><span class="header-section-number">5.6.6</span> Example</h3>
@@ -998,6 +998,7 @@ div.csl-indent {
 </section>
 <section id="description-7" class="level3" data-number="5.8.2">
 <h3 data-number="5.8.2" class="anchored" data-anchor-id="description-7"><span class="header-section-number">5.8.2</span> Description</h3>
+<p>Plot a vertical interval defined by x, ymin and ymax.</p>
 </section>
 <section id="understandable-aesthetics-7" class="level3" data-number="5.8.3">
 <h3 data-number="5.8.3" class="anchored" data-anchor-id="understandable-aesthetics-7"><span class="header-section-number">5.8.3</span> Understandable aesthetics</h3>
@@ -1019,11 +1020,11 @@ div.csl-indent {
 <section id="examples-1" class="level3" data-number="5.8.6">
 <h3 data-number="5.8.6" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">5.8.6</span> Examples</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>summary.wb <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> Income, mean, <span class="at">data=</span>worldbankdata)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Electricity)) <span class="sc">+</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_crossbar</span>(<span class="at">data=</span>summary.wb, <span class="fu">aes</span>(<span class="at">ymin =</span> Electricity, <span class="at">ymax =</span> Electricity),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">"red"</span>, <span class="at">width =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Income) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">max =</span> <span class="fu">max</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">mean =</span> <span class="fu">mean</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Electricity)) <span class="sc">+</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="c_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>

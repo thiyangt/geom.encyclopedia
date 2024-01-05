@@ -272,7 +272,7 @@ ggplot2 [@ggplot2]
 
 ### Description
 
-
+Plot a vertical interval defined by x, ymin and ymax.
 
 ### Understandable aesthetics
 

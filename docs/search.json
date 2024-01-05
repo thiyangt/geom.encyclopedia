@@ -270,7 +270,7 @@
     "href": "c.html#crossbar",
     "title": "5  geom_c",
     "section": "5.8 geom_crossbar",
-    "text": "5.8 geom_crossbar\n\n5.8.1 Package\nggplot2 (Wickham 2016)\n\n\n5.8.2 Description\n\n\n5.8.3 Understandable aesthetics\nrequired aesthetics\nx or y\nxmin or ymin\nxmax or ymax\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.8.4 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.8.5 See also\ngeom_segment\n\n\n5.8.6 Examples\n\nsummary.wb &lt;- aggregate(. ~ Income, mean, data=worldbankdata)\nggplot(worldbankdata, aes(x = Income, y = Electricity)) + \n  geom_point() + \n  geom_crossbar(data=summary.wb, aes(ymin = Electricity, ymax = Electricity),\n                  size=1,col=\"red\", width = .5)\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "5.8 geom_crossbar\n\n5.8.1 Package\nggplot2 (Wickham 2016)\n\n\n5.8.2 Description\nPlot a vertical interval defined by x, ymin and ymax.\n\n\n5.8.3 Understandable aesthetics\nrequired aesthetics\nx or y\nxmin or ymin\nxmax or ymax\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.8.4 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.8.5 See also\ngeom_segment\n\n\n5.8.6 Examples\n\ndf &lt;- worldbankdata |&gt;\n  group_by(Income) |&gt;\n  summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE), mean = mean(Electricity, na.rm=TRUE))\nggplot(worldbankdata, aes(x = Income, y = Electricity)) + \n  geom_point() \n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "d.html#geom_density",
@@ -390,5 +390,19 @@
     "title": "6  geom_d",
     "section": "6.2 geom_density_line",
     "text": "6.2 geom_density_line\n\n6.2.1 Package\nggridges (Wilke 2023)\n\n\n6.2.2 Description\nDraws a density plot same as geom_density. The difference is that the geom draws a ridgeline (line with filled area underneath).\n\n\n6.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\n\n\n6.2.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.2.5 See also\ngeom_density\n\n\n6.2.6 Example\n\nlibrary(ggridges)\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   \n  geom_density_line()"
+  },
+  {
+    "objectID": "e.html#errorbar",
+    "href": "e.html#errorbar",
+    "title": "7  geom_e",
+    "section": "7.1 geom_errorbar",
+    "text": "7.1 geom_errorbar\n\n7.1.1 Package\nggplot2 (Wickham 2016)\n\n\n7.1.2 Description\nPlot a vertical interval defined by x, ymin and ymax.\n\n\n7.1.3 Understandable aesthetics\nrequired aesthetics\nx or y\nymin or xmin (y/x coordinate of the lower whisker)\nymax or xmax (y/x coordinate of the upper whisker)\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n7.1.4 The statistical transformation to use on the data for this layer\nstat_identity\n\n\n7.1.5 See also\ngeom_crossbar, geom_dumbbell\n\n\n7.1.6 Example\n\ndf &lt;- worldbankdata |&gt;\n  group_by(Income) |&gt;\n  summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE), mean = mean(Electricity, na.rm=TRUE))\ndf\n\n# A tibble: 5 × 4\n  Income   min   max  mean\n  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 L       2.11  99.8  37.0\n2 LM      3.81 100    78.8\n3 UM     26.5  100    95.1\n4 H      65.9  100    99.9\n5 &lt;NA&gt;   17.8  100    89.7\n\na1 &lt;- ggplot(data=df, aes(x=Income, ymin=min, ymax=max)) + \ngeom_errorbar(width=0.2, size=1, color=\"#d95f02\") + \n  labs(title = \"a1: geom_errorbar only\")\n\na2 &lt;- ggplot(data=df, aes(x=Income, ymin=min, ymax=max)) + \n  geom_errorbar(width=0.2, size=1, color=\"#d95f02\") + \n  geom_point(data=df, mapping=aes(x=Income, y=mean), size=4, shape=21, fill=\"#1b9e77\") +\n  labs(title = \"a2: geom_errorbar and geom_point\")\na1|a2"
+  },
+  {
+    "objectID": "e.html#geom_errorbarh",
+    "href": "e.html#geom_errorbarh",
+    "title": "7  geom_e",
+    "section": "7.2 geom_errorbarh",
+    "text": "7.2 geom_errorbarh\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   }
 ]

@@ -1,3 +1,110 @@
-# geom_a  {#sec-a}
+# geom_e  {#sec-e}
 
-## geom_abline
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+## geom_errorbar{#errorbar}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Plot a vertical interval defined by x, ymin and ymax.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x` or `y`
+
+`ymin` or `xmin` (y/x coordinate of the lower whisker)
+
+`ymax` or `xmax` (y/x coordinate of the upper whisker)
+
+**optional aesthetics**
+
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_identity`
+
+### See also
+
+[geom_crossbar](#crossbar), [geom_dumbbell](#dumbbell)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5}
+df <- worldbankdata |>
+  group_by(Income) |>
+  summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE), mean = mean(Electricity, na.rm=TRUE))
+df
+a1 <- ggplot(data=df, aes(x=Income, ymin=min, ymax=max)) + 
+geom_errorbar(width=0.2, size=1, color="#d95f02") + 
+  labs(title = "a1: geom_errorbar only")
+
+a2 <- ggplot(data=df, aes(x=Income, ymin=min, ymax=max)) + 
+  geom_errorbar(width=0.2, size=1, color="#d95f02") + 
+  geom_point(data=df, mapping=aes(x=Income, y=mean), size=4, shape=21, fill="#1b9e77") +
+  labs(title = "a2: geom_errorbar and geom_point")
+a1|a2
+```
+
+
+## geom_errorbarh
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Plot a vertical interval defined by x, ymin and ymax.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x` or `y`
+
+`ymin` or `xmin` (y/x coordinate of the lower whisker)
+
+`ymax` or `xmax` (y/x coordinate of the upper whisker)
+
+**optional aesthetics**
+
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_identity`
+
+### See also
+
+[geom_crossbar](#crossbar), [geom_dumbbell](#dumbbell)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5}
+df <- worldbankdata |>
+  group_by(Income) |>
+  summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE), mean = mean(Electricity, na.rm=TRUE))
+df
+a1 <- ggplot(data=df, aes(x=Income, ymin=min, ymax=max)) + 
+geom_errorbarh(width=0.2, size=1, color="#d95f02") + 
+  labs(title = "a1: geom_errorbar only")
+
+a2 <- ggplot(data=df, aes(x=Income, ymin=min, ymax=max)) + 
+  geom_errorbarh(width=0.2, size=1, color="#d95f02") + 
+  geom_point(data=df, mapping=aes(x=Income, y=mean), size=4, shape=21, fill="#1b9e77") +
+  labs(title = "a2: geom_errorbar and geom_point")
+a1|a2
+```

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Visualisation geom Encyclopedia - 7&nbsp; geom_a</title>
+<title>Data Visualisation geom Encyclopedia - 7&nbsp; geom_e</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte.html">E</a></li><li class="breadcrumb-item"><a href="./e.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_a</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte.html">E</a></li><li class="breadcrumb-item"><a href="./e.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_e</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -132,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A: geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
   </div>
 </li>
       </ul>
@@ -183,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">geom_d</span></span></a>
   </div>
 </li>
       </ul>
@@ -200,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./e.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_e</span></span></a>
   </div>
 </li>
       </ul>
@@ -584,7 +637,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#geom_abline" id="toc-geom_abline" class="nav-link active" data-scroll-target="#geom_abline"><span class="header-section-number">7.1</span> geom_abline</a></li>
+  <li><a href="#errorbar" id="toc-errorbar" class="nav-link active" data-scroll-target="#errorbar"><span class="header-section-number">7.1</span> geom_errorbar</a>
+  <ul class="collapse">
+  <li><a href="#package" id="toc-package" class="nav-link" data-scroll-target="#package"><span class="header-section-number">7.1.1</span> Package</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">7.1.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics" id="toc-understandable-aesthetics" class="nav-link" data-scroll-target="#understandable-aesthetics"><span class="header-section-number">7.1.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">7.1.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">7.1.5</span> See also</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">7.1.6</span> Example</a></li>
+  </ul></li>
+  <li><a href="#geom_errorbarh" id="toc-geom_errorbarh" class="nav-link" data-scroll-target="#geom_errorbarh"><span class="header-section-number">7.2</span> geom_errorbarh</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/e.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -593,7 +655,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-a" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_a</span></span></h1>
+<h1 class="title"><span id="sec-e" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_e</span></span></h1>
 </div>
 
 
@@ -608,10 +670,74 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="geom_abline" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="geom_abline"><span class="header-section-number">7.1</span> geom_abline</h2>
+<section id="errorbar" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="errorbar"><span class="header-section-number">7.1</span> geom_errorbar</h2>
+<section id="package" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="package"><span class="header-section-number">7.1.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+</section>
+<section id="description" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="description"><span class="header-section-number">7.1.2</span> Description</h3>
+<p>Plot a vertical interval defined by x, ymin and ymax.</p>
+</section>
+<section id="understandable-aesthetics" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="understandable-aesthetics"><span class="header-section-number">7.1.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x</code> or <code>y</code></p>
+<p><code>ymin</code> or <code>xmin</code> (y/x coordinate of the lower whisker)</p>
+<p><code>ymax</code> or <code>xmax</code> (y/x coordinate of the upper whisker)</p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">7.1.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_identity</code></p>
+</section>
+<section id="see-also" class="level3" data-number="7.1.5">
+<h3 data-number="7.1.5" class="anchored" data-anchor-id="see-also"><span class="header-section-number">7.1.5</span> See also</h3>
+<p><a href="c.html#crossbar">geom_crossbar</a>, <a href="#dumbbell">geom_dumbbell</a></p>
+</section>
+<section id="example" class="level3" data-number="7.1.6">
+<h3 data-number="7.1.6" class="anchored" data-anchor-id="example"><span class="header-section-number">7.1.6</span> Example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Income) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">max =</span> <span class="fu">max</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">mean =</span> <span class="fu">mean</span>(Electricity, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  Income   min   max  mean
+  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 L       2.11  99.8  37.0
+2 LM      3.81 100    78.8
+3 UM     26.5  100    95.1
+4 H      65.9  100    99.9
+5 &lt;NA&gt;   17.8  100    89.7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">ymin=</span>min, <span class="at">ymax=</span>max)) <span class="sc">+</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_errorbar</span>(<span class="at">width=</span><span class="fl">0.2</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">"#d95f02"</span>) <span class="sc">+</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"a1: geom_errorbar only"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">ymin=</span>min, <span class="at">ymax=</span>max)) <span class="sc">+</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">width=</span><span class="fl">0.2</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">"#d95f02"</span>) <span class="sc">+</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>df, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">y=</span>mean), <span class="at">size=</span><span class="dv">4</span>, <span class="at">shape=</span><span class="dv">21</span>, <span class="at">fill=</span><span class="st">"#1b9e77"</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"a2: geom_errorbar and geom_point"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>a1<span class="sc">|</span>a2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="e_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="geom_errorbarh" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="geom_errorbarh"><span class="header-section-number">7.2</span> geom_errorbarh</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
