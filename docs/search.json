@@ -200,7 +200,7 @@
     "href": "index.html",
     "title": "Data Visualisation geom Encyclopedia",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+    "text": "Preface\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics in Data Visualisation. Geometric representations serve as the visual language that bridges the gap between complex datasets and human comprehension. This encyclopedia is a curated collection of geom available in different R programming software packages.\nKeep in mind that the field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Regularly updating your encyclopedia will ensure it remains a relevant and comprehensive resource for users."
   },
   {
     "objectID": "c.html#contour",
