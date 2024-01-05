@@ -291,21 +291,21 @@
     "href": "d.html#density",
     "title": "6  geom_d",
     "section": "6.1 geom_density",
-    "text": "6.1 geom_density\n\n6.1.1 Package\nggplot2 (Wickham 2016)\n\n\n6.1.2 Description\nComputes and draws kernel density estimation.\n\n\n6.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\n\n\n6.1.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.1.5 See also\ngeom_histofram\n\n\n6.1.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   geom_density(fill = \"#d95f02\")"
+    "text": "6.1 geom_density\n\n6.1.1 Package\nggplot2 (Wickham 2016)\n\n\n6.1.2 Description\nComputes and draws kernel density estimation.\n\n\n6.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\n\n\n6.1.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.1.5 See also\ngeom_histofram\n\n\n6.1.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   geom_density()"
   },
   {
     "objectID": "d.html#density_2d",
     "href": "d.html#density_2d",
     "title": "6  geom_d",
-    "section": "6.2 geom_density_2d",
-    "text": "6.2 geom_density_2d\n\n6.2.1 Package\nggplot2 (Wickham 2016)\n\n\n6.2.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with contours.\n\n\n6.2.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n6.2.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.2.5 See also\ngeom_histofram\n\n\n6.2.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d() +\n  xlim(0, 100) +\n  ylim(0, 100) +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a1: geom_density_2d only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() +\n  geom_density_2d() +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d\") \n  \na1|a2"
+    "section": "6.3 geom_density_2d",
+    "text": "6.3 geom_density_2d\n\n6.3.1 Package\nggplot2 (Wickham 2016)\n\n\n6.3.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with contours.\n\n\n6.3.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n6.3.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.3.5 See also\ngeom_histofram\n\n\n6.3.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d() +\n  xlim(0, 100) +\n  ylim(0, 100) +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a1: geom_density_2d only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() +\n  geom_density_2d() +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d\") \n  \na1|a2"
   },
   {
     "objectID": "d.html#density_2d_filled",
     "href": "d.html#density_2d_filled",
     "title": "6  geom_d",
     "section": "6.4 geom_density_2d_filled",
-    "text": "6.4 geom_density_2d_filled\n\n6.4.1 Package\nggplot2 (Wickham 2016)\n\n\n6.4.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with filled contour bands.\n\n\n6.4.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, subgroup\n\n\n6.4.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.4.5 See also\ngeom_histogram\n\n\n6.4.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled() + \n  labs(title = \"a1: geom_density_2d_filled only\") + \n  theme(legend.position=\"none\", aspect.ratio = 1)\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() + \n  geom_density_2d_filled(alpha = 0.5) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d_filled\") + \n  theme(legend.position=\"none\", aspect.ratio = 1)\na1 | a2"
+    "text": "6.4 geom_density_2d_filled\n\n6.4.1 Package\nggplot2 (Wickham 2016)\n\n\n6.4.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with filled contour bands.\n\n\n6.4.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, subgroup\n\n\n6.4.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.4.5 See also\ngeom_histogram\n\n\n6.4.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled() + \n  labs(title = \"a1: geom_density_2d_filled only\") + \n  theme(legend.position=\"none\", aspect.ratio = 1)\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() + \n  geom_density_2d_filled(alpha = 0.5) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d_filled\") + \n  theme(legend.position=\"none\", aspect.ratio = 1)\na1 | a2"
   },
   {
     "objectID": "d.html#dl",
@@ -368,6 +368,27 @@
     "href": "d.html#geom_dumbbell",
     "title": "6  geom_d",
     "section": "6.12 geom_dumbbell",
-    "text": "6.12 geom_dumbbell\n\nlibrary(ggalt)\n\nRegistered S3 methods overwritten by 'ggalt':\n  method                  from   \n  grid.draw.absoluteGrob  ggplot2\n  grobHeight.absoluteGrob ggplot2\n  grobWidth.absoluteGrob  ggplot2\n  grobX.absoluteGrob      ggplot2\n  grobY.absoluteGrob      ggplot2\n\n\n\n\n\n\nHocking, Toby Dylan. 2023. Directlabels: Direct Labels for Multicolor Plots. https://CRAN.R-project.org/package=directlabels.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "6.12 geom_dumbbell\n\n6.12.1 Package\nggalt(Rudis, Bolker, and Schulz 2017)\n\n\n6.12.2 Description\nCreate dumbbell charts.\n\n\n6.12.3 Understandable aesthetics\nrequired aesthetics\nx, y, xend, yend\noptional aesthetics\nalpha, colour, group, linetype, size\n\n\n6.12.4 The statistical transformation to use on the data for this layer\n\n\n6.12.5 See also\ngeom_segment\n\n\n6.12.6 Example\n\nlibrary(ggalt)\ndf &lt;- worldbankdata |&gt;\n  group_by(Income) |&gt;\n  summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE))\ndf\n\n# A tibble: 5 × 3\n  Income   min   max\n  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 L       2.11  99.8\n2 LM      3.81 100  \n3 UM     26.5  100  \n4 H      65.9  100  \n5 &lt;NA&gt;   17.8  100  \n\nggplot(df, aes(y=Income, x=min, xend=max)) +\n  xlab(\"Electricity Range\") + \n  geom_dumbbell(color = \"darkgray\",  # Color of the line between min and max\n                size = 3,            # Line width\n                dot_guide = FALSE,   # Whether to add a guide from origin to X or not\n                size_x = 3,          # Size of the X point\n                size_xend = 3,       # Size of the X end point\n                colour_x = \"#762a83\",    # Color of the X point\n                colour_xend = \"#1b7837\")   # Color of the X end point \n\n\n\n\n\n\n\n\nHocking, Toby Dylan. 2023. Directlabels: Direct Labels for Multicolor Plots. https://CRAN.R-project.org/package=directlabels.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra Coordinate Systems, ’Geoms’, Statistical Transformations, Scales and Fonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’. https://CRAN.R-project.org/package=ggridges."
+  },
+  {
+    "objectID": "d.html#density_ridges",
+    "href": "d.html#density_ridges",
+    "title": "6  geom_d",
+    "section": "6.5 geom_density_ridges",
+    "text": "6.5 geom_density_ridges\n\n6.5.1 Package\nggridges (Wilke 2023)\n\n\n6.5.2 Description\nArranges multiple density plots in a staggered fashion.\n\n\n6.5.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolour, fill, group, height, alpha, linetype, linewidth, scale, rel_min_height\n\n\n6.5.4 The statistical transformation to use on the data for this layer\ndensity_ridges\n\n\n6.5.5 See also\ngeom_density_ridges_gradient\n\n\n6.5.6 Example\n\nlibrary(ggridges)\n worldbankdata |&gt;\n  ggplot(aes(y = Income, x=Electricity)) +   \n  geom_density_ridges()"
+  },
+  {
+    "objectID": "d.html#density_ridges_gradient",
+    "href": "d.html#density_ridges_gradient",
+    "title": "6  geom_d",
+    "section": "6.6 geom_density_ridges_gradient",
+    "text": "6.6 geom_density_ridges_gradient\n\n6.6.1 Package\nggridges (Wilke 2023)\n\n\n6.6.2 Description\nArranges multiple density plots in a staggered fashion.\n\n\n6.6.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolour, fill, group, height, alpha, linetype, linewidth, scale, rel_min_height\n\n\n6.6.4 The statistical transformation to use on the data for this layer\ndensity_ridges\n\n\n6.6.5 See also\ngeom_density_ridges\n\n\n6.6.6 Example\n\nlibrary(ggridges)\n worldbankdata |&gt;\n  ggplot(aes(y = Income, x=Electricity, fill=stat(x))) +   \n  geom_density_ridges_gradient() +\n  scale_fill_viridis_c()"
+  },
+  {
+    "objectID": "d.html#density_line",
+    "href": "d.html#density_line",
+    "title": "6  geom_d",
+    "section": "6.2 geom_density_line",
+    "text": "6.2 geom_density_line\n\n6.2.1 Package\nggridges (Wilke 2023)\n\n\n6.2.2 Description\nDraws a density plot same as geom_density. The difference is that the geom draws a ridgeline (line with filled area underneath).\n\n\n6.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\n\n\n6.2.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.2.5 See also\ngeom_density\n\n\n6.2.6 Example\n\nlibrary(ggridges)\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   \n  geom_density_line()"
   }
 ]

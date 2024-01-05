@@ -48,9 +48,54 @@ Computes and draws kernel density estimation.
 
 ```{r, warning=FALSE, message=FALSE}
 worldbankdata |>
-  ggplot(aes(x = Electricity)) +   geom_density(fill = "#d95f02")
+  ggplot(aes(x = Electricity)) +   geom_density()
 
 ```
+
+## geom_density_line {#density_line}
+
+### Package
+
+ggridges [@ggridges]
+
+### Description
+
+Draws a density plot same as geom_density. The difference is that the geom draws a ridgeline (line with filled area underneath).
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`, `weight`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`stat_density`
+
+
+### See also
+
+[geom_density](#density)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(ggridges)
+worldbankdata |>
+  ggplot(aes(x = Electricity)) +   
+  geom_density_line()
+```
+
+
 
 ## geom_density_2d {#density_2d}
 
@@ -108,7 +153,6 @@ a2 <- worldbankdata |>
 a1|a2
 ```
 
-## geom_density2d
 
 ## geom_density_2d_filled {#density_2d_filled}
 
@@ -121,8 +165,6 @@ ggplot2 [@ggplot2]
 Computes a 2D kernel density estimation using `MASS::kde2d()` and display the results with filled contour bands. 
 
 ### Understandable aesthetics
-
-`stat_density`
 
 
 **required aesthetics**
@@ -163,12 +205,95 @@ a2 <- worldbankdata |>
 a1 | a2
 ```
 
-## geom_density_ridges
+## geom_density_ridges{#density_ridges}
 
-## geom_density_ridges_gradient
+### Package
+
+ggridges [@ggridges]
+
+### Description
+
+Arranges multiple density plots in a staggered fashion.
+
+### Understandable aesthetics
 
 
-## geom_dl {#dl}
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`colour`, `fill`, `group`, `height`, `alpha`, `linetype`, `linewidth`, `scale`, `rel_min_height`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`density_ridges`
+
+
+### See also
+
+[geom_density_ridges_gradient](#density_ridges_gradient)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(ggridges)
+ worldbankdata |>
+  ggplot(aes(y = Income, x=Electricity)) +   
+  geom_density_ridges() 
+```
+
+## geom_density_ridges_gradient{#density_ridges_gradient}
+
+### Package
+
+ggridges [@ggridges]
+
+### Description
+
+Arranges multiple density plots in a staggered fashion.
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`colour`, `fill`, `group`, `height`, `alpha`, `linetype`, `linewidth`, `scale`, `rel_min_height`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`density_ridges`
+
+
+### See also
+
+[geom_density_ridges](#density_ridges)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(ggridges)
+ worldbankdata |>
+  ggplot(aes(y = Income, x=Electricity, fill=stat(x))) +   
+  geom_density_ridges_gradient() +
+  scale_fill_viridis_c()
+```
+
+
+## geom_dl{#dl}
 
 
 ### Package
@@ -425,6 +550,49 @@ a1 | a2
 
 ## geom_dumbbell
 
-```{r}
+### Package
+
+ggalt[@ggalt]
+
+### Description
+
+Create dumbbell charts.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`, `y`, `xend`, `yend`
+
+
+**optional aesthetics**
+
+
+`alpha`, `colour`, `group`, `linetype`, `size`
+
+### The statistical transformation to use on the data for this layer
+
+
+
+### See also
+
+[geom_segment](#segment)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
 library(ggalt)
+df <- worldbankdata |>
+  group_by(Income) |>
+  summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE))
+df
+ggplot(df, aes(y=Income, x=min, xend=max)) +
+  xlab("Electricity Range") + 
+  geom_dumbbell(color = "darkgray",  # Color of the line between min and max
+                size = 3,            # Line width
+                dot_guide = FALSE,   # Whether to add a guide from origin to X or not
+                size_x = 3,          # Size of the X point
+                size_xend = 3,       # Size of the X end point
+                colour_x = "#762a83",    # Color of the X point
+                colour_xend = "#1b7837")   # Color of the X end point 
 ```
