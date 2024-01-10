@@ -1,10 +1,11 @@
 # geom_h  {#sec-h}
 
 ```{r, echo=FALSE,warning=FALSE,message=FALSE}
-library(drone)
 library(tidyverse)
+library(drone)
 library(patchwork)
-data(worldbankdata)
+library(ggpattern)
+data("worldbankdata")
 ```
 
 ## geom_hline{#hline}
@@ -46,3 +47,209 @@ a2 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
 a1 | a2
 ```
 
+
+## geom_histogram{#histogram}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Visualise conontinuous data using histogram.
+
+### Understandable aesthetics
+
+Unlike most other geoms, `geom_hline` does not depend on the x and y variables that we map for the main plot. `geom_hline` has its own independent characteristics: `yintercept`.   The yintercept can be passed either as a arguments or aesthetic.
+
+### Statistics layer(s)
+
+
+
+### See also
+
+[geom_density](#density), [geom_density_line](#density_line), [geom_freqpoly](#freqpoly)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+worldbankdata |>
+  filter(Income == "LM") |>
+  ggplot(aes(x = Electricity)) +   
+  geom_histogram(col="white")
+
+```
+
+
+
+## geom_histogram_pattern{#histogram_pattern}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Visualise conontinuous data using histogram and filled with patterns.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x` or `y`
+
+
+**optional aesthetics**
+
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+### Statistics layer(s)
+
+bin
+
+### See also
+
+[geom_histogram](#histogram), [geom_density](#density), [geom_density_line](#density_line)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+worldbankdata |>
+  filter(Income == "LM") |>
+  ggplot(aes(x = Electricity)) +   
+  geom_histogram_pattern( pattern_color = "white",
+                   pattern_fill = "black")
+```
+
+## geom_hdr_boxplot
+
+### Package
+
+gghdr [@gghdr]
+
+### Description
+
+Calculates and plots the box plot of highest density regions.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x` or `y`
+
+
+**optional aesthetics**
+
+`alpha`, `colour`
+
+
+### Statistics layer(s)
+
+hdrcde
+
+### See also
+
+[geom_boxplot](#boxplot), [geom_histogram](#histogram), [geom_density](#density), [geom_density_line](#density_line)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+library(gghdr)
+worldbankdata |>
+  dplyr::filter(Year == 2021) |>
+  dplyr::select(Cooking) |>
+ggplot(aes(y = Cooking, x=factor(0))) + 
+  geom_hdr_boxplot(fill = "#081d58") 
+```
+
+## geom_hex{#hex}
+
+### Package
+
+gghdr [@gghdr]
+
+### Description
+
+Calculates and plots the box plot of highest density regions.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x` or `y`
+
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
+
+
+### Statistics layer(s)
+
+hdrcde
+
+### See also
+
+[geom_boxplot](#boxplot), [geom_histogram](#histogram), [geom_density](#density), [geom_density_line](#density_line)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+library(hexbin)
+library(viridis)
+worldbankdata |>
+  filter(Income == "LM") |>
+  ggplot(aes(y = Cooking, x=Electricity)) + 
+  geom_hex() + 
+  scale_fill_viridis()
+```
+
+
+
+## geom_heat_grid {#heat_grid}
+
+### Package
+
+ggDoubleHeat [@ggDoubleHeat]
+
+### Description
+
+Visualize two qantitative information inside heatmap cell using grid.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x` or `y`
+
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
+
+
+### Statistics layer(s)
+
+hdrcde
+
+### See also
+
+[geom_boxplot](#boxplot), [geom_histogram](#histogram), [geom_density](#density), [geom_density_line](#density_line)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+library(ggDoubleHeat)
+worldbankdata[254:263, ] |>
+  ggplot(aes(y = Year, x=Income)) + 
+  geom_heat_grid(outside = Electricity,
+           inside = Cooking) 
+```
+
+
+## geom_heat_tri {#heat_tri}
+
+## geom_heat_circle {#heat_circle}

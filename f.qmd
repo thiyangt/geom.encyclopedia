@@ -1,3 +1,96 @@
-# geom_a  {#sec-a}
+# geom_f  {#sec-f}
 
-## geom_abline
+
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+
+## geom_function {#function}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Computes and draws a function as a continuous curve.
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`stat_`prefix
+
+
+### See also
+
+[geom_density](#density)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+ggplot() + 
+  geom_function(fun = ~ 0.5*exp(-abs(.x)))
+
+```
+
+## geom_freqpoly {#freqpoly}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Visualise the spread of a single continuous variable by partitioning the x-axis into bins and mapping the frequency of observations within each bin.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+### The statistical transformation to use on the data for this layer
+
+
+`stat_bin` for a continuous x variable
+
+`stat_count` for a discrete x variable
+
+
+### See also
+
+[geom_density](#density)
+
+### Example
+
+```{r, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
+worldbankdata |>
+  ggplot(aes(x=Electricity, col=Income)) + 
+  geom_freqpoly()
+```

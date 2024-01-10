@@ -1,3 +1,14 @@
-# geom_a  {#sec-a}
+# geom_g  {#sec-g}
 
-## geom_abline
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+
+## geom_g
+
+Not available
