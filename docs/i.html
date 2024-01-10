@@ -646,6 +646,10 @@ div.csl-indent {
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">11.1.5</span> See also</a></li>
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">11.1.6</span> Example</a></li>
   </ul></li>
+  <li><a href="#geom_icon" id="toc-geom_icon" class="nav-link" data-scroll-target="#geom_icon"><span class="header-section-number">11.2</span> geom_icon</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">11.2.1</span> Example</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/i.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -702,6 +706,22 @@ div.csl-indent {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x, y)) <span class="sc">+</span> <span class="fu">geom_image</span>(<span class="fu">aes</span>(<span class="at">image=</span>image))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="i_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="480"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="geom_icon" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="geom_icon"><span class="header-section-number">11.2</span> geom_icon</h2>
+<section id="example-1" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">11.2.1</span> Example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggimage"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>icon <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'ios-power'</span>, <span class="st">'ios-wifi'</span>, <span class="st">'ios-pie'</span>), <span class="dv">10</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x, y)) <span class="sc">+</span> <span class="fu">geom_icon</span>(<span class="fu">aes</span>(<span class="at">image=</span>icon))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="i_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="480"></p>
 </div>
 </div>
 

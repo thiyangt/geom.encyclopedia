@@ -438,13 +438,34 @@
     "href": "f.html#freqpoly",
     "title": "8  geom_f",
     "section": "8.2 geom_freqpoly",
-    "text": "8.2 geom_freqpoly\n\n8.2.1 Package\nggplot2 (Wickham 2016)\n\n\n8.2.2 Description\nVisualise the spread of a single continuous variable by partitioning the x-axis into bins and mapping the frequency of observations within each bin.\n\n\n8.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n8.2.4 The statistical transformation to use on the data for this layer\nstat_bin for a continuous x variable\nstat_count for a discrete x variable\n\n\n8.2.5 See also\ngeom_density\n\n\n8.2.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x=Electricity, col=Income)) + \n  geom_freqpoly()\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "8.2 geom_freqpoly\n\n8.2.1 Package\nggplot2 (Wickham 2016)\n\n\n8.2.2 Description\nVisualise the spread of a single continuous variable by partitioning the x-axis into bins and mapping the frequency of observations within each bin.\n\n\n8.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n8.2.4 The statistical transformation to use on the data for this layer\nstat_bin for a continuous x variable\nstat_count for a discrete x variable\n\n\n8.2.5 See also\ngeom_density\n\n\n8.2.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x=Electricity, col=Income)) + \n  geom_freqpoly()"
   },
   {
     "objectID": "i.html#image",
     "href": "i.html#image",
     "title": "11  geom_i",
     "section": "11.1 geom_image",
-    "text": "11.1 geom_image\n\n11.1.1 Package\nggimage (Yu 2023)\n\n\n11.1.2 Description\nVisualise data through images.\n\n\n11.1.3 Understandable aesthetics\nimage\n\n\n11.1.4 Statistics layer(s)\nidentity\n\n\n11.1.5 See also\ngeom_emoji\n\n\n11.1.6 Example\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10),\n                image = sample(\"https://www.r-project.org/logo/Rlogo.png\",\n                              size=10, replace = TRUE))\nggplot(df, aes(x, y)) + geom_image(aes(image=image))\n\n\n\n\n\n\n\n\nYu, Guangchuang. 2023. Ggimage: Use Image in ’Ggplot2’. https://CRAN.R-project.org/package=ggimage."
+    "text": "11.1 geom_image\n\n11.1.1 Package\nggimage (Yu 2023)\n\n\n11.1.2 Description\nVisualise data through images.\n\n\n11.1.3 Understandable aesthetics\nimage\n\n\n11.1.4 Statistics layer(s)\nidentity\n\n\n11.1.5 See also\ngeom_emoji\n\n\n11.1.6 Example\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10),\n                image = sample(\"https://www.r-project.org/logo/Rlogo.png\",\n                              size=10, replace = TRUE))\nggplot(df, aes(x, y)) + geom_image(aes(image=image))"
+  },
+  {
+    "objectID": "i.html#geom_icon",
+    "href": "i.html#geom_icon",
+    "title": "11  geom_i",
+    "section": "11.2 geom_icon",
+    "text": "11.2 geom_icon\n\n11.2.1 Example\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10))\ndf$icon = sample(c('ios-power', 'ios-wifi', 'ios-pie'), 10, replace=TRUE)\nggplot(df, aes(x, y)) + geom_icon(aes(image=icon))\n\n\n\n\n\n\n\n\nYu, Guangchuang. 2023. Ggimage: Use Image in ’Ggplot2’. https://CRAN.R-project.org/package=ggimage."
+  },
+  {
+    "objectID": "f.html#geom_flag",
+    "href": "f.html#geom_flag",
+    "title": "8  geom_f",
+    "section": "8.3 geom_flag",
+    "text": "8.3 geom_flag\n\nlibrary(ggimage)\nworldbankdata.flag &lt;- worldbankdata |&gt;\n  filter(Country %in% c(\"France\", \"Sweden\", \"Norway\", \"Germany\", \"Switzerland\")) |&gt;\n  filter(Year == 2000) \nworldbankdata.flag$code.flag &lt;- c(\"FR\", \"SE\", \"NO\", \"DE\", \"CH\")\nworldbankdata.flag |&gt;\nggplot(aes(y = Country, x= Electricity)) + \n  geom_col(stat = 'identity') + \n  geom_flag(y = -2, aes(image = code.flag)) +\n  coord_flip() \n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "j.html#jitter",
+    "href": "j.html#jitter",
+    "title": "12  geom_j",
+    "section": "12.1 geom_jitter",
+    "text": "12.1 geom_jitter\n\n12.1.1 Package\nggplot2 (Wickham 2016)\n\n\n12.1.2 Description\nAdds a small amount of random variation to the location of each point, horizontally and/or vertically.\n\n\n12.1.3 The statistical transformation to use on the data for this layer\nstat_identify - It plots the data as it is.\n\n\n12.1.4 See also\ngeom_point\n\n12.1.4.1 With count\n\nworldbankdata |&gt;\n  ggplot(aes(x=Income, y=Electricity)) + \n  geom_jitter()\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   }
 ]

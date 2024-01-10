@@ -94,3 +94,19 @@ worldbankdata |>
   ggplot(aes(x=Electricity, col=Income)) + 
   geom_freqpoly()
 ```
+
+## geom_flag
+
+```{r, warning=FALSE, message=FALSE}
+library(ggimage)
+worldbankdata.flag <- worldbankdata |>
+  filter(Country %in% c("France", "Sweden", "Norway", "Germany", "Switzerland")) |>
+  filter(Year == 2000) 
+worldbankdata.flag$code.flag <- c("FR", "SE", "NO", "DE", "CH")
+worldbankdata.flag |>
+ggplot(aes(y = Country, x= Electricity)) + 
+  geom_col(stat = 'identity') + 
+  geom_flag(y = -2, aes(image = code.flag)) +
+  coord_flip() 
+```
+

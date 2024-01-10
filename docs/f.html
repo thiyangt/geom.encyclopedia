@@ -321,7 +321,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./i.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_i</span></span></a>
   </div>
 </li>
       </ul>
@@ -655,6 +655,7 @@ div.csl-indent {
   <li><a href="#see-also-1" id="toc-see-also-1" class="nav-link" data-scroll-target="#see-also-1"><span class="header-section-number">8.2.5</span> See also</a></li>
   <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">8.2.6</span> Example</a></li>
   </ul></li>
+  <li><a href="#geom_flag" id="toc-geom_flag" class="nav-link" data-scroll-target="#geom_flag"><span class="header-section-number">8.3</span> geom_flag</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/f.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -702,7 +703,7 @@ div.csl-indent {
 </section>
 <section id="see-also" class="level3" data-number="8.1.5">
 <h3 data-number="8.1.5" class="anchored" data-anchor-id="see-also"><span class="header-section-number">8.1.5</span> See also</h3>
-<p><a href="#density">geom_density</a></p>
+<p><a href="d.html#density">geom_density</a></p>
 </section>
 <section id="example" class="level3" data-number="8.1.6">
 <h3 data-number="8.1.6" class="anchored" data-anchor-id="example"><span class="header-section-number">8.1.6</span> Example</h3>
@@ -740,7 +741,7 @@ div.csl-indent {
 </section>
 <section id="see-also-1" class="level3" data-number="8.2.5">
 <h3 data-number="8.2.5" class="anchored" data-anchor-id="see-also-1"><span class="header-section-number">8.2.5</span> See also</h3>
-<p><a href="#density">geom_density</a></p>
+<p><a href="d.html#density">geom_density</a></p>
 </section>
 <section id="example-1" class="level3" data-number="8.2.6">
 <h3 data-number="8.2.6" class="anchored" data-anchor-id="example-1"><span class="header-section-number">8.2.6</span> Example</h3>
@@ -752,6 +753,25 @@ div.csl-indent {
 <p><img src="f_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="480"></p>
 </div>
 </div>
+</section>
+</section>
+<section id="geom_flag" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="geom_flag"><span class="header-section-number">8.3</span> geom_flag</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggimage)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>worldbankdata.flag <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"France"</span>, <span class="st">"Sweden"</span>, <span class="st">"Norway"</span>, <span class="st">"Germany"</span>, <span class="st">"Switzerland"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2000</span>) </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>worldbankdata.flag<span class="sc">$</span>code.flag <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"FR"</span>, <span class="st">"SE"</span>, <span class="st">"NO"</span>, <span class="st">"DE"</span>, <span class="st">"CH"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>worldbankdata.flag <span class="sc">|&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Country, <span class="at">x=</span> Electricity)) <span class="sc">+</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">stat =</span> <span class="st">'identity'</span>) <span class="sc">+</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_flag</span>(<span class="at">y =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="fu">aes</span>(<span class="at">image =</span> code.flag)) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="f_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -759,7 +779,6 @@ div.csl-indent {
 Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->

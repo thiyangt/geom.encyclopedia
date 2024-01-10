@@ -1,3 +1,38 @@
-# geom_a  {#sec-a}
+# geom_j  {#sec-j}
 
-## geom_abline
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+## geom_jitter {#jitter}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Adds a small amount of random variation to the location of each point, horizontally and/or vertically.
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_identify` - It plots the data as it is.
+
+### See also
+
+[geom_point](#point)
+
+#### Example
+
+
+
+```{r,  message=FALSE, warning=FALSE}
+worldbankdata |>
+  ggplot(aes(x=Income, y=Electricity)) + 
+  geom_jitter()
+
+```
