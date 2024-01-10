@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Visualisation geom Encyclopedia - 11&nbsp; geom_a</title>
+<title>Data Visualisation geom Encyclopedia - 11&nbsp; geom_i</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parti.html">I</a></li><li class="breadcrumb-item"><a href="./i.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_a</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parti.html">I</a></li><li class="breadcrumb-item"><a href="./i.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_i</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -268,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./i.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_i</span></span></a>
   </div>
 </li>
       </ul>
@@ -584,7 +637,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#geom_abline" id="toc-geom_abline" class="nav-link active" data-scroll-target="#geom_abline"><span class="header-section-number">11.1</span> geom_abline</a></li>
+  <li><a href="#image" id="toc-image" class="nav-link active" data-scroll-target="#image"><span class="header-section-number">11.1</span> geom_image</a>
+  <ul class="collapse">
+  <li><a href="#package" id="toc-package" class="nav-link" data-scroll-target="#package"><span class="header-section-number">11.1.1</span> Package</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">11.1.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics" id="toc-understandable-aesthetics" class="nav-link" data-scroll-target="#understandable-aesthetics"><span class="header-section-number">11.1.3</span> Understandable aesthetics</a></li>
+  <li><a href="#statistics-layers" id="toc-statistics-layers" class="nav-link" data-scroll-target="#statistics-layers"><span class="header-section-number">11.1.4</span> Statistics layer(s)</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">11.1.5</span> See also</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">11.1.6</span> Example</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/i.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -593,7 +654,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-a" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_a</span></span></h1>
+<h1 class="title"><span id="sec-i" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_i</span></span></h1>
 </div>
 
 
@@ -608,10 +669,49 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="geom_abline" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="geom_abline"><span class="header-section-number">11.1</span> geom_abline</h2>
+<section id="image" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="image"><span class="header-section-number">11.1</span> geom_image</h2>
+<section id="package" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="package"><span class="header-section-number">11.1.1</span> Package</h3>
+<p>ggimage <span class="citation" data-cites="ggimage">(<a href="references.html#ref-ggimage" role="doc-biblioref">Yu 2023</a>)</span></p>
+</section>
+<section id="description" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="description"><span class="header-section-number">11.1.2</span> Description</h3>
+<p>Visualise data through images.</p>
+</section>
+<section id="understandable-aesthetics" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="understandable-aesthetics"><span class="header-section-number">11.1.3</span> Understandable aesthetics</h3>
+<p><code>image</code></p>
+</section>
+<section id="statistics-layers" class="level3" data-number="11.1.4">
+<h3 data-number="11.1.4" class="anchored" data-anchor-id="statistics-layers"><span class="header-section-number">11.1.4</span> Statistics layer(s)</h3>
+<p><code>identity</code></p>
+</section>
+<section id="see-also" class="level3" data-number="11.1.5">
+<h3 data-number="11.1.5" class="anchored" data-anchor-id="see-also"><span class="header-section-number">11.1.5</span> See also</h3>
+<p><a href="#emoji">geom_emoji</a></p>
+</section>
+<section id="example" class="level3" data-number="11.1.6">
+<h3 data-number="11.1.6" class="anchored" data-anchor-id="example"><span class="header-section-number">11.1.6</span> Example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggimage"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">image =</span> <span class="fu">sample</span>(<span class="st">"https://www.r-project.org/logo/Rlogo.png"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">size=</span><span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x, y)) <span class="sc">+</span> <span class="fu">geom_image</span>(<span class="fu">aes</span>(<span class="at">image=</span>image))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="i_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="480"></p>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ggimage" class="csl-entry" role="listitem">
+Yu, Guangchuang. 2023. <em>Ggimage: Use Image in ’Ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggimage">https://CRAN.R-project.org/package=ggimage</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

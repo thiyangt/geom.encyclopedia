@@ -217,18 +217,17 @@ ggDoubleHeat [@ggDoubleHeat]
 
 ### Description
 
-Visualize two qantitative information inside heatmap cell using grid.
+Visualize two quantitative variables of information inside a heatmap cell using a grid.
 
 ### Understandable aesthetics
 
 **required aesthetics**
 
-`x` or `y`
+`x`, `y`, `outside`, `inside`
 
+**Optional aesthetics**
 
-**optional aesthetics**
-
-`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
+`outside_colors`, `outside_name`, `inside_colors`, `inside_name`
 
 
 ### Statistics layer(s)
@@ -237,7 +236,7 @@ hdrcde
 
 ### See also
 
-[geom_boxplot](#boxplot), [geom_histogram](#histogram), [geom_density](#density), [geom_density_line](#density_line)
+[geom_heat_circle](#heat_circle), [geom_heat_tri](#heat_tri)
 
 ### Example
 
@@ -252,4 +251,115 @@ worldbankdata[254:263, ] |>
 
 ## geom_heat_tri {#heat_tri}
 
+### Package
+
+ggDoubleHeat [@ggDoubleHeat]
+
+### Description
+
+Visualize two quantitative variables of information inside a heatmap cell using triangles.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`, `y`, `lower`, `upper`
+
+**Optional aesthetics**
+
+`lower_colors`, `lower_name`, `upper_colors`, `upper_name`
+
+
+### Statistics layer(s)
+
+hdrcde
+
+### See also
+
+[geom_heat_grid](#heat_grid), [geom_heat_tri](#heat_tri)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+library(ggDoubleHeat)
+worldbankdata[254:263, ] |>
+  ggplot(aes(y = Year, x=Income)) + 
+  geom_heat_tri(lower = Electricity,
+           upper = Cooking) 
+```
+
 ## geom_heat_circle {#heat_circle}
+
+### Package
+
+ggDoubleHeat [@ggDoubleHeat]
+
+### Description
+
+Visualize two quantitative variables of information inside a heatmap cell using triangles.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`, `y`, `outside`, `inside`
+
+**Optional aesthetics**
+
+`outside_colors`, `outside_name`, `inside_colors`, `inside_name`
+
+### Statistics layer(s)
+
+hdrcde
+
+### See also
+
+[geom_heat_grid](#heat_grid), [geom_heat_tri](#heat_tri)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+library(ggDoubleHeat)
+worldbankdata[254:263, ] |>
+  ggplot(aes(y = Year, x=Income)) + 
+  geom_heat_circle(outside = Electricity,
+           inside = Cooking) 
+```
+
+## geom_hline{#hline}
+
+### Package 
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Draw a horizontal line given intercept.
+
+### Understandable aesthetics
+
+Unlike most other geoms, `geom_hline` does not depend on the x and y variables that we map for the main plot. 
+
+### The statistical transformation to use on the data for this layer
+
+None (`geom_hline` is independent from the data layer.)
+
+### See also: 
+
+ [geom_point](#point), [geom_vline](#vline), [geom_abline](#hline)
+
+### Example
+
+```{r, fig.height=8, fig.width=8, warning=FALSE, message=FALSE}
+a1 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
+  geom_hline(yintercept = 50) + 
+  labs(title="a1: geom_abline only") +
+  theme(aspect.ratio = 1)
+a2 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
+  geom_hline(yintercept = 50) + 
+  geom_point() + 
+  labs(title = "a2: geom_hline \n and geom_point") +
+  theme(aspect.ratio = 1)
+a1 | a2
+```
+

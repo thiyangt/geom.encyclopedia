@@ -227,8 +227,8 @@
     "objectID": "h.html#hline",
     "href": "h.html#hline",
     "title": "10  geom_h",
-    "section": "10.1 geom_hline",
-    "text": "10.1 geom_hline\n\n10.1.1 Package\nggplot2 (Wickham 2016)\n\n\n10.1.2 Description\nDraw a horizontal line (\\(Y=c\\)) for a given value of \\(c\\), which is known as yintercept.\n\n\n10.1.3 Understandable aesthetics\nUnlike most other geoms, geom_hline does not depend on the x and y variables that we map for the main plot. geom_hline has its own independent characteristics: yintercept. The yintercept can be passed either as a arguments or aesthetic.\n\n\n10.1.4 Statistics layer(s)\nNone\n\n\n10.1.5 See also\ngeom_point, geom_vline, geom_hline\n\n\n10.1.6 Example\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x= Electricity)) + geom_hline(yintercept = 50) + \n  labs(title=\"a1: `geom_hline` only\") +\n  theme(aspect.ratio = 1)\n\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_point() + \n  geom_hline(yintercept = 50) + \n  labs(title=\"a2: `geom_point +\\n geom_hline` both\") +\n  theme(aspect.ratio = 1)\na1 | a2\n\n\n\n\nIllustration of (A) geom_hline and (B) use of geom_point and geom_hline both"
+    "section": "10.9 geom_hline",
+    "text": "10.9 geom_hline\n\n10.9.1 Package\nggplot2 (Wickham 2016)\n\n\n10.9.2 Description\nDraw a horizontal line given intercept.\n\n\n10.9.3 Understandable aesthetics\nUnlike most other geoms, geom_hline does not depend on the x and y variables that we map for the main plot.\n\n\n10.9.4 The statistical transformation to use on the data for this layer\nNone (geom_hline is independent from the data layer.)\n\n\n10.9.5 See also:\ngeom_point, geom_vline, geom_abline\n\n\n10.9.6 Example\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_hline(yintercept = 50) + \n  labs(title=\"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_hline(yintercept = 50) + \n  geom_point() + \n  labs(title = \"a2: geom_hline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nYu, Youzhi, and Trent Buskirk. 2023. ggDoubleHeat: A Heatmap-Like Visualization Tool. https://CRAN.R-project.org/package=ggDoubleHeat."
   },
   {
     "objectID": "i.html#geom_abline",
@@ -410,21 +410,21 @@
     "href": "h.html#heat_grid",
     "title": "10  geom_h",
     "section": "10.6 geom_heat_grid",
-    "text": "10.6 geom_heat_grid\n\n10.6.1 Package\nggDoubleHeat (Yu and Buskirk 2023)\n\n\n10.6.2 Description\nVisualize two qantitative information inside heatmap cell using grid.\n\n\n10.6.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\n\n\n10.6.4 Statistics layer(s)\nhdrcde\n\n\n10.6.5 See also\ngeom_boxplot, geom_histogram, geom_density, geom_density_line\n\n\n10.6.6 Example\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_grid(outside = Electricity,\n           inside = Cooking)"
+    "text": "10.6 geom_heat_grid\n\n10.6.1 Package\nggDoubleHeat (Yu and Buskirk 2023)\n\n\n10.6.2 Description\nVisualize two quantitative variables of information inside a heatmap cell using a grid.\n\n\n10.6.3 Understandable aesthetics\nrequired aesthetics\nx, y, outside, inside\nOptional aesthetics\noutside_colors, outside_name, inside_colors, inside_name\n\n\n10.6.4 Statistics layer(s)\nhdrcde\n\n\n10.6.5 See also\ngeom_heat_circle, geom_heat_tri\n\n\n10.6.6 Example\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_grid(outside = Electricity,\n           inside = Cooking)"
   },
   {
     "objectID": "h.html#heat_tri",
     "href": "h.html#heat_tri",
     "title": "10  geom_h",
     "section": "10.7 geom_heat_tri",
-    "text": "10.7 geom_heat_tri"
+    "text": "10.7 geom_heat_tri\n\n10.7.1 Package\nggDoubleHeat (Yu and Buskirk 2023)\n\n\n10.7.2 Description\nVisualize two quantitative variables of information inside a heatmap cell using triangles.\n\n\n10.7.3 Understandable aesthetics\nrequired aesthetics\nx, y, lower, upper\nOptional aesthetics\nlower_colors, lower_name, upper_colors, upper_name\n\n\n10.7.4 Statistics layer(s)\nhdrcde\n\n\n10.7.5 See also\ngeom_heat_grid, geom_heat_tri\n\n\n10.7.6 Example\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_tri(lower = Electricity,\n           upper = Cooking)"
   },
   {
     "objectID": "h.html#heat_circle",
     "href": "h.html#heat_circle",
     "title": "10  geom_h",
     "section": "10.8 geom_heat_circle",
-    "text": "10.8 geom_heat_circle\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nYu, Youzhi, and Trent Buskirk. 2023. ggDoubleHeat: A Heatmap-Like Visualization Tool. https://CRAN.R-project.org/package=ggDoubleHeat."
+    "text": "10.8 geom_heat_circle\n\n10.8.1 Package\nggDoubleHeat (Yu and Buskirk 2023)\n\n\n10.8.2 Description\nVisualize two quantitative variables of information inside a heatmap cell using triangles.\n\n\n10.8.3 Understandable aesthetics\nrequired aesthetics\nx, y, outside, inside\nOptional aesthetics\noutside_colors, outside_name, inside_colors, inside_name\n\n\n10.8.4 Statistics layer(s)\nhdrcde\n\n\n10.8.5 See also\ngeom_heat_grid, geom_heat_tri\n\n\n10.8.6 Example\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_circle(outside = Electricity,\n           inside = Cooking)"
   },
   {
     "objectID": "f.html#function",
@@ -439,5 +439,12 @@
     "title": "8  geom_f",
     "section": "8.2 geom_freqpoly",
     "text": "8.2 geom_freqpoly\n\n8.2.1 Package\nggplot2 (Wickham 2016)\n\n\n8.2.2 Description\nVisualise the spread of a single continuous variable by partitioning the x-axis into bins and mapping the frequency of observations within each bin.\n\n\n8.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n8.2.4 The statistical transformation to use on the data for this layer\nstat_bin for a continuous x variable\nstat_count for a discrete x variable\n\n\n8.2.5 See also\ngeom_density\n\n\n8.2.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x=Electricity, col=Income)) + \n  geom_freqpoly()\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "i.html#image",
+    "href": "i.html#image",
+    "title": "11  geom_i",
+    "section": "11.1 geom_image",
+    "text": "11.1 geom_image\n\n11.1.1 Package\nggimage (Yu 2023)\n\n\n11.1.2 Description\nVisualise data through images.\n\n\n11.1.3 Understandable aesthetics\nimage\n\n\n11.1.4 Statistics layer(s)\nidentity\n\n\n11.1.5 See also\ngeom_emoji\n\n\n11.1.6 Example\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10),\n                image = sample(\"https://www.r-project.org/logo/Rlogo.png\",\n                              size=10, replace = TRUE))\nggplot(df, aes(x, y)) + geom_image(aes(image=image))\n\n\n\n\n\n\n\n\nYu, Guangchuang. 2023. Ggimage: Use Image in ’Ggplot2’. https://CRAN.R-project.org/package=ggimage."
   }
 ]

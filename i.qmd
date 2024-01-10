@@ -1,3 +1,44 @@
-# geom_a  {#sec-a}
+# geom_i  {#sec-i}
 
-## geom_abline
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+## geom_image {#image}
+
+
+### Package
+
+ggimage [@ggimage]
+
+### Description
+
+Visualise data through images.
+
+### Understandable aesthetics
+
+`image`
+
+### Statistics layer(s)
+
+`identity`
+
+### See also
+
+[geom_emoji](#emoji)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+library("ggimage")
+df <- data.frame(x = rnorm(10),
+                 y = rnorm(10),
+                image = sample("https://www.r-project.org/logo/Rlogo.png",
+                              size=10, replace = TRUE))
+ggplot(df, aes(x, y)) + geom_image(aes(image=image))
+```
+
