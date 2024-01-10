@@ -466,6 +466,48 @@
     "href": "j.html#jitter",
     "title": "12  geom_j",
     "section": "12.1 geom_jitter",
-    "text": "12.1 geom_jitter\n\n12.1.1 Package\nggplot2 (Wickham 2016)\n\n\n12.1.2 Description\nAdds a small amount of random variation to the location of each point, horizontally and/or vertically.\n\n\n12.1.3 The statistical transformation to use on the data for this layer\nstat_identify - It plots the data as it is.\n\n\n12.1.4 See also\ngeom_point\n\n12.1.4.1 With count\n\nworldbankdata |&gt;\n  ggplot(aes(x=Income, y=Electricity)) + \n  geom_jitter()\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "12.1 geom_jitter\n\n12.1.1 Package\nggplot2 (Wickham 2016)\n\n\n12.1.2 Description\nAdds a small amount of random variation to the location of each point, horizontally and/or vertically.\n\n\n12.1.3 The statistical transformation to use on the data for this layer\nstat_identify - It plots the data as it is.\n\n\n12.1.4 See also\ngeom_point\n\n12.1.4.1 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Income, y=Electricity)) + \n  geom_jitter() + ggtitle(\"a1: geom_jitter\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Income, y=Electricity)) + \n  geom_point() + ggtitle(\"a1: geom_point\")\na1 | a2\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "i.html#icon",
+    "href": "i.html#icon",
+    "title": "11  geom_i",
+    "section": "11.2 geom_icon",
+    "text": "11.2 geom_icon\n\n11.2.1 Example\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10))\ndf$icon = sample(c('ios-power', 'ios-wifi', 'ios-pie'), 10, replace=TRUE)\nggplot(df, aes(x, y)) + geom_icon(aes(image=icon))\n\n\n\n\n\n\n\n\nYu, Guangchuang. 2023. Ggimage: Use Image in ’Ggplot2’. https://CRAN.R-project.org/package=ggimage."
+  },
+  {
+    "objectID": "a.html#area",
+    "href": "a.html#area",
+    "title": "3  geom_a",
+    "section": "3.1 geom_area",
+    "text": "3.1 geom_area\n\n3.1.1 Package\nggplot2 (Wickham 2016)\n\n\n3.1.2 Description\nCreate an area plot. This cover the space between x-axis and line that connects the data points.\n\n\n3.1.3 Understandable aesthetics\nalpha, colour, linetype, linewidth\n\n\n3.1.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n3.1.5 See also\ngeom_line, geom_ribbon\n\n\n3.1.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_area(alpha=0.5) + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021) + \n  labs(title = \"a1: geom_area only\")\n\na2 &lt;-  worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_area(alpha=0.5) + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  geom_point(col=\"red\") + \n  labs(title = \"a2: geom_area \\n and geom_point\")\na1 | a2"
+  },
+  {
+    "objectID": "a.html#abline",
+    "href": "a.html#abline",
+    "title": "3  geom_a",
+    "section": "3.2 geom_abline",
+    "text": "3.2 geom_abline\n\n3.2.1 Package\nggplot2 (Wickham 2016)\n\n\n3.2.2 Description\nDescription Draw a straight line (\\(Y=mX+c\\)) for a given slope (\\(m\\)) and intercept (\\(c\\)).\n\n\n3.2.3 Understandable aesthetics\nUnlike most other geoms, geom_abline does not depend on the x and y variables that we map for the main plot. geom_abline has its own independent characteristics: intercept and slope.\n\n\n3.2.4 The statistical transformation to use on the data for this layer\nNone (geom_abline is independent from the data layer.)\n\n\n3.2.5 See also:\ngeom_point, geom_vline, geom_hline\n\n\n3.2.6 Example\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_abline(intercept = 0, slope = 1) + \n  labs(title=\"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_abline(intercept = 0, slope = 1) + \n  geom_point() + \n  labs(title = \"a2: geom_abline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2"
+  },
+  {
+    "objectID": "a.html#alluvium",
+    "href": "a.html#alluvium",
+    "title": "3  geom_a",
+    "section": "3.3 geom_alluvium",
+    "text": "3.3 geom_alluvium\n\n3.3.1 Package\nggalluvial(Brunson and Read 2019; Brunson 2020)\n\n\n3.3.2 Description\nCreate alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories\n\n\n3.3.3 Understandable aesthetics\nx, y, ymin, ymax, alpha, colour, fill, linetype, size, group (group is used internally; arguments are ignored)\n\n\n3.3.4 The statistical transformation to use on the data for this layer\nalluvium\n\n\n3.3.5 See also\ngeom_stratum, geom_flow, geom_lode\n\n\n3.3.6 Example\n\nlibrary(ggalluvial)\nfreq.table &lt;- worldbankdata |&gt;\n  select(Country, Region, Year, Income) |&gt;\n  filter(Year &gt; 2015) |&gt;\n  group_by(Region, Year, Income) |&gt;\n  summarise(n = n()) |&gt;\n  drop_na()\nfreq.table \n\n# A tibble: 153 × 4\n# Groups:   Region, Year [49]\n   Region               Year Income     n\n   &lt;fct&gt;               &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n 1 East Asia & Pacific  2016 LM        13\n 2 East Asia & Pacific  2016 UM        10\n 3 East Asia & Pacific  2016 H         14\n 4 East Asia & Pacific  2017 LM        13\n 5 East Asia & Pacific  2017 UM        10\n 6 East Asia & Pacific  2017 H         14\n 7 East Asia & Pacific  2018 LM        13\n 8 East Asia & Pacific  2018 UM        10\n 9 East Asia & Pacific  2018 H         14\n10 East Asia & Pacific  2019 LM        12\n# ℹ 143 more rows\n\na1 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1/12) + \n  labs(title = \"a1: geom_alluvium only\")\n\na2 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1/12) + \n  geom_stratum(width = 1/12, fill = \"black\", color = \"grey\") +\n  geom_label(stat = \"stratum\", aes(label = after_stat(stratum))) +\n  labs(title = \"a2: geom_alluvium, \\n geom_stratum and geom_label\")\na1/a2"
+  },
+  {
+    "objectID": "a.html#geom_arc",
+    "href": "a.html#geom_arc",
+    "title": "3  geom_a",
+    "section": "3.4 geom_arc",
+    "text": "3.4 geom_arc\n\n3.4.1 Package\nggforce(Pedersen 2022)\n\n\n3.4.2 Description\nDraw a circle or a segment of a circle.\n\n\n3.4.3 Understandable aesthetic\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius, start, end\noptional aesthetics\ncolor, linewidth, linetype, alpha, lineend\n\n\n3.4.4 The statistical transformation to use on the data for this layer\nstat_arc\n\n\n3.4.5 See also\ngeom_arc2, geom_arc_bar\n\n\n3.4.6 Example\n\nlibrary(ggforce)\nggplot() + \n  geom_arc(aes(x0=0, y0=0, r=8, start=1, end=8)) + \n  geom_arc(aes(x0=0, y0=0, r=8, start=1, end=5), col=\"red\",size=2) + theme(aspect.ratio = 1)"
+  },
+  {
+    "objectID": "a.html#arcbar",
+    "href": "a.html#arcbar",
+    "title": "3  geom_a",
+    "section": "3.5 geom_arc_bar",
+    "text": "3.5 geom_arc_bar\n\n3.5.1 Package\nggforce(Pedersen 2022)\n\n\n3.5.2 Description\nTo draw pie chart and donut chart defining centre point, a radius and a start and end angle.\n\n\n3.5.3 Understandable aesthetic\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius, start, end\noptional\ncolor, linewidth, linetype, alpha, lineend\n\n\n3.5.4 The statistical transformation to use on the data for this layer\nstat_arc\n\n\n3.5.5 See also\ngeom_arc, geom_arc_bar\n\n\n3.5.6 Example\n\ndf &lt;- data.frame(\n    state = c('A', 'B', 'C', \n              'D', 'E'),\n    focus = c(0.2, 0, 0, 0, 0),\n    start = c(0, 1, 2, 3, 4),\n    end = c(1, 2, 3, 4, 2*pi),\n    amount = c(4, 3, 1, 2, 5),\n    stringsAsFactors = FALSE\n)\nggplot(df) + \n    geom_arc_bar(aes(x0 = 0, y0 = 0, r0 = 0, r = 1, amount = amount, \n                     fill = state, explode = focus), stat = 'pie') + \n  theme(aspect.ratio = 1)\n\n\n\n\n\n\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for Alluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package ‘Ggalluvial’.”\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   }
 ]

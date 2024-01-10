@@ -31,8 +31,12 @@ Adds a small amount of random variation to the location of each point, horizonta
 
 
 ```{r,  message=FALSE, warning=FALSE}
-worldbankdata |>
+a1 <- worldbankdata |>
   ggplot(aes(x=Income, y=Electricity)) + 
-  geom_jitter()
+  geom_jitter() + ggtitle("a1: geom_jitter")
+a2 <- worldbankdata |>
+  ggplot(aes(x=Income, y=Electricity)) + 
+  geom_point() + ggtitle("a1: geom_point")
+a1 | a2
 
 ```
