@@ -1,3 +1,60 @@
-# geom_a  {#sec-a}
+# geom_l  {#sec-l}
 
-## geom_abline
+
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+data("worldbankdata")
+```
+
+## geom_label
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Labelling plots
+
+### Understandable aesthetics
+
+**Required aesthetics**
+
+`x`, `y`, `label`
+
+
+**Optional aesthetics**
+
+`alpha`, `angle`, `colour`, `family`, `fontface`, `group`, `hjust`,  `lineheight`, `size`, `vjust`
+
+### The statistical transformation to use on the data for this layer 
+
+`identity`
+
+### See also
+
+[geom_text](#text)
+
+### Example
+
+```{r area, warning=FALSE, message=FALSE}
+a1 <- worldbankdata |>
+  filter(Income == "L" | Income =="H") |> 
+  filter(Year == 2021) |>
+  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + 
+  geom_label(aes(fill = factor(Income)), colour = "white", fontface = "bold", alpha=0.5) + theme(aspect.ratio = 1) + labs(title = "a1: geom_label only") 
+a2 <- worldbankdata |>
+  filter(Income == "L" | Income =="H") |> 
+  filter(Year == 2021) |>
+  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + 
+  geom_point(aes(col = Income)) +  theme(aspect.ratio = 1) + 
+  labs(title = "a2: geom_point only") 
+a1|a2
+```
+
+
+## geom_line
+
+## geom_linerange
