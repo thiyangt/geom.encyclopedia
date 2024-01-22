@@ -55,6 +55,97 @@ a1|a2
 ```
 
 
-## geom_line
+## geom_line{#line}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Connects dats in order of the variable on the x axis.
+
+### Understandable aesthetics
+
+
+
+**required aesthetics**
+  
+`x`
+
+`y`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_xx`
+
+### See also
+
+[geom_path](#path)
+  
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+a1 <- worldbankdata |>
+  filter(Country == "Sri Lanka") |>
+  ggplot(aes(x=Year, y=Cooking)) + 
+  geom_line() + ggtitle("geom_line only")
+a2 <- worldbankdata |>
+  filter(Country == "Sri Lanka") |>
+  ggplot(aes(x=Year, y=Cooking)) + 
+  geom_line() + 
+  geom_point() +
+  ggtitle("geom_line and geom_point")
+a1|a2
+```
 
 ## geom_linerange
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Representing a vertical interval defined by x, ymin and ymax
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x` or `y`,
+
+`ymin` or `xmin`,
+
+`ymax` or `xmax`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_align`
+
+### See also
+
+[geom_line](#line), [geom_crossbar](#crossbar), [geom_errorbar](#errorbar), [geom_pointrange](#pointrange)
+  
+### Example
+
+
+```{r}
+worldbankdata |>
+  group_by(Region) |>
+  summarise(min = min(Cooking, na.rm = TRUE), max=max(Cooking, 
+                                                      na.rm = TRUE)) |>
+  ggplot(aes(x=Region)) +
+  geom_linerange(aes(ymin = min, ymax = max)) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```

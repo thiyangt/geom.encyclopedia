@@ -423,7 +423,7 @@ a1 <- worldbankdata |>
   filter(Income == "L") |>
   ggplot(aes(x=Cooking, y=Electricity)) +   
   geom_delaunay_tile(alpha=0.5) + 
-  labs(title = "a1: geom_point only") +
+  labs(title = "a1: geom_delaunay_tile only") +
   theme(aspect.ratio = 1)
 
 a2 <- worldbankdata |>

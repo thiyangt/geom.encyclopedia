@@ -1,3 +1,5 @@
-# geom_a  {#sec-a}
+# geom_p  {#sec-p}
 
-## geom_abline
+## geom_path
+
+## geom_pointrange

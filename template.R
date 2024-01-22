@@ -15,7 +15,15 @@ ggplot2 [@ggplot2]
 
 ### Understandable aesthetics
 
-`alpha`, `colour`, `linetype`, `linewidth`
+**required aesthetics**
+  
+  `x`
+
+`y`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 ### The statistical transformation to use on the data for this layer 
 
@@ -25,4 +33,4 @@ ggplot2 [@ggplot2]
 
 [geom_line](#line), [geom_ribbon](#ribbon)
   
-  ### Example
+### Example

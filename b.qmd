@@ -156,9 +156,11 @@ Divides the Cartesian plane created by x-variable and y-variable into rectangles
 
 `stat_bin_2d`
 
-**See also: ** [geom_bin_2d](#bin_2d), [geom_point](#point)
+### See also
 
-**Example:**
+[geom_bin_2d](#bin_2d), [geom_point](#point)
+
+### Example
 
 ```{r, fig.cap="Illustration of using geom_bin_2d", message=FALSE, warning=FALSE}
 ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
@@ -170,23 +172,35 @@ ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
 
 ## geom_blank{#blank}
 
-**Package: ** ggplot2 [@R-ggplot2]
+### Package
 
-**Description: ** Draws nothing.
+ggplot2 [@R-ggplot2]
+
+### Description
+
+Draws nothing.
 
 ## geom_boxplot{#boxplot}
 
 
-**Package: ** ggplot2 [@R-ggplot2]
+### Package
 
-**Description: ** Draw a bar proportional to the specified number. For example, number of cases or user defined number.
+ggplot2 [@R-ggplot2]
+
+### Description
+
+Draw a bar proportional to the specified number. For example, number of cases or user defined number.
 
 ### The statistical transformation to use on the data for this layer 
 
   `stat_boxplot` - This the default statistics layer. This computes minimum, maximum, median, first quartile ($Q1$), third quartile ($Q3$), upper whisker extends up to $Q3 + 1.5 \times IQR$ and lower whisker extends up to $Q1 - 1.5 \times IQR$, where $IQR = Q3 - Q1$. In a notched box plot, it creates 95\% confidence interval for mean.
   
 
-**See also: ** [geom_col](#col)
+### See also 
+
+[geom_col](#col)
+
+### Example
 
 ```{r, fig.cap="Illustration of using geom_boxplot", message=FALSE, warning=FALSE}
 worldbankdata |>
@@ -212,5 +226,5 @@ geom_boxplot(outlier.colour="black", outlier.shape=16,
 
 ```
 
-
+## geom_bump {#bump}
 

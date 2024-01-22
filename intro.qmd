@@ -1,7 +1,7 @@
 # Introduction
 
 
-# Data wrnging
+# Data wrangling
 
 ```{r}
 library(tidyverse)
@@ -23,12 +23,13 @@ worldbankdata
 
 ```{r}
 library(visdat)
-vis_dat(worldbankdata)
+vis_dat(worldbankdata) + 
+  scale_fill_brewer(palette = "Dark2")
 ```
 
 ```{r}
 library(naniar)
-gg_miss_upset(worldbankdata)
+gg_miss_upset(worldbankdata) 
 ```
 
 

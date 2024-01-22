@@ -1,1 +1,216 @@
 # geom_v  {#sec-v}
+
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+
+
+
+## geom_violin{#violin}
+
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Creates violin plot.
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x`
+
+`y`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`, `weight`
+
+### The statistical transformation to use on the data for this layer 
+
+`ydensity`
+
+### See also
+
+[geom_boxplot](#boxplot), [geom_density](#density)
+  
+### Example
+
+```{r,  message=FALSE, warning=FALSE}
+worldbankdata |>
+  dplyr::filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Income, fill=Income)) + 
+  geom_violin() + 
+  scale_fill_brewer(palette = "Dark2") +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+## geom_violin_pattern {#violin_pattern}
+
+### Package
+
+ggforce [@ggforce]
+
+### Description
+
+Fill violin plots with patterns.
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x`
+
+`y`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`, `weight`
+
+### The statistical transformation to use on the data for this layer 
+
+`ydensity`
+
+### See also
+
+[geom_boxplot](#boxplot), [geom_density](#density)
+  
+### Example
+
+```{r,  message=FALSE, warning=FALSE}
+worldbankdata |>
+  dplyr::filter(Year == 2021) |>
+ggplot(aes(y = Cooking, x=Income, fill=Income)) + 
+  geom_violin_pattern() + 
+  scale_fill_brewer(palette = "Dark2") +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+## geom_voronoi_tile
+
+
+### Package
+
+ggforce [@ggforce]
+
+### Description
+
+Voronoi tiles are the polygons that result from the spatial division of a plane based on the input points.
+
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x`
+
+`y`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`,  `linetype`, `size`
+
+### The statistical transformation to use on the data for this layer 
+
+`voronoi_tile`
+
+### See also
+
+[geom_voronoi_segment](#voroni_segment), [geom_delaunay_tile](#delaunay_tile), [geom_delaunay_segment](#delaunay_segment)
+  
+### Example
+
+
+```{r, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
+library(ggforce)
+a1 <- worldbankdata |>
+  filter(Income == "L") |>
+  filter(Region == "Middle East & North Africa" | Region == "Sub-Saharan Africa") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_voronoi_tile(alpha=0.5, aes(fill=Region)) + 
+  labs(title = "a1: geom_voronoi_tile only") +
+  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
+  theme(aspect.ratio = 1) + 
+  theme(legend.position='bottom')
+a2 <- worldbankdata |>
+  filter(Income == "L") |>
+  filter(Region == "Middle East & North Africa" | Region == "Sub-Saharan Africa") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_voronoi_tile(alpha=0.5, aes(fill=Region)) + 
+  geom_point(aes(col=Region)) + 
+  labs(title = "a1: geom_voronoi_tile and  geom_point") +
+  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
+  theme(aspect.ratio = 1) +
+  theme(legend.position='none')
+a1|a2
+```
+
+## geom_voronoi_segment
+
+### Package
+
+ggforce [@ggforce]
+
+### Description
+
+
+Represents the borders between the regions assigned to different input points.
+
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x`
+
+`y`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`,  `linetype`, `size`
+
+### The statistical transformation to use on the data for this layer 
+
+`voronoi_segment`
+
+### See also
+
+[geom_voronoi_tile](#voroni_tile), [geom_delaunay_tile](#delaunay_tile), [geom_delaunay_segment](#delaunay_segment)
+
+```{r, warning=FALSE, message=FALSE}
+library(ggforce)
+library(deldir) #to calculate delaunay triangulation
+a1 <- worldbankdata |>
+  filter(Year == 2021) |>
+  filter(Income == "LM" | Income == "UM") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_voronoi_segment() +
+  labs(title = "a1: geom_voronoi_segment only") +
+  theme(aspect.ratio = 1)
+
+a2 <- worldbankdata |>
+  filter(Year == 2021) |>
+  filter(Income == "LM" | Income == "UM") |>
+  ggplot(aes(x=Cooking, y=Electricity)) +   
+  geom_point() +
+  geom_voronoi_segment() +
+  labs(title = "a2: geom_point and \n geom_voronoi_segment") +
+  theme(aspect.ratio = 1)
+a1 | a2
+```
+
+

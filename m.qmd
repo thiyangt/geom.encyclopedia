@@ -1,3 +1,293 @@
-# geom_a  {#sec-a}
+# geom_m  {#sec-m}
 
-## geom_abline
+
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+data("worldbankdata")
+```
+
+## geom_mark_circle{#mark_circle}
+
+### Package
+
+ggforce [@ggforce]
+
+### Description
+
+Annotate sets of points via circles.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`x0 (used to anchor the label)`, `y0 (used to anchor the label)`, `filter`, `label`, `description`, `color`, `fill`, `group`, `size`, `linetype`, `alpha`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_xxx`
+
+### See also
+
+[geom_circle](#circle), [geom_encircle](#encircle), [geom_mark_ellipse](#mark_ellipse), [geom_mark_hull](#mark_hill), [geom_mark_rect](#mark_rect)
+  
+### Example
+
+```{r markcircle, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
+library(ggforce)
+worldbankdata |>
+  filter(Country == "Angola") |>
+  ggplot(aes(x = Cooking, y=Electricity)) +
+  geom_mark_circle(aes(fill = Income, label = Income),
+                   con.cap = 0) +
+  geom_point(aes(col=Income))
+```
+
+## geom_make_ellipse{#mark_ellipse}
+
+### Package
+
+ggforce [@ggforce]
+
+### Description
+
+Annotate sets of points via ellipse.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`x0 (used to anchor the label)`, `y0 (used to anchor the label)`, `filter`, `label`, `description`, `color`, `fill`, `group`, `size`, `linetype`, `alpha`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_xxx`
+
+### See also
+
+[geom_circle](#circle), [geom_encircle](#encircle), [geom_mark_circle](#mark_circle),  [geom_mark_hull](#mark_hill), [geom_mark_rect](#mark_rect)
+  
+### Example
+
+```{r markellipse, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
+library(ggforce)
+worldbankdata |>
+  filter(Country == "Angola") |>
+  ggplot(aes(x = Cooking, y=Electricity)) +
+  geom_mark_ellipse(aes(fill = Income, label = Income),
+                   con.cap = 0) +
+  geom_point(aes(col=Income))
+```
+
+## geom_make_hull{#mark_hull}
+
+### Package
+
+ggforce [@ggforce]
+
+### Description
+
+Annotate sets of points via hulls.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`x0 (used to anchor the label)`, `y0 (used to anchor the label)`, `filter`, `label`, `description`, `color`, `fill`, `group`, `size`, `linetype`, `alpha`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_xxx`
+
+### See also
+
+[geom_circle](#circle), [geom_encircle](#encircle), [geom_mark_circle](#mark_circle),  [geom_mark_ellipse](#mark_ellipse), [geom_mark_rect](#mark_rect)
+  
+### Example
+
+```{r markhull, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
+library(ggforce)
+library(concaveman)
+worldbankdata |>
+  filter(Income == "L" | Income =="UM") |>
+  filter(Year == 2021) |>
+  ggplot(aes(x = Cooking, y=Electricity)) +
+  geom_mark_hull(aes(fill=Income, lable = Income)) +
+  geom_point(aes(col=Income))
+```
+
+## geom_make_rect{#mark_rect}
+
+### Package
+
+ggforce [@ggforce]
+
+### Description
+
+Annotate sets of points via rectangles.
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`
+
+`y`
+
+**optional aesthetics**
+
+`x0 (used to anchor the label)`, `y0 (used to anchor the label)`, `filter`, `label`, `description`, `color`, `fill`, `group`, `size`, `linetype`, `alpha`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_xxx`
+
+### See also
+
+[geom_circle](#circle), [geom_encircle](#encircle), [geom_mark_circle](#mark_circle),  [geom_mark_ellipse](#mark_ellipse), [geom_mark_hull](#mark_hull)
+  
+### Example
+
+```{r markrect, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
+library(ggforce)
+worldbankdata |>
+  filter(Country == "Angola") |>
+  ggplot(aes(x = Cooking, y=Electricity)) +
+  geom_mark_rect(aes(fill = Income, label = Income),
+                   con.cap = 0) +
+  geom_point(aes(col=Income))
+```
+
+## geom_map{#map}
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Display polygons as a map.
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`map_id`
+
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `fill` ,`group`, `linetype`, `linewidth`, `subgropu`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_xxx`
+
+### See also
+
+[geom_polygon](#polygon)
+  
+### Example
+
+
+```{r map, comment=NA, message=FALSE, warning=FALSE}
+world = map_data("world")
+ggplot() +
+  geom_map(
+    data = world, map = world,
+    aes(long, lat, map_id = region),
+    fill = "white", colour = "#7f7f7f", size=0.5) 
+
+```
+
+## geom_mosaic{#mosaic}
+
+### Package
+
+ggmosaic [@ggmosaic]
+
+### Description
+
+Create mosaic plot
+
+### Understandable aesthetics
+
+`x`, `y`, `xmin`, `xmax`, `ymin`, `ymax`
+
+
+
+### The statistical transformation to use on the data for this layer 
+
+`mosaic`
+
+### See also
+
+[geom_bar](#bar), [geom_mosaic_jitter](#mosaic_jitter), [geom_mosaic_text](#mosaic_text)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(ggmosaic)
+worldbankdata |>
+  filter(Year == 2022) |>
+  ggplot() +
+  geom_mosaic(aes(x = product(Region), fill = Income)) + 
+  scale_fill_brewer(palette = "Dark2") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+```
+
+## geom_mosic_jitter{#mosaic jitter}
+
+### Package
+
+ggmosaic [@ggmosaic]
+
+### Description
+
+Create a mosaic plot with text or labels.
+
+### Understandable aesthetics
+
+`x`, `y`, `xmin`, `xmax`, `ymin`, `ymax`
+
+
+
+### The statistical transformation to use on the data for this layer 
+
+`mosaic`
+
+### See also
+
+[geom_bar](#bar), [geom_mosaic](#mosaic), [geom_mosaic_text](#mosaic_text)
+
+### Example
+
+```{r, warning=FALSE, message=FALSE}
+library(ggmosaic)
+worldbankdata |>
+  filter(Year == 2022) |>
+  ggplot() +
+  geom_mosaic(aes(x = product(Region), fill = Income), alpha=0.5) +
+  geom_mosaic_text(aes(x = product(Region), fill = Income)) +
+  scale_fill_brewer(palette = "Dark2") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+```
