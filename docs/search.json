@@ -759,7 +759,70 @@
     "objectID": "x.html#geom_xy_means",
     "href": "x.html#geom_xy_means",
     "title": "26  geom_x",
-    "section": "26.1 geom_xy_means",
-    "text": "26.1 geom_xy_means\n\n26.1.1 Package\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"EvaMaeRey/ggxmean\")\n\nggxmean (ggxmean?)\n\n\n26.1.2 Description\nPlace point at mean of x and mean of y\n\n\n26.1.3 Understandable aesthetics\nrequired aesthetics\nx, y\n\n\n26.1.4 The statistical transformation to use on the data for this layer\n\n\n26.1.5 See also\ngeom_point\n\n\n26.1.6 Example\n\nlibrary(ggxmean)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_means(na.rm=TRUE) + ggtitle(\"a1: geom_xy_means only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_point(alpha=0.5) +\n  geom_xy_means(na.rm=TRUE, col=\"red\") + \n  ggtitle(\"a2: geom_points and geom_xy_means\")\na1|a2\n\nWarning: Removed 6047 rows containing missing values (`geom_point()`)."
+    "section": "26.10 geom_xy_means",
+    "text": "26.10 geom_xy_means\n\n26.10.1 Package\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"EvaMaeRey/ggxmean\")\n\nggxmean (ggxmean?)\n\n\n26.10.2 Description\nPlace point at mean of x and mean of y\n\n\n26.10.3 Understandable aesthetics\nrequired aesthetics\nx, y\n\n\n26.10.4 The statistical transformation to use on the data for this layer\n\n\n26.10.5 See also\ngeom_point\n\n\n26.10.6 Example\n\nlibrary(ggxmean)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_means(na.rm=TRUE) + ggtitle(\"a1: geom_xy_means only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_point(alpha=0.5) +\n  geom_xy_means(na.rm=TRUE, col=\"red\") + \n  ggtitle(\"a2: geom_points and geom_xy_means\")\na1|a2\n\nWarning: Removed 6047 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "x.html#geom_x_label",
+    "href": "x.html#geom_x_label",
+    "title": "26  geom_x",
+    "section": "26.1 geom_x_label",
+    "text": "26.1 geom_x_label\n\n26.1.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_x_line",
+    "href": "x.html#geom_x_line",
+    "title": "26  geom_x",
+    "section": "26.2 geom_x_line",
+    "text": "26.2 geom_x_line\n\n26.2.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_x_mean",
+    "href": "x.html#geom_x_mean",
+    "title": "26  geom_x",
+    "section": "26.3 geom_x_mean",
+    "text": "26.3 geom_x_mean\n\n26.3.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_x_mean_label",
+    "href": "x.html#geom_x_mean_label",
+    "title": "26  geom_x",
+    "section": "26.4 geom_x_mean_label",
+    "text": "26.4 geom_x_mean_label\n\n26.4.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_x_median",
+    "href": "x.html#geom_x_median",
+    "title": "26  geom_x",
+    "section": "26.5 geom_x_median",
+    "text": "26.5 geom_x_median\n\n26.5.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_x_percentile",
+    "href": "x.html#geom_x_percentile",
+    "title": "26  geom_x",
+    "section": "26.6 geom_x_percentile",
+    "text": "26.6 geom_x_percentile\n\n26.6.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_x_quantile",
+    "href": "x.html#geom_x_quantile",
+    "title": "26  geom_x",
+    "section": "26.7 geom_x_quantile",
+    "text": "26.7 geom_x_quantile\n\n26.7.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_xmax",
+    "href": "x.html#geom_xmax",
+    "title": "26  geom_x",
+    "section": "26.8 geom_xmax",
+    "text": "26.8 geom_xmax\n\n26.8.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_xmin",
+    "href": "x.html#geom_xmin",
+    "title": "26  geom_x",
+    "section": "26.9 geom_xmin",
+    "text": "26.9 geom_xmin\n\n26.9.1 Package\nggxmean (ggxmean?)"
   }
 ]

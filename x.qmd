@@ -9,6 +9,62 @@ data("worldbankdata")
 ```
 
 
+## geom_x_label
+
+### Package
+
+ggxmean [@ggxmean]
+
+## geom_x_line
+
+### Package
+
+ggxmean [@ggxmean]
+
+
+## geom_x_mean
+
+### Package
+
+ggxmean [@ggxmean]
+
+## geom_x_mean_label
+
+### Package
+
+ggxmean [@ggxmean]
+
+
+## geom_x_median
+
+### Package
+
+ggxmean [@ggxmean]
+
+## geom_x_percentile
+
+### Package
+
+ggxmean [@ggxmean]
+
+## geom_x_quantile
+
+### Package
+
+ggxmean [@ggxmean]
+
+## geom_xmax
+
+### Package
+
+ggxmean [@ggxmean]
+
+## geom_xmin
+
+### Package
+
+ggxmean [@ggxmean]
+
 ## geom_xy_means
 
 
