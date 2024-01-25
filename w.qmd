@@ -1,1 +1,60 @@
 # geom_w  {#sec-w}
+
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+data("worldbankdata")
+```
+
+
+## geom_waffle
+
+### Package
+
+```{r}
+#install.packages("remotes")
+#remotes::install_github("hrbrmstr/waffle")
+
+```
+
+waffle [@waffle]
+
+### Description
+
+Create waffle plots
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`fill` (so the geom knows which column to map the fills to)
+
+`values` (which column you're mapping the filling for the squares with)
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_waffle`
+
+### See also
+
+[geom_bar](#bar), [geom_col](#col)
+  
+
+
+### Example 
+
+```{r}
+library(waffle)
+worldbankdata |>
+  filter(Region == "East Asia & Pacific" | Region == "Europe & Central Asia") |>
+  select(Region, Income, Year) |>
+  group_by(Region, Income) |>
+  tally() |>
+  ggplot(aes(fill=Income, values=n)) +
+  geom_waffle(color = "white") +
+  facet_wrap(~Region, ncol=1) +
+  scale_x_discrete(expand=c(0,0)) +
+  scale_y_discrete(expand=c(0,0)) +
+  coord_equal() 
+```

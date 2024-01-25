@@ -1,5 +1,261 @@
 # geom_p  {#sec-p}
 
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+library(ggpattern)
+data("worldbankdata")
+```
+
+## geom_point
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Visualize observations using points
+
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x`
+
+`y`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_prefix`
+
+### See also
+
+[geom_jitter](#jitter)
+  
+### Example
+
+```{r, warning = FALSE, message = FALSE}
+worldbankdata |>
+  filter(Country == "Bangladesh") |> 
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2013:2021)  
+
+```
+
+
 ## geom_path
 
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Connects the observations in the order in which they appear in the dataset.
+
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x`
+
+`y`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_prefix`
+
+### See also
+
+[geom_line](#line)
+  
+### Example
+
+```{r, warning = FALSE, message = FALSE}
+a1 <- worldbankdata |>
+  filter(Country == "Bangladesh") |> 
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_path() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2013:2021)  + 
+  ggtitle("a1: X-time dependent variable")
+a2 <- worldbankdata |>
+  ggplot(aes(x=Electricity, y=Cooking)) + 
+  geom_path() + ggtitle("a2: X-time independent variable")
+a1|a2
+```
+
+
 ## geom_pointrange
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Representing a vertical interval defined by ymin, ymax and point represent by y for different levels of x.
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x` or `y`,
+
+`ymin` or `xmin`,
+
+`ymax` or `xmax`
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_align`
+
+### See also
+
+[geom_line](#line), [geom_crossbar](#crossbar), [geom_errorbar](#errorbar), [geom_linerange](#linerange)
+
+### Example
+
+Method 1
+  
+```{r}
+worldbankdata |>
+  group_by(Region) |>
+  summarise(min = min(Cooking, na.rm = TRUE), max=max(Cooking, 
+                                                      na.rm = TRUE),
+            median = median(Cooking, na.rm=TRUE)) |>
+  ggplot(aes(x = Region, y = median, ymin = min, ymax = max)) +
+  geom_pointrange() + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+Method 2
+
+```{r}
+ggplot(data = worldbankdata) +
+  geom_pointrange(
+    mapping = aes(x = Region, y = Cooking),
+    stat = "summary",
+    fun.min = min,
+    fun.max = max,
+    fun = median
+  ) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+
+## geom_polygon
+
+### Package
+
+ggplot2 [@ggplot2]
+
+### Description
+
+Create polygon given x and y values. This is similar to paths except that the start an end points are connected.
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x`,
+
+`y`
+
+**optional aesthetics**
+  
+ `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`, `subgroup`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_align`
+
+### See also
+
+[geom_path](#path)
+
+### Example
+
+```{r, warning = FALSE, message = FALSE}
+a1 <- worldbankdata |>
+  filter(Country == "Bangladesh") |> 
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_polygon() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2013:2021)  + 
+  ggtitle("a1: X-time dependent variable")
+a2 <- worldbankdata |>
+  ggplot(aes(x=Electricity, y=Cooking)) + 
+  geom_polygon() + ggtitle("a2: X-time independent variable")
+a1|a2
+```
+
+## geom_polygon_pattern
+
+### Package
+
+ggpattern [@ggpattern]
+
+### Description
+
+Fill polygons with pattern
+
+### Understandable aesthetics
+
+**required aesthetics**
+  
+`x` or `y`,
+
+
+**optional aesthetics**
+  
+  `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`, `subgroup`, `pattern_fill`, `pattern_fill_colour`, `pattern`
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_align`
+
+### See also
+
+[geom_polygon](#polygon)
+
+### Example
+
+```{r, warning = FALSE, message = FALSE}
+a1 <- worldbankdata |>
+  filter(Country == "Bangladesh") |> 
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_polygon_pattern() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2013:2021)  + 
+  ggtitle("a1: X-time dependent variable")
+a2 <- worldbankdata |>
+  ggplot(aes(x=Electricity, y=Cooking)) + 
+  geom_polygon_pattern(aes(fill=Region)) + 
+  ggtitle("a2: X-time independent variable")
+a1|a2
+```
+
+

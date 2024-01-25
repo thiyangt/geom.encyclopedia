@@ -18,6 +18,16 @@ ggplot2 [@ggplot2]
 
 Draw a bar proportional to the specified number. For example, number of cases or user defined number.
 
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`, `y`, 
+
+**optional aesthetics**
+
+`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
+
 ### The statistical transformation to use on the data for this layer 
 
   `stat_count` - This the default statistics layer. It counts number of cases in each group. 
@@ -64,6 +74,51 @@ dfbar <- data.frame(class=c("A", "B"),  income = c(100, 200))
 ggplot(dfbar, aes(class, income)) +
   geom_bar(stat="identity")
 ```
+
+## geom_bar_pattern{#bar_pattern}
+
+### Package
+
+ggpattern [@ggpattern]
+
+### Description
+
+Fill bars with patterns
+
+### Understandable aesthetics
+
+**required aesthetics**
+
+`x`, `y`, 
+
+**optional aesthetics**
+
+ `pattern`, `pattern_angle`
+
+### The statistical transformation to use on the data for this layer 
+
+  `stat_count` - This the default statistics layer. It counts number of cases in each group. 
+  
+  `stat_identify` - It plots the data as it is.
+
+### See also
+
+[geom_bar](#bar)
+
+#### With count 
+
+```{r, fig.cap="Illustration of geom_bar to create a bar chart", message=FALSE, warning=FALSE}
+library(ggpattern)
+worldbankdata |>
+  dplyr::select(c("Year", "Income")) |>
+  dplyr::filter(Year==2021) |>
+  ggplot(aes(x = Income)) + 
+  geom_bar_pattern()
+```
+
+
+
+
 
 ## geom_bin_2d{#bin2d}
 
@@ -227,4 +282,50 @@ geom_boxplot(outlier.colour="black", outlier.shape=16,
 ```
 
 ## geom_bump {#bump}
+
+
+### Package
+
+ggbump [@ggbump]
+
+### Description 
+
+Creates  a smooth rank over time.
+
+### Understandable aesthetics
+
+
+**required aesthetics**
+
+`x`, `y`
+
+**optional aesthetics**
+
+`colour`, `alpha`, `size`
+
+
+### The statistical transformation to use on the data for this layer 
+
+`stat_bin_2d`
+
+### See also
+
+[geom_line](#line)
+
+### Example
+
+```{r, fig.cap="Illustration of using geom_bin_2d", message=FALSE, warning=FALSE}
+library(ggbump)
+a1 <- worldbankdata |> 
+  filter(Country == "Afghanistan") |>
+  ggplot(aes(x = Year, y=Electricity)) +
+  geom_bump() + ggtitle("a1: geom_bump only")
+a2 <- worldbankdata |> 
+  filter(Country == "Afghanistan") |>
+  ggplot(aes(x = Year, y=Electricity)) +
+  geom_bump() + 
+  geom_point() + 
+  ggtitle("a2: geom_bump and geom_point")
+a1|a2
+```
 

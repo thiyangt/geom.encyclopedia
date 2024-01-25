@@ -4,35 +4,35 @@
     "href": "b.html#bar",
     "title": "4  geom_b",
     "section": "4.1 geom_bar",
-    "text": "4.1 geom_bar\n\n4.1.1 Package\nggplot2 (Wickham 2016)\n\n\n4.1.2 Description\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\n\n\n4.1.3 The statistical transformation to use on the data for this layer\nstat_count - This the default statistics layer. It counts number of cases in each group.\nstat_identify - It plots the data as it is.\n\n\n4.1.4 See also\ngeom_col\n\n4.1.4.1 With count\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income)) + \n  geom_bar()\n\n\n\n\nIllustration of geom_bar to create a bar chart\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income, fill=Region)) + \n  geom_bar()\n\n\n\n\nIllustration of geom_bar to create a stacked bar chart\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income, fill=Region)) + \n  geom_bar(position = \"dodge\")\n\n\n\n\nIllustration of geom_bar to create a cluster bar chart\n\n\n\n\n\n\n4.1.4.2 With identity\n\ndfbar &lt;- data.frame(class=c(\"A\", \"B\"),  income = c(100, 200))\nggplot(dfbar, aes(class, income)) +\n  geom_bar(stat=\"identity\")"
+    "text": "4.1 geom_bar\n\n4.1.1 Package\nggplot2 (Wickham 2016)\n\n\n4.1.2 Description\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\n\n\n4.1.3 Understandable aesthetics\nrequired aesthetics\nx, y,\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\n\n\n4.1.4 The statistical transformation to use on the data for this layer\nstat_count - This the default statistics layer. It counts number of cases in each group.\nstat_identify - It plots the data as it is.\n\n\n4.1.5 See also\ngeom_col\n\n4.1.5.1 With count\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income)) + \n  geom_bar()\n\n\n\n\nIllustration of geom_bar to create a bar chart\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income, fill=Region)) + \n  geom_bar()\n\n\n\n\nIllustration of geom_bar to create a stacked bar chart\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income, fill=Region)) + \n  geom_bar(position = \"dodge\")\n\n\n\n\nIllustration of geom_bar to create a cluster bar chart\n\n\n\n\n\n\n4.1.5.2 With identity\n\ndfbar &lt;- data.frame(class=c(\"A\", \"B\"),  income = c(100, 200))\nggplot(dfbar, aes(class, income)) +\n  geom_bar(stat=\"identity\")"
   },
   {
     "objectID": "b.html#bin2d",
     "href": "b.html#bin2d",
     "title": "4  geom_b",
-    "section": "4.4 geom_bin2d",
-    "text": "4.4 geom_bin2d\n\n4.4.1 Package\nggplot2 (R-ggplot2?)\n\n\n4.4.2 Description\nDivides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.\n\n\n4.4.3 Understandable aesthetics\nx, y, fill, group\n\n\n4.4.4 The statistical transformation to use on the data for this layer\nstat_bin_2d\n\n\n4.4.5 See also\ngeom_bin_2d, geom_point\n\n\n4.4.6 Example\n\nggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +\n  geom_bin2d() + \n  theme(aspect.ratio = 1) +\n  scale_fill_viridis()\n\n\n\n\nIllustration of using geom_bin_2d"
+    "section": "4.5 geom_bin2d",
+    "text": "4.5 geom_bin2d\n\n4.5.1 Package\nggplot2 (R-ggplot2?)\n\n\n4.5.2 Description\nDivides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.\n\n\n4.5.3 Understandable aesthetics\nx, y, fill, group\n\n\n4.5.4 The statistical transformation to use on the data for this layer\nstat_bin_2d\n\n\n4.5.5 See also\ngeom_bin_2d, geom_point\n\n\n4.5.6 Example\n\nggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +\n  geom_bin2d() + \n  theme(aspect.ratio = 1) +\n  scale_fill_viridis()\n\n\n\n\nIllustration of using geom_bin_2d"
   },
   {
     "objectID": "b.html#bin2dpattern",
     "href": "b.html#bin2dpattern",
     "title": "4  geom_b",
-    "section": "4.3 geom_bin2d_pattern",
-    "text": "4.3 geom_bin2d_pattern\n\n4.3.1 Package\nggpattern(FC, Davis, and ggplot2 authors 2023)\n\n\n4.3.2 Description\nDivides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.\n\n\n4.3.3 Understandable aesthetics\npattern_fill (pattern_* - for mapping variables under aesthetics), pattern (to set a patten, for example pattern=‘stripe’), fill, colour\n\n\n4.3.4 The statistical transformation to use on the data for this layer\n\n\n4.3.5 See also\ngeom_bin2d, geom_point\n\nggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +\n  ggpattern::geom_bin2d_pattern(bins=20) + \n  scale_fill_viridis() +\n  theme(aspect.ratio = 1)\n\n\n\n\nIllustration of using geom_bin_2d"
+    "section": "4.4 geom_bin2d_pattern",
+    "text": "4.4 geom_bin2d_pattern\n\n4.4.1 Package\nggpattern(FC, Davis, and ggplot2 authors 2023)\n\n\n4.4.2 Description\nDivides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.\n\n\n4.4.3 Understandable aesthetics\npattern_fill (pattern_* - for mapping variables under aesthetics), pattern (to set a patten, for example pattern=‘stripe’), fill, colour\n\n\n4.4.4 The statistical transformation to use on the data for this layer\n\n\n4.4.5 See also\ngeom_bin2d, geom_point\n\nggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +\n  ggpattern::geom_bin2d_pattern(bins=20) + \n  scale_fill_viridis() +\n  theme(aspect.ratio = 1)\n\n\n\n\nIllustration of using geom_bin_2d"
   },
   {
     "objectID": "b.html#blank",
     "href": "b.html#blank",
     "title": "4  geom_b",
-    "section": "4.5 geom_blank",
-    "text": "4.5 geom_blank\n\n4.5.1 Package\nggplot2 (R-ggplot2?)\n\n\n4.5.2 Description\nDraws nothing."
+    "section": "4.6 geom_blank",
+    "text": "4.6 geom_blank\n\n4.6.1 Package\nggplot2 (R-ggplot2?)\n\n\n4.6.2 Description\nDraws nothing."
   },
   {
     "objectID": "b.html#boxplot",
     "href": "b.html#boxplot",
     "title": "4  geom_b",
-    "section": "4.6 geom_boxplot",
-    "text": "4.6 geom_boxplot\n\n4.6.1 Package\nggplot2 (R-ggplot2?)\n\n\n4.6.2 Description\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\n\n\n4.6.3 The statistical transformation to use on the data for this layer\nstat_boxplot - This the default statistics layer. This computes minimum, maximum, median, first quartile (\\(Q1\\)), third quartile (\\(Q3\\)), upper whisker extends up to \\(Q3 + 1.5 \\times IQR\\) and lower whisker extends up to \\(Q1 - 1.5 \\times IQR\\), where \\(IQR = Q3 - Q1\\). In a notched box plot, it creates 95% confidence interval for mean.\n\n\n4.6.4 See also\ngeom_col\n\n\n4.6.5 Example\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking, x=factor(0))) + \n  geom_boxplot() + \n  theme(axis.title.x=element_blank(),\n        axis.text.x=element_blank(),\n        axis.ticks.x=element_blank())\n\n\n\n\nIllustration of using geom_boxplot\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking, x=factor(0))) +  \ngeom_boxplot(outlier.colour=\"black\", outlier.shape=16,\n             outlier.size=2, notch=TRUE) + \n  theme(axis.title.x=element_blank(),\n        axis.text.x=element_blank(),\n        axis.ticks.x=element_blank())\n\n\n\n\nIllustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot."
+    "section": "4.7 geom_boxplot",
+    "text": "4.7 geom_boxplot\n\n4.7.1 Package\nggplot2 (R-ggplot2?)\n\n\n4.7.2 Description\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\n\n\n4.7.3 The statistical transformation to use on the data for this layer\nstat_boxplot - This the default statistics layer. This computes minimum, maximum, median, first quartile (\\(Q1\\)), third quartile (\\(Q3\\)), upper whisker extends up to \\(Q3 + 1.5 \\times IQR\\) and lower whisker extends up to \\(Q1 - 1.5 \\times IQR\\), where \\(IQR = Q3 - Q1\\). In a notched box plot, it creates 95% confidence interval for mean.\n\n\n4.7.4 See also\ngeom_col\n\n\n4.7.5 Example\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking, x=factor(0))) + \n  geom_boxplot() + \n  theme(axis.title.x=element_blank(),\n        axis.text.x=element_blank(),\n        axis.ticks.x=element_blank())\n\n\n\n\nIllustration of using geom_boxplot\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking, x=factor(0))) +  \ngeom_boxplot(outlier.colour=\"black\", outlier.shape=16,\n             outlier.size=2, notch=TRUE) + \n  theme(axis.title.x=element_blank(),\n        axis.text.x=element_blank(),\n        axis.ticks.x=element_blank())\n\n\n\n\nIllustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot."
   },
   {
     "objectID": "partc.html",
@@ -542,8 +542,8 @@
     "objectID": "b.html#bump",
     "href": "b.html#bump",
     "title": "4  geom_b",
-    "section": "4.7 geom_bump",
-    "text": "4.7 geom_bump\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "section": "4.8 geom_bump",
+    "text": "4.8 geom_bump\n\n4.8.1 Package\nggbump (ggbump?)\n\n\n4.8.2 Description\nCreates a smooth rank over time.\n\n\n4.8.3 Understandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\ncolour, alpha, size\n\n\n4.8.4 The statistical transformation to use on the data for this layer\nstat_bin_2d\n\n\n4.8.5 See also\ngeom_line\n\n\n4.8.6 Example\n\nlibrary(ggbump)\na1 &lt;- worldbankdata |&gt; \n  filter(Country == \"Afghanistan\") |&gt;\n  ggplot(aes(x = Year, y=Electricity)) +\n  geom_bump() + ggtitle(\"a1: geom_bump only\")\na2 &lt;- worldbankdata |&gt; \n  filter(Country == \"Afghanistan\") |&gt;\n  ggplot(aes(x = Year, y=Electricity)) +\n  geom_bump() + \n  geom_point() + \n  ggtitle(\"a2: geom_bump and geom_point\")\na1|a2\n\n\n\n\nIllustration of using geom_bin_2d\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "m.html#mark_circle",
@@ -696,15 +696,15 @@
     "objectID": "p.html#geom_path",
     "href": "p.html#geom_path",
     "title": "18  geom_p",
-    "section": "18.1 geom_path",
-    "text": "18.1 geom_path"
+    "section": "18.2 geom_path",
+    "text": "18.2 geom_path\n\n18.2.1 Package\nggplot2 (Wickham 2016)\n\n\n18.2.2 Description\nConnects the observations in the order in which they appear in the dataset.\n\n\n18.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n18.2.4 The statistical transformation to use on the data for this layer\nstat_prefix\n\n\n18.2.5 See also\ngeom_line\n\n\n18.2.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_path() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_path() + ggtitle(\"a2: X-time independent variable\")\na1|a2"
   },
   {
     "objectID": "p.html#geom_pointrange",
     "href": "p.html#geom_pointrange",
     "title": "18  geom_p",
-    "section": "18.2 geom_pointrange",
-    "text": "18.2 geom_pointrange"
+    "section": "18.3 geom_pointrange",
+    "text": "18.3 geom_pointrange\n\n18.3.1 Package\nggplot2 (Wickham 2016)\n\n\n18.3.2 Description\nRepresenting a vertical interval defined by ymin, ymax and point represent by y for different levels of x.\n\n\n18.3.3 Understandable aesthetics\nrequired aesthetics\nx or y,\nymin or xmin,\nymax or xmax\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n18.3.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n18.3.5 See also\ngeom_line, geom_crossbar, geom_errorbar, geom_linerange\n\n\n18.3.6 Example\nMethod 1\n\nworldbankdata |&gt;\n  group_by(Region) |&gt;\n  summarise(min = min(Cooking, na.rm = TRUE), max=max(Cooking, \n                                                      na.rm = TRUE),\n            median = median(Cooking, na.rm=TRUE)) |&gt;\n  ggplot(aes(x = Region, y = median, ymin = min, ymax = max)) +\n  geom_pointrange() + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\n\n\n\nMethod 2\n\nggplot(data = worldbankdata) +\n  geom_pointrange(\n    mapping = aes(x = Region, y = Cooking),\n    stat = \"summary\",\n    fun.min = min,\n    fun.max = max,\n    fun = median\n  ) + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\nWarning: Removed 6047 rows containing non-finite values (`stat_summary()`)."
   },
   {
     "objectID": "v.html#geom_voronoi_segment",
@@ -719,5 +719,40 @@
     "title": "24  geom_v",
     "section": "24.3 geom_voronoi_tile",
     "text": "24.3 geom_voronoi_tile\n\n24.3.1 Package\nggforce (Pedersen 2022)\n\n\n24.3.2 Description\nVoronoi tiles are the polygons that result from the spatial division of a plane based on the input points.\n\n\n24.3.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, linetype, size\n\n\n24.3.4 The statistical transformation to use on the data for this layer\nvoronoi_tile\n\n\n24.3.5 See also\ngeom_voronoi_segment, geom_delaunay_tile, geom_delaunay_segment\n\n\n24.3.6 Example\n\nlibrary(ggforce)\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  filter(Region == \"Middle East & North Africa\" | Region == \"Sub-Saharan Africa\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_voronoi_tile(alpha=0.5, aes(fill=Region)) + \n  labs(title = \"a1: geom_voronoi_tile only\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  scale_color_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1) + \n  theme(legend.position='bottom')\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  filter(Region == \"Middle East & North Africa\" | Region == \"Sub-Saharan Africa\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_voronoi_tile(alpha=0.5, aes(fill=Region)) + \n  geom_point(aes(col=Region)) + \n  labs(title = \"a1: geom_voronoi_tile and  geom_point\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  scale_color_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1) +\n  theme(legend.position='none')\na1|a2"
+  },
+  {
+    "objectID": "p.html#geom_point",
+    "href": "p.html#geom_point",
+    "title": "18  geom_p",
+    "section": "18.1 geom_point",
+    "text": "18.1 geom_point\n\n18.1.1 Package\nggplot2 (Wickham 2016)\n\n\n18.1.2 Description\nVisualize observations using points\n\n\n18.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n18.1.4 The statistical transformation to use on the data for this layer\nstat_prefix\n\n\n18.1.5 See also\ngeom_jitter\n\n\n18.1.6 Example\n\nworldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)"
+  },
+  {
+    "objectID": "p.html#geom_polygon",
+    "href": "p.html#geom_polygon",
+    "title": "18  geom_p",
+    "section": "18.4 geom_polygon",
+    "text": "18.4 geom_polygon\n\n18.4.1 Package\nggplot2 (Wickham 2016)\n\n\n18.4.2 Description\nCreate polygon given x and y values. This is similar to paths except that the start an end points are connected.\n\n\n18.4.3 Understandable aesthetics\nrequired aesthetics\nx,\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, subgroup\n\n\n18.4.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n18.4.5 See also\ngeom_path\n\n\n18.4.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_polygon() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_polygon() + ggtitle(\"a2: X-time independent variable\")\na1|a2"
+  },
+  {
+    "objectID": "p.html#geom_polygon_pattern",
+    "href": "p.html#geom_polygon_pattern",
+    "title": "18  geom_p",
+    "section": "18.5 geom_polygon_pattern",
+    "text": "18.5 geom_polygon_pattern\n\n18.5.1 Package\nggpattern (FC, Davis, and ggplot2 authors 2023)\n\n\n18.5.2 Description\nFill polygons with pattern\n\n\n18.5.3 Understandable aesthetics\nrequired aesthetics\nx or y,\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, subgroup, pattern_fill, pattern_fill_colour, pattern\n\n\n18.5.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n18.5.5 See also\ngeom_polygon\n\n\n18.5.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_polygon_pattern() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_polygon_pattern(aes(fill=Region)) + \n  ggtitle(\"a2: X-time independent variable\")\na1|a2\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "b.html#bar_pattern",
+    "href": "b.html#bar_pattern",
+    "title": "4  geom_b",
+    "section": "4.2 geom_bar_pattern",
+    "text": "4.2 geom_bar_pattern\n\n4.2.1 Package\nggpattern (FC, Davis, and ggplot2 authors 2023)\n\n\n4.2.2 Description\nFill bars with patterns\n\n\n4.2.3 Understandable aesthetics\nrequired aesthetics\nx, y,\noptional aesthetics\npattern, pattern_angle\n\n\n4.2.4 The statistical transformation to use on the data for this layer\nstat_count - This the default statistics layer. It counts number of cases in each group.\nstat_identify - It plots the data as it is.\n\n\n4.2.5 See also\ngeom_bar\n\n4.2.5.1 With count\n\nlibrary(ggpattern)\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\")) |&gt;\n  dplyr::filter(Year==2021) |&gt;\n  ggplot(aes(x = Income)) + \n  geom_bar_pattern()\n\n\n\n\nIllustration of geom_bar to create a bar chart"
+  },
+  {
+    "objectID": "w.html#geom_waffle",
+    "href": "w.html#geom_waffle",
+    "title": "25  geom_w",
+    "section": "25.1 geom_waffle",
+    "text": "25.1 geom_waffle\n\n25.1.1 Package\n\n#install.packages(\"remotes\")\n#remotes::install_github(\"hrbrmstr/waffle\")\n\nwaffle (Rudis and Gandy 2023)\n\n\n25.1.2 Description\nCreate waffle plots\n\n\n25.1.3 Understandable aesthetics\nrequired aesthetics\nfill (so the geom knows which column to map the fills to)\nvalues (which column you’re mapping the filling for the squares with)\n\n\n25.1.4 The statistical transformation to use on the data for this layer\nstat_waffle\n\n\n25.1.5 See also\ngeom_bar, geom_col\n\n\n25.1.6 Example\n\nlibrary(waffle)\nworldbankdata |&gt;\n  filter(Region == \"East Asia & Pacific\" | Region == \"Europe & Central Asia\") |&gt;\n  select(Region, Income, Year) |&gt;\n  group_by(Region, Income) |&gt;\n  tally() |&gt;\n  ggplot(aes(fill=Income, values=n)) +\n  geom_waffle(color = \"white\") +\n  facet_wrap(~Region, ncol=1) +\n  scale_x_discrete(expand=c(0,0)) +\n  scale_y_discrete(expand=c(0,0)) +\n  coord_equal() \n\n\n\n\n\n\n\n\nRudis, Bob, and Dave Gandy. 2023. Waffle: Create Waffle Chart Visualizations."
   }
 ]

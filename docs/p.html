@@ -20,7 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -584,8 +637,51 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#geom_path" id="toc-geom_path" class="nav-link active" data-scroll-target="#geom_path"><span class="header-section-number">18.1</span> geom_path</a></li>
-  <li><a href="#geom_pointrange" id="toc-geom_pointrange" class="nav-link" data-scroll-target="#geom_pointrange"><span class="header-section-number">18.2</span> geom_pointrange</a></li>
+  <li><a href="#geom_point" id="toc-geom_point" class="nav-link active" data-scroll-target="#geom_point"><span class="header-section-number">18.1</span> geom_point</a>
+  <ul class="collapse">
+  <li><a href="#package" id="toc-package" class="nav-link" data-scroll-target="#package"><span class="header-section-number">18.1.1</span> Package</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">18.1.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics" id="toc-understandable-aesthetics" class="nav-link" data-scroll-target="#understandable-aesthetics"><span class="header-section-number">18.1.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">18.1.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">18.1.5</span> See also</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">18.1.6</span> Example</a></li>
+  </ul></li>
+  <li><a href="#geom_path" id="toc-geom_path" class="nav-link" data-scroll-target="#geom_path"><span class="header-section-number">18.2</span> geom_path</a>
+  <ul class="collapse">
+  <li><a href="#package-1" id="toc-package-1" class="nav-link" data-scroll-target="#package-1"><span class="header-section-number">18.2.1</span> Package</a></li>
+  <li><a href="#description-1" id="toc-description-1" class="nav-link" data-scroll-target="#description-1"><span class="header-section-number">18.2.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-1" id="toc-understandable-aesthetics-1" class="nav-link" data-scroll-target="#understandable-aesthetics-1"><span class="header-section-number">18.2.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-1" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-1" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-1"><span class="header-section-number">18.2.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-1" id="toc-see-also-1" class="nav-link" data-scroll-target="#see-also-1"><span class="header-section-number">18.2.5</span> See also</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">18.2.6</span> Example</a></li>
+  </ul></li>
+  <li><a href="#geom_pointrange" id="toc-geom_pointrange" class="nav-link" data-scroll-target="#geom_pointrange"><span class="header-section-number">18.3</span> geom_pointrange</a>
+  <ul class="collapse">
+  <li><a href="#package-2" id="toc-package-2" class="nav-link" data-scroll-target="#package-2"><span class="header-section-number">18.3.1</span> Package</a></li>
+  <li><a href="#description-2" id="toc-description-2" class="nav-link" data-scroll-target="#description-2"><span class="header-section-number">18.3.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-2" id="toc-understandable-aesthetics-2" class="nav-link" data-scroll-target="#understandable-aesthetics-2"><span class="header-section-number">18.3.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-2" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-2" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-2"><span class="header-section-number">18.3.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-2" id="toc-see-also-2" class="nav-link" data-scroll-target="#see-also-2"><span class="header-section-number">18.3.5</span> See also</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">18.3.6</span> Example</a></li>
+  </ul></li>
+  <li><a href="#geom_polygon" id="toc-geom_polygon" class="nav-link" data-scroll-target="#geom_polygon"><span class="header-section-number">18.4</span> geom_polygon</a>
+  <ul class="collapse">
+  <li><a href="#package-3" id="toc-package-3" class="nav-link" data-scroll-target="#package-3"><span class="header-section-number">18.4.1</span> Package</a></li>
+  <li><a href="#description-3" id="toc-description-3" class="nav-link" data-scroll-target="#description-3"><span class="header-section-number">18.4.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-3" id="toc-understandable-aesthetics-3" class="nav-link" data-scroll-target="#understandable-aesthetics-3"><span class="header-section-number">18.4.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-3" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-3" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-3"><span class="header-section-number">18.4.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-3" id="toc-see-also-3" class="nav-link" data-scroll-target="#see-also-3"><span class="header-section-number">18.4.5</span> See also</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3"><span class="header-section-number">18.4.6</span> Example</a></li>
+  </ul></li>
+  <li><a href="#geom_polygon_pattern" id="toc-geom_polygon_pattern" class="nav-link" data-scroll-target="#geom_polygon_pattern"><span class="header-section-number">18.5</span> geom_polygon_pattern</a>
+  <ul class="collapse">
+  <li><a href="#package-4" id="toc-package-4" class="nav-link" data-scroll-target="#package-4"><span class="header-section-number">18.5.1</span> Package</a></li>
+  <li><a href="#description-4" id="toc-description-4" class="nav-link" data-scroll-target="#description-4"><span class="header-section-number">18.5.2</span> Description</a></li>
+  <li><a href="#understandable-aesthetics-4" id="toc-understandable-aesthetics-4" class="nav-link" data-scroll-target="#understandable-aesthetics-4"><span class="header-section-number">18.5.3</span> Understandable aesthetics</a></li>
+  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-4" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-4" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-4"><span class="header-section-number">18.5.4</span> The statistical transformation to use on the data for this layer</a></li>
+  <li><a href="#see-also-4" id="toc-see-also-4" class="nav-link" data-scroll-target="#see-also-4"><span class="header-section-number">18.5.5</span> See also</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4"><span class="header-section-number">18.5.6</span> Example</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/p.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -609,13 +705,261 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="geom_path" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="geom_path"><span class="header-section-number">18.1</span> geom_path</h2>
+<section id="geom_point" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="geom_point"><span class="header-section-number">18.1</span> geom_point</h2>
+<section id="package" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="package"><span class="header-section-number">18.1.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 </section>
-<section id="geom_pointrange" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="geom_pointrange"><span class="header-section-number">18.2</span> geom_pointrange</h2>
+<section id="description" class="level3" data-number="18.1.2">
+<h3 data-number="18.1.2" class="anchored" data-anchor-id="description"><span class="header-section-number">18.1.2</span> Description</h3>
+<p>Visualize observations using points</p>
+</section>
+<section id="understandable-aesthetics" class="level3" data-number="18.1.3">
+<h3 data-number="18.1.3" class="anchored" data-anchor-id="understandable-aesthetics"><span class="header-section-number">18.1.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x</code></p>
+<p><code>y</code></p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer" class="level3" data-number="18.1.4">
+<h3 data-number="18.1.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">18.1.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_prefix</code></p>
+</section>
+<section id="see-also" class="level3" data-number="18.1.5">
+<h3 data-number="18.1.5" class="anchored" data-anchor-id="see-also"><span class="header-section-number">18.1.5</span> See also</h3>
+<p><a href="j.html#jitter">geom_jitter</a></p>
+</section>
+<section id="example" class="level3" data-number="18.1.6">
+<h3 data-number="18.1.6" class="anchored" data-anchor-id="example"><span class="header-section-number">18.1.6</span> Example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bangladesh"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;=</span> <span class="dv">2013</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;=</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2013</span><span class="sc">:</span><span class="dv">2021</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="geom_path" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="geom_path"><span class="header-section-number">18.2</span> geom_path</h2>
+<section id="package-1" class="level3" data-number="18.2.1">
+<h3 data-number="18.2.1" class="anchored" data-anchor-id="package-1"><span class="header-section-number">18.2.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+</section>
+<section id="description-1" class="level3" data-number="18.2.2">
+<h3 data-number="18.2.2" class="anchored" data-anchor-id="description-1"><span class="header-section-number">18.2.2</span> Description</h3>
+<p>Connects the observations in the order in which they appear in the dataset.</p>
+</section>
+<section id="understandable-aesthetics-1" class="level3" data-number="18.2.3">
+<h3 data-number="18.2.3" class="anchored" data-anchor-id="understandable-aesthetics-1"><span class="header-section-number">18.2.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x</code></p>
+<p><code>y</code></p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-1" class="level3" data-number="18.2.4">
+<h3 data-number="18.2.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-1"><span class="header-section-number">18.2.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_prefix</code></p>
+</section>
+<section id="see-also-1" class="level3" data-number="18.2.5">
+<h3 data-number="18.2.5" class="anchored" data-anchor-id="see-also-1"><span class="header-section-number">18.2.5</span> See also</h3>
+<p><a href="l.html#line">geom_line</a></p>
+</section>
+<section id="example-1" class="level3" data-number="18.2.6">
+<h3 data-number="18.2.6" class="anchored" data-anchor-id="example-1"><span class="header-section-number">18.2.6</span> Example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bangladesh"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;=</span> <span class="dv">2013</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;=</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>() <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2013</span><span class="sc">:</span><span class="dv">2021</span>)  <span class="sc">+</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"a1: X-time dependent variable"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Electricity, <span class="at">y=</span>Cooking)) <span class="sc">+</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"a2: X-time independent variable"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>a1<span class="sc">|</span>a2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="geom_pointrange" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="geom_pointrange"><span class="header-section-number">18.3</span> geom_pointrange</h2>
+<section id="package-2" class="level3" data-number="18.3.1">
+<h3 data-number="18.3.1" class="anchored" data-anchor-id="package-2"><span class="header-section-number">18.3.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+</section>
+<section id="description-2" class="level3" data-number="18.3.2">
+<h3 data-number="18.3.2" class="anchored" data-anchor-id="description-2"><span class="header-section-number">18.3.2</span> Description</h3>
+<p>Representing a vertical interval defined by ymin, ymax and point represent by y for different levels of x.</p>
+</section>
+<section id="understandable-aesthetics-2" class="level3" data-number="18.3.3">
+<h3 data-number="18.3.3" class="anchored" data-anchor-id="understandable-aesthetics-2"><span class="header-section-number">18.3.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x</code> or <code>y</code>,</p>
+<p><code>ymin</code> or <code>xmin</code>,</p>
+<p><code>ymax</code> or <code>xmax</code></p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-2" class="level3" data-number="18.3.4">
+<h3 data-number="18.3.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-2"><span class="header-section-number">18.3.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_align</code></p>
+</section>
+<section id="see-also-2" class="level3" data-number="18.3.5">
+<h3 data-number="18.3.5" class="anchored" data-anchor-id="see-also-2"><span class="header-section-number">18.3.5</span> See also</h3>
+<p><a href="l.html#line">geom_line</a>, <a href="c.html#crossbar">geom_crossbar</a>, <a href="e.html#errorbar">geom_errorbar</a>, <a href="#linerange">geom_linerange</a></p>
+</section>
+<section id="example-2" class="level3" data-number="18.3.6">
+<h3 data-number="18.3.6" class="anchored" data-anchor-id="example-2"><span class="header-section-number">18.3.6</span> Example</h3>
+<p>Method 1</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(Cooking, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">max=</span><span class="fu">max</span>(Cooking, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                                                      <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">median =</span> <span class="fu">median</span>(Cooking, <span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Region, <span class="at">y =</span> median, <span class="at">ymin =</span> min, <span class="at">ymax =</span> max)) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>() <span class="sc">+</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Method 2</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> worldbankdata) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Region, <span class="at">y =</span> Cooking),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"summary"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun.min =</span> min,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun.max =</span> max,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> median</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 6047 rows containing non-finite values (`stat_summary()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="p_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="geom_polygon" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="geom_polygon"><span class="header-section-number">18.4</span> geom_polygon</h2>
+<section id="package-3" class="level3" data-number="18.4.1">
+<h3 data-number="18.4.1" class="anchored" data-anchor-id="package-3"><span class="header-section-number">18.4.1</span> Package</h3>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+</section>
+<section id="description-3" class="level3" data-number="18.4.2">
+<h3 data-number="18.4.2" class="anchored" data-anchor-id="description-3"><span class="header-section-number">18.4.2</span> Description</h3>
+<p>Create polygon given x and y values. This is similar to paths except that the start an end points are connected.</p>
+</section>
+<section id="understandable-aesthetics-3" class="level3" data-number="18.4.3">
+<h3 data-number="18.4.3" class="anchored" data-anchor-id="understandable-aesthetics-3"><span class="header-section-number">18.4.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x</code>,</p>
+<p><code>y</code></p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>alpha</code>, <code>colour</code>, <code>fill</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code>, <code>subgroup</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-3" class="level3" data-number="18.4.4">
+<h3 data-number="18.4.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-3"><span class="header-section-number">18.4.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_align</code></p>
+</section>
+<section id="see-also-3" class="level3" data-number="18.4.5">
+<h3 data-number="18.4.5" class="anchored" data-anchor-id="see-also-3"><span class="header-section-number">18.4.5</span> See also</h3>
+<p><a href="#path">geom_path</a></p>
+</section>
+<section id="example-3" class="level3" data-number="18.4.6">
+<h3 data-number="18.4.6" class="anchored" data-anchor-id="example-3"><span class="header-section-number">18.4.6</span> Example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bangladesh"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;=</span> <span class="dv">2013</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;=</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>() <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2013</span><span class="sc">:</span><span class="dv">2021</span>)  <span class="sc">+</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"a1: X-time dependent variable"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Electricity, <span class="at">y=</span>Cooking)) <span class="sc">+</span> </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"a2: X-time independent variable"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>a1<span class="sc">|</span>a2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="geom_polygon_pattern" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="geom_polygon_pattern"><span class="header-section-number">18.5</span> geom_polygon_pattern</h2>
+<section id="package-4" class="level3" data-number="18.5.1">
+<h3 data-number="18.5.1" class="anchored" data-anchor-id="package-4"><span class="header-section-number">18.5.1</span> Package</h3>
+<p>ggpattern <span class="citation" data-cites="ggpattern">(<a href="references.html#ref-ggpattern" role="doc-biblioref">FC, Davis, and ggplot2 authors 2023</a>)</span></p>
+</section>
+<section id="description-4" class="level3" data-number="18.5.2">
+<h3 data-number="18.5.2" class="anchored" data-anchor-id="description-4"><span class="header-section-number">18.5.2</span> Description</h3>
+<p>Fill polygons with pattern</p>
+</section>
+<section id="understandable-aesthetics-4" class="level3" data-number="18.5.3">
+<h3 data-number="18.5.3" class="anchored" data-anchor-id="understandable-aesthetics-4"><span class="header-section-number">18.5.3</span> Understandable aesthetics</h3>
+<p><strong>required aesthetics</strong></p>
+<p><code>x</code> or <code>y</code>,</p>
+<p><strong>optional aesthetics</strong></p>
+<p><code>alpha</code>, <code>colour</code>, <code>fill</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code>, <code>subgroup</code>, <code>pattern_fill</code>, <code>pattern_fill_colour</code>, <code>pattern</code></p>
+</section>
+<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-4" class="level3" data-number="18.5.4">
+<h3 data-number="18.5.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-4"><span class="header-section-number">18.5.4</span> The statistical transformation to use on the data for this layer</h3>
+<p><code>stat_align</code></p>
+</section>
+<section id="see-also-4" class="level3" data-number="18.5.5">
+<h3 data-number="18.5.5" class="anchored" data-anchor-id="see-also-4"><span class="header-section-number">18.5.5</span> See also</h3>
+<p><a href="#polygon">geom_polygon</a></p>
+</section>
+<section id="example-4" class="level3" data-number="18.5.6">
+<h3 data-number="18.5.6" class="anchored" data-anchor-id="example-4"><span class="header-section-number">18.5.6</span> Example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bangladesh"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;=</span> <span class="dv">2013</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;=</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon_pattern</span>() <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2013</span><span class="sc">:</span><span class="dv">2021</span>)  <span class="sc">+</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"a1: X-time dependent variable"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Electricity, <span class="at">y=</span>Cooking)) <span class="sc">+</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon_pattern</span>(<span class="fu">aes</span>(<span class="at">fill=</span>Region)) <span class="sc">+</span> </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"a2: X-time independent variable"</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>a1<span class="sc">|</span>a2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ggpattern" class="csl-entry" role="listitem">
+FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. <em>Ggpattern: ’Ggplot2’ Pattern Geoms</em>.
+</div>
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
