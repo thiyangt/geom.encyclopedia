@@ -5,7 +5,7 @@ project:
 book:
   title: "Data Visualisation `geom` Encyclopedia"
   author: "Thiyanga S. Talagala"
-  date: "`r Sys.Date()`"
+  date: "31 Jan 2024"
   site-url: https://thiyangt.github.io/geom.encyclopedia/
   repo-url: https://github.com/thiyangt/geom.encyclopedia
   repo-branch: main
