@@ -11,27 +11,27 @@ data("worldbankdata")
 
 ## geom_area{#area}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Create an area plot. This cover the space between x-axis and line that connects the data points.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 `alpha`, `colour`, `linetype`, `linewidth`
 
-### The statistical transformation to use on the data for this layer 
+**The statistical transformation to use on the data for this layer**
 
 `stat_align`
 
-### See also
+**See also**
 
 [geom_line](#line), [geom_ribbon](#ribbon)
 
-### Example
+**Example**
 
 ```{r area, warning=FALSE, message=FALSE}
 a1 <- worldbankdata |>
@@ -58,27 +58,27 @@ a1 | a2
 
 ## geom_abline{#abline}
 
-### Package 
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Description Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and intercept ($c$).
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 Unlike most other geoms, `geom_abline` does not depend on the x and y variables that we map for the main plot. `geom_abline` has its own independent characteristics: `intercept` and `slope`.
 
-### The statistical transformation to use on the data for this layer
+**The statistical transformation to use on the data for this layer**
 
 None (`geom_abline` is independent from the data layer.)
 
-### See also: 
+**See also**
 
  [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
 
-### Example
+**Example**
 
 ```{r, fig.height=8, fig.width=8, warning=FALSE, message=FALSE}
 a1 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 
@@ -95,27 +95,27 @@ a1 | a2
 
 ## geom_alluvium{#alluvium}
 
-### Package
+**Package**
 
 ggalluvial[@brunson2019package; @brunson2020ggalluvial]
 
-### Description
+**Description**
 
 Create alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 `x`, `y`, `ymin`, `ymax`, `alpha`, `colour`, `fill`, `linetype`, `size`, `group` (group is used internally; arguments are ignored)
 
-### The statistical transformation to use on the data for this layer
+**The statistical transformation to use on the data for this layer**
 
 alluvium
 
-### See also
+**See also**
 
 [geom_stratum](#stratum), [geom_flow](#flow), [geom_lode](#lode)
 
-### Example
+**Example**
 
 ```{r alluvial, fig.width=10,fig.height=10, warning=FALSE, message=FALSE}
 library(ggalluvial)
@@ -143,15 +143,15 @@ a1/a2
 
 ## geom_arc
 
-### Package
+**Package**
 
 ggforce[@ggforce]
 
-### Description
+**Description**
 
 Draw a circle or a segment of a circle.
 
-### Understandable aesthetic
+**Understandable aesthetic**
 
 **required aesthetics**
 
@@ -161,11 +161,11 @@ Draw a circle or a segment of a circle.
 
 `color`, `linewidth`, `linetype`, `alpha`, `lineend`
 
-### The statistical transformation to use on the data for this layer
+**The statistical transformation to use on the data for this layer**
 
 `stat_arc`
 
-### See also
+**See also**
 
 [geom_arc2](#arc2), [geom_arc_bar](#arcbar)
 
@@ -180,15 +180,15 @@ ggplot() +
 
 ## geom_arc_bar{#arcbar}
 
-### Package
+**Package**
 
 ggforce[@ggforce]
 
-### Description
+**Description**
 
 To draw pie chart and donut chart defining centre point, a radius and a start and end angle.
 
-### Understandable aesthetic
+**Understandable aesthetic**
 
 **required aesthetics**
 
@@ -198,15 +198,15 @@ To draw pie chart and donut chart defining centre point, a radius and a start an
 
 `color`, `linewidth`, `linetype`, `alpha`, `lineend`
 
-### The statistical transformation to use on the data for this layer
+**The statistical transformation to use on the data for this layer**
 
 `stat_arc`
 
-### See also
+**See also**
 
 [geom_arc](#arc), [geom_arc_bar](#arcbar)
 
-### Example
+**Example**
 
 
 ```{r, warning=FALSE, message=FALSE}
