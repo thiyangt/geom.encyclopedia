@@ -103,11 +103,24 @@ Place point at mean of x and mean of y
 library(ggxmean)
 a1 <- worldbankdata |>
   ggplot(aes(x = Income, y = Cooking)) + 
-  geom_xy_means(na.rm=TRUE) + ggtitle("a1: geom_xy_means only")
+  geom_xy_means(na.rm=TRUE, col="red", size=4) + 
+  ggtitle("a1: geom_xy_means only")
 a2 <- worldbankdata |>
   ggplot(aes(x = Income, y = Cooking)) + 
   geom_point(alpha=0.5) +
-  geom_xy_means(na.rm=TRUE, col="red") + 
+  geom_xy_means(na.rm=TRUE, col="red", size=4) + 
   ggtitle("a2: geom_points and geom_xy_means")
 a1|a2
+```
+
+## geom_xy_xymean
+
+### Example 
+
+```{r, warning=FALSE, message=FALSE}
+library(ggxmean)
+worldbankdata |>
+  ggplot(aes(x = Income, y = Cooking)) + 
+  geom_xy_xymean(na.rm=TRUE, size=3) 
+
 ```

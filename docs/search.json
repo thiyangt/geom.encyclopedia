@@ -760,7 +760,7 @@
     "href": "x.html#geom_xy_means",
     "title": "26  geom_x",
     "section": "26.10 geom_xy_means",
-    "text": "26.10 geom_xy_means\n\n26.10.1 Package\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"EvaMaeRey/ggxmean\")\n\nggxmean (ggxmean?)\n\n\n26.10.2 Description\nPlace point at mean of x and mean of y\n\n\n26.10.3 Understandable aesthetics\nrequired aesthetics\nx, y\n\n\n26.10.4 The statistical transformation to use on the data for this layer\n\n\n26.10.5 See also\ngeom_point\n\n\n26.10.6 Example\n\nlibrary(ggxmean)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_means(na.rm=TRUE) + ggtitle(\"a1: geom_xy_means only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_point(alpha=0.5) +\n  geom_xy_means(na.rm=TRUE, col=\"red\") + \n  ggtitle(\"a2: geom_points and geom_xy_means\")\na1|a2\n\nWarning: Removed 6047 rows containing missing values (`geom_point()`)."
+    "text": "26.10 geom_xy_means\n\n26.10.1 Package\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"EvaMaeRey/ggxmean\")\n\nggxmean (ggxmean?)\n\n\n26.10.2 Description\nPlace point at mean of x and mean of y\n\n\n26.10.3 Understandable aesthetics\nrequired aesthetics\nx, y\n\n\n26.10.4 The statistical transformation to use on the data for this layer\n\n\n26.10.5 See also\ngeom_point\n\n\n26.10.6 Example\n\nlibrary(ggxmean)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_means(na.rm=TRUE, col=\"red\", size=4) + \n  ggtitle(\"a1: geom_xy_means only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_point(alpha=0.5) +\n  geom_xy_means(na.rm=TRUE, col=\"red\", size=4) + \n  ggtitle(\"a2: geom_points and geom_xy_means\")\na1|a2\n\nWarning: Removed 6047 rows containing missing values (`geom_point()`)."
   },
   {
     "objectID": "x.html#geom_x_label",
@@ -824,5 +824,12 @@
     "title": "26  geom_x",
     "section": "26.9 geom_xmin",
     "text": "26.9 geom_xmin\n\n26.9.1 Package\nggxmean (ggxmean?)"
+  },
+  {
+    "objectID": "x.html#geom_xy_xymean",
+    "href": "x.html#geom_xy_xymean",
+    "title": "26  geom_x",
+    "section": "26.11 geom_xy_xymean",
+    "text": "26.11 geom_xy_xymean\n\n26.11.1 Example\n\nlibrary(ggxmean)\nworldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_xymean(na.rm=TRUE, size=3)"
   }
 ]
