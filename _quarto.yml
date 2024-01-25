@@ -2,10 +2,12 @@ project:
   type: book
   output-dir: docs
 
+
 book:
   title: "Data Visualisation `geom` Encyclopedia"
   author: "Thiyanga S. Talagala"
   date: "31 Jan 2024"
+  downloads: [pdf, epub]
   site-url: https://thiyangt.github.io/geom.encyclopedia/
   repo-url: https://github.com/thiyangt/geom.encyclopedia
   repo-branch: main
