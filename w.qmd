@@ -52,7 +52,7 @@ worldbankdata |>
   group_by(Region, Income) |>
   tally() |>
   ggplot(aes(fill=Income, values=n)) +
-  geom_waffle(color = "white") +
+  geom_waffle(color = "white", size=1) +
   facet_wrap(~Region, ncol=1) +
   scale_x_discrete(expand=c(0,0)) +
   scale_y_discrete(expand=c(0,0)) +
