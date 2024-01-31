@@ -11,29 +11,30 @@ data("worldbankdata")
 
 ## geom_col
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Create bar charts
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-### The statistical transformation to use on the data for this layer
+*Required aesthetics*
 
-Before using `geom_col`, you need to create a summary table of counts/proportions or you can apply `geom_col` for a summary table.
+`x`, `y`
 
-`after_stat(count)`
+*Optional aesthetics*
 
-`after_stat(prop)`
+`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
 
-### See also
+
+**See also**
 
 [geom_bar](#bar)
 
-### Example
+**Example**
 
 ```{r}
 worldbankdata |>
@@ -47,61 +48,68 @@ worldbankdata |>
 
 ## geom_col_pattern{#col_pattern}
 
-### Package
+**Package**
 
 ggpattern [@ggpattern]
 
-### Description
+**Description**
 
 Fill columns with a pattern. User can map a variable for pattern or set a pattern.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-`x`, `y`, `pattern`, `fill`, `colour`
+*Required aesthetics*
 
-### The statistical transformation to use on the data for this layer
+`x`, `y`
 
-None
+*Optional aesthetics*
+
+`pattern`, `fill`, `colour`
 
 
-### See also
+**See also**
 
 [geom_line](#line), [geom_ribbon](#ribbon)
+
+**Example**
 
 ```{r, fig.cap="Illustration of geom_col_pattern"}
 worldbankdata |>
   filter(Year == 2021) |>
   group_by(Income) |>
   summarise(n = n()) |>
-  ggplot(aes(x = Income, y = n)) +   ggpattern::geom_col_pattern( pattern = 'stripe',
-    fill    = 'white',
-    colour  = 'black')
+  ggplot(aes(x = Income, y = n)) +  
+  ggpattern::geom_col_pattern(aes(pattern = n, pattern_angle=n),
+    colour  = 'black', fill="white") 
 ```
 
 ## geom_count{#count}
 
-### Package
+**Package**
 
 ggplo2t [@ggplot2]
 
-### Description
+**Description**
 
 Counts the observations at every point on the plot, and then maps the count with the size of the point.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-`x`, `y`, `pattern`, `fill`, `colour`
+*Required aesthetics*
 
-### The statistical transformation to use on the data for this layer
-
-None
+`x`, `y`
 
 
-### See also
+*Optional aesthetics*
+
+`alpha`, `colour`, `fill`, `group`, `shape`, `size`, `stroke`
+
+
+**See also**
 
 [geom_point](#point)
 
-### Example
+**Example**
 
 Here, both `geom_point` and `geom_count` are plotted to see the difference.
 
@@ -121,31 +129,30 @@ a1 | a2
 
 ## geom_circle{#circle}
 
-### Package
+**Package**
 
 ggforce [@ggforce]
 
-### Description
+**Description**
 
-### Understandable aesthetics
+Draw circles based on a center point and a radius.
 
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x0` - starting coordinate of x-axis , `y0` - starting coordinate of x-axis, `r` - radius
 
-**optional aesthetics**
+*optional aesthetics*
 
 `color`, `fill`, `linewidth`, `linetype`, `alpha`, `lineend`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_align`
+**See also**
 
-### See also
+[geom_mark_circle](#mark_circle)
 
-[geom_mark_circle](#mark_circle), 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 worldbankdata |>
@@ -160,74 +167,96 @@ ggplot(aes(y = Cooking, x=Electricity, col=Income)) +
 ## geom_contour {#contour}
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
-Create contour plots
+Create contour plots.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-`x`, `y`, `alpha`, `colour`, `linetype`, `linewidth`, `group`, `weight`
+*Required aesthetics*
 
-### The statistical transformation to use on the data for this layer 
+`x`, `y`
 
-`stat_contour`
+*Optional aesthetics*
 
-### See also
+`alpha`, `colour`, `fill` , `group`, `linetype`, `linewidth`, `subgroup`
+
+
+**See also**
 
 [geom_contour_filled](#contour_filled), [geom_tile](#tile), [geom_density_2d](#density_2d)
   
-### Example
+**Example**
+
+
+```{r, warning=FALSE, message=FALSE, fig.height=3, fig.width=3}
+mean <- c(0.5, -0.5)
+sigma <- matrix(c(1, 0.5, 0.5, 1), nrow=2)
+data.grid <- expand.grid(x=seq(-3, 3, length.out=200),
+                         y=seq(-3, 3, length.out=200))
+df <- cbind(data.grid, prob = mvtnorm::dmvnorm(data.grid, mean=mean, sigma=sigma))
+ggplot(df, aes(x=x, y=y, z=prob)) + 
+  geom_contour() + 
+  theme(aspect.ratio = 1)
+```
 
 
 
 ## geom_contour_filled {#contour_filled}
 
-
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Create contour plots
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 `x`, `y`, `alpha`, `colour`, `linetype`, `linewidth`, `group`, `weight`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_contour`
-
-### See also
+**See also**
 
 [geom_contour](#contour), [geom_tile](#tile), [geom_density_2d](#density_2d)
   
-### Example
+**Example**
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+mean <- c(0.5, -0.5)
+sigma <- matrix(c(1, 0.5, 0.5, 1), nrow=2)
+data.grid <- expand.grid(x=seq(-3, 3, length.out=200),
+                         y=seq(-3, 3, length.out=200))
+df <- cbind(data.grid, prob = mvtnorm::dmvnorm(data.grid, mean=mean, sigma=sigma))
+ggplot(df, aes(x=x, y=y, z=prob)) + 
+  geom_contour_filled() + 
+  theme(aspect.ratio = 1)
+```
 
 
 ## geom_curve {#curve}
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 `geom_segment()` draws a straight line between between two points. geom_curve draws a curved line.
 
 ### Understandable aesthetics
 
-**required aesthetics**
+*required aesthetics*
 
 `x`, `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 
 `alpha`, `colour`, `linetype`, `linewidth`, `group`
@@ -300,7 +329,6 @@ Plot a vertical interval defined by x, ymin and ymax.
 ### Examples
 
 ```{r, warning=FALSE, message=FALSE}
-summary.wb <- aggregate(. ~ Income, mean, data=worldbankdata)
 ggplot(worldbankdata, aes(x = Income, y = Electricity)) + 
   geom_point() + 
   geom_crossbar(data=summary.wb, aes(ymin = Electricity, ymax = Electricity),

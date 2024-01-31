@@ -190,19 +190,27 @@ Computes a 2D kernel density estimation using `MASS::kde2d()` and display the re
 
 ### Example
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=15}
 a1 <- worldbankdata |>
+  filter(Year == "2021") |>
   ggplot(aes(y = Cooking, x=Electricity)) +   
   geom_density_2d_filled() + 
   labs(title = "a1: geom_density_2d_filled only") + 
-  theme(legend.position="none", aspect.ratio = 1)
+  theme( aspect.ratio = 1)
 a2 <- worldbankdata |>
+  filter(Year == "2020") |>
   ggplot(aes(y = Cooking, x=Electricity)) +   
-  geom_point() + 
   geom_density_2d_filled(alpha = 0.5) + 
+    geom_point() + 
   labs(title = "a2: geom_point and \n geom_density_2d_filled") + 
-  theme(legend.position="none", aspect.ratio = 1)
-a1 | a2
+  theme( aspect.ratio = 1)
+a3 <- worldbankdata |>
+  filter(Year == "2020") |>
+  ggplot(aes(y = Cooking, x=Electricity)) +   
+  geom_point(alpha=0.5) + 
+  labs(title = "a3: geom_point") + 
+  theme(aspect.ratio = 1)
+a1 / a2 / a3
 ```
 
 ## geom_density_ridges{#density_ridges}

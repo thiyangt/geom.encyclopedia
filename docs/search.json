@@ -46,56 +46,56 @@
     "href": "c.html#geom_col",
     "title": "5  geom_c",
     "section": "5.1 geom_col",
-    "text": "5.1 geom_col\n\n5.1.1 Package\nggplot2 (Wickham 2016)\n\n\n5.1.2 Description\nCreate bar charts\n\n\n5.1.3 Understandable aesthetics\n\n\n5.1.4 The statistical transformation to use on the data for this layer\nBefore using geom_col, you need to create a summary table of counts/proportions or you can apply geom_col for a summary table.\nafter_stat(count)\nafter_stat(prop)\n\n\n5.1.5 See also\ngeom_bar\n\n\n5.1.6 Example\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  group_by(Income) |&gt;\n  summarise(n = n()) |&gt;\n  ggplot(aes(x = Income, y = n)) +   geom_col()"
+    "text": "5.1 geom_col\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate bar charts\nUnderstandable aesthetics\nRequired aesthetics\nx, y\nOptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\nSee also\ngeom_bar\nExample\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  group_by(Income) |&gt;\n  summarise(n = n()) |&gt;\n  ggplot(aes(x = Income, y = n)) +   geom_col()"
   },
   {
     "objectID": "c.html#col_pattern",
     "href": "c.html#col_pattern",
     "title": "5  geom_c",
     "section": "5.2 geom_col_pattern",
-    "text": "5.2 geom_col_pattern\n\n5.2.1 Package\nggpattern (FC, Davis, and ggplot2 authors 2023)\n\n\n5.2.2 Description\nFill columns with a pattern. User can map a variable for pattern or set a pattern.\n\n\n5.2.3 Understandable aesthetics\nx, y, pattern, fill, colour\n\n\n5.2.4 The statistical transformation to use on the data for this layer\nNone\n\n\n5.2.5 See also\ngeom_line, geom_ribbon\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  group_by(Income) |&gt;\n  summarise(n = n()) |&gt;\n  ggplot(aes(x = Income, y = n)) +   ggpattern::geom_col_pattern( pattern = 'stripe',\n    fill    = 'white',\n    colour  = 'black')\n\n\n\n\nIllustration of geom_col_pattern"
+    "text": "5.2 geom_col_pattern\nPackage\nggpattern (FC, Davis, and ggplot2 authors 2023)\nDescription\nFill columns with a pattern. User can map a variable for pattern or set a pattern.\nUnderstandable aesthetics\nRequired aesthetics\nx, y\nOptional aesthetics\npattern, fill, colour\nSee also\ngeom_line, geom_ribbon\nExample\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  group_by(Income) |&gt;\n  summarise(n = n()) |&gt;\n  ggplot(aes(x = Income, y = n)) +  \n  ggpattern::geom_col_pattern(aes(pattern = n, pattern_angle=n),\n    colour  = 'black', fill=\"white\") \n\n\n\n\nIllustration of geom_col_pattern"
   },
   {
     "objectID": "c.html#count",
     "href": "c.html#count",
     "title": "5  geom_c",
     "section": "5.3 geom_count",
-    "text": "5.3 geom_count\n\n5.3.1 Package\nggplo2t (Wickham 2016)\n\n\n5.3.2 Description\nCounts the observations at every point on the plot, and then maps the count with the size of the point.\n\n\n5.3.3 Understandable aesthetics\nx, y, pattern, fill, colour\n\n\n5.3.4 The statistical transformation to use on the data for this layer\nNone\n\n\n5.3.5 See also\ngeom_point\n\n\n5.3.6 Example\nHere, both geom_point and geom_count are plotted to see the difference.\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_point(alpha = 0.5) + \n  labs(title = \"a1: geom_point\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_count() + \n  labs(title = \"a2: geom_count\") +\n  theme(aspect.ratio = 1)\na1 | a2"
+    "text": "5.3 geom_count\nPackage\nggplo2t (Wickham 2016)\nDescription\nCounts the observations at every point on the plot, and then maps the count with the size of the point.\nUnderstandable aesthetics\nRequired aesthetics\nx, y\nOptional aesthetics\nalpha, colour, fill, group, shape, size, stroke\nSee also\ngeom_point\nExample\nHere, both geom_point and geom_count are plotted to see the difference.\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_point(alpha = 0.5) + \n  labs(title = \"a1: geom_point\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_count() + \n  labs(title = \"a2: geom_count\") +\n  theme(aspect.ratio = 1)\na1 | a2"
   },
   {
     "objectID": "c.html#circle",
     "href": "c.html#circle",
     "title": "5  geom_c",
     "section": "5.4 geom_circle",
-    "text": "5.4 geom_circle\n\n5.4.1 Package\nggforce (Pedersen 2022)\n\n\n5.4.2 Description\n\n\n5.4.3 Understandable aesthetics\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius\noptional aesthetics\ncolor, fill, linewidth, linetype, alpha, lineend\n\n\n5.4.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n5.4.5 See also\ngeom_mark_circle, ### Example\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\nggplot(aes(y = Cooking, x=Electricity, col=Income)) + \n  geom_point() + \n  ggforce::geom_circle(aes(x0 = 26, y0 = 5, r = 20),\n              inherit.aes = FALSE) + \n  theme(aspect.ratio = 1)"
+    "text": "5.4 geom_circle\nPackage\nggforce (Pedersen 2022)\nDescription\nDraw circles based on a center point and a radius.\nUnderstandable aesthetics\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius\noptional aesthetics\ncolor, fill, linewidth, linetype, alpha, lineend\nSee also\ngeom_mark_circle\nExample\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\nggplot(aes(y = Cooking, x=Electricity, col=Income)) + \n  geom_point() + \n  ggforce::geom_circle(aes(x0 = 26, y0 = 5, r = 20),\n              inherit.aes = FALSE) + \n  theme(aspect.ratio = 1)"
   },
   {
     "objectID": "c.html#contour",
     "href": "c.html#contour",
     "title": "5  geom_c",
     "section": "5.5 geom_contour",
-    "text": "5.5 geom_contour\n\n5.5.1 Package\nggplot2 (Wickham 2016)\n\n\n5.5.2 Description\nCreate contour plots\n\n\n5.5.3 Understandable aesthetics\nx, y, alpha, colour, linetype, linewidth, group, weight\n\n\n5.5.4 The statistical transformation to use on the data for this layer\nstat_contour\n\n\n5.5.5 See also\ngeom_contour_filled, geom_tile, geom_density_2d\n\n\n5.5.6 Example"
+    "text": "5.5 geom_contour\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate contour plots.\nUnderstandable aesthetics\nRequired aesthetics\nx, y\nOptional aesthetics\nalpha, colour, fill , group, linetype, linewidth, subgroup\nSee also\ngeom_contour_filled, geom_tile, geom_density_2d\nExample\n\nmean &lt;- c(0.5, -0.5)\nsigma &lt;- matrix(c(1, 0.5, 0.5, 1), nrow=2)\ndata.grid &lt;- expand.grid(x=seq(-3, 3, length.out=200),\n                         y=seq(-3, 3, length.out=200))\ndf &lt;- cbind(data.grid, prob = mvtnorm::dmvnorm(data.grid, mean=mean, sigma=sigma))\nggplot(df, aes(x=x, y=y, z=prob)) + \n  geom_contour() + \n  theme(aspect.ratio = 1)"
   },
   {
     "objectID": "c.html#contour_filled",
     "href": "c.html#contour_filled",
     "title": "5  geom_c",
     "section": "5.6 geom_contour_filled",
-    "text": "5.6 geom_contour_filled\n\n5.6.1 Package\nggplot2 (Wickham 2016)\n\n\n5.6.2 Description\nCreate contour plots\n\n\n5.6.3 Understandable aesthetics\nx, y, alpha, colour, linetype, linewidth, group, weight\n\n\n5.6.4 The statistical transformation to use on the data for this layer\nstat_contour\n\n\n5.6.5 See also\ngeom_contour, geom_tile, geom_density_2d\n\n\n5.6.6 Example"
+    "text": "5.6 geom_contour_filled\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate contour plots\nUnderstandable aesthetics\nx, y, alpha, colour, linetype, linewidth, group, weight\nSee also\ngeom_contour, geom_tile, geom_density_2d\nExample\n\nmean &lt;- c(0.5, -0.5)\nsigma &lt;- matrix(c(1, 0.5, 0.5, 1), nrow=2)\ndata.grid &lt;- expand.grid(x=seq(-3, 3, length.out=200),\n                         y=seq(-3, 3, length.out=200))\ndf &lt;- cbind(data.grid, prob = mvtnorm::dmvnorm(data.grid, mean=mean, sigma=sigma))\nggplot(df, aes(x=x, y=y, z=prob)) + \n  geom_contour_filled() + \n  theme(aspect.ratio = 1)"
   },
   {
     "objectID": "c.html#curve",
     "href": "c.html#curve",
     "title": "5  geom_c",
     "section": "5.7 geom_curve",
-    "text": "5.7 geom_curve\n\n5.7.1 Package\nggplot2 (Wickham 2016)\n\n\n5.7.2 Description\ngeom_segment() draws a straight line between between two points. geom_curve draws a curved line.\n\n\n5.7.3 Understandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.7.4 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.7.5 See also\ngeom_segment\n\n\n5.7.6 Examples\n\ndf &lt;- data.frame(x1 = 0, x2 = 100, y1 = 0, y2 = 100)\nggplot(df) + \n  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2))\n\n\n\n\n\ndf &lt;- data.frame(x2 = c( 3, 4, 4, 3, -3, -4, -4, -3),\n                 y2 = c( 4, 3, -3, -4, -4, -3, 3, 3),\n                 x1 = rep(0, 8),\n                 y1 = rep(0, 8))\n\nggplot(df) + \n  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2),\n             curvature = 0.75, angle = -45,\n             arrow = arrow(length = unit(0.25,\"cm\"))) + \n  coord_equal() +\n  xlim(-5, 5) + ylim(-5, 5)"
+    "text": "5.7 geom_curve\nPackage\nggplot2 (Wickham 2016)\nDescription\ngeom_segment() draws a straight line between between two points. geom_curve draws a curved line.\n\n5.7.1 Understandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.7.2 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.7.3 See also\ngeom_segment\n\n\n5.7.4 Examples\n\ndf &lt;- data.frame(x1 = 0, x2 = 100, y1 = 0, y2 = 100)\nggplot(df) + \n  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2))\n\n\n\n\n\ndf &lt;- data.frame(x2 = c( 3, 4, 4, 3, -3, -4, -4, -3),\n                 y2 = c( 4, 3, -3, -4, -4, -3, 3, 3),\n                 x1 = rep(0, 8),\n                 y1 = rep(0, 8))\n\nggplot(df) + \n  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2),\n             curvature = 0.75, angle = -45,\n             arrow = arrow(length = unit(0.25,\"cm\"))) + \n  coord_equal() +\n  xlim(-5, 5) + ylim(-5, 5)"
   },
   {
     "objectID": "c.html#crossbar",
     "href": "c.html#crossbar",
     "title": "5  geom_c",
     "section": "5.8 geom_crossbar",
-    "text": "5.8 geom_crossbar\n\n5.8.1 Package\nggplot2 (Wickham 2016)\n\n\n5.8.2 Description\nPlot a vertical interval defined by x, ymin and ymax.\n\n\n5.8.3 Understandable aesthetics\nrequired aesthetics\nx or y\nxmin or ymin\nxmax or ymax\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.8.4 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.8.5 See also\ngeom_segment\n\n\n5.8.6 Examples\n\nsummary.wb &lt;- aggregate(. ~ Income, mean, data=worldbankdata)\nggplot(worldbankdata, aes(x = Income, y = Electricity)) + \n  geom_point() + \n  geom_crossbar(data=summary.wb, aes(ymin = Electricity, ymax = Electricity),\n                  size=1,col=\"red\", width = .5)\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "5.8 geom_crossbar\n\n5.8.1 Package\nggplot2 (Wickham 2016)\n\n\n5.8.2 Description\nPlot a vertical interval defined by x, ymin and ymax.\n\n\n5.8.3 Understandable aesthetics\nrequired aesthetics\nx or y\nxmin or ymin\nxmax or ymax\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.8.4 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.8.5 See also\ngeom_segment\n\n\n5.8.6 Examples\n\nsummary.wb &lt;- aggregate(. ~ Income, mean, data=worldbankdata)\nsummary.wb\nggplot(worldbankdata, aes(x = Income, y = Electricity)) + \n  geom_point() + \n  geom_crossbar(data=summary.wb, aes(ymin = Electricity, ymax = Electricity),\n                  size=1,col=\"red\", width = .5)\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "d.html#density",
@@ -123,7 +123,7 @@
     "href": "d.html#density_2d_filled",
     "title": "6  geom_d",
     "section": "6.4 geom_density_2d_filled",
-    "text": "6.4 geom_density_2d_filled\n\n6.4.1 Package\nggplot2 (Wickham 2016)\n\n\n6.4.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with filled contour bands.\n\n\n6.4.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, subgroup\n\n\n6.4.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.4.5 See also\ngeom_histogram\n\n\n6.4.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled() + \n  labs(title = \"a1: geom_density_2d_filled only\") + \n  theme(legend.position=\"none\", aspect.ratio = 1)\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() + \n  geom_density_2d_filled(alpha = 0.5) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d_filled\") + \n  theme(legend.position=\"none\", aspect.ratio = 1)\na1 | a2"
+    "text": "6.4 geom_density_2d_filled\n\n6.4.1 Package\nggplot2 (Wickham 2016)\n\n\n6.4.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with filled contour bands.\n\n\n6.4.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, subgroup\n\n\n6.4.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.4.5 See also\ngeom_histogram\n\n\n6.4.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Year == \"2021\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled() + \n  labs(title = \"a1: geom_density_2d_filled only\") + \n  theme( aspect.ratio = 1)\na2 &lt;- worldbankdata |&gt;\n  filter(Year == \"2020\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled(alpha = 0.5) + \n    geom_point() + \n  labs(title = \"a2: geom_point and \\n geom_density_2d_filled\") + \n  theme( aspect.ratio = 1)\na3 &lt;- worldbankdata |&gt;\n  filter(Year == \"2020\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point(alpha=0.5) + \n  labs(title = \"a3: geom_point\") + \n  theme(aspect.ratio = 1)\na1 / a2 / a3"
   },
   {
     "objectID": "d.html#density_ridges",
@@ -333,7 +333,7 @@
     "href": "index.html",
     "title": "Data Visualisation geom Encyclopedia",
     "section": "",
-    "text": "Preface\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics in Data Visualisation. Geometric representations serve as the visual language that bridges the gap between complex datasets and human comprehension. This encyclopedia is a curated collection of geom available in different R programming software packages.\nKeep in mind that the field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Regularly updating your encyclopedia will ensure it remains a relevant and comprehensive resource for users."
+    "text": "Preface\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics in Data Visualisation. Geometric representations serve as the visual language that bridges the gap between complex datasets and human comprehension. This encyclopedia is a curated collection of geom available in different R programming software packages.\nKeep in mind that the field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Regularly updating your encyclopedia will ensure it remains a relevant and comprehensive resource for users.\n|A|B|C|"
   },
   {
     "objectID": "intro.html",
