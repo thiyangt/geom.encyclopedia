@@ -301,7 +301,7 @@ ggplot2 [@ggplot2]
 
 ### Description
 
-Plot a vertical interval defined by x, ymin and ymax.
+Plot a vertical interval defined by y, ymin and ymax or x, xmin and xmax.
 
 ### Understandable aesthetics
 
@@ -315,23 +315,40 @@ Plot a vertical interval defined by x, ymin and ymax.
 
 **optional aesthetics**
 
-
 `alpha`, `colour`, `linetype`, `linewidth`, `group`
 
-### The statistical transformation to use on the data for this layer 
-
-`identity`
 
 ### See also
 
 [geom_segment](#segment)
   
-### Examples
+**Examples**
+
+*Example 1*
 
 ```{r, warning=FALSE, message=FALSE}
-ggplot(worldbankdata, aes(x = Income, y = Electricity)) + 
-  geom_point() + 
-  geom_crossbar(data=summary.wb, aes(ymin = Electricity, ymax = Electricity),
-                  size=1,col="red", width = .5)
+summarydf <- worldbankdata |>
+  drop_na() |>
+  select(Electricity, Income) |>
+  group_by(Income) |>
+  reframe(qs = quantile(Electricity, c(0.25, 0.5 ,0.75))) |>
+  mutate(q=rep(c("Q1", "Q2", "Q3"), 4)) |>
+  pivot_wider(names_from = q,
+              values_from = qs)
+summarydf
+ggplot(summarydf, aes(x=Income, ymin = Q1, y=Q2, ymax = Q3)) + 
+  geom_crossbar(size=1,col="red", width = .5)
 ```
 
+*Example 2*
+
+```{r}
+summary_stats <- worldbankdata |>
+  drop_na() |>
+  select(Electricity, Income) |>
+  group_by(Income) |>
+  reframe(mean = mean(Electricity),
+          sd = sd(Electricity)) 
+ggplot(summary_stats, aes(x = Income, y = mean, ymin = mean - sd, ymax = mean + sd)) +
+  geom_crossbar(width = 0.5, fatten = 2) 
+```
