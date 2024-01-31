@@ -10,127 +10,122 @@ library(viridis)
 
 ## geom_bar{#bar}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Draw a bar proportional to the specified number. For example, number of cases or user defined number.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`, `y`, 
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
 
-### The statistical transformation to use on the data for this layer 
 
-  `stat_count` - This the default statistics layer. It counts number of cases in each group. 
-  
-  `stat_identify` - It plots the data as it is.
-
-### See also
+**See also**
 
 [geom_col](#col)
 
-#### With count 
+**Example**
 
-```{r, fig.cap="Illustration of geom_bar to create a bar chart", message=FALSE, warning=FALSE}
+*Example 1: Given observations* 
+
+```{r,  message=FALSE, warning=FALSE}
 worldbankdata |>
   dplyr::select(c("Year", "Income")) |>
-  dplyr::filter(Year==2021) |>
-  ggplot(aes(x = Income)) + 
-  geom_bar()
-
-```
-
-```{r, fig.cap="Illustration of geom_bar to create a stacked bar chart", message=FALSE, warning=FALSE,}
-worldbankdata |>
-  dplyr::select(c("Year", "Income", "Region")) |>
-  dplyr::filter(Year==2021) |>
-  ggplot(aes(x = Income, fill=Region)) + 
+  dplyr::filter(Year == 2021) |>
+  ggplot(aes(x = Income)) +
   geom_bar()
 ```
 
-```{r, fig.cap="Illustration of geom_bar to create a cluster bar chart", message=FALSE, warning=FALSE}
+*Example 2*
+
+```{r,  message=FALSE, warning=FALSE,}
 worldbankdata |>
   dplyr::select(c("Year", "Income", "Region")) |>
-  dplyr::filter(Year==2021) |>
-  ggplot(aes(x = Income, fill=Region)) + 
-  geom_bar(position = "dodge")
+  dplyr::filter(Year == 2021) |>
+  ggplot(aes(x = Income, fill = Region)) +
+  geom_bar() +
+  scale_fill_brewer(palette = "Paired", na.value = "grey50")
 ```
 
-
-
-#### With identity
+*Example 3*
 
 ```{r, message=FALSE, warning=FALSE}
-dfbar <- data.frame(class=c("A", "B"),  income = c(100, 200))
+worldbankdata |>
+  dplyr::select(c("Year", "Income", "Region")) |>
+  dplyr::filter(Year == 2021) |>
+  ggplot(aes(x = Income, fill = Region)) +
+  geom_bar(position = "dodge") +
+  scale_fill_brewer(palette = "Paired", na.value = "grey50")
+```
+
+
+*Example 4: Given counts*
+
+```{r, message=FALSE, warning=FALSE}
+dfbar <- data.frame(class = c("A", "B"), income = c(100, 200))
 ggplot(dfbar, aes(class, income)) +
-  geom_bar(stat="identity")
+  geom_bar(stat = "identity")
 ```
 
 ## geom_bar_pattern{#bar_pattern}
 
-### Package
+**Package**
 
 ggpattern [@ggpattern]
 
-### Description
+**Description**
 
 Fill bars with patterns
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`, `y`, 
 
-**optional aesthetics**
+*optional aesthetics*
 
  `pattern`, `pattern_angle`
 
-### The statistical transformation to use on the data for this layer 
 
-  `stat_count` - This the default statistics layer. It counts number of cases in each group. 
-  
-  `stat_identify` - It plots the data as it is.
-
-### See also
+**See also**
 
 [geom_bar](#bar)
 
-#### With count 
+**Example**
 
-```{r, fig.cap="Illustration of geom_bar to create a bar chart", message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(ggpattern)
 worldbankdata |>
+  tidyr::drop_na() |> ## Missing values should be removed to see the different patterns for different levels
   dplyr::select(c("Year", "Income")) |>
-  dplyr::filter(Year==2021) |>
-  ggplot(aes(x = Income)) + 
-  geom_bar_pattern()
+  dplyr::filter(Year == 2021) |>
+  ggplot(aes(x = Income)) +
+  geom_bar_pattern(aes(pattern = Income, pattern_angle = Income), fill = "white", colour = "black", pattern_spacing = 0.03, pattern_key_scale_factor = 1)
 ```
-
-
 
 
 
 ## geom_bin_2d{#bin2d}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 **required aesthetics**
 
@@ -140,192 +135,206 @@ Divides the Cartesian plane created by x-variable and y-variable into rectangles
 
 `fill`, `group`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_bin2d`
-
-### See also 
+**See also** 
 
 [geom_bin2d](#bin2d), [geom_point](#point)
 
-### Example
+**Example**
 
-```{r, fig.cap="Illustration of using geom_bin_2d", message=FALSE, warning=FALSE}
-ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
-  geom_bin_2d() + 
-  scale_fill_viridis() +
+```{r, message=FALSE, warning=FALSE}
+ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +
+  geom_bin_2d() +
+  scale_fill_viridis(na.value = "grey50", limits = c(0, 30)) +
   theme(aspect.ratio = 1)
 ```
 
-```{r, fig.cap="Illustration of changing bins in geom_bin_2d", message=FALSE, warning=FALSE}
-ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
-  geom_bin_2d(bins=20) + 
-  scale_fill_viridis() +
+```{r, message=FALSE, warning=FALSE}
+ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +
+  geom_bin_2d(bins = 20) +
+  scale_fill_viridis(na.value = "grey50", limits = c(0, 30)) +
   theme(aspect.ratio = 1)
 ```
 
 ## geom_bin2d_pattern{#bin2dpattern}
 
-### Package
+**Package**
 
 ggpattern[@ggpattern]
 
-### Description
+**Description**
 
 Divides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.
 
-### Understandable aesthetics
+**Understandable aesthetics**
+
+*Required aesthetics*
+
+`x`, `y`
+
+
+*Optional aesthetics*
 
 `pattern_fill` (pattern_* - for mapping variables under aesthetics), `pattern` (to set a patten, for example pattern='stripe'), `fill`, `colour`
 
-### The statistical transformation to use on the data for this layer 
 
-
-### See also
+**See also**
 
 [geom_bin2d](#bin2d), [geom_point](#point)
 
-```{r, fig.cap="Illustration of using geom_bin_2d", message=FALSE, warning=FALSE}
-ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
-  ggpattern::geom_bin2d_pattern(bins=20) + 
-  scale_fill_viridis() +
+**Example**
+
+```{r, message=FALSE, warning=FALSE}
+worldbankdata |>
+  drop_na() |>
+  ggplot(aes(y = Cooking, x = Electricity)) +
+  geom_bin2d_pattern(aes(pattern_spacing = ..density..), fill = "white", colour = "black", bins = 20) +
   theme(aspect.ratio = 1)
 ```
 
 ## geom_bin2d{#bin2d}
 
 
-### Package
+**Package**
 
 ggplot2 [@R-ggplot2]
 
-### Description 
+**Description**
 
 Divides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 `x`, `y`, `fill`, `group`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_bin_2d`
 
-### See also
+**See also**
 
 [geom_bin_2d](#bin_2d), [geom_point](#point)
 
-### Example
+**Example**
 
-```{r, fig.cap="Illustration of using geom_bin_2d", message=FALSE, warning=FALSE}
-ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) +
-  geom_bin2d() + 
+```{r,  message=FALSE, warning=FALSE}
+ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +
+  geom_bin2d() +
   theme(aspect.ratio = 1) +
-  scale_fill_viridis()
+  scale_fill_viridis(na.value = "grey50", limits = c(0, 30))
 ```
 
 
 ## geom_blank{#blank}
 
-### Package
+**Package**
 
 ggplot2 [@R-ggplot2]
 
-### Description
+**Description**
 
 Draws nothing.
 
 ## geom_boxplot{#boxplot}
 
 
-### Package
+**Package**
 
 ggplot2 [@R-ggplot2]
 
-### Description
+**Description**
 
 Draw a bar proportional to the specified number. For example, number of cases or user defined number.
 
-### The statistical transformation to use on the data for this layer 
 
-  `stat_boxplot` - This the default statistics layer. This computes minimum, maximum, median, first quartile ($Q1$), third quartile ($Q3$), upper whisker extends up to $Q3 + 1.5 \times IQR$ and lower whisker extends up to $Q1 - 1.5 \times IQR$, where $IQR = Q3 - Q1$. In a notched box plot, it creates 95\% confidence interval for mean.
-  
-
-### See also 
+**See also** 
 
 [geom_col](#col)
 
-### Example
 
-```{r, fig.cap="Illustration of using geom_boxplot", message=FALSE, warning=FALSE}
+**Example**
+
+```{r, message=FALSE, warning=FALSE, fig.height=3, fig.width=2}
 worldbankdata |>
   dplyr::filter(Year == 2021) |>
   dplyr::select(Cooking) |>
-ggplot(aes(y = Cooking, x=factor(0))) + 
-  geom_boxplot() + 
-  theme(axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
-        axis.ticks.x=element_blank())
+  ggplot(aes(y = Cooking, x = factor(0))) +
+  geom_boxplot() +
+  theme(
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank()
+  )
 ```
 
-```{r geomboxparam, fig.cap="Illustration of using geom_boxplot with changing outliers and adding a notch to create notched box plot.", message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, fig.height=5}
 worldbankdata |>
   dplyr::filter(Year == 2021) |>
-  dplyr::select(Cooking) |>
-ggplot(aes(y = Cooking, x=factor(0))) +  
-geom_boxplot(outlier.colour="black", outlier.shape=16,
-             outlier.size=2, notch=TRUE) + 
-  theme(axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
-        axis.ticks.x=element_blank())
+  ggplot(aes(y = Cooking, x = Region)) +
+  geom_boxplot() +
+  theme(
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank()
+  )
+```
 
+```{r geomboxparam, message=FALSE, warning=FALSE, fig.height=3, fig.width=2}
+worldbankdata |>
+  dplyr::filter(Year == 2021) |>
+  ggplot(aes(y = Cooking, x = factor(0))) +
+  geom_boxplot(
+    outlier.colour = "black", outlier.shape = 16,
+    outlier.size = 2, notch = TRUE
+  ) +
+  theme(
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank()
+  )
 ```
 
 ## geom_bump {#bump}
 
 
-### Package
+**Package**
 
 ggbump [@ggbump]
 
-### Description 
+**Description** 
 
 Creates  a smooth rank over time.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
 `x`, `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `colour`, `alpha`, `size`
 
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_bin_2d`
-
-### See also
+**See also**
 
 [geom_line](#line)
 
-### Example
+**Example**
 
-```{r, fig.cap="Illustration of using geom_bin_2d", message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(ggbump)
-a1 <- worldbankdata |> 
+a1 <- worldbankdata |>
   filter(Country == "Afghanistan") |>
-  ggplot(aes(x = Year, y=Electricity)) +
-  geom_bump() + ggtitle("a1: geom_bump only")
-a2 <- worldbankdata |> 
+  ggplot(aes(x = Year, y = Electricity)) +
+  geom_bump() +
+  ggtitle("a1: geom_bump only")
+a2 <- worldbankdata |>
   filter(Country == "Afghanistan") |>
-  ggplot(aes(x = Year, y=Electricity)) +
-  geom_bump() + 
-  geom_point() + 
+  ggplot(aes(x = Year, y = Electricity)) +
+  geom_bump() +
+  geom_point() +
   ggtitle("a2: geom_bump and geom_point")
-a1|a2
+a1 | a2
 ```
 

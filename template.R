@@ -34,3 +34,7 @@ ggplot2 [@ggplot2]
 [geom_line](#line), [geom_ribbon](#ribbon)
   
 ### Example
+  
+
+library("styler")
+style_file(here("a.qmd"))

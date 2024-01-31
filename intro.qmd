@@ -1,19 +1,14 @@
 # Introduction
 
-
-# Data wrangling
-
 ```{r}
 library(tidyverse)
 ```
 
-# Data
+
+## Data
 
 ```{r}
 library(drone)
-```
-
-```{r}
 library(tibble)
 data(worldbankdata)
 worldbankdata
@@ -32,26 +27,18 @@ library(naniar)
 gg_miss_upset(worldbankdata) 
 ```
 
+## Packages use for data wrangiling and |> operator
 
-
-
-# Different formats of the dataset
-
-```{r, message=FALSE,warning=FALSE}
-library(tidyverse)
-```
-
-## Subset of datasets created from the `worldbankdata`
-
-```{r}
-wbd.M <- worldbankdata |>
-  filter(Income == "L")
-```
-
-```{r}
-wdb.Bangladesh <- worldbankdata |>
-  filter(Country == "Bangladesh") |> filter(Year != 2000)
-```
 
 ## R packages with geom implementation
+
+1. ggplot2 [@ggplot2]
+
+2. ggpattern [@ggpattern]
+
+3. ggforce [@ggforce]
+
+4. ggalluvial [@ggalluvial]
+
+5. ggbump [@ggbump]
 

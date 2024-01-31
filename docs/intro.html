@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -126,6 +145,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="./">Data Visualisation <code>geom</code> Encyclopedia</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/thiyangt/geom.encyclopedia" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-`geom`-Encyclopedia.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-`geom`-Encyclopedia.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
     </div>
       </div>
@@ -557,7 +593,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./x.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">geom_x</span></span></a>
   </div>
 </li>
       </ul>
@@ -618,16 +654,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link active" data-scroll-target="#data-wrangling"><span class="header-section-number">3</span> Data wrangling</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">4</span> Data</a>
-  <ul class="collapse">
-  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">4.1</span> Data description</a></li>
-  </ul></li>
-  <li><a href="#different-formats-of-the-dataset" id="toc-different-formats-of-the-dataset" class="nav-link" data-scroll-target="#different-formats-of-the-dataset"><span class="header-section-number">5</span> Different formats of the dataset</a>
-  <ul class="collapse">
-  <li><a href="#subset-of-datasets-created-from-the-worldbankdata" id="toc-subset-of-datasets-created-from-the-worldbankdata" class="nav-link" data-scroll-target="#subset-of-datasets-created-from-the-worldbankdata"><span class="header-section-number">5.1</span> Subset of datasets created from the <code>worldbankdata</code></a></li>
-  <li><a href="#r-packages-with-geom-implementation" id="toc-r-packages-with-geom-implementation" class="nav-link" data-scroll-target="#r-packages-with-geom-implementation"><span class="header-section-number">5.2</span> R packages with geom implementation</a></li>
-  </ul></li>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="header-section-number">2.1</span> Data</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2.2</span> Data description</a></li>
+  <li><a href="#packages-use-for-data-wrangiling-and-operator" id="toc-packages-use-for-data-wrangiling-and-operator" class="nav-link" data-scroll-target="#packages-use-for-data-wrangiling-and-operator"><span class="header-section-number">2.3</span> Packages use for data wrangiling and |&gt; operator</a></li>
+  <li><a href="#r-packages-with-geom-implementation" id="toc-r-packages-with-geom-implementation" class="nav-link" data-scroll-target="#r-packages-with-geom-implementation"><span class="header-section-number">2.4</span> R packages with geom implementation</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -651,8 +681,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="data-wrangling" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Data wrangling</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -668,16 +696,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
-</section>
-<section id="data" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Data</h1>
+<section id="data" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">2.1</span> Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,937 × 7
    Country Code  Region                     Year Cooking Electricity Income
@@ -695,49 +720,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 7,927 more rows</code></pre>
 </div>
 </div>
-<section id="data-description" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="data-description"><span class="header-section-number">4.1</span> Data description</h2>
+</section>
+<section id="data-description" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2.2</span> Data description</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 12499 rows containing missing values (`geom_raster()`).</code></pre>
 </div>
 <div class="cell-output-display">
+<p><img src="intro_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
 <p><img src="intro_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="intro_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
 </section>
+<section id="packages-use-for-data-wrangiling-and-operator" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="packages-use-for-data-wrangiling-and-operator"><span class="header-section-number">2.3</span> Packages use for data wrangiling and |&gt; operator</h2>
 </section>
-<section id="different-formats-of-the-dataset" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Different formats of the dataset</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="subset-of-datasets-created-from-the-worldbankdata" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="subset-of-datasets-created-from-the-worldbankdata"><span class="header-section-number">5.1</span> Subset of datasets created from the <code>worldbankdata</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>wbd.M <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Income <span class="sc">==</span> <span class="st">"L"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wdb.Bangladesh <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bangladesh"</span>) <span class="sc">|&gt;</span> <span class="fu">filter</span>(Year <span class="sc">!=</span> <span class="dv">2000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="r-packages-with-geom-implementation" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="r-packages-with-geom-implementation"><span class="header-section-number">5.2</span> R packages with geom implementation</h2>
+<section id="r-packages-with-geom-implementation" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="r-packages-with-geom-implementation"><span class="header-section-number">2.4</span> R packages with geom implementation</h2>
+<ol type="1">
+<li><p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
+<li><p>ggpattern <span class="citation" data-cites="ggpattern">(<a href="references.html#ref-ggpattern" role="doc-biblioref">FC, Davis, and ggplot2 authors 2023</a>)</span></p></li>
+<li><p>ggforce <span class="citation" data-cites="ggforce">(<a href="references.html#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p></li>
+<li><p>ggalluvial <span class="citation" data-cites="ggalluvial">(<a href="references.html#ref-ggalluvial" role="doc-biblioref"><strong>ggalluvial?</strong></a>)</span></p></li>
+<li><p>ggbump <span class="citation" data-cites="ggbump">(<a href="references.html#ref-ggbump" role="doc-biblioref">Sjoberg 2020</a>)</span></p></li>
+</ol>
 
 
-</section>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ggpattern" class="csl-entry" role="listitem">
+FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. <em>Ggpattern: ’Ggplot2’ Pattern Geoms</em>.
+</div>
+<div id="ref-ggforce" class="csl-entry" role="listitem">
+Pedersen, Thomas Lin. 2022. <em>Ggforce: Accelerating ’Ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggforce">https://CRAN.R-project.org/package=ggforce</a>.
+</div>
+<div id="ref-ggbump" class="csl-entry" role="listitem">
+Sjoberg, David. 2020. <em>Ggbump: Bump Chart and Sigmoid Curves</em>. <a href="https://CRAN.R-project.org/package=ggbump">https://CRAN.R-project.org/package=ggbump</a>.
+</div>
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
