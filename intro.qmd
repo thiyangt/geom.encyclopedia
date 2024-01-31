@@ -1,7 +1,43 @@
 # Introduction
 
+## What is data visualisation?
+
+To explain the idea I use the following dataset.
+
+
 ```{r}
-library(tidyverse)
+set.seed(2024)
+var1 <- rnorm(30)
+var2 <- factor(rep(c(1, 2, 3), each=10))
+toydata <- data.frame(var1, var2)
+head(toydata) 
+```
+
+```{r}
+library(ggplot2)
+ggplot(toydata, aes(x=var2, y=var1, col=var2)) +
+  geom_point()
+```
+
+## What did we do in making a plot to data visualisation?
+
+
+
+
+## What is `geom`?
+
+
+
+
+Below are four methods that I used to visualise the distribution of var1 by var 2.
+
+```{r}
+library(patchwork)
+library(ggridges)
+p <- ggplot(toydata, aes(x=var2, y=var1, col=var2))
+p1 <- p + geom_point() + ggtitle("A")
+p2 <- p + geom_boxplot() + ggtitle("B")
+(p1|p2)
 ```
 
 
@@ -16,7 +52,8 @@ worldbankdata
 
 ## Data description
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
 library(visdat)
 vis_dat(worldbankdata) + 
   scale_fill_brewer(palette = "Dark2")
@@ -41,4 +78,8 @@ gg_miss_upset(worldbankdata)
 4. ggalluvial [@ggalluvial]
 
 5. ggbump [@ggbump]
+
+6. ggridges [@ggridges]
+
+7. ggalt [@ggalt]
 

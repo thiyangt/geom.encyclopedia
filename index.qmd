@@ -4,4 +4,4 @@ Welcome to the "Data Visualisation `geom` Encyclopedia", an encyclopedia of geom
 
 Keep in mind that the field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Regularly updating your encyclopedia will ensure it remains a relevant and comprehensive resource for users.
 
-|A|B|C|
+|[A](#sec-a)|[B](#sec-b)|[C](#sec-c)|

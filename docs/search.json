@@ -53,7 +53,7 @@
     "href": "c.html#col_pattern",
     "title": "5  geom_c",
     "section": "5.2 geom_col_pattern",
-    "text": "5.2 geom_col_pattern\nPackage\nggpattern (FC, Davis, and ggplot2 authors 2023)\nDescription\nFill columns with a pattern. User can map a variable for pattern or set a pattern.\nUnderstandable aesthetics\nRequired aesthetics\nx, y\nOptional aesthetics\npattern, fill, colour\nSee also\ngeom_line, geom_ribbon\nExample\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  group_by(Income) |&gt;\n  summarise(n = n()) |&gt;\n  ggplot(aes(x = Income, y = n)) +  \n  ggpattern::geom_col_pattern(aes(pattern = n, pattern_angle=n),\n    colour  = 'black', fill=\"white\") \n\n\n\n\nIllustration of geom_col_pattern"
+    "text": "5.2 geom_col_pattern\nPackage\nggpattern (FC, Davis, and ggplot2 authors 2023)\nDescription\nFill columns with a pattern. User can map a variable for pattern or set a pattern.\nUnderstandable aesthetics\nRequired aesthetics\nx, y\nOptional aesthetics\npattern, fill, colour\nSee also\ngeom_line, geom_ribbon\nExample\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  group_by(Income) |&gt;\n  summarise(n = n()) |&gt;\n  ggplot(aes(x = Income, y = n)) +  \n  ggpattern::geom_col_pattern(aes(pattern = n, pattern_angle=n),\n    colour  = 'black', fill=\"white\")"
   },
   {
     "objectID": "c.html#count",
@@ -67,7 +67,7 @@
     "href": "c.html#circle",
     "title": "5  geom_c",
     "section": "5.4 geom_circle",
-    "text": "5.4 geom_circle\nPackage\nggforce (Pedersen 2022)\nDescription\nDraw circles based on a center point and a radius.\nUnderstandable aesthetics\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius\noptional aesthetics\ncolor, fill, linewidth, linetype, alpha, lineend\nSee also\ngeom_mark_circle\nExample\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\nggplot(aes(y = Cooking, x=Electricity, col=Income)) + \n  geom_point() + \n  ggforce::geom_circle(aes(x0 = 26, y0 = 5, r = 20),\n              inherit.aes = FALSE) + \n  theme(aspect.ratio = 1)"
+    "text": "5.4 geom_circle\nPackage\nggforce (Pedersen 2022)\nDescription\nDraw circles based on a center point and a radius.\nUnderstandable aesthetics\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius\noptional aesthetics\ncolor, fill, linewidth, linetype, alpha, lineend\nSee also\ngeom_mark_circle\nExample\n\nworldbankdata |&gt;\n  filter(Year == 2021) |&gt;\nggplot(aes(y = Cooking, x=Electricity, col=Income)) + \n  geom_point() + \n  scale_color_brewer(palette = \"Dark2\") +\n  ggforce::geom_circle(aes(x0 = 26, y0 = 5, r = 20),\n              inherit.aes = FALSE) + \n    theme(aspect.ratio = 1)"
   },
   {
     "objectID": "c.html#contour",
@@ -88,98 +88,98 @@
     "href": "c.html#curve",
     "title": "5  geom_c",
     "section": "5.7 geom_curve",
-    "text": "5.7 geom_curve\nPackage\nggplot2 (Wickham 2016)\nDescription\ngeom_segment() draws a straight line between between two points. geom_curve draws a curved line.\n\n5.7.1 Understandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.7.2 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.7.3 See also\ngeom_segment\n\n\n5.7.4 Examples\n\ndf &lt;- data.frame(x1 = 0, x2 = 100, y1 = 0, y2 = 100)\nggplot(df) + \n  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2))\n\n\n\n\n\ndf &lt;- data.frame(x2 = c( 3, 4, 4, 3, -3, -4, -4, -3),\n                 y2 = c( 4, 3, -3, -4, -4, -3, 3, 3),\n                 x1 = rep(0, 8),\n                 y1 = rep(0, 8))\n\nggplot(df) + \n  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2),\n             curvature = 0.75, angle = -45,\n             arrow = arrow(length = unit(0.25,\"cm\"))) + \n  coord_equal() +\n  xlim(-5, 5) + ylim(-5, 5)"
+    "text": "5.7 geom_curve\nPackage\nggplot2 (Wickham 2016)\nDescription\ngeom_segment() draws a straight line between between two points. geom_curve draws a curved line.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, linetype, linewidth, group\nThe statistical transformation to use on the data for this layer\nidentity\nSee also\ngeom_segment\nExamples\n\ndf &lt;- data.frame(x1 = 0, x2 = 100, y1 = 0, y2 = 100)\nggplot(df) + \n  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2))\n\n\n\n\n\ndf &lt;- data.frame(x2 = c( 3, 4, 4, 3, -3, -4, -4, -3),\n                 y2 = c( 4, 3, -3, -4, -4, -3, 3, 3),\n                 x1 = rep(0, 8),\n                 y1 = rep(0, 8))\n\nggplot(df) + \n  geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2),\n             curvature = 0.75, angle = -45,\n             arrow = arrow(length = unit(0.25,\"cm\"))) + \n  coord_equal() +\n  xlim(-5, 5) + ylim(-5, 5)"
   },
   {
     "objectID": "c.html#crossbar",
     "href": "c.html#crossbar",
     "title": "5  geom_c",
     "section": "5.8 geom_crossbar",
-    "text": "5.8 geom_crossbar\n\n5.8.1 Package\nggplot2 (Wickham 2016)\n\n\n5.8.2 Description\nPlot a vertical interval defined by x, ymin and ymax.\n\n\n5.8.3 Understandable aesthetics\nrequired aesthetics\nx or y\nxmin or ymin\nxmax or ymax\noptional aesthetics\nalpha, colour, linetype, linewidth, group\n\n\n5.8.4 The statistical transformation to use on the data for this layer\nidentity\n\n\n5.8.5 See also\ngeom_segment\n\n\n5.8.6 Examples\n\nsummary.wb &lt;- aggregate(. ~ Income, mean, data=worldbankdata)\nsummary.wb\nggplot(worldbankdata, aes(x = Income, y = Electricity)) + \n  geom_point() + \n  geom_crossbar(data=summary.wb, aes(ymin = Electricity, ymax = Electricity),\n                  size=1,col=\"red\", width = .5)\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "5.8 geom_crossbar\nPackage\nggplot2 (Wickham 2016)\nDescription\nPlot a vertical interval defined by y, ymin and ymax or x, xmin and xmax.\nUnderstandable aesthetics\nrequired aesthetics\nx or y\nxmin or ymin\nxmax or ymax\noptional aesthetics\nalpha, colour, linetype, linewidth, group\nSee also\ngeom_segment\nExamples\nExample 1\n\nsummarydf &lt;- worldbankdata |&gt;\n  drop_na() |&gt;\n  select(Electricity, Income) |&gt;\n  group_by(Income) |&gt;\n  reframe(qs = quantile(Electricity, c(0.25, 0.5 ,0.75))) |&gt;\n  mutate(q=rep(c(\"Q1\", \"Q2\", \"Q3\"), 4)) |&gt;\n  pivot_wider(names_from = q,\n              values_from = qs)\nsummarydf\n\n# A tibble: 4 × 4\n  Income    Q1    Q2    Q3\n  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 L       16.6  32.2  50.7\n2 LM      62.0  86.7  97.7\n3 UM      95.9  99.5 100. \n4 H      100   100   100  \n\nggplot(summarydf, aes(x=Income, ymin = Q1, y=Q2, ymax = Q3)) + \n  geom_crossbar(size=1,col=\"red\", width = .5)\n\n\n\n\nExample 2\n\nsummary_stats &lt;- worldbankdata |&gt;\n  drop_na() |&gt;\n  select(Electricity, Income) |&gt;\n  group_by(Income) |&gt;\n  reframe(mean = mean(Electricity),\n          sd = sd(Electricity)) \nggplot(summary_stats, aes(x = Income, y = mean, ymin = mean - sd, ymax = mean + sd)) +\n  geom_crossbar(width = 0.5, fatten = 2) \n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "d.html#density",
     "href": "d.html#density",
     "title": "6  geom_d",
     "section": "6.1 geom_density",
-    "text": "6.1 geom_density\n\n6.1.1 Package\nggplot2 (Wickham 2016)\n\n\n6.1.2 Description\nComputes and draws kernel density estimation.\n\n\n6.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\n\n\n6.1.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.1.5 See also\ngeom_histogram\n\n\n6.1.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   geom_density()"
+    "text": "6.1 geom_density\nPackage\nggplot2 (Wickham 2016)\nDescription\nComputes and draws kernel density estimation.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\nSee also\ngeom_histogram\nExample\n\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   geom_density()"
   },
   {
     "objectID": "d.html#density_line",
     "href": "d.html#density_line",
     "title": "6  geom_d",
     "section": "6.2 geom_density_line",
-    "text": "6.2 geom_density_line\n\n6.2.1 Package\nggridges (Wilke 2023)\n\n\n6.2.2 Description\nDraws a density plot same as geom_density. The difference is that the geom draws a ridgeline (line with filled area underneath).\n\n\n6.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\n\n\n6.2.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.2.5 See also\ngeom_density\n\n\n6.2.6 Example\n\nlibrary(ggridges)\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   \n  geom_density_line()"
+    "text": "6.2 geom_density_line\nPackage\nggridges (Wilke 2023)\nDescription\nDraws a density plot same as geom_density. The difference is that the geom draws a ridgeline (line with filled area underneath).\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, weight\nSee also\ngeom_density\nExample\n\nlibrary(ggridges)\nworldbankdata |&gt;\n  ggplot(aes(x = Electricity)) +   \n  geom_density_line()"
   },
   {
     "objectID": "d.html#density_2d",
     "href": "d.html#density_2d",
     "title": "6  geom_d",
     "section": "6.3 geom_density_2d",
-    "text": "6.3 geom_density_2d\n\n6.3.1 Package\nggplot2 (Wickham 2016)\n\n\n6.3.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with contours.\n\n\n6.3.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n6.3.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.3.5 See also\ngeom_histofram\n\n\n6.3.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d() +\n  xlim(0, 100) +\n  ylim(0, 100) +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a1: geom_density_2d only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() +\n  geom_density_2d() +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d\") \n  \na1|a2"
+    "text": "6.3 geom_density_2d\nPackage\nggplot2 (Wickham 2016)\nDescription\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with contours.\nUnderstandable aesthetics\nstat_density\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_histofram\nExample\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d() +\n  xlim(0, 100) +\n  ylim(0, 100) +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a1: geom_density_2d only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point() +\n  geom_density_2d() +\n  theme(aspect.ratio = 1) + \n  labs(title = \"a2: geom_point and \\n geom_density_2d\") \n  \na1|a2"
   },
   {
     "objectID": "d.html#density_2d_filled",
     "href": "d.html#density_2d_filled",
     "title": "6  geom_d",
     "section": "6.4 geom_density_2d_filled",
-    "text": "6.4 geom_density_2d_filled\n\n6.4.1 Package\nggplot2 (Wickham 2016)\n\n\n6.4.2 Description\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with filled contour bands.\n\n\n6.4.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, subgroup\n\n\n6.4.4 The statistical transformation to use on the data for this layer\nstat_density\n\n\n6.4.5 See also\ngeom_histogram\n\n\n6.4.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Year == \"2021\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled() + \n  labs(title = \"a1: geom_density_2d_filled only\") + \n  theme( aspect.ratio = 1)\na2 &lt;- worldbankdata |&gt;\n  filter(Year == \"2020\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled(alpha = 0.5) + \n    geom_point() + \n  labs(title = \"a2: geom_point and \\n geom_density_2d_filled\") + \n  theme( aspect.ratio = 1)\na3 &lt;- worldbankdata |&gt;\n  filter(Year == \"2020\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point(alpha=0.5) + \n  labs(title = \"a3: geom_point\") + \n  theme(aspect.ratio = 1)\na1 / a2 / a3"
+    "text": "6.4 geom_density_2d_filled\nPackage\nggplot2 (Wickham 2016)\nDescription\nComputes a 2D kernel density estimation using MASS::kde2d() and display the results with filled contour bands.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, subgroup\nSee also\ngeom_histogram\nExample\n\na1 &lt;- worldbankdata |&gt;\n  filter(Year == \"2021\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled() + \n  labs(title = \"a1: geom_density_2d_filled only\") + \n  theme( aspect.ratio = 1)\na2 &lt;- worldbankdata |&gt;\n  filter(Year == \"2020\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_density_2d_filled(alpha = 0.5) + \n    geom_point() + \n  labs(title = \"a2: geom_point and \\n geom_density_2d_filled\") + \n  theme( aspect.ratio = 1)\na3 &lt;- worldbankdata |&gt;\n  filter(Year == \"2020\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point(alpha=0.5) + \n  labs(title = \"a3: geom_point\") + \n  theme(aspect.ratio = 1)\na1 / a2 / a3"
   },
   {
     "objectID": "d.html#density_ridges",
     "href": "d.html#density_ridges",
     "title": "6  geom_d",
     "section": "6.5 geom_density_ridges",
-    "text": "6.5 geom_density_ridges\n\n6.5.1 Package\nggridges (Wilke 2023)\n\n\n6.5.2 Description\nArranges multiple density plots in a staggered fashion.\n\n\n6.5.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolour, fill, group, height, alpha, linetype, linewidth, scale, rel_min_height\n\n\n6.5.4 The statistical transformation to use on the data for this layer\ndensity_ridges\n\n\n6.5.5 See also\ngeom_density_ridges_gradient\n\n\n6.5.6 Example\n\nlibrary(ggridges)\n worldbankdata |&gt;\n  ggplot(aes(y = Income, x=Electricity)) +   \n  geom_density_ridges()"
+    "text": "6.5 geom_density_ridges\nPackage\nggridges (Wilke 2023)\nDescription\nArranges multiple density plots in a staggered fashion.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\ncolour, fill, group, height, alpha, linetype, linewidth, scale, rel_min_height\nSee also\ngeom_density_ridges_gradient\nExample\n\nlibrary(ggridges)\n worldbankdata |&gt;\n  ggplot(aes(y = Income, x=Electricity)) +   \n  geom_density_ridges()"
   },
   {
     "objectID": "d.html#density_ridges_gradient",
     "href": "d.html#density_ridges_gradient",
     "title": "6  geom_d",
     "section": "6.6 geom_density_ridges_gradient",
-    "text": "6.6 geom_density_ridges_gradient\n\n6.6.1 Package\nggridges (Wilke 2023)\n\n\n6.6.2 Description\nArranges multiple density plots in a staggered fashion.\n\n\n6.6.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolour, fill, group, height, alpha, linetype, linewidth, scale, rel_min_height\n\n\n6.6.4 The statistical transformation to use on the data for this layer\ndensity_ridges\n\n\n6.6.5 See also\ngeom_density_ridges\n\n\n6.6.6 Example\n\nlibrary(ggridges)\n worldbankdata |&gt;\n  ggplot(aes(y = Income, x=Electricity, fill=stat(x))) +   \n  geom_density_ridges_gradient() +\n  scale_fill_viridis_c()"
+    "text": "6.6 geom_density_ridges_gradient\nPackage\nggridges (Wilke 2023)\nDescription\nArranges multiple density plots in a staggered fashion.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\ncolour, fill, group, height, alpha, linetype, linewidth, scale, rel_min_height\nSee also\ngeom_density_ridges\nExample\n\nlibrary(ggridges)\n worldbankdata |&gt;\n  ggplot(aes(y = Income, x=Electricity, fill=stat(x))) +   \n  geom_density_ridges_gradient() +\n  scale_fill_viridis_c()"
   },
   {
     "objectID": "d.html#dl",
     "href": "d.html#dl",
     "title": "6  geom_d",
     "section": "6.7 geom_dl",
-    "text": "6.7 geom_dl\n\n6.7.1 Package\ndirectlabels (Hocking 2023)\n\n\n6.7.2 Description\nDisplay direct labels on the plot.\n\n\n6.7.3 Understandable aesthetics\nlayer\n\n\n6.7.4 The statistical transformation to use on the data for this layer\nstat_identity\n\n\n6.7.5 See also\ngeom_text\n\n\n6.7.6 Example\n\nlibrary(directlabels)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point(aes(col=Income)) +\n  theme(aspect.ratio = 1) +\n  scale_color_brewer(palette = \"Set1\")\na1 +\n  geom_dl(aes(label=Income), method=\"smart.grid\")+\n  scale_shape_manual(values=c(H = 1, \n                              UM = 6,\n                              L = 3,\n                              LM = 2),\n                     guide=\"none\")"
+    "text": "6.7 geom_dl\nPackage\ndirectlabels (Hocking 2023)\nDescription\nDisplay direct labels on the plot.\nUnderstandable aesthetics\nlayer\nSee also\ngeom_text\nExample\n\nlibrary(directlabels)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) +   \n  geom_point(aes(col=Income)) +\n  theme(aspect.ratio = 1) +\n  scale_color_brewer(palette = \"Set1\")\na1 +\n  geom_dl(aes(label=Income), method=\"smart.grid\")+\n  scale_shape_manual(values=c(H = 1, \n                              UM = 6,\n                              L = 3,\n                              LM = 2),\n                     guide=\"none\")"
   },
   {
     "objectID": "d.html#dotplot",
     "href": "d.html#dotplot",
     "title": "6  geom_d",
     "section": "6.8 geom_dotplot",
-    "text": "6.8 geom_dotplot\n\n6.8.1 Package\nggplot2 (Wickham 2016)\n\n\n6.8.2 Description\nCreate dotplot.\n\n\n6.8.3 Understandable aesthetics\nstat_density\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , group, linetype, stroke\n\n\n6.8.4 The statistical transformation to use on the data for this layer\nstat_identity\n\n\n6.8.5 See also\ngeom_histogram\n\n\n6.8.6 Example\n\nworldbankdata |&gt;\n  ggplot(aes(x=Cooking)) +   \n  geom_dotplot(binwidth = 1) + \n  theme(legend.position=\"none\", aspect.ratio = 1)"
+    "text": "6.8 geom_dotplot\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate dotplot.\n\n6.8.1 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , group, linetype, stroke\nSee also\ngeom_histogram\nExample\n\nworldbankdata |&gt;\n  ggplot(aes(x=Cooking)) +   \n  geom_dotplot(binwidth = 1) + \n  theme(legend.position=\"none\", aspect.ratio = 1)"
   },
   {
     "objectID": "d.html#delaunay_tile",
     "href": "d.html#delaunay_tile",
     "title": "6  geom_d",
     "section": "6.9 geom_delaunay_tile",
-    "text": "6.9 geom_delaunay_tile\n\n6.9.1 Package\nggplot2 (Pedersen 2022)\n\n\n6.9.2 Description\nDisplay voronoi tesselation and delaunay triangulation.\n\n\n6.9.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\n\n\n6.9.4 The statistical transformation to use on the data for this layer\ndelaunay_tile\n\n\n6.9.5 See also\ngeom_delaunay_segment\n\n\n6.9.6 Example\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_tile(alpha=0.5) + \n  labs(title = \"a1: geom_delaunay_tile only\") +\n  theme(aspect.ratio = 1)\n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_tile(alpha=0.5) + \n  labs(title = \"a2: geom_point and \\n geom_delaunay_tile\") +\n  theme(aspect.ratio = 1)\na1 | a2"
+    "text": "6.9 geom_delaunay_tile\nPackage\nggforce (Pedersen 2022)\nDescription\nDisplay voronoi tesselation and delaunay triangulation.\nUnderstandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\nSee also\ngeom_delaunay_segment\nExample\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_tile(alpha=0.5) + \n  labs(title = \"a1: geom_delaunay_tile only\") +\n  theme(aspect.ratio = 1)\n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_tile(alpha=0.5) + \n  labs(title = \"a2: geom_point and \\n geom_delaunay_tile\") +\n  theme(aspect.ratio = 1)\na1 | a2"
   },
   {
     "objectID": "d.html#delaunay_segment",
     "href": "d.html#delaunay_segment",
     "title": "6  geom_d",
     "section": "6.10 geom_delaunay_segment",
-    "text": "6.10 geom_delaunay_segment\n\n6.10.1 Package\nggplot2 (Pedersen 2022)\n\n\n6.10.2 Description\nDisplay voronoi tesselation and delaunay triangulation.\n\n\n6.10.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\n\n\n6.10.4 The statistical transformation to use on the data for this layer\ndelaunay_segment\n\n\n6.10.5 See also\ngeom_delaunay_tile\n\n\n6.10.6 Example\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\n\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_segment() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a1: geom_delaunay_segment only\") \n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_segment() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a2: geom_point and \\n geom_delaunay_segment\") \n\na1 | a2"
+    "text": "6.10 geom_delaunay_segment\nPackage\nggforce (Pedersen 2022)\nDescription\nDisplay voronoi tesselation and delaunay triangulation.\nUnderstandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\nSee also\ngeom_delaunay_tile\nExample\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\n\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_segment() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a1: geom_delaunay_segment only\") \n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_segment() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a2: geom_point and \\n geom_delaunay_segment\") \n\na1 | a2"
   },
   {
     "objectID": "d.html#delaunay_segment2",
     "href": "d.html#delaunay_segment2",
     "title": "6  geom_d",
     "section": "6.11 geom_delaunay_segment2",
-    "text": "6.11 geom_delaunay_segment2\n\n6.11.1 Package\nggplot2 (Pedersen 2022)\n\n\n6.11.2 Description\nDisplay voronoi tesselation and delaunay triangulation.\n\n\n6.11.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\n\n\n6.11.4 The statistical transformation to use on the data for this layer\ndelaunay_segment2\n\n\n6.11.5 See also\ngeom_delaunay_tile\n\n\n6.11.6 Example\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\n\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_segment2() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a1: geom_delaunay_segment2 only\") \n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_segment2() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a2: geom_point and \\n geom_delaunay_segment2\") \n\na1 | a2"
+    "text": "6.11 geom_delaunay_segment2\nPackage\nggforce (Pedersen 2022)\nDescription\nDisplay voronoi tesselation and delaunay triangulation.\nUnderstandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill , linetype, size\nSee also\ngeom_delaunay_tile\nExample\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\n\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_delaunay_segment2() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a1: geom_delaunay_segment2 only\") \n\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_delaunay_segment2() + \n  theme(aspect.ratio = 1) +\n  labs(title = \"a2: geom_point and \\n geom_delaunay_segment2\") \n\na1 | a2"
   },
   {
     "objectID": "d.html#geom_dumbbell",
     "href": "d.html#geom_dumbbell",
     "title": "6  geom_d",
     "section": "6.12 geom_dumbbell",
-    "text": "6.12 geom_dumbbell\n\n6.12.1 Package\nggalt(Rudis, Bolker, and Schulz 2017)\n\n\n6.12.2 Description\nCreate dumbbell charts.\n\n\n6.12.3 Understandable aesthetics\nrequired aesthetics\nx, y, xend, yend\noptional aesthetics\nalpha, colour, group, linetype, size\n\n\n6.12.4 The statistical transformation to use on the data for this layer\n\n\n6.12.5 See also\ngeom_segment\n\n\n6.12.6 Example\n\nlibrary(ggalt)\ndf &lt;- worldbankdata |&gt;\n  group_by(Income) |&gt;\n  summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE))\ndf\n\n# A tibble: 5 × 3\n  Income   min   max\n  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 L       2.11  99.8\n2 LM      3.81 100  \n3 UM     26.5  100  \n4 H      65.9  100  \n5 &lt;NA&gt;   17.8  100  \n\nggplot(df, aes(y=Income, x=min, xend=max)) +\n  xlab(\"Electricity Range\") + \n  geom_dumbbell(color = \"darkgray\",  # Color of the line between min and max\n                size = 3,            # Line width\n                dot_guide = FALSE,   # Whether to add a guide from origin to X or not\n                size_x = 3,          # Size of the X point\n                size_xend = 3,       # Size of the X end point\n                colour_x = \"#762a83\",    # Color of the X point\n                colour_xend = \"#1b7837\")   # Color of the X end point \n\n\n\n\n\n\n\n\nHocking, Toby Dylan. 2023. Directlabels: Direct Labels for Multicolor Plots. https://CRAN.R-project.org/package=directlabels.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra Coordinate Systems, ’Geoms’, Statistical Transformations, Scales and Fonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’. https://CRAN.R-project.org/package=ggridges."
+    "text": "6.12 geom_dumbbell\nPackage\nggalt(Rudis, Bolker, and Schulz 2017)\nDescription\nCreate dumbbell charts.\nUnderstandable aesthetics\nrequired aesthetics\nx, y, xend, yend\noptional aesthetics\nalpha, colour, group, linetype, size\nSee also\ngeom_segment\nExample\n\nlibrary(ggalt)\ndf &lt;- worldbankdata |&gt;\n  group_by(Income) |&gt;\n  summarise(min = min(Electricity, na.rm=TRUE), max = max(Electricity, na.rm=TRUE))\ndf\n\n# A tibble: 5 × 3\n  Income   min   max\n  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 L       2.11  99.8\n2 LM      3.81 100  \n3 UM     26.5  100  \n4 H      65.9  100  \n5 &lt;NA&gt;   17.8  100  \n\nggplot(df, aes(y=Income, x=min, xend=max)) +\n  xlab(\"Electricity Range\") + \n  geom_dumbbell(color = \"darkgray\",  # Color of the line between min and max\n                size = 3,            # Line width\n                dot_guide = FALSE,   # Whether to add a guide from origin to X or not\n                size_x = 3,          # Size of the X point\n                size_xend = 3,       # Size of the X end point\n                colour_x = \"#762a83\",    # Color of the X point\n                colour_xend = \"#1b7837\")   # Color of the X end point \n\n\n\n\n\n\n\n\nHocking, Toby Dylan. 2023. Directlabels: Direct Labels for Multicolor Plots. https://CRAN.R-project.org/package=directlabels.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra Coordinate Systems, ’Geoms’, Statistical Transformations, Scales and Fonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’. https://CRAN.R-project.org/package=ggridges."
   },
   {
     "objectID": "e.html#errorbar",
@@ -346,8 +346,8 @@
     "objectID": "intro.html#data-description",
     "href": "intro.html#data-description",
     "title": "2  Introduction",
-    "section": "2.2 Data description",
-    "text": "2.2 Data description\n\nlibrary(visdat)\nvis_dat(worldbankdata) + \n  scale_fill_brewer(palette = \"Dark2\")\n\nWarning: Removed 12499 rows containing missing values (`geom_raster()`).\n\n\n\n\n\n\nlibrary(naniar)\ngg_miss_upset(worldbankdata)"
+    "section": "2.5 Data description",
+    "text": "2.5 Data description\n\nlibrary(tidyverse)\nlibrary(visdat)\nvis_dat(worldbankdata) + \n  scale_fill_brewer(palette = \"Dark2\")\n\n\n\n\n\nlibrary(naniar)\ngg_miss_upset(worldbankdata)"
   },
   {
     "objectID": "intro.html#subset-of-datasets-created-from-the-worldbankdata",
@@ -360,8 +360,8 @@
     "objectID": "intro.html#r-packages-with-geom-implementation",
     "href": "intro.html#r-packages-with-geom-implementation",
     "title": "2  Introduction",
-    "section": "2.4 R packages with geom implementation",
-    "text": "2.4 R packages with geom implementation\n\nggplot2 (Wickham 2016)\nggpattern (FC, Davis, and ggplot2 authors 2023)\nggforce (Pedersen 2022)\nggalluvial (ggalluvial?)\nggbump (Sjoberg 2020)\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "section": "2.7 R packages with geom implementation",
+    "text": "2.7 R packages with geom implementation\n\nggplot2 (Wickham 2016)\nggpattern (FC, Davis, and ggplot2 authors 2023)\nggforce (Pedersen 2022)\nggalluvial (ggalluvial?)\nggbump (Sjoberg 2020)\nggridges (Wilke 2023)\nggalt (Rudis, Bolker, and Schulz 2017)\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra Coordinate Systems, ’Geoms’, Statistical Transformations, Scales and Fonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’. https://CRAN.R-project.org/package=ggridges."
   },
   {
     "objectID": "parta.html",
@@ -836,14 +836,35 @@
     "objectID": "intro.html#data",
     "href": "intro.html#data",
     "title": "2  Introduction",
-    "section": "2.1 Data",
-    "text": "2.1 Data\n\nlibrary(drone)\nlibrary(tibble)\ndata(worldbankdata)\nworldbankdata\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows"
+    "section": "2.4 Data",
+    "text": "2.4 Data\n\nlibrary(drone)\nlibrary(tibble)\ndata(worldbankdata)\nworldbankdata\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows"
   },
   {
     "objectID": "intro.html#packages-use-for-data-wrangiling-and-operator",
     "href": "intro.html#packages-use-for-data-wrangiling-and-operator",
     "title": "2  Introduction",
-    "section": "2.3 Packages use for data wrangiling and |> operator",
-    "text": "2.3 Packages use for data wrangiling and |&gt; operator"
+    "section": "2.6 Packages use for data wrangiling and |> operator",
+    "text": "2.6 Packages use for data wrangiling and |&gt; operator"
+  },
+  {
+    "objectID": "intro.html#what-is-geom",
+    "href": "intro.html#what-is-geom",
+    "title": "2  Introduction",
+    "section": "2.3 What is geom?",
+    "text": "2.3 What is geom?\nBelow are four methods that I used to visualise the distribution of var1 by var 2.\n\nlibrary(patchwork)\nlibrary(ggridges)\np &lt;- ggplot(toydata, aes(x=var2, y=var1, col=var2))\np1 &lt;- p + geom_point() + ggtitle(\"A\")\np2 &lt;- p + geom_boxplot() + ggtitle(\"B\")\n(p1|p2)"
+  },
+  {
+    "objectID": "intro.html#what-is-data-visualisation",
+    "href": "intro.html#what-is-data-visualisation",
+    "title": "2  Introduction",
+    "section": "2.1 What is data visualisation?",
+    "text": "2.1 What is data visualisation?\nTo explain the idea I use the following dataset.\n\nset.seed(2024)\nvar1 &lt;- rnorm(30)\nvar2 &lt;- factor(rep(c(1, 2, 3), each=10))\ntoydata &lt;- data.frame(var1, var2)\nhead(toydata) \n\n        var1 var2\n1  0.9819694    1\n2  0.4687150    1\n3 -0.1079713    1\n4 -0.2128782    1\n5  1.1580985    1\n6  1.2923548    1\n\n\n\nlibrary(ggplot2)\nggplot(toydata, aes(x=var2, y=var1, col=var2)) +\n  geom_point()"
+  },
+  {
+    "objectID": "intro.html#what-did-we-do-in-making-a-plot-to-data-visualisation",
+    "href": "intro.html#what-did-we-do-in-making-a-plot-to-data-visualisation",
+    "title": "2  Introduction",
+    "section": "2.2 What did we do in making a plot to data visualisation?",
+    "text": "2.2 What did we do in making a plot to data visualisation?"
   }
 ]

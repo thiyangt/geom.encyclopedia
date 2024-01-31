@@ -10,43 +10,37 @@ data("worldbankdata")
 ```
 
 
+
+
 ## geom_density {#density}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Computes and draws kernel density estimation.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
-`x`
+`x`, `y`
 
-`y`
-
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`, `weight`
 
 
-### The statistical transformation to use on the data for this layer
-
-
-`stat_density`
-
-
-### See also
+**See also**
 
 [geom_histogram](#hist)
 
-### Example
+**Example**
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 worldbankdata |>
   ggplot(aes(x = Electricity)) +   geom_density()
 
@@ -54,41 +48,36 @@ worldbankdata |>
 
 ## geom_density_line {#density_line}
 
-### Package
+**Package**
 
 ggridges [@ggridges]
 
-### Description
+**Description**
 
 Draws a density plot same as geom_density. The difference is that the geom draws a ridgeline (line with filled area underneath).
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`, `weight`
 
 
-### The statistical transformation to use on the data for this layer
 
-
-`stat_density`
-
-
-### See also
+**See also**
 
 [geom_density](#density)
 
-### Example
+**Example**
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(ggridges)
 worldbankdata |>
   ggplot(aes(x = Electricity)) +   
@@ -99,41 +88,36 @@ worldbankdata |>
 
 ## geom_density_2d {#density_2d}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Computes a 2D kernel density estimation using `MASS::kde2d()` and display the results with contours. 
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 `stat_density`
 
 
-**required aesthetics**
+*required aesthetics*
 
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 
-### The statistical transformation to use on the data for this layer
 
-
-`stat_density`
-
-
-### See also
+**See also**
 
 [geom_histofram](#hist)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 a1 <- worldbankdata |>
@@ -156,39 +140,33 @@ a1|a2
 
 ## geom_density_2d_filled {#density_2d_filled}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Computes a 2D kernel density estimation using `MASS::kde2d()` and display the results with filled contour bands. 
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `group`, `linetype`, `linewidth`, `subgroup`
 
 
-### The statistical transformation to use on the data for this layer
-
-
-`stat_density`
-
-
-### See also
+**See also**
 
 [geom_histogram](#hist)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE, fig.height=15}
 a1 <- worldbankdata |>
@@ -215,41 +193,35 @@ a1 / a2 / a3
 
 ## geom_density_ridges{#density_ridges}
 
-### Package
+**Package**
 
 ggridges [@ggridges]
 
-### Description
+**Description**
 
 Arranges multiple density plots in a staggered fashion.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
-`x`
+`x`, `y`
 
-`y`
-
-**optional aesthetics**
+*optional aesthetics*
 
 `colour`, `fill`, `group`, `height`, `alpha`, `linetype`, `linewidth`, `scale`, `rel_min_height`
 
 
-### The statistical transformation to use on the data for this layer
 
 
-`density_ridges`
-
-
-### See also
+**See also**
 
 [geom_density_ridges_gradient](#density_ridges_gradient)
 
-### Example
+**Example**
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(ggridges)
  worldbankdata |>
   ggplot(aes(y = Income, x=Electricity)) +   
@@ -258,41 +230,34 @@ library(ggridges)
 
 ## geom_density_ridges_gradient{#density_ridges_gradient}
 
-### Package
+**Package**
 
 ggridges [@ggridges]
 
-### Description
+**Description**
 
 Arranges multiple density plots in a staggered fashion.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
-`x`
+`x`, `y`
 
-`y`
-
-**optional aesthetics**
+*optional aesthetics*
 
 `colour`, `fill`, `group`, `height`, `alpha`, `linetype`, `linewidth`, `scale`, `rel_min_height`
 
 
-### The statistical transformation to use on the data for this layer
 
-
-`density_ridges`
-
-
-### See also
+**See also**
 
 [geom_density_ridges](#density_ridges)
 
-### Example
+**Example**
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(ggridges)
  worldbankdata |>
   ggplot(aes(y = Income, x=Electricity, fill=stat(x))) +   
@@ -304,32 +269,27 @@ library(ggridges)
 ## geom_dl{#dl}
 
 
-### Package
+**Package**
 
 directlabels [@directlabels]
 
-### Description
+**Description**
 
 Display direct labels on the plot.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 `layer`
 
 
-### The statistical transformation to use on the data for this layer
-
-`stat_identity`
-
-
-### See also
+**See also**
 
 [geom_text](#text)
 
-### Example
+**Example**
 
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(directlabels)
 a1 <- worldbankdata |>
   ggplot(aes(y = Cooking, x=Electricity)) +   
@@ -349,41 +309,32 @@ a1 +
 
 ## geom_dotplot {#dotplot}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Create dotplot.
 
 ### Understandable aesthetics
 
-`stat_density`
 
-
-**required aesthetics**
+*required aesthetics*
 
 `x` or `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `fill` , `group`, `linetype`, `stroke`
 
-
-### The statistical transformation to use on the data for this layer
-
-
-`stat_identity`
-
-
-### See also
+**See also**
 
 [geom_histogram](#hist)
 
-### Example
+**Example**
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 worldbankdata |>
   ggplot(aes(x=Cooking)) +   
   geom_dotplot(binwidth = 1) + 
@@ -392,37 +343,32 @@ worldbankdata |>
 
 ## geom_delaunay_tile {#delaunay_tile}
 
-### Package
+**Package**
 
-ggplot2 [@ggforce]
+ggforce [@ggforce]
 
-### Description
+**Description**
 
 Display voronoi tesselation and delaunay triangulation.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
 `x` or `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `fill` , `linetype`, `size`
 
 
-### The statistical transformation to use on the data for this layer
 
-
-`delaunay_tile`
-
-
-### See also
+**See also**
 
 [geom_delaunay_segment](#delaunay_segment)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -446,37 +392,32 @@ a1 | a2
 
 ## geom_delaunay_segment {#delaunay_segment}
 
-### Package
+**Package**
 
-ggplot2 [@ggforce]
+ggforce [@ggforce]
 
-### Description
+**Description**
 
 Display voronoi tesselation and delaunay triangulation.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
 `x` or `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `fill` , `linetype`, `size`
 
 
-### The statistical transformation to use on the data for this layer
 
-
-`delaunay_segment`
-
-
-### See also
+**See also**
 
 [geom_delaunay_tile](#delaunay_tile)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -502,37 +443,31 @@ a1 | a2
 
 ## geom_delaunay_segment2 {#delaunay_segment2}
 
-### Package
+**Package**
 
-ggplot2 [@ggforce]
+ggforce [@ggforce]
 
-### Description
+**Description**
 
 Display voronoi tesselation and delaunay triangulation.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
-**required aesthetics**
+*required aesthetics*
 
 `x` or `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `fill` , `linetype`, `size`
 
 
-### The statistical transformation to use on the data for this layer
-
-
-`delaunay_segment2`
-
-
-### See also
+**See also**
 
 [geom_delaunay_tile](#delaunay_tile)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -558,35 +493,31 @@ a1 | a2
 
 ## geom_dumbbell
 
-### Package
+**Package**
 
 ggalt[@ggalt]
 
-### Description
+**Description**
 
 Create dumbbell charts.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`, `y`, `xend`, `yend`
 
 
-**optional aesthetics**
+*optional aesthetics*
 
 
 `alpha`, `colour`, `group`, `linetype`, `size`
 
-### The statistical transformation to use on the data for this layer
-
-
-
-### See also
+**See also**
 
 [geom_segment](#segment)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggalt)

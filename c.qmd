@@ -73,7 +73,7 @@ Fill columns with a pattern. User can map a variable for pattern or set a patter
 
 **Example**
 
-```{r, fig.cap="Illustration of geom_col_pattern"}
+```{r, fig.height=3}
 worldbankdata |>
   filter(Year == 2021) |>
   group_by(Income) |>
@@ -154,14 +154,15 @@ Draw circles based on a center point and a radius.
 
 **Example**
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=3}
 worldbankdata |>
   filter(Year == 2021) |>
 ggplot(aes(y = Cooking, x=Electricity, col=Income)) + 
   geom_point() + 
+  scale_color_brewer(palette = "Dark2") +
   ggforce::geom_circle(aes(x0 = 26, y0 = 5, r = 20),
               inherit.aes = FALSE) + 
-  theme(aspect.ratio = 1)
+    theme(aspect.ratio = 1)
 ```
 
 ## geom_contour {#contour}
@@ -250,7 +251,7 @@ ggplot2 [@ggplot2]
 
 `geom_segment()` draws a straight line between between two points. geom_curve draws a curved line.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 *required aesthetics*
 
@@ -261,24 +262,24 @@ ggplot2 [@ggplot2]
 
 `alpha`, `colour`, `linetype`, `linewidth`, `group`
 
-### The statistical transformation to use on the data for this layer 
+**The statistical transformation to use on the data for this layer** 
 
 `identity`
 
-### See also
+**See also**
 
 [geom_segment](#segment)
   
-### Examples
+**Examples**
 
 
-```{r}
+```{r, fig.height=3, fig.width=3}
 df <- data.frame(x1 = 0, x2 = 100, y1 = 0, y2 = 100)
 ggplot(df) + 
   geom_curve(aes(x = x1, y = y1, xend = x2, yend = y2))
 ```
 
-```{r}
+```{r, fig.height=3, fig.width=3}
 df <- data.frame(x2 = c( 3, 4, 4, 3, -3, -4, -4, -3),
                  y2 = c( 4, 3, -3, -4, -4, -3, 3, 3),
                  x1 = rep(0, 8),
@@ -295,17 +296,17 @@ ggplot(df) +
 ## geom_crossbar {#crossbar}
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Plot a vertical interval defined by y, ymin and ymax or x, xmin and xmax.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x` or `y`
 
@@ -313,12 +314,12 @@ Plot a vertical interval defined by y, ymin and ymax or x, xmin and xmax.
 
 `xmax` or `ymax`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `linetype`, `linewidth`, `group`
 
 
-### See also
+**See also**
 
 [geom_segment](#segment)
   
@@ -326,7 +327,7 @@ Plot a vertical interval defined by y, ymin and ymax or x, xmin and xmax.
 
 *Example 1*
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.height=3}
 summarydf <- worldbankdata |>
   drop_na() |>
   select(Electricity, Income) |>
@@ -342,7 +343,7 @@ ggplot(summarydf, aes(x=Income, ymin = Q1, y=Q2, ymax = Q3)) +
 
 *Example 2*
 
-```{r}
+```{r, fig.height=3}
 summary_stats <- worldbankdata |>
   drop_na() |>
   select(Electricity, Income) |>

@@ -660,22 +660,8 @@ div.csl-indent {
   <li><a href="#circle" id="toc-circle" class="nav-link" data-scroll-target="#circle"><span class="header-section-number">5.4</span> geom_circle</a></li>
   <li><a href="#contour" id="toc-contour" class="nav-link" data-scroll-target="#contour"><span class="header-section-number">5.5</span> geom_contour</a></li>
   <li><a href="#contour_filled" id="toc-contour_filled" class="nav-link" data-scroll-target="#contour_filled"><span class="header-section-number">5.6</span> geom_contour_filled</a></li>
-  <li><a href="#curve" id="toc-curve" class="nav-link" data-scroll-target="#curve"><span class="header-section-number">5.7</span> geom_curve</a>
-  <ul class="collapse">
-  <li><a href="#understandable-aesthetics" id="toc-understandable-aesthetics" class="nav-link" data-scroll-target="#understandable-aesthetics"><span class="header-section-number">5.7.1</span> Understandable aesthetics</a></li>
-  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">5.7.2</span> The statistical transformation to use on the data for this layer</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">5.7.3</span> See also</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">5.7.4</span> Examples</a></li>
-  </ul></li>
-  <li><a href="#crossbar" id="toc-crossbar" class="nav-link" data-scroll-target="#crossbar"><span class="header-section-number">5.8</span> geom_crossbar</a>
-  <ul class="collapse">
-  <li><a href="#package" id="toc-package" class="nav-link" data-scroll-target="#package"><span class="header-section-number">5.8.1</span> Package</a></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">5.8.2</span> Description</a></li>
-  <li><a href="#understandable-aesthetics-1" id="toc-understandable-aesthetics-1" class="nav-link" data-scroll-target="#understandable-aesthetics-1"><span class="header-section-number">5.8.3</span> Understandable aesthetics</a></li>
-  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer-1" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer-1" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer-1"><span class="header-section-number">5.8.4</span> The statistical transformation to use on the data for this layer</a></li>
-  <li><a href="#see-also-1" id="toc-see-also-1" class="nav-link" data-scroll-target="#see-also-1"><span class="header-section-number">5.8.5</span> See also</a></li>
-  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">5.8.6</span> Examples</a></li>
-  </ul></li>
+  <li><a href="#curve" id="toc-curve" class="nav-link" data-scroll-target="#curve"><span class="header-section-number">5.7</span> geom_curve</a></li>
+  <li><a href="#crossbar" id="toc-crossbar" class="nav-link" data-scroll-target="#crossbar"><span class="header-section-number">5.8</span> geom_crossbar</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/c.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -747,12 +733,7 @@ div.csl-indent {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  ggpattern<span class="sc">::</span><span class="fu">geom_col_pattern</span>(<span class="fu">aes</span>(<span class="at">pattern =</span> n, <span class="at">pattern_angle=</span>n),</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour  =</span> <span class="st">'black'</span>, <span class="at">fill=</span><span class="st">"white"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="c_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Illustration of geom_col_pattern</figcaption>
-</figure>
-</div>
+<p><img src="c_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -805,9 +786,10 @@ div.csl-indent {
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span>Electricity, <span class="at">col=</span>Income)) <span class="sc">+</span> </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  ggforce<span class="sc">::</span><span class="fu">geom_circle</span>(<span class="fu">aes</span>(<span class="at">x0 =</span> <span class="dv">26</span>, <span class="at">y0 =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">20</span>),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  ggforce<span class="sc">::</span><span class="fu">geom_circle</span>(<span class="fu">aes</span>(<span class="at">x0 =</span> <span class="dv">26</span>, <span class="at">y0 =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">20</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="c_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -872,29 +854,22 @@ div.csl-indent {
 <p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p><code>geom_segment()</code> draws a straight line between between two points. geom_curve draws a curved line.</p>
-<section id="understandable-aesthetics" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="understandable-aesthetics"><span class="header-section-number">5.7.1</span> Understandable aesthetics</h3>
+<p><strong>Understandable aesthetics</strong></p>
 <p><em>required aesthetics</em></p>
 <p><code>x</code>, <code>y</code></p>
 <p><em>optional aesthetics</em></p>
 <p><code>alpha</code>, <code>colour</code>, <code>linetype</code>, <code>linewidth</code>, <code>group</code></p>
-</section>
-<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer" class="level3" data-number="5.7.2">
-<h3 data-number="5.7.2" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">5.7.2</span> The statistical transformation to use on the data for this layer</h3>
+<p><strong>The statistical transformation to use on the data for this layer</strong></p>
 <p><code>identity</code></p>
-</section>
-<section id="see-also" class="level3" data-number="5.7.3">
-<h3 data-number="5.7.3" class="anchored" data-anchor-id="see-also"><span class="header-section-number">5.7.3</span> See also</h3>
+<p><strong>See also</strong></p>
 <p><a href="#segment">geom_segment</a></p>
-</section>
-<section id="examples" class="level3" data-number="5.7.4">
-<h3 data-number="5.7.4" class="anchored" data-anchor-id="examples"><span class="header-section-number">5.7.4</span> Examples</h3>
+<p><strong>Examples</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x1 =</span> <span class="dv">0</span>, <span class="at">x2 =</span> <span class="dv">100</span>, <span class="at">y1 =</span> <span class="dv">0</span>, <span class="at">y2 =</span> <span class="dv">100</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df) <span class="sc">+</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_curve</span>(<span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y1, <span class="at">xend =</span> x2, <span class="at">yend =</span> y2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="c_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<p><img src="c_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="288"></p>
 </div>
 </div>
 <div class="cell">
@@ -910,47 +885,65 @@ div.csl-indent {
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="c_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="c_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="288"></p>
 </div>
 </div>
-</section>
 </section>
 <section id="crossbar" class="level2" data-number="5.8">
 <h2 data-number="5.8" class="anchored" data-anchor-id="crossbar"><span class="header-section-number">5.8</span> geom_crossbar</h2>
-<section id="package" class="level3" data-number="5.8.1">
-<h3 data-number="5.8.1" class="anchored" data-anchor-id="package"><span class="header-section-number">5.8.1</span> Package</h3>
+<p><strong>Package</strong></p>
 <p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
-</section>
-<section id="description" class="level3" data-number="5.8.2">
-<h3 data-number="5.8.2" class="anchored" data-anchor-id="description"><span class="header-section-number">5.8.2</span> Description</h3>
-<p>Plot a vertical interval defined by x, ymin and ymax.</p>
-</section>
-<section id="understandable-aesthetics-1" class="level3" data-number="5.8.3">
-<h3 data-number="5.8.3" class="anchored" data-anchor-id="understandable-aesthetics-1"><span class="header-section-number">5.8.3</span> Understandable aesthetics</h3>
-<p><strong>required aesthetics</strong></p>
+<p><strong>Description</strong></p>
+<p>Plot a vertical interval defined by y, ymin and ymax or x, xmin and xmax.</p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
 <p><code>x</code> or <code>y</code></p>
 <p><code>xmin</code> or <code>ymin</code></p>
 <p><code>xmax</code> or <code>ymax</code></p>
-<p><strong>optional aesthetics</strong></p>
+<p><em>optional aesthetics</em></p>
 <p><code>alpha</code>, <code>colour</code>, <code>linetype</code>, <code>linewidth</code>, <code>group</code></p>
-</section>
-<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer-1" class="level3" data-number="5.8.4">
-<h3 data-number="5.8.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer-1"><span class="header-section-number">5.8.4</span> The statistical transformation to use on the data for this layer</h3>
-<p><code>identity</code></p>
-</section>
-<section id="see-also-1" class="level3" data-number="5.8.5">
-<h3 data-number="5.8.5" class="anchored" data-anchor-id="see-also-1"><span class="header-section-number">5.8.5</span> See also</h3>
+<p><strong>See also</strong></p>
 <p><a href="#segment">geom_segment</a></p>
-</section>
-<section id="examples-1" class="level3" data-number="5.8.6">
-<h3 data-number="5.8.6" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">5.8.6</span> Examples</h3>
+<p><strong>Examples</strong></p>
+<p><em>Example 1</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>summary.wb <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> Income, mean, <span class="at">data=</span>worldbankdata)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>summary.wb</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Electricity)) <span class="sc">+</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_crossbar</span>(<span class="at">data=</span>summary.wb, <span class="fu">aes</span>(<span class="at">ymin =</span> Electricity, <span class="at">ymax =</span> Electricity),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">"red"</span>, <span class="at">width =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>summarydf <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Electricity, Income) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Income) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(<span class="at">qs =</span> <span class="fu">quantile</span>(Electricity, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span> ,<span class="fl">0.75</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">q=</span><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Q1"</span>, <span class="st">"Q2"</span>, <span class="st">"Q3"</span>), <span class="dv">4</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> q,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> qs)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>summarydf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+  Income    Q1    Q2    Q3
+  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 L       16.6  32.2  50.7
+2 LM      62.0  86.7  97.7
+3 UM      95.9  99.5 100. 
+4 H      100   100   100  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydf, <span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">ymin =</span> Q1, <span class="at">y=</span>Q2, <span class="at">ymax =</span> Q3)) <span class="sc">+</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_crossbar</span>(<span class="at">size=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">"red"</span>, <span class="at">width =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="c_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><em>Example 2</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Electricity, Income) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Income) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Electricity),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> <span class="fu">sd</span>(Electricity)) </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summary_stats, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> mean, <span class="at">ymin =</span> mean <span class="sc">-</span> sd, <span class="at">ymax =</span> mean <span class="sc">+</span> sd)) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_crossbar</span>(<span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">fatten =</span> <span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="c_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 
 
@@ -965,7 +958,6 @@ Pedersen, Thomas Lin. 2022. <em>Ggforce: Accelerating ’Ggplot2’</em>. <a hre
 Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->
