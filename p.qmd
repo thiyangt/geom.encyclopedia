@@ -31,15 +31,13 @@ Visualize observations using points
   
   `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_prefix`
 
-### See also
+**See also88
 
 [geom_jitter](#jitter)
   
-### Example
+**Example88
 
 ```{r, warning = FALSE, message = FALSE}
 worldbankdata |>
@@ -55,32 +53,28 @@ worldbankdata |>
 
 ## geom_path
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Connects the observations in the order in which they appear in the dataset.
 
+**Understandable aesthetics**
 
-### Understandable aesthetics
-
-**required aesthetics**
+*required aesthetics*
   
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_prefix`
-
-### See also
+**See also**
 
 [geom_line](#line)
   
@@ -104,17 +98,17 @@ a1|a2
 
 ## geom_pointrange
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Representing a vertical interval defined by ymin, ymax and point represent by y for different levels of x.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `x` or `y`,
 
@@ -122,19 +116,15 @@ Representing a vertical interval defined by ymin, ymax and point represent by y 
 
 `ymax` or `xmax`
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
-### The statistical transformation to use on the data for this layer 
-
-`stat_align`
-
-### See also
+**See also**
 
 [geom_line](#line), [geom_crossbar](#crossbar), [geom_errorbar](#errorbar), [geom_linerange](#linerange)
 
-### Example
+**Example**
 
 Method 1
   
@@ -166,35 +156,31 @@ ggplot(data = worldbankdata) +
 
 ## geom_polygon
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Create polygon given x and y values. This is similar to paths except that the start an end points are connected.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `x`,
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
   
  `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`, `subgroup`
 
-### The statistical transformation to use on the data for this layer 
-
-`stat_align`
-
-### See also
+**See also**
 
 [geom_path](#path)
 
-### Example
+**Example**
 
 ```{r, warning = FALSE, message = FALSE}
 a1 <- worldbankdata |>
@@ -213,34 +199,31 @@ a1|a2
 
 ## geom_polygon_pattern
 
-### Package
+**Package**
 
 ggpattern [@ggpattern]
 
-### Description
+**Description**
 
 Fill polygons with pattern
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `x` or `y`,
 
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`, `subgroup`, `pattern_fill`, `pattern_fill_colour`, `pattern`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_align`
-
-### See also
+**See also**
 
 [geom_polygon](#polygon)
 
-### Example
+**Example**
 
 ```{r, warning = FALSE, message = FALSE}
 a1 <- worldbankdata |>

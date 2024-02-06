@@ -145,6 +145,23 @@ div.csl-indent {
       <a href="./">Data Visualisation <code>geom</code> Encyclopedia</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/thiyangt/geom.encyclopedia" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-`geom`-Encyclopedia.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-`geom`-Encyclopedia.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
     </div>
       </div>
@@ -576,7 +593,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./x.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">geom_x</span></span></a>
   </div>
 </li>
       </ul>
@@ -637,15 +654,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#geom_waffle" id="toc-geom_waffle" class="nav-link active" data-scroll-target="#geom_waffle"><span class="header-section-number">25.1</span> geom_waffle</a>
-  <ul class="collapse">
-  <li><a href="#package" id="toc-package" class="nav-link" data-scroll-target="#package"><span class="header-section-number">25.1.1</span> Package</a></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">25.1.2</span> Description</a></li>
-  <li><a href="#understandable-aesthetics" id="toc-understandable-aesthetics" class="nav-link" data-scroll-target="#understandable-aesthetics"><span class="header-section-number">25.1.3</span> Understandable aesthetics</a></li>
-  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">25.1.4</span> The statistical transformation to use on the data for this layer</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">25.1.5</span> See also</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">25.1.6</span> Example</a></li>
-  </ul></li>
+  <li><a href="#geom_waffle" id="toc-geom_waffle" class="nav-link active" data-scroll-target="#geom_waffle"><span class="header-section-number">25.1</span> geom_waffle</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/w.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -671,34 +680,21 @@ div.csl-indent {
 
 <section id="geom_waffle" class="level2" data-number="25.1">
 <h2 data-number="25.1" class="anchored" data-anchor-id="geom_waffle"><span class="header-section-number">25.1</span> geom_waffle</h2>
-<section id="package" class="level3" data-number="25.1.1">
-<h3 data-number="25.1.1" class="anchored" data-anchor-id="package"><span class="header-section-number">25.1.1</span> Package</h3>
+<p><strong>Package</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("remotes")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#remotes::install_github("hrbrmstr/waffle")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>waffle <span class="citation" data-cites="waffle">(<a href="references.html#ref-waffle" role="doc-biblioref">Rudis and Gandy 2023</a>)</span></p>
-</section>
-<section id="description" class="level3" data-number="25.1.2">
-<h3 data-number="25.1.2" class="anchored" data-anchor-id="description"><span class="header-section-number">25.1.2</span> Description</h3>
+<p><strong>Description</strong></p>
 <p>Create waffle plots</p>
-</section>
-<section id="understandable-aesthetics" class="level3" data-number="25.1.3">
-<h3 data-number="25.1.3" class="anchored" data-anchor-id="understandable-aesthetics"><span class="header-section-number">25.1.3</span> Understandable aesthetics</h3>
-<p><strong>required aesthetics</strong></p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
 <p><code>fill</code> (so the geom knows which column to map the fills to)</p>
 <p><code>values</code> (which column you’re mapping the filling for the squares with)</p>
-</section>
-<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer" class="level3" data-number="25.1.4">
-<h3 data-number="25.1.4" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">25.1.4</span> The statistical transformation to use on the data for this layer</h3>
-<p><code>stat_waffle</code></p>
-</section>
-<section id="see-also" class="level3" data-number="25.1.5">
-<h3 data-number="25.1.5" class="anchored" data-anchor-id="see-also"><span class="header-section-number">25.1.5</span> See also</h3>
+<p><strong>See also</strong></p>
 <p><a href="b.html#bar">geom_bar</a>, <a href="#col">geom_col</a></p>
-</section>
-<section id="example" class="level3" data-number="25.1.6">
-<h3 data-number="25.1.6" class="anchored" data-anchor-id="example"><span class="header-section-number">25.1.6</span> Example</h3>
+<p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
@@ -723,7 +719,6 @@ div.csl-indent {
 Rudis, Bob, and Dave Gandy. 2023. <em>Waffle: Create Waffle Chart Visualizations</em>.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -333,7 +333,7 @@
     "href": "index.html",
     "title": "Data Visualisation geom Encyclopedia",
     "section": "",
-    "text": "Preface\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics in Data Visualisation. Geometric representations serve as the visual language that bridges the gap between complex datasets and human comprehension. This encyclopedia is a curated collection of geom available in different R programming software packages.\nKeep in mind that the field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Regularly updating your encyclopedia will ensure it remains a relevant and comprehensive resource for users.\n|A|B|C|"
+    "text": "Preface\n\nA | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics in Data Visualisation. Geometric representations serve as the visual language that bridges the gap between complex datasets and human comprehension. This encyclopedia is a curated collection of geom available in different R programming software packages.\nThe field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users."
   },
   {
     "objectID": "intro.html",
@@ -445,7 +445,7 @@
     "href": "i.html#image",
     "title": "11  geom_i",
     "section": "11.1 geom_image",
-    "text": "11.1 geom_image\n\n11.1.1 Package\nggimage (Yu 2023)\n\n\n11.1.2 Description\nVisualise data through images.\n\n\n11.1.3 Understandable aesthetics\nimage\n\n\n11.1.4 Statistics layer(s)\nidentity\n\n\n11.1.5 See also\ngeom_emoji\n\n\n11.1.6 Example\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10),\n                image = sample(\"https://www.r-project.org/logo/Rlogo.png\",\n                              size=10, replace = TRUE))\nggplot(df, aes(x, y)) + geom_image(aes(image=image))"
+    "text": "11.1 geom_image\nPackage\nggimage (Yu 2023)\nDescription\nVisualise data through images.\nUnderstandable aesthetics\nimage\nSee also\ngeom_emoji\nExample\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10),\n                image = sample(\"https://www.r-project.org/logo/Rlogo.png\",\n                              size=10, replace = TRUE))\nggplot(df, aes(x, y)) + geom_image(aes(image=image))"
   },
   {
     "objectID": "i.html#geom_icon",
@@ -466,7 +466,7 @@
     "href": "j.html#jitter",
     "title": "12  geom_j",
     "section": "12.1 geom_jitter",
-    "text": "12.1 geom_jitter\n\n12.1.1 Package\nggplot2 (Wickham 2016)\n\n\n12.1.2 Description\nAdds a small amount of random variation to the location of each point, horizontally and/or vertically.\n\n\n12.1.3 The statistical transformation to use on the data for this layer\nstat_identify - It plots the data as it is.\n\n\n12.1.4 See also\ngeom_point\n\n12.1.4.1 Example\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Income, y=Electricity)) + \n  geom_jitter() + ggtitle(\"a1: geom_jitter\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Income, y=Electricity)) + \n  geom_point() + ggtitle(\"a1: geom_point\")\na1 | a2\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "12.1 geom_jitter\nPackage\nggplot2 (Wickham 2016)\nDescription\nAdds a small amount of random variation to the location of each point, horizontally and/or vertically.\nSee also\ngeom_point\nExample\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Income, y=Electricity)) + \n  geom_jitter() + ggtitle(\"a1: geom_jitter\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Income, y=Electricity)) + \n  geom_point() + ggtitle(\"a1: geom_point\")\na1 | a2\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "i.html#icon",
@@ -522,7 +522,7 @@
     "href": "l.html#geom_label",
     "title": "14  geom_l",
     "section": "14.1 geom_label",
-    "text": "14.1 geom_label\n\n14.1.1 Package\nggplot2 (Wickham 2016)\n\n\n14.1.2 Description\nLabelling plots\n\n\n14.1.3 Understandable aesthetics\nRequired aesthetics\nx, y, label\nOptional aesthetics\nalpha, angle, colour, family, fontface, group, hjust, lineheight, size, vjust\n\n\n14.1.4 The statistical transformation to use on the data for this layer\nidentity\n\n\n14.1.5 See also\ngeom_text\n\n\n14.1.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\" | Income ==\"H\") |&gt; \n  filter(Year == 2021) |&gt;\n  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + \n  geom_label(aes(fill = factor(Income)), colour = \"white\", fontface = \"bold\", alpha=0.5) + theme(aspect.ratio = 1) + labs(title = \"a1: geom_label only\") \na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\" | Income ==\"H\") |&gt; \n  filter(Year == 2021) |&gt;\n  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + \n  geom_point(aes(col = Income)) +  theme(aspect.ratio = 1) + \n  labs(title = \"a2: geom_point only\") \na1|a2"
+    "text": "14.1 geom_label\nPackage\nggplot2 (Wickham 2016)\nDescription\nLabelling plots\nUnderstandable aesthetics\nRequired aesthetics\nx, y, label\nOptional aesthetics\nalpha, angle, colour, family, fontface, group, hjust, lineheight, size, vjust\nSee also\ngeom_text\nExample\n\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\" | Income ==\"H\") |&gt; \n  filter(Year == 2021) |&gt;\n  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + \n  geom_label(aes(fill = factor(Income)), colour = \"white\", fontface = \"bold\", alpha=0.5) + theme(aspect.ratio = 1) + labs(title = \"a1: geom_label only\") \na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\" | Income ==\"H\") |&gt; \n  filter(Year == 2021) |&gt;\n  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + \n  geom_point(aes(col = Income)) +  theme(aspect.ratio = 1) + \n  labs(title = \"a2: geom_point only\") \na1|a2"
   },
   {
     "objectID": "l.html#geom_line",
@@ -536,7 +536,7 @@
     "href": "l.html#geom_linerange",
     "title": "14  geom_l",
     "section": "14.3 geom_linerange",
-    "text": "14.3 geom_linerange\n\n14.3.1 Package\nggplot2 (Wickham 2016)\n\n\n14.3.2 Description\nRepresenting a vertical interval defined by x, ymin and ymax\n\n\n14.3.3 Understandable aesthetics\nrequired aesthetics\nx or y,\nymin or xmin,\nymax or xmax\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n14.3.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n14.3.5 See also\ngeom_line, geom_crossbar, geom_errorbar, geom_pointrange\n\n\n14.3.6 Example\n\nworldbankdata |&gt;\n  group_by(Region) |&gt;\n  summarise(min = min(Cooking, na.rm = TRUE), max=max(Cooking, \n                                                      na.rm = TRUE)) |&gt;\n  ggplot(aes(x=Region)) +\n  geom_linerange(aes(ymin = min, ymax = max)) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "14.3 geom_linerange\nPackage\nggplot2 (Wickham 2016)\nDescription\nRepresenting a vertical interval defined by x, ymin and ymax\nUnderstandable aesthetics\nrequired aesthetics\nx or y,\nymin or xmin,\nymax or xmax\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_crossbar, geom_errorbar, geom_pointrange\nExample\n\nworldbankdata |&gt;\n  group_by(Region) |&gt;\n  summarise(min = min(Cooking, na.rm = TRUE), max=max(Cooking, \n                                                      na.rm = TRUE)) |&gt;\n  ggplot(aes(x=Region)) +\n  geom_linerange(aes(ymin = min, ymax = max)) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "b.html#bump",
@@ -550,7 +550,7 @@
     "href": "m.html#mark_circle",
     "title": "15  geom_m",
     "section": "15.1 geom_mark_circle",
-    "text": "15.1 geom_mark_circle\n\n15.1.1 Package\nggforce (Pedersen 2022)\n\n\n15.1.2 Description\nAnnotate sets of points via circles.\n\n\n15.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\n\n\n15.1.4 The statistical transformation to use on the data for this layer\nstat_xxx\n\n\n15.1.5 See also\ngeom_circle, geom_encircle, geom_mark_ellipse, geom_mark_hull, geom_mark_rect\n\n\n15.1.6 Example\n\nlibrary(ggforce)\nworldbankdata |&gt;\n  filter(Country == \"Angola\") |&gt;\n  ggplot(aes(x = Cooking, y=Electricity)) +\n  geom_mark_circle(aes(fill = Income, label = Income),\n                   con.cap = 0) +\n  geom_point(aes(col=Income))"
+    "text": "15.1 geom_mark_circle\nPackage\nggforce (Pedersen 2022)\nDescription\nAnnotate sets of points via circles.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\nSee also\ngeom_circle, geom_encircle, geom_mark_ellipse, geom_mark_hull, geom_mark_rect\nExample\n\nlibrary(ggforce)\nworldbankdata |&gt;\n  filter(Country == \"Angola\") |&gt;\n  ggplot(aes(x = Cooking, y=Electricity)) +\n  geom_mark_circle(aes(fill = Income, label = Income),\n                   con.cap = 0) +\n  geom_point(aes(col=Income))"
   },
   {
     "objectID": "m.html#geom_make_ellipse",
@@ -585,49 +585,49 @@
     "href": "m.html#mark_ellipse",
     "title": "15  geom_m",
     "section": "15.2 geom_make_ellipse",
-    "text": "15.2 geom_make_ellipse\n\n15.2.1 Package\nggforce (Pedersen 2022)\n\n\n15.2.2 Description\nAnnotate sets of points via ellipse.\n\n\n15.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\n\n\n15.2.4 The statistical transformation to use on the data for this layer\nstat_xxx\n\n\n15.2.5 See also\ngeom_circle, geom_encircle, geom_mark_circle, geom_mark_hull, geom_mark_rect\n\n\n15.2.6 Example\n\nlibrary(ggforce)\nworldbankdata |&gt;\n  filter(Country == \"Angola\") |&gt;\n  ggplot(aes(x = Cooking, y=Electricity)) +\n  geom_mark_ellipse(aes(fill = Income, label = Income),\n                   con.cap = 0) +\n  geom_point(aes(col=Income))"
+    "text": "15.2 geom_make_ellipse\nPackage\nggforce (Pedersen 2022)\nDescription\nAnnotate sets of points via ellipse.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\nSee also\ngeom_circle, geom_encircle, geom_mark_circle, geom_mark_hull, geom_mark_rect\nExample\n\nlibrary(ggforce)\nworldbankdata |&gt;\n  filter(Country == \"Angola\") |&gt;\n  ggplot(aes(x = Cooking, y=Electricity)) +\n  geom_mark_ellipse(aes(fill = Income, label = Income),\n                   con.cap = 0) +\n  geom_point(aes(col=Income))"
   },
   {
     "objectID": "m.html#mark_hull",
     "href": "m.html#mark_hull",
     "title": "15  geom_m",
     "section": "15.3 geom_make_hull",
-    "text": "15.3 geom_make_hull\n\n15.3.1 Package\nggforce (Pedersen 2022)\n\n\n15.3.2 Description\nAnnotate sets of points via hulls.\n\n\n15.3.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\n\n\n15.3.4 The statistical transformation to use on the data for this layer\nstat_xxx\n\n\n15.3.5 See also\ngeom_circle, geom_encircle, geom_mark_circle, geom_mark_ellipse, geom_mark_rect\n\n\n15.3.6 Example\n\nlibrary(ggforce)\nlibrary(concaveman)\nworldbankdata |&gt;\n  filter(Income == \"L\" | Income ==\"UM\") |&gt;\n  filter(Year == 2021) |&gt;\n  ggplot(aes(x = Cooking, y=Electricity)) +\n  geom_mark_hull(aes(fill=Income, lable = Income)) +\n  geom_point(aes(col=Income))"
+    "text": "15.3 geom_make_hull\nPackage\nggforce (Pedersen 2022)\nDescription\nAnnotate sets of points via hulls.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\nSee also\ngeom_circle, geom_encircle, geom_mark_circle, geom_mark_ellipse, geom_mark_rect\nExample\n\nlibrary(ggforce)\nlibrary(concaveman)\nworldbankdata |&gt;\n  filter(Income == \"L\" | Income ==\"UM\") |&gt;\n  filter(Year == 2021) |&gt;\n  ggplot(aes(x = Cooking, y=Electricity)) +\n  geom_mark_hull(aes(fill=Income, lable = Income)) +\n  geom_point(aes(col=Income))"
   },
   {
     "objectID": "m.html#mark_rect",
     "href": "m.html#mark_rect",
     "title": "15  geom_m",
     "section": "15.4 geom_make_rect",
-    "text": "15.4 geom_make_rect\n\n15.4.1 Package\nggforce (Pedersen 2022)\n\n\n15.4.2 Description\nAnnotate sets of points via rectangles.\n\n\n15.4.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\n\n\n15.4.4 The statistical transformation to use on the data for this layer\nstat_xxx\n\n\n15.4.5 See also\ngeom_circle, geom_encircle, geom_mark_circle, geom_mark_ellipse, geom_mark_hull\n\n\n15.4.6 Example\n\nlibrary(ggforce)\nworldbankdata |&gt;\n  filter(Country == \"Angola\") |&gt;\n  ggplot(aes(x = Cooking, y=Electricity)) +\n  geom_mark_rect(aes(fill = Income, label = Income),\n                   con.cap = 0) +\n  geom_point(aes(col=Income))"
+    "text": "15.4 geom_make_rect\nPackage\nggforce (Pedersen 2022)\nDescription\nAnnotate sets of points via rectangles.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\nSee also\ngeom_circle, geom_encircle, geom_mark_circle, geom_mark_ellipse, geom_mark_hull\nExample\n\nlibrary(ggforce)\nworldbankdata |&gt;\n  filter(Country == \"Angola\") |&gt;\n  ggplot(aes(x = Cooking, y=Electricity)) +\n  geom_mark_rect(aes(fill = Income, label = Income),\n                   con.cap = 0) +\n  geom_point(aes(col=Income))"
   },
   {
     "objectID": "m.html#map",
     "href": "m.html#map",
     "title": "15  geom_m",
     "section": "15.5 geom_map",
-    "text": "15.5 geom_map\n\n15.5.1 Package\nggplot2 (Wickham 2016)\n\n\n15.5.2 Description\nDisplay polygons as a map.\n\n\n15.5.3 Understandable aesthetics\nrequired aesthetics\nmap_id\noptional aesthetics\nalpha, colour, fill ,group, linetype, linewidth, subgropu\n\n\n15.5.4 The statistical transformation to use on the data for this layer\nstat_xxx\n\n\n15.5.5 See also\ngeom_polygon\n\n\n15.5.6 Example\n\nworld = map_data(\"world\")\nggplot() +\n  geom_map(\n    data = world, map = world,\n    aes(long, lat, map_id = region),\n    fill = \"white\", colour = \"#7f7f7f\", size=0.5)"
+    "text": "15.5 geom_map\nPackage\nggplot2 (Wickham 2016)\nDescription\nDisplay polygons as a map.\nUnderstandable aesthetics\nrequired aesthetics\nmap_id\n**optional aesthetics*\nalpha, colour, fill ,group, linetype, linewidth, subgropu\nSee also\ngeom_polygon\nExample\n\nworld = map_data(\"world\")\nggplot() +\n  geom_map(\n    data = world, map = world,\n    aes(long, lat, map_id = region),\n    fill = \"white\", colour = \"#7f7f7f\", size=0.5)"
   },
   {
     "objectID": "m.html#mosaic",
     "href": "m.html#mosaic",
     "title": "15  geom_m",
     "section": "15.6 geom_mosaic",
-    "text": "15.6 geom_mosaic\n\n15.6.1 Package\nggmosaic (Jeppson, Hofmann, and Cook 2021)\n\n\n15.6.2 Description\nCreate mosaic plot\n\n\n15.6.3 Understandable aesthetics\nx, y, xmin, xmax, ymin, ymax\n\n\n15.6.4 The statistical transformation to use on the data for this layer\nmosaic\n\n\n15.6.5 See also\ngeom_bar, geom_mosaic_jitter, geom_mosaic_text\n\n\n15.6.6 Example\n\nlibrary(ggmosaic)\nworldbankdata |&gt;\n  filter(Year == 2022) |&gt;\n  ggplot() +\n  geom_mosaic(aes(x = product(Region), fill = Income)) + \n  scale_fill_brewer(palette = \"Dark2\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))"
+    "text": "15.6 geom_mosaic\nPackage\nggmosaic (Jeppson, Hofmann, and Cook 2021)\nDescription\nCreate mosaic plot\nUnderstandable aesthetics\nx, y, xmin, xmax, ymin, ymax\nSee also\ngeom_bar, geom_mosaic_jitter, geom_mosaic_text\nExample\n\nlibrary(ggmosaic)\nworldbankdata |&gt;\n  filter(Year == 2022) |&gt;\n  ggplot() +\n  geom_mosaic(aes(x = product(Region), fill = Income)) + \n  scale_fill_brewer(palette = \"Dark2\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))"
   },
   {
     "objectID": "m.html#geom_mosic_jittermosaic-jitter",
     "href": "m.html#geom_mosic_jittermosaic-jitter",
     "title": "15  geom_m",
     "section": "15.7 geom_mosic_jitter{#mosaic jitter}",
-    "text": "15.7 geom_mosic_jitter{#mosaic jitter}\n\n15.7.1 Package\nggmosaic (Jeppson, Hofmann, and Cook 2021)\n\n\n15.7.2 Description\nCreate a mosaic plot with text or labels.\n\n\n15.7.3 Understandable aesthetics\nx, y, xmin, xmax, ymin, ymax\n\n\n15.7.4 The statistical transformation to use on the data for this layer\nmosaic\n\n\n15.7.5 See also\ngeom_bar, geom_mosaic, geom_mosaic_text\n\n\n15.7.6 Example\n\nlibrary(ggmosaic)\nworldbankdata |&gt;\n  filter(Year == 2022) |&gt;\n  ggplot() +\n  geom_mosaic(aes(x = product(Region), fill = Income), alpha=0.5) +\n  geom_mosaic_text(aes(x = product(Region), fill = Income)) +\n  scale_fill_brewer(palette = \"Dark2\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) \n\n\n\n\n\n\n\n\nJeppson, Haley, Heike Hofmann, and Di Cook. 2021. Ggmosaic: Mosaic Plots in the ’Ggplot2’ Framework. https://CRAN.R-project.org/package=ggmosaic.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "15.7 geom_mosic_jitter{#mosaic jitter}\nPackage\nggmosaic (Jeppson, Hofmann, and Cook 2021)\nDescription\nCreate a mosaic plot with text or labels.\n\n15.7.1 Understandable aesthetics\nx, y, xmin, xmax, ymin, ymax\nSee also\ngeom_bar, geom_mosaic, geom_mosaic_text\nExample\n\nlibrary(ggmosaic)\nworldbankdata |&gt;\n  filter(Year == 2022) |&gt;\n  ggplot() +\n  geom_mosaic(aes(x = product(Region), fill = Income), alpha=0.5) +\n  geom_mosaic_text(aes(x = product(Region), fill = Income)) +\n  scale_fill_brewer(palette = \"Dark2\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) \n\n\n\n\n\n\n\n\nJeppson, Haley, Heike Hofmann, and Di Cook. 2021. Ggmosaic: Mosaic Plots in the ’Ggplot2’ Framework. https://CRAN.R-project.org/package=ggmosaic.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "l.html#line",
     "href": "l.html#line",
     "title": "14  geom_l",
     "section": "14.2 geom_line",
-    "text": "14.2 geom_line\n\n14.2.1 Package\nggplot2 (Wickham 2016)\n\n\n14.2.2 Description\nConnects dats in order of the variable on the x axis.\n\n\n14.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n14.2.4 The statistical transformation to use on the data for this layer\nstat_xx\n\n\n14.2.5 See also\ngeom_path\n\n\n14.2.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\") |&gt;\n  ggplot(aes(x=Year, y=Cooking)) + \n  geom_line() + ggtitle(\"geom_line only\")\na2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\") |&gt;\n  ggplot(aes(x=Year, y=Cooking)) + \n  geom_line() + \n  geom_point() +\n  ggtitle(\"geom_line and geom_point\")\na1|a2"
+    "text": "14.2 geom_line\nPackage\nggplot2 (Wickham 2016)\nDescription\nConnects data in order of the variable on the x axis.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_path\nExample\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\") |&gt;\n  ggplot(aes(x=Year, y=Cooking)) + \n  geom_line() + ggtitle(\"geom_line only\")\na2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\") |&gt;\n  ggplot(aes(x=Year, y=Cooking)) + \n  geom_line() + \n  geom_point() +\n  ggtitle(\"geom_line and geom_point\")\na1|a2"
   },
   {
     "objectID": "v.html#geom_vline",
@@ -648,7 +648,7 @@
     "href": "v.html#violin",
     "title": "24  geom_v",
     "section": "24.1 geom_violin",
-    "text": "24.1 geom_violin\n\n24.1.1 Package\nggplot2 (Wickham 2016)\n\n\n24.1.2 Description\nCreates violin plot.\n\n\n24.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, weight\n\n\n24.1.4 The statistical transformation to use on the data for this layer\nydensity\n\n\n24.1.5 See also\ngeom_boxplot, geom_density\n\n\n24.1.6 Example\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\nggplot(aes(y = Cooking, x=Income, fill=Income)) + \n  geom_violin() + \n  scale_fill_brewer(palette = \"Dark2\") +\n  theme(axis.title.x=element_blank(),\n        axis.text.x=element_blank(),\n        axis.ticks.x=element_blank())"
+    "text": "24.1 geom_violin\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreates violin plot.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, weight\nSee also\ngeom_boxplot, geom_density\nExample\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\nggplot(aes(y = Cooking, x=Income, fill=Income)) + \n  geom_violin() + \n  scale_fill_brewer(palette = \"Dark2\") +\n  theme(axis.title.x=element_blank(),\n        axis.text.x=element_blank(),\n        axis.ticks.x=element_blank())"
   },
   {
     "objectID": "v.html#geom_violin_pattern",
@@ -683,7 +683,7 @@
     "href": "v.html#violin_pattern",
     "title": "24  geom_v",
     "section": "24.2 geom_violin_pattern",
-    "text": "24.2 geom_violin_pattern\n\n24.2.1 Package\nggforce (Pedersen 2022)\n\n\n24.2.2 Description\nFill violin plots with patterns.\n\n\n24.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, weight\n\n\n24.2.4 The statistical transformation to use on the data for this layer\nydensity\n\n\n24.2.5 See also\ngeom_boxplot, geom_density\n\n\n24.2.6 Example\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\nggplot(aes(y = Cooking, x=Income, fill=Income)) + \n  geom_violin_pattern() + \n  scale_fill_brewer(palette = \"Dark2\") +\n  theme(axis.title.x=element_blank(),\n        axis.text.x=element_blank(),\n        axis.ticks.x=element_blank())"
+    "text": "24.2 geom_violin_pattern\nPackage\nggforce (Pedersen 2022)\nDescription\nFill violin plots with patterns.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth, weight\n\n24.2.1 The statistical transformation to use on the data for this layer\nydensity\nSee also\ngeom_boxplot, geom_density\nExample\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\nggplot(aes(y = Cooking, x=Income, fill=Income)) + \n  geom_violin_pattern() + \n  scale_fill_brewer(palette = \"Dark2\") +\n  theme(axis.title.x=element_blank(),\n        axis.text.x=element_blank(),\n        axis.ticks.x=element_blank())"
   },
   {
     "objectID": "v.html#geom_voroni_tile-1",
@@ -697,49 +697,49 @@
     "href": "p.html#geom_path",
     "title": "18  geom_p",
     "section": "18.2 geom_path",
-    "text": "18.2 geom_path\n\n18.2.1 Package\nggplot2 (Wickham 2016)\n\n\n18.2.2 Description\nConnects the observations in the order in which they appear in the dataset.\n\n\n18.2.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n18.2.4 The statistical transformation to use on the data for this layer\nstat_prefix\n\n\n18.2.5 See also\ngeom_line\n\n\n18.2.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_path() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_path() + ggtitle(\"a2: X-time independent variable\")\na1|a2"
+    "text": "18.2 geom_path\nPackage\nggplot2 (Wickham 2016)\nDescription\nConnects the observations in the order in which they appear in the dataset.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line\n\n18.2.1 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_path() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_path() + ggtitle(\"a2: X-time independent variable\")\na1|a2"
   },
   {
     "objectID": "p.html#geom_pointrange",
     "href": "p.html#geom_pointrange",
     "title": "18  geom_p",
     "section": "18.3 geom_pointrange",
-    "text": "18.3 geom_pointrange\n\n18.3.1 Package\nggplot2 (Wickham 2016)\n\n\n18.3.2 Description\nRepresenting a vertical interval defined by ymin, ymax and point represent by y for different levels of x.\n\n\n18.3.3 Understandable aesthetics\nrequired aesthetics\nx or y,\nymin or xmin,\nymax or xmax\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n18.3.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n18.3.5 See also\ngeom_line, geom_crossbar, geom_errorbar, geom_linerange\n\n\n18.3.6 Example\nMethod 1\n\nworldbankdata |&gt;\n  group_by(Region) |&gt;\n  summarise(min = min(Cooking, na.rm = TRUE), max=max(Cooking, \n                                                      na.rm = TRUE),\n            median = median(Cooking, na.rm=TRUE)) |&gt;\n  ggplot(aes(x = Region, y = median, ymin = min, ymax = max)) +\n  geom_pointrange() + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\n\n\n\nMethod 2\n\nggplot(data = worldbankdata) +\n  geom_pointrange(\n    mapping = aes(x = Region, y = Cooking),\n    stat = \"summary\",\n    fun.min = min,\n    fun.max = max,\n    fun = median\n  ) + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\nWarning: Removed 6047 rows containing non-finite values (`stat_summary()`)."
+    "text": "18.3 geom_pointrange\nPackage\nggplot2 (Wickham 2016)\nDescription\nRepresenting a vertical interval defined by ymin, ymax and point represent by y for different levels of x.\nUnderstandable aesthetics\nrequired aesthetics\nx or y,\nymin or xmin,\nymax or xmax\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_crossbar, geom_errorbar, geom_linerange\nExample\nMethod 1\n\nworldbankdata |&gt;\n  group_by(Region) |&gt;\n  summarise(min = min(Cooking, na.rm = TRUE), max=max(Cooking, \n                                                      na.rm = TRUE),\n            median = median(Cooking, na.rm=TRUE)) |&gt;\n  ggplot(aes(x = Region, y = median, ymin = min, ymax = max)) +\n  geom_pointrange() + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\n\n\n\nMethod 2\n\nggplot(data = worldbankdata) +\n  geom_pointrange(\n    mapping = aes(x = Region, y = Cooking),\n    stat = \"summary\",\n    fun.min = min,\n    fun.max = max,\n    fun = median\n  ) + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\nWarning: Removed 6047 rows containing non-finite values (`stat_summary()`)."
   },
   {
     "objectID": "v.html#geom_voronoi_segment",
     "href": "v.html#geom_voronoi_segment",
     "title": "24  geom_v",
     "section": "24.4 geom_voronoi_segment",
-    "text": "24.4 geom_voronoi_segment\n\n24.4.1 Package\nggforce (Pedersen 2022)\n\n\n24.4.2 Description\nRepresents the borders between the regions assigned to different input points.\n\n\n24.4.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, linetype, size\n\n\n24.4.4 The statistical transformation to use on the data for this layer\nvoronoi_segment\n\n\n24.4.5 See also\ngeom_voronoi_tile, geom_delaunay_tile, geom_delaunay_segment\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\na1 &lt;- worldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  filter(Income == \"LM\" | Income == \"UM\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_voronoi_segment() +\n  labs(title = \"a1: geom_voronoi_segment only\") +\n  theme(aspect.ratio = 1)\n\na2 &lt;- worldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  filter(Income == \"LM\" | Income == \"UM\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_voronoi_segment() +\n  labs(title = \"a2: geom_point and \\n geom_voronoi_segment\") +\n  theme(aspect.ratio = 1)\na1 | a2\n\n\n\n\n\n\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "24.4 geom_voronoi_segment\nPackage\nggforce (Pedersen 2022)\nDescription\nRepresents the borders between the regions assigned to different input points.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, linetype, size\nSee also\ngeom_voronoi_tile, geom_delaunay_tile, geom_delaunay_segment\nExample\n\nlibrary(ggforce)\nlibrary(deldir) #to calculate delaunay triangulation\na1 &lt;- worldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  filter(Income == \"LM\" | Income == \"UM\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_voronoi_segment() +\n  labs(title = \"a1: geom_voronoi_segment only\") +\n  theme(aspect.ratio = 1)\n\na2 &lt;- worldbankdata |&gt;\n  filter(Year == 2021) |&gt;\n  filter(Income == \"LM\" | Income == \"UM\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_point() +\n  geom_voronoi_segment() +\n  labs(title = \"a2: geom_point and \\n geom_voronoi_segment\") +\n  theme(aspect.ratio = 1)\na1 | a2\n\n\n\n\n\n\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "v.html#geom_voronoi_tile",
     "href": "v.html#geom_voronoi_tile",
     "title": "24  geom_v",
     "section": "24.3 geom_voronoi_tile",
-    "text": "24.3 geom_voronoi_tile\n\n24.3.1 Package\nggforce (Pedersen 2022)\n\n\n24.3.2 Description\nVoronoi tiles are the polygons that result from the spatial division of a plane based on the input points.\n\n\n24.3.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, linetype, size\n\n\n24.3.4 The statistical transformation to use on the data for this layer\nvoronoi_tile\n\n\n24.3.5 See also\ngeom_voronoi_segment, geom_delaunay_tile, geom_delaunay_segment\n\n\n24.3.6 Example\n\nlibrary(ggforce)\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  filter(Region == \"Middle East & North Africa\" | Region == \"Sub-Saharan Africa\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_voronoi_tile(alpha=0.5, aes(fill=Region)) + \n  labs(title = \"a1: geom_voronoi_tile only\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  scale_color_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1) + \n  theme(legend.position='bottom')\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  filter(Region == \"Middle East & North Africa\" | Region == \"Sub-Saharan Africa\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_voronoi_tile(alpha=0.5, aes(fill=Region)) + \n  geom_point(aes(col=Region)) + \n  labs(title = \"a1: geom_voronoi_tile and  geom_point\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  scale_color_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1) +\n  theme(legend.position='none')\na1|a2"
+    "text": "24.3 geom_voronoi_tile\nPackage\nggforce (Pedersen 2022)\nDescription\nVoronoi tiles are the polygons that result from the spatial division of a plane based on the input points.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, linetype, size\nSee also\ngeom_voronoi_segment, geom_delaunay_tile, geom_delaunay_segment\nExample\n\nlibrary(ggforce)\na1 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  filter(Region == \"Middle East & North Africa\" | Region == \"Sub-Saharan Africa\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_voronoi_tile(alpha=0.5, aes(fill=Region)) + \n  labs(title = \"a1: geom_voronoi_tile only\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  scale_color_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1) + \n  theme(legend.position='bottom')\na2 &lt;- worldbankdata |&gt;\n  filter(Income == \"L\") |&gt;\n  filter(Region == \"Middle East & North Africa\" | Region == \"Sub-Saharan Africa\") |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) +   \n  geom_voronoi_tile(alpha=0.5, aes(fill=Region)) + \n  geom_point(aes(col=Region)) + \n  labs(title = \"a1: geom_voronoi_tile and  geom_point\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  scale_color_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1) +\n  theme(legend.position='none')\na1|a2"
   },
   {
     "objectID": "p.html#geom_point",
     "href": "p.html#geom_point",
     "title": "18  geom_p",
     "section": "18.1 geom_point",
-    "text": "18.1 geom_point\n\n18.1.1 Package\nggplot2 (Wickham 2016)\n\n\n18.1.2 Description\nVisualize observations using points\n\n\n18.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n18.1.4 The statistical transformation to use on the data for this layer\nstat_prefix\n\n\n18.1.5 See also\ngeom_jitter\n\n\n18.1.6 Example\n\nworldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)"
+    "text": "18.1 geom_point\n\n18.1.1 Package\nggplot2 (Wickham 2016)\n\n\n18.1.2 Description\nVisualize observations using points\n\n\n18.1.3 Understandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n**See also88\ngeom_jitter\n**Example88\n\nworldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)"
   },
   {
     "objectID": "p.html#geom_polygon",
     "href": "p.html#geom_polygon",
     "title": "18  geom_p",
     "section": "18.4 geom_polygon",
-    "text": "18.4 geom_polygon\n\n18.4.1 Package\nggplot2 (Wickham 2016)\n\n\n18.4.2 Description\nCreate polygon given x and y values. This is similar to paths except that the start an end points are connected.\n\n\n18.4.3 Understandable aesthetics\nrequired aesthetics\nx,\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, subgroup\n\n\n18.4.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n18.4.5 See also\ngeom_path\n\n\n18.4.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_polygon() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_polygon() + ggtitle(\"a2: X-time independent variable\")\na1|a2"
+    "text": "18.4 geom_polygon\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate polygon given x and y values. This is similar to paths except that the start an end points are connected.\nUnderstandable aesthetics\nrequired aesthetics\nx,\ny\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, subgroup\nSee also\ngeom_path\nExample\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_polygon() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_polygon() + ggtitle(\"a2: X-time independent variable\")\na1|a2"
   },
   {
     "objectID": "p.html#geom_polygon_pattern",
     "href": "p.html#geom_polygon_pattern",
     "title": "18  geom_p",
     "section": "18.5 geom_polygon_pattern",
-    "text": "18.5 geom_polygon_pattern\n\n18.5.1 Package\nggpattern (FC, Davis, and ggplot2 authors 2023)\n\n\n18.5.2 Description\nFill polygons with pattern\n\n\n18.5.3 Understandable aesthetics\nrequired aesthetics\nx or y,\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, subgroup, pattern_fill, pattern_fill_colour, pattern\n\n\n18.5.4 The statistical transformation to use on the data for this layer\nstat_align\n\n\n18.5.5 See also\ngeom_polygon\n\n\n18.5.6 Example\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_polygon_pattern() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_polygon_pattern(aes(fill=Region)) + \n  ggtitle(\"a2: X-time independent variable\")\na1|a2\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+    "text": "18.5 geom_polygon_pattern\nPackage\nggpattern (FC, Davis, and ggplot2 authors 2023)\nDescription\nFill polygons with pattern\nUnderstandable aesthetics\nrequired aesthetics\nx or y,\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth, subgroup, pattern_fill, pattern_fill_colour, pattern\nSee also\ngeom_polygon\nExample\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_polygon_pattern() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"a1: X-time dependent variable\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x=Electricity, y=Cooking)) + \n  geom_polygon_pattern(aes(fill=Region)) + \n  ggtitle(\"a2: X-time independent variable\")\na1|a2\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   },
   {
     "objectID": "b.html#bar_pattern",
@@ -753,21 +753,21 @@
     "href": "w.html#geom_waffle",
     "title": "25  geom_w",
     "section": "25.1 geom_waffle",
-    "text": "25.1 geom_waffle\n\n25.1.1 Package\n\n#install.packages(\"remotes\")\n#remotes::install_github(\"hrbrmstr/waffle\")\n\nwaffle (Rudis and Gandy 2023)\n\n\n25.1.2 Description\nCreate waffle plots\n\n\n25.1.3 Understandable aesthetics\nrequired aesthetics\nfill (so the geom knows which column to map the fills to)\nvalues (which column you’re mapping the filling for the squares with)\n\n\n25.1.4 The statistical transformation to use on the data for this layer\nstat_waffle\n\n\n25.1.5 See also\ngeom_bar, geom_col\n\n\n25.1.6 Example\n\nlibrary(waffle)\nworldbankdata |&gt;\n  filter(Region == \"East Asia & Pacific\" | Region == \"Europe & Central Asia\") |&gt;\n  select(Region, Income, Year) |&gt;\n  group_by(Region, Income) |&gt;\n  tally() |&gt;\n  ggplot(aes(fill=Income, values=n)) +\n  geom_waffle(color = \"white\", size=1) +\n  facet_wrap(~Region, ncol=1) +\n  scale_x_discrete(expand=c(0,0)) +\n  scale_y_discrete(expand=c(0,0)) +\n  coord_equal() \n\n\n\n\n\n\n\n\nRudis, Bob, and Dave Gandy. 2023. Waffle: Create Waffle Chart Visualizations."
+    "text": "25.1 geom_waffle\nPackage\n\n#install.packages(\"remotes\")\n#remotes::install_github(\"hrbrmstr/waffle\")\n\nwaffle (Rudis and Gandy 2023)\nDescription\nCreate waffle plots\nUnderstandable aesthetics\nrequired aesthetics\nfill (so the geom knows which column to map the fills to)\nvalues (which column you’re mapping the filling for the squares with)\nSee also\ngeom_bar, geom_col\nExample\n\nlibrary(waffle)\nworldbankdata |&gt;\n  filter(Region == \"East Asia & Pacific\" | Region == \"Europe & Central Asia\") |&gt;\n  select(Region, Income, Year) |&gt;\n  group_by(Region, Income) |&gt;\n  tally() |&gt;\n  ggplot(aes(fill=Income, values=n)) +\n  geom_waffle(color = \"white\", size=1) +\n  facet_wrap(~Region, ncol=1) +\n  scale_x_discrete(expand=c(0,0)) +\n  scale_y_discrete(expand=c(0,0)) +\n  coord_equal() \n\n\n\n\n\n\n\n\nRudis, Bob, and Dave Gandy. 2023. Waffle: Create Waffle Chart Visualizations."
   },
   {
     "objectID": "x.html#geom_xy_means",
     "href": "x.html#geom_xy_means",
     "title": "26  geom_x",
-    "section": "26.10 geom_xy_means",
-    "text": "26.10 geom_xy_means\n\n26.10.1 Package\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"EvaMaeRey/ggxmean\")\n\nggxmean (ggxmean?)\n\n\n26.10.2 Description\nPlace point at mean of x and mean of y\n\n\n26.10.3 Understandable aesthetics\nrequired aesthetics\nx, y\n\n\n26.10.4 The statistical transformation to use on the data for this layer\n\n\n26.10.5 See also\ngeom_point\n\n\n26.10.6 Example\n\nlibrary(ggxmean)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_means(na.rm=TRUE, col=\"red\", size=4) + \n  ggtitle(\"a1: geom_xy_means only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_point(alpha=0.5) +\n  geom_xy_means(na.rm=TRUE, col=\"red\", size=4) + \n  ggtitle(\"a2: geom_points and geom_xy_means\")\na1|a2\n\nWarning: Removed 6047 rows containing missing values (`geom_point()`)."
+    "section": "26.8 geom_xy_means",
+    "text": "26.8 geom_xy_means\nPackage\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"EvaMaeRey/ggxmean\")\n\nggxmean (Reynolds 2024)\nDescription\nPlace point at mean of x and mean of y\nUnderstandable aesthetics\nrequired aesthetics\nx, y\nSee also\ngeom_point\nExample\n\nlibrary(ggxmean)\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_means(na.rm=TRUE, col=\"red\", size=4) + \n  ggtitle(\"a1: geom_xy_means only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_point(alpha=0.5) +\n  geom_xy_means(na.rm=TRUE, col=\"red\", size=4) + \n  ggtitle(\"a2: geom_points and geom_xy_means\")\na1|a2\n\nWarning: Removed 6047 rows containing missing values (`geom_point()`)."
   },
   {
     "objectID": "x.html#geom_x_label",
     "href": "x.html#geom_x_label",
     "title": "26  geom_x",
     "section": "26.1 geom_x_label",
-    "text": "26.1 geom_x_label\n\n26.1.1 Package\nggxmean (ggxmean?)"
+    "text": "26.1 geom_x_label\nPackage\nggxmean (Reynolds 2024)\ngeom_x_line\nPackage\nggxmean (Reynolds 2024)"
   },
   {
     "objectID": "x.html#geom_x_line",
@@ -780,8 +780,8 @@
     "objectID": "x.html#geom_x_mean",
     "href": "x.html#geom_x_mean",
     "title": "26  geom_x",
-    "section": "26.3 geom_x_mean",
-    "text": "26.3 geom_x_mean\n\n26.3.1 Package\nggxmean (ggxmean?)"
+    "section": "26.2 geom_x_mean",
+    "text": "26.2 geom_x_mean\nPackage\nggxmean (Reynolds 2024)\ngeom_x_mean_label"
   },
   {
     "objectID": "x.html#geom_x_mean_label",
@@ -794,43 +794,43 @@
     "objectID": "x.html#geom_x_median",
     "href": "x.html#geom_x_median",
     "title": "26  geom_x",
-    "section": "26.5 geom_x_median",
-    "text": "26.5 geom_x_median\n\n26.5.1 Package\nggxmean (ggxmean?)"
+    "section": "26.3 geom_x_median",
+    "text": "26.3 geom_x_median\nPackage\nggxmean (Reynolds 2024)"
   },
   {
     "objectID": "x.html#geom_x_percentile",
     "href": "x.html#geom_x_percentile",
     "title": "26  geom_x",
-    "section": "26.6 geom_x_percentile",
-    "text": "26.6 geom_x_percentile\n\n26.6.1 Package\nggxmean (ggxmean?)"
+    "section": "26.4 geom_x_percentile",
+    "text": "26.4 geom_x_percentile\nPackage\nggxmean (Reynolds 2024)"
   },
   {
     "objectID": "x.html#geom_x_quantile",
     "href": "x.html#geom_x_quantile",
     "title": "26  geom_x",
-    "section": "26.7 geom_x_quantile",
-    "text": "26.7 geom_x_quantile\n\n26.7.1 Package\nggxmean (ggxmean?)"
+    "section": "26.5 geom_x_quantile",
+    "text": "26.5 geom_x_quantile\nPackage\nggxmean (Reynolds 2024)"
   },
   {
     "objectID": "x.html#geom_xmax",
     "href": "x.html#geom_xmax",
     "title": "26  geom_x",
-    "section": "26.8 geom_xmax",
-    "text": "26.8 geom_xmax\n\n26.8.1 Package\nggxmean (ggxmean?)"
+    "section": "26.6 geom_xmax",
+    "text": "26.6 geom_xmax\nPackage\nggxmean (Reynolds 2024)"
   },
   {
     "objectID": "x.html#geom_xmin",
     "href": "x.html#geom_xmin",
     "title": "26  geom_x",
-    "section": "26.9 geom_xmin",
-    "text": "26.9 geom_xmin\n\n26.9.1 Package\nggxmean (ggxmean?)"
+    "section": "26.7 geom_xmin",
+    "text": "26.7 geom_xmin\nPackage\nggxmean (Reynolds 2024)"
   },
   {
     "objectID": "x.html#geom_xy_xymean",
     "href": "x.html#geom_xy_xymean",
     "title": "26  geom_x",
-    "section": "26.11 geom_xy_xymean",
-    "text": "26.11 geom_xy_xymean\n\n26.11.1 Example\n\nlibrary(ggxmean)\nworldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_xymean(na.rm=TRUE, size=3)"
+    "section": "26.9 geom_xy_xymean",
+    "text": "26.9 geom_xy_xymean\nExample\n\nlibrary(ggxmean)\nworldbankdata |&gt;\n  ggplot(aes(x = Income, y = Cooking)) + \n  geom_xy_xymean(na.rm=TRUE, size=3) \n\n\n\n\n\n\n\n\nReynolds, Evangeline. 2024. Ggxmean: Statistical Geoms."
   },
   {
     "objectID": "intro.html#data",

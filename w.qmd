@@ -10,7 +10,7 @@ data("worldbankdata")
 
 ## geom_waffle
 
-### Package
+**Package**
 
 ```{r}
 #install.packages("remotes")
@@ -20,29 +20,26 @@ data("worldbankdata")
 
 waffle [@waffle]
 
-### Description
+**Description**
 
 Create waffle plots
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `fill` (so the geom knows which column to map the fills to)
 
 `values` (which column you're mapping the filling for the squares with)
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_waffle`
-
-### See also
+**See also**
 
 [geom_bar](#bar), [geom_col](#col)
   
 
 
-### Example 
+**Example** 
 
 ```{r}
 library(waffle)

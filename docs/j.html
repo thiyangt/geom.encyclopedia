@@ -145,6 +145,23 @@ div.csl-indent {
       <a href="./">Data Visualisation <code>geom</code> Encyclopedia</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/thiyangt/geom.encyclopedia" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-`geom`-Encyclopedia.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-`geom`-Encyclopedia.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
     </div>
       </div>
@@ -389,7 +406,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./m.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">geom_m</span></span></a>
   </div>
 </li>
       </ul>
@@ -440,7 +457,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">geom_p</span></span></a>
   </div>
 </li>
       </ul>
@@ -576,7 +593,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./x.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">geom_x</span></span></a>
   </div>
 </li>
       </ul>
@@ -637,13 +654,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#jitter" id="toc-jitter" class="nav-link active" data-scroll-target="#jitter"><span class="header-section-number">12.1</span> geom_jitter</a>
-  <ul class="collapse">
-  <li><a href="#package" id="toc-package" class="nav-link" data-scroll-target="#package"><span class="header-section-number">12.1.1</span> Package</a></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">12.1.2</span> Description</a></li>
-  <li><a href="#the-statistical-transformation-to-use-on-the-data-for-this-layer" id="toc-the-statistical-transformation-to-use-on-the-data-for-this-layer" class="nav-link" data-scroll-target="#the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">12.1.3</span> The statistical transformation to use on the data for this layer</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">12.1.4</span> See also</a></li>
-  </ul></li>
+  <li><a href="#jitter" id="toc-jitter" class="nav-link active" data-scroll-target="#jitter"><span class="header-section-number">12.1</span> geom_jitter</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/j.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -669,23 +680,13 @@ div.csl-indent {
 
 <section id="jitter" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="jitter"><span class="header-section-number">12.1</span> geom_jitter</h2>
-<section id="package" class="level3" data-number="12.1.1">
-<h3 data-number="12.1.1" class="anchored" data-anchor-id="package"><span class="header-section-number">12.1.1</span> Package</h3>
+<p><strong>Package</strong></p>
 <p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
-</section>
-<section id="description" class="level3" data-number="12.1.2">
-<h3 data-number="12.1.2" class="anchored" data-anchor-id="description"><span class="header-section-number">12.1.2</span> Description</h3>
+<p><strong>Description</strong></p>
 <p>Adds a small amount of random variation to the location of each point, horizontally and/or vertically.</p>
-</section>
-<section id="the-statistical-transformation-to-use-on-the-data-for-this-layer" class="level3" data-number="12.1.3">
-<h3 data-number="12.1.3" class="anchored" data-anchor-id="the-statistical-transformation-to-use-on-the-data-for-this-layer"><span class="header-section-number">12.1.3</span> The statistical transformation to use on the data for this layer</h3>
-<p><code>stat_identify</code> - It plots the data as it is.</p>
-</section>
-<section id="see-also" class="level3" data-number="12.1.4">
-<h3 data-number="12.1.4" class="anchored" data-anchor-id="see-also"><span class="header-section-number">12.1.4</span> See also</h3>
+<p><strong>See also</strong></p>
 <p><a href="#point">geom_point</a></p>
-<section id="example" class="level4" data-number="12.1.4.1">
-<h4 data-number="12.1.4.1" class="anchored" data-anchor-id="example"><span class="header-section-number">12.1.4.1</span> Example</h4>
+<p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
@@ -705,8 +706,6 @@ div.csl-indent {
 Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 </div>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

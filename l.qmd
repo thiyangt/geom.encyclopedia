@@ -10,34 +10,31 @@ data("worldbankdata")
 
 ## geom_label
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Labelling plots
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**Required aesthetics**
+*Required aesthetics*
 
 `x`, `y`, `label`
 
 
-**Optional aesthetics**
+*Optional aesthetics*
 
 `alpha`, `angle`, `colour`, `family`, `fontface`, `group`, `hjust`,  `lineheight`, `size`, `vjust`
 
-### The statistical transformation to use on the data for this layer 
 
-`identity`
-
-### See also
+**See also**
 
 [geom_text](#text)
 
-### Example
+**Example**
 
 ```{r area, warning=FALSE, message=FALSE}
 a1 <- worldbankdata |>
@@ -58,37 +55,35 @@ a1|a2
 ## geom_line{#line}
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
-Connects dats in order of the variable on the x axis.
+Connects data in order of the variable on the x axis.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 
 
-**required aesthetics**
+*required aesthetics*
   
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_xx`
 
-### See also
+**See also**
 
 [geom_path](#path)
   
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 a1 <- worldbankdata |>
@@ -107,17 +102,17 @@ a1|a2
 ## geom_linerange
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Representing a vertical interval defined by x, ymin and ymax
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `x` or `y`,
 
@@ -125,19 +120,16 @@ Representing a vertical interval defined by x, ymin and ymax
 
 `ymax` or `xmax`
 
-**optional aesthetics**
+*optional aesthetics*
   
-  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_align`
-
-### See also
+**See also**
 
 [geom_line](#line), [geom_crossbar](#crossbar), [geom_errorbar](#errorbar), [geom_pointrange](#pointrange)
   
-### Example
+**Example**
 
 
 ```{r}

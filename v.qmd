@@ -14,35 +14,32 @@ data("worldbankdata")
 ## geom_violin{#violin}
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Creates violin plot.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`, `group`, `linetype`, `linewidth`, `weight`
 
-### The statistical transformation to use on the data for this layer 
 
-`ydensity`
-
-### See also
+**See also**
 
 [geom_boxplot](#boxplot), [geom_density](#density)
   
-### Example
+**Example**
 
 ```{r,  message=FALSE, warning=FALSE}
 worldbankdata |>
@@ -57,23 +54,23 @@ ggplot(aes(y = Cooking, x=Income, fill=Income)) +
 
 ## geom_violin_pattern {#violin_pattern}
 
-### Package
+**Package**
 
 ggforce [@ggforce]
 
-### Description
+**Description**
 
 Fill violin plots with patterns.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`, `group`, `linetype`, `linewidth`, `weight`
 
@@ -81,11 +78,11 @@ Fill violin plots with patterns.
 
 `ydensity`
 
-### See also
+**See also**
 
 [geom_boxplot](#boxplot), [geom_density](#density)
   
-### Example
+**Example**
 
 ```{r,  message=FALSE, warning=FALSE}
 worldbankdata |>
@@ -101,36 +98,34 @@ ggplot(aes(y = Cooking, x=Income, fill=Income)) +
 ## geom_voronoi_tile
 
 
-### Package
+**Package**
 
 ggforce [@ggforce]
 
-### Description
+**Description**
 
 Voronoi tiles are the polygons that result from the spatial division of a plane based on the input points.
 
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`,  `linetype`, `size`
 
-### The statistical transformation to use on the data for this layer 
 
-`voronoi_tile`
 
-### See also
+**See also**
 
 [geom_voronoi_segment](#voroni_segment), [geom_delaunay_tile](#delaunay_tile), [geom_delaunay_segment](#delaunay_segment)
   
-### Example
+**Example**
 
 
 ```{r, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
@@ -161,35 +156,34 @@ a1|a2
 
 ## geom_voronoi_segment
 
-### Package
+**Package**
 
 ggforce [@ggforce]
 
-### Description
+**Description**
 
 
 Represents the borders between the regions assigned to different input points.
 
 
-### Understandable aesthetics
+*Understandable aesthetics*
 
-**required aesthetics**
+*required aesthetics*
   
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`,  `linetype`, `size`
 
-### The statistical transformation to use on the data for this layer 
 
-`voronoi_segment`
-
-### See also
+**See also**
 
 [geom_voronoi_tile](#voroni_tile), [geom_delaunay_tile](#delaunay_tile), [geom_delaunay_segment](#delaunay_segment)
+
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggforce)

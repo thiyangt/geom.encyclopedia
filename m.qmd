@@ -10,35 +10,33 @@ data("worldbankdata")
 
 ## geom_mark_circle{#mark_circle}
 
-### Package
+**Package**
 
 ggforce [@ggforce]
 
-### Description
+**Description**
 
 Annotate sets of points via circles.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `x0 (used to anchor the label)`, `y0 (used to anchor the label)`, `filter`, `label`, `description`, `color`, `fill`, `group`, `size`, `linetype`, `alpha`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_xxx`
 
-### See also
+**See also**
 
 [geom_circle](#circle), [geom_encircle](#encircle), [geom_mark_ellipse](#mark_ellipse), [geom_mark_hull](#mark_hill), [geom_mark_rect](#mark_rect)
   
-### Example
+**Example**
 
 ```{r markcircle, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -52,35 +50,32 @@ worldbankdata |>
 
 ## geom_make_ellipse{#mark_ellipse}
 
-### Package
+**Package**
 
 ggforce [@ggforce]
 
-### Description
+**Description**
 
 Annotate sets of points via ellipse.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `x0 (used to anchor the label)`, `y0 (used to anchor the label)`, `filter`, `label`, `description`, `color`, `fill`, `group`, `size`, `linetype`, `alpha`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_xxx`
-
-### See also
+**See also**
 
 [geom_circle](#circle), [geom_encircle](#encircle), [geom_mark_circle](#mark_circle),  [geom_mark_hull](#mark_hill), [geom_mark_rect](#mark_rect)
   
-### Example
+**Example**
 
 ```{r markellipse, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -94,35 +89,32 @@ worldbankdata |>
 
 ## geom_make_hull{#mark_hull}
 
-### Package
+**Package**
 
 ggforce [@ggforce]
 
-### Description
+**Description**
 
 Annotate sets of points via hulls.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `x0 (used to anchor the label)`, `y0 (used to anchor the label)`, `filter`, `label`, `description`, `color`, `fill`, `group`, `size`, `linetype`, `alpha`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_xxx`
-
-### See also
+**See also**
 
 [geom_circle](#circle), [geom_encircle](#encircle), [geom_mark_circle](#mark_circle),  [geom_mark_ellipse](#mark_ellipse), [geom_mark_rect](#mark_rect)
   
-### Example
+**Example**
 
 ```{r markhull, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -137,35 +129,32 @@ worldbankdata |>
 
 ## geom_make_rect{#mark_rect}
 
-### Package
+**Package**
 
 ggforce [@ggforce]
 
-### Description
+**Description**
 
 Annotate sets of points via rectangles.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
 
 `x0 (used to anchor the label)`, `y0 (used to anchor the label)`, `filter`, `label`, `description`, `color`, `fill`, `group`, `size`, `linetype`, `alpha`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_xxx`
-
-### See also
+**See also**
 
 [geom_circle](#circle), [geom_encircle](#encircle), [geom_mark_circle](#mark_circle),  [geom_mark_ellipse](#mark_ellipse), [geom_mark_hull](#mark_hull)
   
-### Example
+**Example**
 
 ```{r markrect, fig.height=5, fig.width=5, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -179,34 +168,31 @@ worldbankdata |>
 
 ## geom_map{#map}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Display polygons as a map.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `map_id`
 
-
-**optional aesthetics**
+**optional aesthetics*
   
   `alpha`, `colour`, `fill` ,`group`, `linetype`, `linewidth`, `subgropu`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_xxx`
 
-### See also
+**See also**
 
 [geom_polygon](#polygon)
   
-### Example
+**Example**
 
 
 ```{r map, comment=NA, message=FALSE, warning=FALSE}
@@ -221,29 +207,25 @@ ggplot() +
 
 ## geom_mosaic{#mosaic}
 
-### Package
+**Package**
 
 ggmosaic [@ggmosaic]
 
-### Description
+**Description**
 
 Create mosaic plot
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 `x`, `y`, `xmin`, `xmax`, `ymin`, `ymax`
 
 
 
-### The statistical transformation to use on the data for this layer 
-
-`mosaic`
-
-### See also
+**See also**
 
 [geom_bar](#bar), [geom_mosaic_jitter](#mosaic_jitter), [geom_mosaic_text](#mosaic_text)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggmosaic)
@@ -257,11 +239,11 @@ worldbankdata |>
 
 ## geom_mosic_jitter{#mosaic jitter}
 
-### Package
+**Package**
 
 ggmosaic [@ggmosaic]
 
-### Description
+**Description**
 
 Create a mosaic plot with text or labels.
 
@@ -270,16 +252,11 @@ Create a mosaic plot with text or labels.
 `x`, `y`, `xmin`, `xmax`, `ymin`, `ymax`
 
 
-
-### The statistical transformation to use on the data for this layer 
-
-`mosaic`
-
-### See also
+**See also**
 
 [geom_bar](#bar), [geom_mosaic](#mosaic), [geom_mosaic_text](#mosaic_text)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggmosaic)

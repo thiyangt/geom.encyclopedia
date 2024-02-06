@@ -11,27 +11,24 @@ data("worldbankdata")
 ## geom_image {#image}
 
 
-### Package
+**Package**
 
 ggimage [@ggimage]
 
-### Description
+**Description**
 
 Visualise data through images.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 `image`
 
-### Statistics layer(s)
 
-`identity`
-
-### See also
+**See also**
 
 [geom_emoji](#emoji)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library("ggimage")

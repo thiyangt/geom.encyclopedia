@@ -11,64 +11,60 @@ data("worldbankdata")
 
 ## geom_x_label
 
-### Package
+**Package**
 
 ggxmean [@ggxmean]
 
-## geom_x_line
+**geom_x_line**
 
-### Package
+**Package**
 
 ggxmean [@ggxmean]
 
 
 ## geom_x_mean
 
-### Package
+**Package**
 
 ggxmean [@ggxmean]
 
-## geom_x_mean_label
-
-### Package
-
-ggxmean [@ggxmean]
+**geom_x_mean_label**
 
 
 ## geom_x_median
 
-### Package
+**Package**
 
 ggxmean [@ggxmean]
 
 ## geom_x_percentile
 
-### Package
+**Package**
 
 ggxmean [@ggxmean]
 
 ## geom_x_quantile
 
-### Package
+**Package**
 
 ggxmean [@ggxmean]
 
 ## geom_xmax
 
-### Package
+**Package**
 
 ggxmean [@ggxmean]
 
 ## geom_xmin
 
-### Package
+**Package**
 
 ggxmean [@ggxmean]
 
 ## geom_xy_means
 
 
-### Package
+**Package**
 
 ```{r}
 # install.packages("devtools")
@@ -77,27 +73,24 @@ ggxmean [@ggxmean]
 
 ggxmean [@ggxmean]
 
-### Description
+**Description**
 
 Place point at mean of x and mean of y
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
 `x`, `y`
 
-### The statistical transformation to use on the data for this layer 
 
-
-
-### See also
+**See also**
 
 [geom_point](#point)
   
 
 
-### Example 
+**Example**
 
 ```{r}
 library(ggxmean)
@@ -115,7 +108,7 @@ a1|a2
 
 ## geom_xy_xymean
 
-### Example 
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggxmean)
