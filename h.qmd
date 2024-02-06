@@ -11,27 +11,24 @@ data("worldbankdata")
 ## geom_hline{#hline}
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Draw a horizontal line ($Y=c$) for a given value of $c$, which is known as `yintercept`.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 Unlike most other geoms, `geom_hline` does not depend on the x and y variables that we map for the main plot. `geom_hline` has its own independent characteristics: `yintercept`.   The yintercept can be passed either as a arguments or aesthetic.
 
-### Statistics layer(s)
 
-None
-
-### See also
+**See also**
 
 [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
 
-### Example
+**Example**
 
 
 ```{r hline2, fig.cap="Illustration of (A) geom_hline and (B) use of geom_point and geom_hline both", warning=FALSE,message=FALSE}
@@ -51,27 +48,24 @@ a1 | a2
 ## geom_histogram{#histogram}
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
-Visualise conontinuous data using histogram.
+Visualise  data using histogram.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 Unlike most other geoms, `geom_hline` does not depend on the x and y variables that we map for the main plot. `geom_hline` has its own independent characteristics: `yintercept`.   The yintercept can be passed either as a arguments or aesthetic.
 
-### Statistics layer(s)
 
-
-
-### See also
+**See also**
 
 [geom_density](#density), [geom_density_line](#density_line), [geom_freqpoly](#freqpoly)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 worldbankdata |>
@@ -86,31 +80,28 @@ worldbankdata |>
 ## geom_histogram_pattern{#histogram_pattern}
 
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
-Visualise conontinuous data using histogram and filled with patterns.
+Visualize numeric data using histogram and filled with patterns.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x` or `y`
 
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 
-### Statistics layer(s)
 
-bin
-
-### See also
+**See also**
 
 [geom_histogram](#histogram), [geom_density](#density), [geom_density_line](#density_line)
 
@@ -126,35 +117,32 @@ worldbankdata |>
 
 ## geom_hdr_boxplot
 
-### Package
+**Package**
 
 gghdr [@gghdr]
 
-### Description
+**Description**
 
 Calculates and plots the box plot of highest density regions.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x` or `y`
 
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`
 
 
-### Statistics layer(s)
 
-hdrcde
-
-### See also
+**See also**
 
 [geom_boxplot](#boxplot), [geom_histogram](#histogram), [geom_density](#density), [geom_density_line](#density_line)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(gghdr)
@@ -167,35 +155,32 @@ ggplot(aes(y = Cooking, x=factor(0))) +
 
 ## geom_hex{#hex}
 
-### Package
+**Package**
 
 gghdr [@gghdr]
 
-### Description
+**Description**
 
 Calculates and plots the box plot of highest density regions.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x` or `y`
 
 
-**optional aesthetics**
+*optional aesthetics*
 
 `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
 
 
-### Statistics layer(s)
 
-hdrcde
-
-### See also
+**See also**
 
 [geom_boxplot](#boxplot), [geom_histogram](#histogram), [geom_density](#density), [geom_density_line](#density_line)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(hexbin)
@@ -211,34 +196,30 @@ worldbankdata |>
 
 ## geom_heat_grid {#heat_grid}
 
-### Package
+**Package**
 
 ggDoubleHeat [@ggDoubleHeat]
 
-### Description
+**Description**
 
 Visualize two quantitative variables of information inside a heatmap cell using a grid.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`, `y`, `outside`, `inside`
 
-**Optional aesthetics**
+*Optional aesthetics*
 
 `outside_colors`, `outside_name`, `inside_colors`, `inside_name`
 
 
-### Statistics layer(s)
-
-hdrcde
-
-### See also
+**See also**
 
 [geom_heat_circle](#heat_circle), [geom_heat_tri](#heat_tri)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(ggDoubleHeat)
@@ -251,34 +232,31 @@ worldbankdata[254:263, ] |>
 
 ## geom_heat_tri {#heat_tri}
 
-### Package
+**Package**
 
 ggDoubleHeat [@ggDoubleHeat]
 
-### Description
+**Description**
 
 Visualize two quantitative variables of information inside a heatmap cell using triangles.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`, `y`, `lower`, `upper`
 
-**Optional aesthetics**
+*Optional aesthetics*
 
 `lower_colors`, `lower_name`, `upper_colors`, `upper_name`
 
 
-### Statistics layer(s)
 
-hdrcde
-
-### See also
+**See also**
 
 [geom_heat_grid](#heat_grid), [geom_heat_tri](#heat_tri)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(ggDoubleHeat)
@@ -290,33 +268,30 @@ worldbankdata[254:263, ] |>
 
 ## geom_heat_circle {#heat_circle}
 
-### Package
+**Package**
 
 ggDoubleHeat [@ggDoubleHeat]
 
-### Description
+**Description**
 
 Visualize two quantitative variables of information inside a heatmap cell using triangles.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
 
 `x`, `y`, `outside`, `inside`
 
-**Optional aesthetics**
+*Optional aesthetics*
 
 `outside_colors`, `outside_name`, `inside_colors`, `inside_name`
 
-### Statistics layer(s)
 
-hdrcde
-
-### See also
+**See also**
 
 [geom_heat_grid](#heat_grid), [geom_heat_tri](#heat_tri)
 
-### Example
+**Example**
 
 ```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
 library(ggDoubleHeat)
@@ -328,27 +303,24 @@ worldbankdata[254:263, ] |>
 
 ## geom_hline{#hline}
 
-### Package 
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
 Draw a horizontal line given intercept.
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
 Unlike most other geoms, `geom_hline` does not depend on the x and y variables that we map for the main plot. 
 
-### The statistical transformation to use on the data for this layer
 
-None (`geom_hline` is independent from the data layer.)
-
-### See also: 
+**See also**
 
  [geom_point](#point), [geom_vline](#vline), [geom_abline](#hline)
 
-### Example
+**Example**
 
 ```{r, fig.height=8, fig.width=8, warning=FALSE, message=FALSE}
 a1 <- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + 

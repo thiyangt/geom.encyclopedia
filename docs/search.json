@@ -228,7 +228,7 @@
     "href": "h.html#hline",
     "title": "10  geom_h",
     "section": "10.9 geom_hline",
-    "text": "10.9 geom_hline\n\n10.9.1 Package\nggplot2 (Wickham 2016)\n\n\n10.9.2 Description\nDraw a horizontal line given intercept.\n\n\n10.9.3 Understandable aesthetics\nUnlike most other geoms, geom_hline does not depend on the x and y variables that we map for the main plot.\n\n\n10.9.4 The statistical transformation to use on the data for this layer\nNone (geom_hline is independent from the data layer.)\n\n\n10.9.5 See also:\ngeom_point, geom_vline, geom_abline\n\n\n10.9.6 Example\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_hline(yintercept = 50) + \n  labs(title=\"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_hline(yintercept = 50) + \n  geom_point() + \n  labs(title = \"a2: geom_hline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nYu, Youzhi, and Trent Buskirk. 2023. ggDoubleHeat: A Heatmap-Like Visualization Tool. https://CRAN.R-project.org/package=ggDoubleHeat."
+    "text": "10.9 geom_hline\nPackage\nggplot2 (Wickham 2016)\nDescription\nDraw a horizontal line given intercept.\nUnderstandable aesthetics\nUnlike most other geoms, geom_hline does not depend on the x and y variables that we map for the main plot.\nSee also\ngeom_point, geom_vline, geom_abline\nExample\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_hline(yintercept = 50) + \n  labs(title=\"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x=Electricity)) + \n  geom_hline(yintercept = 50) + \n  geom_point() + \n  labs(title = \"a2: geom_hline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nYu, Youzhi, and Trent Buskirk. 2023. ggDoubleHeat: A Heatmap-Like Visualization Tool. https://CRAN.R-project.org/package=ggDoubleHeat."
   },
   {
     "objectID": "i.html#geom_abline",
@@ -382,49 +382,49 @@
     "href": "h.html#histogram",
     "title": "10  geom_h",
     "section": "10.2 geom_histogram",
-    "text": "10.2 geom_histogram\n\n10.2.1 Package\nggplot2 (Wickham 2016)\n\n\n10.2.2 Description\nVisualise conontinuous data using histogram.\n\n\n10.2.3 Understandable aesthetics\nUnlike most other geoms, geom_hline does not depend on the x and y variables that we map for the main plot. geom_hline has its own independent characteristics: yintercept. The yintercept can be passed either as a arguments or aesthetic.\n\n\n10.2.4 Statistics layer(s)\n\n\n10.2.5 See also\ngeom_density, geom_density_line, geom_freqpoly\n\n\n10.2.6 Example\n\nworldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +   \n  geom_histogram(col=\"white\")"
+    "text": "10.2 geom_histogram\nPackage\nggplot2 (Wickham 2016)\nDescription\nVisualise data using histogram.\nUnderstandable aesthetics\nUnlike most other geoms, geom_hline does not depend on the x and y variables that we map for the main plot. geom_hline has its own independent characteristics: yintercept. The yintercept can be passed either as a arguments or aesthetic.\nSee also\ngeom_density, geom_density_line, geom_freqpoly\nExample\n\nworldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +   \n  geom_histogram(col=\"white\")"
   },
   {
     "objectID": "h.html#histogram_pattern",
     "href": "h.html#histogram_pattern",
     "title": "10  geom_h",
     "section": "10.3 geom_histogram_pattern",
-    "text": "10.3 geom_histogram_pattern\n\n10.3.1 Package\nggplot2 (Wickham 2016)\n\n\n10.3.2 Description\nVisualise conontinuous data using histogram and filled with patterns.\n\n\n10.3.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, group, linetype, linewidth\n\n\n10.3.4 Statistics layer(s)\nbin\n\n\n10.3.5 See also\ngeom_histogram, geom_density, geom_density_line\n\n\n10.3.6 Example\n\nworldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +   \n  geom_histogram_pattern( pattern_color = \"white\",\n                   pattern_fill = \"black\")"
+    "text": "10.3 geom_histogram_pattern\nPackage\nggplot2 (Wickham 2016)\nDescription\nVisualize numeric data using histogram and filled with patterns.\nUnderstandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_histogram, geom_density, geom_density_line\n\n10.3.1 Example\n\nworldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +   \n  geom_histogram_pattern( pattern_color = \"white\",\n                   pattern_fill = \"black\")"
   },
   {
     "objectID": "h.html#geom_hdr_boxplot",
     "href": "h.html#geom_hdr_boxplot",
     "title": "10  geom_h",
     "section": "10.4 geom_hdr_boxplot",
-    "text": "10.4 geom_hdr_boxplot\n\n10.4.1 Package\ngghdr (gghdr?)\n\n\n10.4.2 Description\nCalculates and plots the box plot of highest density regions.\n\n\n10.4.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour\n\n\n10.4.4 Statistics layer(s)\nhdrcde\n\n\n10.4.5 See also\ngeom_boxplot, geom_histogram, geom_density, geom_density_line\n\n\n10.4.6 Example\n\nlibrary(gghdr)\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking, x=factor(0))) + \n  geom_hdr_boxplot(fill = \"#081d58\")"
+    "text": "10.4 geom_hdr_boxplot\nPackage\ngghdr (gghdr?)\nDescription\nCalculates and plots the box plot of highest density regions.\nUnderstandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour\nSee also\ngeom_boxplot, geom_histogram, geom_density, geom_density_line\nExample\n\nlibrary(gghdr)\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\nggplot(aes(y = Cooking, x=factor(0))) + \n  geom_hdr_boxplot(fill = \"#081d58\")"
   },
   {
     "objectID": "h.html#hex",
     "href": "h.html#hex",
     "title": "10  geom_h",
     "section": "10.5 geom_hex",
-    "text": "10.5 geom_hex\n\n10.5.1 Package\ngghdr (gghdr?)\n\n\n10.5.2 Description\nCalculates and plots the box plot of highest density regions.\n\n\n10.5.3 Understandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\n\n\n10.5.4 Statistics layer(s)\nhdrcde\n\n\n10.5.5 See also\ngeom_boxplot, geom_histogram, geom_density, geom_density_line\n\n\n10.5.6 Example\n\nlibrary(hexbin)\nlibrary(viridis)\nworldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) + \n  geom_hex() + \n  scale_fill_viridis()"
+    "text": "10.5 geom_hex\nPackage\ngghdr (gghdr?)\nDescription\nCalculates and plots the box plot of highest density regions.\nUnderstandable aesthetics\nrequired aesthetics\nx or y\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\nSee also\ngeom_boxplot, geom_histogram, geom_density, geom_density_line\nExample\n\nlibrary(hexbin)\nlibrary(viridis)\nworldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(y = Cooking, x=Electricity)) + \n  geom_hex() + \n  scale_fill_viridis()"
   },
   {
     "objectID": "h.html#heat_grid",
     "href": "h.html#heat_grid",
     "title": "10  geom_h",
     "section": "10.6 geom_heat_grid",
-    "text": "10.6 geom_heat_grid\n\n10.6.1 Package\nggDoubleHeat (Yu and Buskirk 2023)\n\n\n10.6.2 Description\nVisualize two quantitative variables of information inside a heatmap cell using a grid.\n\n\n10.6.3 Understandable aesthetics\nrequired aesthetics\nx, y, outside, inside\nOptional aesthetics\noutside_colors, outside_name, inside_colors, inside_name\n\n\n10.6.4 Statistics layer(s)\nhdrcde\n\n\n10.6.5 See also\ngeom_heat_circle, geom_heat_tri\n\n\n10.6.6 Example\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_grid(outside = Electricity,\n           inside = Cooking)"
+    "text": "10.6 geom_heat_grid\nPackage\nggDoubleHeat (Yu and Buskirk 2023)\nDescription\nVisualize two quantitative variables of information inside a heatmap cell using a grid.\nUnderstandable aesthetics\nrequired aesthetics\nx, y, outside, inside\nOptional aesthetics\noutside_colors, outside_name, inside_colors, inside_name\nSee also\ngeom_heat_circle, geom_heat_tri\nExample\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_grid(outside = Electricity,\n           inside = Cooking)"
   },
   {
     "objectID": "h.html#heat_tri",
     "href": "h.html#heat_tri",
     "title": "10  geom_h",
     "section": "10.7 geom_heat_tri",
-    "text": "10.7 geom_heat_tri\n\n10.7.1 Package\nggDoubleHeat (Yu and Buskirk 2023)\n\n\n10.7.2 Description\nVisualize two quantitative variables of information inside a heatmap cell using triangles.\n\n\n10.7.3 Understandable aesthetics\nrequired aesthetics\nx, y, lower, upper\nOptional aesthetics\nlower_colors, lower_name, upper_colors, upper_name\n\n\n10.7.4 Statistics layer(s)\nhdrcde\n\n\n10.7.5 See also\ngeom_heat_grid, geom_heat_tri\n\n\n10.7.6 Example\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_tri(lower = Electricity,\n           upper = Cooking)"
+    "text": "10.7 geom_heat_tri\nPackage\nggDoubleHeat (Yu and Buskirk 2023)\nDescription\nVisualize two quantitative variables of information inside a heatmap cell using triangles.\nUnderstandable aesthetics\nrequired aesthetics\nx, y, lower, upper\nOptional aesthetics\nlower_colors, lower_name, upper_colors, upper_name\nSee also\ngeom_heat_grid, geom_heat_tri\nExample\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_tri(lower = Electricity,\n           upper = Cooking)"
   },
   {
     "objectID": "h.html#heat_circle",
     "href": "h.html#heat_circle",
     "title": "10  geom_h",
     "section": "10.8 geom_heat_circle",
-    "text": "10.8 geom_heat_circle\n\n10.8.1 Package\nggDoubleHeat (Yu and Buskirk 2023)\n\n\n10.8.2 Description\nVisualize two quantitative variables of information inside a heatmap cell using triangles.\n\n\n10.8.3 Understandable aesthetics\nrequired aesthetics\nx, y, outside, inside\nOptional aesthetics\noutside_colors, outside_name, inside_colors, inside_name\n\n\n10.8.4 Statistics layer(s)\nhdrcde\n\n\n10.8.5 See also\ngeom_heat_grid, geom_heat_tri\n\n\n10.8.6 Example\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_circle(outside = Electricity,\n           inside = Cooking)"
+    "text": "10.8 geom_heat_circle\nPackage\nggDoubleHeat (Yu and Buskirk 2023)\nDescription\nVisualize two quantitative variables of information inside a heatmap cell using triangles.\nUnderstandable aesthetics\nrequired aesthetics\nx, y, outside, inside\nOptional aesthetics\noutside_colors, outside_name, inside_colors, inside_name\nSee also\ngeom_heat_grid, geom_heat_tri\nExample\n\nlibrary(ggDoubleHeat)\nworldbankdata[254:263, ] |&gt;\n  ggplot(aes(y = Year, x=Income)) + \n  geom_heat_circle(outside = Electricity,\n           inside = Cooking)"
   },
   {
     "objectID": "f.html#function",
