@@ -866,5 +866,61 @@
     "title": "2  Introduction",
     "section": "2.2 What did we do in making a plot to data visualisation?",
     "text": "2.2 What did we do in making a plot to data visualisation?"
+  },
+  {
+    "objectID": "q.html#qq",
+    "href": "q.html#qq",
+    "title": "19  geom_q",
+    "section": "19.1 geom_qq",
+    "text": "19.1 geom_qq\nPackage\nggplot2 (Wickham 2016)\nDescription\nDraws quantitle-quantile plot.\nUnderstandable aesthetics\nrequired aesthetics\nsample\noptional aesthetics\ngroup, x, y\nSee also\ngeom_qq_line\nExample\n\nworldbankdata |&gt;\n  ggplot(aes(sample = Cooking)) +\n  geom_qq()\n\nWarning: Removed 6047 rows containing non-finite values (`stat_qq()`)."
+  },
+  {
+    "objectID": "q.html#qq_line",
+    "href": "q.html#qq_line",
+    "title": "19  geom_q",
+    "section": "19.2 geom_qq_line",
+    "text": "19.2 geom_qq_line\nPackage\nggplot2 (Wickham 2016)\nDescription\nComputes the slope and intercept of the line connecting the points at specified quartiles of the theoretical and sample distribution in the quantitle-quantile plot. This geom should be used along with geom_qq to plot to be meaningful.\nUnderstandable aesthetics\nrequired aesthetics\nsample\noptional aesthetics\ngroup, x, y\nSee also\ngeom_qq_line\nExample\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(sample = Cooking)) +\n  geom_qq_line()  + ggtitle(\"geom_qq_line only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(sample = Cooking)) +\n  geom_qq_line() + geom_qq() + ggtitle(\"geom_qq_line and geom_qq\")\na1|a2"
+  },
+  {
+    "objectID": "q.html#quantile",
+    "href": "q.html#quantile",
+    "title": "19  geom_q",
+    "section": "19.3 geom_qquantile",
+    "text": "19.3 geom_qquantile\nPackage\nggplot2 (Wickham 2016)\nDescription\nFits and draw quantile regression lines. Quantile regression models the relationship between independent variables and the percentiles of the dependent variable\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, group, linetype, linewidth, weight, quantile, method\nSee also\ngeom_boxplot\nExamples\nExample 1\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y=Cooking, x = Electricity)) + \n  geom_quantile() + ggtitle(\"geom_quantile only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y=Cooking, x = Electricity)) + \n  geom_quantile() + \n  geom_point() +\n  ggtitle(\"geom_quantile and geom_point\")\na1|a2\n\n\n\n\nExample 2\n\nq &lt;- seq(0.05, 0.95, by = 0.05)\na3 &lt;- worldbankdata |&gt;\n  ggplot(aes(y=Cooking, x = Electricity)) + \n  geom_quantile(method = \"rqss\") + \n  ggtitle(\"geom_quantile with method rqss\")\na4 &lt;- worldbankdata |&gt;\n  ggplot(aes(y=Cooking, x = Electricity)) + \n  geom_quantile(method = \"rqss\") + \n  geom_point() +\n  ggtitle(\"geom_quantile with \\n method rqss and geom_point\")\na3|a4\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "r.html#mark_circle",
+    "href": "r.html#mark_circle",
+    "title": "20  geom_r",
+    "section": "20.1 geom_mark_circle",
+    "text": "20.1 geom_mark_circle\nPackage\nggforce (Pedersen 2022)\nDescription\nAnnotate sets of points via circles.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nx0 (used to anchor the label), y0 (used to anchor the label), filter, label, description, color, fill, group, size, linetype, alpha\nSee also\ngeom_circle, geom_encircle, geom_mark_ellipse, geom_mark_hull, geom_mark_rect\nExample\n\n\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce."
+  },
+  {
+    "objectID": "r.html#raster",
+    "href": "r.html#raster",
+    "title": "20  geom_r",
+    "section": "20.1 geom_raster",
+    "text": "20.1 geom_raster\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\noptional aesthetics\nSee also\ngeom_tile, geom_rect\nExample"
+  },
+  {
+    "objectID": "r.html#geom_rect",
+    "href": "r.html#geom_rect",
+    "title": "20  geom_r",
+    "section": "20.2 geom_rect",
+    "text": "20.2 geom_rect\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\noptional aesthetics\nSee also\ngeom_tile, geom_rect\nExample"
+  },
+  {
+    "objectID": "r.html#geom_ribbon",
+    "href": "r.html#geom_ribbon",
+    "title": "20  geom_r",
+    "section": "20.3 geom_ribbon",
+    "text": "20.3 geom_ribbon\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\noptional aesthetics\nSee also\nExample"
+  },
+  {
+    "objectID": "r.html#geom_rub",
+    "href": "r.html#geom_rub",
+    "title": "20  geom_r",
+    "section": "20.4 geom_rub",
+    "text": "20.4 geom_rub\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\noptional aesthetics\nSee also\nExample\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
   }
 ]

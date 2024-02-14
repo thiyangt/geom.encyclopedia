@@ -1,3 +1,113 @@
-# geom_a  {#sec-a}
+# geom_r  {#sec-r}
 
-## geom_abline
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+data("worldbankdata")
+```
+
+
+
+## geom_raster{#raster}
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+
+*optional aesthetics*
+
+
+
+**See also**
+
+[geom_tile](#tile), [geom_rect](#rect)
+
+**Example**
+
+
+## geom_rect
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+
+*optional aesthetics*
+
+
+
+**See also**
+
+[geom_tile](#tile), [geom_rect](#rect)
+
+**Example**
+
+## geom_ribbon
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+
+*optional aesthetics*
+
+
+
+**See also**
+
+
+**Example**
+
+## geom_rub
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+
+*optional aesthetics*
+
+
+
+**See also**
+
+
+**Example**
+
+```{r}
+
+```

@@ -5,31 +5,28 @@ library(patchwork)
 data("worldbankdata")
 ```
 
-## geom_area{#area}
+##geom_area{#area}
 
-### Package
+**Package**
 
 ggplot2 [@ggplot2]
 
-### Description
+**Description**
 
-### Understandable aesthetics
+**Understandable aesthetics**
 
-**required aesthetics**
+*required aesthetics*
   
   `x`
 
 `y`
 
-**optional aesthetics**
+*optional aesthetics*
   
   `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
-### The statistical transformation to use on the data for this layer 
 
-`stat_align`
-
-### See also
+**See also**
 
 [geom_line](#line), [geom_ribbon](#ribbon)
   
