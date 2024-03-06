@@ -2,21 +2,23 @@
 
 ## What is data visualisation?
 
-To explain the idea I use the following dataset.
+Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. To demonstrate the concept, I use a simple dataset. This dataset includes 30 rows and two variables. Looking at the numerical figures makes it difficult to find patterns in the data. Figure 2 is a visual representation of the same dataset using an individual value plot. The individual value plot shows each observation as a single point. The individual value plot presents insights at a glance. We can see the outline behaviour of one observation in "L2". The dispersion of data in L2 and L3 are higher than L1. We can immediately see the outline behavior of one observation in "L2". Moreover, it is immediately apparent that the dispersion of data in L2 and L3 is slightly higher than in L1.
 
 
-```{r}
+
+
+```{r, echo=FALSE}
 set.seed(2024)
-var1 <- rnorm(30)
-var2 <- factor(rep(c(1, 2, 3), each=10))
-toydata <- data.frame(var1, var2)
-head(toydata) 
+var1 <- abs(round(rnorm(30), 1))
+var2 <- factor(rep(c("L1", "L2", "L3"), each=10))
+toydata <- data.frame(x=var2, y=var1)
+toydata |> knitr::kable()
 ```
 
 ```{r}
 library(ggplot2)
-ggplot(toydata, aes(x=var2, y=var1, col=var2)) +
-  geom_point()
+ggplot(toydata, aes(x=x, y=y, col=x)) +
+  geom_point() + scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3"))
 ```
 
 ## What did we do in making a plot to data visualisation?
