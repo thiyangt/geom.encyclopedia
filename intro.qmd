@@ -5,35 +5,57 @@
 Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. To demonstrate the concept, I use a simple dataset. This dataset includes 30 rows and two variables. Looking at the numerical figures makes it difficult to find patterns in the data. Figure 2 is a visual representation of the same dataset using an individual value plot. The individual value plot shows each observation as a single point. The individual value plot presents insights at a glance. We can see the outline behaviour of one observation in "L2". The dispersion of data in L2 and L3 are higher than L1. We can immediately see the outline behavior of one observation in "L2". Moreover, it is immediately apparent that the dispersion of data in L2 and L3 is slightly higher than in L1. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively.
 
 
-```{r, echo=FALSE}
-set.seed(2024)
-var1 <- abs(round(rnorm(30), 1))
-var2 <- factor(rep(c("L1", "L2", "L3"), each=10))
-toydata <- data.frame(x=var2, y=var1)
-toydata |> knitr::kable()
-```
-
-```{r, fig.height=10, fig.width=10}
-library(ggplot2)
-ggplot(toydata, aes(x=x, y=y, col=x)) +
-  geom_point() + scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3")) + theme(aspect.ratio = 1)
-```
-
 ## What did we do in making a graph/plot?
 
 
 In making a graph (sometimes we call plot), what we are doing is we are mapping variables to graphical properties on a cartesian plan. and then represent data using a suitable geometry. I will break down the steps as below:
 
-Step 1: Obtain a canvas to draw the plot
+Step 1: Obtain ingredients to make a plot. There are two main ingredients: i) canvas to draw a plot. ii) data to plot on the canvas
+
+Let's first obtain a canvas using the ggplot2 package.
 
 ```{r}
+library(ggplot2)
 ggplot()
+```
+
+Second, the data that we are going to draw the plot. Here, I use `worldbankdata` available in the package drone.
+
+```{r, echo=FALSE}
+library(drone)
+data(worldbankdata)
+worldbankdata
 ```
 
 Step 2: Map the variables to the graphical properties.
 
-```{r}
+```{r, fig.height=4, fig.width=8, echo=FALSE}
+ggplot(worldbankdata, aes(x=Income, y=Electricity))
+```
 
+Step 3: Plot the data.
+
+```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE}
+library(patchwork)
+library(tidyverse)
+library(ggbeeswarm)
+
+p1 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_point() + ggtitle("A")
+p2 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_quasirandom() + ggtitle("B")
+p3 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C")
+p4 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D")
+p5 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E")
+p6 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="black", trim=TRUE)+ ggtitle("F")
+
+lrdf <- worldbankdata |> select(Electricity, Income) |> group_by(Income) |>
+  summarize(Min = min(Electricity, na.rm = TRUE), Max = max(Electricity, na.rm=TRUE), Mean = mean(Electricity, na.rm = TRUE))
+p7 <- ggplot(lrdf) + 
+   geom_linerange(aes(x=Income, ymin=Min, ymax=Max, ymean = Mean), width=0.2, size=1, color="blue") + ggtitle("G") + ylab("Electricity")
+p8 <- ggplot(lrdf) + 
+   geom_linerange(aes(x=Income, ymin=Min, ymax=Max),  width=0.2, size=1, color="blue") + 
+  geom_point( aes(x=Income, y=Mean), col="white", size=4, shape=21, fill="red") + ggtitle("H") + ylab("Electricity")
+
+(p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
 ## What is `geom`?
@@ -43,14 +65,6 @@ Step 2: Map the variables to the graphical properties.
 
 Below are four methods that I used to visualise the distribution of var1 by var 2.
 
-```{r}
-library(patchwork)
-library(ggridges)
-p <- ggplot(toydata, aes(x=var2, y=var1, col=var2))
-p1 <- p + geom_point() + ggtitle("A")
-p2 <- p + geom_boxplot() + ggtitle("B")
-(p1|p2)
-```
 
 
 ## Data

@@ -851,14 +851,14 @@
     "href": "intro.html#what-is-geom",
     "title": "2  Introduction",
     "section": "2.3 What is geom?",
-    "text": "2.3 What is geom?\nBelow are four methods that I used to visualise the distribution of var1 by var 2.\n\nlibrary(patchwork)\nlibrary(ggridges)\np &lt;- ggplot(toydata, aes(x=var2, y=var1, col=var2))\np1 &lt;- p + geom_point() + ggtitle(\"A\")\np2 &lt;- p + geom_boxplot() + ggtitle(\"B\")\n(p1|p2)"
+    "text": "2.3 What is geom?\nBelow are four methods that I used to visualise the distribution of var1 by var 2."
   },
   {
     "objectID": "intro.html#what-is-data-visualisation",
     "href": "intro.html#what-is-data-visualisation",
     "title": "2  Introduction",
     "section": "2.1 What is data visualisation?",
-    "text": "2.1 What is data visualisation?\nTo explain the idea I use the following dataset.\n\nset.seed(2024)\nvar1 &lt;- rnorm(30)\nvar2 &lt;- factor(rep(c(1, 2, 3), each=10))\ntoydata &lt;- data.frame(var1, var2)\nhead(toydata) \n\n        var1 var2\n1  0.9819694    1\n2  0.4687150    1\n3 -0.1079713    1\n4 -0.2128782    1\n5  1.1580985    1\n6  1.2923548    1\n\n\n\nlibrary(ggplot2)\nggplot(toydata, aes(x=var2, y=var1, col=var2)) +\n  geom_point()"
+    "text": "2.1 What is data visualisation?\nData visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. To demonstrate the concept, I use a simple dataset. This dataset includes 30 rows and two variables. Looking at the numerical figures makes it difficult to find patterns in the data. Figure 2 is a visual representation of the same dataset using an individual value plot. The individual value plot shows each observation as a single point. The individual value plot presents insights at a glance. We can see the outline behaviour of one observation in “L2”. The dispersion of data in L2 and L3 are higher than L1. We can immediately see the outline behavior of one observation in “L2”. Moreover, it is immediately apparent that the dispersion of data in L2 and L3 is slightly higher than in L1. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively."
   },
   {
     "objectID": "intro.html#what-did-we-do-in-making-a-plot-to-data-visualisation",
@@ -922,5 +922,12 @@
     "title": "20  geom_r",
     "section": "20.4 geom_rub",
     "text": "20.4 geom_rub\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\noptional aesthetics\nSee also\nExample\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org."
+  },
+  {
+    "objectID": "intro.html#what-did-we-do-in-making-a-graphplot",
+    "href": "intro.html#what-did-we-do-in-making-a-graphplot",
+    "title": "2  Introduction",
+    "section": "2.2 What did we do in making a graph/plot?",
+    "text": "2.2 What did we do in making a graph/plot?\nIn making a graph (sometimes we call plot), what we are doing is we are mapping variables to graphical properties on a cartesian plan. and then represent data using a suitable geometry. I will break down the steps as below:\nStep 1: Obtain ingredients to make a plot. There are two main ingredients: i) canvas to draw a plot. ii) data to plot on the canvas\nLet’s first obtain a canvas using the ggplot2 package.\n\nlibrary(ggplot2)\nggplot()\n\n\n\n\nSecond, the data that we are going to draw the plot. Here, I use worldbankdata available in the package drone.\n\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows\n\n\nStep 2: Map the variables to the graphical properties.\n\n\n\n\n\nStep 3: Plot the data."
   }
 ]

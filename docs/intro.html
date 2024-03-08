@@ -474,7 +474,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./q.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">geom_q</span></span></a>
   </div>
 </li>
       </ul>
@@ -491,7 +491,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">geom_r</span></span></a>
   </div>
 </li>
       </ul>
@@ -655,7 +655,7 @@ div.csl-indent {
    
   <ul>
   <li><a href="#what-is-data-visualisation" id="toc-what-is-data-visualisation" class="nav-link active" data-scroll-target="#what-is-data-visualisation"><span class="header-section-number">2.1</span> What is data visualisation?</a></li>
-  <li><a href="#what-did-we-do-in-making-a-plot-to-data-visualisation" id="toc-what-did-we-do-in-making-a-plot-to-data-visualisation" class="nav-link" data-scroll-target="#what-did-we-do-in-making-a-plot-to-data-visualisation"><span class="header-section-number">2.2</span> What did we do in making a plot to data visualisation?</a></li>
+  <li><a href="#what-did-we-do-in-making-a-graphplot" id="toc-what-did-we-do-in-making-a-graphplot" class="nav-link" data-scroll-target="#what-did-we-do-in-making-a-graphplot"><span class="header-section-number">2.2</span> What did we do in making a graph/plot?</a></li>
   <li><a href="#what-is-geom" id="toc-what-is-geom" class="nav-link" data-scroll-target="#what-is-geom"><span class="header-section-number">2.3</span> What is <code>geom</code>?</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.4</span> Data</a></li>
   <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2.5</span> Data description</a></li>
@@ -686,57 +686,63 @@ div.csl-indent {
 
 <section id="what-is-data-visualisation" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="what-is-data-visualisation"><span class="header-section-number">2.1</span> What is data visualisation?</h2>
-<p>To explain the idea I use the following dataset.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>var1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>var2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="at">each=</span><span class="dv">10</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>toydata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(var1, var2)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(toydata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>        var1 var2
-1  0.9819694    1
-2  0.4687150    1
-3 -0.1079713    1
-4 -0.2128782    1
-5  1.1580985    1
-6  1.2923548    1</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(toydata, <span class="fu">aes</span>(<span class="at">x=</span>var2, <span class="at">y=</span>var1, <span class="at">col=</span>var2)) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="intro_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
+<p>Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. To demonstrate the concept, I use a simple dataset. This dataset includes 30 rows and two variables. Looking at the numerical figures makes it difficult to find patterns in the data. Figure 2 is a visual representation of the same dataset using an individual value plot. The individual value plot shows each observation as a single point. The individual value plot presents insights at a glance. We can see the outline behaviour of one observation in “L2”. The dispersion of data in L2 and L3 are higher than L1. We can immediately see the outline behavior of one observation in “L2”. Moreover, it is immediately apparent that the dispersion of data in L2 and L3 is slightly higher than in L1. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively.</p>
 </section>
-<section id="what-did-we-do-in-making-a-plot-to-data-visualisation" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="what-did-we-do-in-making-a-plot-to-data-visualisation"><span class="header-section-number">2.2</span> What did we do in making a plot to data visualisation?</h2>
+<section id="what-did-we-do-in-making-a-graphplot" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="what-did-we-do-in-making-a-graphplot"><span class="header-section-number">2.2</span> What did we do in making a graph/plot?</h2>
+<p>In making a graph (sometimes we call plot), what we are doing is we are mapping variables to graphical properties on a cartesian plan. and then represent data using a suitable geometry. I will break down the steps as below:</p>
+<p>Step 1: Obtain ingredients to make a plot. There are two main ingredients: i) canvas to draw a plot. ii) data to plot on the canvas</p>
+<p>Let’s first obtain a canvas using the ggplot2 package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Second, the data that we are going to draw the plot. Here, I use <code>worldbankdata</code> available in the package drone.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7,937 × 7
+   Country Code  Region                     Year Cooking Electricity Income
+   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; 
+ 1 Aruba   ABW   Latin America &amp; Caribbean  1990      NA       100   H     
+ 2 Aruba   ABW   Latin America &amp; Caribbean  2000      NA        91.7 H     
+ 3 Aruba   ABW   Latin America &amp; Caribbean  2013      NA       100   H     
+ 4 Aruba   ABW   Latin America &amp; Caribbean  2014      NA       100   H     
+ 5 Aruba   ABW   Latin America &amp; Caribbean  2015      NA       100   H     
+ 6 Aruba   ABW   Latin America &amp; Caribbean  2016      NA       100   H     
+ 7 Aruba   ABW   Latin America &amp; Caribbean  2017      NA       100   H     
+ 8 Aruba   ABW   Latin America &amp; Caribbean  2018      NA       100   H     
+ 9 Aruba   ABW   Latin America &amp; Caribbean  2019      NA       100   H     
+10 Aruba   ABW   Latin America &amp; Caribbean  2020      NA       100   H     
+# ℹ 7,927 more rows</code></pre>
+</div>
+</div>
+<p>Step 2: Map the variables to the graphical properties.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="intro_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+<p>Step 3: Plot the data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="intro_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
 </section>
 <section id="what-is-geom" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="what-is-geom"><span class="header-section-number">2.3</span> What is <code>geom</code>?</h2>
 <p>Below are four methods that I used to visualise the distribution of var1 by var 2.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(toydata, <span class="fu">aes</span>(<span class="at">x=</span>var2, <span class="at">y=</span>var1, <span class="at">col=</span>var2))</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"A"</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"B"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>(p1<span class="sc">|</span>p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="intro_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
 </section>
 <section id="data" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="data"><span class="header-section-number">2.4</span> Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,937 × 7
    Country Code  Region                     Year Cooking Electricity Income
@@ -758,19 +764,19 @@ div.csl-indent {
 <section id="data-description" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2.5</span> Data description</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="intro_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="intro_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
