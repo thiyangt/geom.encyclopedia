@@ -144,7 +144,7 @@ Calculates and plots the box plot of highest density regions.
 
 **Example**
 
-```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5, eval=FALSE}
 library(gghdr)
 worldbankdata |>
   dplyr::filter(Year == 2021) |>
