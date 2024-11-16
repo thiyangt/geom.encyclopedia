@@ -1,0 +1,35 @@
+[
+  {
+    "objectID": "s.html",
+    "href": "s.html",
+    "title": "21  geom_s",
+    "section": "",
+    "text": "21.1 geom_smooth\nPackage\nggplot2 (Wickham 2016)\nDescription\nAdd a smooth curve or line to a scatter plot for visulizing trend between x and y variable.\nSee also\ngeom_point\nUnderstandable aesthetics\nThe statistical transformation to use on the data for this layer\nExample\np1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt; \n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n\n  ggtitle(\"geom_point_only\")\n\np2 &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_smooth() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_smoth_only\")\n\np3 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\" ) |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  geom_smooth() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_point + geom_smooth: loess\")\n\np4 &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt; \n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_point + geom_smooth:lm\")\n\n(p1 + p2)/(p3+p4)",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_smooth",
+    "href": "s.html#geom_smooth",
+    "title": "21  geom_s",
+    "section": "",
+    "text": "Required aesthetics\n\nx, y\n\nOptional aesthetics\n\nalpha, colour, fill, group, linetype, linewidth, weight, ymax, ymin\n\n\n\n\nsmooth",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_segment",
+    "href": "s.html#geom_segment",
+    "title": "21  geom_s",
+    "section": "21.2 geom_segment",
+    "text": "21.2 geom_segment\nPackage\nggplot2 (Wickham 2016)\nDescription\nAdd a straight line segment between two points.\nUnderstandable aesthetics\n\nRequired aesthetics\n\nx, y, xend or yend\n\nOptional aesthetics\n\nalpha, colour, group, linetype, linewidth\n\n\nThe statistical transformation to use on the data for this layer\n\nidentity\n\nSee Also\n\ngeom_curve(), geom_path(), geom_line(), geom_spoke()\n\nExamples\n\np1 &lt;- ggplot() + \n  geom_segment(aes(x = 3, y = 4, xend = 25, yend = 25)) +\n  theme_minimal() +\n  coord_cartesian(ylim = c(0, 30), xlim = c(0, 30)) +\n  theme_bw()+\n  ggtitle(\"geom_segment_only\")\n\n\ndata &lt;- data.frame(\n  x_start = c(1.5, 2.6, 4.1, 5.1),\n  y_start = c(1.2, 2, 2.2, 2.8),\n  x_end = c(2.5, 4, 5, 6.6),\n  y_end = c(2, 2.1, 2.8, 2.7))\n\np2 &lt;- ggplot(data) +\n  geom_segment(aes(x = x_start, y = y_start, xend = x_end, yend = y_end),\n               color = \"black\", size = 0.5, \n               arrow = arrow(type = \"closed\", length = unit(0.2, \"inches\"))) +\n  labs(x = \"X Axis\",\n       y = \"Y Axis\") +\n  ggtitle(\"geom_segment with direction\")\np1+p2\n\n\n\n\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  }
+]

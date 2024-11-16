@@ -1,1 +1,143 @@
 # geom_s  {#sec-s}
+
+```{r message=FALSE, warning=FALSE, comment=""}
+library(tidyverse)
+library(patchwork) # Combine Plots
+library(viridis) # Add colors 
+library(rnaturalearthdata) # Spacial Data Analysis
+library(sf) # Spacial Data Analysis
+```
+
+
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+library(drone)
+data("worldbankdata")
+```
+
+## geom_smooth
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+Add a smooth curve or line to a scatter plot for visulizing trend between x and y variable.
+
+**See also**
+
+[geom_point](#point)
+
+**Understandable aesthetics**
+
+- Required aesthetics
+  - x, y
+  
+- Optional aesthetics
+  - alpha, colour, fill, group, linetype, linewidth, weight, ymax, ymin
+  
+**The statistical transformation to use on the data for this layer**
+
+- smooth
+
+**Example**
+
+
+```{r fig.height=10, fig.width=10, message=FALSE, warning=FALSE, comment=""}
+p1 <- worldbankdata |>
+  filter(Country == "Sri Lanka" ) |>
+  filter(Year >= 2013 & Year <= 2021) |> 
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2000:2021)  + 
+
+  ggtitle("geom_point_only")
+
+p2 <- worldbankdata |> 
+  filter(Country == "Sri Lanka" ) |>
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_smooth() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2000:2021)  + 
+  ggtitle("geom_smoth_only")
+
+p3 <- worldbankdata |>
+  filter(Country == "Sri Lanka" ) |> 
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_point() +
+  geom_smooth() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2000:2021)  + 
+  ggtitle("geom_point + geom_smooth: loess")
+
+p4 <- worldbankdata |> 
+  filter(Country == "Sri Lanka" ) |>
+  filter(Year >= 2013 & Year <= 2021) |> 
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2000:2021)  + 
+  ggtitle("geom_point + geom_smooth:lm")
+
+(p1 + p2)/(p3+p4)
+```
+
+## geom_segment
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+Add a straight line segment between two points. 
+
+**Understandable aesthetics**
+
+- Required aesthetics
+  - x, y, xend or yend
+  
+- Optional aesthetics
+  - alpha, colour, group, linetype, linewidth
+  
+**The statistical transformation to use on the data for this layer**
+
+- identity
+
+**See Also**
+
+- geom_curve(), geom_path(), geom_line(), geom_spoke()
+
+**Examples**
+
+
+```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
+p1 <- ggplot() + 
+  geom_segment(aes(x = 3, y = 4, xend = 25, yend = 25)) +
+  theme_minimal() +
+  coord_cartesian(ylim = c(0, 30), xlim = c(0, 30)) +
+  theme_bw()+
+  ggtitle("geom_segment_only")
+
+
+data <- data.frame(
+  x_start = c(1.5, 2.6, 4.1, 5.1),
+  y_start = c(1.2, 2, 2.2, 2.8),
+  x_end = c(2.5, 4, 5, 6.6),
+  y_end = c(2, 2.1, 2.8, 2.7))
+
+p2 <- ggplot(data) +
+  geom_segment(aes(x = x_start, y = y_start, xend = x_end, yend = y_end),
+               color = "black", size = 0.5, 
+               arrow = arrow(type = "closed", length = unit(0.2, "inches"))) +
+  labs(x = "X Axis",
+       y = "Y Axis") +
+  ggtitle("geom_segment with direction")
+p1+p2
+```
+
