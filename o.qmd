@@ -1,3 +1,2 @@
-# geom_a  {#sec-a}
+# geom_o  {#sec-o}
 
-## geom_abline
