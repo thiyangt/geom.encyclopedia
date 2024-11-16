@@ -12,6 +12,6 @@ geomc <- c('geom_col',
 sectionc <- c(5.1, 5.2, 5.3)
 dfc <- data.frame(geom = geomc,
                   section = sectionc)
-dfc |> knitr::kable(format = "html") |> kable_styling(full_width = F)
+dfc |> knitr::kable() 
 ```
 
