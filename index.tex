@@ -3941,16 +3941,6 @@ ggplot2 (Wickham 2016)
 
 \chapter{geom\_s}\label{sec-s}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyverse)}
-\FunctionTok{library}\NormalTok{(patchwork) }\CommentTok{\# Combine Plots}
-\FunctionTok{library}\NormalTok{(viridis) }\CommentTok{\# Add colors }
-\FunctionTok{library}\NormalTok{(rnaturalearthdata) }\CommentTok{\# Spacial Data Analysis}
-\FunctionTok{library}\NormalTok{(sf) }\CommentTok{\# Spacial Data Analysis}
-\end{Highlighting}
-\end{Shaded}
-
 \section{geom\_smooth}\label{geom_smooth}
 
 \textbf{Package}
@@ -4110,8 +4100,8 @@ layer}
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
   \AttributeTok{x\_start =} \FunctionTok{c}\NormalTok{(}\FloatTok{1.5}\NormalTok{, }\FloatTok{2.6}\NormalTok{, }\FloatTok{4.1}\NormalTok{, }\FloatTok{5.1}\NormalTok{),}
   \AttributeTok{y\_start =} \FunctionTok{c}\NormalTok{(}\FloatTok{1.2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\FloatTok{2.2}\NormalTok{, }\FloatTok{2.8}\NormalTok{),}
-  \AttributeTok{x\_end =} \FunctionTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\FloatTok{6.6}\NormalTok{),}
-  \AttributeTok{y\_end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{2.1}\NormalTok{, }\FloatTok{2.8}\NormalTok{, }\FloatTok{2.7}\NormalTok{))}
+  \AttributeTok{x\_end =} \FunctionTok{c}\NormalTok{(}\FloatTok{2.6}\NormalTok{, }\FloatTok{4.1}\NormalTok{, }\FloatTok{5.1}\NormalTok{, }\DecValTok{6}\NormalTok{),}
+  \AttributeTok{y\_end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{2.2}\NormalTok{, }\FloatTok{2.8}\NormalTok{, }\DecValTok{4}\NormalTok{))}
 
 \NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(data) }\SpecialCharTok{+}
   \FunctionTok{geom\_segment}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_start, }\AttributeTok{y =}\NormalTok{ y\_start, }\AttributeTok{xend =}\NormalTok{ x\_end, }\AttributeTok{yend =}\NormalTok{ y\_end),}
