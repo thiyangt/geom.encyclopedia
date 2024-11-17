@@ -4326,6 +4326,76 @@ layer}
 
 \includegraphics{s_files/figure-pdf/unnamed-chunk-8-1.pdf}
 
+\section{geom\_sf}\label{geom_sf}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+\begin{itemize}
+\tightlist
+\item
+  Visualize sf objects.
+\end{itemize}
+
+\textbf{Understandable aesthetics}
+
+\begin{itemize}
+\tightlist
+\item
+  Required aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    simple feature geometry
+  \end{itemize}
+\item
+  Optional aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    alpha, colour, group, fill
+  \end{itemize}
+\end{itemize}
+
+\textbf{The statistical transformation to use on the data for this
+layer}
+
+\begin{itemize}
+\tightlist
+\item
+  sf
+\end{itemize}
+
+\textbf{See Also}
+
+\begin{itemize}
+\tightlist
+\item
+  geom\_sf\_label(), geom\_sf\_text()
+\end{itemize}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(sf)}
+\NormalTok{world }\OtherTok{\textless{}{-}} \FunctionTok{st\_read}\NormalTok{(}\FunctionTok{system.file}\NormalTok{(}\StringTok{"shape/nc.shp"}\NormalTok{, }\AttributeTok{package =} \StringTok{"sf"}\NormalTok{), }\AttributeTok{quiet =} \ConstantTok{TRUE}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ world) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ AREA), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_viridis\_c}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Spatial Features with geom\_sf"}\NormalTok{,}
+       \AttributeTok{fill =} \StringTok{"Area"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{s_files/figure-pdf/unnamed-chunk-9-1.pdf}
+
 \part{T}
 
 \chapter{geom\_t}\label{sec-t}

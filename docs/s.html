@@ -666,6 +666,7 @@ div.csl-indent {
   <li><a href="#geom_segment" id="toc-geom_segment" class="nav-link" data-scroll-target="#geom_segment"><span class="header-section-number">21.2</span> geom_segment</a></li>
   <li><a href="#geom_spoke" id="toc-geom_spoke" class="nav-link" data-scroll-target="#geom_spoke"><span class="header-section-number">21.3</span> geom_spoke</a></li>
   <li><a href="#geom_step" id="toc-geom_step" class="nav-link" data-scroll-target="#geom_step"><span class="header-section-number">21.4</span> geom_step</a></li>
+  <li><a href="#geom_sf" id="toc-geom_sf" class="nav-link" data-scroll-target="#geom_sf"><span class="header-section-number">21.5</span> geom_sf</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/s.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -981,6 +982,52 @@ div.csl-indent {
 <div>
 <figure class="figure">
 <p><img src="s_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geom_sf" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="geom_sf"><span class="header-section-number">21.5</span> geom_sf</h2>
+<p><strong>Package</strong></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p><strong>Description</strong></p>
+<ul>
+<li>Visualize sf objects.</li>
+</ul>
+<p><strong>Understandable aesthetics</strong></p>
+<ul>
+<li>Required aesthetics
+<ul>
+<li>simple feature geometry</li>
+</ul></li>
+<li>Optional aesthetics
+<ul>
+<li>alpha, colour, group, fill</li>
+</ul></li>
+</ul>
+<p><strong>The statistical transformation to use on the data for this layer</strong></p>
+<ul>
+<li>sf</li>
+</ul>
+<p><strong>See Also</strong></p>
+<ul>
+<li>geom_sf_label(), geom_sf_text()</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>), <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> AREA), <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Spatial Features with geom_sf"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Area"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="s_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="480"></p>
 </figure>
 </div>
 </div>

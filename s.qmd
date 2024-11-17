@@ -291,3 +291,43 @@ p1 + p2
 
 
 ```
+
+## geom_sf
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+
+**Description**
+
+- Visualize sf objects.
+
+**Understandable aesthetics**
+  
+- Required aesthetics
+  - simple feature geometry
+  
+- Optional aesthetics
+  - alpha, colour, group, fill
+  
+**The statistical transformation to use on the data for this layer**
+
+- sf
+
+**See Also**
+
+- geom_sf_label(), geom_sf_text() 
+
+**Example**
+
+```{r fig.height=5, fig.width=5, message=FALSE, warning=FALSE}
+library(sf)
+world <- st_read(system.file("shape/nc.shp", package = "sf"), quiet = TRUE)
+
+ggplot(data = world) +
+  geom_sf(aes(fill = AREA), color = "black") +
+  scale_fill_viridis_c() +
+  labs(title = "Spatial Features with geom_sf",
+       fill = "Area")
+```
