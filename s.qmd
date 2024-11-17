@@ -115,6 +115,7 @@ Add a straight line segment between two points.
 
 **Examples**
 
+**Example 1: simulated data**
 
 ```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
 p1 <- ggplot() + 
@@ -141,3 +142,9 @@ p2 <- ggplot(data) +
 p1+p2
 ```
 
+
+**Example 2: Application data**
+
+```{r fig.height=5, fig.width=5, message=FALSE, warning=FALSE}
+
+```
