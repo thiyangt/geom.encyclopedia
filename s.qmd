@@ -147,4 +147,147 @@ p1+p2
 
 ```{r fig.height=5, fig.width=5, message=FALSE, warning=FALSE}
 
+SL_segments <- worldbankdata |> 
+  filter(Country == "Sri Lanka" & Year > 2013) |> 
+     mutate(
+    x_end = lead(Year), 
+    y_end = lead(Electricity)  
+  ) |> 
+  filter(!is.na(x_end) & !is.na(y_end))
+
+ ggplot(SL_segments) +
+  geom_segment(aes(x = Year, y = Electricity, xend = x_end, 
+                   yend = y_end),
+               color = "blue", size = 0.5, arrow = arrow(type = "closed", length = unit(0.2, "inches"))) +
+  labs(x = "Year",
+       y = "Electricity Consumption",
+       title = "Sri Lanka Electricity Consumption Over Time (geom_segment)")
+
+```
+
+
+## geom_spoke
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+- Creates radial line segments (spokes) from a central point, where each spoke is defined by its angle and radius. This is useful for visualizing directions or vectors.
+
+**Understandable aesthetics**
+
+- Required aesthetics
+  - x, y, angle, radius
+  
+- Optional aesthetics
+  - alpha, colour, group, linetype, linewidth
+  
+**The statistical transformation to use on the data for this layer**
+
+- identity
+
+**Examples**
+
+**Example: Simulated data**
+
+
+```{r fig.height=5, fig.width=5, message=FALSE, warning=FALSE}
+set.seed(8)
+data <- tibble(
+  x = runif(10, 1, 10),      # Random x-coordinates
+  y = runif(10, 1, 10),      # Random y-coordinates
+  angle = runif(10, 0, 2 * pi),  # Random angles in radians
+  radius = runif(10, 0.5, 2) # Random lengths for spokes
+)
+
+
+ggplot(data, aes(x = x, y = y)) +
+  geom_spoke(aes(angle = angle, radius = radius),
+             color = "blue", size = 0.5) +
+  labs(x = "X-Axis", 
+       y = "Y-Axis", 
+       title = "geom_spoke") 
+
+```
+
+**Example: Practical application data**
+
+```{r}
+SL <- worldbankdata |> 
+  filter(Country == "Sri Lanka" & Year > 2013)
+
+# Prepare the data for geom_spoke
+SL_segments <- SL |> 
+  mutate(
+    x_end = lead(Year),  # Next year
+    y_end = lead(Electricity)  # Next year's electricity value
+  ) |> 
+  filter(!is.na(x_end) & !is.na(y_end)) |> 
+  mutate(
+    angle = atan2(y_end - Electricity, x_end - Year),  # Angle in radians
+    radius = sqrt((x_end - Year)^2 + (y_end - Electricity)^2)  # Euclidean distance
+  )
+
+# Plot with geom_spoke
+ggplot(SL_segments, aes(x = Year, y = Electricity, color=as.factor(Year))) +
+  geom_spoke(aes(angle = angle, radius = radius), size = 1) +
+  scale_color_brewer(type = "qual", palette = 2) +
+  labs(x = "Year",
+       y = "Electricity Consumption",
+       title = "Sri Lanka Electricity Consumption Over Time (geom_spoke)")
+
+```
+
+## geom_step
+
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+- Create stairstep plot: Connect observations in the order in which they appear in the data by stairs. 
+
+**Understandable aesthetics**
+
+- Required aesthetics
+  - x, y
+  
+- Optional aesthetics
+  - alpha, colour, group, linetype, linewidth
+  
+**The statistical transformation to use on the data for this layer**
+
+- identity
+
+**See Also**
+
+- geom_path(), geom_line(), geom_polygon(), geom_segment()
+
+**Example**
+
+
+```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
+p1 <- worldbankdata |> 
+  filter(Country == "Bangladesh") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_point() + 
+  scale_x_continuous(breaks = 2013:2021)  + 
+  ggtitle("geom_point only")
+
+p2 <- worldbankdata |> 
+  filter(Country == "Sri Lanka") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_step(color = "red", size = 1) + 
+  scale_x_continuous(breaks = 2013:2021)  + 
+  ggtitle("geom_step only")
+
+p1 + p2 
+
+
 ```

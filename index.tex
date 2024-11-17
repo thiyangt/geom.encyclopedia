@@ -4087,6 +4087,8 @@ layer}
 
 \textbf{Examples}
 
+\textbf{Example 1: simulated data}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+} 
@@ -4115,6 +4117,214 @@ layer}
 \end{Shaded}
 
 \includegraphics{s_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+\textbf{Example 2: Application data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SL\_segments }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Sri Lanka"} \SpecialCharTok{\&}\NormalTok{ Year }\SpecialCharTok{\textgreater{}} \DecValTok{2013}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+     \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{x\_end =} \FunctionTok{lead}\NormalTok{(Year), }
+    \AttributeTok{y\_end =} \FunctionTok{lead}\NormalTok{(Electricity)  }
+\NormalTok{  ) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(x\_end) }\SpecialCharTok{\&} \SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(y\_end))}
+
+ \FunctionTok{ggplot}\NormalTok{(SL\_segments) }\SpecialCharTok{+}
+  \FunctionTok{geom\_segment}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{xend =}\NormalTok{ x\_end, }
+                   \AttributeTok{yend =}\NormalTok{ y\_end),}
+               \AttributeTok{color =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{arrow =} \FunctionTok{arrow}\NormalTok{(}\AttributeTok{type =} \StringTok{"closed"}\NormalTok{, }\AttributeTok{length =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\StringTok{"inches"}\NormalTok{))) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Year"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Electricity Consumption"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Sri Lanka Electricity Consumption Over Time (geom\_segment)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{s_files/figure-pdf/unnamed-chunk-5-1.pdf}
+
+\section{geom\_spoke}\label{geom_spoke}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+\begin{itemize}
+\tightlist
+\item
+  Creates radial line segments (spokes) from a central point, where each
+  spoke is defined by its angle and radius. This is useful for
+  visualizing directions or vectors.
+\end{itemize}
+
+\textbf{Understandable aesthetics}
+
+\begin{itemize}
+\tightlist
+\item
+  Required aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    x, y, angle, radius
+  \end{itemize}
+\item
+  Optional aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    alpha, colour, group, linetype, linewidth
+  \end{itemize}
+\end{itemize}
+
+\textbf{The statistical transformation to use on the data for this
+layer}
+
+\begin{itemize}
+\tightlist
+\item
+  identity
+\end{itemize}
+
+\textbf{Examples}
+
+\textbf{Example: Simulated data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{8}\NormalTok{)}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{x =} \FunctionTok{runif}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{),      }\CommentTok{\# Random x{-}coordinates}
+  \AttributeTok{y =} \FunctionTok{runif}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{),      }\CommentTok{\# Random y{-}coordinates}
+  \AttributeTok{angle =} \FunctionTok{runif}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{2} \SpecialCharTok{*}\NormalTok{ pi),  }\CommentTok{\# Random angles in radians}
+  \AttributeTok{radius =} \FunctionTok{runif}\NormalTok{(}\DecValTok{10}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{2}\NormalTok{) }\CommentTok{\# Random lengths for spokes}
+\NormalTok{)}
+
+
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x, }\AttributeTok{y =}\NormalTok{ y)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_spoke}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{angle =}\NormalTok{ angle, }\AttributeTok{radius =}\NormalTok{ radius),}
+             \AttributeTok{color =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"X{-}Axis"}\NormalTok{, }
+       \AttributeTok{y =} \StringTok{"Y{-}Axis"}\NormalTok{, }
+       \AttributeTok{title =} \StringTok{"geom\_spoke"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{s_files/figure-pdf/unnamed-chunk-6-1.pdf}
+
+\textbf{Example: Practical application data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SL }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Sri Lanka"} \SpecialCharTok{\&}\NormalTok{ Year }\SpecialCharTok{\textgreater{}} \DecValTok{2013}\NormalTok{)}
+
+\CommentTok{\# Prepare the data for geom\_spoke}
+\NormalTok{SL\_segments }\OtherTok{\textless{}{-}}\NormalTok{ SL }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{x\_end =} \FunctionTok{lead}\NormalTok{(Year),  }\CommentTok{\# Next year}
+    \AttributeTok{y\_end =} \FunctionTok{lead}\NormalTok{(Electricity)  }\CommentTok{\# Next year\textquotesingle{}s electricity value}
+\NormalTok{  ) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(x\_end) }\SpecialCharTok{\&} \SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(y\_end)) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{angle =} \FunctionTok{atan2}\NormalTok{(y\_end }\SpecialCharTok{{-}}\NormalTok{ Electricity, x\_end }\SpecialCharTok{{-}}\NormalTok{ Year),  }\CommentTok{\# Angle in radians}
+    \AttributeTok{radius =} \FunctionTok{sqrt}\NormalTok{((x\_end }\SpecialCharTok{{-}}\NormalTok{ Year)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{+}\NormalTok{ (y\_end }\SpecialCharTok{{-}}\NormalTok{ Electricity)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)  }\CommentTok{\# Euclidean distance}
+\NormalTok{  )}
+
+\CommentTok{\# Plot with geom\_spoke}
+\FunctionTok{ggplot}\NormalTok{(SL\_segments, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{color=}\FunctionTok{as.factor}\NormalTok{(Year))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_spoke}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{angle =}\NormalTok{ angle, }\AttributeTok{radius =}\NormalTok{ radius), }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{type =} \StringTok{"qual"}\NormalTok{, }\AttributeTok{palette =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Year"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Electricity Consumption"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Sri Lanka Electricity Consumption Over Time (geom\_spoke)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{s_files/figure-pdf/unnamed-chunk-7-1.pdf}
+
+\section{geom\_step}\label{geom_step}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+\begin{itemize}
+\tightlist
+\item
+  Create stairstep plot: Connect observations in the order in which they
+  appear in the data by stairs.
+\end{itemize}
+
+\textbf{Understandable aesthetics}
+
+\begin{itemize}
+\tightlist
+\item
+  Required aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    x, y
+  \end{itemize}
+\item
+  Optional aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    alpha, colour, group, linetype, linewidth
+  \end{itemize}
+\end{itemize}
+
+\textbf{The statistical transformation to use on the data for this
+layer}
+
+\begin{itemize}
+\tightlist
+\item
+  identity
+\end{itemize}
+
+\textbf{See Also}
+
+\begin{itemize}
+\tightlist
+\item
+  geom\_path(), geom\_line(), geom\_polygon(), geom\_segment()
+\end{itemize}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bangladesh"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{\textgreater{}=} \DecValTok{2013} \SpecialCharTok{\&}\NormalTok{ Year }\SpecialCharTok{\textless{}=} \DecValTok{2021}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year, }\AttributeTok{y=}\NormalTok{Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \DecValTok{2013}\SpecialCharTok{:}\DecValTok{2021}\NormalTok{)  }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_point only"}\NormalTok{)}
+
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Sri Lanka"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{\textgreater{}=} \DecValTok{2013} \SpecialCharTok{\&}\NormalTok{ Year }\SpecialCharTok{\textless{}=} \DecValTok{2021}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year, }\AttributeTok{y=}\NormalTok{Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_step}\NormalTok{(}\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \DecValTok{2013}\SpecialCharTok{:}\DecValTok{2021}\NormalTok{)  }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_step only"}\NormalTok{)}
+
+\NormalTok{p1 }\SpecialCharTok{+}\NormalTok{ p2 }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{s_files/figure-pdf/unnamed-chunk-8-1.pdf}
 
 \part{T}
 
