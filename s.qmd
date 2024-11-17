@@ -321,13 +321,67 @@ ggplot2 [@ggplot2]
 
 **Example**
 
-```{r fig.height=5, fig.width=5, message=FALSE, warning=FALSE}
-library(sf)
-world <- st_read(system.file("shape/nc.shp", package = "sf"), quiet = TRUE)
+```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
+library(rnaturalearth)
+library(rnaturalearthdata)
 
-ggplot(data = world) +
-  geom_sf(aes(fill = AREA), color = "black") +
-  scale_fill_viridis_c() +
-  labs(title = "Spatial Features with geom_sf",
-       fill = "Area")
+# Load world spatial data
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+electricity_data <- worldbankdata |> filter(Year == 2020)
+world_electricity <- world |> 
+  left_join(electricity_data, by = c("name" = "Country"))
+
+ggplot(data = world_electricity) +
+  geom_sf(aes(fill = Electricity), color = "black", size = 0.1) +
+  scale_fill_viridis_c(option = "plasma", na.value = "grey90") +
+  labs(
+    title = "Percentage of Population Access to Electricity by Country",
+    fill = "Electricity")
 ```
+
+## geom_sf_label
+
+
+**Description**
+
+- Add text labels to spatial features in a plot created with geom_sf()
+
+**Understandable aesthetics**
+
+- Required aesthetics
+  - label
+  
+- Optional aesthetics
+  - alpha, colour, group, fill
+  
+**The statistical transformation to use on the data for this layer**
+
+- sf_coordinates
+
+**See Also**
+
+- geom_sf(), geom_sf_text(), 
+
+## geom_sf_text
+
+
+**Description**
+
+- Add text labels to spatial features in a plot created with geom_sf() without the background box.It is a similar approach as with geom_sf_label()
+
+**Understandable aesthetics**
+
+- Required aesthetics
+  - label
+  
+- Optional aesthetics
+  - alpha, colour, group, fill
+  
+**The statistical transformation to use on the data for this layer**
+
+- sf_coordinates
+
+**See Also**
+
+- geom_sf(), geom_sf_label()

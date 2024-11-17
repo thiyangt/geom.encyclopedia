@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "s.html",
+    "href": "s.html",
+    "title": "21  geom_s",
+    "section": "",
+    "text": "21.1 geom_smooth\nPackage\nggplot2 (Wickham 2016)\nDescription\nAdd a smooth curve or line to a scatter plot for visulizing trend between x and y variable.\nSee also\ngeom_point\nUnderstandable aesthetics\nThe statistical transformation to use on the data for this layer\nExample\np1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt; \n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n\n  ggtitle(\"geom_point_only\")\n\np2 &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_smooth() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_smoth_only\")\n\np3 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\" ) |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  geom_smooth() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_point + geom_smooth: loess\")\n\np4 &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt; \n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_point + geom_smooth:lm\")\n\n(p1 + p2)/(p3+p4)",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_smooth",
+    "href": "s.html#geom_smooth",
+    "title": "21  geom_s",
+    "section": "",
+    "text": "Required aesthetics\n\nx, y\n\nOptional aesthetics\n\nalpha, colour, fill, group, linetype, linewidth, weight, ymax, ymin\n\n\n\n\nsmooth",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_segment",
+    "href": "s.html#geom_segment",
+    "title": "21  geom_s",
+    "section": "21.2 geom_segment",
+    "text": "21.2 geom_segment\nPackage\nggplot2 (Wickham 2016)\nDescription\nAdd a straight line segment between two points.\nUnderstandable aesthetics\n\nRequired aesthetics\n\nx, y, xend or yend\n\nOptional aesthetics\n\nalpha, colour, group, linetype, linewidth\n\n\nThe statistical transformation to use on the data for this layer\n\nidentity\n\nSee Also\n\ngeom_curve(), geom_path(), geom_line(), geom_spoke()\n\nExamples\nExample 1: simulated data\n\np1 &lt;- ggplot() + \n  geom_segment(aes(x = 3, y = 4, xend = 25, yend = 25)) +\n  theme_minimal() +\n  coord_cartesian(ylim = c(0, 30), xlim = c(0, 30)) +\n  theme_bw()+\n  ggtitle(\"geom_segment_only\")\n\n\ndata &lt;- data.frame(\n  x_start = c(1.5, 2.6, 4.1, 5.1),\n  y_start = c(1.2, 2, 2.2, 2.8),\n  x_end = c(2.6, 4.1, 5.1, 6),\n  y_end = c(2, 2.2, 2.8, 4))\n\np2 &lt;- ggplot(data) +\n  geom_segment(aes(x = x_start, y = y_start, xend = x_end, yend = y_end),\n               color = \"black\", size = 0.5, \n               arrow = arrow(type = \"closed\", length = unit(0.2, \"inches\"))) +\n  labs(x = \"X Axis\",\n       y = \"Y Axis\") +\n  ggtitle(\"geom_segment with direction\")\np1+p2\n\n\n\n\n\n\n\n\nExample 2: Application data\n\nSL_segments &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" & Year &gt; 2013) |&gt; \n     mutate(\n    x_end = lead(Year), \n    y_end = lead(Electricity)  \n  ) |&gt; \n  filter(!is.na(x_end) & !is.na(y_end))\n\n ggplot(SL_segments) +\n  geom_segment(aes(x = Year, y = Electricity, xend = x_end, \n                   yend = y_end),\n               color = \"blue\", size = 0.5, arrow = arrow(type = \"closed\", length = unit(0.2, \"inches\"))) +\n  labs(x = \"Year\",\n       y = \"Electricity Consumption\",\n       title = \"Sri Lanka Electricity Consumption Over Time (geom_segment)\")",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_spoke",
+    "href": "s.html#geom_spoke",
+    "title": "21  geom_s",
+    "section": "21.3 geom_spoke",
+    "text": "21.3 geom_spoke\nPackage\nggplot2 (Wickham 2016)\nDescription\n\nCreates radial line segments (spokes) from a central point, where each spoke is defined by its angle and radius. This is useful for visualizing directions or vectors.\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nx, y, angle, radius\n\nOptional aesthetics\n\nalpha, colour, group, linetype, linewidth\n\n\nThe statistical transformation to use on the data for this layer\n\nidentity\n\nExamples\nExample: Simulated data\n\nset.seed(8)\ndata &lt;- tibble(\n  x = runif(10, 1, 10),      # Random x-coordinates\n  y = runif(10, 1, 10),      # Random y-coordinates\n  angle = runif(10, 0, 2 * pi),  # Random angles in radians\n  radius = runif(10, 0.5, 2) # Random lengths for spokes\n)\n\n\nggplot(data, aes(x = x, y = y)) +\n  geom_spoke(aes(angle = angle, radius = radius),\n             color = \"blue\", size = 0.5) +\n  labs(x = \"X-Axis\", \n       y = \"Y-Axis\", \n       title = \"geom_spoke\") \n\n\n\n\n\n\n\n\nExample: Practical application data\n\nSL &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" & Year &gt; 2013)\n\n# Prepare the data for geom_spoke\nSL_segments &lt;- SL |&gt; \n  mutate(\n    x_end = lead(Year),  # Next year\n    y_end = lead(Electricity)  # Next year's electricity value\n  ) |&gt; \n  filter(!is.na(x_end) & !is.na(y_end)) |&gt; \n  mutate(\n    angle = atan2(y_end - Electricity, x_end - Year),  # Angle in radians\n    radius = sqrt((x_end - Year)^2 + (y_end - Electricity)^2)  # Euclidean distance\n  )\n\n# Plot with geom_spoke\nggplot(SL_segments, aes(x = Year, y = Electricity, color=as.factor(Year))) +\n  geom_spoke(aes(angle = angle, radius = radius), size = 1) +\n  scale_color_brewer(type = \"qual\", palette = 2) +\n  labs(x = \"Year\",\n       y = \"Electricity Consumption\",\n       title = \"Sri Lanka Electricity Consumption Over Time (geom_spoke)\")",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_step",
+    "href": "s.html#geom_step",
+    "title": "21  geom_s",
+    "section": "21.4 geom_step",
+    "text": "21.4 geom_step\nPackage\nggplot2 (Wickham 2016)\nDescription\n\nCreate stairstep plot: Connect observations in the order in which they appear in the data by stairs.\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nx, y\n\nOptional aesthetics\n\nalpha, colour, group, linetype, linewidth\n\n\nThe statistical transformation to use on the data for this layer\n\nidentity\n\nSee Also\n\ngeom_path(), geom_line(), geom_polygon(), geom_segment()\n\nExample\n\np1 &lt;- worldbankdata |&gt; \n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"geom_point only\")\n\np2 &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_step(color = \"red\", size = 1) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"geom_step only\")\n\np1 + p2",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_sf",
+    "href": "s.html#geom_sf",
+    "title": "21  geom_s",
+    "section": "21.5 geom_sf",
+    "text": "21.5 geom_sf\nPackage\nggplot2 (Wickham 2016)\nDescription\n\nVisualize sf objects.\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nsimple feature geometry\n\nOptional aesthetics\n\nalpha, colour, group, fill\n\n\nThe statistical transformation to use on the data for this layer\n\nsf\n\nSee Also\n\ngeom_sf_label(), geom_sf_text()\n\nExample\n\nlibrary(rnaturalearth)\nlibrary(rnaturalearthdata)\n\n# Load world spatial data\nworld &lt;- ne_countries(scale = \"medium\", returnclass = \"sf\")\n\nelectricity_data &lt;- worldbankdata |&gt; filter(Year == 2020)\nworld_electricity &lt;- world |&gt; \n  left_join(electricity_data, by = c(\"name\" = \"Country\"))\n\nggplot(data = world_electricity) +\n  geom_sf(aes(fill = Electricity), color = \"black\", size = 0.1) +\n  scale_fill_viridis_c(option = \"plasma\", na.value = \"grey90\") +\n  labs(\n    title = \"Percentage of Population Access to Electricity by Country\",\n    fill = \"Electricity\")",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_sf_label",
+    "href": "s.html#geom_sf_label",
+    "title": "21  geom_s",
+    "section": "21.6 geom_sf_label",
+    "text": "21.6 geom_sf_label\n\nggplot(data = world_electricity) +\n  geom_sf(aes(fill = Electricity), color = \"black\", size = 0.1) +\n  geom_sf_label(aes(label = name), size = 3, label.padding = unit(0.1, \"lines\")) +\n  scale_fill_viridis_c(option = \"plasma\", na.value = \"grey90\") +\n  labs(\n    title = \"Percentage of Population Access to Electricity by Country\",\n    fill = \"Electricity\"\n  ) \n\nWarning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not\ngive correct results for longitude/latitude data\n\n\n\n\n\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "S",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>geom_s</span>"
+    ]
+  }
+]

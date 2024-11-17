@@ -667,6 +667,7 @@ div.csl-indent {
   <li><a href="#geom_spoke" id="toc-geom_spoke" class="nav-link" data-scroll-target="#geom_spoke"><span class="header-section-number">21.3</span> geom_spoke</a></li>
   <li><a href="#geom_step" id="toc-geom_step" class="nav-link" data-scroll-target="#geom_step"><span class="header-section-number">21.4</span> geom_step</a></li>
   <li><a href="#geom_sf" id="toc-geom_sf" class="nav-link" data-scroll-target="#geom_sf"><span class="header-section-number">21.5</span> geom_sf</a></li>
+  <li><a href="#geom_sf_label" id="toc-geom_sf_label" class="nav-link" data-scroll-target="#geom_sf_label"><span class="header-section-number">21.6</span> geom_sf_label</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/s.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -695,7 +696,7 @@ div.csl-indent {
 <section id="geom_smooth" class="level2" data-number="21.1">
 <h2 data-number="21.1" class="anchored" data-anchor-id="geom_smooth"><span class="header-section-number">21.1</span> geom_smooth</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Add a smooth curve or line to a scatter plot for visulizing trend between x and y variable.</p>
 <p><strong>See also</strong></p>
@@ -769,7 +770,7 @@ div.csl-indent {
 <section id="geom_segment" class="level2" data-number="21.2">
 <h2 data-number="21.2" class="anchored" data-anchor-id="geom_segment"><span class="header-section-number">21.2</span> geom_segment</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Add a straight line segment between two points.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -853,7 +854,7 @@ div.csl-indent {
 <section id="geom_spoke" class="level2" data-number="21.3">
 <h2 data-number="21.3" class="anchored" data-anchor-id="geom_spoke"><span class="header-section-number">21.3</span> geom_spoke</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <ul>
 <li>Creates radial line segments (spokes) from a central point, where each spoke is defined by its angle and radius. This is useful for visualizing directions or vectors.</li>
@@ -935,7 +936,7 @@ div.csl-indent {
 <section id="geom_step" class="level2" data-number="21.4">
 <h2 data-number="21.4" class="anchored" data-anchor-id="geom_step"><span class="header-section-number">21.4</span> geom_step</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <ul>
 <li>Create stairstep plot: Connect observations in the order in which they appear in the data by stairs.</li>
@@ -990,7 +991,7 @@ div.csl-indent {
 <section id="geom_sf" class="level2" data-number="21.5">
 <h2 data-number="21.5" class="anchored" data-anchor-id="geom_sf"><span class="header-section-number">21.5</span> geom_sf</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <ul>
 <li>Visualize sf objects.</li>
@@ -1016,25 +1017,57 @@ div.csl-indent {
 </ul>
 <p><strong>Example</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>), <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearthdata)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> AREA), <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Spatial Features with geom_sf"</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Area"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load world spatial data</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>electricity_data <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span> <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2020</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>world_electricity <span class="ot">&lt;-</span> world <span class="sc">|&gt;</span> </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(electricity_data, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"name"</span> <span class="ot">=</span> <span class="st">"Country"</span>))</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world_electricity) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Electricity), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"plasma"</span>, <span class="at">na.value =</span> <span class="st">"grey90"</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Percentage of Population Access to Electricity by Country"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Electricity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="s_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="480"></p>
+<p><img src="s_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geom_sf_label" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="geom_sf_label"><span class="header-section-number">21.6</span> geom_sf_label</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world_electricity) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Electricity), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"lines"</span>)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"plasma"</span>, <span class="at">na.value =</span> <span class="st">"grey90"</span>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Percentage of Population Access to Electricity by Country"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Electricity"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+give correct results for longitude/latitude data</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="s_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-ggplot2" class="csl-entry" role="listitem">
 Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
