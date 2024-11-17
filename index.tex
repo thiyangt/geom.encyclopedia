@@ -4383,18 +4383,202 @@ layer}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(sf)}
-\NormalTok{world }\OtherTok{\textless{}{-}} \FunctionTok{st\_read}\NormalTok{(}\FunctionTok{system.file}\NormalTok{(}\StringTok{"shape/nc.shp"}\NormalTok{, }\AttributeTok{package =} \StringTok{"sf"}\NormalTok{), }\AttributeTok{quiet =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(rnaturalearth)}
+\FunctionTok{library}\NormalTok{(rnaturalearthdata)}
 
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ world) }\SpecialCharTok{+}
-  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ AREA), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_fill\_viridis\_c}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Spatial Features with geom\_sf"}\NormalTok{,}
-       \AttributeTok{fill =} \StringTok{"Area"}\NormalTok{)}
+\CommentTok{\# Load world spatial data}
+\NormalTok{world }\OtherTok{\textless{}{-}} \FunctionTok{ne\_countries}\NormalTok{(}\AttributeTok{scale =} \StringTok{"medium"}\NormalTok{, }\AttributeTok{returnclass =} \StringTok{"sf"}\NormalTok{)}
+
+\NormalTok{electricity\_data }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2020}\NormalTok{)}
+\NormalTok{world\_electricity }\OtherTok{\textless{}{-}}\NormalTok{ world }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{left\_join}\NormalTok{(electricity\_data, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"name"} \OtherTok{=} \StringTok{"Country"}\NormalTok{))}
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ world\_electricity) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Electricity), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_viridis\_c}\NormalTok{(}\AttributeTok{option =} \StringTok{"plasma"}\NormalTok{, }\AttributeTok{na.value =} \StringTok{"grey90"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Percentage of Population Access to Electricity by Country"}\NormalTok{,}
+    \AttributeTok{fill =} \StringTok{"Electricity"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{s_files/figure-pdf/unnamed-chunk-9-1.pdf}
+
+\section{geom\_sf\_label}\label{geom_sf_label}
+
+\textbf{Package}
+
+ggsflabel (Yutani 2024 )
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install.packages("devtools")}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"yutannihilation/ggsflabel"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Description}
+
+\begin{itemize}
+\tightlist
+\item
+  Add text labels to spatial features in a plot created with geom\_sf()
+\end{itemize}
+
+\textbf{Understandable aesthetics}
+
+\begin{itemize}
+\tightlist
+\item
+  Required aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    label
+  \end{itemize}
+\item
+  Optional aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    alpha, colour, group, fill
+  \end{itemize}
+\end{itemize}
+
+\textbf{The statistical transformation to use on the data for this
+layer}
+
+\begin{itemize}
+\tightlist
+\item
+  sf\_coordinates
+\end{itemize}
+
+\textbf{See Also}
+
+\begin{itemize}
+\tightlist
+\item
+  geom\_sf(), geom\_sf\_text()
+\end{itemize}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rnaturalearth)}
+\FunctionTok{library}\NormalTok{(rnaturalearthdata)}
+
+\CommentTok{\# Load world spatial data}
+\NormalTok{world }\OtherTok{\textless{}{-}} \FunctionTok{ne\_countries}\NormalTok{(}\AttributeTok{scale =} \StringTok{"medium"}\NormalTok{, }\AttributeTok{returnclass =} \StringTok{"sf"}\NormalTok{)}
+
+\NormalTok{electricity\_data }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2020}\NormalTok{)}
+\NormalTok{world\_electricity }\OtherTok{\textless{}{-}}\NormalTok{ world }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{left\_join}\NormalTok{(electricity\_data, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"name"} \OtherTok{=} \StringTok{"Country"}\NormalTok{))}
+
+\NormalTok{countries\_to\_label }\OtherTok{\textless{}{-}}\NormalTok{ world\_electricity }\SpecialCharTok{|\textgreater{}} \FunctionTok{head}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ world\_electricity) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Electricity), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+}
+   \FunctionTok{geom\_sf\_label}\NormalTok{(}\AttributeTok{data =}\NormalTok{ countries\_to\_label, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ name), }\AttributeTok{size =} \DecValTok{3}\NormalTok{, }\AttributeTok{label.padding =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\StringTok{"lines"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_viridis\_c}\NormalTok{(}\AttributeTok{option =} \StringTok{"plasma"}\NormalTok{, }\AttributeTok{na.value =} \StringTok{"grey90"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Percentage of Population Access to Electricity by Country"}\NormalTok{,}
+    \AttributeTok{fill =} \StringTok{"Electricity"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{s_files/figure-pdf/unnamed-chunk-10-1.pdf}
+
+\section{geom\_sf\_text}\label{geom_sf_text}
+
+ggsflabel (Yutani 2024 )
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install.packages("devtools")}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"yutannihilation/ggsflabel"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Description}
+
+\begin{itemize}
+\tightlist
+\item
+  Add text labels to spatial features in a plot created with geom\_sf()
+  without the background box. It is a similar approach as with
+  geom\_sf\_label().
+\end{itemize}
+
+\textbf{Understandable aesthetics}
+
+\begin{itemize}
+\tightlist
+\item
+  Required aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    label
+  \end{itemize}
+\item
+  Optional aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    alpha, colour, group, fill
+  \end{itemize}
+\end{itemize}
+
+\textbf{The statistical transformation to use on the data for this
+layer}
+
+\begin{itemize}
+\tightlist
+\item
+  sf\_coordinates
+\end{itemize}
+
+\textbf{See Also}
+
+\begin{itemize}
+\tightlist
+\item
+  geom\_sf(), geom\_sf\_label()
+\end{itemize}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rnaturalearth)}
+\FunctionTok{library}\NormalTok{(rnaturalearthdata)}
+
+\CommentTok{\# Load world spatial data}
+\NormalTok{world }\OtherTok{\textless{}{-}} \FunctionTok{ne\_countries}\NormalTok{(}\AttributeTok{scale =} \StringTok{"medium"}\NormalTok{, }\AttributeTok{returnclass =} \StringTok{"sf"}\NormalTok{)}
+
+\NormalTok{electricity\_data }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2020}\NormalTok{)}
+\NormalTok{world\_electricity }\OtherTok{\textless{}{-}}\NormalTok{ world }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{left\_join}\NormalTok{(electricity\_data, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"name"} \OtherTok{=} \StringTok{"Country"}\NormalTok{))}
+
+\NormalTok{countries\_to\_label }\OtherTok{\textless{}{-}}\NormalTok{ world\_electricity }\SpecialCharTok{|\textgreater{}} \FunctionTok{head}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ world\_electricity) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Electricity), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+}
+   \FunctionTok{geom\_sf\_text}\NormalTok{(}\AttributeTok{data =}\NormalTok{ countries\_to\_label, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ name), }\AttributeTok{size =} \DecValTok{3}\NormalTok{, }\AttributeTok{label.padding =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\StringTok{"lines"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_viridis\_c}\NormalTok{(}\AttributeTok{option =} \StringTok{"plasma"}\NormalTok{, }\AttributeTok{na.value =} \StringTok{"grey90"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Percentage of Population Access to Electricity by Country"}\NormalTok{,}
+    \AttributeTok{fill =} \StringTok{"Electricity"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{s_files/figure-pdf/unnamed-chunk-11-1.pdf}
 
 \part{T}
 
@@ -4889,6 +5073,10 @@ Yu, Guangchuang. 2023. \emph{Ggimage: Use Image in 'Ggplot2'}.
 Yu, Youzhi, and Trent Buskirk. 2023. \emph{ggDoubleHeat: A Heatmap-Like
 Visualization Tool}.
 \url{https://CRAN.R-project.org/package=ggDoubleHeat}.
+
+\bibitem[\citeproctext]{ref-ggsflabel}
+Yutani, Hiroaki. 2024. \emph{Ggsflabel: Labels for 'Sf' with 'Ggplot2'}.
+\url{https://github.com/yutannihilation/ggsflabel}.
 
 \end{CSLReferences}
 

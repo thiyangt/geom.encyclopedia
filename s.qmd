@@ -342,6 +342,15 @@ ggplot(data = world_electricity) +
 
 ## geom_sf_label
 
+**Package**
+
+ggsflabel [@ggsflabel
+]
+
+```r
+# install.packages("devtools")
+devtools::install_github("yutannihilation/ggsflabel")
+```
 
 **Description**
 
@@ -361,14 +370,45 @@ ggplot(data = world_electricity) +
 
 **See Also**
 
-- geom_sf(), geom_sf_text(), 
+- geom_sf(), geom_sf_text()
+
+**Example**
+
+```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+# Load world spatial data
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+electricity_data <- worldbankdata |> filter(Year == 2020)
+world_electricity <- world |> 
+  left_join(electricity_data, by = c("name" = "Country"))
+
+countries_to_label <- world_electricity |> head(10)
+
+ggplot(data = world_electricity) +
+  geom_sf(aes(fill = Electricity), color = "black", size = 0.1) +
+   geom_sf_label(data = countries_to_label, aes(label = name), size = 3, label.padding = unit(0.1, "lines")) +
+  scale_fill_viridis_c(option = "plasma", na.value = "grey90") +
+  labs(
+    title = "Percentage of Population Access to Electricity by Country",
+    fill = "Electricity")
+```
 
 ## geom_sf_text
 
+ggsflabel [@ggsflabel
+]
+
+```r
+# install.packages("devtools")
+devtools::install_github("yutannihilation/ggsflabel")
+```
 
 **Description**
 
-- Add text labels to spatial features in a plot created with geom_sf() without the background box.It is a similar approach as with geom_sf_label()
+- Add text labels to spatial features in a plot created with geom_sf() without the background box. It is a similar approach as with geom_sf_label().
 
 **Understandable aesthetics**
 
@@ -385,3 +425,28 @@ ggplot(data = world_electricity) +
 **See Also**
 
 - geom_sf(), geom_sf_label()
+
+**Example**
+
+
+```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+# Load world spatial data
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+electricity_data <- worldbankdata |> filter(Year == 2020)
+world_electricity <- world |> 
+  left_join(electricity_data, by = c("name" = "Country"))
+
+countries_to_label <- world_electricity |> head(10)
+
+ggplot(data = world_electricity) +
+  geom_sf(aes(fill = Electricity), color = "black", size = 0.1) +
+   geom_sf_text(data = countries_to_label, aes(label = name), size = 3, label.padding = unit(0.1, "lines")) +
+  scale_fill_viridis_c(option = "plasma", na.value = "grey90") +
+  labs(
+    title = "Percentage of Population Access to Electricity by Country",
+    fill = "Electricity")
+```
