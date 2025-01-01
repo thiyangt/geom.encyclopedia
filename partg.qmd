@@ -1,1 +1,16 @@
 # G  {#sec-G.unnumbered}
+
+
+
+In this part of the book we will look at the geoms starts with letter "f" or "F".
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+geomf <- c('geom_f')
+sectionf <- c(7.1)
+dff <- data.frame(geom = geomf,
+                  section = sectionf)
+dff |> knitr::kable() 
+```

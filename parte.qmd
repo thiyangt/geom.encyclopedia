@@ -1,1 +1,16 @@
 # E  {#sec-E.unnumbered}
+
+
+
+In this part of the book we will look at the geoms starts with letter "d" or "D".
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+geome <- c('geom_e')
+sectione <- c(7.1)
+dfe <- data.frame(geom = geome,
+                  section = sectione)
+dfe |> knitr::kable() 
+```

@@ -450,3 +450,57 @@ ggplot(data = world_electricity) +
     title = "Percentage of Population Access to Electricity by Country",
     fill = "Electricity")
 ```
+
+
+## geom_sf_pattern 
+
+
+**Package**
+
+ggpattern [@ggpattern]
+
+
+**Description**
+
+- Add patterns to the map. 
+
+**Understandable aesthetics**
+
+- Required aesthetics
+  - NuULL
+  
+- Optional aesthetics
+  - alpha, colour, group, fill
+  
+**The statistical transformation to use on the data for this layer**
+
+- sf_coordinates
+
+**Example**
+
+**Example**
+
+```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+# Load world spatial data
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+electricity_data <- worldbankdata |> filter(Year == 2020)
+world_electricity <- world |> 
+  left_join(electricity_data, by = c("name" = "Country"))
+
+ggplot(data = world) +
+  geom_sf_pattern(aes(fill = electricity, pattern = is.na(electricity)), 
+                  color = "black", 
+                  size = 0.1,
+                  pattern_fill = "gray80", 
+                  pattern_angle = 45, 
+                  pattern_density = 0.1) +
+  scale_fill_viridis_c(option = "plasma", na.value = "white") +
+  labs(
+    title = "Global Electricity Access with Patterns for Missing Data",
+    fill = "Electricity (GWh)"
+  )
+```
