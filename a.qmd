@@ -311,6 +311,7 @@ Plotted Average Shifted Histogram (ASH)
 
 
 ```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+library(ggformula)
 p1 <- worldbankdata |>
   filter(Income == "LM") |>
   ggplot(aes(x = Electricity)) +
