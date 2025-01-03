@@ -750,6 +750,115 @@ layer}
 
 \includegraphics{a_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
+\#\#geom\_arrow\{\#arrow\}
+
+\textbf{Package}
+
+metR (Campitelli 2021)
+
+\textbf{Description}
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{arrow,type}, \texttt{arrow.angle}, \texttt{arrow.length},
+\texttt{arrow.ends}, \texttt{arrow.type}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_line}, \hyperref[ribbon]{geom\_ribbon}
+
+\subsection{Example}\label{example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(metR)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Attaching package: 'metR'
+\end{verbatim}
+
+\begin{verbatim}
+The following object is masked from 'package:purrr':
+
+    cross
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{50}\NormalTok{),           }\CommentTok{\# Longitude or X{-}coordinates}
+  \AttributeTok{y =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{),           }\CommentTok{\# Latitude or Y{-}coordinates}
+  \AttributeTok{dx =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{),         }\CommentTok{\# Wind direction components (change in X)}
+  \AttributeTok{dy =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)          }\CommentTok{\# Wind direction components (change in Y)}
+\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x, }\AttributeTok{y =}\NormalTok{ y)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{"\#1b9e77"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}  
+  \FunctionTok{geom\_arrow}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{dx =}\NormalTok{ dx, }\AttributeTok{dy =}\NormalTok{ dy), }\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{, }\AttributeTok{arrow.type =} \StringTok{"closed"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Wind Directions at Different Locations"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Longitude"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Latitude"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{a_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+\section{geom\_ash}\label{ash}
+
+\textbf{Package}
+
+ggformula (Kaplan and Pruim 2023)
+
+\textbf{Description}
+
+Plotted Average Shifted Histogram (ASH)
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{fill}, \texttt{bins}, \texttt{alpha},
+\texttt{size}
+
+\textbf{See also}
+
+\hyperref[histogram]{geom\_histogram}, \hyperref[density]{geom\_density}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggformula)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Income }\SpecialCharTok{==} \StringTok{"LM"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+   \FunctionTok{geom\_ash}\NormalTok{(}\AttributeTok{bins =} \DecValTok{20}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\StringTok{"Average Shifted Histogram"}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Income }\SpecialCharTok{==} \StringTok{"LM"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =} \FunctionTok{stat}\NormalTok{(density)), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"gray"}\NormalTok{) }\SpecialCharTok{+}
+   \FunctionTok{geom\_ash}\NormalTok{(}\AttributeTok{bins =} \DecValTok{20}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\StringTok{"Histogram and Average Shifted Histogram"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{a_files/figure-pdf/unnamed-chunk-5-1.pdf}
+
 \part{B}
 
 In this part of the book we will look at the geoms starts with letter
@@ -2198,7 +2307,7 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer}
 
 \hyperref[crossbar]{geom\_crossbar}, \hyperref[dumbbell]{geom\_dumbbell}
 
-\subsection{Example}\label{example}
+\subsection{Example}\label{example-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2271,7 +2380,7 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer-1}
 
 \hyperref[crossbar]{geom\_crossbar}, \hyperref[dumbbell]{geom\_dumbbell}
 
-\subsection{Example}\label{example-1}
+\subsection{Example}\label{example-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2339,7 +2448,7 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer-2}
 
 \hyperref[circle]{geom\_circle}
 
-\subsection{Example}\label{example-2}
+\subsection{Example}\label{example-3}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2394,7 +2503,7 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer-3}
 
 \hyperref[point]{geom\_point}
 
-\subsection{Example}\label{example-3}
+\subsection{Example}\label{example-4}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2465,7 +2574,7 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer-4}
 
 \hyperref[density]{geom\_density}
 
-\subsection{Example}\label{example-4}
+\subsection{Example}\label{example-5}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2513,7 +2622,7 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer-5}
 
 \hyperref[density]{geom\_density}
 
-\subsection{Example}\label{example-5}
+\subsection{Example}\label{example-6}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2683,7 +2792,7 @@ Visualize numeric data using histogram and filled with patterns.
 \hyperref[density]{geom\_density},
 \hyperref[density_line]{geom\_density\_line}
 
-\subsection{Example}\label{example-6}
+\subsection{Example}\label{example-7}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2982,7 +3091,7 @@ Visualise data through images.
 
 \section{geom\_icon}\label{icon}
 
-\subsection{Example}\label{example-7}
+\subsection{Example}\label{example-8}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3579,7 +3688,7 @@ dataset.
 
 \hyperref[line]{geom\_line}
 
-\subsection{Example}\label{example-8}
+\subsection{Example}\label{example-9}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5299,6 +5408,10 @@ Plots.''} \emph{Journal of Open Source Software} 5 (49).
 Brunson, Jason Cory, and Quentin D Read. 2019. {``Package
 {`Ggalluvial'}.''}
 
+\bibitem[\citeproctext]{ref-metR}
+Campitelli, Elio. 2021. \emph{metR: Tools for Easier Analysis of
+Meteorological Fields}. \url{https://doi.org/10.5281/zenodo.2593516}.
+
 \bibitem[\citeproctext]{ref-ggpattern}
 FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. \emph{Ggpattern:
 'Ggplot2' Pattern Geoms}.
@@ -5312,6 +5425,11 @@ Multicolor Plots}.
 Jeppson, Haley, Heike Hofmann, and Di Cook. 2021. \emph{Ggmosaic: Mosaic
 Plots in the 'Ggplot2' Framework}.
 \url{https://CRAN.R-project.org/package=ggmosaic}.
+
+\bibitem[\citeproctext]{ref-ggformula}
+Kaplan, Daniel, and Randall Pruim. 2023. \emph{Ggformula: Formula
+Interface to the Grammar of Graphics}.
+\url{https://CRAN.R-project.org/package=ggformula}.
 
 \bibitem[\citeproctext]{ref-emoGG}
 Miller, David L. 2023. \emph{emoGG: Use Emoji in Ggplot2}.
