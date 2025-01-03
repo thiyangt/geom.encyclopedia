@@ -234,3 +234,91 @@ ggplot(df) +
   scale_fill_brewer(palette = "Dark2") +
   theme(aspect.ratio = 1)
 ```
+
+
+##geom_arrow{#arrow}
+
+**Package**
+
+metR [@metR]
+
+**Description**
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+ `arrow,type`, `arrow.angle`, `arrow.length`, `arrow.ends`, `arrow.type`
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+  
+### Example
+  
+```{r}
+library(metR)
+data <- tibble(
+  x = c(10, 20, 30, 40, 50),           # Longitude or X-coordinates
+  y = c(1, 2, 3, 4, 5),           # Latitude or Y-coordinates
+  dx = c(1, 0, -1, 0, 1),         # Wind direction components (change in X)
+  dy = c(1, -1, 0, 1, 0)          # Wind direction components (change in Y)
+)
+
+ggplot(data, aes(x = x, y = y)) +
+  geom_point(color = "#1b9e77", size = 3) +  
+  geom_arrow(aes(dx = dx, dy = dy), color = "#d95f02", size = 1, arrow.type = "closed") +
+  labs(title = "Wind Directions at Different Locations", x = "Longitude", y = "Latitude")
+```
+
+## geom_ash{#ash}
+
+**Package**
+
+ggformula [@ggformula]
+
+
+
+**Description**
+
+Plotted Average Shifted Histogram (ASH)
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+ `color`, `fill`, `bins`, `alpha`, `size`
+
+
+**See also**
+
+[geom_histogram](#histogram), [geom_density](#density)
+  
+**Example**
+
+
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+p1 <- worldbankdata |>
+  filter(Income == "LM") |>
+  ggplot(aes(x = Electricity)) +
+   geom_ash(bins = 20, color = "#d95f02") + labs("Average Shifted Histogram")
+p2 <- worldbankdata |>
+  filter(Income == "LM") |>
+  ggplot(aes(x = Electricity)) +
+  geom_histogram(aes(y = stat(density)), color = "black", fill = "gray") +
+   geom_ash(bins = 20, color = "#d95f02") + labs("Histogram and Average Shifted Histogram")
+p1|p2
+```
