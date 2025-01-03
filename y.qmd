@@ -1,2 +1,145 @@
 # geom_y  {#sec-y}
 
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+data("worldbankdata")
+```
+
+
+
+##geom_y_line{#y_line}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Create horizontal lines representing the specified value of the y variable across the x values in the data.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+`x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_ydiff](#ydiff), [geom_line](#line)
+  
+**Example**
+
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+
+library(ggxmean)
+p1 <- worldbankdata |> 
+  filter(Country == "Angola") |>
+  ggplot(mapping = aes(x = Cooking, y = Electricity)) +
+geom_point()  + ggtitle("without geom_y_line")
+p2 <- worldbankdata |> 
+  filter(Country == "Angola") |>
+  ggplot(mapping = aes(x = Cooking, y = Electricity)) +
+geom_point() + geom_y_line(alpha = .2) + 
+  ggtitle("with geom_y_line")
+p1|p2
+```
+
+
+## geom_y_mean{#y_mean}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Draw a horizontal line at the mean of y-variable.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+[geom_y_line](#y_line)
+  
+**Example**
+
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+
+library(ggxmean)
+p1 <- worldbankdata |> 
+  filter(Country == "Angola") |>
+  ggplot(mapping = aes(x = Cooking, y = Electricity)) +
+geom_point()  + ggtitle("without geom_y_mean")
+p2 <- worldbankdata |> 
+  filter(Country == "Angola") |>
+  ggplot(mapping = aes(x = Cooking, y = Electricity)) +
+geom_point() + geom_y_mean(colour="#d95f02") + 
+  ggtitle("with geom_y_mean")
+p1|p2
+```
+
+
+##geom_ydiff{#ydiff}
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+[geom_y_line](#y_line)
+  
+**Example**
+
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+
+library(ggxmean)
+p1 <- worldbankdata |> 
+  filter(Country == "Angola") |>
+  ggplot(mapping = aes(x = Cooking, y = Electricity)) +
+geom_point()  + ggtitle("without geom_ydiff")
+p2 <- worldbankdata |> 
+  filter(Country == "Angola") |>
+  ggplot(mapping = aes(x = Cooking, y = Electricity)) +
+geom_point() +
+  geom_y_mean(col="#d95f02")+ggxmean:::geom_ydiff(colour="#1b9e77") + 
+  ggtitle("with geom_ydiff")
+p1|p2
+```

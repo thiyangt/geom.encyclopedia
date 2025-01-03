@@ -436,7 +436,7 @@ library(rnaturalearthdata)
 # Load world spatial data
 world <- ne_countries(scale = "medium", returnclass = "sf")
 
-electricity_data <- worldbankdata |> filter(Year == 2020)
+electricity_data <- worldbankdata |> filter("Year" == 2020 )
 world_electricity <- world |> 
   left_join(electricity_data, by = c("name" = "Country"))
 
@@ -478,21 +478,20 @@ ggpattern [@ggpattern]
 
 **Example**
 
-**Example**
-
-```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
+```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE,  cache=TRUE}
 library(rnaturalearth)
 library(rnaturalearthdata)
+library(ggpattern)
 
 # Load world spatial data
 world <- ne_countries(scale = "medium", returnclass = "sf")
 
-electricity_data <- worldbankdata |> filter(Year == 2020)
+electricity_data <- worldbankdata |> filter("Year" == 2020)
 world_electricity <- world |> 
   left_join(electricity_data, by = c("name" = "Country"))
 
-ggplot(data = world) +
-  geom_sf_pattern(aes(fill = electricity, pattern = is.na(electricity)), 
+ggplot(data = world_electricity) +
+  geom_sf_pattern(aes(fill = Electricity, pattern = is.na(Electricity)), 
                   color = "black", 
                   size = 0.1,
                   pattern_fill = "gray80", 

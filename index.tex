@@ -43,14 +43,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -70,7 +84,7 @@
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
@@ -80,7 +94,7 @@
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
 \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
@@ -210,6 +224,7 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -227,6 +242,7 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
+
 \title{Data Visualisation \texttt{geom} Encyclopedia}
 \author{Thiyanga S. Talagala}
 \date{2024-11-12}
@@ -240,6 +256,7 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
+
 \bookmarksetup{startatroot}
 
 \chapter*{Preface}\label{preface}
@@ -1548,6 +1565,19 @@ xmax.
 
 \part{D}
 
+In this part of the book we will look at the geoms starts with letter
+``d'' or ``D''.
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule\noalign{}
+geom & section \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+geom\_d & 6.1 \\
+\end{longtable}
+
 \chapter{geom\_d}\label{sec-d}
 
 \section{geom\_density}\label{density}
@@ -2118,6 +2148,19 @@ Create dumbbell charts.
 
 \part{E}
 
+In this part of the book we will look at the geoms starts with letter
+``d'' or ``D''.
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule\noalign{}
+geom & section \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+geom\_e & 7.1 \\
+\end{longtable}
+
 \chapter{geom\_e}\label{sec-e}
 
 \section{geom\_errorbar}\label{errorbar}
@@ -2374,6 +2417,19 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer-3}
 
 \part{F}
 
+In this part of the book we will look at the geoms starts with letter
+``f'' or ``F''.
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule\noalign{}
+geom & section \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+geom\_f & 7.1 \\
+\end{longtable}
+
 \chapter{geom\_f}\label{sec-f}
 
 \section{geom\_function}\label{function}
@@ -2489,6 +2545,19 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer-5}
 \includegraphics{f_files/figure-pdf/unnamed-chunk-4-1.pdf}
 
 \part{G}
+
+In this part of the book we will look at the geoms starts with letter
+``f'' or ``F''.
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule\noalign{}
+geom & section \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+geom\_f & 7.1 \\
+\end{longtable}
 
 \chapter{geom\_g}\label{sec-g}
 
@@ -4408,7 +4477,7 @@ layer}
 
 \textbf{Package}
 
-ggsflabel (Yutani 2024 )
+ggsflabel (Yutani 2024)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4494,7 +4563,7 @@ layer}
 
 \section{geom\_sf\_text}\label{geom_sf_text}
 
-ggsflabel (Yutani 2024 )
+ggsflabel (Yutani 2024)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4562,7 +4631,7 @@ layer}
 \CommentTok{\# Load world spatial data}
 \NormalTok{world }\OtherTok{\textless{}{-}} \FunctionTok{ne\_countries}\NormalTok{(}\AttributeTok{scale =} \StringTok{"medium"}\NormalTok{, }\AttributeTok{returnclass =} \StringTok{"sf"}\NormalTok{)}
 
-\NormalTok{electricity\_data }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2020}\NormalTok{)}
+\NormalTok{electricity\_data }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(}\StringTok{"Year"} \SpecialCharTok{==} \DecValTok{2020}\NormalTok{ )}
 \NormalTok{world\_electricity }\OtherTok{\textless{}{-}}\NormalTok{ world }\SpecialCharTok{|\textgreater{}} 
   \FunctionTok{left\_join}\NormalTok{(electricity\_data, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"name"} \OtherTok{=} \StringTok{"Country"}\NormalTok{))}
 
@@ -4579,6 +4648,83 @@ layer}
 \end{Shaded}
 
 \includegraphics{s_files/figure-pdf/unnamed-chunk-11-1.pdf}
+
+\section{geom\_sf\_pattern}\label{geom_sf_pattern}
+
+\textbf{Package}
+
+ggpattern (FC, Davis, and ggplot2 authors 2023)
+
+\textbf{Description}
+
+\begin{itemize}
+\tightlist
+\item
+  Add patterns to the map.
+\end{itemize}
+
+\textbf{Understandable aesthetics}
+
+\begin{itemize}
+\tightlist
+\item
+  Required aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    NuULL
+  \end{itemize}
+\item
+  Optional aesthetics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    alpha, colour, group, fill
+  \end{itemize}
+\end{itemize}
+
+\textbf{The statistical transformation to use on the data for this
+layer}
+
+\begin{itemize}
+\tightlist
+\item
+  sf\_coordinates
+\end{itemize}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rnaturalearth)}
+\FunctionTok{library}\NormalTok{(rnaturalearthdata)}
+\FunctionTok{library}\NormalTok{(ggpattern)}
+
+\CommentTok{\# Load world spatial data}
+\NormalTok{world }\OtherTok{\textless{}{-}} \FunctionTok{ne\_countries}\NormalTok{(}\AttributeTok{scale =} \StringTok{"medium"}\NormalTok{, }\AttributeTok{returnclass =} \StringTok{"sf"}\NormalTok{)}
+
+\NormalTok{electricity\_data }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(}\StringTok{"Year"} \SpecialCharTok{==} \DecValTok{2020}\NormalTok{)}
+\NormalTok{world\_electricity }\OtherTok{\textless{}{-}}\NormalTok{ world }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{left\_join}\NormalTok{(electricity\_data, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"name"} \OtherTok{=} \StringTok{"Country"}\NormalTok{))}
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ world\_electricity) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf\_pattern}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Electricity, }\AttributeTok{pattern =} \FunctionTok{is.na}\NormalTok{(Electricity)), }
+                  \AttributeTok{color =} \StringTok{"black"}\NormalTok{, }
+                  \AttributeTok{size =} \FloatTok{0.1}\NormalTok{,}
+                  \AttributeTok{pattern\_fill =} \StringTok{"gray80"}\NormalTok{, }
+                  \AttributeTok{pattern\_angle =} \DecValTok{45}\NormalTok{, }
+                  \AttributeTok{pattern\_density =} \FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_viridis\_c}\NormalTok{(}\AttributeTok{option =} \StringTok{"plasma"}\NormalTok{, }\AttributeTok{na.value =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Global Electricity Access with Patterns for Missing Data"}\NormalTok{,}
+    \AttributeTok{fill =} \StringTok{"Electricity (GWh)"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{s_files/figure-pdf/unnamed-chunk-12-1.pdf}
 
 \part{T}
 
@@ -4842,15 +4988,6 @@ with)
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(waffle)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Warning: package 'waffle' was built under R version 4.4.2
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \NormalTok{worldbankdata }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{filter}\NormalTok{(Region }\SpecialCharTok{==} \StringTok{"East Asia \& Pacific"} \SpecialCharTok{|}\NormalTok{ Region }\SpecialCharTok{==} \StringTok{"Europe \& Central Asia"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{select}\NormalTok{(Region, Income, Year) }\SpecialCharTok{|\textgreater{}}
@@ -4992,6 +5129,149 @@ Warning: Removed 6047 rows containing missing values or values outside the scale
 
 \chapter{geom\_y}\label{sec-y}
 
+\#\#geom\_y\_line\{\#y\_line\}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Create horizontal lines representing the specified value of the y
+variable across the x values in the data.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[ydiff]{geom\_ydiff}, \hyperref[line]{geom\_line}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggxmean)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Angola"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{()  }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"without geom\_y\_line"}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Angola"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_y\_line}\NormalTok{(}\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{2}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"with geom\_y\_line"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{y_files/figure-pdf/unnamed-chunk-2-1.pdf}
+
+\section{geom\_y\_mean}\label{y_mean}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Draw a horizontal line at the mean of y-variable.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_line}, \hyperref[ribbon]{geom\_ribbon}
+\hyperref[y_line]{geom\_y\_line}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggxmean)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Angola"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{()  }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"without geom\_y\_mean"}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Angola"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_y\_mean}\NormalTok{(}\AttributeTok{colour=}\StringTok{"\#d95f02"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"with geom\_y\_mean"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{y_files/figure-pdf/unnamed-chunk-3-1.pdf}
+
+\#\#geom\_ydiff\{\#ydiff\}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_line}, \hyperref[ribbon]{geom\_ribbon}
+\hyperref[y_line]{geom\_y\_line}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggxmean)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Angola"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{()  }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"without geom\_ydiff"}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Angola"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_y\_mean}\NormalTok{(}\AttributeTok{col=}\StringTok{"\#d95f02"}\NormalTok{)}\SpecialCharTok{+}\NormalTok{ggxmean}\SpecialCharTok{:::}\FunctionTok{geom\_ydiff}\NormalTok{(}\AttributeTok{colour=}\StringTok{"\#1b9e77"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"with geom\_ydiff"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{y_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
 \part{Z}
 
 \chapter{geom\_z}\label{sec-z}
@@ -5079,6 +5359,7 @@ Yutani, Hiroaki. 2024. \emph{Ggsflabel: Labels for 'Sf' with 'Ggplot2'}.
 \url{https://github.com/yutannihilation/ggsflabel}.
 
 \end{CSLReferences}
+
 
 
 

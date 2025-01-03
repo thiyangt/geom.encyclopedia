@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.13)  17 NOV 2024 17:28
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.13)  3 JAN 2025 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -194,16 +194,16 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
+Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-11-02 L3 programming layer (loader) 
+Package: expl3 2024-12-09 L3 programming layer (loader) 
 
 ! LaTeX Error: Mismatched LaTeX support files detected.
 (LaTeX)        Loading 'expl3.sty' aborted!
 (LaTeX)        
 (LaTeX)        The L3 programming layer in the LaTeX format
 (LaTeX)        is dated 2024-09-10, but in your TeX tree the files require
-(LaTeX)        at least 2024-11-02.
+(LaTeX)        at least 2024-12-09.
 
 For immediate help type H <return>.
  ...                                              
@@ -211,10 +211,10 @@ For immediate help type H <return>.
 l.78      \ExplLoaderFileDate{expl3.sty}}
                                          % 
 Here is how much of TeX's memory you used:
- 4579 strings out of 476234
- 94869 string characters out of 5785622
+ 4586 strings out of 476234
+ 94948 string characters out of 5785622
  612879 words of memory out of 5000000
- 27167 multiletter control sequences out of 15000+600000
+ 27174 multiletter control sequences out of 15000+600000
  558077 words of font info for 37 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,1n,107p,10900b,271s stack positions out of 10000i,1000n,20000p,200000b,200000s
