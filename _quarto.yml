@@ -4,9 +4,10 @@ project:
 
 
 book:
-  title: "Data Visualisation `geom` Encyclopedia"
+  title: "Data Visualisation Geometries Encyclopedia"
+  subtitle: "geoms in the grammar of graphics (ggplot)"
   author: "Thiyanga S. Talagala"
-  date: "12 NOV 2024"
+  date: "`r Sys.Date()`"
   downloads: [pdf, epub]
   site-url: https://thiyangt.github.io/geom.encyclopedia/
   repo-url: https://github.com/thiyangt/geom.encyclopedia

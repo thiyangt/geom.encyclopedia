@@ -141,3 +141,16 @@ worldbankdata |>
   geom_linerange(aes(ymin = min, ymax = max)) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
+
+
+## geom_lm
+
+## geom_lm_fitted
+
+## geom_lm_pred_int
+
+## geom_lm_residuals
+
+## geom_lm_conf_int
+
+## geom_lm_formula

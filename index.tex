@@ -3612,6 +3612,146 @@ aesthetics}\label{understandable-aesthetics-7}
 
 \chapter{geom\_o}\label{sec-o}
 
+\section{geom\_outlier}\label{outlier}
+
+\textbf{Package}
+
+ggdemetra (Quartier-la-Tente 2024)
+
+\textbf{Description}
+
+Function to add directly to the plot the outliers used in the
+pre-adjustment process of the seasonal adjustment.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{date}
+
+\texttt{y}
+
+Note: frequency must be equal to 12, 6, 4 or 2
+
+\emph{optional aesthetics}
+
+\texttt{first\_date}, \texttt{last\_date}, \texttt{coefficients},
+\texttt{digits}, \texttt{show.legend}, \texttt{inherit.aes}
+
+\textbf{See also}
+
+\hyperref[text]{geom\_text}, \hyperref[label]{geom\_label}
+\hyperref[text_repel]{geom\_text\_repel},
+\hyperref[label_repel]{geom\_label\_repel}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("RJDemetra")}
+\CommentTok{\#install.packages("ggdemetra")}
+\FunctionTok{library}\NormalTok{(RJDemetra)}
+\FunctionTok{library}\NormalTok{(ggdemetra)}
+\NormalTok{ipi\_c\_eu }\OtherTok{\textless{}{-}} \FunctionTok{window}\NormalTok{(ipi\_c\_eu, }\AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{2000}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2010}\NormalTok{, }\DecValTok{12}\NormalTok{))}
+\NormalTok{ipi\_c\_eu\_df }\OtherTok{\textless{}{-}} \FunctionTok{ts2df}\NormalTok{(ipi\_c\_eu)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ipi\_c\_eu\_df, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ date, }\AttributeTok{y =}\NormalTok{ FR)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Without geom\_outlier"}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ipi\_c\_eu\_df, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ date, }\AttributeTok{y =}\NormalTok{ FR)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_outlier}\NormalTok{(}\AttributeTok{geom =} \StringTok{"label\_repel"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"With geom\_outlier"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{/}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{o_files/figure-pdf/unnamed-chunk-2-1.pdf}
+
+\section{geom\_outline}\label{outline}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_line}, \hyperref[ribbon]{geom\_ribbon}
+
+\textbf{Example}
+
+\section{geom\_outline\_point}\label{outline_point}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_line}, \hyperref[ribbon]{geom\_ribbon}
+
+\textbf{Example}
+
+\section{geom\_overhang\_seats}\label{overhang_seats}
+
+\textbf{Package}
+
+ggparliament (\textbf{ggparliament?})
+
+\textbf{Description}
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_line}, \hyperref[ribbon]{geom\_ribbon}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#devtools::install\_github("zmeers/ggparliament")}
+\FunctionTok{library}\NormalTok{(ggparliament)}
+\end{Highlighting}
+\end{Shaded}
+
 \part{P}
 
 \chapter{geom\_p}\label{sec-p}
@@ -5106,8 +5246,7 @@ with)
   \FunctionTok{geom\_waffle}\NormalTok{(}\AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\AttributeTok{size=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Region, }\AttributeTok{ncol=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{expand=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{scale\_y\_discrete}\NormalTok{(}\AttributeTok{expand=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{coord\_equal}\NormalTok{() }
+  \FunctionTok{scale\_y\_discrete}\NormalTok{(}\AttributeTok{expand=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -5437,6 +5576,11 @@ Miller, David L. 2023. \emph{emoGG: Use Emoji in Ggplot2}.
 \bibitem[\citeproctext]{ref-ggforce}
 Pedersen, Thomas Lin. 2022. \emph{Ggforce: Accelerating 'Ggplot2'}.
 \url{https://CRAN.R-project.org/package=ggforce}.
+
+\bibitem[\citeproctext]{ref-ggdemetra}
+Quartier-la-Tente, Alain. 2024. \emph{Ggdemetra: 'Ggplot2' Extension for
+Seasonal and Trading Day Adjustment with 'RJDemetra'}.
+\url{https://CRAN.R-project.org/package=ggdemetra}.
 
 \bibitem[\citeproctext]{ref-ggxmean}
 Reynolds, Evangeline. 2024. \emph{Ggxmean: Statistical Geoms}.

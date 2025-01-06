@@ -8,61 +8,7 @@ library(patchwork)
 data("worldbankdata")
 ```
 
-
-## geom_x_label
-
-**Package**
-
-ggxmean [@ggxmean]
-
-**geom_x_line**
-
-**Package**
-
-ggxmean [@ggxmean]
-
-
-## geom_x_mean
-
-**Package**
-
-ggxmean [@ggxmean]
-
-**geom_x_mean_label**
-
-
-## geom_x_median
-
-**Package**
-
-ggxmean [@ggxmean]
-
-## geom_x_percentile
-
-**Package**
-
-ggxmean [@ggxmean]
-
-## geom_x_quantile
-
-**Package**
-
-ggxmean [@ggxmean]
-
-## geom_xmax
-
-**Package**
-
-ggxmean [@ggxmean]
-
-## geom_xmin
-
-**Package**
-
-ggxmean [@ggxmean]
-
-## geom_xy_means
-
+## geom_xmax{#xmax}
 
 **Package**
 
@@ -75,22 +21,368 @@ ggxmean [@ggxmean]
 
 **Description**
 
-Place point at mean of x and mean of y
+Draw vertical line at the max of x.
 
 **Understandable aesthetics**
 
 *required aesthetics*
-  
+
+`x`
+
+*optional aesthetics*
+
+`color`, `linetype` , `size`
+
+**See also**
+
+[geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+**Example**
+
+```{r, warning=FALSE, message=FALSE}
+library(ggxmean)
+drop_na(worldbankdata) |>
+ggplot(aes(x = Cooking)) +
+  geom_histogram(binwidth = 5, alpha=0.5, fill = "#1b9e77", color = "black") + 
+  geom_xmax(color = "#d95f02", linetype = "dashed", size = 1) 
+```
+
+
+## geom_xmin{#xmin}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Draw vertical line at the min of x.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`
+
+*optional aesthetics*
+
+color, linetype , size
+
+**See also**
+
+
+ [geom_xmax](@xmax), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+
+__Example 1__
+
+```{r, warning=FALSE, message=FALSE}
+drop_na(worldbankdata) |>
+ggplot(aes(x = Cooking)) +
+  geom_histogram(binwidth = 5, fill = "#1b9e77", color = "black") + 
+  geom_xmin(color = "#d95f02", linetype = "dashed", size = 1) 
+```
+
+
+
+## geom_x_median{#x_median}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Place point at median of x.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`
+
+*optional aesthetics*
+
+`color`, `linetype` , `size`
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+ [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+**Example**
+
+
+```{r, warning=FALSE, message=FALSE}
+drop_na(worldbankdata) |>
+ggplot(aes(x = Cooking)) +
+  geom_histogram(binwidth = 5, fill = "#1b9e77", color = "black") + 
+  geom_x_median(color = "#d95f02", linetype = "dashed", size = 1) 
+```
+
+
+## geom_x_mean{#x_mean}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Place point at mean of x.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`
+
+*optional aesthetics*
+
+`color`, `linetype` , `size`
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), 
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+**Example**
+
+
+```{r, warning=FALSE, message=FALSE}
+drop_na(worldbankdata) |>
+ggplot(aes(x = Cooking)) +
+  geom_histogram(binwidth = 5, fill = "#1b9e77", color = "black") + 
+  geom_x_mean(color = "#d95f02", linetype = "dashed", size = 1) 
+```
+
+
+## geom_x_mean_label{#x_mean_label}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Place point at mean of x and label.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`
+
+*optional aesthetics*
+
+`color`, `linetype` , `size`
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+**Example**
+
+```{r, warning=FALSE, message=FALSE}
+drop_na(worldbankdata) |>
+ggplot(aes(x = Cooking)) +
+  geom_histogram(binwidth = 5, fill = "#1b9e77", color = "black") + 
+  geom_x_mean_label(color = "#d95f02", linetype = "dashed", size = 1) 
+```
+
+
+## geom_x_percentile{#x_percentile}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Lines are drawn at the percentile value of x.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`
+
+*optional aesthetics*
+
+`percentile`, `color`, `linetype` , `size`
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+**Example**
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+quantile(worldbankdata$Cooking, na.rm = T)
+drop_na(worldbankdata) |>
+ggplot(mapping = aes(x = Cooking)) +
+  geom_histogram(binwidth = 5, fill = "#1b9e77", color = "black") + 
+  geom_x_percentile(percentile = c( 25,50, 75), linetype = "dashed", size = 1, color = "#d95f02") +
+     labs(title = "25th, 50th and 75th percentiles", x = "Cooking", y = "Frequency")
+```
+
+
+## geom_xy_means {#xy_means}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Place point at the intersection point of mean of x and mean of y.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
 `x`, `y`
+
+*optional aesthetics*
+
+`position`, `color`, `size`
 
 
 **See also**
 
-[geom_point](#point)
-  
 
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
 
 **Example**
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+drop_na(worldbankdata) |> 
+  ggplot() +
+  aes(x = Electricity, y = Cooking) +
+  geom_point(color = "black", size = 1) + 
+  ggxmean::geom_xy_means(color = "red", size = 5) +  
+  labs(title = "", x = "Electricity", y = "Cooking") 
+```
+
+**Example 2**
 
 ```{r}
 library(ggxmean)
@@ -106,14 +398,741 @@ a2 <- worldbankdata |>
 a1|a2
 ```
 
-## geom_xy_xymean
+
+## geom_x_line {#x_line}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Lines defined by values of x.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`
+
+*optional aesthetics*
+
+`color`, `size`, `alpha`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example __
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+p1 <- drop_na(worldbankdata) |> 
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity)) + geom_point()+
+  labs(title = "geom_point only", x = "Cooking", y = "Electricity") 
+p2 <- drop_na(worldbankdata) |> 
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity)) + geom_point()+
+  geom_x_line(color = '#1b9e77', size = 0.9) +
+  labs(title = "geom_point and geom_x_line", x = "Cooking", y = "Electricity") 
+p1|p2
+```
+
+
+## geom_xdiff {#xdiff}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Place lines from each point to mean x.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `size`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example __
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=10}
+p1 <- drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |> 
+  ggplot(aes(x = Cooking, y = Electricity)) + geom_point() + ggxmean:::geom_xdiff() +
+  labs(title = "", x = "Cooking", y = "Electricity") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5),
+        plot.caption = element_text(hjust = 0.5), legend.position = "none",
+        axis.title.x = element_text(margin = margin(t = 10)),
+        axis.title.y = element_text(margin = margin(r = 10)))
+p2 <- drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |> 
+  ggplot(aes(x = Cooking, y = Electricity)) + geom_x_mean() +
+  geom_point() + ggxmean:::geom_xdiff() +
+  labs(title = "geom_x_mean, geom_point and geom_xdiff", x = "Cooking", y = "Electricity") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5),
+        plot.caption = element_text(hjust = 0.5), legend.position = "none",
+        axis.title.x = element_text(margin = margin(t = 10)),
+        axis.title.y = element_text(margin = margin(r = 10)))
+p1/p2
+```
+
+
+## geom_x1sd {#x1sd}
+
+__Package__
+
+ggxmean [@ggxmean]
+
+__Description__
+
+Represents one standard deviation.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `alpha`, `fill`, `linetype`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example __
+
+```{r,warning=FALSE, message=FALSE}
+drop_na(worldbankdata) |> 
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity)) + 
+  geom_point() + 
+  ggxmean:::geom_x1sd(color = '#e7298a', fill = '#e7298a') +
+  labs(title = "", x = "Cooking", y = "Electricity") 
+```
+
+
+## geom_xydiffsmean {#xydiffsmean}
+
+__Package__
+
+ggxmean [@ggxmean]
+ 
+__Description__
+
+Draw the results of $$\frac{\sum_{i=1}^{N}(x_i-\bar{x})(y_i-\bar{y})}{N}$$
+
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `alpha`, `fill`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example __
+
+```{r,warning=FALSE, message=FALSE}
+p1 <- drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity)) + 
+  geom_point() +
+  ggxmean:::geom_xydiffsmean(color = '#c51b8a', fill = '#c51b8a', alpha = 0.5) +
+  labs(title = "", x = "Cooking", y = "Electricity") 
+p2 <- drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity)) + 
+  geom_point() + ggxmean:::geom_xdiff(col="#1b9e77") + ggxmean:::geom_ydiff(col="#d95f02")+
+  ggxmean:::geom_xydiffsmean(color = '#c51b8a', fill = '#c51b8a', alpha = 0.5) +
+  labs(title = "geom_point, geom_xdiff, geom_ydiff, geom_xydiffmean", x = "Cooking", y = "Electricity") 
+p1/p2
+```
+
+## geom_xsidebar {#xsidebar}
+
+__Package__
+
+ggside [@ggside]
+ 
+__Description__
+
+The xside variant of geom_bar is geom_xsidebar. 
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `alpha`, `fill`, `position`, `width`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example __
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+require(ggside)
+drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity )) +
+  geom_point(size = 1.5) + 
+  geom_xsidebar(aes(fill = Income)) +
+  labs(title = "", x = "Cooking", y = "Electricity") + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+```
+
+
+## geom_xsidedensity {#xsidedensity}
+
+__Package__
+
+ggside [@ggside]
+ 
+__Description__
+
+The xside variant of geom_density is geom_xsidedensity.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `fill`, `position`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
 
 **Example**
 
-```{r, warning=FALSE, message=FALSE}
-library(ggxmean)
-worldbankdata |>
-  ggplot(aes(x = Income, y = Cooking)) + 
-  geom_xy_xymean(na.rm=TRUE, size=3) 
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+require(ggside)
+drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity, fill = Income)) +
+  geom_point(size = 1.5) +
+  geom_xsidedensity(size = 1) +
+  labs(title = "", x = "Cooking", y = "Electricity")  + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
 
 ```
+
+## geom_xsidefreqpoly {#xsidefreqpoly}
+
+__Package__
+
+ggside [@ggside]
+ 
+__Description__
+
+The xside variant of geom_freqpoly is geom_xsidefreqpoly.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `fill`, `position`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example__
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+require(ggside)
+drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity, colour = Income)) +
+  geom_point(size = 1.5) + 
+  geom_xsidefreqpoly(aes(y=after_stat(count)),binwidth = 500) +
+  labs(title = "", x = "Cooking", y = "Electricity") + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+
+```
+
+## geom_xsidehistogram {#xsidehistogram}
+
+__Package__
+
+ggside [@ggside]
+ 
+__Description__
+
+The xside variant of geom_histogram is geom_xsidehistogram.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `fill`, `position`, `binwidth`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example__
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+require(ggside)
+drop_na(worldbankdata) %>% 
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) %>% 
+  ggplot(aes(x = Cooking, y = Electricity, colour = Income)) +
+  geom_point(size = 1.5) + 
+  geom_xsidehistogram(binwidth = 0.1, aes(fill = Income)) +
+  labs(title = "", x = "Cooking", y = "Electricity") + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+
+```
+
+## geom_xsidepoint {#xsidepoint}
+
+__Package__
+
+ggside [@ggside]
+ 
+__Description__
+
+The ggside variants of geom_point is geom_xsidepoint. Projection of points into the x-axis to show the marginal distribution of x.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `fill`, `position`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example__
+
+```{r,warning=FALSE, message=FALSE}
+require(ggside)
+drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |> 
+  ggplot(aes(x = Cooking, y = Electricity, colour = Income)) +
+  geom_point(size = 1.5) +
+  geom_xsidepoint(aes(y = Income)) +
+  labs(title = "", x = "Cooking", y = "Electricity")  + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+```
+
+
+## geom_xsideboxplot {#xsideboxplot}
+
+__Package__
+
+ggside [@ggside]
+ 
+__Description__
+
+The xside variant of geom_boxplot is geom_xsideboxplot. Marginal distribution of x using boxplots
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `fill`, `position`, `alpha`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example__
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+require(ggside)
+drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity, colour = Income)) +
+  geom_point(size = 1.5) + 
+  geom_xsideboxplot(aes(y = Income), orientation = "y") +
+  labs(title = "", x = "Cooking", y = "Electricity")  + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+```
+
+
+
+## geom_x_margin_arrow {#x_margin_arrow}
+
+__Package__
+
+ggpp [@ggpp]
+ 
+__Description__
+
+Plot small arrows on plot margins in a 2D display. Arrows can be used to highlight specific values along a margin.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `alpha`, `position`, `xintercept`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_point](@x_margin_point),
+[geom_xsidefunction](@xsidefunction)
+
+__Example__
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+require(ggpp)
+drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |> 
+  ggplot(aes(x = Cooking, y = Electricity, colour = Income)) +
+  geom_point(size = 1.5) + 
+  geom_x_margin_arrow(xintercept = seq(0, 75, by = 10), size = 1, alpha = 0.8) +
+  labs(title = "", x = "Cooking", y = "Electricity")  + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+```
+
+
+## geom_x_margin_point {#x_margin_point}
+
+__Package__
+
+ggpp [@ggpp]
+ 
+__Description__
+
+Margin points can supplement a 2d display with annotations. Margin points can highlight individual values along a margin.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `alpha`, `position`, `xintercept`
+
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_xsidefunction](@xsidefunction)
+
+__Example__
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=6}
+require(ggpp)
+drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |> 
+  ggplot(aes(x = Cooking, y = Electricity, colour = Income)) +
+  geom_point(size = 1.5) + 
+  geom_x_margin_point(xintercept = seq(0, 75, by = 10)) +
+  labs(title = "", x = "Cooking", y = "Electricity") + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+  
+```
+
+## geom_xsidefunction {#xsidefunction}
+
+__Package__
+
+ggside [@ggside]
+
+__Description__
+
+The xside and yside variants of geom_function.
+
+__Understandable aesthetics__
+
+_required aesthetics_
+
+`x`
+
+_optional aesthetics_
+
+`color`, `alpha`, `position`
+
+__See also__
+
+[geom_density2d](@density2d)
+
+**See also**
+
+
+ [geom_xmax](@xmax), [geom_xmin](@xmin), 
+[geom_x_median](@x_median), [geom_x_mean](@x_mean),
+[geom_x_mean_label](@x_mean_label),
+[geom_x_percentile](@x_percentile),
+[geom_xy_means](@xy_means),
+[geom_x_line](@x_line),
+[geom_xdiff](@xdiff),
+[geom_x1sd](@x1sd),
+[geom_xydiffsmean](@xydiffsmean),
+[geom_xsidebar](@xsidebar),
+[geom_xsidedensity](@xsidedensity),
+[geom_xsidefreqpoly](@xsidefreqpoly),
+[geom_xsidehistogram](@xsidehistogram),
+[geom_xsidepoint](@xsidepoint),
+[geom_xsideboxplot](@xsideboxplot),
+[geom_x_margin_arrow](@x_margin_arrow),
+[geom_x_margin_point](@x_margin_point)
+
+__Example__
+
+```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=10}
+require(ggpp)
+drop_na(worldbankdata) |>
+ggplot(aes(x = Cooking, y = Electricity, colour = Income)) +
+  geom_point() +
+  geom_xsidedensity(fill = "#d95f02", alpha = .3) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+```
+

@@ -1,2 +1,149 @@
 # geom_o  {#sec-o}
 
+```{r, message=FALSE, warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(drone)
+library(patchwork)
+data("worldbankdata")
+```
+
+## geom_outlier {#outlier}
+
+**Package**
+
+ggdemetra [@ggdemetra]
+
+**Description**
+
+Function to add directly to the plot the outliers used in the pre-adjustment process of the seasonal adjustment.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+`date`
+
+`y`
+
+Note: frequency must be equal to 12, 6, 4 or 2
+
+*optional aesthetics*
+  
+`first_date`, `last_date`, `coefficients`, `digits`, `show.legend`, `inherit.aes`
+
+
+**See also**
+
+[geom_text](#text), [geom_label](#label)
+[geom_text_repel](#text_repel), [geom_label_repel](#label_repel)
+  
+**Example**
+
+```{r, warning=FALSE, message=FALSE}
+#install.packages("RJDemetra")
+#install.packages("ggdemetra")
+library(RJDemetra)
+library(ggdemetra)
+ipi_c_eu <- window(ipi_c_eu, start = c(2000, 1), end = c(2010, 12))
+ipi_c_eu_df <- ts2df(ipi_c_eu)
+p1 <- ggplot(data = ipi_c_eu_df, mapping = aes(x = date, y = FR)) +
+    geom_line() + ggtitle("Without geom_outlier")
+p2 <- ggplot(data = ipi_c_eu_df, mapping = aes(x = date, y = FR)) +
+    geom_line() + geom_outlier(geom = "label_repel") + ggtitle("With geom_outlier")
+p1/p2
+```
+
+## geom_outline {#outline}
+
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+  
+**Example**
+  
+
+
+## geom_outline_point{#outline_point}
+
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+  
+**Example**
+  
+
+
+##  geom_overhang_seats{#overhang_seats}
+
+
+**Package**
+
+ggparliament [@ggparliament]
+
+**Description**
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+  
+**Example**
+
+```{r}
+#devtools::install_github("zmeers/ggparliament")
+library(ggparliament)
+
+```
+

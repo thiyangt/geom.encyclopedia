@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>17&nbsp; geom_o – Data Visualisation `geom` Encyclopedia</title>
+<title>17&nbsp; geom_o – Data Visualisation Geometries Encyclopedia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -96,20 +150,20 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Data Visualisation <code>geom</code> Encyclopedia</a> 
+      <a href="./">Data Visualisation Geometries Encyclopedia</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/thiyangt/geom.encyclopedia" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-`geom`-Encyclopedia.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-Geometries-Encyclopedia.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-`geom`-Encyclopedia.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-Geometries-Encyclopedia.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -603,8 +657,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#outlier" id="toc-outlier" class="nav-link active" data-scroll-target="#outlier"><span class="header-section-number">17.1</span> geom_outlier</a></li>
+  <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline"><span class="header-section-number">17.2</span> geom_outline</a></li>
+  <li><a href="#outline_point" id="toc-outline_point" class="nav-link" data-scroll-target="#outline_point"><span class="header-section-number">17.3</span> geom_outline_point</a></li>
+  <li><a href="#overhang_seats" id="toc-overhang_seats" class="nav-link" data-scroll-target="#overhang_seats"><span class="header-section-number">17.4</span> geom_overhang_seats</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/o.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -628,8 +691,102 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="outlier" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="outlier"><span class="header-section-number">17.1</span> geom_outlier</h2>
+<p><strong>Package</strong></p>
+<p>ggdemetra <span class="citation" data-cites="ggdemetra">(<a href="#ref-ggdemetra" role="doc-biblioref">Quartier-la-Tente 2024</a>)</span></p>
+<p><strong>Description</strong></p>
+<p>Function to add directly to the plot the outliers used in the pre-adjustment process of the seasonal adjustment.</p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>date</code></p>
+<p><code>y</code></p>
+<p>Note: frequency must be equal to 12, 6, 4 or 2</p>
+<p><em>optional aesthetics</em></p>
+<p><code>first_date</code>, <code>last_date</code>, <code>coefficients</code>, <code>digits</code>, <code>show.legend</code>, <code>inherit.aes</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#text">geom_text</a>, <a href="#label">geom_label</a> <a href="#text_repel">geom_text_repel</a>, <a href="#label_repel">geom_label_repel</a></p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("RJDemetra")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggdemetra")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RJDemetra)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdemetra)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ipi_c_eu <span class="ot">&lt;-</span> <span class="fu">window</span>(ipi_c_eu, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2010</span>, <span class="dv">12</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ipi_c_eu_df <span class="ot">&lt;-</span> <span class="fu">ts2df</span>(ipi_c_eu)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> ipi_c_eu_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> FR)) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Without geom_outlier"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> ipi_c_eu_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> FR)) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_outlier</span>(<span class="at">geom =</span> <span class="st">"label_repel"</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"With geom_outlier"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">/</span>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="o_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="outline" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="outline"><span class="header-section-number">17.2</span> geom_outline</h2>
+<p><strong>Package</strong></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p><strong>Description</strong></p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>x</code></p>
+<p><code>y</code></p>
+<p><em>optional aesthetics</em></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
+<p><strong>Example</strong></p>
+</section>
+<section id="outline_point" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="outline_point"><span class="header-section-number">17.3</span> geom_outline_point</h2>
+<p><strong>Package</strong></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p><strong>Description</strong></p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>x</code></p>
+<p><code>y</code></p>
+<p><em>optional aesthetics</em></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
+<p><strong>Example</strong></p>
+</section>
+<section id="overhang_seats" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="overhang_seats"><span class="header-section-number">17.4</span> geom_overhang_seats</h2>
+<p><strong>Package</strong></p>
+<p>ggparliament <span class="citation" data-cites="ggparliament">(<a href="#ref-ggparliament" role="doc-biblioref"><strong>ggparliament?</strong></a>)</span></p>
+<p><strong>Description</strong></p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>x</code></p>
+<p><code>y</code></p>
+<p><em>optional aesthetics</em></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("zmeers/ggparliament")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggparliament)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ggdemetra" class="csl-entry" role="listitem">
+Quartier-la-Tente, Alain. 2024. <em>Ggdemetra: ’Ggplot2’ Extension for Seasonal and Trading Day Adjustment with ’RJDemetra’</em>. <a href="https://CRAN.R-project.org/package=ggdemetra">https://CRAN.R-project.org/package=ggdemetra</a>.
+</div>
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1069,4 +1226,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/o.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/o.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

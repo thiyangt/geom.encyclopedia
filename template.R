@@ -30,7 +30,7 @@ ggplot2 [@ggplot2]
 
 [geom_line](#line), [geom_ribbon](#ribbon)
   
-### Example
+**Example**
   
 
 library("styler")
