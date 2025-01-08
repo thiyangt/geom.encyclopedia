@@ -6,7 +6,7 @@ Data visualization is the graphical representation of data to understand the pat
 
 ## What are Gemetries (geoms) in Data Visualisation?
 
-In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.
+In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.
 
 ```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE, fig.cap="Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F."}
 library(patchwork)
@@ -35,7 +35,7 @@ p8 <- ggplot(lrdf) +
 (p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
-In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualise the plots. For example, in chart A: all values are represented using individual points. In chart H: The range is denoted using a blue line and mean is represented using a red dot. 
+In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualise on the plots. For example, in chart A: all values are represented using individual points. In chart H: The range is denoted using a blue line and mean is represented using a red dot. 
 
 ```{r, fig.height=5, fig.width=5,echo=FALSE}
 p0 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity))
