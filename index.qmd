@@ -1,5 +1,7 @@
 # Preface {.unnumbered}
 
+## "Data Visualisation <span style='color:red;'>Geom</span>etrie<span style='color:red;'>s</span> Encyclopedia"
+
 ::: {style="font-size: 300%;"}
 
  [A](#sec-a) | [B](#sec-b) | [C](#sec-c) | [D](#sec-d) | [E](#sec-e) | [F](#sec-f) | [G](#sec-g) | [H](#sec-h) | [I](#sec-i) | [J](#sec-j) | [K](#sec-k) | [L](#sec-l) | [M](#sec-m) | [N](#sec-n) | [O](#sec-o) | [ P](#sec-p) | [Q](#sec-q) | [R](#sec-r) | [S](#sec-s) | [T](#sec-t) | [U](#sec-u) | [V](#sec-v) | [W](#sec-w) | [X](#sec-x) | [Y](#sec-y) | [Z](#sec-z) |
@@ -11,7 +13,9 @@ Welcome to the "Data Visualisation `geom` Encyclopedia", an encyclopedia of geom
 The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.
 
 
-This book is a work in progress. The accompanying package for drone is available at: https://github.com/thiyangt/drone
+This book is a work in progress. The accompanying package for drone is available at: \url{https://github.com/thiyangt/drone}
+
+## drone: <span style='color:red;'>Data</span> fo<span style='color:red;'>R</span> ge<span style='color:red;'>O</span>m e<span style='color:red;'>N</span>cyclopa<span style='color:red;'>E</span>dia
 
 
 ```{r, echo=FALSE, fig.pos="center"}

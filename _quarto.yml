@@ -4,7 +4,7 @@ project:
 
 
 book:
-  title: "Data Visualisation <span style='color:red;'>Geom</span>etrie<span style='color:blue;'>s</span> Encyclopedia"
+  title: "Data Visualisation <span style='color:red;'>Geom</span>etrie<span style='color:red;'>s</span> Encyclopedia"
   subtitle: "Geoms in the Grammar of Graphics: All Types of Plots"
   author: "Thiyanga S. Talagala"
   date: "`r Sys.Date()`"
