@@ -18,30 +18,30 @@ ggplot2 [@ggplot2]
 
 __Description__
 
-Text geoms are useful for labeling plots. They can be used by themselves as scatterplots or in combination with other geoms, for example, for labeling points or for annotating the height of bars. geom_text() adds only text to the plot.
+Labeling plots. 
 
 __Understandable aesthetics__
 
 _required aesthetics_
 
-x, y
+`x`, `y`
 
 _optional aesthetics_
 
-stat , position  , size
+`stat` , `position`  , `size`
 
 __Example__
 
-```{r, warning=FALSE, message=FALSE, fig.width=12, fig.height=8}
-drop_na(worldbankdata) %>% 
-  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) %>% 
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+p1 <- drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
+  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + geom_text(size = 3) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + ggtitle("geom_text only")
+p2 <- drop_na(worldbankdata) |>
+  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |>
   ggplot(aes(x = Cooking, y = Electricity, label = Income)) + 
-  geom_point(aes(color = Income), size = 1) +
-  geom_text(size = 3) +  
-  labs(title = "",x = "Cooking", y = "Electricity")  +  
-  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10))
+  geom_point(aes(color = Income)) +
+  geom_text(size = 3) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + ggtitle("geom_point and geom_text only")
+p1|p2
 ```
 
 ## __geom_text_repel__
@@ -52,13 +52,13 @@ ggrepel [@ggrepel]
 
 __Description__
 
-geom_text_repel adds text directly to the plot
+Repulsive textual annotations.
 
 __Understandable aesthetics__
 
 _required aesthetics_
 
-x, y
+`x, y
 
 _optional aesthetics_
 
@@ -66,153 +66,14 @@ stat , position  , size
 
 __Example__
 
-```{r, warning=FALSE, message=FALSE, fig.width=12, fig.height=8}
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
 library(ggrepel)
-ggplot(mtcars, aes(x = wt, y = mpg, label = rownames(mtcars))) +
+p1 <- ggplot(mtcars, aes(x = wt, y = mpg, label = rownames(mtcars))) +
   geom_text_repel() +  
-  labs(title = "",x = "Weight (1000 lbs)", y = "Miles/(US) gallon")  +  
-  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10))
-```
-
-## __geom_tile__
-
-__Package__
-
-ggplot2 [@ggplot2]
-
-__Description__
-
-geom_text_repel adds text directly to the plot
-
-__Understandable aesthetics__
-
-_required aesthetics_
-
-x, y
-
-_optional aesthetics_
-
-stat , position  , size
-
-__Example__
-
-```{r, warning=FALSE, message=FALSE, fig.width=12, fig.height=8}
-drop_na(worldbankdata) %>% 
-  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) %>% 
-  ggplot( aes(x = Cooking, y = Electricity)) + geom_point(aes(col = Code)) +
-  geom_tile(aes(fill = Code)) +  
-  labs(title = "",x = "Cooking", y = "Electricity")  +  
-  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10))
-```
-
-## __geom_text_cooks__
-
-__Package__
-
-ggxmean [@ggxmean]
-
-__Description__
-
-Returns a scatter plot with points that are labeled.
-
-__Understandable aesthetics__
-
-_required aesthetics_
-
-x, y
-
-_optional aesthetics_
-
-position  , size, digits, check_overlap
-
-__Example__
-
-```{r, warning=FALSE, message=FALSE, fig.width=12, fig.height=8}
-data <- data.frame(
-  x = 1:20,  
-  y = 3 + 2 * (1:20) + rnorm(20, mean = 0, sd = 2))
-
-data %>%
-  ggplot(aes(x = x, y = y)) +
+  labs(title = "",x = "Weight (1000 lbs)", y = "Miles/(US) gallon") + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + ggtitle("geom_text_repel only")
+p2 <- ggplot(mtcars, aes(x = wt, y = mpg, label = rownames(mtcars))) +
   geom_point() +
-  geom_lm() +
-  geom_text_cooks(check_overlap = TRUE, digits = 1)  +  
-  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10))
+  geom_text_repel() +  
+  labs(title = "",x = "Weight (1000 lbs)", y = "Miles/(US) gallon") + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + ggtitle("geom_text_repel and geom_point")
+p1|p2
 ```
-
-## __geom_text_coordinate__
-
-__Package__
-
-ggxmean [@ggxmean]
-
-__Description__
-
-Returns a scatter plot with points that are labeled.
-
-__Understandable aesthetics__
-
-_required aesthetics_
-
-x, y
-
-_optional aesthetics_
-
-position  , size, check_overlap, nudge_x
-
-__Example__
-
-```{r, warning=FALSE, message=FALSE, fig.width=12, fig.height=8}
-data <- data.frame(
-  x = 1:20,  
-  y = 3 + 2 * (1:20) + rnorm(20, mean = 0, sd = 2))
-
-data %>%
-  ggplot(aes(x = x, y = y)) +
-  geom_point() +
-  geom_text_coordinate(check_overlap = TRUE, nudge_x = .3)  +  
-  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10))
-```
-
-## __geom_text_leverage__
-
-__Package__
-
-ggxmean [@ggxmean]
-
-__Description__
-
-Returns a scatter plot with points that are labeled.
-
-__Understandable aesthetics__
-
-_required aesthetics_
-
-x, y
-
-_optional aesthetics_
-
-position  , size, check_overlap, nudge_x
-
-__Example__
-
-```{r, warning=FALSE, message=FALSE, fig.width=12, fig.height=8}
-drop_na(worldbankdata) %>% 
-  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA', 'TLS')) %>% 
-  ggplot(aes(x = Electricity, y = Cooking)) +
-  geom_point() +
-  geom_text_coordinate(check_overlap = TRUE, nudge_x = .3)  +  
-  labs(title = "",x = "Cooking", y = "Electricity")  + 
-  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10))
-```
-

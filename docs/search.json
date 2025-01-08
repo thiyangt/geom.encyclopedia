@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "2  Introduction",
+    "section": "",
+    "text": "2.1 What is data visualisation?\nData visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#what-are-gemetries-geoms-in-data-visualisation",
+    "href": "intro.html#what-are-gemetries-geoms-in-data-visualisation",
+    "title": "2  Introduction",
+    "section": "2.2 What are Gemetries (geoms) in Data Visualisation?",
+    "text": "2.2 What are Gemetries (geoms) in Data Visualisation?\nIn data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.\n\n\n\n\n\nRelationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F.\n\n\n\n\nIn order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualise the plots. For example, in chart A: all values are represented using individual points. In chart H: The range is denoted using a blue line and mean is represented using a red dot.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-use-in-the-encyclopedia",
+    "href": "intro.html#data-use-in-the-encyclopedia",
+    "title": "2  Introduction",
+    "section": "2.3 Data use in the Encyclopedia",
+    "text": "2.3 Data use in the Encyclopedia\n\nlibrary(drone)\nlibrary(tibble)\ndata(worldbankdata)\nworldbankdata\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-description",
+    "href": "intro.html#data-description",
+    "title": "2  Introduction",
+    "section": "2.4 Data description",
+    "text": "2.4 Data description\n\nlibrary(tidyverse)\nlibrary(visdat)\nvis_dat(worldbankdata) + \n  scale_fill_brewer(palette = \"Dark2\")\n\n\n\n\n\n\n\n\n\nlibrary(naniar)\ngg_miss_upset(worldbankdata)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#packages-use-for-data-wrangiling-and-operator",
+    "href": "intro.html#packages-use-for-data-wrangiling-and-operator",
+    "title": "2  Introduction",
+    "section": "2.5 Packages use for data wrangiling and |> operator",
+    "text": "2.5 Packages use for data wrangiling and |&gt; operator",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#r-packages-with-geom-implementation",
+    "href": "intro.html#r-packages-with-geom-implementation",
+    "title": "2  Introduction",
+    "section": "2.6 R packages with geom implementation",
+    "text": "2.6 R packages with geom implementation\n\nggplot2 (Wickham 2016)\nggpattern (FC, Davis, and ggplot2 authors 2023)\nggforce (Pedersen 2022)\nggalluvial (ggalluvial?)\nggbump (Sjoberg 2020)\nggridges (Wilke 2023)\nggalt (Rudis, Bolker, and Schulz 2017)\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra Coordinate Systems, ’Geoms’, Statistical Transformations, Scales and Fonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’. https://CRAN.R-project.org/package=ggridges.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  }
+]

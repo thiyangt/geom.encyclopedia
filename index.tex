@@ -233,7 +233,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Data Visualisation geom Encyclopedia},
+  pdftitle={Data Visualisation Geometries Encyclopedia},
   pdfauthor={Thiyanga S. Talagala},
   colorlinks=true,
   linkcolor={blue},
@@ -243,9 +243,16 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Data Visualisation \texttt{geom} Encyclopedia}
+\title{Data Visualisation \textbf{Geom}etrie\emph{s} Encyclopedia}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{geoms in the grammar of graphics (ggplot)}
 \author{Thiyanga S. Talagala}
-\date{2024-11-12}
+\date{Invalid Date}
 
 \begin{document}
 \maketitle
@@ -290,6 +297,9 @@ visualizations may emerge over time. Hence, I will be regularly updating
 this encyclopedia to ensure it remains a relevant and comprehensive
 resource for users.
 
+This book is a work in progress. The accompanying package for drone is
+available at: https://github.com/thiyangt/drone
+
 \bookmarksetup{startatroot}
 
 \chapter{}\label{section}
@@ -302,78 +312,46 @@ resource for users.
 
 Data visualization is the graphical representation of data to understand
 the patterns, trends, relationships, outliers and complex structures
-hidden inside data more easily. To demonstrate the concept, I use a
-simple dataset. This dataset includes 30 rows and two variables. Looking
-at the numerical figures makes it difficult to find patterns in the
-data. Figure 2 is a visual representation of the same dataset using an
-individual value plot. The individual value plot shows each observation
-as a single point. The individual value plot presents insights at a
-glance. We can see the outline behaviour of one observation in ``L2''.
-The dispersion of data in L2 and L3 are higher than L1. We can
-immediately see the outline behavior of one observation in ``L2''.
-Moreover, it is immediately apparent that the dispersion of data in L2
-and L3 is slightly higher than in L1. In other words data visualization
-allows data to speak for itself in a way that is easily understandable
-to humans. It is like giving a voice to the data, enabling us to listen
-and understand its story more effectively.
+hidden inside data more easily. In other words data visualization allows
+data to speak for itself in a way that is easily understandable to
+humans. It is like giving a voice to the data, enabling us to listen and
+understand its story more effectively.
 
-\section{What did we do in making a
-graph/plot?}\label{what-did-we-do-in-making-a-graphplot}
+\section{What are Gemetries (geoms) in Data
+Visualisation?}\label{what-are-gemetries-geoms-in-data-visualisation}
 
-In making a graph (sometimes we call plot), what we are doing is we are
-mapping variables to graphical properties on a cartesian plan. and then
-represent data using a suitable geometry. I will break down the steps as
-below:
+In data visualization, geometries (or geoms) refer to the visual
+elements that represent data in a plot. They define the type of chart or
+shape used to depict data points or relationships. For example, the
+below figure represents the relationship between income level and
+percentage of people access to electricity in lower incom (L), lower
+middle income (LM), upper middle income (UM) and higher income (H)
+countries using 6 different graph times.
 
-Step 1: Obtain ingredients to make a plot. There are two main
-ingredients: i) canvas to draw a plot. ii) data to plot on the canvas
+\begin{figure}[H]
 
-Let's first obtain a canvas using the ggplot2 package.
+{\centering \includegraphics{intro_files/figure-pdf/unnamed-chunk-1-1.pdf}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2)}
-\FunctionTok{ggplot}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+}
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-1-1.pdf}
+\caption{Relationship between income level and percentage of people
+access to electricity in lower incom (L), lower middle income (LM),
+upper middle income (UM) and higher income (H) countries using 6
+different graphs from A to F.}
 
-Second, the data that we are going to draw the plot. Here, I use
-\texttt{worldbankdata} available in the package drone.
+\end{figure}%
 
-\begin{verbatim}
-# A tibble: 7,937 x 7
-   Country Code  Region                     Year Cooking Electricity Income
-   <fct>   <fct> <fct>                     <dbl>   <dbl>       <dbl> <fct> 
- 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     
- 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     
- 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     
- 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     
- 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     
- 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     
- 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     
- 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     
- 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     
-10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     
-# i 7,927 more rows
-\end{verbatim}
+In order to create the above plots, I use the same i) dataset and ii)
+same cartesian plane (shown below). The differences are the geometries
+that we use and statistics we visualise the plots. For example, in chart
+A: all values are represented using individual points. In chart H: The
+range is denoted using a blue line and mean is represented using a red
+dot.
 
-Step 2: Map the variables to the graphical properties.
+\includegraphics{intro_files/figure-pdf/unnamed-chunk-2-1.pdf}
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-3-1.pdf}
-
-Step 3: Plot the data.
-
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-4-1.pdf}
-
-\section{\texorpdfstring{What is
-\texttt{geom}?}{What is geom?}}\label{what-is-geom}
-
-Below are four methods that I used to visualise the distribution of var1
-by var 2.
-
-\section{Data}\label{data}
+\section{Data use in the
+Encyclopedia}\label{data-use-in-the-encyclopedia}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -412,7 +390,7 @@ by var 2.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-6-1.pdf}
+\includegraphics{intro_files/figure-pdf/unnamed-chunk-4-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -421,7 +399,7 @@ by var 2.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-7-1.pdf}
+\includegraphics{intro_files/figure-pdf/unnamed-chunk-5-1.pdf}
 
 \section{Packages use for data wrangiling and \textbar\textgreater{}
 operator}\label{packages-use-for-data-wrangiling-and-operator}
@@ -3291,6 +3269,18 @@ Representing a vertical interval defined by x, ymin and ymax
 
 \includegraphics{l_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
+\section{geom\_lm}\label{geom_lm}
+
+\section{geom\_lm\_fitted}\label{geom_lm_fitted}
+
+\section{geom\_lm\_pred\_int}\label{geom_lm_pred_int}
+
+\section{geom\_lm\_residuals}\label{geom_lm_residuals}
+
+\section{geom\_lm\_conf\_int}\label{geom_lm_conf_int}
+
+\section{geom\_lm\_formula}\label{geom_lm_formula}
+
 \part{M}
 
 \chapter{geom\_m}\label{sec-m}
@@ -4979,6 +4969,82 @@ layer}
 
 \chapter{geom\_t}\label{sec-t}
 
+\section{\texorpdfstring{\textbf{geom\_text}}{geom\_text}}\label{geom_text}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+Labeling plots.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}, \texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{stat} , \texttt{position} , \texttt{size}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{label =}\NormalTok{ Income)) }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_text only"}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{label =}\NormalTok{ Income)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_point and geom\_text only"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{t_files/figure-pdf/unnamed-chunk-2-1.pdf}
+
+\section{\texorpdfstring{\textbf{geom\_text\_repel}}{geom\_text\_repel}}\label{geom_text_repel}
+
+\textbf{Package}
+
+ggrepel (\textbf{ggrepel?})
+
+\textbf{Description}
+
+Repulsive textual annotations.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+`x, y
+
+\emph{optional aesthetics}
+
+stat , position , size
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggrepel)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(mtcars, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ wt, }\AttributeTok{y =}\NormalTok{ mpg, }\AttributeTok{label =} \FunctionTok{rownames}\NormalTok{(mtcars))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text\_repel}\NormalTok{() }\SpecialCharTok{+}  
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{,}\AttributeTok{x =} \StringTok{"Weight (1000 lbs)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Miles/(US) gallon"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_text\_repel only"}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(mtcars, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ wt, }\AttributeTok{y =}\NormalTok{ mpg, }\AttributeTok{label =} \FunctionTok{rownames}\NormalTok{(mtcars))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_text\_repel}\NormalTok{() }\SpecialCharTok{+}  
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{,}\AttributeTok{x =} \StringTok{"Weight (1000 lbs)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Miles/(US) gallon"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_text\_repel and geom\_point"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{t_files/figure-pdf/unnamed-chunk-3-1.pdf}
+
 \part{U}
 
 \chapter{geom\_u}\label{sec-u}
@@ -5256,57 +5322,7 @@ with)
 
 \chapter{geom\_x}\label{sec-x}
 
-\section{geom\_x\_label}\label{geom_x_label}
-
-\textbf{Package}
-
-ggxmean (Reynolds 2024)
-
-\textbf{geom\_x\_line}
-
-\textbf{Package}
-
-ggxmean (Reynolds 2024)
-
-\section{geom\_x\_mean}\label{geom_x_mean}
-
-\textbf{Package}
-
-ggxmean (Reynolds 2024)
-
-\textbf{geom\_x\_mean\_label}
-
-\section{geom\_x\_median}\label{geom_x_median}
-
-\textbf{Package}
-
-ggxmean (Reynolds 2024)
-
-\section{geom\_x\_percentile}\label{geom_x_percentile}
-
-\textbf{Package}
-
-ggxmean (Reynolds 2024)
-
-\section{geom\_x\_quantile}\label{geom_x_quantile}
-
-\textbf{Package}
-
-ggxmean (Reynolds 2024)
-
-\section{geom\_xmax}\label{geom_xmax}
-
-\textbf{Package}
-
-ggxmean (Reynolds 2024)
-
-\section{geom\_xmin}\label{geom_xmin}
-
-\textbf{Package}
-
-ggxmean (Reynolds 2024)
-
-\section{geom\_xy\_means}\label{geom_xy_means}
+\section{geom\_xmax}\label{xmax}
 
 \textbf{Package}
 
@@ -5321,7 +5337,330 @@ ggxmean (Reynolds 2024)
 
 \textbf{Description}
 
-Place point at mean of x and mean of y
+Draw vertical line at the max of x.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{linetype} , \texttt{size}
+
+\textbf{See also}
+
+\href{@xmin}{geom\_xmin}, \href{@x_median}{geom\_x\_median},
+\href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggxmean)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"\#1b9e77"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_xmax}\NormalTok{(}\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-3-1.pdf}
+
+\section{geom\_xmin}\label{xmin}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Draw vertical line at the min of x.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+color, linetype , size
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@x_median}{geom\_x\_median},
+\href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example 1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"\#1b9e77"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_xmin}\NormalTok{(}\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+\section{geom\_x\_median}\label{x_median}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Place point at median of x.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{linetype} , \texttt{size}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"\#1b9e77"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_x\_median}\NormalTok{(}\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-5-1.pdf}
+
+\section{geom\_x\_mean}\label{x_mean}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Place point at mean of x.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{linetype} , \texttt{size}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"\#1b9e77"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_x\_mean}\NormalTok{(}\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-6-1.pdf}
+
+\section{geom\_x\_mean\_label}\label{x_mean_label}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Place point at mean of x and label.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{linetype} , \texttt{size}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"\#1b9e77"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_x\_mean\_label}\NormalTok{(}\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-7-1.pdf}
+
+\section{geom\_x\_percentile}\label{x_percentile}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Lines are drawn at the percentile value of x.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{percentile}, \texttt{color}, \texttt{linetype} , \texttt{size}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{quantile}\NormalTok{(worldbankdata}\SpecialCharTok{$}\NormalTok{Cooking, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    0%    25%    50%    75%   100% 
+  0.00  27.30  84.75 100.00 100.00 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"\#1b9e77"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_x\_percentile}\NormalTok{(}\AttributeTok{percentile =} \FunctionTok{c}\NormalTok{( }\DecValTok{25}\NormalTok{,}\DecValTok{50}\NormalTok{, }\DecValTok{75}\NormalTok{), }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{) }\SpecialCharTok{+}
+     \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"25th, 50th and 75th percentiles"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-8-1.pdf}
+
+\section{geom\_xy\_means}\label{xy_means}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Place point at the intersection point of mean of x and mean of y.
 
 \textbf{Understandable aesthetics}
 
@@ -5329,11 +5668,44 @@ Place point at mean of x and mean of y
 
 \texttt{x}, \texttt{y}
 
+\emph{optional aesthetics}
+
+\texttt{position}, \texttt{color}, \texttt{size}
+
 \textbf{See also}
 
-\hyperref[point]{geom\_point}
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@x_line}{geom\_x\_line}, \href{@xdiff}{geom\_xdiff},
+\href{@x1sd}{geom\_x1sd}, \href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
 
 \textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Electricity, }\AttributeTok{y =}\NormalTok{ Cooking) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} 
+\NormalTok{  ggxmean}\SpecialCharTok{::}\FunctionTok{geom\_xy\_means}\NormalTok{(}\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{size =} \DecValTok{5}\NormalTok{) }\SpecialCharTok{+}  
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Electricity"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Cooking"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-9-1.pdf}
+
+\textbf{Example 2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5356,22 +5728,738 @@ Warning: Removed 6047 rows containing missing values or values outside the scale
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{x_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\includegraphics{x_files/figure-pdf/unnamed-chunk-10-1.pdf}
 
-\section{geom\_xy\_xymean}\label{geom_xy_xymean}
+\section{geom\_x\_line}\label{x_line}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Lines defined by values of x.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{size}, \texttt{alpha}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@xdiff}{geom\_xdiff},
+\href{@x1sd}{geom\_x1sd}, \href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example }
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"geom\_point only"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{geom\_x\_line}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}\#1b9e77\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.9}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"geom\_point and geom\_x\_line"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-11-1.pdf}
+
+\section{geom\_xdiff}\label{xdiff}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Place lines from each point to mean x.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{size}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@x1sd}{geom\_x1sd}, \href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example }
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}\NormalTok{ ggxmean}\SpecialCharTok{:::}\FunctionTok{geom\_xdiff}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{),}
+        \AttributeTok{plot.subtitle =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{),}
+        \AttributeTok{plot.caption =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{), }\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{,}
+        \AttributeTok{axis.title.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{margin =} \FunctionTok{margin}\NormalTok{(}\AttributeTok{t =} \DecValTok{10}\NormalTok{)),}
+        \AttributeTok{axis.title.y =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{margin =} \FunctionTok{margin}\NormalTok{(}\AttributeTok{r =} \DecValTok{10}\NormalTok{)))}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+} \FunctionTok{geom\_x\_mean}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}\NormalTok{ ggxmean}\SpecialCharTok{:::}\FunctionTok{geom\_xdiff}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"geom\_x\_mean, geom\_point and geom\_xdiff"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{),}
+        \AttributeTok{plot.subtitle =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{),}
+        \AttributeTok{plot.caption =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{), }\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{,}
+        \AttributeTok{axis.title.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{margin =} \FunctionTok{margin}\NormalTok{(}\AttributeTok{t =} \DecValTok{10}\NormalTok{)),}
+        \AttributeTok{axis.title.y =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{margin =} \FunctionTok{margin}\NormalTok{(}\AttributeTok{r =} \DecValTok{10}\NormalTok{)))}
+\NormalTok{p1}\SpecialCharTok{/}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-12-1.pdf}
+
+\section{geom\_x1sd}\label{x1sd}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Represents one standard deviation.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{alpha}, \texttt{fill}, \texttt{linetype}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example }
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} 
+\NormalTok{  ggxmean}\SpecialCharTok{:::}\FunctionTok{geom\_x1sd}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}\#e7298a\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \StringTok{\textquotesingle{}\#e7298a\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-13-1.pdf}
+
+\section{geom\_xydiffsmean}\label{xydiffsmean}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Draw the results of
+\[\frac{\sum_{i=1}^{N}(x_i-\bar{x})(y_i-\bar{y})}{N}\]
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{alpha}, \texttt{fill}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example }
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+\NormalTok{  ggxmean}\SpecialCharTok{:::}\FunctionTok{geom\_xydiffsmean}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}\#c51b8a\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \StringTok{\textquotesingle{}\#c51b8a\textquotesingle{}}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}\NormalTok{ ggxmean}\SpecialCharTok{:::}\FunctionTok{geom\_xdiff}\NormalTok{(}\AttributeTok{col=}\StringTok{"\#1b9e77"}\NormalTok{) }\SpecialCharTok{+}\NormalTok{ ggxmean}\SpecialCharTok{:::}\FunctionTok{geom\_ydiff}\NormalTok{(}\AttributeTok{col=}\StringTok{"\#d95f02"}\NormalTok{)}\SpecialCharTok{+}
+\NormalTok{  ggxmean}\SpecialCharTok{:::}\FunctionTok{geom\_xydiffsmean}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}\#c51b8a\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \StringTok{\textquotesingle{}\#c51b8a\textquotesingle{}}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"geom\_point, geom\_xdiff, geom\_ydiff, geom\_xydiffmean"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }
+\NormalTok{p1}\SpecialCharTok{/}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-14-1.pdf}
+
+\section{geom\_xsidebar}\label{xsidebar}
+
+\textbf{Package}
+
+ggside (Landis 2024)
+
+\textbf{Description}
+
+The xside variant of geom\_bar is geom\_xsidebar.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{alpha}, \texttt{fill}, \texttt{position},
+\texttt{width}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example }
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(ggside)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity )) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_xsidebar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-15-1.pdf}
+
+\section{geom\_xsidedensity}\label{xsidedensity}
+
+\textbf{Package}
+
+ggside (Landis 2024)
+
+\textbf{Description}
+
+The xside variant of geom\_density is geom\_xsidedensity.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{fill}, \texttt{position}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
 
 \textbf{Example}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggxmean)}
-\NormalTok{worldbankdata }\SpecialCharTok{|\textgreater{}}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Income, }\AttributeTok{y =}\NormalTok{ Cooking)) }\SpecialCharTok{+} 
-  \FunctionTok{geom\_xy\_xymean}\NormalTok{(}\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size=}\DecValTok{3}\NormalTok{) }
+\FunctionTok{require}\NormalTok{(ggside)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{fill =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_xsidedensity}\NormalTok{(}\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{)  }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{x_files/figure-pdf/unnamed-chunk-4-1.pdf}
+\includegraphics{x_files/figure-pdf/unnamed-chunk-16-1.pdf}
+
+\section{geom\_xsidefreqpoly}\label{xsidefreqpoly}
+
+\textbf{Package}
+
+ggside (Landis 2024)
+
+\textbf{Description}
+
+The xside variant of geom\_freqpoly is geom\_xsidefreqpoly.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{fill}, \texttt{position}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(ggside)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_xsidefreqpoly}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\FunctionTok{after\_stat}\NormalTok{(count)),}\AttributeTok{binwidth =} \DecValTok{500}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-17-1.pdf}
+
+\section{geom\_xsidehistogram}\label{xsidehistogram}
+
+\textbf{Package}
+
+ggside (Landis 2024)
+
+\textbf{Description}
+
+The xside variant of geom\_histogram is geom\_xsidehistogram.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{fill}, \texttt{position}, \texttt{binwidth}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(ggside)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_xsidehistogram}\NormalTok{(}\AttributeTok{binwidth =} \FloatTok{0.1}\NormalTok{, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-18-1.pdf}
+
+\section{geom\_xsidepoint}\label{xsidepoint}
+
+\textbf{Package}
+
+ggside (Landis 2024)
+
+\textbf{Description}
+
+The ggside variants of geom\_point is geom\_xsidepoint. Projection of
+points into the x-axis to show the marginal distribution of x.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{fill}, \texttt{position}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(ggside)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_xsidepoint}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{)  }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-19-1.pdf}
+
+\section{geom\_xsideboxplot}\label{xsideboxplot}
+
+\textbf{Package}
+
+ggside (Landis 2024)
+
+\textbf{Description}
+
+The xside variant of geom\_boxplot is geom\_xsideboxplot. Marginal
+distribution of x using boxplots
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{fill}, \texttt{position}, \texttt{alpha}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(ggside)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_xsideboxplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Income), }\AttributeTok{orientation =} \StringTok{"y"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{)  }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-20-1.pdf}
+
+\section{geom\_x\_margin\_arrow}\label{x_margin_arrow}
+
+\textbf{Package}
+
+ggpp (Aphalo 2024)
+
+\textbf{Description}
+
+Plot small arrows on plot margins in a 2D display. Arrows can be used to
+highlight specific values along a margin.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{alpha}, \texttt{position}, \texttt{xintercept}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_point}{geom\_x\_margin\_point},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(ggpp)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_x\_margin\_arrow}\NormalTok{(}\AttributeTok{xintercept =} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{75}\NormalTok{, }\AttributeTok{by =} \DecValTok{10}\NormalTok{), }\AttributeTok{size =} \DecValTok{1}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.8}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{)  }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-21-1.pdf}
+
+\section{geom\_x\_margin\_point}\label{x_margin_point}
+
+\textbf{Package}
+
+ggpp (Aphalo 2024)
+
+\textbf{Description}
+
+Margin points can supplement a 2d display with annotations. Margin
+points can highlight individual values along a margin.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{alpha}, \texttt{position}, \texttt{xintercept}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@xsidefunction}{geom\_xsidefunction}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(ggpp)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Code }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}AFG\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}AGO\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BEN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BFA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BGD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BOL\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}BWA\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_x\_margin\_point}\NormalTok{(}\AttributeTok{xintercept =} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{75}\NormalTok{, }\AttributeTok{by =} \DecValTok{10}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{, }\AttributeTok{x =} \StringTok{"Cooking"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Electricity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-22-1.pdf}
+
+\section{geom\_xsidefunction}\label{xsidefunction}
+
+\textbf{Package}
+
+ggside (Landis 2024)
+
+\textbf{Description}
+
+The xside and yside variants of geom\_function.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\emph{optional aesthetics}
+
+\texttt{color}, \texttt{alpha}, \texttt{position}
+
+\textbf{See also}
+
+\href{@density2d}{geom\_density2d}
+
+\textbf{See also}
+
+\href{@xmax}{geom\_xmax}, \href{@xmin}{geom\_xmin},
+\href{@x_median}{geom\_x\_median}, \href{@x_mean}{geom\_x\_mean},
+\href{@x_mean_label}{geom\_x\_mean\_label},
+\href{@x_percentile}{geom\_x\_percentile},
+\href{@xy_means}{geom\_xy\_means}, \href{@x_line}{geom\_x\_line},
+\href{@xdiff}{geom\_xdiff}, \href{@x1sd}{geom\_x1sd},
+\href{@xydiffsmean}{geom\_xydiffsmean},
+\href{@xsidebar}{geom\_xsidebar},
+\href{@xsidedensity}{geom\_xsidedensity},
+\href{@xsidefreqpoly}{geom\_xsidefreqpoly},
+\href{@xsidehistogram}{geom\_xsidehistogram},
+\href{@xsidepoint}{geom\_xsidepoint},
+\href{@xsideboxplot}{geom\_xsideboxplot},
+\href{@x_margin_arrow}{geom\_x\_margin\_arrow},
+\href{@x_margin_point}{geom\_x\_margin\_point}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(ggpp)}
+\FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_xsidedensity}\NormalTok{(}\AttributeTok{fill =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{3}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{x_files/figure-pdf/unnamed-chunk-23-1.pdf}
 
 \part{Y}
 
@@ -5528,8 +6616,6 @@ ggplot2 (Wickham 2016)
 
 \chapter{Summary}\label{summary}
 
-In summary, this book has no content whatsoever.
-
 \bookmarksetup{startatroot}
 
 \chapter*{References}\label{references}
@@ -5539,6 +6625,10 @@ In summary, this book has no content whatsoever.
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-ggpp}
+Aphalo, Pedro J. 2024. \emph{Ggpp: Grammar Extensions to 'Ggplot2'}.
+\url{https://CRAN.R-project.org/package=ggpp}.
+
 \bibitem[\citeproctext]{ref-brunson2020ggalluvial}
 Brunson, Jason Cory. 2020. {``Ggalluvial: Layered Grammar for Alluvial
 Plots.''} \emph{Journal of Open Source Software} 5 (49).
@@ -5569,6 +6659,10 @@ Plots in the 'Ggplot2' Framework}.
 Kaplan, Daniel, and Randall Pruim. 2023. \emph{Ggformula: Formula
 Interface to the Grammar of Graphics}.
 \url{https://CRAN.R-project.org/package=ggformula}.
+
+\bibitem[\citeproctext]{ref-ggside}
+Landis, Justin. 2024. \emph{Ggside: Side Grammar Graphics}.
+\url{https://CRAN.R-project.org/package=ggside}.
 
 \bibitem[\citeproctext]{ref-emoGG}
 Miller, David L. 2023. \emph{emoGG: Use Emoji in Ggplot2}.

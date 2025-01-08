@@ -11,3 +11,4 @@ Welcome to the "Data Visualisation `geom` Encyclopedia", an encyclopedia of geom
 The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.
 
 
+This book is a work in progress. The accompanying package for drone is available at: https://github.com/thiyangt/drone

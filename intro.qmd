@@ -2,52 +2,29 @@
 
 ## What is data visualisation?
 
-Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. To demonstrate the concept, I use a simple dataset. This dataset includes 30 rows and two variables. Looking at the numerical figures makes it difficult to find patterns in the data. Figure 2 is a visual representation of the same dataset using an individual value plot. The individual value plot shows each observation as a single point. The individual value plot presents insights at a glance. We can see the outline behaviour of one observation in "L2". The dispersion of data in L2 and L3 are higher than L1. We can immediately see the outline behavior of one observation in "L2". Moreover, it is immediately apparent that the dispersion of data in L2 and L3 is slightly higher than in L1. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively.
+Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively.
 
+## What are Gemetries (geoms) in Data Visualisation?
 
-## What did we do in making a graph/plot?
+In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.
 
-
-In making a graph (sometimes we call plot), what we are doing is we are mapping variables to graphical properties on a cartesian plan. and then represent data using a suitable geometry. I will break down the steps as below:
-
-Step 1: Obtain ingredients to make a plot. There are two main ingredients: i) canvas to draw a plot. ii) data to plot on the canvas
-
-Let's first obtain a canvas using the ggplot2 package.
-
-```{r}
-library(ggplot2)
-ggplot()
-```
-
-Second, the data that we are going to draw the plot. Here, I use `worldbankdata` available in the package drone.
-
-```{r, echo=FALSE}
-library(drone)
-data(worldbankdata)
-worldbankdata
-```
-
-Step 2: Map the variables to the graphical properties.
-
-```{r, fig.height=4, fig.width=8, echo=FALSE}
-ggplot(worldbankdata, aes(x=Income, y=Electricity))
-```
-
-Step 3: Plot the data.
-
-```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE}
+```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE, fig.cap="Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F."}
 library(patchwork)
 library(tidyverse)
 library(ggbeeswarm)
+library(ggplot2)
+library(drone)
+data("worldbankdata")
+worldbankdata2021 <- worldbankdata |> filter(Year == 2021)
 
-p1 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_point() + ggtitle("A")
-p2 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_quasirandom() + ggtitle("B")
-p3 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C")
-p4 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D")
-p5 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E")
-p6 <- ggplot(worldbankdata, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="black", trim=TRUE)+ ggtitle("F")
+p1 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_point() + ggtitle("A")
+p2 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_quasirandom() + ggtitle("B")
+p3 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C")
+p4 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D")
+p5 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E")
+p6 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="black", trim=TRUE)+ ggtitle("F")
 
-lrdf <- worldbankdata |> select(Electricity, Income) |> group_by(Income) |>
+lrdf <- worldbankdata2021 |> select(Electricity, Income) |> group_by(Income) |>
   summarize(Min = min(Electricity, na.rm = TRUE), Max = max(Electricity, na.rm=TRUE), Mean = mean(Electricity, na.rm = TRUE))
 p7 <- ggplot(lrdf) + 
    geom_linerange(aes(x=Income, ymin=Min, ymax=Max, ymean = Mean), width=0.2, size=1, color="blue") + ggtitle("G") + ylab("Electricity")
@@ -58,16 +35,15 @@ p8 <- ggplot(lrdf) +
 (p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
-## What is `geom`?
+In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualise the plots. For example, in chart A: all values are represented using individual points. In chart H: The range is denoted using a blue line and mean is represented using a red dot. 
+
+```{r, fig.height=5, fig.width=5,echo=FALSE}
+p0 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity))
+p0
+```
 
 
-
-
-Below are four methods that I used to visualise the distribution of var1 by var 2.
-
-
-
-## Data
+## Data use in the Encyclopedia
 
 ```{r}
 library(drone)

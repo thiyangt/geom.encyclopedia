@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Introduction – Data Visualisation Geometries Encyclopedia</title>
+<title>2&nbsp; Introduction – Data Visualisation **Geom**etrie**s** Encyclopedia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,20 +150,20 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Data Visualisation Geometries Encyclopedia</a> 
+      <a href="./">Data Visualisation <strong>Geom</strong>etrie<strong>s</strong> Encyclopedia</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/thiyangt/geom.encyclopedia" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-Geometries-Encyclopedia.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation---Geom--etrie--s---Encyclopedia.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation-Geometries-Encyclopedia.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation---Geom--etrie--s---Encyclopedia.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -663,12 +663,11 @@ div.csl-indent {
    
   <ul>
   <li><a href="#what-is-data-visualisation" id="toc-what-is-data-visualisation" class="nav-link active" data-scroll-target="#what-is-data-visualisation"><span class="header-section-number">2.1</span> What is data visualisation?</a></li>
-  <li><a href="#what-did-we-do-in-making-a-graphplot" id="toc-what-did-we-do-in-making-a-graphplot" class="nav-link" data-scroll-target="#what-did-we-do-in-making-a-graphplot"><span class="header-section-number">2.2</span> What did we do in making a graph/plot?</a></li>
-  <li><a href="#what-is-geom" id="toc-what-is-geom" class="nav-link" data-scroll-target="#what-is-geom"><span class="header-section-number">2.3</span> What is <code>geom</code>?</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.4</span> Data</a></li>
-  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2.5</span> Data description</a></li>
-  <li><a href="#packages-use-for-data-wrangiling-and-operator" id="toc-packages-use-for-data-wrangiling-and-operator" class="nav-link" data-scroll-target="#packages-use-for-data-wrangiling-and-operator"><span class="header-section-number">2.6</span> Packages use for data wrangiling and |&gt; operator</a></li>
-  <li><a href="#r-packages-with-geom-implementation" id="toc-r-packages-with-geom-implementation" class="nav-link" data-scroll-target="#r-packages-with-geom-implementation"><span class="header-section-number">2.7</span> R packages with geom implementation</a></li>
+  <li><a href="#what-are-gemetries-geoms-in-data-visualisation" id="toc-what-are-gemetries-geoms-in-data-visualisation" class="nav-link" data-scroll-target="#what-are-gemetries-geoms-in-data-visualisation"><span class="header-section-number">2.2</span> What are Gemetries (geoms) in Data Visualisation?</a></li>
+  <li><a href="#data-use-in-the-encyclopedia" id="toc-data-use-in-the-encyclopedia" class="nav-link" data-scroll-target="#data-use-in-the-encyclopedia"><span class="header-section-number">2.3</span> Data use in the Encyclopedia</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2.4</span> Data description</a></li>
+  <li><a href="#packages-use-for-data-wrangiling-and-operator" id="toc-packages-use-for-data-wrangiling-and-operator" class="nav-link" data-scroll-target="#packages-use-for-data-wrangiling-and-operator"><span class="header-section-number">2.5</span> Packages use for data wrangiling and |&gt; operator</a></li>
+  <li><a href="#r-packages-with-geom-implementation" id="toc-r-packages-with-geom-implementation" class="nav-link" data-scroll-target="#r-packages-with-geom-implementation"><span class="header-section-number">2.6</span> R packages with geom implementation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -696,75 +695,39 @@ div.csl-indent {
 
 <section id="what-is-data-visualisation" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="what-is-data-visualisation"><span class="header-section-number">2.1</span> What is data visualisation?</h2>
-<p>Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. To demonstrate the concept, I use a simple dataset. This dataset includes 30 rows and two variables. Looking at the numerical figures makes it difficult to find patterns in the data. Figure 2 is a visual representation of the same dataset using an individual value plot. The individual value plot shows each observation as a single point. The individual value plot presents insights at a glance. We can see the outline behaviour of one observation in “L2”. The dispersion of data in L2 and L3 are higher than L1. We can immediately see the outline behavior of one observation in “L2”. Moreover, it is immediately apparent that the dispersion of data in L2 and L3 is slightly higher than in L1. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively.</p>
+<p>Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively.</p>
 </section>
-<section id="what-did-we-do-in-making-a-graphplot" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="what-did-we-do-in-making-a-graphplot"><span class="header-section-number">2.2</span> What did we do in making a graph/plot?</h2>
-<p>In making a graph (sometimes we call plot), what we are doing is we are mapping variables to graphical properties on a cartesian plan. and then represent data using a suitable geometry. I will break down the steps as below:</p>
-<p>Step 1: Obtain ingredients to make a plot. There are two main ingredients: i) canvas to draw a plot. ii) data to plot on the canvas</p>
-<p>Let’s first obtain a canvas using the ggplot2 package.</p>
+<section id="what-are-gemetries-geoms-in-data-visualisation" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="what-are-gemetries-geoms-in-data-visualisation"><span class="header-section-number">2.2</span> What are Gemetries (geoms) in Data Visualisation?</h2>
+<p>In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="768"></p>
+<figcaption>Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Second, the data that we are going to draw the plot. Here, I use <code>worldbankdata</code> available in the package drone.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7,937 × 7
-   Country Code  Region                     Year Cooking Electricity Income
-   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; 
- 1 Aruba   ABW   Latin America &amp; Caribbean  1990      NA       100   H     
- 2 Aruba   ABW   Latin America &amp; Caribbean  2000      NA        91.7 H     
- 3 Aruba   ABW   Latin America &amp; Caribbean  2013      NA       100   H     
- 4 Aruba   ABW   Latin America &amp; Caribbean  2014      NA       100   H     
- 5 Aruba   ABW   Latin America &amp; Caribbean  2015      NA       100   H     
- 6 Aruba   ABW   Latin America &amp; Caribbean  2016      NA       100   H     
- 7 Aruba   ABW   Latin America &amp; Caribbean  2017      NA       100   H     
- 8 Aruba   ABW   Latin America &amp; Caribbean  2018      NA       100   H     
- 9 Aruba   ABW   Latin America &amp; Caribbean  2019      NA       100   H     
-10 Aruba   ABW   Latin America &amp; Caribbean  2020      NA       100   H     
-# ℹ 7,927 more rows</code></pre>
-</div>
-</div>
-<p>Step 2: Map the variables to the graphical properties.</p>
+<p>In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualise the plots. For example, in chart A: all values are represented using individual points. In chart H: The range is denoted using a blue line and mean is represented using a red dot.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Step 3: Plot the data.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="480"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="what-is-geom" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="what-is-geom"><span class="header-section-number">2.3</span> What is <code>geom</code>?</h2>
-<p>Below are four methods that I used to visualise the distribution of var1 by var 2.</p>
-</section>
-<section id="data" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="data"><span class="header-section-number">2.4</span> Data</h2>
+<section id="data-use-in-the-encyclopedia" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="data-use-in-the-encyclopedia"><span class="header-section-number">2.3</span> Data use in the Encyclopedia</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,937 × 7
    Country Code  Region                     Year Cooking Electricity Income
@@ -783,50 +746,50 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="data-description" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2.5</span> Data description</h2>
+<section id="data-description" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2.4</span> Data description</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="packages-use-for-data-wrangiling-and-operator" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="packages-use-for-data-wrangiling-and-operator"><span class="header-section-number">2.6</span> Packages use for data wrangiling and |&gt; operator</h2>
+<section id="packages-use-for-data-wrangiling-and-operator" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="packages-use-for-data-wrangiling-and-operator"><span class="header-section-number">2.5</span> Packages use for data wrangiling and |&gt; operator</h2>
 </section>
-<section id="r-packages-with-geom-implementation" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="r-packages-with-geom-implementation"><span class="header-section-number">2.7</span> R packages with geom implementation</h2>
+<section id="r-packages-with-geom-implementation" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="r-packages-with-geom-implementation"><span class="header-section-number">2.6</span> R packages with geom implementation</h2>
 <ol type="1">
-<li><p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
-<li><p>ggpattern <span class="citation" data-cites="ggpattern">(<a href="#ref-ggpattern" role="doc-biblioref">FC, Davis, and ggplot2 authors 2023</a>)</span></p></li>
-<li><p>ggforce <span class="citation" data-cites="ggforce">(<a href="#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p></li>
-<li><p>ggalluvial <span class="citation" data-cites="ggalluvial">(<a href="#ref-ggalluvial" role="doc-biblioref"><strong>ggalluvial?</strong></a>)</span></p></li>
-<li><p>ggbump <span class="citation" data-cites="ggbump">(<a href="#ref-ggbump" role="doc-biblioref">Sjoberg 2020</a>)</span></p></li>
-<li><p>ggridges <span class="citation" data-cites="ggridges">(<a href="#ref-ggridges" role="doc-biblioref">Wilke 2023</a>)</span></p></li>
-<li><p>ggalt <span class="citation" data-cites="ggalt">(<a href="#ref-ggalt" role="doc-biblioref">Rudis, Bolker, and Schulz 2017</a>)</span></p></li>
+<li><p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
+<li><p>ggpattern <span class="citation" data-cites="ggpattern">(<a href="references.html#ref-ggpattern" role="doc-biblioref">FC, Davis, and ggplot2 authors 2023</a>)</span></p></li>
+<li><p>ggforce <span class="citation" data-cites="ggforce">(<a href="references.html#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p></li>
+<li><p>ggalluvial <span class="citation" data-cites="ggalluvial">(<a href="references.html#ref-ggalluvial" role="doc-biblioref"><strong>ggalluvial?</strong></a>)</span></p></li>
+<li><p>ggbump <span class="citation" data-cites="ggbump">(<a href="references.html#ref-ggbump" role="doc-biblioref">Sjoberg 2020</a>)</span></p></li>
+<li><p>ggridges <span class="citation" data-cites="ggridges">(<a href="references.html#ref-ggridges" role="doc-biblioref">Wilke 2023</a>)</span></p></li>
+<li><p>ggalt <span class="citation" data-cites="ggalt">(<a href="references.html#ref-ggalt" role="doc-biblioref">Rudis, Bolker, and Schulz 2017</a>)</span></p></li>
 </ol>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-ggpattern" class="csl-entry" role="listitem">
 FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. <em>Ggpattern: ’Ggplot2’ Pattern Geoms</em>.
 </div>

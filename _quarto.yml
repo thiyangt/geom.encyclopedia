@@ -4,8 +4,8 @@ project:
 
 
 book:
-  title: "Data Visualisation Geometries Encyclopedia"
-  subtitle: "geoms in the grammar of graphics (ggplot)"
+  title: "Data Visualisation **Geom**etrie**s** Encyclopedia"
+  subtitle: "Geoms in the Grammar of Graphics: All Types of Plots"
   author: "Thiyanga S. Talagala"
   date: "`r Sys.Date()`"
   downloads: [pdf, epub]
