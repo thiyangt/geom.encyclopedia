@@ -1,6 +1,6 @@
 # Preface {.unnumbered}
 
-## "Data Visualisation <span style='color:red;'>Geom</span>etrie<span style='color:red;'>s</span> Encyclopedia"
+
 
 ::: {style="font-size: 300%;"}
 
