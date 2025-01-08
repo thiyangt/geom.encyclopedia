@@ -12,3 +12,9 @@ The field of data visualization is dynamic, and new techniques and visualization
 
 
 This book is a work in progress. The accompanying package for drone is available at: https://github.com/thiyangt/drone
+
+
+```{r, echo=FALSE, fig.pos="center"}
+knitr::include_graphics("dronehex.png")
+```
+
