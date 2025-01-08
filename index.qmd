@@ -13,9 +13,11 @@ Welcome to the "Data Visualisation `geom` Encyclopedia", an encyclopedia of geom
 The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.
 
 
-This book is a work in progress. The accompanying package for drone is available at: \url{https://github.com/thiyangt/drone}
+This book is a work in progress. The accompanying R package for drone is available at: \url{https://github.com/thiyangt/drone}
 
-## drone: <span style='color:red;'>Data</span> fo<span style='color:red;'>R</span> ge<span style='color:red;'>O</span>m e<span style='color:red;'>N</span>cyclopa<span style='color:red;'>E</span>dia
+## Accompanying R package:  drone
+
+## <span style='color:red;'>drone</span>: <span style='color:red;'>D</span>ata fo<span style='color:red;'>R</span> ge<span style='color:red;'>O</span>m e<span style='color:red;'>N</span>cyclopa<span style='color:red;'>E</span>dia
 
 
 ```{r, echo=FALSE, fig.pos="center"}
