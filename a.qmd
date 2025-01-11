@@ -1,4 +1,4 @@
-# geom_a  {#sec-a}
+# geom_a {#sec-a}
 
 
 ```{r, message=FALSE, warning=FALSE,echo=FALSE}
