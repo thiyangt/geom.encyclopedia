@@ -285,12 +285,13 @@
 \hyperref[sec-w]{W} \textbar{} \hyperref[sec-x]{X} \textbar{}
 \hyperref[sec-y]{Y} \textbar{} \hyperref[sec-z]{Z} \textbar{}
 
+\includegraphics{cover/cover.labels.png}
+
 Welcome to the ``Data Visualisation \texttt{geom} Encyclopedia'', an
-encyclopedia of geometrics in Data Visualisation. Geometric
-representations serve as the visual language that bridges the gap
-between complex datasets and human comprehension. This encyclopedia is a
+encyclopedia of geometrics in Data Visualisation. This encyclopedia is a
 curated collection of \texttt{geom} available in different R programming
-software packages.
+software packages. This book can also be considered as an ``Encyclopedia
+of Plots''.
 
 The field of data visualization is dynamic, and new techniques and
 visualizations may emerge over time. Hence, I will be regularly updating
@@ -298,7 +299,7 @@ this encyclopedia to ensure it remains a relevant and comprehensive
 resource for users.
 
 This book is a work in progress. The accompanying R package for drone is
-available at: \url{https://github.com/thiyangt/drone}
+available on CRAN: \url{https://github.com/thiyangt/drone}
 
 \section*{Accompanying R package:
 drone}\label{accompanying-r-package-drone}
@@ -4260,6 +4261,18 @@ ggplot2 (Wickham 2016)
 
 \textbf{Example}
 
+\section{geom\_rect}\label{geom_rect-1}
+
+\textbf{See also}
+
+\hyperref[tile]{geom\_tile}, \hyperref[raster]{geom\_raster}
+
+\section{geom\_raster}\label{geom_raster}
+
+\textbf{See also}
+
+\hyperref[rect]{geom\_tile}, \hyperref[tile]{geom\_tile}
+
 \part{S}
 
 \chapter{geom\_s}\label{sec-s}
@@ -4984,7 +4997,7 @@ layer}
 
 \chapter{geom\_t}\label{sec-t}
 
-\section{\texorpdfstring{\textbf{geom\_text}}{geom\_text}}\label{geom_text}
+\section{geom\_text}\label{text}
 
 \textbf{Package}
 
@@ -5022,7 +5035,7 @@ Labeling plots.
 
 \includegraphics{t_files/figure-pdf/unnamed-chunk-2-1.pdf}
 
-\section{\texorpdfstring{\textbf{geom\_text\_repel}}{geom\_text\_repel}}\label{geom_text_repel}
+\section{geom\_text\_repel}\label{text_repel}
 
 \textbf{Package}
 
@@ -5059,6 +5072,198 @@ stat , position , size
 \end{Shaded}
 
 \includegraphics{t_files/figure-pdf/unnamed-chunk-3-1.pdf}
+
+\section{geom\_tile}\label{tile}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+Create heat map plot. \texttt{geom\_rect()} and \texttt{geom\_tile()} do
+the same thing, but function inputs are different: \texttt{geom\_rect()}
+uses the locations of the four corners (xmin, xmax, ymin and ymax),
+while \texttt{geom\_tile()} uses the center of the tile and its
+dimensions (x, y, width, height).
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[rect]{geom\_rect}, \hyperref[raster]{geom\_raster}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Region }\SpecialCharTok{==} \StringTok{"South Asia"}\NormalTok{ ) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year,}
+             \AttributeTok{y=}\NormalTok{Country, }\AttributeTok{fill=}\NormalTok{Cooking)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_tile}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{width=}\DecValTok{1}\NormalTok{, }\AttributeTok{height=}\DecValTok{1}\NormalTok{), }\AttributeTok{col=}\StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
+\NormalTok{  viridis}\SpecialCharTok{::}\FunctionTok{scale\_fill\_viridis}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{coord\_fixed}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{t_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+\section{geom\_text\_cooks}\label{text_cooks}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Returns a scatter plot with points that are labeled.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}, \texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{position} , \texttt{size}, \texttt{digits},
+\texttt{check\_overlap}
+
+\textbf{See also}
+
+\hyperref[scatter]{geom\_scatter}, \hyperref[text]{geom\_text},
+\hyperref[label]{geom\_label}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggxmean)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bolivia"} \SpecialCharTok{\&}\NormalTok{ Cooking }\SpecialCharTok{\textgreater{}} \DecValTok{75}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Cooking, }\AttributeTok{y=}\NormalTok{Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text\_cooks}\NormalTok{(}\AttributeTok{check\_overlap =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{digits =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_text\_cooks only"}\NormalTok{)  }
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bolivia"} \SpecialCharTok{\&}\NormalTok{ Cooking }\SpecialCharTok{\textgreater{}} \DecValTok{75}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Cooking, }\AttributeTok{y=}\NormalTok{Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{col=}\StringTok{"red"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text\_cooks}\NormalTok{(}\AttributeTok{check\_overlap =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{digits =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_point and geom\_text\_cooks"}\NormalTok{) }
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{t_files/figure-pdf/unnamed-chunk-5-1.pdf}
+
+\section{geom\_text\_coordinate}\label{text_coordinate}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+Returns a scatter plot with points that are labeled with (x, y)
+coordinates.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{position}, \texttt{size}, \texttt{check\_overlap},
+\texttt{nudge\_x}
+
+\textbf{See also}
+
+\hyperref[text]{geom\_text}, \hyperref[text_cooks]{geom\_text\_cooks},
+\hyperref[text_repel]{geom\_text\_repel}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bolivia"} \SpecialCharTok{\&}\NormalTok{ Cooking }\SpecialCharTok{\textgreater{}} \DecValTok{75}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Cooking, }\AttributeTok{y=}\NormalTok{Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text\_coordinate}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_text\_coordinate only"}\NormalTok{)}
+
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bolivia"} \SpecialCharTok{\&}\NormalTok{ Cooking }\SpecialCharTok{\textgreater{}} \DecValTok{75}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Cooking, }\AttributeTok{y=}\NormalTok{Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{col=}\StringTok{"red"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text\_coordinate}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_point and geom\_text\_coordinate"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{t_files/figure-pdf/unnamed-chunk-6-1.pdf}
+
+\section{geom\_text\_leverage}\label{text_leverage}
+
+\textbf{Package}
+
+ggxmean (Reynolds 2024)
+
+\textbf{Description}
+
+Returns a scatter plot with points that are labeled.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}, \texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{position} , \texttt{size}, \texttt{check\_overlap},
+\texttt{nudge\_x}
+
+\textbf{See also}
+
+\hyperref[text]{geom\_text}, \hyperref[text_cooks]{geom\_text\_cooks},
+\hyperref[text_repel]{geom\_text\_repel}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bolivia"} \SpecialCharTok{\&}\NormalTok{ Cooking }\SpecialCharTok{\textgreater{}} \DecValTok{75}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Cooking, }\AttributeTok{y=}\NormalTok{Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text\_leverage}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_text\_leverage only"}\NormalTok{)}
+
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bolivia"} \SpecialCharTok{\&}\NormalTok{ Cooking }\SpecialCharTok{\textgreater{}} \DecValTok{75}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Cooking, }\AttributeTok{y=}\NormalTok{Electricity)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{col=}\StringTok{"red"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text\_leverage}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"geom\_point and geom\_text\_leverage"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{t_files/figure-pdf/unnamed-chunk-7-1.pdf}
 
 \part{U}
 

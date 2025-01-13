@@ -10,7 +10,7 @@ data("worldbankdata")
 
 
 
-## __geom_text__
+## geom_text{#text}
 
 __Package__
 
@@ -44,7 +44,7 @@ p2 <- drop_na(worldbankdata) |>
 p1|p2
 ```
 
-## __geom_text_repel__
+## geom_text_repel{#text_repel}
 
 __Package__
 
@@ -75,5 +75,176 @@ p2 <- ggplot(mtcars, aes(x = wt, y = mpg, label = rownames(mtcars))) +
   geom_point() +
   geom_text_repel() +  
   labs(title = "",x = "Weight (1000 lbs)", y = "Miles/(US) gallon") + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + ggtitle("geom_text_repel and geom_point")
+p1|p2
+```
+
+
+## geom_tile{#tile}
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+Create heat map plot. `geom_rect()` and `geom_tile()` do the same thing, but function inputs are different: `geom_rect()` uses the locations of the four corners (xmin, xmax, ymin and ymax), while `geom_tile()` uses the center of the tile and its dimensions (x, y, width, height).
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+`x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_rect](#rect), [geom_raster](#raster)
+  
+**Example**
+
+```{r, fig.height=3, figh.width=10}
+ worldbankdata |>
+  filter(Region == "South Asia" ) |>
+  ggplot(aes(x=Year,
+             y=Country, fill=Cooking)) +
+  geom_tile(aes(width=1, height=1), col="white") +
+  viridis::scale_fill_viridis() +
+  coord_fixed()
+```
+
+## geom_text_cooks{#text_cooks}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Returns a scatter plot with points that are labeled.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`, `y`
+
+*optional aesthetics*
+
+`position` , `size`, `digits`, `check_overlap`
+
+**See also**
+
+[geom_scatter](#scatter), [geom_text](#text), [geom_label](#label)
+  
+**Example**
+
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+library(ggxmean)
+p1 <- worldbankdata |>
+  filter(Country == "Bolivia" & Cooking > 75) |>
+  ggplot(aes(x=Cooking, y=Electricity)) + 
+  geom_text_cooks(check_overlap = TRUE, digits = 1) + ggtitle("geom_text_cooks only")  
+p2 <- worldbankdata |>
+  filter(Country == "Bolivia" & Cooking > 75) |>
+  ggplot(aes(x=Cooking, y=Electricity)) + 
+  geom_point(col="red") +
+  geom_text_cooks(check_overlap = TRUE, digits = 1) + ggtitle("geom_point and geom_text_cooks") 
+p1|p2
+```
+
+## geom_text_coordinate{#text_coordinate}
+
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+Returns a scatter plot with points that are labeled with (x, y) coordinates.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+`x`
+
+`y`
+
+*optional aesthetics*
+  
+`position`, `size`, `check_overlap`, `nudge_x`
+
+
+**See also**
+
+[geom_text](#text), [geom_text_cooks](#text_cooks),
+[geom_text_repel](#text_repel)
+  
+**Example**
+
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+p1 <- worldbankdata |>
+  filter(Country == "Bolivia" & Cooking > 75) |>
+  ggplot(aes(x=Cooking, y=Electricity)) + 
+  geom_text_coordinate() +
+  ggtitle("geom_text_coordinate only")
+
+p2 <- worldbankdata |>
+  filter(Country == "Bolivia" & Cooking > 75) |>
+  ggplot(aes(x=Cooking, y=Electricity)) + 
+  geom_point(col="red") +
+  geom_text_coordinate() +
+  ggtitle("geom_point and geom_text_coordinate")
+p1|p2
+```
+
+## geom_text_leverage{#text_leverage}
+
+**Package**
+
+ggxmean [@ggxmean]
+
+**Description**
+
+Returns a scatter plot with points that are labeled.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`, `y`
+
+*optional aesthetics*
+
+`position` , `size`, `check_overlap`, `nudge_x`
+
+**See also**
+
+[geom_text](#text), [geom_text_cooks](#text_cooks),
+[geom_text_repel](#text_repel)
+
+**Example**
+
+
+```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+p1 <- worldbankdata |>
+  filter(Country == "Bolivia" & Cooking > 75) |>
+  ggplot(aes(x=Cooking, y=Electricity)) + 
+  geom_text_leverage() +
+  ggtitle("geom_text_leverage only")
+
+p2 <- worldbankdata |>
+  filter(Country == "Bolivia" & Cooking > 75) |>
+  ggplot(aes(x=Cooking, y=Electricity)) + 
+  geom_point(col="red") +
+  geom_text_leverage() +
+  ggtitle("geom_point and geom_text_leverage")
 p1|p2
 ```

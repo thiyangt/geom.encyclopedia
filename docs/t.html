@@ -210,7 +210,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">geom_a{#sec-a}</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
   </div>
 </li>
       </ul>
@@ -662,8 +662,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#geom_text" id="toc-geom_text" class="nav-link active" data-scroll-target="#geom_text"><span class="header-section-number">22.1</span> <strong>geom_text</strong></a></li>
-  <li><a href="#geom_text_repel" id="toc-geom_text_repel" class="nav-link" data-scroll-target="#geom_text_repel"><span class="header-section-number">22.2</span> <strong>geom_text_repel</strong></a></li>
+  <li><a href="#text" id="toc-text" class="nav-link active" data-scroll-target="#text"><span class="header-section-number">22.1</span> geom_text</a></li>
+  <li><a href="#text_repel" id="toc-text_repel" class="nav-link" data-scroll-target="#text_repel"><span class="header-section-number">22.2</span> geom_text_repel</a></li>
+  <li><a href="#tile" id="toc-tile" class="nav-link" data-scroll-target="#tile"><span class="header-section-number">22.3</span> geom_tile</a></li>
+  <li><a href="#text_cooks" id="toc-text_cooks" class="nav-link" data-scroll-target="#text_cooks"><span class="header-section-number">22.4</span> geom_text_cooks</a></li>
+  <li><a href="#text_coordinate" id="toc-text_coordinate" class="nav-link" data-scroll-target="#text_coordinate"><span class="header-section-number">22.5</span> geom_text_coordinate</a></li>
+  <li><a href="#text_leverage" id="toc-text_leverage" class="nav-link" data-scroll-target="#text_leverage"><span class="header-section-number">22.6</span> geom_text_leverage</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/t.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -689,8 +693,8 @@ div.csl-indent {
 </header>
 
 
-<section id="geom_text" class="level2" data-number="22.1">
-<h2 data-number="22.1" class="anchored" data-anchor-id="geom_text"><span class="header-section-number">22.1</span> <strong>geom_text</strong></h2>
+<section id="text" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="text"><span class="header-section-number">22.1</span> geom_text</h2>
 <p><strong>Package</strong></p>
 <p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
@@ -720,8 +724,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="geom_text_repel" class="level2" data-number="22.2">
-<h2 data-number="22.2" class="anchored" data-anchor-id="geom_text_repel"><span class="header-section-number">22.2</span> <strong>geom_text_repel</strong></h2>
+<section id="text_repel" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="text_repel"><span class="header-section-number">22.2</span> geom_text_repel</h2>
 <p><strong>Package</strong></p>
 <p>ggrepel <span class="citation" data-cites="ggrepel">(<a href="#ref-ggrepel" role="doc-biblioref">Slowikowski 2024</a>)</span></p>
 <p><strong>Description</strong></p>
@@ -750,9 +754,154 @@ div.csl-indent {
 </div>
 </div>
 </div>
+</section>
+<section id="tile" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="tile"><span class="header-section-number">22.3</span> geom_tile</h2>
+<p><strong>Package</strong></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p><strong>Description</strong></p>
+<p>Create heat map plot. <code>geom_rect()</code> and <code>geom_tile()</code> do the same thing, but function inputs are different: <code>geom_rect()</code> uses the locations of the four corners (xmin, xmax, ymin and ymax), while <code>geom_tile()</code> uses the center of the tile and its dimensions (x, y, width, height).</p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>x</code></p>
+<p><code>y</code></p>
+<p><em>optional aesthetics</em></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#rect">geom_rect</a>, <a href="#raster">geom_raster</a></p>
+<p><strong>Example</strong></p>
+<div class="cell" data-figh.width="10">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"South Asia"</span> ) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Year,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">y=</span>Country, <span class="at">fill=</span>Cooking)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">width=</span><span class="dv">1</span>, <span class="at">height=</span><span class="dv">1</span>), <span class="at">col=</span><span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  viridis<span class="sc">::</span><span class="fu">scale_fill_viridis</span>() <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="t_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="text_cooks" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="text_cooks"><span class="header-section-number">22.4</span> geom_text_cooks</h2>
+<p><strong>Package</strong></p>
+<p>ggxmean <span class="citation" data-cites="ggxmean">(<a href="#ref-ggxmean" role="doc-biblioref">Reynolds 2024</a>)</span></p>
+<p><strong>Description</strong></p>
+<p>Returns a scatter plot with points that are labeled.</p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>x</code>, <code>y</code></p>
+<p><em>optional aesthetics</em></p>
+<p><code>position</code> , <code>size</code>, <code>digits</code>, <code>check_overlap</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#scatter">geom_scatter</a>, <a href="#text">geom_text</a>, <a href="#label">geom_label</a></p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggxmean)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bolivia"</span> <span class="sc">&amp;</span> Cooking <span class="sc">&gt;</span> <span class="dv">75</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Cooking, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_cooks</span>(<span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">digits =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"geom_text_cooks only"</span>)  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bolivia"</span> <span class="sc">&amp;</span> Cooking <span class="sc">&gt;</span> <span class="dv">75</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Cooking, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_cooks</span>(<span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">digits =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"geom_point and geom_text_cooks"</span>) </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">|</span>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="t_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="text_coordinate" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="text_coordinate"><span class="header-section-number">22.5</span> geom_text_coordinate</h2>
+<p><strong>Package</strong></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p><strong>Description</strong></p>
+<p>Returns a scatter plot with points that are labeled with (x, y) coordinates.</p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>x</code></p>
+<p><code>y</code></p>
+<p><em>optional aesthetics</em></p>
+<p><code>position</code>, <code>size</code>, <code>check_overlap</code>, <code>nudge_x</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#text">geom_text</a>, <a href="#text_cooks">geom_text_cooks</a>, <a href="#text_repel">geom_text_repel</a></p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bolivia"</span> <span class="sc">&amp;</span> Cooking <span class="sc">&gt;</span> <span class="dv">75</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Cooking, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_coordinate</span>() <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"geom_text_coordinate only"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bolivia"</span> <span class="sc">&amp;</span> Cooking <span class="sc">&gt;</span> <span class="dv">75</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Cooking, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_coordinate</span>() <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"geom_point and geom_text_coordinate"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">|</span>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="t_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="text_leverage" class="level2" data-number="22.6">
+<h2 data-number="22.6" class="anchored" data-anchor-id="text_leverage"><span class="header-section-number">22.6</span> geom_text_leverage</h2>
+<p><strong>Package</strong></p>
+<p>ggxmean <span class="citation" data-cites="ggxmean">(<a href="#ref-ggxmean" role="doc-biblioref">Reynolds 2024</a>)</span></p>
+<p><strong>Description</strong></p>
+<p>Returns a scatter plot with points that are labeled.</p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>x</code>, <code>y</code></p>
+<p><em>optional aesthetics</em></p>
+<p><code>position</code> , <code>size</code>, <code>check_overlap</code>, <code>nudge_x</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#text">geom_text</a>, <a href="#text_cooks">geom_text_cooks</a>, <a href="#text_repel">geom_text_repel</a></p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bolivia"</span> <span class="sc">&amp;</span> Cooking <span class="sc">&gt;</span> <span class="dv">75</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Cooking, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_leverage</span>() <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"geom_text_leverage only"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Bolivia"</span> <span class="sc">&amp;</span> Cooking <span class="sc">&gt;</span> <span class="dv">75</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Cooking, <span class="at">y=</span>Electricity)) <span class="sc">+</span> </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_leverage</span>() <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"geom_point and geom_text_leverage"</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">|</span>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="t_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ggxmean" class="csl-entry" role="listitem">
+Reynolds, Evangeline. 2024. <em>Ggxmean: Statistical Geoms</em>.
+</div>
 <div id="ref-ggrepel" class="csl-entry" role="listitem">
 Slowikowski, Kamil. 2024. <em>Ggrepel: Automatically Position Non-Overlapping Text Labels with ’Ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggrepel">https://CRAN.R-project.org/package=ggrepel</a>.
 </div>

@@ -111,3 +111,17 @@ ggplot2 [@ggplot2]
 ```{r}
 
 ```
+
+## geom_rect
+
+
+**See also**
+
+[geom_tile](#tile), [geom_raster](#raster)
+
+## geom_raster
+
+
+**See also**
+
+[geom_tile](#rect), [geom_tile](#tile)

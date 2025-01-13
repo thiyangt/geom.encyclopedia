@@ -8,19 +8,21 @@
 
 :::
 
-Welcome to the "Data Visualisation `geom` Encyclopedia", an encyclopedia of geometrics in Data Visualisation. Geometric representations serve as the visual language that bridges the gap between complex datasets and human comprehension. This encyclopedia is a curated collection of `geom` available in different R programming software packages.
+![](cover/cover.labels.png)
+
+Welcome to the "Data Visualisation `geom` Encyclopedia", an encyclopedia of geometrics in Data Visualisation.  This encyclopedia is a curated collection of `geom` available in different R programming software packages. This book can also be considered as an "Encyclopedia of Plots". 
 
 The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.
 
 
-This book is a work in progress. The accompanying R package for drone is available at: \url{https://github.com/thiyangt/drone}
+This book is a work in progress. The accompanying R package for drone is available on CRAN: [https://github.com/thiyangt/drone](https://github.com/thiyangt/drone)
 
 ## Accompanying R package:  drone
 
 ## <span style='color:red;'>drone</span>: <span style='color:red;'>D</span>ata fo<span style='color:red;'>R</span> ge<span style='color:red;'>O</span>m e<span style='color:red;'>N</span>cyclopa<span style='color:red;'>E</span>dia
 
 
-```{r, echo=FALSE, fig.pos="center"}
+```{r, echo=FALSE, fig.pos="c"}
 knitr::include_graphics("dronehex.png")
 ```
 
