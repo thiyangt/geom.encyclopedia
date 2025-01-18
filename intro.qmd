@@ -1,17 +1,5 @@
 # Data and setting up your workflow {.unnumbered}
 
-## What is data visualisation?
-
-Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily. In other words data visualization allows data to speak for itself in a way that is easily understandable to humans. It is like giving a voice to the data, enabling us to listen and understand its story more effectively.
-
-## What are Gemetries (geoms) in Data Visualisation?
-
-In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.
-
-In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualise on the plots. For example, in chart A: all values are represented using individual points. In chart H: The range is denoted using a blue line and mean is represented using a red dot. 
-
-
-
 ## Data sets use in geom Encyclopedia
 
 ```{r}

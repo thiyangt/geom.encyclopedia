@@ -11,10 +11,17 @@ In data visualization, geometries (or geoms) refer to the visual elements that r
 To illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows:
 
 ```{r}
-Variable <- c("I") 
+#| echo: false
+library(knitr)
+library(kableExtra)
+Variable <- c("Country", "Income", "Electricity")
+description <- c("Country name", "Income category in 2021: lower income (L), lower middle income (LM)", "Percentage of people access to electricity")
+df <- data.frame(Variable, Description = description)
+df |> kbl() |>
+  kable_paper("hover", full_width = F)
 ```
 
-about their income category: lower income (L), lower middle income (LM)
+The first eight rows of the dataset as well as the R code to load the dataset is given below:
 
 ```{r,  warning=FALSE, message=FALSE}
 library(drone)
@@ -26,11 +33,20 @@ worldbankdata2021 |> head(8)
 ```
 
 
+Now, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in Figure \@ref(fig:cartesian)
 
-For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM) countries in 2021 using 6 different graph types.
+```{r, fig.height=3, fig.width=3,echo=FALSE}
+#| fig.cap: "Figure 1: Cartesian Coordinate Plane. Income level is mapped to x-axis and Electricity is mapped to y-axis."
+#| fig.label: "fig:cartesian"
+p0 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity))
+p0
+```
 
+Figure 2 shows 6 plotting types that I created using the same dataset and same cartesian plane. 
 
-```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE, fig.cap="Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F."}
+```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE}
+#| fig.cap: "Figure 2: Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM) in 2021"
+#| fig.label: "fig:geom"
 library(patchwork)
 library(tidyverse)
 library(ggbeeswarm)
@@ -41,41 +57,76 @@ worldbankdata2021 <- worldbankdata |> filter(Year == 2021 & Income == "LM" | Inc
 
 p1 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_point() + ggtitle("A: geom_point")
 p2 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_quasirandom() + ggtitle("B: geom_quasirandom")
-p3 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C")
-p4 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D")
-p5 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E")
-p6 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="black", trim=TRUE)+ ggtitle("F")
+p3 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C: geom_jitter")
+p4 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D: geom_boxplot")
+p5 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E: geom_jitter and geom_boxplot")
+p6 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="black", trim=TRUE)+ ggtitle("F: geom_violin")
 
 lrdf <- worldbankdata2021 |> select(Electricity, Income) |> group_by(Income) |>
   summarize(Min = min(Electricity, na.rm = TRUE), Max = max(Electricity, na.rm=TRUE), Mean = mean(Electricity, na.rm = TRUE))
 p7 <- ggplot(lrdf) + 
-   geom_linerange(aes(x=Income, ymin=Min, ymax=Max, ymean = Mean), width=0.2, size=1, color="blue") + ggtitle("G") + ylab("Electricity")
+   geom_linerange(aes(x=Income, ymin=Min, ymax=Max, ymean = Mean), width=0.2, size=1, color="blue") + ggtitle("G: geom_linerange") + ylab("Electricity")
 p8 <- ggplot(lrdf) + 
    geom_linerange(aes(x=Income, ymin=Min, ymax=Max),  width=0.2, size=1, color="blue") + 
-  geom_point( aes(x=Income, y=Mean), col="white", size=4, shape=21, fill="red") + ggtitle("H") + ylab("Electricity")
+  geom_point( aes(x=Income, y=Mean), col="white", size=4, shape=21, fill="red") + ggtitle("H: geom_linerage and geom_point") + ylab("Electricity")
 
 (p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
-**What similarities do you observe in the above graphs?**
+Eventhough, I used the same dataset and same cartesian coordinate plane the appearance of the plots are drastically different.
 
- i) The same dataset is used to create all the charts
+Could you list the differences you observe in the charts?
 
-ii) same Cartesian plane 
+1. The type of chart or shape used to depict data. In data visualization grammar of graphics framework, this is reffered to as **gemetries (or geoms)**, the visual elements that represent data on a plot.  In the [ggplot2](@ggplot2) package, this is reffered to as **geom layer**.
 
-```{r, fig.height=5, fig.width=5,echo=FALSE}
-p0 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity))
-p0
+2. The statistics that we compute on the data to visualise on the chart. In the [ggplot2](@ggplot2) this is referred to as **stat layer**.
+
+Here is a  summary of geom and stat layers used in the charts shown in Figure \@ref(fig:geom).
+
+
+```{r}
+#| echo: false
+plot.name <- c("A", "B", "C", "D", "E", "F", "G", "H")
+geom <- c("point",
+          "quasirandom",
+          "jitter",
+          "boxplot",
+          "jitter and boxplot",
+          "violin",
+          "linerange",
+          "linerange and point")
+stat <- c("data is plotted as-is", 
+          "data is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting",
+          "data is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible",
+          "Five statistical summary measures used in the boxplot",
+          "Individual points and summary measures corresponds to boxplot",
+          " calculate and plot the kernel density estimation (KDE) for continuous data",
+          "Range of data",
+          "Range and mean of data")
+df2 <- data.frame(plot.name, geom, stat)
+df2 |>    kbl(col.names = c("Plot", "geom layer", "stat layer")) |> 
+  kable_paper("hover", full_width = F)
+  
 ```
 
 
+This encylopedia is a collection of geoms, in other words plot types that you can create using the ggplot2 or extensions of ggplot2 framework. In other words <span style='color:red;'>Encyclopedia of Plots</span>.
 
-## How this <span style='color:red;'>geom encyclopedia</span> is organized?
+## Motivation to write this book
+
+There is no centralized location to find all types of geoms are easily accessible. 
 
 ## What you will learn?
 
 
+
+Each geom has a set of aesthetics that it understands.
+
 ## What you won't learn?
+
+This book is not focused on teaching R programming fundamentals or providing a comprehensive guide to data visualization principles. It assumes you already have a basic understanding of R and ggplot2, and it will not cover how to start from scratch in these areas.
+
+## How this <span style='color:red;'>geom encyclopedia</span> is organized?
 
 
 ## Audiene

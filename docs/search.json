@@ -70,7 +70,7 @@
     "href": "preface.html",
     "title": "Preface",
     "section": "",
-    "text": "What can I find in this geom encyclopedia?\nBefore answering this question let me briefly explain what is data visualisation? Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily.\nNow let’s look at what is geom?\nIn data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships.\nTo illustrate the idea I use the following dataset which contains\nlibrary(drone)\nlibrary(tidyverse)\ndata(\"worldbankdata\")\nworldbankdata2021 &lt;- worldbankdata |&gt; filter(Year == 2021) |&gt;\n  filter( Income == \"LM\" | Income ==\"L\") |&gt; select(Income, Electricity, Country)\nFor example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM) countries in 2021 using 6 different graph types.\nRelationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F.\nWhat similarities do you observe in the above graphs?",
+    "text": "What can I find in this geom encyclopedia?\nBefore answering this question let me briefly explain what is data visualisation? Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily.\nNow let’s look at what is geom?\nIn data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships.\nTo illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows:\nVariable\nDescription\n\n\n\n\nCountry\nCountry name\n\n\nIncome\nIncome category in 2021: lower income (L), lower middle income (LM)\n\n\nElectricity\nPercentage of people access to electricity\nThe first eight rows of the dataset as well as the R code to load the dataset is given below:\nlibrary(drone)\nlibrary(tidyverse)\ndata(\"worldbankdata\")\nworldbankdata2021 &lt;- worldbankdata |&gt; filter(Year == 2021) |&gt;\n  filter( Income == \"LM\" | Income ==\"L\") |&gt; select( Country, Income, Electricity)\nworldbankdata2021 |&gt; head(8)\n\n# A tibble: 8 × 3\n  Country      Income Electricity\n  &lt;fct&gt;        &lt;fct&gt;        &lt;dbl&gt;\n1 Afghanistan  L             97.7\n2 Angola       LM            48.2\n3 Burundi      L             10.2\n4 Benin        LM            42.0\n5 Burkina Faso L             19.0\n6 Bangladesh   LM            99.0\n7 Bolivia      LM            98.6\n8 Bhutan       LM           100\nNow, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in Figure @ref(fig:cartesian)\nFigure 1: Cartesian Coordinate Plane. Income level is mapped to x-axis and Electricity is mapped to y-axis.\nFigure 2 shows 6 plotting types that I created using the same dataset and same cartesian plane.\nFigure 2: Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM) in 2021\nEventhough, I used the same dataset and same cartesian coordinate plane the appearance of the plots are drastically different.\nCould you list the differences you observe in the charts?\nHere is a summary of geom and stat layers used in the charts shown in Figure @ref(fig:geom).\nPlot\ngeom layer\nstat layer\n\n\n\n\nA\npoint\ndata is plotted as-is\n\n\nB\nquasirandom\ndata is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting\n\n\nC\njitter\ndata is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible\n\n\nD\nboxplot\nFive statistical summary measures used in the boxplot\n\n\nE\njitter and boxplot\nIndividual points and summary measures corresponds to boxplot\n\n\nF\nviolin\ncalculate and plot the kernel density estimation (KDE) for continuous data\n\n\nG\nlinerange\nRange of data\n\n\nH\nlinerange and point\nRange and mean of data\nThis encylopedia is a collection of geoms, in other words plot types that you can create using the ggplot2 or extensions of ggplot2 framework. In other words Encyclopedia of Plots.",
     "crumbs": [
       "Preface"
     ]
@@ -90,7 +90,7 @@
     "href": "preface.html#what-you-will-learn",
     "title": "Preface",
     "section": "What you will learn?",
-    "text": "What you will learn?",
+    "text": "What you will learn?\nEach geom has a set of aesthetics that it understands.",
     "crumbs": [
       "Preface"
     ]
@@ -100,7 +100,7 @@
     "href": "preface.html#what-you-wont-learn",
     "title": "Preface",
     "section": "What you won’t learn?",
-    "text": "What you won’t learn?",
+    "text": "What you won’t learn?\nThis book is not focused on teaching R programming fundamentals or providing a comprehensive guide to data visualization principles. It assumes you already have a basic understanding of R and ggplot2, and it will not cover how to start from scratch in these areas.",
     "crumbs": [
       "Preface"
     ]
@@ -150,7 +150,17 @@
     "href": "preface.html#what-can-i-find-in-this-geom-encyclopedia",
     "title": "Preface",
     "section": "",
-    "text": "The same dataset is used to create all the charts\nsame Cartesian plane",
+    "text": "The type of chart or shape used to depict data. In data visualization grammar of graphics framework, this is reffered to as gemetries (or geoms), the visual elements that represent data on a plot. In the ggplot2 package, this is reffered to as geom layer.\nThe statistics that we compute on the data to visualise on the chart. In the ggplot2 this is referred to as stat layer.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#motivation-to-write-this-book",
+    "href": "preface.html#motivation-to-write-this-book",
+    "title": "Preface",
+    "section": "Motivation to write this book",
+    "text": "Motivation to write this book\nThere is no centralized location to find all types of geoms are easily accessible.",
     "crumbs": [
       "Preface"
     ]
