@@ -1,4 +1,4 @@
-# Preface {.unnumbered}
+# Welcome {.unnumbered}
 
 
 
@@ -10,19 +10,28 @@
 
 ![](cover/cover.labels.png)
 
-Welcome to the "Data Visualisation `geom` Encyclopedia", an encyclopedia of geometrics in Data Visualisation.  This encyclopedia is a curated collection of `geom` available in different R programming software packages. This book can also be considered as an "Encyclopedia of Plots". 
+Welcome to the "Data Visualisation `geom` Encyclopedia", an encyclopedia of geometrics use in data visualisation.  This encyclopedia is a curated collection of `geom` available in different R programming software packages. This book can also be considered as an "Encyclopedia of Plots". 
 
-The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.
+
 
 
 This book is a work in progress. The accompanying R package for drone is available on CRAN: [https://github.com/thiyangt/drone](https://github.com/thiyangt/drone)
 
-## Accompanying R package:  drone
+## Accompanying R package: <span style='color:red;'>drone</span>: <span style='color:red;'>D</span>ata fo<span style='color:red;'>R</span> ge<span style='color:red;'>O</span>m e<span style='color:red;'>N</span>cyclopa<span style='color:red;'>E</span>dia
 
-## <span style='color:red;'>drone</span>: <span style='color:red;'>D</span>ata fo<span style='color:red;'>R</span> ge<span style='color:red;'>O</span>m e<span style='color:red;'>N</span>cyclopa<span style='color:red;'>E</span>dia
-
-
-```{r, echo=FALSE, fig.pos="c"}
+```{r, echo=FALSE, fig.align="center"}
 knitr::include_graphics("dronehex.png")
 ```
 
+## Why choose "drone" as the package name? 
+
+This encyclopedia provides a comprehensive overview of `geoms` within the grammar of graphics framework, much like a drone offers a bird's-eye view of a landscape.
+
+
+
+To load the encyclopedia via `drone` package use the following code.
+
+```r
+install.packages(drone)
+load_encyclopedia()
+```

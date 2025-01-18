@@ -1,0 +1,22 @@
+# Preface {.unnumbered}
+
+## What can I find in this <span style='color:red;'>geom encyclopedia</span>?
+
+
+## How this <span style='color:red;'>geom encyclopedia</span> is organized?
+
+## What you will learn?
+
+
+## What you won't learn?
+
+
+## Audiene
+
+## What prior knowledge is needed to use this <span style='color:red;'>geom encyclopedia</span>?
+
+## Acknowledgments
+
+## Colophon
+
+The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.

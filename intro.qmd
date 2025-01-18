@@ -43,7 +43,7 @@ p0
 ```
 
 
-## Data use in the Encyclopedia
+## Data sets use in geom Encyclopedia
 
 ```{r}
 library(drone)

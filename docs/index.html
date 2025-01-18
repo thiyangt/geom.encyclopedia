@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -129,19 +163,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">preface.html</span></span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -156,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">geom_a</span></span></a>
   </div>
 </li>
       </ul>
@@ -173,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./b.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">geom_b</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">geom_b</span></span></a>
   </div>
 </li>
       </ul>
@@ -190,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./c.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">geom_c</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">geom_c</span></span></a>
   </div>
 </li>
       </ul>
@@ -207,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">geom_d</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">geom_d</span></span></a>
   </div>
 </li>
       </ul>
@@ -224,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./e.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_e</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">geom_e</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./f.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">geom_f</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">geom_f</span></span></a>
   </div>
 </li>
       </ul>
@@ -258,7 +292,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./g.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">geom_g</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">geom_g</span></span></a>
   </div>
 </li>
       </ul>
@@ -275,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./h.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">geom_h</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">geom_h</span></span></a>
   </div>
 </li>
       </ul>
@@ -292,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./i.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_i</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">geom_i</span></span></a>
   </div>
 </li>
       </ul>
@@ -309,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./j.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">geom_j</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">geom_j</span></span></a>
   </div>
 </li>
       </ul>
@@ -326,7 +360,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./k.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">geom_k</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">geom_k</span></span></a>
   </div>
 </li>
       </ul>
@@ -343,7 +377,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./l.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">geom_l</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">geom_l</span></span></a>
   </div>
 </li>
       </ul>
@@ -360,7 +394,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./m.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">geom_m</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">geom_m</span></span></a>
   </div>
 </li>
       </ul>
@@ -377,7 +411,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./n.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">geom_n</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">geom_n</span></span></a>
   </div>
 </li>
       </ul>
@@ -394,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./o.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">geom_o</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">geom_o</span></span></a>
   </div>
 </li>
       </ul>
@@ -411,7 +445,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">geom_p</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">geom_p</span></span></a>
   </div>
 </li>
       </ul>
@@ -428,7 +462,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./q.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">geom_q</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">geom_q</span></span></a>
   </div>
 </li>
       </ul>
@@ -445,7 +479,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">geom_r</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">geom_r</span></span></a>
   </div>
 </li>
       </ul>
@@ -462,7 +496,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./s.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">geom_s</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">geom_s</span></span></a>
   </div>
 </li>
       </ul>
@@ -479,7 +513,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./t.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">geom_t</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">geom_t</span></span></a>
   </div>
 </li>
       </ul>
@@ -496,7 +530,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./u.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">geom_u</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">geom_u</span></span></a>
   </div>
 </li>
       </ul>
@@ -513,7 +547,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./v.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">geom_v</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">geom_v</span></span></a>
   </div>
 </li>
       </ul>
@@ -530,7 +564,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./w.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">geom_w</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">geom_w</span></span></a>
   </div>
 </li>
       </ul>
@@ -547,7 +581,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./x.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">geom_x</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">geom_x</span></span></a>
   </div>
 </li>
       </ul>
@@ -564,7 +598,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./y.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">geom_y</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">geom_y</span></span></a>
   </div>
 </li>
       </ul>
@@ -581,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./z.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">geom_z</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">geom_z</span></span></a>
   </div>
 </li>
       </ul>
@@ -589,7 +623,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -608,10 +642,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
   <ul class="collapse">
-  <li><a href="#accompanying-r-package-drone" id="toc-accompanying-r-package-drone" class="nav-link" data-scroll-target="#accompanying-r-package-drone">Accompanying R package: drone</a></li>
-  <li><a href="#drone-data-for-geom-encyclopaedia" id="toc-drone-data-for-geom-encyclopaedia" class="nav-link" data-scroll-target="#drone-data-for-geom-encyclopaedia"><span style="color:red;">drone</span>: <span style="color:red;">D</span>ata fo<span style="color:red;">R</span> ge<span style="color:red;">O</span>m e<span style="color:red;">N</span>cyclopa<span style="color:red;">E</span>dia</a></li>
+  <li><a href="#accompanying-r-package-drone-data-for-geom-encyclopaedia" id="toc-accompanying-r-package-drone-data-for-geom-encyclopaedia" class="nav-link" data-scroll-target="#accompanying-r-package-drone-data-for-geom-encyclopaedia">Accompanying R package: <span style="color:red;">drone</span>: <span style="color:red;">D</span>ata fo<span style="color:red;">R</span> ge<span style="color:red;">O</span>m e<span style="color:red;">N</span>cyclopa<span style="color:red;">E</span>dia</a></li>
+  <li><a href="#why-choose-drone-as-the-package-name" id="toc-why-choose-drone-as-the-package-name" class="nav-link" data-scroll-target="#why-choose-drone-as-the-package-name">Why choose “drone” as the package name?</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -651,29 +685,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
+<section id="welcome" class="level1 unnumbered">
+<h1 class="unnumbered">Welcome</h1>
 <div style="font-size: 400%;">
 <p><a href="#sec-a">A</a> | <a href="#sec-b">B</a> | <a href="#sec-c">C</a> | <a href="#sec-d">D</a> | <a href="#sec-e">E</a> | <a href="#sec-f">F</a> | <a href="#sec-g">G</a> | <a href="#sec-h">H</a> | <a href="#sec-i">I</a> | <a href="#sec-j">J</a> | <a href="#sec-k">K</a> | <a href="#sec-l">L</a> | <a href="#sec-m">M</a> | <a href="#sec-n">N</a> | <a href="#sec-o">O</a> | <a href="#sec-p">P</a> | <a href="#sec-q">Q</a> | <a href="#sec-r">R</a> | <a href="#sec-s">S</a> | <a href="#sec-t">T</a> | <a href="#sec-u">U</a> | <a href="#sec-v">V</a> | <a href="#sec-w">W</a> | <a href="#sec-x">X</a> | <a href="#sec-y">Y</a> | <a href="#sec-z">Z</a> |</p>
 </div>
 <p><img src="cover/cover.labels.png" class="img-fluid"></p>
-<p>Welcome to the “Data Visualisation <code>geom</code> Encyclopedia”, an encyclopedia of geometrics in Data Visualisation. This encyclopedia is a curated collection of <code>geom</code> available in different R programming software packages. This book can also be considered as an “Encyclopedia of Plots”.</p>
-<p>The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.</p>
+<p>Welcome to the “Data Visualisation <code>geom</code> Encyclopedia”, an encyclopedia of geometrics use in data visualisation. This encyclopedia is a curated collection of <code>geom</code> available in different R programming software packages. This book can also be considered as an “Encyclopedia of Plots”.</p>
 <p>This book is a work in progress. The accompanying R package for drone is available on CRAN: <a href="https://github.com/thiyangt/drone">https://github.com/thiyangt/drone</a></p>
-<section id="accompanying-r-package-drone" class="level2">
-<h2 class="anchored" data-anchor-id="accompanying-r-package-drone">Accompanying R package: drone</h2>
-</section>
-<section id="drone-data-for-geom-encyclopaedia" class="level2">
-<h2 class="anchored" data-anchor-id="drone-data-for-geom-encyclopaedia"><span style="color:red;">drone</span>: <span style="color:red;">D</span>ata fo<span style="color:red;">R</span> ge<span style="color:red;">O</span>m e<span style="color:red;">N</span>cyclopa<span style="color:red;">E</span>dia</h2>
-<div class="cell">
+<section id="accompanying-r-package-drone-data-for-geom-encyclopaedia" class="level2">
+<h2 class="anchored" data-anchor-id="accompanying-r-package-drone-data-for-geom-encyclopaedia">Accompanying R package: <span style="color:red;">drone</span>: <span style="color:red;">D</span>ata fo<span style="color:red;">R</span> ge<span style="color:red;">O</span>m e<span style="color:red;">N</span>cyclopa<span style="color:red;">E</span>dia</h2>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="dronehex.png" class="img-fluid figure-img" data-fig-pos="c" width="259"></p>
+<p><img src="dronehex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="259"></p>
 </figure>
 </div>
 </div>
 </div>
+</section>
+<section id="why-choose-drone-as-the-package-name" class="level2">
+<h2 class="anchored" data-anchor-id="why-choose-drone-as-the-package-name">Why choose “drone” as the package name?</h2>
+<p>This encyclopedia provides a comprehensive overview of <code>geoms</code> within the grammar of graphics framework, much like a drone offers a bird’s-eye view of a landscape.</p>
+<p>To load the encyclopedia via <code>drone</code> package use the following code.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(drone)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load_encyclopedia</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -1104,8 +1141,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./preface.html" class="pagination-link" aria-label="preface.html">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">preface.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./preface.html" class="pagination-link" aria-label="Preface">
+        <span class="nav-page-text">Preface</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
