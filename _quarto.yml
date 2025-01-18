@@ -6,7 +6,6 @@ book:
   title: "Data Visualisation <span style='color:red;'>Geom</span>etries Encyclopedia"
   subtitle: "Geoms in the Grammar of Graphics: All Types of Plots"
   author: "Thiyanga S. Talagala"
-  date: "`r Sys.Date()`"
   downloads: [pdf, epub]
   reader-mode: true
   page-footer:

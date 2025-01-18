@@ -1,6 +1,13 @@
 # Data and setting up your workflow {.unnumbered}
 
-## Data sets use in geom Encyclopedia
+## Installation of associated packages
+
+```r
+install.packages(drone)
+install.packages(tidyverse)
+```
+
+## Data set use in geom Encyclopedia
 
 ```{r}
 library(drone)
@@ -9,7 +16,15 @@ data(worldbankdata)
 worldbankdata
 ```
 
-## Data description
+## `worldbankdata`: Data Profiling
+
+```{r , message=FALSE, warning=FALSE}
+library(skimr)
+worldbankdata |> 
+  skim()
+```
+
+## `worldbankdata`: Data Quality Analysis
 
 ```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -18,7 +33,7 @@ vis_dat(worldbankdata) +
   scale_fill_brewer(palette = "Dark2")
 ```
 
-```{r}
+```{r , message=FALSE, warning=FALSE}
 library(naniar)
 gg_miss_upset(worldbankdata) 
 ```
@@ -41,3 +56,4 @@ gg_miss_upset(worldbankdata)
 
 7. ggalt [@ggalt]
 
+WIP - adding..

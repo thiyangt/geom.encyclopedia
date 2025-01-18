@@ -1,5 +1,95 @@
 [
   {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Data and setting up your workflow",
+    "section": "",
+    "text": "Installation of associated packages",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#worldbankdata-data-profiling",
+    "href": "intro.html#worldbankdata-data-profiling",
+    "title": "Data and setting up your workflow",
+    "section": "worldbankdata: Data Profiling",
+    "text": "worldbankdata: Data Profiling\n\nlibrary(skimr)\nworldbankdata |&gt; \n  skim()\n\n\nData summary\n\n\nName\nworldbankdata\n\n\nNumber of rows\n7937\n\n\nNumber of columns\n7\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nfactor\n4\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nCountry\n0\n1.00\nFALSE\n227\nAfg: 36, Alb: 36, Alg: 36, Ame: 36\n\n\nCode\n0\n1.00\nFALSE\n218\nCIV: 48, CUW: 47, CZE: 47, FRO: 47\n\n\nRegion\n199\n0.97\nFALSE\n7\nEur: 2038, Sub: 1693, Lat: 1512, Eas: 1343\n\n\nIncome\n559\n0.93\nFALSE\n4\nH: 2177, LM: 1978, L: 1704, UM: 1519\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nYear\n1\n1.00\n2004.59\n10.41\n1987.00\n1996.00\n2005.00\n2014\n2022\n▇▇▇▇▇\n\n\nCooking\n6047\n0.24\n65.48\n38.46\n0.00\n27.30\n84.75\n100\n100\n▃▁▁▁▇\n\n\nElectricity\n5693\n0.28\n84.40\n26.45\n2.11\n79.86\n99.80\n100\n100\n▁▁▁▁▇",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#worldbankdata-data-quality-analysis",
+    "href": "intro.html#worldbankdata-data-quality-analysis",
+    "title": "Data and setting up your workflow",
+    "section": "worldbankdata: Data Quality Analysis",
+    "text": "worldbankdata: Data Quality Analysis\n\nlibrary(tidyverse)\nlibrary(visdat)\nvis_dat(worldbankdata) + \n  scale_fill_brewer(palette = \"Dark2\")\n\n\n\n\n\n\n\n\n\nlibrary(naniar)\ngg_miss_upset(worldbankdata)",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#r-packages-with-geom-implementation",
+    "href": "intro.html#r-packages-with-geom-implementation",
+    "title": "Data and setting up your workflow",
+    "section": "R packages with geom implementation",
+    "text": "R packages with geom implementation\n\nggplot2 (Wickham 2016)\nggpattern (FC, Davis, and ggplot2 authors 2023)\nggforce (Pedersen 2022)\nggalluvial (ggalluvial?)\nggbump (Sjoberg 2020)\nggridges (Wilke 2023)\nggalt (Rudis, Bolker, and Schulz 2017)\n\nWIP - adding..\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra Coordinate Systems, ’Geoms’, Statistical Transformations, Scales and Fonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’. https://CRAN.R-project.org/package=ggridges.",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "",
+    "text": "Welcome\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics use in data visualisation. This encyclopedia is a curated collection of geom available in different R programming software packages. This book can also be considered as an “Encyclopedia of Plots”.\nThis book is a work in progress. The accompanying R package for drone is available on CRAN: https://github.com/thiyangt/drone",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
+    "href": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "text": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#why-choose-drone-as-the-package-name",
+    "href": "index.html#why-choose-drone-as-the-package-name",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "Why choose “drone” as the package name?",
+    "text": "Why choose “drone” as the package name?\nThis encyclopedia provides a comprehensive overview of geoms within the grammar of graphics framework, much like a drone offers a bird’s-eye view of a landscape.\nTo load this Data Visualisation Geom Encyclopedia via drone package use the following code.\ninstall.packages(drone)\nload_encyclopedia()",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "intro.html#installation-of-associated-packages",
+    "href": "intro.html#installation-of-associated-packages",
+    "title": "Data and setting up your workflow",
+    "section": "",
+    "text": "install.packages(drone)\ninstall.packages(tidyverse)",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-set-use-in-geom-encyclopedia",
+    "href": "intro.html#data-set-use-in-geom-encyclopedia",
+    "title": "Data and setting up your workflow",
+    "section": "Data set use in geom Encyclopedia",
+    "text": "Data set use in geom Encyclopedia\n\nlibrary(drone)\nlibrary(tibble)\ndata(worldbankdata)\nworldbankdata\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
     "objectID": "preface.html",
     "href": "preface.html",
     "title": "Preface",
@@ -110,99 +200,135 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data Visualisation Geometries Encyclopedia",
+    "objectID": "i.html",
+    "href": "i.html",
+    "title": "9  geom_i",
     "section": "",
-    "text": "Welcome\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics use in data visualisation. This encyclopedia is a curated collection of geom available in different R programming software packages. This book can also be considered as an “Encyclopedia of Plots”.\nThis book is a work in progress. The accompanying R package for drone is available on CRAN: https://github.com/thiyangt/drone",
+    "text": "9.1 geom_image\nPackage\nggimage (Yu 2023)\nDescription\nVisualise data through images.\nUnderstandable aesthetics\nimage\nSee also\ngeom_emoji\nExample\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10),\n                image = sample(\"https://www.r-project.org/logo/Rlogo.png\",\n                              size=10, replace = TRUE))\nggplot(df, aes(x, y)) + geom_image(aes(image=image))",
     "crumbs": [
-      "Welcome"
+      "I",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>geom_i</span>"
     ]
   },
   {
-    "objectID": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
-    "href": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
-    "title": "Data Visualisation Geometries Encyclopedia",
-    "section": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
-    "text": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "objectID": "i.html#icon",
+    "href": "i.html#icon",
+    "title": "9  geom_i",
+    "section": "9.2 geom_icon",
+    "text": "9.2 geom_icon\n\n9.2.1 Example\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10))\ndf$icon = sample(c('ios-power', 'ios-wifi', 'ios-pie'), 10, replace=TRUE)\nggplot(df, aes(x, y)) + geom_icon(aes(image=icon))\n\n\n\n\n\n\n\n\n\n\n\n\nYu, Guangchuang. 2023. Ggimage: Use Image in ’Ggplot2’. https://CRAN.R-project.org/package=ggimage.",
     "crumbs": [
-      "Welcome"
+      "I",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>geom_i</span>"
     ]
   },
   {
-    "objectID": "index.html#why-choose-drone-as-the-package-name",
-    "href": "index.html#why-choose-drone-as-the-package-name",
-    "title": "Data Visualisation Geometries Encyclopedia",
-    "section": "Why choose “drone” as the package name?",
-    "text": "Why choose “drone” as the package name?\nThis encyclopedia provides a comprehensive overview of geoms within the grammar of graphics framework, much like a drone offers a bird’s-eye view of a landscape.\nTo load this Data Visualisation Geom Encyclopedia via drone package use the following code.\ninstall.packages(drone)\nload_encyclopedia()",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "a.html",
-    "href": "a.html",
-    "title": "1  geom_a",
+    "objectID": "b.html",
+    "href": "b.html",
+    "title": "2  geom_b",
     "section": "",
-    "text": "1.1 geom_area\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate an area plot. This cover the space between x-axis and line that connects the data points.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_area(alpha = 0.5) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +\n  scale_x_continuous(breaks = 2013:2021) +\n  labs(title = \"a1: geom_area only\")\n\na2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_area(alpha = 0.5) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +\n  scale_x_continuous(breaks = 2013:2021) +\n  geom_point(col = \"red\") +\n  labs(title = \"a2: geom_area \\n and geom_point\")\na1 | a2",
+    "text": "2.1 geom_bar\nPackage\nggplot2 (Wickham 2016)\nDescription\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\nUnderstandable aesthetics\nrequired aesthetics\nx, y,\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\nSee also\ngeom_col\nExample\nExample 1: Given observations\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\")) |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(x = Income)) +\n  geom_bar()\nExample 2\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(x = Income, fill = Region)) +\n  geom_bar() +\n  scale_fill_brewer(palette = \"Paired\", na.value = \"grey50\")\nExample 3\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(x = Income, fill = Region)) +\n  geom_bar(position = \"dodge\") +\n  scale_fill_brewer(palette = \"Paired\", na.value = \"grey50\")\nExample 4: Given counts\ndfbar &lt;- data.frame(class = c(\"A\", \"B\"), income = c(100, 200))\nggplot(dfbar, aes(class, income)) +\n  geom_bar(stat = \"identity\")",
     "crumbs": [
-      "A",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+      "B",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>geom_b</span>"
     ]
   },
   {
-    "objectID": "a.html#abline",
-    "href": "a.html#abline",
-    "title": "1  geom_a",
-    "section": "1.2 geom_abline",
-    "text": "1.2 geom_abline\nPackage\nggplot2 (Wickham 2016)\nDescription\nDescription Draw a straight line (\\(Y=mX+c\\)) for a given slope (\\(m\\)) and intercept (\\(c\\)).\nUnderstandable aesthetics\nUnlike most other geoms, geom_abline does not depend on the x and y variables that we map for the main plot. geom_abline has its own independent characteristics: intercept and slope.\nSee also\ngeom_point, geom_vline, geom_hline\nExample\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +\n  geom_abline(intercept = 0, slope = 1) +\n  labs(title = \"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +\n  geom_abline(intercept = 0, slope = 1) +\n  geom_point() +\n  labs(title = \"a2: geom_abline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2",
+    "objectID": "b.html#bar_pattern",
+    "href": "b.html#bar_pattern",
+    "title": "2  geom_b",
+    "section": "2.2 geom_bar_pattern",
+    "text": "2.2 geom_bar_pattern\nPackage\nggpattern (FC, Davis, and ggplot2 authors 2023)\nDescription\nFill bars with patterns\nUnderstandable aesthetics\nrequired aesthetics\nx, y,\noptional aesthetics\npattern, pattern_angle\nSee also\ngeom_bar\nExample\n\nlibrary(ggpattern)\nworldbankdata |&gt;\n  tidyr::drop_na() |&gt; ## Missing values should be removed to see the different patterns for different levels\n  dplyr::select(c(\"Year\", \"Income\")) |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(x = Income)) +\n  geom_bar_pattern(aes(pattern = Income, pattern_angle = Income), fill = \"white\", colour = \"black\", pattern_spacing = 0.03, pattern_key_scale_factor = 1)",
     "crumbs": [
-      "A",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+      "B",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>geom_b</span>"
     ]
   },
   {
-    "objectID": "a.html#alluvium",
-    "href": "a.html#alluvium",
-    "title": "1  geom_a",
-    "section": "1.3 geom_alluvium",
-    "text": "1.3 geom_alluvium\nPackage\nggalluvial(Brunson and Read 2019; Brunson 2020)\nDescription\nCreate alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories\nUnderstandable aesthetics\nrequired aesthetics\nx, y, ymin, ymax,\noptional aesthetics\nalpha, colour, fill, linetype, size, group (group is used internally; arguments are ignored)\nSee also\ngeom_stratum, geom_flow, geom_lode\nExample\n\nlibrary(ggalluvial)\nfreq.table &lt;- worldbankdata |&gt;\n  select(Country, Region, Year, Income) |&gt;\n  filter(Year &gt; 2015) |&gt;\n  group_by(Region, Year, Income) |&gt;\n  summarise(n = n()) |&gt;\n  drop_na()\nfreq.table\n\n# A tibble: 153 × 4\n# Groups:   Region, Year [49]\n   Region               Year Income     n\n   &lt;fct&gt;               &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n 1 East Asia & Pacific  2016 LM        13\n 2 East Asia & Pacific  2016 UM        10\n 3 East Asia & Pacific  2016 H         14\n 4 East Asia & Pacific  2017 LM        13\n 5 East Asia & Pacific  2017 UM        10\n 6 East Asia & Pacific  2017 H         14\n 7 East Asia & Pacific  2018 LM        13\n 8 East Asia & Pacific  2018 UM        10\n 9 East Asia & Pacific  2018 H         14\n10 East Asia & Pacific  2019 LM        12\n# ℹ 143 more rows\n\na1 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1 / 12) +\n  labs(title = \"a1: geom_alluvium only\")\n\na2 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1 / 12) +\n  geom_stratum(width = 1 / 12, fill = \"black\", color = \"grey\") +\n  geom_label(stat = \"stratum\", aes(label = after_stat(stratum))) +\n  labs(title = \"a2: geom_alluvium, \\n geom_stratum and geom_label\")\na1 / a2",
+    "objectID": "b.html#bin2d",
+    "href": "b.html#bin2d",
+    "title": "2  geom_b",
+    "section": "2.5 geom_bin2d",
+    "text": "2.5 geom_bin2d\nPackage\nggplot2 (R-ggplot2?)\nDescription\nDivides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.\nUnderstandable aesthetics\nx, y, fill, group\nSee also\ngeom_bin_2d, geom_point\nExample\n\nggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +\n  geom_bin2d() +\n  theme(aspect.ratio = 1) +\n  scale_fill_viridis(na.value = \"grey50\", limits = c(0, 30))",
     "crumbs": [
-      "A",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+      "B",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>geom_b</span>"
     ]
   },
   {
-    "objectID": "a.html#geom_arc",
-    "href": "a.html#geom_arc",
-    "title": "1  geom_a",
-    "section": "1.4 geom_arc",
-    "text": "1.4 geom_arc\nPackage\nggforce(Pedersen 2022)\nDescription\nDraw a circle or a segment of a circle.\nUnderstandable aesthetic\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius, start, end\noptional aesthetics\ncolor, linewidth, linetype, alpha, lineend\nThe statistical transformation to use on the data for this layer\nstat_arc\nSee also\ngeom_arc2, geom_arc_bar\nExample\n\nlibrary(ggforce)\nggplot() +\n  geom_arc(aes(x0 = 0, y0 = 0, r = 8, start = 1, end = 8)) +\n  geom_arc(aes(x0 = 0, y0 = 0, r = 8, start = 1, end = 5), col = \"red\", size = 2) +\n  theme(aspect.ratio = 1)",
+    "objectID": "b.html#bin2dpattern",
+    "href": "b.html#bin2dpattern",
+    "title": "2  geom_b",
+    "section": "2.4 geom_bin2d_pattern",
+    "text": "2.4 geom_bin2d_pattern\nPackage\nggpattern(FC, Davis, and ggplot2 authors 2023)\nDescription\nDivides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.\nUnderstandable aesthetics\nRequired aesthetics\nx, y\nOptional aesthetics\npattern_fill (pattern_* - for mapping variables under aesthetics), pattern (to set a patten, for example pattern=‘stripe’), fill, colour\nSee also\ngeom_bin2d, geom_point\nExample\n\nworldbankdata |&gt;\n  drop_na() |&gt;\n  ggplot(aes(y = Cooking, x = Electricity)) +\n  geom_bin2d_pattern(aes(pattern_spacing = ..density..), fill = \"white\", colour = \"black\", bins = 20) +\n  theme(aspect.ratio = 1)",
     "crumbs": [
-      "A",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+      "B",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>geom_b</span>"
     ]
   },
   {
-    "objectID": "a.html#arcbar",
-    "href": "a.html#arcbar",
-    "title": "1  geom_a",
-    "section": "1.5 geom_arc_bar",
-    "text": "1.5 geom_arc_bar\nPackage\nggforce(Pedersen 2022)\nDescription\nTo draw pie chart and donut chart defining centre point, a radius and a start and end angle.\nUnderstandable aesthetic\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius, start, end\noptional aesthetics\ncolor, linewidth, linetype, alpha, lineend\nThe statistical transformation to use on the data for this layer\nstat_arc\nSee also\ngeom_arc, geom_arc_bar\nExample\n\ndf &lt;- data.frame(\n  state = c(\n    \"A\", \"B\", \"C\",\n    \"D\", \"E\"\n  ),\n  focus = c(0.2, 0, 0, 0, 0),\n  start = c(0, 1, 2, 3, 4),\n  end = c(1, 2, 3, 4, 2 * pi),\n  amount = c(4, 3, 1, 2, 5),\n  stringsAsFactors = FALSE\n)\nggplot(df) +\n  geom_arc_bar(aes(\n    x0 = 0, y0 = 0, r0 = 0, r = 1, amount = amount,\n    fill = state, explode = focus\n  ), stat = \"pie\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1)\n\n\n\n\n\n\n\n\n##geom_arrow{#arrow}\nPackage\nmetR (Campitelli 2021)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\narrow,type, arrow.angle, arrow.length, arrow.ends, arrow.type\nSee also\ngeom_line, geom_ribbon\n\n1.5.1 Example\n\nlibrary(metR)\n\n\nAttaching package: 'metR'\n\n\nThe following object is masked from 'package:purrr':\n\n    cross\n\ndata &lt;- tibble(\n  x = c(10, 20, 30, 40, 50),           # Longitude or X-coordinates\n  y = c(1, 2, 3, 4, 5),           # Latitude or Y-coordinates\n  dx = c(1, 0, -1, 0, 1),         # Wind direction components (change in X)\n  dy = c(1, -1, 0, 1, 0)          # Wind direction components (change in Y)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point(color = \"#1b9e77\", size = 3) +  \n  geom_arrow(aes(dx = dx, dy = dy), color = \"#d95f02\", size = 1, arrow.type = \"closed\") +\n  labs(title = \"Wind Directions at Different Locations\", x = \"Longitude\", y = \"Latitude\")",
+    "objectID": "b.html#blank",
+    "href": "b.html#blank",
+    "title": "2  geom_b",
+    "section": "2.6 geom_blank",
+    "text": "2.6 geom_blank\nPackage\nggplot2 (R-ggplot2?)\nDescription\nDraws nothing.",
     "crumbs": [
-      "A",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+      "B",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>geom_b</span>"
     ]
   },
   {
-    "objectID": "a.html#ash",
-    "href": "a.html#ash",
-    "title": "1  geom_a",
-    "section": "1.6 geom_ash",
-    "text": "1.6 geom_ash\nPackage\nggformula (Kaplan and Pruim 2023)\nDescription\nPlotted Average Shifted Histogram (ASH)\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolor, fill, bins, alpha, size\nSee also\ngeom_histogram, geom_density\nExample\n\nlibrary(ggformula)\np1 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n   geom_ash(bins = 20, color = \"#d95f02\") + labs(\"Average Shifted Histogram\")\np2 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n  geom_histogram(aes(y = stat(density)), color = \"black\", fill = \"gray\") +\n   geom_ash(bins = 20, color = \"#d95f02\") + labs(\"Histogram and Average Shifted Histogram\")\np1|p2\n\n\n\n\n\n\n\n\n\n\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for Alluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package ‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of Meteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula Interface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "objectID": "b.html#boxplot",
+    "href": "b.html#boxplot",
+    "title": "2  geom_b",
+    "section": "2.7 geom_boxplot",
+    "text": "2.7 geom_boxplot\nPackage\nggplot2 (R-ggplot2?)\nDescription\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\nSee also\ngeom_col\nExample\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\n  ggplot(aes(y = Cooking, x = factor(0))) +\n  geom_boxplot() +\n  theme(\n    axis.title.x = element_blank(),\n    axis.text.x = element_blank(),\n    axis.ticks.x = element_blank()\n  )\n\n\n\n\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(y = Cooking, x = Region)) +\n  geom_boxplot() +\n  theme(\n    axis.title.x = element_blank(),\n    axis.text.x = element_blank(),\n    axis.ticks.x = element_blank()\n  )\n\n\n\n\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(y = Cooking, x = factor(0))) +\n  geom_boxplot(\n    outlier.colour = \"black\", outlier.shape = 16,\n    outlier.size = 2, notch = TRUE\n  ) +\n  theme(\n    axis.title.x = element_blank(),\n    axis.text.x = element_blank(),\n    axis.ticks.x = element_blank()\n  )",
     "crumbs": [
-      "A",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+      "B",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>geom_b</span>"
+    ]
+  },
+  {
+    "objectID": "b.html#bump",
+    "href": "b.html#bump",
+    "title": "2  geom_b",
+    "section": "2.8 geom_bump",
+    "text": "2.8 geom_bump\nPackage\nggbump (Sjoberg 2020)\nDescription\nCreates a smooth rank over time.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\ncolour, alpha, size\nSee also\ngeom_line\nExample\n\nlibrary(ggbump)\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Afghanistan\") |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_bump() +\n  ggtitle(\"a1: geom_bump only\")\na2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Afghanistan\") |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_bump() +\n  geom_point() +\n  ggtitle(\"a2: geom_bump and geom_point\")\na1 | a2\n\n\n\n\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "B",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>geom_b</span>"
+    ]
+  },
+  {
+    "objectID": "q.html",
+    "href": "q.html",
+    "title": "17  geom_q",
+    "section": "",
+    "text": "17.1 geom_qq\nPackage\nggplot2 (Wickham 2016)\nDescription\nDraws quantitle-quantile plot.\nUnderstandable aesthetics\nrequired aesthetics\nsample\noptional aesthetics\ngroup, x, y\nSee also\ngeom_qq_line\nExample\nworldbankdata |&gt;\n  ggplot(aes(sample = Cooking)) +\n  geom_qq()\n\nWarning: Removed 6047 rows containing non-finite outside the scale range\n(`stat_qq()`).",
+    "crumbs": [
+      "Q",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>geom_q</span>"
+    ]
+  },
+  {
+    "objectID": "q.html#qq_line",
+    "href": "q.html#qq_line",
+    "title": "17  geom_q",
+    "section": "17.2 geom_qq_line",
+    "text": "17.2 geom_qq_line\nPackage\nggplot2 (Wickham 2016)\nDescription\nComputes the slope and intercept of the line connecting the points at specified quartiles of the theoretical and sample distribution in the quantitle-quantile plot. This geom should be used along with geom_qq to plot to be meaningful.\nUnderstandable aesthetics\nrequired aesthetics\nsample\noptional aesthetics\ngroup, x, y\nSee also\ngeom_qq_line\nExample\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(sample = Cooking)) +\n  geom_qq_line()  + ggtitle(\"geom_qq_line only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(sample = Cooking)) +\n  geom_qq_line() + geom_qq() + ggtitle(\"geom_qq_line and geom_qq\")\na1|a2",
+    "crumbs": [
+      "Q",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>geom_q</span>"
+    ]
+  },
+  {
+    "objectID": "q.html#quantile",
+    "href": "q.html#quantile",
+    "title": "17  geom_q",
+    "section": "17.3 geom_qquantile",
+    "text": "17.3 geom_qquantile\nPackage\nggplot2 (Wickham 2016)\nDescription\nFits and draw quantile regression lines. Quantile regression models the relationship between independent variables and the percentiles of the dependent variable\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, group, linetype, linewidth, weight, quantile, method\nSee also\ngeom_boxplot\nExamples\nExample 1\n\na1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y=Cooking, x = Electricity)) + \n  geom_quantile() + ggtitle(\"geom_quantile only\")\na2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y=Cooking, x = Electricity)) + \n  geom_quantile() + \n  geom_point() +\n  ggtitle(\"geom_quantile and geom_point\")\na1|a2\n\n\n\n\n\n\n\n\nExample 2\n\nq &lt;- seq(0.05, 0.95, by = 0.05)\na3 &lt;- worldbankdata |&gt;\n  ggplot(aes(y=Cooking, x = Electricity)) + \n  geom_quantile(method = \"rqss\") + \n  ggtitle(\"geom_quantile with method rqss\")\na4 &lt;- worldbankdata |&gt;\n  ggplot(aes(y=Cooking, x = Electricity)) + \n  geom_quantile(method = \"rqss\") + \n  geom_point() +\n  ggtitle(\"geom_quantile with \\n method rqss and geom_point\")\na3|a4\n\n\n\n\n\n\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "Q",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>geom_q</span>"
     ]
   }
 ]
