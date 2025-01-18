@@ -34,7 +34,7 @@
     "href": "preface.html#what-you-will-learn",
     "title": "Preface",
     "section": "What you will learn?",
-    "text": "What you will learn?\nEach geom has a set of aesthetics that it understands.",
+    "text": "What you will learn?\nEach geom has a set of aesthetics that it understands. These aesthetics can be divided into two parts: i) required aesthetics and ii) optional aesthetics. Further, Every geom has a default stat; and every stat has a default geom.\nTo get an idea about the associated aesthetics and stat let look at plot shown in Figure 4. In this case x, y are required aesthetics and color size and alpha is optional aesthetics. The statistics layer is identity since the data points are plotted as it is.\nThe aesthetic mappings, defined with aes(), describe how variables in the dataset are mapped to visual properties or aesthetics. This aes(x=Income, y=Electricity, color=Income) is called mapping variables to the visual properties of the chart. This alpha=0.5, size=2 is called setting values to visual properties.\n\nggplot(worldbankdata2021, aes(x=Income, y=Electricity, color=Income)) + \n  geom_point(alpha=0.5, size=2) +\n  scale_color_brewer(palette = \"Dark2\")\n\n\n\n\nFigure 4: Distribution of Electricity by Income Category\n\n\n\n\nIn this geom encyclopedia, you will learn about the required and optional aesthetics that each geom supports, as well as the associated statistical layer for each geom. Additionally, an example is provided demonstrating the application of each geom with reproducible R code.",
     "crumbs": [
       "Preface"
     ]
@@ -54,7 +54,7 @@
     "href": "preface.html#how-this-geom-encyclopedia-is-organized",
     "title": "Preface",
     "section": "How this geom encyclopedia is organized?",
-    "text": "How this geom encyclopedia is organized?",
+    "text": "How this geom encyclopedia is organized?\nAs this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a",
     "crumbs": [
       "Preface"
     ]
@@ -107,6 +107,36 @@
     "text": "Colophon\nThe field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the tidyverse.” Journal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686.\n\n\nWickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis Vaughan. 2023. Dplyr: A Grammar of Data Manipulation. https://CRAN.R-project.org/package=dplyr.\n\n\nWickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024. Tidyr: Tidy Messy Data. https://CRAN.R-project.org/package=tidyr.",
     "crumbs": [
       "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "",
+    "text": "Welcome\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics use in data visualisation. This encyclopedia is a curated collection of geom available in different R programming software packages. This book can also be considered as an “Encyclopedia of Plots”.\nThis book is a work in progress. The accompanying R package for drone is available on CRAN: https://github.com/thiyangt/drone",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
+    "href": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "text": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#why-choose-drone-as-the-package-name",
+    "href": "index.html#why-choose-drone-as-the-package-name",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "Why choose “drone” as the package name?",
+    "text": "Why choose “drone” as the package name?\nThis encyclopedia provides a comprehensive overview of geoms within the grammar of graphics framework, much like a drone offers a bird’s-eye view of a landscape.\nTo load this Data Visualisation Geom Encyclopedia via drone package use the following code.\ninstall.packages(drone)\nload_encyclopedia()",
+    "crumbs": [
+      "Welcome"
     ]
   }
 ]

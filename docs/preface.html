@@ -857,7 +857,23 @@ div.csl-indent {
 </section>
 <section id="what-you-will-learn" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-will-learn">What you will learn?</h2>
-<p>Each geom has a set of aesthetics that it understands.</p>
+<p>Each geom has a set of aesthetics that it understands. These aesthetics can be divided into two parts: i) required aesthetics and ii) optional aesthetics. Further, Every geom has a default stat; and every stat has a default geom.</p>
+<p>To get an idea about the associated aesthetics and stat let look at plot shown in Figure 4. In this case <code>x</code>, <code>y</code> are required aesthetics and <code>color</code> <code>size</code> and <code>alpha</code> is optional aesthetics. The statistics layer is identity since the data points are plotted as it is.</p>
+<p>The aesthetic mappings, defined with <code>aes()</code>, describe how variables in the dataset are mapped to visual properties or aesthetics. This <code>aes(x=Income, y=Electricity, color=Income)</code> is called mapping variables to the visual properties of the chart. This <code>alpha=0.5, size=2</code> is called setting values to visual properties.</p>
+<div class="cell" data-fig.label="fig:example">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata2021, <span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">y=</span>Electricity, <span class="at">color=</span>Income)) <span class="sc">+</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="preface_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 4: Distribution of Electricity by Income Category</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In this <span style="color:red;">geom encyclopedia</span>, you will learn about the required and optional aesthetics that each geom supports, as well as the associated statistical layer for each geom. Additionally, an example is provided demonstrating the application of each geom with reproducible R code.</p>
 </section>
 <section id="what-you-wont-learn" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-wont-learn">What you won’t learn?</h2>
@@ -865,6 +881,7 @@ div.csl-indent {
 </section>
 <section id="how-this-geom-encyclopedia-is-organized" class="level2">
 <h2 class="anchored" data-anchor-id="how-this-geom-encyclopedia-is-organized">How this <span style="color:red;">geom encyclopedia</span> is organized?</h2>
+<p>As this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a</p>
 </section>
 <section id="audience" class="level2">
 <h2 class="anchored" data-anchor-id="audience">Audience</h2>

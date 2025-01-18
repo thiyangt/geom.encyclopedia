@@ -120,7 +120,21 @@ There is no centralized location to find all types of geoms are easily accessibl
 ## What you will learn?
 
 
-Each geom has a set of aesthetics that it understands.
+Each geom has a set of aesthetics that it understands. These aesthetics can be divided into two parts: i) required aesthetics and ii) optional aesthetics. Further, Every geom has a default stat; and every stat has a default geom.
+
+To get an idea about the associated aesthetics and stat let look at plot shown in Figure 4. In this case `x`, `y` are required aesthetics and `color` `size` and `alpha` is optional aesthetics. The statistics layer is identity since the data points are plotted as it is. 
+
+The aesthetic mappings, defined with `aes()`, describe how variables in the dataset are mapped to visual properties or aesthetics. This `aes(x=Income, y=Electricity, color=Income)` is called mapping variables to the visual properties of the chart. This `alpha=0.5, size=2` is called setting values to visual properties. 
+
+```{r, warning=FALSE, message=FALSE}
+#| fig.cap: "Figure 4: Distribution of Electricity by Income Category "
+#| fig.label: "fig:example"
+ggplot(worldbankdata2021, aes(x=Income, y=Electricity, color=Income)) + 
+  geom_point(alpha=0.5, size=2) +
+  scale_color_brewer(palette = "Dark2")
+```
+
+In this <span style='color:red;'>geom encyclopedia</span>, you will learn about the required and optional aesthetics that each geom supports, as well as the associated statistical layer for each geom. Additionally, an example is provided demonstrating the application of each geom with reproducible R code.
 
 ## What you won't learn?
 
@@ -128,6 +142,7 @@ This book is not focused on teaching R programming fundamentals or providing a c
 
 ## How this <span style='color:red;'>geom encyclopedia</span> is organized?
 
+As this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a 
 
 ## Audience
 
