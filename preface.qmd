@@ -2,6 +2,48 @@
 
 ## What can I find in this <span style='color:red;'>geom encyclopedia</span>?
 
+Before answering this question let me briefly explain what is data visualisation? Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily.
+
+Now let's look at what is **geom**?
+
+In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.
+
+
+```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE, fig.cap="Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F."}
+library(patchwork)
+library(tidyverse)
+library(ggbeeswarm)
+library(ggplot2)
+library(drone)
+data("worldbankdata")
+worldbankdata2021 <- worldbankdata |> filter(Year == 2021)
+
+p1 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_point() + ggtitle("A")
+p2 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_quasirandom() + ggtitle("B")
+p3 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C")
+p4 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D")
+p5 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E")
+p6 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="black", trim=TRUE)+ ggtitle("F")
+
+lrdf <- worldbankdata2021 |> select(Electricity, Income) |> group_by(Income) |>
+  summarize(Min = min(Electricity, na.rm = TRUE), Max = max(Electricity, na.rm=TRUE), Mean = mean(Electricity, na.rm = TRUE))
+p7 <- ggplot(lrdf) + 
+   geom_linerange(aes(x=Income, ymin=Min, ymax=Max, ymean = Mean), width=0.2, size=1, color="blue") + ggtitle("G") + ylab("Electricity")
+p8 <- ggplot(lrdf) + 
+   geom_linerange(aes(x=Income, ymin=Min, ymax=Max),  width=0.2, size=1, color="blue") + 
+  geom_point( aes(x=Income, y=Mean), col="white", size=4, shape=21, fill="red") + ggtitle("H") + ylab("Electricity")
+
+(p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
+```
+
+In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualize on the plots.
+
+```{r, fig.height=5, fig.width=5,echo=FALSE}
+p0 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity))
+p0
+```
+
+
 
 ## How this <span style='color:red;'>geom encyclopedia</span> is organized?
 
@@ -15,7 +57,38 @@
 
 ## What prior knowledge is needed to use this <span style='color:red;'>geom encyclopedia</span>?
 
+**For a complete newcomer to get an idea about the possible charts that can be drawn for a data set.**
+
+ None
+
+
+**To get hands-on-experience with the examples provided you need to have following knowledge.**
+
+1. R and RStudio  Integrated Development Environment (IDE)
+
+2. Basics of R programming
+
+3. [tidyverse](https://www.tidyverse.org/) [@tidyverse] style of coding
+
+4. Data wrangling with tidyr[@tidyr] and dplyr[@dplyr]
+
+5. Knowledge in using the pipe operator:  **|>**
+
+6. Knowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2[@ggplot2]
+
+If you want to learn more of them, following are the books recommended:
+
+- [R for Data Science (2e)](https://r4ds.hadley.nz/) written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
+
+- [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/)  written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.
+
 ## Acknowledgments
+
+I would like to thank all the package authors and contributors who have developed and shared geoms as R packages.
+
+I would like to thank all the students who took my ASP 460 2.0/STA 492 2.0 Data Visualization course in 2024 for their valuable contributions in exploring geoms with me.
+
+This book was built with <a href="https://quarto.org/">Quarto</a>. 
 
 ## Colophon
 

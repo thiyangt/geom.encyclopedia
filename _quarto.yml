@@ -4,11 +4,17 @@ project:
 
 
 book:
-  title: "Data Visualisation <span style='color:red;'>Geom</span>etrie<span style='color:red;'>s</span> Encyclopedia"
+  title: "Data Visualisation <span style='color:red;'>Geom</span>etries Encyclopedia"
   subtitle: "Geoms in the Grammar of Graphics: All Types of Plots"
   author: "Thiyanga S. Talagala"
   date: "`r Sys.Date()`"
   downloads: [pdf, epub]
+  reader-mode: true
+  page-footer:
+    left: |
+      Data Visualisation Geometries Encyclopedia was written by Thiyanga S. Talagala.
+    right: |
+      GEOM Encyclopedia (Encyclopedia of Plots)
   site-url: https://thiyangt.github.io/geom.encyclopedia/
   repo-url: https://github.com/thiyangt/geom.encyclopedia
   repo-branch: main

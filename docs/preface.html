@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -96,26 +116,31 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Data Visualisation <span style="color:red;">Geom</span>etrie<span style="color:red;">s</span> Encyclopedia</a> 
-        <div class="sidebar-tools-main">
+      <a href="./">Data Visualisation <span style="color:red;">Geom</span>etries Encyclopedia</a> 
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/thiyangt/geom.encyclopedia" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation--span-style=-color-red---Geom--span-etrie-span-style=-color-red---s--span--Encyclopedia.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation--span-style=-color-red---Geom--span-etries-Encyclopedia.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation--span-style=-color-red---Geom--span-etrie-span-style=-color-red---s--span--Encyclopedia.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation--span-style=-color-red---Geom--span-etries-Encyclopedia.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
       </ul>
     </div>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
     </div>
       </div>
@@ -141,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data and How to Run the Examples in the GEOM Encyclopedia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -643,6 +668,29 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="what-can-i-find-in-this-geom-encyclopedia" class="level2">
 <h2 class="anchored" data-anchor-id="what-can-i-find-in-this-geom-encyclopedia">What can I find in this <span style="color:red;">geom encyclopedia</span>?</h2>
+<p>Before answering this question let me briefly explain what is data visualisation? Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily.</p>
+<p>Now let’s look at what is <strong>geom</strong>?</p>
+<p>In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="preface_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="768"></p>
+<figcaption>Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualize on the plots.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="preface_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="how-this-geom-encyclopedia-is-organized" class="level2">
 <h2 class="anchored" data-anchor-id="how-this-geom-encyclopedia-is-organized">How this <span style="color:red;">geom encyclopedia</span> is organized?</h2>
@@ -658,15 +706,44 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia" class="level2">
 <h2 class="anchored" data-anchor-id="what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia">What prior knowledge is needed to use this <span style="color:red;">geom encyclopedia</span>?</h2>
+<p><strong>For a complete newcomer to get an idea about the possible charts that can be drawn for a data set.</strong></p>
+<p>None</p>
+<p><strong>To get hands-on-experience with the examples provided you need to have following knowledge.</strong></p>
+<ol type="1">
+<li><p>R and RStudio Integrated Development Environment (IDE)</p></li>
+<li><p>Basics of R programming</p></li>
+<li><p><a href="https://www.tidyverse.org/">tidyverse</a> <span class="citation" data-cites="tidyverse">(<a href="references.html#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> style of coding</p></li>
+<li><p>Data wrangling with tidyr<span class="citation" data-cites="tidyr">(<a href="references.html#ref-tidyr" role="doc-biblioref">Wickham, Vaughan, and Girlich 2024</a>)</span> and dplyr<span class="citation" data-cites="dplyr">(<a href="references.html#ref-dplyr" role="doc-biblioref">Wickham et al. 2023</a>)</span></p></li>
+<li><p>Knowledge in using the pipe operator (|&gt;)</p></li>
+<li><p>Knowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2<span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
+</ol>
+<p>If you want to learn more of them, following are the books recommended:</p>
 </section>
 <section id="acknowledgments" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
+<p>I would like to thank all the package authors and contributors who have developed and shared geoms as R packages.</p>
+<p>I would like to thank all the students who took my ASP 460 2.0/STA 492 2.0 Data Visualization course in 2024 for their valuable contributions in exploring geoms with me.</p>
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </section>
 <section id="colophon" class="level2">
 <h2 class="anchored" data-anchor-id="colophon">Colophon</h2>
 <p>The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+<div id="ref-tidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+<div id="ref-dplyr" class="csl-entry" role="listitem">
+Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis Vaughan. 2023. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.
+</div>
+<div id="ref-tidyr" class="csl-entry" role="listitem">
+Wickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1097,14 +1174,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./intro.html" class="pagination-link" aria-label="Data and How to Run the Examples in the GEOM Encyclopedia">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data and How to Run the Examples in the GEOM Encyclopedia</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Data Visualisation Geometries Encyclopedia was written by Thiyanga S. Talagala.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/preface.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>GEOM Encyclopedia (Encyclopedia of Plots)</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/preface.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

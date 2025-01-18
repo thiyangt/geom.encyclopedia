@@ -1,4 +1,4 @@
-# Introduction
+# Data and setting up your workflow {.unnumbered}
 
 ## What is data visualisation?
 
@@ -8,39 +8,8 @@ Data visualization is the graphical representation of data to understand the pat
 
 In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.
 
-```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE, fig.cap="Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F."}
-library(patchwork)
-library(tidyverse)
-library(ggbeeswarm)
-library(ggplot2)
-library(drone)
-data("worldbankdata")
-worldbankdata2021 <- worldbankdata |> filter(Year == 2021)
-
-p1 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_point() + ggtitle("A")
-p2 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_quasirandom() + ggtitle("B")
-p3 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C")
-p4 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D")
-p5 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E")
-p6 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="black", trim=TRUE)+ ggtitle("F")
-
-lrdf <- worldbankdata2021 |> select(Electricity, Income) |> group_by(Income) |>
-  summarize(Min = min(Electricity, na.rm = TRUE), Max = max(Electricity, na.rm=TRUE), Mean = mean(Electricity, na.rm = TRUE))
-p7 <- ggplot(lrdf) + 
-   geom_linerange(aes(x=Income, ymin=Min, ymax=Max, ymean = Mean), width=0.2, size=1, color="blue") + ggtitle("G") + ylab("Electricity")
-p8 <- ggplot(lrdf) + 
-   geom_linerange(aes(x=Income, ymin=Min, ymax=Max),  width=0.2, size=1, color="blue") + 
-  geom_point( aes(x=Income, y=Mean), col="white", size=4, shape=21, fill="red") + ggtitle("H") + ylab("Electricity")
-
-(p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
-```
-
 In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualise on the plots. For example, in chart A: all values are represented using individual points. In chart H: The range is denoted using a blue line and mean is represented using a red dot. 
 
-```{r, fig.height=5, fig.width=5,echo=FALSE}
-p0 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity))
-p0
-```
 
 
 ## Data sets use in geom Encyclopedia
@@ -66,7 +35,6 @@ library(naniar)
 gg_miss_upset(worldbankdata) 
 ```
 
-## Packages use for data wrangiling and |> operator
 
 
 ## R packages with geom implementation

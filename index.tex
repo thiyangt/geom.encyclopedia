@@ -243,7 +243,7 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Data Visualisation {Geom}etrie{s} Encyclopedia}
+\title{Data Visualisation {Geom}etries Encyclopedia}
 \usepackage{etoolbox}
 \makeatletter
 \providecommand{\subtitle}[1]{% add subtitle to \maketitle
@@ -344,6 +344,40 @@ encyclopedia}?}
 
 \markright{What can I find in this {geom encyclopedia}?}
 
+Before answering this question let me briefly explain what is data
+visualisation? Data visualization is the graphical representation of
+data to understand the patterns, trends, relationships, outliers and
+complex structures hidden inside data more easily.
+
+Now let's look at what is \textbf{geom}?
+
+In data visualization, geometries (or geoms) refer to the visual
+elements that represent data in a plot. They define the type of chart or
+shape used to depict data points or relationships. For example, the
+below figure represents the relationship between income level and
+percentage of people access to electricity in lower income (L), lower
+middle income (LM), upper middle income (UM) and higher income (H)
+countries using 6 different graph times.
+
+\begin{figure}[H]
+
+{\centering \includegraphics{preface_files/figure-pdf/unnamed-chunk-1-1.pdf}
+
+}
+
+\caption{Relationship between income level and percentage of people
+access to electricity in lower incom (L), lower middle income (LM),
+upper middle income (UM) and higher income (H) countries using 6
+different graphs from A to F.}
+
+\end{figure}%
+
+In order to create the above plots, I use the same i) dataset and ii)
+same cartesian plane (shown below). The differences are the geometries
+that we use and statistics we visualize on the plots.
+
+\includegraphics{preface_files/figure-pdf/unnamed-chunk-2-1.pdf}
+
 \section*{\texorpdfstring{How this {geom encyclopedia} is
 organized?}{How this geom encyclopedia is organized?}}\label{how-this-geom-encyclopedia-is-organized}
 \addcontentsline{toc}{section}{How this {geom encyclopedia} is
@@ -375,10 +409,48 @@ this {geom encyclopedia}?}
 \markright{What prior knowledge is needed to use this {geom
 encyclopedia}?}
 
+\textbf{For a complete newcomer to get an idea about the possible charts
+that can be drawn for a data set.}
+
+None
+
+\textbf{To get hands-on-experience with the examples provided you need
+to have following knowledge.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  R and RStudio Integrated Development Environment (IDE)
+\item
+  Basics of R programming
+\item
+  \href{https://www.tidyverse.org/}{tidyverse} (Wickham et al. 2019)
+  style of coding
+\item
+  Data wrangling with tidyr(Wickham, Vaughan, and Girlich 2024) and
+  dplyr(Wickham et al. 2023)
+\item
+  Knowledge in using the pipe operator (\textbar\textgreater)
+\item
+  Knowledge in creating data visualisations using the grammar of
+  graphics frame work implemented in ggplot2(Wickham 2016)
+\end{enumerate}
+
+If you want to learn more of them, following are the books recommended:
+
 \section*{Acknowledgments}\label{acknowledgments}
 \addcontentsline{toc}{section}{Acknowledgments}
 
 \markright{Acknowledgments}
+
+I would like to thank all the package authors and contributors who have
+developed and shared geoms as R packages.
+
+I would like to thank all the students who took my ASP 460 2.0/STA 492
+2.0 Data Visualization course in 2024 for their valuable contributions
+in exploring geoms with me.
+
+This book was built with Quarto.
 
 \section*{Colophon}\label{colophon}
 \addcontentsline{toc}{section}{Colophon}
@@ -392,9 +464,17 @@ resource for users.
 
 \bookmarksetup{startatroot}
 
-\chapter{Introduction}\label{introduction}
+\chapter*{Data and setting up your
+workflow}\label{data-and-setting-up-your-workflow}
+\addcontentsline{toc}{chapter}{Data and setting up your workflow}
 
-\section{What is data visualisation?}\label{what-is-data-visualisation}
+\markboth{Data and setting up your workflow}{Data and setting up your
+workflow}
+
+\section*{What is data visualisation?}\label{what-is-data-visualisation}
+\addcontentsline{toc}{section}{What is data visualisation?}
+
+\markright{What is data visualisation?}
 
 Data visualization is the graphical representation of data to understand
 the patterns, trends, relationships, outliers and complex structures
@@ -403,8 +483,12 @@ data to speak for itself in a way that is easily understandable to
 humans. It is like giving a voice to the data, enabling us to listen and
 understand its story more effectively.
 
-\section{What are Gemetries (geoms) in Data
+\section*{What are Gemetries (geoms) in Data
 Visualisation?}\label{what-are-gemetries-geoms-in-data-visualisation}
+\addcontentsline{toc}{section}{What are Gemetries (geoms) in Data
+Visualisation?}
+
+\markright{What are Gemetries (geoms) in Data Visualisation?}
 
 In data visualization, geometries (or geoms) refer to the visual
 elements that represent data in a plot. They define the type of chart or
@@ -414,19 +498,6 @@ percentage of people access to electricity in lower income (L), lower
 middle income (LM), upper middle income (UM) and higher income (H)
 countries using 6 different graph times.
 
-\begin{figure}[H]
-
-{\centering \includegraphics{intro_files/figure-pdf/unnamed-chunk-1-1.pdf}
-
-}
-
-\caption{Relationship between income level and percentage of people
-access to electricity in lower incom (L), lower middle income (LM),
-upper middle income (UM) and higher income (H) countries using 6
-different graphs from A to F.}
-
-\end{figure}%
-
 In order to create the above plots, I use the same i) dataset and ii)
 same cartesian plane (shown below). The differences are the geometries
 that we use and statistics we visualise on the plots. For example, in
@@ -434,10 +505,11 @@ chart A: all values are represented using individual points. In chart H:
 The range is denoted using a blue line and mean is represented using a
 red dot.
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-2-1.pdf}
+\section*{Data sets use in geom
+Encyclopedia}\label{data-sets-use-in-geom-encyclopedia}
+\addcontentsline{toc}{section}{Data sets use in geom Encyclopedia}
 
-\section{Data use in the
-Encyclopedia}\label{data-use-in-the-encyclopedia}
+\markright{Data sets use in geom Encyclopedia}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -465,7 +537,10 @@ Encyclopedia}\label{data-use-in-the-encyclopedia}
 # i 7,927 more rows
 \end{verbatim}
 
-\section{Data description}\label{data-description}
+\section*{Data description}\label{data-description}
+\addcontentsline{toc}{section}{Data description}
+
+\markright{Data description}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -476,7 +551,7 @@ Encyclopedia}\label{data-use-in-the-encyclopedia}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-4-1.pdf}
+\includegraphics{intro_files/figure-pdf/unnamed-chunk-2-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -485,13 +560,13 @@ Encyclopedia}\label{data-use-in-the-encyclopedia}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-5-1.pdf}
+\includegraphics{intro_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
-\section{Packages use for data wrangiling and \textbar\textgreater{}
-operator}\label{packages-use-for-data-wrangiling-and-operator}
-
-\section{R packages with geom
+\section*{R packages with geom
 implementation}\label{r-packages-with-geom-implementation}
+\addcontentsline{toc}{section}{R packages with geom implementation}
+
+\markright{R packages with geom implementation}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6991,6 +7066,22 @@ Non-Overlapping Text Labels with 'Ggplot2'}.
 Wickham, Hadley. 2016. \emph{Ggplot2: Elegant Graphics for Data
 Analysis}. Springer-Verlag New York.
 \url{https://ggplot2.tidyverse.org}.
+
+\bibitem[\citeproctext]{ref-tidyverse}
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy
+D'Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.
+{``Welcome to the {tidyverse}.''} \emph{Journal of Open Source Software}
+4 (43): 1686. \url{https://doi.org/10.21105/joss.01686}.
+
+\bibitem[\citeproctext]{ref-dplyr}
+Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis
+Vaughan. 2023. \emph{Dplyr: A Grammar of Data Manipulation}.
+\url{https://CRAN.R-project.org/package=dplyr}.
+
+\bibitem[\citeproctext]{ref-tidyr}
+Wickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024.
+\emph{Tidyr: Tidy Messy Data}.
+\url{https://CRAN.R-project.org/package=tidyr}.
 
 \bibitem[\citeproctext]{ref-ggridges}
 Wilke, Claus O. 2023. \emph{Ggridges: Ridgeline Plots in 'Ggplot2'}.
