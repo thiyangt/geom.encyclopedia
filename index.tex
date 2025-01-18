@@ -326,6 +326,7 @@ package use the following code.
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{install.packages}\NormalTok{(drone)}
+\FunctionTok{library}\NormalTok{(drone)}
 \FunctionTok{load\_encyclopedia}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
@@ -680,11 +681,24 @@ workflow}\label{data-and-setting-up-your-workflow}
 \markboth{Data and setting up your workflow}{Data and setting up your
 workflow}
 
-\section*{Data sets use in geom
-Encyclopedia}\label{data-sets-use-in-geom-encyclopedia}
-\addcontentsline{toc}{section}{Data sets use in geom Encyclopedia}
+\section*{Installation of associated
+packages}\label{installation-of-associated-packages}
+\addcontentsline{toc}{section}{Installation of associated packages}
 
-\markright{Data sets use in geom Encyclopedia}
+\markright{Installation of associated packages}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(drone)}
+\FunctionTok{install.packages}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\section*{Data set use in geom
+Encyclopedia}\label{data-set-use-in-geom-encyclopedia}
+\addcontentsline{toc}{section}{Data set use in geom Encyclopedia}
+
+\markright{Data set use in geom Encyclopedia}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -712,10 +726,129 @@ Encyclopedia}\label{data-sets-use-in-geom-encyclopedia}
 # i 7,927 more rows
 \end{verbatim}
 
-\section*{Data description}\label{data-description}
-\addcontentsline{toc}{section}{Data description}
+\section*{\texorpdfstring{\texttt{worldbankdata}: Data
+Profiling}{worldbankdata: Data Profiling}}\label{worldbankdata-data-profiling}
+\addcontentsline{toc}{section}{\texttt{worldbankdata}: Data Profiling}
 
-\markright{Data description}
+\markright{\texttt{worldbankdata}: Data Profiling}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(skimr)}
+\NormalTok{worldbankdata }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{skim}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{Data summary}\tabularnewline
+\toprule\noalign{}
+\endfirsthead
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Name & worldbankdata \\
+Number of rows & 7937 \\
+Number of columns & 7 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Column type frequency: & \\
+factor & 4 \\
+numeric & 3 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Group variables & None \\
+\end{longtable}
+
+\textbf{Variable type: factor}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1020}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0816}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0918}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.4388}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+ordered
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_unique
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+top\_counts
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Country & 0 & 1.00 & FALSE & 227 & Afg: 36, Alb: 36, Alg: 36, Ame: 36 \\
+Code & 0 & 1.00 & FALSE & 218 & CIV: 48, CUW: 47, CZE: 47, FRO: 47 \\
+Region & 199 & 0.97 & FALSE & 7 & Eur: 2038, Sub: 1693, Lat: 1512, Eas:
+1343 \\
+Income & 559 & 0.93 & FALSE & 4 & H: 2177, LM: 1978, L: 1704, UM:
+1519 \\
+\end{longtable}
+
+\textbf{Variable type: numeric}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.1522}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.1087}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.1522}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0870}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0652}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0870}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0870}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0870}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0543}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0543}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0652}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+mean
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+sd
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p25
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p50
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p75
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p100
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+hist
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Year & 1 & 1.00 & 2004.59 & 10.41 & 1987.00 & 1996.00 & 2005.00 & 2014 &
+2022 & ▇▇▇▇▇ \\
+Cooking & 6047 & 0.24 & 65.48 & 38.46 & 0.00 & 27.30 & 84.75 & 100 & 100
+& ▃▁▁▁▇ \\
+Electricity & 5693 & 0.28 & 84.40 & 26.45 & 2.11 & 79.86 & 99.80 & 100 &
+100 & ▁▁▁▁▇ \\
+\end{longtable}
+
+\section*{\texorpdfstring{\texttt{worldbankdata}: Data Quality
+Analysis}{worldbankdata: Data Quality Analysis}}\label{worldbankdata-data-quality-analysis}
+\addcontentsline{toc}{section}{\texttt{worldbankdata}: Data Quality
+Analysis}
+
+\markright{\texttt{worldbankdata}: Data Quality Analysis}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -726,7 +859,7 @@ Encyclopedia}\label{data-sets-use-in-geom-encyclopedia}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-2-1.pdf}
+\includegraphics{intro_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -735,7 +868,7 @@ Encyclopedia}\label{data-sets-use-in-geom-encyclopedia}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{intro_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\includegraphics{intro_files/figure-pdf/unnamed-chunk-4-1.pdf}
 
 \section*{R packages with geom
 implementation}\label{r-packages-with-geom-implementation}
@@ -760,6 +893,8 @@ implementation}\label{r-packages-with-geom-implementation}
 \item
   ggalt (Rudis, Bolker, and Schulz 2017)
 \end{enumerate}
+
+WIP - adding..
 
 \part{A}
 

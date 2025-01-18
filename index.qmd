@@ -33,5 +33,6 @@ To load this <span style='color:red;'>Data Visualisation Geom Encyclopedia</span
 
 ```r
 install.packages(drone)
+library(drone)
 load_encyclopedia()
 ```
