@@ -119,7 +119,6 @@ There is no centralized location to find all types of geoms are easily accessibl
 ## What you will learn?
 
 
-
 Each geom has a set of aesthetics that it understands.
 
 ## What you won't learn?
@@ -129,7 +128,7 @@ This book is not focused on teaching R programming fundamentals or providing a c
 ## How this <span style='color:red;'>geom encyclopedia</span> is organized?
 
 
-## Audiene
+## Audience
 
 ## What prior knowledge is needed to use this <span style='color:red;'>geom encyclopedia</span>?
 

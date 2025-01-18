@@ -353,30 +353,161 @@ Now let's look at what is \textbf{geom}?
 
 In data visualization, geometries (or geoms) refer to the visual
 elements that represent data in a plot. They define the type of chart or
-shape used to depict data points or relationships. For example, the
-below figure represents the relationship between income level and
-percentage of people access to electricity in lower income (L), lower
-middle income (LM), upper middle income (UM) and higher income (H)
-countries using 6 different graph times.
+shape used to depict data points or relationships.
+
+To illustrate the idea I use the following dataset which contains
+information related to 82 countires. The variable description is as
+follows:
+
+\begin{table}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Variable & Description\\
+\hline
+Country & Country name\\
+\hline
+Income & Income category in 2021: lower income (L), lower middle income (LM)\\
+\hline
+Electricity & Percentage of people access to electricity\\
+\hline
+\end{tabular}
+\end{table}
+
+The first eight rows of the dataset as well as the R code to load the
+dataset is given below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(drone)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{data}\NormalTok{(}\StringTok{"worldbankdata"}\NormalTok{)}
+\NormalTok{worldbankdata2021 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2021}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{( Income }\SpecialCharTok{==} \StringTok{"LM"} \SpecialCharTok{|}\NormalTok{ Income }\SpecialCharTok{==}\StringTok{"L"}\NormalTok{) }\SpecialCharTok{|\textgreater{}} \FunctionTok{select}\NormalTok{( Country, Income, Electricity)}
+\NormalTok{worldbankdata2021 }\SpecialCharTok{|\textgreater{}} \FunctionTok{head}\NormalTok{(}\DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 8 x 3
+  Country      Income Electricity
+  <fct>        <fct>        <dbl>
+1 Afghanistan  L             97.7
+2 Angola       LM            48.2
+3 Burundi      L             10.2
+4 Benin        LM            42.0
+5 Burkina Faso L             19.0
+6 Bangladesh   LM            99.0
+7 Bolivia      LM            98.6
+8 Bhutan       LM           100  
+\end{verbatim}
+
+Now, I want to visualize the relationship between Electricity and Income
+variables on the cartesian coordinate plane shown in Figure
+@ref(fig:cartesian)
 
 \begin{figure}[H]
 
-{\centering \includegraphics{preface_files/figure-pdf/unnamed-chunk-1-1.pdf}
+{\centering \includegraphics{preface_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
 }
 
-\caption{Relationship between income level and percentage of people
-access to electricity in lower incom (L), lower middle income (LM),
-upper middle income (UM) and higher income (H) countries using 6
-different graphs from A to F.}
+\caption{Figure 1: Cartesian Coordinate Plane. Income level is mapped to
+x-axis and Electricity is mapped to y-axis.}
 
 \end{figure}%
 
-In order to create the above plots, I use the same i) dataset and ii)
-same cartesian plane (shown below). The differences are the geometries
-that we use and statistics we visualize on the plots.
+Figure 2 shows 6 plotting types that I created using the same dataset
+and same cartesian plane.
 
-\includegraphics{preface_files/figure-pdf/unnamed-chunk-2-1.pdf}
+\begin{figure}[H]
+
+{\centering \includegraphics{preface_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+}
+
+\caption{Figure 2: Relationship between income level and percentage of
+people access to electricity in lower incom (L), lower middle income
+(LM) in 2021}
+
+\end{figure}%
+
+Eventhough, I used the same dataset and same cartesian coordinate plane
+the appearance of the plots are drastically different.
+
+Could you list the differences you observe in the charts?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The type of chart or shape used to depict data. In data visualization
+  grammar of graphics framework, this is reffered to as
+  \textbf{gemetries (or geoms)}, the visual elements that represent data
+  on a plot. In the \href{@ggplot2}{ggplot2} package, this is reffered
+  to as \textbf{geom layer}.
+\item
+  The statistics that we compute on the data to visualise on the chart.
+  In the \href{@ggplot2}{ggplot2} this is referred to as \textbf{stat
+  layer}.
+\end{enumerate}
+
+Here is a summary of geom and stat layers used in the charts shown in
+Figure @ref(fig:geom).
+
+\begin{table}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Plot & geom layer & stat layer\\
+\hline
+A & point & data is plotted as-is\\
+\hline
+B & quasirandom & data is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting\\
+\hline
+C & jitter & data is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible\\
+\hline
+D & boxplot & Five statistical summary measures used in the boxplot\\
+\hline
+E & jitter and boxplot & Individual points and summary measures corresponds to boxplot\\
+\hline
+F & violin & calculate and plot the kernel density estimation (KDE) for continuous data\\
+\hline
+G & linerange & Range of data\\
+\hline
+H & linerange and point & Range and mean of data\\
+\hline
+\end{tabular}
+\end{table}
+
+This encylopedia is a collection of geoms, in other words plot types
+that you can create using the ggplot2 or extensions of ggplot2
+framework. In other words {Encyclopedia of Plots}.
+
+\section*{Motivation to write this
+book}\label{motivation-to-write-this-book}
+\addcontentsline{toc}{section}{Motivation to write this book}
+
+\markright{Motivation to write this book}
+
+There is no centralized location to find all types of geoms are easily
+accessible.
+
+\section*{What you will learn?}\label{what-you-will-learn}
+\addcontentsline{toc}{section}{What you will learn?}
+
+\markright{What you will learn?}
+
+Each geom has a set of aesthetics that it understands.
+
+\section*{What you won't learn?}\label{what-you-wont-learn}
+\addcontentsline{toc}{section}{What you won't learn?}
+
+\markright{What you won't learn?}
+
+This book is not focused on teaching R programming fundamentals or
+providing a comprehensive guide to data visualization principles. It
+assumes you already have a basic understanding of R and ggplot2, and it
+will not cover how to start from scratch in these areas.
 
 \section*{\texorpdfstring{How this {geom encyclopedia} is
 organized?}{How this geom encyclopedia is organized?}}\label{how-this-geom-encyclopedia-is-organized}
@@ -385,20 +516,10 @@ organized?}
 
 \markright{How this {geom encyclopedia} is organized?}
 
-\section*{What you will learn?}\label{what-you-will-learn}
-\addcontentsline{toc}{section}{What you will learn?}
+\section*{Audience}\label{audience}
+\addcontentsline{toc}{section}{Audience}
 
-\markright{What you will learn?}
-
-\section*{What you won't learn?}\label{what-you-wont-learn}
-\addcontentsline{toc}{section}{What you won't learn?}
-
-\markright{What you won't learn?}
-
-\section*{Audiene}\label{audiene}
-\addcontentsline{toc}{section}{Audiene}
-
-\markright{Audiene}
+\markright{Audience}
 
 \section*{\texorpdfstring{What prior knowledge is needed to use this
 {geom
@@ -430,13 +551,23 @@ to have following knowledge.}
   Data wrangling with tidyr(Wickham, Vaughan, and Girlich 2024) and
   dplyr(Wickham et al. 2023)
 \item
-  Knowledge in using the pipe operator (\textbar\textgreater)
+  Knowledge in using the pipe operator: \textbf{\textbar\textgreater{}}
 \item
   Knowledge in creating data visualisations using the grammar of
   graphics frame work implemented in ggplot2(Wickham 2016)
 \end{enumerate}
 
 If you want to learn more of them, following are the books recommended:
+
+\begin{itemize}
+\item
+  \href{https://r4ds.hadley.nz/}{R for Data Science (2e)} written by
+  Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
+\item
+  \href{https://ggplot2-book.org/}{ggplot2: Elegant Graphics for Data
+  Analysis (3e)} written by Hadley Wickham, Danielle Navarro, and Thomas
+  Lin Pedersen.
+\end{itemize}
 
 \section*{Acknowledgments}\label{acknowledgments}
 \addcontentsline{toc}{section}{Acknowledgments}
@@ -470,40 +601,6 @@ workflow}\label{data-and-setting-up-your-workflow}
 
 \markboth{Data and setting up your workflow}{Data and setting up your
 workflow}
-
-\section*{What is data visualisation?}\label{what-is-data-visualisation}
-\addcontentsline{toc}{section}{What is data visualisation?}
-
-\markright{What is data visualisation?}
-
-Data visualization is the graphical representation of data to understand
-the patterns, trends, relationships, outliers and complex structures
-hidden inside data more easily. In other words data visualization allows
-data to speak for itself in a way that is easily understandable to
-humans. It is like giving a voice to the data, enabling us to listen and
-understand its story more effectively.
-
-\section*{What are Gemetries (geoms) in Data
-Visualisation?}\label{what-are-gemetries-geoms-in-data-visualisation}
-\addcontentsline{toc}{section}{What are Gemetries (geoms) in Data
-Visualisation?}
-
-\markright{What are Gemetries (geoms) in Data Visualisation?}
-
-In data visualization, geometries (or geoms) refer to the visual
-elements that represent data in a plot. They define the type of chart or
-shape used to depict data points or relationships. For example, the
-below figure represents the relationship between income level and
-percentage of people access to electricity in lower income (L), lower
-middle income (LM), upper middle income (UM) and higher income (H)
-countries using 6 different graph times.
-
-In order to create the above plots, I use the same i) dataset and ii)
-same cartesian plane (shown below). The differences are the geometries
-that we use and statistics we visualise on the plots. For example, in
-chart A: all values are represented using individual points. In chart H:
-The range is denoted using a blue line and mean is represented using a
-red dot.
 
 \section*{Data sets use in geom
 Encyclopedia}\label{data-sets-use-in-geom-encyclopedia}
