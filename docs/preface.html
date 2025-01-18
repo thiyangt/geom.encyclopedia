@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -670,23 +704,36 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="what-can-i-find-in-this-geom-encyclopedia">What can I find in this <span style="color:red;">geom encyclopedia</span>?</h2>
 <p>Before answering this question let me briefly explain what is data visualisation? Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily.</p>
 <p>Now let’s look at what is <strong>geom</strong>?</p>
-<p>In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.</p>
+<p>In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships.</p>
+<p>To illustrate the idea I use the following dataset which contains</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"worldbankdata"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>worldbankdata2021 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span> <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( Income <span class="sc">==</span> <span class="st">"LM"</span> <span class="sc">|</span> Income <span class="sc">==</span><span class="st">"L"</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(Income, Electricity, Country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM) countries in 2021 using 6 different graph types.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="preface_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="preface_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="768"></p>
 <figcaption>Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualize on the plots.</p>
+<p><strong>What similarities do you observe in the above graphs?</strong></p>
+<ol type="i">
+<li><p>The same dataset is used to create all the charts</p></li>
+<li><p>same Cartesian plane</p></li>
+</ol>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="preface_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="480"></p>
+<p><img src="preface_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="480"></p>
 </figure>
 </div>
 </div>
@@ -714,10 +761,14 @@ div.csl-indent {
 <li><p>Basics of R programming</p></li>
 <li><p><a href="https://www.tidyverse.org/">tidyverse</a> <span class="citation" data-cites="tidyverse">(<a href="references.html#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> style of coding</p></li>
 <li><p>Data wrangling with tidyr<span class="citation" data-cites="tidyr">(<a href="references.html#ref-tidyr" role="doc-biblioref">Wickham, Vaughan, and Girlich 2024</a>)</span> and dplyr<span class="citation" data-cites="dplyr">(<a href="references.html#ref-dplyr" role="doc-biblioref">Wickham et al. 2023</a>)</span></p></li>
-<li><p>Knowledge in using the pipe operator (|&gt;)</p></li>
+<li><p>Knowledge in using the pipe operator: <strong>|&gt;</strong></p></li>
 <li><p>Knowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2<span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
 </ol>
 <p>If you want to learn more of them, following are the books recommended:</p>
+<ul>
+<li><p><a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a> written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.</p></li>
+<li><p><a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics for Data Analysis (3e)</a> written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.</p></li>
+</ul>
 </section>
 <section id="acknowledgments" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>

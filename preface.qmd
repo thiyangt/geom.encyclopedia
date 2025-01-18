@@ -6,7 +6,28 @@ Before answering this question let me briefly explain what is data visualisation
 
 Now let's look at what is **geom**?
 
-In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.
+In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. 
+
+To illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows:
+
+```{r}
+Variable <- c("I") 
+```
+
+about their income category: lower income (L), lower middle income (LM)
+
+```{r,  warning=FALSE, message=FALSE}
+library(drone)
+library(tidyverse)
+data("worldbankdata")
+worldbankdata2021 <- worldbankdata |> filter(Year == 2021) |>
+  filter( Income == "LM" | Income =="L") |> select( Country, Income, Electricity)
+worldbankdata2021 |> head(8)
+```
+
+
+
+For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM) countries in 2021 using 6 different graph types.
 
 
 ```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE, fig.cap="Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F."}
@@ -16,10 +37,10 @@ library(ggbeeswarm)
 library(ggplot2)
 library(drone)
 data("worldbankdata")
-worldbankdata2021 <- worldbankdata |> filter(Year == 2021)
+worldbankdata2021 <- worldbankdata |> filter(Year == 2021 & Income == "LM" | Income =="L")
 
-p1 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_point() + ggtitle("A")
-p2 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_quasirandom() + ggtitle("B")
+p1 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_point() + ggtitle("A: geom_point")
+p2 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_quasirandom() + ggtitle("B: geom_quasirandom")
 p3 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C")
 p4 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D")
 p5 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E")
@@ -36,7 +57,11 @@ p8 <- ggplot(lrdf) +
 (p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
-In order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualize on the plots.
+**What similarities do you observe in the above graphs?**
+
+ i) The same dataset is used to create all the charts
+
+ii) same Cartesian plane 
 
 ```{r, fig.height=5, fig.width=5,echo=FALSE}
 p0 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity))

@@ -70,7 +70,7 @@
     "href": "preface.html",
     "title": "Preface",
     "section": "",
-    "text": "What can I find in this geom encyclopedia?\nBefore answering this question let me briefly explain what is data visualisation? Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily.\nNow let’s look at what is geom?\nIn data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. For example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graph times.\nRelationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F.\nIn order to create the above plots, I use the same i) dataset and ii) same cartesian plane (shown below). The differences are the geometries that we use and statistics we visualize on the plots.",
+    "text": "What can I find in this geom encyclopedia?\nBefore answering this question let me briefly explain what is data visualisation? Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily.\nNow let’s look at what is geom?\nIn data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships.\nTo illustrate the idea I use the following dataset which contains\nlibrary(drone)\nlibrary(tidyverse)\ndata(\"worldbankdata\")\nworldbankdata2021 &lt;- worldbankdata |&gt; filter(Year == 2021) |&gt;\n  filter( Income == \"LM\" | Income ==\"L\") |&gt; select(Income, Electricity, Country)\nFor example, the below figure represents the relationship between income level and percentage of people access to electricity in lower income (L), lower middle income (LM) countries in 2021 using 6 different graph types.\nRelationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM), upper middle income (UM) and higher income (H) countries using 6 different graphs from A to F.\nWhat similarities do you observe in the above graphs?",
     "crumbs": [
       "Preface"
     ]
@@ -120,7 +120,7 @@
     "href": "preface.html#what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia",
     "title": "Preface",
     "section": "What prior knowledge is needed to use this geom encyclopedia?",
-    "text": "What prior knowledge is needed to use this geom encyclopedia?\nFor a complete newcomer to get an idea about the possible charts that can be drawn for a data set.\nNone\nTo get hands-on-experience with the examples provided you need to have following knowledge.\n\nR and RStudio Integrated Development Environment (IDE)\nBasics of R programming\ntidyverse (Wickham et al. 2019) style of coding\nData wrangling with tidyr(Wickham, Vaughan, and Girlich 2024) and dplyr(Wickham et al. 2023)\nKnowledge in using the pipe operator (|&gt;)\nKnowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2(Wickham 2016)\n\nIf you want to learn more of them, following are the books recommended:",
+    "text": "What prior knowledge is needed to use this geom encyclopedia?\nFor a complete newcomer to get an idea about the possible charts that can be drawn for a data set.\nNone\nTo get hands-on-experience with the examples provided you need to have following knowledge.\n\nR and RStudio Integrated Development Environment (IDE)\nBasics of R programming\ntidyverse (Wickham et al. 2019) style of coding\nData wrangling with tidyr(Wickham, Vaughan, and Girlich 2024) and dplyr(Wickham et al. 2023)\nKnowledge in using the pipe operator: |&gt;\nKnowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2(Wickham 2016)\n\nIf you want to learn more of them, following are the books recommended:\n\nR for Data Science (2e) written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.\nggplot2: Elegant Graphics for Data Analysis (3e) written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.",
     "crumbs": [
       "Preface"
     ]
@@ -141,6 +141,16 @@
     "title": "Preface",
     "section": "Colophon",
     "text": "Colophon\nThe field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the tidyverse.” Journal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686.\n\n\nWickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis Vaughan. 2023. Dplyr: A Grammar of Data Manipulation. https://CRAN.R-project.org/package=dplyr.\n\n\nWickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024. Tidyr: Tidy Messy Data. https://CRAN.R-project.org/package=tidyr.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#what-can-i-find-in-this-geom-encyclopedia",
+    "href": "preface.html#what-can-i-find-in-this-geom-encyclopedia",
+    "title": "Preface",
+    "section": "",
+    "text": "The same dataset is used to create all the charts\nsame Cartesian plane",
     "crumbs": [
       "Preface"
     ]
