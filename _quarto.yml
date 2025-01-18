@@ -2,7 +2,6 @@ project:
   type: book
   output-dir: docs
 
-
 book:
   title: "Data Visualisation <span style='color:red;'>Geom</span>etries Encyclopedia"
   subtitle: "Geoms in the Grammar of Graphics: All Types of Plots"

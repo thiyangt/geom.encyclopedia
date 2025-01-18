@@ -54,7 +54,7 @@
     "href": "preface.html#how-this-geom-encyclopedia-is-organized",
     "title": "Preface",
     "section": "How this geom encyclopedia is organized?",
-    "text": "How this geom encyclopedia is organized?\nAs this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a",
+    "text": "How this geom encyclopedia is organized?\nAs this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a chapter geoms are not organized according to the alphabetical order. At the beginning of each chapter, I have tabulated the geoms listed under that letter.",
     "crumbs": [
       "Preface"
     ]
@@ -94,7 +94,7 @@
     "href": "preface.html#cite",
     "title": "Preface",
     "section": "Cite",
-    "text": "Cite\nPlease use the below text and bibtex for citing the book.\nPlease use the below text and bibtex for citing the associated R package drone.\nTalagala T (2025).   drone: Data for Data   Visualisation Geometries   Encyclopedia. R package   version 1.0.0, commit   86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,   &lt;https://github.com/thiyangt/drone&gt;.\n@Manual{drone,     title = {drone: Data for Data Visualisation Geometries Encyclopedia},     author = {Thiyanga S. Talagala},     year = {2025},     note = {R package version 1.0.0, commit 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72},     url = {https://github.com/thiyangt/drone},   }",
+    "text": "Cite\nPlease use the below text and bibtex for citing the book.\nT. S. Talagala, Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots. [Online]. Available: https://thiyangt.github.io/geom.encyclopedia/. [Accessed: Jan. 18, 2025\n@online{talagala2024geoms,   author       = {Thiyanga S. Talagala},   title        = {Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots},   year         = {2024},   url          = {https://thiyangt.github.io/geom.encyclopedia/},   note         = {Accessed: 2025-01-18} }\nPlease use the below text and bibtex for citing the associated R package drone.\nTalagala T (2025).   drone: Data for Data   Visualisation Geometries   Encyclopedia. R package   version 1.0.0, commit   86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,   &lt;https://github.com/thiyangt/drone&gt;.\n@Manual{drone,     title = {drone: Data for Data Visualisation Geometries Encyclopedia},     author = {Thiyanga S. Talagala},     year = {2025},     note = {R package version 1.0.0, commit 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72},     url = {https://github.com/thiyangt/drone},   }",
     "crumbs": [
       "Preface"
     ]
@@ -137,6 +137,72 @@
     "text": "Why choose “drone” as the package name?\nThis encyclopedia provides a comprehensive overview of geoms within the grammar of graphics framework, much like a drone offers a bird’s-eye view of a landscape.\nTo load this Data Visualisation Geom Encyclopedia via drone package use the following code.\ninstall.packages(drone)\nload_encyclopedia()",
     "crumbs": [
       "Welcome"
+    ]
+  },
+  {
+    "objectID": "a.html",
+    "href": "a.html",
+    "title": "1  geom_a",
+    "section": "",
+    "text": "1.1 geom_area\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate an area plot. This cover the space between x-axis and line that connects the data points.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_area(alpha = 0.5) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +\n  scale_x_continuous(breaks = 2013:2021) +\n  labs(title = \"a1: geom_area only\")\n\na2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_area(alpha = 0.5) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +\n  scale_x_continuous(breaks = 2013:2021) +\n  geom_point(col = \"red\") +\n  labs(title = \"a2: geom_area \\n and geom_point\")\na1 | a2",
+    "crumbs": [
+      "A",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#abline",
+    "href": "a.html#abline",
+    "title": "1  geom_a",
+    "section": "1.2 geom_abline",
+    "text": "1.2 geom_abline\nPackage\nggplot2 (Wickham 2016)\nDescription\nDescription Draw a straight line (\\(Y=mX+c\\)) for a given slope (\\(m\\)) and intercept (\\(c\\)).\nUnderstandable aesthetics\nUnlike most other geoms, geom_abline does not depend on the x and y variables that we map for the main plot. geom_abline has its own independent characteristics: intercept and slope.\nSee also\ngeom_point, geom_vline, geom_hline\nExample\n\na1 &lt;- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +\n  geom_abline(intercept = 0, slope = 1) +\n  labs(title = \"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +\n  geom_abline(intercept = 0, slope = 1) +\n  geom_point() +\n  labs(title = \"a2: geom_abline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2",
+    "crumbs": [
+      "A",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#alluvium",
+    "href": "a.html#alluvium",
+    "title": "1  geom_a",
+    "section": "1.3 geom_alluvium",
+    "text": "1.3 geom_alluvium\nPackage\nggalluvial(Brunson and Read 2019; Brunson 2020)\nDescription\nCreate alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories\nUnderstandable aesthetics\nrequired aesthetics\nx, y, ymin, ymax,\noptional aesthetics\nalpha, colour, fill, linetype, size, group (group is used internally; arguments are ignored)\nSee also\ngeom_stratum, geom_flow, geom_lode\nExample\n\nlibrary(ggalluvial)\nfreq.table &lt;- worldbankdata |&gt;\n  select(Country, Region, Year, Income) |&gt;\n  filter(Year &gt; 2015) |&gt;\n  group_by(Region, Year, Income) |&gt;\n  summarise(n = n()) |&gt;\n  drop_na()\nfreq.table\n\n# A tibble: 153 × 4\n# Groups:   Region, Year [49]\n   Region               Year Income     n\n   &lt;fct&gt;               &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n 1 East Asia & Pacific  2016 LM        13\n 2 East Asia & Pacific  2016 UM        10\n 3 East Asia & Pacific  2016 H         14\n 4 East Asia & Pacific  2017 LM        13\n 5 East Asia & Pacific  2017 UM        10\n 6 East Asia & Pacific  2017 H         14\n 7 East Asia & Pacific  2018 LM        13\n 8 East Asia & Pacific  2018 UM        10\n 9 East Asia & Pacific  2018 H         14\n10 East Asia & Pacific  2019 LM        12\n# ℹ 143 more rows\n\na1 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1 / 12) +\n  labs(title = \"a1: geom_alluvium only\")\n\na2 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +\n  geom_alluvium(aes(fill = Income), width = 1 / 12) +\n  geom_stratum(width = 1 / 12, fill = \"black\", color = \"grey\") +\n  geom_label(stat = \"stratum\", aes(label = after_stat(stratum))) +\n  labs(title = \"a2: geom_alluvium, \\n geom_stratum and geom_label\")\na1 / a2",
+    "crumbs": [
+      "A",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_arc",
+    "href": "a.html#geom_arc",
+    "title": "1  geom_a",
+    "section": "1.4 geom_arc",
+    "text": "1.4 geom_arc\nPackage\nggforce(Pedersen 2022)\nDescription\nDraw a circle or a segment of a circle.\nUnderstandable aesthetic\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius, start, end\noptional aesthetics\ncolor, linewidth, linetype, alpha, lineend\nThe statistical transformation to use on the data for this layer\nstat_arc\nSee also\ngeom_arc2, geom_arc_bar\nExample\n\nlibrary(ggforce)\nggplot() +\n  geom_arc(aes(x0 = 0, y0 = 0, r = 8, start = 1, end = 8)) +\n  geom_arc(aes(x0 = 0, y0 = 0, r = 8, start = 1, end = 5), col = \"red\", size = 2) +\n  theme(aspect.ratio = 1)",
+    "crumbs": [
+      "A",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#arcbar",
+    "href": "a.html#arcbar",
+    "title": "1  geom_a",
+    "section": "1.5 geom_arc_bar",
+    "text": "1.5 geom_arc_bar\nPackage\nggforce(Pedersen 2022)\nDescription\nTo draw pie chart and donut chart defining centre point, a radius and a start and end angle.\nUnderstandable aesthetic\nrequired aesthetics\nx0 - starting coordinate of x-axis , y0 - starting coordinate of x-axis, r - radius, start, end\noptional aesthetics\ncolor, linewidth, linetype, alpha, lineend\nThe statistical transformation to use on the data for this layer\nstat_arc\nSee also\ngeom_arc, geom_arc_bar\nExample\n\ndf &lt;- data.frame(\n  state = c(\n    \"A\", \"B\", \"C\",\n    \"D\", \"E\"\n  ),\n  focus = c(0.2, 0, 0, 0, 0),\n  start = c(0, 1, 2, 3, 4),\n  end = c(1, 2, 3, 4, 2 * pi),\n  amount = c(4, 3, 1, 2, 5),\n  stringsAsFactors = FALSE\n)\nggplot(df) +\n  geom_arc_bar(aes(\n    x0 = 0, y0 = 0, r0 = 0, r = 1, amount = amount,\n    fill = state, explode = focus\n  ), stat = \"pie\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1)\n\n\n\n\n\n\n\n\n##geom_arrow{#arrow}\nPackage\nmetR (Campitelli 2021)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\narrow,type, arrow.angle, arrow.length, arrow.ends, arrow.type\nSee also\ngeom_line, geom_ribbon\n\n1.5.1 Example\n\nlibrary(metR)\n\n\nAttaching package: 'metR'\n\n\nThe following object is masked from 'package:purrr':\n\n    cross\n\ndata &lt;- tibble(\n  x = c(10, 20, 30, 40, 50),           # Longitude or X-coordinates\n  y = c(1, 2, 3, 4, 5),           # Latitude or Y-coordinates\n  dx = c(1, 0, -1, 0, 1),         # Wind direction components (change in X)\n  dy = c(1, -1, 0, 1, 0)          # Wind direction components (change in Y)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point(color = \"#1b9e77\", size = 3) +  \n  geom_arrow(aes(dx = dx, dy = dy), color = \"#d95f02\", size = 1, arrow.type = \"closed\") +\n  labs(title = \"Wind Directions at Different Locations\", x = \"Longitude\", y = \"Latitude\")",
+    "crumbs": [
+      "A",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#ash",
+    "href": "a.html#ash",
+    "title": "1  geom_a",
+    "section": "1.6 geom_ash",
+    "text": "1.6 geom_ash\nPackage\nggformula (Kaplan and Pruim 2023)\nDescription\nPlotted Average Shifted Histogram (ASH)\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolor, fill, bins, alpha, size\nSee also\ngeom_histogram, geom_density\nExample\n\nlibrary(ggformula)\np1 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n   geom_ash(bins = 20, color = \"#d95f02\") + labs(\"Average Shifted Histogram\")\np2 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n  geom_histogram(aes(y = stat(density)), color = \"black\", fill = \"gray\") +\n   geom_ash(bins = 20, color = \"#d95f02\") + labs(\"Histogram and Average Shifted Histogram\")\np1|p2\n\n\n\n\n\n\n\n\n\n\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for Alluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package ‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of Meteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula Interface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "A",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>geom_a</span>"
     ]
   }
 ]

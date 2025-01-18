@@ -142,7 +142,7 @@ This book is not focused on teaching R programming fundamentals or providing a c
 
 ## How this <span style='color:red;'>geom encyclopedia</span> is organized?
 
-As this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a 
+As this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a chapter geoms are not organized according to the alphabetical order. At the beginning of each chapter, I have tabulated the geoms listed under that letter.
 
 ## Audience
 
@@ -192,6 +192,18 @@ This book was built with <a href="https://quarto.org/">Quarto</a>.
 ## Cite
 
 Please use the below text and bibtex for citing the book.
+
+ `T. S. Talagala, Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots. [Online]. Available: https://thiyangt.github.io/geom.encyclopedia/. [Accessed: Jan. 18, 2025`
+
+
+`@online{talagala2024geoms,
+  author       = {Thiyanga S. Talagala},
+  title        = {Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots},
+  year         = {2024},
+  url          = {https://thiyangt.github.io/geom.encyclopedia/},
+  note         = {Accessed: 2025-01-18}
+}`
+
 
 
 Please use the below text and bibtex for citing the associated R package drone.

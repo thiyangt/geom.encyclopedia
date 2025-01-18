@@ -320,8 +320,8 @@ This encyclopedia provides a comprehensive overview of \texttt{geoms}
 within the grammar of graphics framework, much like a drone offers a
 bird's-eye view of a landscape.
 
-To load the encyclopedia via \texttt{drone} package use the following
-code.
+To load this {Data Visualisation Geom Encyclopedia} via \texttt{drone}
+package use the following code.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -383,7 +383,8 @@ dataset is given below:
 \FunctionTok{library}\NormalTok{(tidyverse)}
 \FunctionTok{data}\NormalTok{(}\StringTok{"worldbankdata"}\NormalTok{)}
 \NormalTok{worldbankdata2021 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2021}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
-  \FunctionTok{filter}\NormalTok{( Income }\SpecialCharTok{==} \StringTok{"LM"} \SpecialCharTok{|}\NormalTok{ Income }\SpecialCharTok{==}\StringTok{"L"}\NormalTok{) }\SpecialCharTok{|\textgreater{}} \FunctionTok{select}\NormalTok{( Country, Income, Electricity)}
+  \FunctionTok{filter}\NormalTok{( Income }\SpecialCharTok{==} \StringTok{"LM"} \SpecialCharTok{|}\NormalTok{ Income }\SpecialCharTok{==}\StringTok{"L"}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{select}\NormalTok{( Country, Income, Electricity)}
 \NormalTok{worldbankdata2021 }\SpecialCharTok{|\textgreater{}} \FunctionTok{head}\NormalTok{(}\DecValTok{8}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -432,8 +433,8 @@ people access to electricity in lower incom (L), lower middle income
 
 \end{figure}%
 
-Eventhough, I used the same dataset and same cartesian coordinate plane
-the appearance of the plots are drastically different.
+Even though, I used the same data set and same Cartesian coordinate
+plane the appearance of the plots are drastically different.
 
 Could you list the differences you observe in the charts?
 
@@ -497,7 +498,46 @@ accessible.
 
 \markright{What you will learn?}
 
-Each geom has a set of aesthetics that it understands.
+Each geom has a set of aesthetics that it understands. These aesthetics
+can be divided into two parts: i) required aesthetics and ii) optional
+aesthetics. Further, Every geom has a default stat; and every stat has a
+default geom.
+
+To get an idea about the associated aesthetics and stat let look at plot
+shown in Figure 4. In this case \texttt{x}, \texttt{y} are required
+aesthetics and \texttt{color} \texttt{size} and \texttt{alpha} is
+optional aesthetics. The statistics layer is identity since the data
+points are plotted as it is.
+
+The aesthetic mappings, defined with \texttt{aes()}, describe how
+variables in the dataset are mapped to visual properties or aesthetics.
+This \texttt{aes(x=Income,\ y=Electricity,\ color=Income)} is called
+mapping variables to the visual properties of the chart. This
+\texttt{alpha=0.5,\ size=2} is called setting values to visual
+properties.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(worldbankdata2021, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Income, }\AttributeTok{y=}\NormalTok{Electricity, }\AttributeTok{color=}\NormalTok{Income)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{size=}\DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{preface_files/figure-pdf/unnamed-chunk-6-1.pdf}
+
+}
+
+\caption{Figure 4: Distribution of Electricity by Income Category}
+
+\end{figure}%
+
+In this {geom encyclopedia}, you will learn about the required and
+optional aesthetics that each geom supports, as well as the associated
+statistical layer for each geom. Additionally, an example is provided
+demonstrating the application of each geom with reproducible R code.
 
 \section*{What you won't learn?}\label{what-you-wont-learn}
 \addcontentsline{toc}{section}{What you won't learn?}
@@ -516,10 +556,30 @@ organized?}
 
 \markright{How this {geom encyclopedia} is organized?}
 
+As this is an encyclopedia, the chapters are organised according to the
+alphabetical order. However, within a chapter geoms are not organized
+according to the alphabetical order. At the beginning of each chapter, I
+have tabulated the geoms listed under that letter.
+
 \section*{Audience}\label{audience}
 \addcontentsline{toc}{section}{Audience}
 
 \markright{Audience}
+
+The Figure 3 shows my target audience for the book. In general for all
+data enthusiasts, this can be considered as a {Encyclopedia of Plots}.
+For R, tidyverse, gggplot2 users this can be considered as a {Data
+Visualisation Geometries Encyclopedia}.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=2.87in,height=\textheight]{audience.png}
+
+}
+
+\caption{Figure 4: Audience}
+
+\end{figure}%
 
 \section*{\texorpdfstring{What prior knowledge is needed to use this
 {geom
@@ -582,6 +642,24 @@ I would like to thank all the students who took my ASP 460 2.0/STA 492
 in exploring geoms with me.
 
 This book was built with Quarto.
+
+\section*{Cite}\label{cite}
+\addcontentsline{toc}{section}{Cite}
+
+\markright{Cite}
+
+Please use the below text and bibtex for citing the book.
+
+\texttt{T.\ S.\ Talagala,\ Data\ Visualisation\ Geometries\ Encyclopedia:\ Geoms\ in\ the\ Grammar\ of\ Graphics\ -\ All\ Types\ of\ Plots.\ {[}Online{]}.\ Available:\ https://thiyangt.github.io/geom.encyclopedia/.\ {[}Accessed:\ Jan.\ 18,\ 2025}
+
+\texttt{@online\{talagala2024geoms,\ \ \ author\ \ \ \ \ \ \ =\ \{Thiyanga\ S.\ Talagala\},\ \ \ title\ \ \ \ \ \ \ \ =\ \{Data\ Visualisation\ Geometries\ Encyclopedia:\ Geoms\ in\ the\ Grammar\ of\ Graphics\ -\ All\ Types\ of\ Plots\},\ \ \ year\ \ \ \ \ \ \ \ \ =\ \{2024\},\ \ \ url\ \ \ \ \ \ \ \ \ \ =\ \{https://thiyangt.github.io/geom.encyclopedia/\},\ \ \ note\ \ \ \ \ \ \ \ \ =\ \{Accessed:\ 2025-01-18\}\ \}}
+
+Please use the below text and bibtex for citing the associated R package
+drone.
+
+\texttt{Talagala\ T\ (2025).\ \ \ drone:\ Data\ for\ Data\ \ \ Visualisation\ Geometries\ \ \ Encyclopedia.\ R\ package\ \ \ version\ 1.0.0,\ commit\ \ \ 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,\ \ \ \textless{}https://github.com/thiyangt/drone\textgreater{}.}
+
+\texttt{@Manual\{drone,\ \ \ \ \ title\ =\ \{drone:\ Data\ for\ Data\ Visualisation\ Geometries\ Encyclopedia\},\ \ \ \ \ author\ =\ \{Thiyanga\ S.\ Talagala\},\ \ \ \ \ year\ =\ \{2025\},\ \ \ \ \ note\ =\ \{R\ package\ version\ 1.0.0,\ commit\ 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72\},\ \ \ \ \ url\ =\ \{https://github.com/thiyangt/drone\},\ \ \ \}}
 
 \section*{Colophon}\label{colophon}
 \addcontentsline{toc}{section}{Colophon}
