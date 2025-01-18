@@ -29,7 +29,7 @@ This encyclopedia provides a comprehensive overview of `geoms` within the gramma
 
 
 
-To load the encyclopedia via `drone` package use the following code.
+To load this <span style='color:red;'>Data Visualisation Geom Encyclopedia</span> via `drone` package use the following code.
 
 ```r
 install.packages(drone)

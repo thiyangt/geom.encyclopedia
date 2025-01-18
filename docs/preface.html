@@ -679,6 +679,7 @@ div.csl-indent {
   <li><a href="#audience" id="toc-audience" class="nav-link" data-scroll-target="#audience">Audience</a></li>
   <li><a href="#what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia" id="toc-what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia" class="nav-link" data-scroll-target="#what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia">What prior knowledge is needed to use this <span style="color:red;">geom encyclopedia</span>?</a></li>
   <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#cite" id="toc-cite" class="nav-link" data-scroll-target="#cite">Cite</a></li>
   <li><a href="#colophon" id="toc-colophon" class="nav-link" data-scroll-target="#colophon">Colophon</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/preface.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -745,8 +746,9 @@ div.csl-indent {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"worldbankdata"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>worldbankdata2021 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span> <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( Income <span class="sc">==</span> <span class="st">"LM"</span> <span class="sc">|</span> Income <span class="sc">==</span><span class="st">"L"</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>( Country, Income, Electricity)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>worldbankdata2021 <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( Income <span class="sc">==</span> <span class="st">"LM"</span> <span class="sc">|</span> Income <span class="sc">==</span><span class="st">"L"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>( Country, Income, Electricity)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>worldbankdata2021 <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 3
   Country      Income Electricity
@@ -783,7 +785,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Eventhough, I used the same dataset and same cartesian coordinate plane the appearance of the plots are drastically different.</p>
+<p>Even though, I used the same data set and same Cartesian coordinate plane the appearance of the plots are drastically different.</p>
 <p>Could you list the differences you observe in the charts?</p>
 <ol type="1">
 <li><p>The type of chart or shape used to depict data. In data visualization grammar of graphics framework, this is reffered to as <strong>gemetries (or geoms)</strong>, the visual elements that represent data on a plot. In the <a href="@ggplot2">ggplot2</a> package, this is reffered to as <strong>geom layer</strong>.</p></li>
@@ -866,6 +868,17 @@ div.csl-indent {
 </section>
 <section id="audience" class="level2">
 <h2 class="anchored" data-anchor-id="audience">Audience</h2>
+<p>The Figure 3 shows my target audience for the book. In general for all data enthusiasts, this can be considered as a <span style="color:green;">Encyclopedia of Plots</span>. For R, tidyverse, gggplot2 users this can be considered as a <span style="color:red;">Data Visualisation Geometries Encyclopedia</span>.</p>
+<div class="cell" data-layout-align="center" data-fig.label="fig:audience">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="audience.png" class="img-fluid figure-img" width="430"></p>
+<figcaption>Figure 4: Audience</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia" class="level2">
 <h2 class="anchored" data-anchor-id="what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia">What prior knowledge is needed to use this <span style="color:red;">geom encyclopedia</span>?</h2>
@@ -891,6 +904,13 @@ div.csl-indent {
 <p>I would like to thank all the package authors and contributors who have developed and shared geoms as R packages.</p>
 <p>I would like to thank all the students who took my ASP 460 2.0/STA 492 2.0 Data Visualization course in 2024 for their valuable contributions in exploring geoms with me.</p>
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</section>
+<section id="cite" class="level2">
+<h2 class="anchored" data-anchor-id="cite">Cite</h2>
+<p>Please use the below text and bibtex for citing the book.</p>
+<p>Please use the below text and bibtex for citing the associated R package drone.</p>
+<p><code>Talagala T (2025).   drone: Data for Data   Visualisation Geometries   Encyclopedia. R package   version 1.0.0, commit   86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,   &lt;https://github.com/thiyangt/drone&gt;.</code></p>
+<p><code>@Manual{drone,     title = {drone: Data for Data Visualisation Geometries Encyclopedia},     author = {Thiyanga S. Talagala},     year = {2025},     note = {R package version 1.0.0, commit 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72},     url = {https://github.com/thiyangt/drone},   }</code></p>
 </section>
 <section id="colophon" class="level2">
 <h2 class="anchored" data-anchor-id="colophon">Colophon</h2>

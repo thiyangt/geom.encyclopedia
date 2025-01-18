@@ -28,7 +28,8 @@ library(drone)
 library(tidyverse)
 data("worldbankdata")
 worldbankdata2021 <- worldbankdata |> filter(Year == 2021) |>
-  filter( Income == "LM" | Income =="L") |> select( Country, Income, Electricity)
+  filter( Income == "LM" | Income =="L") |> 
+  select( Country, Income, Electricity)
 worldbankdata2021 |> head(8)
 ```
 
@@ -73,7 +74,7 @@ p8 <- ggplot(lrdf) +
 (p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
-Eventhough, I used the same dataset and same cartesian coordinate plane the appearance of the plots are drastically different.
+Even though, I used the same data set and same Cartesian coordinate plane the appearance of the plots are drastically different.
 
 Could you list the differences you observe in the charts?
 
@@ -130,6 +131,14 @@ This book is not focused on teaching R programming fundamentals or providing a c
 
 ## Audience
 
+The Figure 3 shows my target audience for the book. In general for all data enthusiasts, this can be considered as a <span style='color:green;'>Encyclopedia of Plots</span>. For R, tidyverse, gggplot2 users this can be considered as a <span style='color:red;'>Data Visualisation Geometries Encyclopedia</span>.
+
+```{r, echo=FALSE, fig.align="center"}
+#| fig.cap: "Figure 4: Audience"
+#| fig.label: "fig:audience"
+knitr::include_graphics("audience.png")
+```
+
 ## What prior knowledge is needed to use this <span style='color:red;'>geom encyclopedia</span>?
 
 **For a complete newcomer to get an idea about the possible charts that can be drawn for a data set.**
@@ -171,6 +180,24 @@ Please use the below text and bibtex for citing the book.
 
 
 Please use the below text and bibtex for citing the associated R package drone.
+
+`Talagala T (2025).
+  drone: Data for Data
+  Visualisation Geometries
+  Encyclopedia. R package
+  version 1.0.0, commit
+  86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,
+  <https://github.com/thiyangt/drone>.`
+
+
+`@Manual{drone,
+    title = {drone: Data for Data Visualisation Geometries Encyclopedia},
+    author = {Thiyanga S. Talagala},
+    year = {2025},
+    note = {R package version 1.0.0, commit 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72},
+    url = {https://github.com/thiyangt/drone},
+  }`
+
 ## Colophon
 
 The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.
