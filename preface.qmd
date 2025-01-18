@@ -60,7 +60,7 @@ p2 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_quasirandom
 p3 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + ggtitle("C: geom_jitter")
 p4 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_boxplot() + ggtitle("D: geom_boxplot")
 p5 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_jitter() + geom_boxplot(alpha=0.5, outlier.shape = NA) + ggtitle("E: geom_jitter and geom_boxplot")
-p6 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="black", trim=TRUE)+ ggtitle("F: geom_violin")
+p6 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity)) + geom_violin(width = 1, fill="white", trim=TRUE)+ ggtitle("F: geom_violin")
 
 lrdf <- worldbankdata2021 |> select(Electricity, Income) |> group_by(Income) |>
   summarize(Min = min(Electricity, na.rm = TRUE), Max = max(Electricity, na.rm=TRUE), Mean = mean(Electricity, na.rm = TRUE))
@@ -165,6 +165,12 @@ I would like to thank all the students who took my ASP 460 2.0/STA 492 2.0 Data 
 
 This book was built with <a href="https://quarto.org/">Quarto</a>. 
 
+## Cite
+
+Please use the below text and bibtex for citing the book.
+
+
+Please use the below text and bibtex for citing the associated R package drone.
 ## Colophon
 
 The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.
