@@ -1,4 +1,4 @@
-# geom_e  {#sec-e}
+# E  {#sec-e}
 
 ```{r, message=FALSE, warning=FALSE,echo=FALSE}
 library(tidyverse)

@@ -1,4 +1,4 @@
-# geom_p  {#sec-p}
+# P  {#sec-p}
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)

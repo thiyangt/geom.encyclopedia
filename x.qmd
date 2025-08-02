@@ -1,4 +1,4 @@
-# geom_x  {#sec-x}
+# X {#sec-x}
 
 
 ```{r, message=FALSE, warning=FALSE,echo=FALSE}

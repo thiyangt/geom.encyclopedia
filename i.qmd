@@ -1,4 +1,4 @@
-# geom_i  {#sec-i}
+# I  {#sec-i}
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -44,7 +44,7 @@ ggplot(df, aes(x, y)) + geom_image(aes(image=image))
 
 ### Example
 
-```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=5, eval=FALSE}
 library("ggimage")
 df <- data.frame(x = rnorm(10),
                  y = rnorm(10))

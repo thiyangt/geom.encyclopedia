@@ -1,4 +1,4 @@
-# geom_s  {#sec-s}
+# S {#sec-s}
 
 ```{r message=FALSE, warning=FALSE, comment="", echo=FALSE}
 library(tidyverse)

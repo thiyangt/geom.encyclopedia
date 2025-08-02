@@ -1,4 +1,4 @@
-# geom_d  {#sec-d}
+# D  {#sec-d}
 
 
 ```{r, message=FALSE, warning=FALSE,echo=FALSE}
