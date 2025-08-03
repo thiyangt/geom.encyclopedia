@@ -1,2 +1,21 @@
-# Summary
+# Guide to Select Geoms
+
+```{r}
+#|wwarning: FALSE
+#|message: FALSE
+library(tidyverse)
+a <- c('geom_area',
+          'geom_abline',
+          'geom_alluvium',
+          'geom_arc',
+          'geom_arc_bar',
+          'geom_arrow',
+          'geom_ash')
+tribble(
+  ~geom,  ~cat1, ~cat2, ~cat3, ~flow, ~q1, ~q2, ~q3, ~c1q1, ~q2c1
+  "a", 1:3,
+  "b", 4:6
+)
+
+```
 

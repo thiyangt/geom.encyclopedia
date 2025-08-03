@@ -47,7 +47,6 @@ book:
     - x.qmd  
     - y.qmd 
     - z.qmd  
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
