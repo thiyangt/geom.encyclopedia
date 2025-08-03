@@ -245,6 +245,28 @@ a2 <- worldbankdata |>
 a1 | a2
 ```
 
+## geom_arima
+
+**Package**
+
+ggdemetra 
+
+**Example**
+
+```{r}
+library(ggdemetra)
+ worldbankdata |>
+  filter(Country == "Bangladesh") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x = Year, y = Electricity)) +
+  geom_line() + 
+  #geom_sa(color = "#155692", message = FALSE) +
+  geom_arima(geom = "label",
+               x_arima = - Inf, y_arima = -Inf, 
+               vjust = -1, hjust = -0.1,
+               message = FALSE)
+  
+```
 
 ## geom_arrow{#arrow}
 
@@ -340,3 +362,11 @@ p2 <- worldbankdata |>
    geom_ash(bins = 20, color = "#d95f02") + labs(title = "Histogram and Average Shifted Histogram")
 p1|p2
 ```
+
+## geom_autodensity
+
+## geom_autohistogram
+
+## geom_autopoint
+
+## geom_axis_hive

@@ -122,13 +122,13 @@ ggparliament [@ggparliament]
 
 **Description**
 
+Draw overhang seats in mixed-member proportional (MMP) electoral systems
+
 **Understandable aesthetics**
 
 *required aesthetics*
   
-  `x`
-
-`y`
+  `expr`
 
 *optional aesthetics*
   
@@ -144,6 +144,32 @@ ggparliament [@ggparliament]
 ```{r}
 #devtools::install_github("zmeers/ggparliament")
 library(ggparliament)
+sriLanka <- tibble(
+  year = 2024,
+  seats = c(64, 63, 311, 193),
+  government = c(0, 0, 1, 1),
+  colour = c("red", "blue", "green", "orange"),
+  party = c("SLPFA",
+            "SJB",
+            "NPP",
+            "TNA"))
+
+sl_data <- parliament_data(
+  election_data = sriLanka,
+  parl_rows = 11,
+  party_seats = sriLanka$seats,
+  type = "horseshoe")
+
+sl_data$overhang_seats <- rep(
+  c(1, 0, 1, 0, 1, 0, 1, 0),
+  c(295, 16, 11, 182, 3, 61, 3, 60)
+)
+ggplot(sl_data, aes(x, y, colour = party)) +
+  geom_parliament_seats() +
+  geom_overhang_seats(overhang_seats == 0.2) +
+  theme_ggparliament() +
+  scale_colour_manual(values = c("red", "blue", "green", "orange"))
 
 ```
+
 

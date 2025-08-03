@@ -53,8 +53,8 @@
     "objectID": "a.html#arrow",
     "href": "a.html#arrow",
     "title": "1  A",
-    "section": "1.6 geom_arrow",
-    "text": "1.6 geom_arrow\nPackage\nmetR (Campitelli 2021)\nDescription\nDraws directional arrows (like vectors) on a plot, which can represent directions or flows — such as wind directions, movement, or gradients. The arrow from (x, y) and pointing in the direction (dx, dy) (vector components).\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\narrow,type, arrow.angle, arrow.length, arrow.ends, arrow.type\nSee also\ngeom_line, geom_ribbon\n\n1.6.1 Example\n\nlibrary(metR)\ndata &lt;- tibble::tibble(\n  x = c(10, 20, 30, 40, 50),           # Longitude or X-coordinates\n  y = c(1, 2, 3, 4, 5),           # Latitude or Y-coordinates\n  dx = c(1, 0, -1, 0, 1),         # Wind direction components (change in X)\n  dy = c(1, -1, 0, 1, 0)          # Wind direction components (change in Y)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point(color = \"#1b9e77\", size = 3) +  \n  geom_arrow(aes(dx = dx, dy = dy), color = \"#d95f02\", size = 1, arrow.type = \"closed\") +\n  labs(title = \"Wind Directions at Different Locations\", x = \"Longitude\", y = \"Latitude\")",
+    "section": "1.7 geom_arrow",
+    "text": "1.7 geom_arrow\nPackage\nmetR (Campitelli 2021)\nDescription\nDraws directional arrows (like vectors) on a plot, which can represent directions or flows — such as wind directions, movement, or gradients. The arrow from (x, y) and pointing in the direction (dx, dy) (vector components).\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\narrow,type, arrow.angle, arrow.length, arrow.ends, arrow.type\nSee also\ngeom_line, geom_ribbon\n\n1.7.1 Example\n\nlibrary(metR)\ndata &lt;- tibble::tibble(\n  x = c(10, 20, 30, 40, 50),           # Longitude or X-coordinates\n  y = c(1, 2, 3, 4, 5),           # Latitude or Y-coordinates\n  dx = c(1, 0, -1, 0, 1),         # Wind direction components (change in X)\n  dy = c(1, -1, 0, 1, 0)          # Wind direction components (change in Y)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point(color = \"#1b9e77\", size = 3) +  \n  geom_arrow(aes(dx = dx, dy = dy), color = \"#d95f02\", size = 1, arrow.type = \"closed\") +\n  labs(title = \"Wind Directions at Different Locations\", x = \"Longitude\", y = \"Latitude\")",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
     ]
@@ -63,8 +63,118 @@
     "objectID": "a.html#ash",
     "href": "a.html#ash",
     "title": "1  A",
-    "section": "1.7 geom_ash",
-    "text": "1.7 geom_ash\nPackage\nggformula (Kaplan and Pruim 2023)\nDescription\nPlot Average Shifted Histogram (ASH). The ASH is a nonparametric probability density estimator derived from a collection of histograms.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolor, fill, bins, alpha, size\nSee also\ngeom_histogram, geom_density\nExample\n\nlibrary(ggformula)\np1 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n   geom_ash(bins = 20, color = \"#d95f02\") +   labs(title=\"Average Shifted Histogram\")\np2 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n  geom_histogram(aes(y = stat(density)), color = \"black\", fill = \"gray\") +\n   geom_ash(bins = 20, color = \"#d95f02\") + labs(title = \"Histogram and Average Shifted Histogram\")\np1|p2\n\n\n\n\n\n\n\n\n\n\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for Alluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package ‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of Meteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula Interface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "section": "1.8 geom_ash",
+    "text": "1.8 geom_ash\nPackage\nggformula (Kaplan and Pruim 2023)\nDescription\nPlot Average Shifted Histogram (ASH). The ASH is a nonparametric probability density estimator derived from a collection of histograms.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolor, fill, bins, alpha, size\nSee also\ngeom_histogram, geom_density\nExample\n\nlibrary(ggformula)\np1 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n   geom_ash(bins = 20, color = \"#d95f02\") +   labs(title=\"Average Shifted Histogram\")\np2 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n  geom_histogram(aes(y = stat(density)), color = \"black\", fill = \"gray\") +\n   geom_ash(bins = 20, color = \"#d95f02\") + labs(title = \"Histogram and Average Shifted Histogram\")\np1|p2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "y.html",
+    "href": "y.html",
+    "title": "25  Y",
+    "section": "",
+    "text": "25.1 geom_y_mean\n##geom_y_line{#y_line}\nPackage\nggxmean (Reynolds 2024)\nDescription\nCreate horizontal lines representing the specified value of the y variable across the x values in the data.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_ydiff, geom_line\nExample\nPackage\nggxmean (Reynolds 2024)\nDescription\nDraw a horizontal line at the mean of y-variable.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon geom_y_line\nExample\nlibrary(ggxmean)\np1 &lt;- worldbankdata |&gt; \n  filter(Country == \"Angola\") |&gt;\n  ggplot(mapping = aes(x = Cooking, y = Electricity)) +\ngeom_point()  + ggtitle(\"without geom_y_mean\")\np2 &lt;- worldbankdata |&gt; \n  filter(Country == \"Angola\") |&gt;\n  ggplot(mapping = aes(x = Cooking, y = Electricity)) +\ngeom_point() + geom_y_mean(colour=\"#d95f02\") + \n  ggtitle(\"with geom_y_mean\")\np1|p2\n##geom_ydiff{#ydiff}\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon geom_y_line\nExample\nlibrary(ggxmean)\np1 &lt;- worldbankdata |&gt; \n  filter(Country == \"Angola\") |&gt;\n  ggplot(mapping = aes(x = Cooking, y = Electricity)) +\ngeom_point()  + ggtitle(\"without geom_ydiff\")\np2 &lt;- worldbankdata |&gt; \n  filter(Country == \"Angola\") |&gt;\n  ggplot(mapping = aes(x = Cooking, y = Electricity)) +\ngeom_point() +\n  geom_y_mean(col=\"#d95f02\")+ggxmean:::geom_ydiff(colour=\"#1b9e77\") + \n  ggtitle(\"with geom_ydiff\")\np1|p2",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Y</span>"
+    ]
+  },
+  {
+    "objectID": "y.html#y_mean",
+    "href": "y.html#y_mean",
+    "title": "25  Y",
+    "section": "",
+    "text": "Reynolds, Evangeline. 2024. Ggxmean: Statistical Geoms.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Y</span>"
+    ]
+  },
+  {
+    "objectID": "o.html",
+    "href": "o.html",
+    "title": "15  O",
+    "section": "",
+    "text": "15.1 geom_outlier\nPackage\nggdemetra (Quartier-la-Tente 2024)\nDescription\nFunction to add directly to the plot the outliers used in the pre-adjustment process of the seasonal adjustment.\nUnderstandable aesthetics\nrequired aesthetics\ndate\ny\nNote: frequency must be equal to 12, 6, 4 or 2\noptional aesthetics\nfirst_date, last_date, coefficients, digits, show.legend, inherit.aes\nSee also\ngeom_text, geom_label geom_text_repel, geom_label_repel\nExample\n#install.packages(\"RJDemetra\")\n#install.packages(\"ggdemetra\")\nlibrary(RJDemetra)\nlibrary(ggdemetra)\nipi_c_eu &lt;- window(ipi_c_eu, start = c(2000, 1), end = c(2010, 12))\nipi_c_eu_df &lt;- ts2df(ipi_c_eu)\np1 &lt;- ggplot(data = ipi_c_eu_df, mapping = aes(x = date, y = FR)) +\n    geom_line() + ggtitle(\"Without geom_outlier\")\np2 &lt;- ggplot(data = ipi_c_eu_df, mapping = aes(x = date, y = FR)) +\n    geom_line() + geom_outlier(geom = \"label_repel\") + ggtitle(\"With geom_outlier\")\np1/p2",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>O</span>"
+    ]
+  },
+  {
+    "objectID": "o.html#outline",
+    "href": "o.html#outline",
+    "title": "15  O",
+    "section": "15.2 geom_outline",
+    "text": "15.2 geom_outline\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>O</span>"
+    ]
+  },
+  {
+    "objectID": "o.html#outline_point",
+    "href": "o.html#outline_point",
+    "title": "15  O",
+    "section": "15.3 geom_outline_point",
+    "text": "15.3 geom_outline_point\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>O</span>"
+    ]
+  },
+  {
+    "objectID": "o.html#overhang_seats",
+    "href": "o.html#overhang_seats",
+    "title": "15  O",
+    "section": "15.4 geom_overhang_seats",
+    "text": "15.4 geom_overhang_seats\nPackage\nggparliament (ggparliament?)\nDescription\nDraw overhang seats in mixed-member proportional (MMP) electoral systems\nUnderstandable aesthetics\nrequired aesthetics\nexpr\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample\n\n#devtools::install_github(\"zmeers/ggparliament\")\nlibrary(ggparliament)\nsriLanka &lt;- tibble(\n  year = 2024,\n  seats = c(64, 63, 311, 193),\n  government = c(0, 0, 1, 1),\n  colour = c(\"red\", \"blue\", \"green\", \"orange\"),\n  party = c(\"SLPFA\",\n            \"SJB\",\n            \"NPP\",\n            \"TNA\"))\n\nsl_data &lt;- parliament_data(\n  election_data = sriLanka,\n  parl_rows = 11,\n  party_seats = sriLanka$seats,\n  type = \"horseshoe\")\n\nsl_data$overhang_seats &lt;- rep(\n  c(1, 0, 1, 0, 1, 0, 1, 0),\n  c(295, 16, 11, 182, 3, 61, 3, 60)\n)\nggplot(sl_data, aes(x, y, colour = party)) +\n  geom_parliament_seats() +\n  geom_overhang_seats(overhang_seats == 0.2) +\n  theme_ggparliament() +\n  scale_colour_manual(values = c(\"red\", \"blue\", \"green\", \"orange\"))\n\n\n\n\n\n\n\n\n\n\n\n\nQuartier-la-Tente, Alain. 2024. Ggdemetra: ’Ggplot2’ Extension for Seasonal and Trading Day Adjustment with ’RJDemetra’. https://CRAN.R-project.org/package=ggdemetra.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>O</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_arima",
+    "href": "a.html#geom_arima",
+    "title": "1  A",
+    "section": "1.6 geom_arima",
+    "text": "1.6 geom_arima\nPackage\nggdemetra\nExample\n\nlibrary(ggdemetra)\n\nLoading required package: RJDemetra\n\n\n\nAttaching package: 'RJDemetra'\n\n\nThe following objects are masked from 'package:dplyr':\n\n    compute, count\n\n\n\nAttaching package: 'ggdemetra'\n\n\nThe following object is masked from 'package:RJDemetra':\n\n    ipi_c_eu\n\n\nThe following object is masked from 'package:base':\n\n    raw\n\n worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_line() + \n  #geom_sa(color = \"#155692\", message = FALSE) +\n  geom_arima(geom = \"label\",\n               x_arima = - Inf, y_arima = -Inf, \n               vjust = -1, hjust = -0.1,\n               message = FALSE)\n\nWarning: Computation failed in `stat_arima()`.\nCaused by error in `dataframe2ts()`:\n! Error with the frequency: it must be equal to 12, 6, 4 or 2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_autodensity",
+    "href": "a.html#geom_autodensity",
+    "title": "1  A",
+    "section": "1.9 geom_autodensity",
+    "text": "1.9 geom_autodensity",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_autohistogram",
+    "href": "a.html#geom_autohistogram",
+    "title": "1  A",
+    "section": "1.10 geom_autohistogram",
+    "text": "1.10 geom_autohistogram",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_autopoint",
+    "href": "a.html#geom_autopoint",
+    "title": "1  A",
+    "section": "1.11 geom_autopoint",
+    "text": "1.11 geom_autopoint",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_axis_hive",
+    "href": "a.html#geom_axis_hive",
+    "title": "1  A",
+    "section": "1.12 geom_axis_hive",
+    "text": "1.12 geom_axis_hive\n\n\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for Alluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package ‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of Meteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula Interface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
     ]
