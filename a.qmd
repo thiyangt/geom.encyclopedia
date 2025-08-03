@@ -9,55 +9,6 @@ data("worldbankdata")
 ```
 
 
-## geom_area{#area}
-
-**Package**
-
-ggplot2 [@ggplot2]
-
-**Description**
-
-Create an area plot. This cover the space between x-axis and line that connects the data points.
-
-**Understandable aesthetics**
-
-*required aesthetics*
-
-`x`, `y`
-
-*optional aesthetics*
-
-`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
-
-
-**See also**
-
-[geom_line](#line), [geom_ribbon](#ribbon)
-
-**Example**
-
-```{r area, warning=FALSE, message=FALSE}
-a1 <- worldbankdata |>
-  filter(Country == "Bangladesh") |>
-  filter(Year >= 2013 & Year <= 2021) |>
-  ggplot(aes(x = Year, y = Electricity)) +
-  geom_area(alpha = 0.5) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
-  scale_x_continuous(breaks = 2013:2021) +
-  labs(title = "a1: geom_area only")
-
-a2 <- worldbankdata |>
-  filter(Country == "Bangladesh") |>
-  filter(Year >= 2013 & Year <= 2021) |>
-  ggplot(aes(x = Year, y = Electricity)) +
-  geom_area(alpha = 0.5) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
-  scale_x_continuous(breaks = 2013:2021) +
-  geom_point(col = "red") +
-  labs(title = "a2: geom_area \n and geom_point")
-a1 | a2
-```
-
 
 ## geom_abline{#abline}
 
@@ -93,6 +44,7 @@ a2 <- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +
 a1 | a2
 ```
 
+
 ## geom_alluvium{#alluvium}
 
 **Package**
@@ -125,7 +77,8 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 library(ggalluvial)
 freq.table <- worldbankdata |>
   select(Country, Region, Year, Income) |>
-  filter(Year > 2015) |>
+  filter(Year > 2019) |>
+  filter(Region %in% c("East Asia & Pacific", "North America")) |>
   group_by(Region, Year, Income) |>
   summarise(n = n()) |>
   drop_na()
@@ -134,16 +87,19 @@ freq.table
 a1 <- freq.table |>
   ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +
   geom_alluvium(aes(fill = Income), width = 1 / 12) +
+  scale_fill_brewer(palette = "Dark2") +
   labs(title = "a1: geom_alluvium only")
 
 a2 <- freq.table |>
   ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +
   geom_alluvium(aes(fill = Income), width = 1 / 12) +
   geom_stratum(width = 1 / 12, fill = "black", color = "grey") +
-  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) + scale_fill_brewer(palette = "Dark2") +
   labs(title = "a2: geom_alluvium, \n geom_stratum and geom_label")
 a1 / a2
 ```
+
+
 
 ## geom_arc
 
@@ -182,6 +138,8 @@ ggplot() +
   geom_arc(aes(x0 = 0, y0 = 0, r = 8, start = 1, end = 5), col = "red", size = 2) +
   theme(aspect.ratio = 1)
 ```
+
+
 
 ## geom_arc_bar{#arcbar}
 
@@ -236,13 +194,68 @@ ggplot(df) +
 ```
 
 
-##geom_arrow{#arrow}
+
+
+## geom_area{#area}
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+Create an area plot. This cover the space between x-axis and line that connects the data points.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+
+`x`, `y`
+
+*optional aesthetics*
+
+`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+
+**Example**
+
+```{r area, warning=FALSE, message=FALSE}
+a1 <- worldbankdata |>
+  filter(Country == "Bangladesh") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x = Year, y = Electricity)) +
+  geom_area(alpha = 0.5) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  scale_x_continuous(breaks = 2013:2021) +
+  labs(title = "a1: geom_area only")
+
+a2 <- worldbankdata |>
+  filter(Country == "Bangladesh") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x = Year, y = Electricity)) +
+  geom_area(alpha = 0.5) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  scale_x_continuous(breaks = 2013:2021) +
+  geom_point(col = "red") +
+  labs(title = "a2: geom_area \n and geom_point")
+a1 | a2
+```
+
+
+## geom_arrow{#arrow}
 
 **Package**
 
 metR [@metR]
 
 **Description**
+
+Draws directional arrows (like vectors) on a plot, which can represent directions or flows — such as wind directions, movement, or gradients. The arrow from (x, y) and pointing in the direction (dx, dy) (vector components).
+
 
 **Understandable aesthetics**
 
@@ -263,9 +276,9 @@ metR [@metR]
   
 ### Example
   
-```{r}
+```{r warning=FALSE, message=FALSE,}
 library(metR)
-data <- tibble(
+data <- tibble::tibble(
   x = c(10, 20, 30, 40, 50),           # Longitude or X-coordinates
   y = c(1, 2, 3, 4, 5),           # Latitude or Y-coordinates
   dx = c(1, 0, -1, 0, 1),         # Wind direction components (change in X)
@@ -288,7 +301,7 @@ ggformula [@ggformula]
 
 **Description**
 
-Plotted Average Shifted Histogram (ASH)
+Plot Average Shifted Histogram (ASH). The ASH is a nonparametric probability density estimator derived from a collection of histograms.
 
 **Understandable aesthetics**
 
@@ -310,16 +323,20 @@ Plotted Average Shifted Histogram (ASH)
 **Example**
 
 
-```{r, warning=FALSE, message=FALSE, fig.width=10, fig.height=5}
+```{r}
+#| warning: false
+#| message: false
+#| fig.width: 10
+#| fig.height: 5
 library(ggformula)
 p1 <- worldbankdata |>
   filter(Income == "LM") |>
   ggplot(aes(x = Electricity)) +
-   geom_ash(bins = 20, color = "#d95f02") + labs("Average Shifted Histogram")
+   geom_ash(bins = 20, color = "#d95f02") +   labs(title="Average Shifted Histogram")
 p2 <- worldbankdata |>
   filter(Income == "LM") |>
   ggplot(aes(x = Electricity)) +
   geom_histogram(aes(y = stat(density)), color = "black", fill = "gray") +
-   geom_ash(bins = 20, color = "#d95f02") + labs("Histogram and Average Shifted Histogram")
+   geom_ash(bins = 20, color = "#d95f02") + labs(title = "Histogram and Average Shifted Histogram")
 p1|p2
 ```
