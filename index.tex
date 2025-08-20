@@ -1188,6 +1188,75 @@ connects the data points.
 
 \pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/area-1.pdf}}
 
+\section{geom\_arima}\label{geom_arima}
+
+\textbf{Package}
+
+ggdemetra
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggdemetra)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Loading required package: RJDemetra
+\end{verbatim}
+
+\begin{verbatim}
+
+Attaching package: 'RJDemetra'
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:dplyr':
+
+    compute, count
+\end{verbatim}
+
+\begin{verbatim}
+
+Attaching package: 'ggdemetra'
+\end{verbatim}
+
+\begin{verbatim}
+The following object is masked from 'package:RJDemetra':
+
+    ipi_c_eu
+\end{verbatim}
+
+\begin{verbatim}
+The following object is masked from 'package:base':
+
+    raw
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bangladesh"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{\textgreater{}=} \DecValTok{2013} \SpecialCharTok{\&}\NormalTok{ Year }\SpecialCharTok{\textless{}=} \DecValTok{2021}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} 
+  \CommentTok{\#geom\_sa(color = "\#155692", message = FALSE) +}
+  \FunctionTok{geom\_arima}\NormalTok{(}\AttributeTok{geom =} \StringTok{"label"}\NormalTok{,}
+               \AttributeTok{x\_arima =} \SpecialCharTok{{-}} \ConstantTok{Inf}\NormalTok{, }\AttributeTok{y\_arima =} \SpecialCharTok{{-}}\ConstantTok{Inf}\NormalTok{, }
+               \AttributeTok{vjust =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{hjust =} \SpecialCharTok{{-}}\FloatTok{0.1}\NormalTok{,}
+               \AttributeTok{message =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning: Computation failed in `stat_arima()`.
+Caused by error in `dataframe2ts()`:
+! Error with the frequency: it must be equal to 12, 6, 4 or 2
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+
 \section{geom\_arrow}\label{arrow}
 
 \textbf{Package}
@@ -1237,7 +1306,7 @@ components).
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/unnamed-chunk-5-1.pdf}}
 
 \section{geom\_ash}\label{ash}
 
@@ -1285,7 +1354,15 @@ probability density estimator derived from a collection of histograms.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/unnamed-chunk-5-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/unnamed-chunk-6-1.pdf}}
+
+\section{geom\_autodensity}\label{geom_autodensity}
+
+\section{geom\_autohistogram}\label{geom_autohistogram}
+
+\section{geom\_autopoint}\label{geom_autopoint}
+
+\section{geom\_axis\_hive}\label{geom_axis_hive}
 
 \bookmarksetup{startatroot}
 
@@ -4079,13 +4156,13 @@ ggparliament (\textbf{ggparliament?})
 
 \textbf{Description}
 
+Draw overhang seats in mixed-member proportional (MMP) electoral systems
+
 \textbf{Understandable aesthetics}
 
 \emph{required aesthetics}
 
-\texttt{x}
-
-\texttt{y}
+\texttt{expr}
 
 \emph{optional aesthetics}
 
@@ -4102,8 +4179,35 @@ ggparliament (\textbf{ggparliament?})
 \begin{Highlighting}[]
 \CommentTok{\#devtools::install\_github("zmeers/ggparliament")}
 \FunctionTok{library}\NormalTok{(ggparliament)}
+\NormalTok{sriLanka }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{year =} \DecValTok{2024}\NormalTok{,}
+  \AttributeTok{seats =} \FunctionTok{c}\NormalTok{(}\DecValTok{64}\NormalTok{, }\DecValTok{63}\NormalTok{, }\DecValTok{311}\NormalTok{, }\DecValTok{193}\NormalTok{),}
+  \AttributeTok{government =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{),}
+  \AttributeTok{colour =} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"blue"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"orange"}\NormalTok{),}
+  \AttributeTok{party =} \FunctionTok{c}\NormalTok{(}\StringTok{"SLPFA"}\NormalTok{,}
+            \StringTok{"SJB"}\NormalTok{,}
+            \StringTok{"NPP"}\NormalTok{,}
+            \StringTok{"TNA"}\NormalTok{))}
+
+\NormalTok{sl\_data }\OtherTok{\textless{}{-}} \FunctionTok{parliament\_data}\NormalTok{(}
+  \AttributeTok{election\_data =}\NormalTok{ sriLanka,}
+  \AttributeTok{parl\_rows =} \DecValTok{11}\NormalTok{,}
+  \AttributeTok{party\_seats =}\NormalTok{ sriLanka}\SpecialCharTok{$}\NormalTok{seats,}
+  \AttributeTok{type =} \StringTok{"horseshoe"}\NormalTok{)}
+
+\NormalTok{sl\_data}\SpecialCharTok{$}\NormalTok{overhang\_seats }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}
+  \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{),}
+  \FunctionTok{c}\NormalTok{(}\DecValTok{295}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{182}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{61}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{60}\NormalTok{)}
+\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(sl\_data, }\FunctionTok{aes}\NormalTok{(x, y, }\AttributeTok{colour =}\NormalTok{ party)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_parliament\_seats}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_overhang\_seats}\NormalTok{(overhang\_seats }\SpecialCharTok{==} \FloatTok{0.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_ggparliament}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_colour\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"blue"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"orange"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{o_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 
 \bookmarksetup{startatroot}
 
@@ -7032,7 +7136,7 @@ The xside and yside variants of geom\_function.
 
 \chapter{Y}\label{sec-y}
 
-\#\#geom\_y\_line\{\#y\_line\}
+\section{geom\_y\_line}\label{y_line}
 
 \textbf{Package}
 
@@ -7128,7 +7232,7 @@ Draw a horizontal line at the mean of y-variable.
 
 \pandocbounded{\includegraphics[keepaspectratio]{y_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 
-\#\#geom\_ydiff\{\#ydiff\}
+\section{geom\_ydiff}\label{ydiff}
 
 \textbf{Package}
 
@@ -7178,10 +7282,6 @@ ggplot2 (Wickham 2016)
 \bookmarksetup{startatroot}
 
 \chapter{Z}\label{sec-z}
-
-\bookmarksetup{startatroot}
-
-\chapter{Summary}\label{summary}
 
 \bookmarksetup{startatroot}
 

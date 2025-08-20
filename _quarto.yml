@@ -49,6 +49,9 @@ book:
     - z.qmd  
     - references.qmd
 
+sidebar:
+    style: "docked"
+
 bibliography: references.bib
 
 format:
@@ -56,6 +59,8 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+  epub:
+    cover-image: cover.png
 
 
 
