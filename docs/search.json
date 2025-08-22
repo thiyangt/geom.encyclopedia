@@ -428,5 +428,155 @@
     "crumbs": [
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>V</span>"
     ]
+  },
+  {
+    "objectID": "t.html",
+    "href": "t.html",
+    "title": "20  T",
+    "section": "",
+    "text": "20.1 geom_text\nPackage\nggplot2 (Wickham 2016)\nDescription\nLabeling plots.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nstat , position , size\nExample\np1 &lt;- drop_na(worldbankdata) |&gt;\n  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |&gt;\n  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + geom_text(size = 3) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + ggtitle(\"geom_text only\")\np2 &lt;- drop_na(worldbankdata) |&gt;\n  filter(Code %in% c('AFG', 'AGO', 'BEN', 'BFA', 'BGD', 'BOL', 'BWA')) |&gt;\n  ggplot(aes(x = Cooking, y = Electricity, label = Income)) + \n  geom_point(aes(color = Income)) +\n  geom_text(size = 3) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + ggtitle(\"geom_point and geom_text only\")\np1|p2",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>T</span>"
+    ]
+  },
+  {
+    "objectID": "t.html#text_repel",
+    "href": "t.html#text_repel",
+    "title": "20  T",
+    "section": "20.2 geom_text_repel",
+    "text": "20.2 geom_text_repel\nPackage\nggrepel (Slowikowski 2024)\nDescription\nRepulsive textual annotations.\nUnderstandable aesthetics\nrequired aesthetics\n`x, y\noptional aesthetics\nstat , position , size\nExample\n\nlibrary(ggrepel)\np1 &lt;- ggplot(mtcars, aes(x = wt, y = mpg, label = rownames(mtcars))) +\n  geom_text_repel() +  \n  labs(title = \"\",x = \"Weight (1000 lbs)\", y = \"Miles/(US) gallon\") + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + ggtitle(\"geom_text_repel only\")\np2 &lt;- ggplot(mtcars, aes(x = wt, y = mpg, label = rownames(mtcars))) +\n  geom_point() +\n  geom_text_repel() +  \n  labs(title = \"\",x = \"Weight (1000 lbs)\", y = \"Miles/(US) gallon\") + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + ggtitle(\"geom_text_repel and geom_point\")\np1|p2",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>T</span>"
+    ]
+  },
+  {
+    "objectID": "t.html#tile",
+    "href": "t.html#tile",
+    "title": "20  T",
+    "section": "20.3 geom_tile",
+    "text": "20.3 geom_tile\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate heat map plot. geom_rect() and geom_tile() do the same thing, but function inputs are different: geom_rect() uses the locations of the four corners (xmin, xmax, ymin and ymax), while geom_tile() uses the center of the tile and its dimensions (x, y, width, height).\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_rect, geom_raster\nExample\n\n worldbankdata |&gt;\n  filter(Region == \"South Asia\" ) |&gt;\n  ggplot(aes(x=Year,\n             y=Country, fill=Cooking)) +\n  geom_tile(aes(width=1, height=1), col=\"white\") +\n  viridis::scale_fill_viridis() +\n  coord_fixed()",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>T</span>"
+    ]
+  },
+  {
+    "objectID": "t.html#text_cooks",
+    "href": "t.html#text_cooks",
+    "title": "20  T",
+    "section": "20.4 geom_text_cooks",
+    "text": "20.4 geom_text_cooks\nPackage\nggxmean (Reynolds 2024)\nDescription\nReturns a scatter plot with points that are labeled.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nposition , size, digits, check_overlap\nSee also\ngeom_scatter, geom_text, geom_label\nExample\n\nlibrary(ggxmean)\np1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bolivia\" & Cooking &gt; 75) |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) + \n  geom_text_cooks(check_overlap = TRUE, digits = 1) + ggtitle(\"geom_text_cooks only\")  \np2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bolivia\" & Cooking &gt; 75) |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) + \n  geom_point(col=\"red\") +\n  geom_text_cooks(check_overlap = TRUE, digits = 1) + ggtitle(\"geom_point and geom_text_cooks\") \np1|p2",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>T</span>"
+    ]
+  },
+  {
+    "objectID": "t.html#text_coordinate",
+    "href": "t.html#text_coordinate",
+    "title": "20  T",
+    "section": "20.5 geom_text_coordinate",
+    "text": "20.5 geom_text_coordinate\nPackage\nggplot2 (Wickham 2016)\nDescription\nReturns a scatter plot with points that are labeled with (x, y) coordinates.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nposition, size, check_overlap, nudge_x\nSee also\ngeom_text, geom_text_cooks, geom_text_repel\nExample\n\np1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bolivia\" & Cooking &gt; 75) |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) + \n  geom_text_coordinate() +\n  ggtitle(\"geom_text_coordinate only\")\n\np2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bolivia\" & Cooking &gt; 75) |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) + \n  geom_point(col=\"red\") +\n  geom_text_coordinate() +\n  ggtitle(\"geom_point and geom_text_coordinate\")\np1|p2",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>T</span>"
+    ]
+  },
+  {
+    "objectID": "t.html#text_leverage",
+    "href": "t.html#text_leverage",
+    "title": "20  T",
+    "section": "20.6 geom_text_leverage",
+    "text": "20.6 geom_text_leverage\nPackage\nggxmean (Reynolds 2024)\nDescription\nReturns a scatter plot with points that are labeled.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nposition , size, check_overlap, nudge_x\nSee also\ngeom_text, geom_text_cooks, geom_text_repel\nExample\n\np1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bolivia\" & Cooking &gt; 75) |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) + \n  geom_text_leverage() +\n  ggtitle(\"geom_text_leverage only\")\n\np2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bolivia\" & Cooking &gt; 75) |&gt;\n  ggplot(aes(x=Cooking, y=Electricity)) + \n  geom_point(col=\"red\") +\n  geom_text_leverage() +\n  ggtitle(\"geom_point and geom_text_leverage\")\np1|p2\n\n\n\n\n\n\n\n\n\n\n\n\nReynolds, Evangeline. 2024. Ggxmean: Statistical Geoms.\n\n\nSlowikowski, Kamil. 2024. Ggrepel: Automatically Position Non-Overlapping Text Labels with ’Ggplot2’. https://CRAN.R-project.org/package=ggrepel.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>T</span>"
+    ]
+  },
+  {
+    "objectID": "s.html",
+    "href": "s.html",
+    "title": "19  S",
+    "section": "",
+    "text": "19.1 geom_smooth\nPackage\nggplot2 (Wickham 2016)\nDescription\nAdd a smooth curve or line to a scatter plot for visulizing trend between x and y variable.\nSee also\ngeom_point\nUnderstandable aesthetics\nThe statistical transformation to use on the data for this layer\nExample\np1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt; \n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n\n  ggtitle(\"geom_point_only\")\n\np2 &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_smooth() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_smoth_only\")\n\np3 &lt;- worldbankdata |&gt;\n  filter(Country == \"Sri Lanka\" ) |&gt; \n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  geom_smooth() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_point + geom_smooth: loess\")\n\np4 &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" ) |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt; \n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + \n  scale_x_continuous(breaks = 2000:2021)  + \n  ggtitle(\"geom_point + geom_smooth:lm\")\n\n(p1 + p2)/(p3+p4)",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_smooth",
+    "href": "s.html#geom_smooth",
+    "title": "19  S",
+    "section": "",
+    "text": "Required aesthetics\n\nx, y\n\nOptional aesthetics\n\nalpha, colour, fill, group, linetype, linewidth, weight, ymax, ymin\n\n\n\n\nsmooth",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_segment",
+    "href": "s.html#geom_segment",
+    "title": "19  S",
+    "section": "19.2 geom_segment",
+    "text": "19.2 geom_segment\nPackage\nggplot2 (Wickham 2016)\nDescription\nAdd a straight line segment between two points.\nUnderstandable aesthetics\n\nRequired aesthetics\n\nx, y, xend or yend\n\nOptional aesthetics\n\nalpha, colour, group, linetype, linewidth\n\n\nThe statistical transformation to use on the data for this layer\n\nidentity\n\nSee Also\n\ngeom_curve(), geom_path(), geom_line(), geom_spoke()\n\nExamples\nExample 1: simulated data\n\np1 &lt;- ggplot() + \n  geom_segment(aes(x = 3, y = 4, xend = 25, yend = 25)) +\n  theme_minimal() +\n  coord_cartesian(ylim = c(0, 30), xlim = c(0, 30)) +\n  theme_bw()+\n  ggtitle(\"geom_segment_only\")\n\n\ndata &lt;- data.frame(\n  x_start = c(1.5, 2.6, 4.1, 5.1),\n  y_start = c(1.2, 2, 2.2, 2.8),\n  x_end = c(2.6, 4.1, 5.1, 6),\n  y_end = c(2, 2.2, 2.8, 4))\n\np2 &lt;- ggplot(data) +\n  geom_segment(aes(x = x_start, y = y_start, xend = x_end, yend = y_end),\n               color = \"black\", size = 0.5, \n               arrow = arrow(type = \"closed\", length = unit(0.2, \"inches\"))) +\n  labs(x = \"X Axis\",\n       y = \"Y Axis\") +\n  ggtitle(\"geom_segment with direction\")\np1+p2\n\n\n\n\n\n\n\n\nExample 2: Application data\n\nSL_segments &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" & Year &gt; 2013) |&gt; \n     mutate(\n    x_end = lead(Year), \n    y_end = lead(Electricity)  \n  ) |&gt; \n  filter(!is.na(x_end) & !is.na(y_end))\n\n ggplot(SL_segments) +\n  geom_segment(aes(x = Year, y = Electricity, xend = x_end, \n                   yend = y_end),\n               color = \"blue\", size = 0.5, arrow = arrow(type = \"closed\", length = unit(0.2, \"inches\"))) +\n  labs(x = \"Year\",\n       y = \"Electricity Consumption\",\n       title = \"Sri Lanka Electricity Consumption Over Time (geom_segment)\")",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_spoke",
+    "href": "s.html#geom_spoke",
+    "title": "19  S",
+    "section": "19.3 geom_spoke",
+    "text": "19.3 geom_spoke\nPackage\nggplot2 (Wickham 2016)\nDescription\n\nCreates radial line segments (spokes) from a central point, where each spoke is defined by its angle and radius. This is useful for visualizing directions or vectors.\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nx, y, angle, radius\n\nOptional aesthetics\n\nalpha, colour, group, linetype, linewidth\n\n\nThe statistical transformation to use on the data for this layer\n\nidentity\n\nExamples\nExample: Simulated data\n\nset.seed(8)\ndata &lt;- tibble(\n  x = runif(10, 1, 10),      # Random x-coordinates\n  y = runif(10, 1, 10),      # Random y-coordinates\n  angle = runif(10, 0, 2 * pi),  # Random angles in radians\n  radius = runif(10, 0.5, 2) # Random lengths for spokes\n)\n\n\nggplot(data, aes(x = x, y = y)) +\n  geom_spoke(aes(angle = angle, radius = radius),\n             color = \"blue\", size = 0.5) +\n  labs(x = \"X-Axis\", \n       y = \"Y-Axis\", \n       title = \"geom_spoke\") \n\n\n\n\n\n\n\n\nExample: Practical application data\n\nSL &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\" & Year &gt; 2013)\n\n# Prepare the data for geom_spoke\nSL_segments &lt;- SL |&gt; \n  mutate(\n    x_end = lead(Year),  # Next year\n    y_end = lead(Electricity)  # Next year's electricity value\n  ) |&gt; \n  filter(!is.na(x_end) & !is.na(y_end)) |&gt; \n  mutate(\n    angle = atan2(y_end - Electricity, x_end - Year),  # Angle in radians\n    radius = sqrt((x_end - Year)^2 + (y_end - Electricity)^2)  # Euclidean distance\n  )\n\n# Plot with geom_spoke\nggplot(SL_segments, aes(x = Year, y = Electricity, color=as.factor(Year))) +\n  geom_spoke(aes(angle = angle, radius = radius), size = 1) +\n  scale_color_brewer(type = \"qual\", palette = 2) +\n  labs(x = \"Year\",\n       y = \"Electricity Consumption\",\n       title = \"Sri Lanka Electricity Consumption Over Time (geom_spoke)\")",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_step",
+    "href": "s.html#geom_step",
+    "title": "19  S",
+    "section": "19.4 geom_step",
+    "text": "19.4 geom_step\nPackage\nggplot2 (Wickham 2016)\nDescription\n\nCreate stairstep plot: Connect observations in the order in which they appear in the data by stairs.\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nx, y\n\nOptional aesthetics\n\nalpha, colour, group, linetype, linewidth\n\n\nThe statistical transformation to use on the data for this layer\n\nidentity\n\nSee Also\n\ngeom_path(), geom_line(), geom_polygon(), geom_segment()\n\nExample\n\np1 &lt;- worldbankdata |&gt; \n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_point() + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"geom_point only\")\n\np2 &lt;- worldbankdata |&gt; \n  filter(Country == \"Sri Lanka\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x=Year, y=Electricity)) + \n  geom_step(color = \"red\", size = 1) + \n  scale_x_continuous(breaks = 2013:2021)  + \n  ggtitle(\"geom_step only\")\n\np1 + p2",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_sf",
+    "href": "s.html#geom_sf",
+    "title": "19  S",
+    "section": "19.5 geom_sf",
+    "text": "19.5 geom_sf\nPackage\nggplot2 (Wickham 2016)\nDescription\n\nVisualize sf objects.\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nsimple feature geometry\n\nOptional aesthetics\n\nalpha, colour, group, fill\n\n\nThe statistical transformation to use on the data for this layer\n\nsf\n\nSee Also\n\ngeom_sf_label(), geom_sf_text()\n\nExample\n\nlibrary(rnaturalearth)\nlibrary(rnaturalearthdata)\n\n# Load world spatial data\nworld &lt;- ne_countries(scale = \"medium\", returnclass = \"sf\")\n\nelectricity_data &lt;- worldbankdata |&gt; filter(Year == 2020)\nworld_electricity &lt;- world |&gt; \n  left_join(electricity_data, by = c(\"name\" = \"Country\"))\n\nggplot(data = world_electricity) +\n  geom_sf(aes(fill = Electricity), color = \"black\", size = 0.1) +\n  scale_fill_viridis_c(option = \"plasma\", na.value = \"grey90\") +\n  labs(\n    title = \"Percentage of Population Access to Electricity by Country\",\n    fill = \"Electricity\")",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_sf_label",
+    "href": "s.html#geom_sf_label",
+    "title": "19  S",
+    "section": "19.6 geom_sf_label",
+    "text": "19.6 geom_sf_label\nPackage\nggsflabel (Yutani 2024)\n# install.packages(\"devtools\")\ndevtools::install_github(\"yutannihilation/ggsflabel\")\nDescription\n\nAdd text labels to spatial features in a plot created with geom_sf()\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nlabel\n\nOptional aesthetics\n\nalpha, colour, group, fill\n\n\nThe statistical transformation to use on the data for this layer\n\nsf_coordinates\n\nSee Also\n\ngeom_sf(), geom_sf_text()\n\nExample\n\nlibrary(rnaturalearth)\nlibrary(rnaturalearthdata)\n\n# Load world spatial data\nworld &lt;- ne_countries(scale = \"medium\", returnclass = \"sf\")\n\nelectricity_data &lt;- worldbankdata |&gt; filter(Year == 2020)\nworld_electricity &lt;- world |&gt; \n  left_join(electricity_data, by = c(\"name\" = \"Country\"))\n\ncountries_to_label &lt;- world_electricity |&gt; head(10)\n\nggplot(data = world_electricity) +\n  geom_sf(aes(fill = Electricity), color = \"black\", size = 0.1) +\n   geom_sf_label(data = countries_to_label, aes(label = name), size = 3, label.padding = unit(0.1, \"lines\")) +\n  scale_fill_viridis_c(option = \"plasma\", na.value = \"grey90\") +\n  labs(\n    title = \"Percentage of Population Access to Electricity by Country\",\n    fill = \"Electricity\")",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_sf_text",
+    "href": "s.html#geom_sf_text",
+    "title": "19  S",
+    "section": "19.7 geom_sf_text",
+    "text": "19.7 geom_sf_text\nggsflabel (Yutani 2024)\n# install.packages(\"devtools\")\ndevtools::install_github(\"yutannihilation/ggsflabel\")\nDescription\n\nAdd text labels to spatial features in a plot created with geom_sf() without the background box. It is a similar approach as with geom_sf_label().\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nlabel\n\nOptional aesthetics\n\nalpha, colour, group, fill\n\n\nThe statistical transformation to use on the data for this layer\n\nsf_coordinates\n\nSee Also\n\ngeom_sf(), geom_sf_label()\n\nExample\n\nlibrary(rnaturalearth)\nlibrary(rnaturalearthdata)\n\n# Load world spatial data\nworld &lt;- ne_countries(scale = \"medium\", returnclass = \"sf\")\n\nelectricity_data &lt;- worldbankdata |&gt; filter(\"Year\" == 2020 )\nworld_electricity &lt;- world |&gt; \n  left_join(electricity_data, by = c(\"name\" = \"Country\"))\n\ncountries_to_label &lt;- world_electricity |&gt; head(10)\n\nggplot(data = world_electricity) +\n  geom_sf(aes(fill = Electricity), color = \"black\", size = 0.1) +\n   geom_sf_text(data = countries_to_label, aes(label = name), size = 3, label.padding = unit(0.1, \"lines\")) +\n  scale_fill_viridis_c(option = \"plasma\", na.value = \"grey90\") +\n  labs(\n    title = \"Percentage of Population Access to Electricity by Country\",\n    fill = \"Electricity\")",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
+  },
+  {
+    "objectID": "s.html#geom_sf_pattern",
+    "href": "s.html#geom_sf_pattern",
+    "title": "19  S",
+    "section": "19.8 geom_sf_pattern",
+    "text": "19.8 geom_sf_pattern\nPackage\nggpattern (FC, Davis, and ggplot2 authors 2023)\nDescription\n\nAdd patterns to the map.\n\nUnderstandable aesthetics\n\nRequired aesthetics\n\nNuULL\n\nOptional aesthetics\n\nalpha, colour, group, fill\n\n\nThe statistical transformation to use on the data for this layer\n\nsf_coordinates\n\nExample\n\nlibrary(rnaturalearth)\nlibrary(rnaturalearthdata)\nlibrary(ggpattern)\n\n# Load world spatial data\nworld &lt;- ne_countries(scale = \"medium\", returnclass = \"sf\")\n\nelectricity_data &lt;- worldbankdata |&gt; filter(\"Year\" == 2020)\nworld_electricity &lt;- world |&gt; \n  left_join(electricity_data, by = c(\"name\" = \"Country\"))\n\nggplot(data = world_electricity) +\n  geom_sf_pattern(aes(fill = Electricity, pattern = is.na(Electricity)), \n                  color = \"black\", \n                  size = 0.1,\n                  pattern_fill = \"gray80\", \n                  pattern_angle = 45, \n                  pattern_density = 0.1) +\n  scale_fill_viridis_c(option = \"plasma\", na.value = \"white\") +\n  labs(\n    title = \"Global Electricity Access with Patterns for Missing Data\",\n    fill = \"Electricity (GWh)\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nYutani, Hiroaki. 2024. Ggsflabel: Labels for ’Sf’ with ’Ggplot2’. https://github.com/yutannihilation/ggsflabel.",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>S</span>"
+    ]
   }
 ]
