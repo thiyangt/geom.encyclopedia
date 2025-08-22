@@ -272,7 +272,7 @@ Place point at mean of x and label.
 drop_na(worldbankdata) |>
 ggplot(aes(x = Cooking)) +
   geom_histogram(binwidth = 5, fill = "#1b9e77", color = "black") + 
-  geom_x_mean_label(color = "#d95f02", linetype = "dashed", size = 1) 
+  geom_x_mean_label(color = "#d95f02", linetype = "dashed", size = 3) 
 ```
 
 
@@ -1131,8 +1131,9 @@ __Example__
 ```{r,warning=FALSE, message=FALSE, fig.width=10, fig.height=10}
 require(ggpp)
 drop_na(worldbankdata) |>
-ggplot(aes(x = Cooking, y = Electricity, colour = Income)) +
+  filter(Income %in% c("L", "H")) |>
+ggplot(aes(x = Cooking, y = Electricity, colour = Income, fill=Income)) +
   geom_point() +
-  geom_xsidedensity(fill = "#d95f02", alpha = .3) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+  geom_xsidedensity( alpha = .3) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
 ```
 
