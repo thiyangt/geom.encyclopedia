@@ -3511,7 +3511,7 @@ Visualise data through images.
 
 \section{geom\_icon}\label{icon}
 
-\subsection{Example}\label{example-8}
+\textbf{Example}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3522,6 +3522,55 @@ Visualise data through images.
 \FunctionTok{ggplot}\NormalTok{(df, }\FunctionTok{aes}\NormalTok{(x, y)) }\SpecialCharTok{+} \FunctionTok{geom\_icon}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{image=}\NormalTok{icon))}
 \end{Highlighting}
 \end{Shaded}
+
+\section{geom\_jitter\_interactive}\label{geom_jitter_interactive}
+
+\textbf{Package}
+
+ggiraph (\textbf{ggiraph?})
+
+\textbf{Description}
+
+Adds interactive features like tooltips and hyperlinks, allowing for
+dynamic exploration of jittered data points in a plot.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[point]{geom\_point}, \hyperref[jitter]{geom\_ribbon}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggiraph)}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(worldbankdata, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Region, }\AttributeTok{x =}\NormalTok{ Electricity, }\AttributeTok{color =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_jitter\_interactive}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{tooltip =} \FunctionTok{paste}\NormalTok{(}\StringTok{"Country:"}\NormalTok{, Country, }
+                                              \StringTok{"\textless{}br\textgreater{}Year:"}\NormalTok{, Year, }
+                                              \StringTok{"\textless{}br\textgreater{}Electricity:"}\NormalTok{, Electricity)),}
+                          \AttributeTok{size =} \DecValTok{2}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Electricity by region and income group"}\NormalTok{,}
+      \AttributeTok{y =} \StringTok{"Region"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Electricity"}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{"Income group"}\NormalTok{) }
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{girafe}\NormalTok{(}\AttributeTok{ggobj =}\NormalTok{ p)}
+\ControlFlowTok{if}\NormalTok{( }\FunctionTok{interactive}\NormalTok{() ) }\FunctionTok{print}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{img/geom_jitter_interactive.png}}
 
 \bookmarksetup{startatroot}
 
@@ -4285,7 +4334,7 @@ dataset.
 
 \hyperref[line]{geom\_line}
 
-\subsection{Example}\label{example-9}
+\subsection{Example}\label{example-8}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7533,6 +7582,11 @@ Charts}\label{specialized-advanced-charts}
 \subsection{Arc Diagram}\label{arc-diagram}
 
 \subsection{Polar Chart}\label{polar-chart}
+
+\section{Interactive}\label{interactive}
+
+\section{Drawing polygons, lines,
+shape}\label{drawing-polygons-lines-shape}
 
 \bookmarksetup{startatroot}
 
