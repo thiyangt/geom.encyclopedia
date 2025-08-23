@@ -5724,6 +5724,158 @@ Returns a scatter plot with points that are labeled.
 
 \chapter{V}\label{sec-v}
 
+\section{geom\_vline}\label{vline}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+Draw a verticle line at the specified intercept.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{xintercept}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[abline]{geom\_abline}, \hyperref[hline]{geom\_hline}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(worldbankdata, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Cooking, }\AttributeTok{x =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \DecValTok{50}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"a1: geom\_vline only"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\NormalTok{)}
+\NormalTok{a2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(worldbankdata, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Cooking, }\AttributeTok{x =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \DecValTok{50}\NormalTok{)  }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"a2: geom\_vline }\SpecialCharTok{\textbackslash{}n}\StringTok{ and geom\_point"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\NormalTok{)}
+\NormalTok{a1 }\SpecialCharTok{|}\NormalTok{ a2}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+
+\section{geom\_vridgeline}\label{vridgeline}
+
+\textbf{Package}
+
+ggridges (Wilke 2023)
+
+\textbf{Description}
+
+Plots the sum of the x and width aesthetics versus y, filling the area
+between x and x + width with a color.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{width}, \texttt{group}, \texttt{scale}, \texttt{min\_width},
+\texttt{color}, \texttt{fill}, \texttt{alpha}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_boxplot}, \hyperref[ribbon]{geom\_ribbon}
+
+\textbf{Example }
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggridges)}
+\NormalTok{worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Income }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"L"}\NormalTok{, }\StringTok{"UM"}\NormalTok{, }\StringTok{"H"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Income, }\AttributeTok{y =}\NormalTok{ Cooking, }
+             \AttributeTok{width =} \FunctionTok{after\_stat}\NormalTok{(density), }
+             \AttributeTok{fill =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vridgeline}\NormalTok{(}\AttributeTok{stat =} \StringTok{"ydensity"}\NormalTok{, }\AttributeTok{trim =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.85}\NormalTok{, }\AttributeTok{scale =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Ridgeline of Cooking Fuel by Income Group"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+
+\section{geom\_voronoi}\label{voronoi}
+
+\textbf{Package}
+
+ggvoronoi (Garrett, Nar, and Fisher 2024)
+
+\textbf{Description}
+
+A Voronoi diagram is a way to divide space based on proximity to a set
+of points. Think of it as creating territories around each point, where
+every location in a territory is closer to that point than any other.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{width}, \texttt{group}, \texttt{scale}, \texttt{min\_width},
+\texttt{color}, \texttt{fill}, \texttt{alpha}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_point}, \hyperref[ribbon]{geom\_ribbon}
+
+\textbf{Example }
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#remotes::install\_github("garretrc/ggvoronoi", dependencies = TRUE, build\_opts = c("{-}{-}no{-}resave{-}data"))}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(ggvoronoi)}
+\CommentTok{\# 1. Create a data frame with province names and centroid coordinates}
+\NormalTok{province\_points }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Province =} \FunctionTok{c}\NormalTok{(}\StringTok{"Western"}\NormalTok{, }\StringTok{"Central"}\NormalTok{, }\StringTok{"Southern"}\NormalTok{, }\StringTok{"Northern"}\NormalTok{, }
+               \StringTok{"Eastern"}\NormalTok{, }\StringTok{"North Western"}\NormalTok{, }\StringTok{"North Central"}\NormalTok{, }
+               \StringTok{"Uva"}\NormalTok{, }\StringTok{"Sabaragamuwa"}\NormalTok{),}
+  \AttributeTok{lon =} \FunctionTok{c}\NormalTok{(}\FloatTok{79.95}\NormalTok{, }\FloatTok{80.63}\NormalTok{, }\FloatTok{80.22}\NormalTok{, }\FloatTok{80.38}\NormalTok{, }\FloatTok{81.05}\NormalTok{, }\FloatTok{79.95}\NormalTok{, }\FloatTok{80.65}\NormalTok{, }\FloatTok{81.0}\NormalTok{, }\FloatTok{80.35}\NormalTok{),}
+  \AttributeTok{lat =} \FunctionTok{c}\NormalTok{(}\FloatTok{6.90}\NormalTok{, }\FloatTok{7.30}\NormalTok{, }\FloatTok{6.05}\NormalTok{, }\FloatTok{9.65}\NormalTok{, }\FloatTok{7.85}\NormalTok{, }\FloatTok{7.75}\NormalTok{, }\FloatTok{8.35}\NormalTok{, }\FloatTok{6.85}\NormalTok{, }\FloatTok{6.75}\NormalTok{)}
+\NormalTok{)}
+\CommentTok{\# 2. Define a bounding box outline (roughly Sri Lanka coordinates)}
+\NormalTok{outline }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\FloatTok{79.6}\NormalTok{, }\FloatTok{82.0}\NormalTok{, }\FloatTok{82.0}\NormalTok{, }\FloatTok{79.6}\NormalTok{),}
+  \AttributeTok{y =} \FunctionTok{c}\NormalTok{(}\FloatTok{5.8}\NormalTok{, }\FloatTok{5.8}\NormalTok{, }\FloatTok{10.0}\NormalTok{, }\FloatTok{10.0}\NormalTok{)}
+\NormalTok{)}
+\CommentTok{\# 3. Plot Voronoi diagram}
+\FunctionTok{ggplot}\NormalTok{(province\_points, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon, }\AttributeTok{y =}\NormalTok{ lat)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_voronoi}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Province), }\AttributeTok{outline =}\NormalTok{ outline) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ Province), }\AttributeTok{size =} \DecValTok{3}\NormalTok{, }\AttributeTok{vjust =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_equal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Voronoi Diagram of Sri Lanka Provinces"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+
 \section{geom\_violin}\label{violin}
 
 \textbf{Package}
@@ -5766,7 +5918,7 @@ Creates violin plot.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-5-1.pdf}}
 
 \section{geom\_violin\_pattern}\label{violin_pattern}
 
@@ -5815,7 +5967,7 @@ layer}\label{the-statistical-transformation-to-use-on-the-data-for-this-layer-6}
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-6-1.pdf}}
 
 \section{geom\_voronoi\_tile}\label{geom_voronoi_tile}
 
@@ -5876,7 +6028,7 @@ a plane based on the input points.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-7-1.pdf}}
 
 \section{geom\_voronoi\_segment}\label{geom_voronoi_segment}
 
@@ -5933,7 +6085,7 @@ points.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-5-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{v_files/figure-pdf/unnamed-chunk-8-1.pdf}}
 
 \bookmarksetup{startatroot}
 
@@ -7410,6 +7562,11 @@ Meteorological Fields}. \url{https://doi.org/10.5281/zenodo.2593516}.
 \bibitem[\citeproctext]{ref-ggpattern}
 FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. \emph{Ggpattern:
 'Ggplot2' Pattern Geoms}.
+
+\bibitem[\citeproctext]{ref-ggvoronoi}
+Garrett, Robert C., Austin Nar, and Thomas J. Fisher. 2024.
+\emph{Ggvoronoi: Voronoi Diagrams and Heatmaps with 'Ggplot2'}.
+\url{https://github.com/garretrc/ggvoronoi}.
 
 \bibitem[\citeproctext]{ref-directlabels}
 Hocking, Toby Dylan. 2023. \emph{Directlabels: Direct Labels for

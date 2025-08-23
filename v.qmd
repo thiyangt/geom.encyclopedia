@@ -10,6 +10,145 @@ data("worldbankdata")
 
 
 
+## geom_vline{#vline}
+
+
+**Package**
+
+ggplot2 [@ggplot2]
+
+**Description**
+
+Draw a verticle line at the specified intercept.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+`xintercept`
+
+
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_abline](#abline), [geom_hline](#hline)
+  
+**Example**
+
+```{r,  message=FALSE, warning=FALSE}
+a1 <- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +
+  geom_vline(xintercept = 50) +
+  labs(title = "a1: geom_vline only") +
+  theme(aspect.ratio = 1)
+a2 <- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +
+  geom_vline(xintercept = 50)  +
+  geom_point() +
+  labs(title = "a2: geom_vline \n and geom_point") +
+  theme(aspect.ratio = 1)
+a1 | a2
+```
+
+## geom_vridgeline{#vridgeline}
+
+**Package**
+
+ggridges [@ggridges]
+
+**Description**
+
+Plots the sum of the x and width aesthetics versus y, filling the area between x and x + width with a color.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+`width`, `group`, `scale`, `min_width`, `color`, `fill`, `alpha`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_boxplot](#line), [geom_ribbon](#ribbon)
+  
+**Example **
+
+```{r, warning=FALSE, message=FALSE}
+library(ggridges)
+worldbankdata |>
+  filter(Income %in% c("L", "UM", "H")) |>
+  ggplot(aes(x = Income, y = Cooking, 
+             width = after_stat(density), 
+             fill = Income)) +
+  geom_vridgeline(stat = "ydensity", trim = FALSE, alpha = 0.85, scale = 2) +
+  labs(title = "Ridgeline of Cooking Fuel by Income Group")
+```
+
+## geom_voronoi{#voronoi}
+
+**Package**
+
+ggvoronoi [@ggvoronoi]
+
+**Description**
+
+A Voronoi diagram is a way to divide space based on proximity to a set of points. Think of it as creating territories around each point, where every location in a territory is closer to that point than any other.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+`x`
+
+`y`
+
+*optional aesthetics*
+  
+`width`, `group`, `scale`, `min_width`, `color`, `fill`, `alpha`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_point](#line), [geom_ribbon](#ribbon)
+  
+**Example **
+  
+```{r,  message=FALSE, warning=FALSE}
+#remotes::install_github("garretrc/ggvoronoi", dependencies = TRUE, build_opts = c("--no-resave-data"))
+library(ggplot2)
+library(ggvoronoi)
+# 1. Create a data frame with province names and centroid coordinates
+province_points <- data.frame(
+  Province = c("Western", "Central", "Southern", "Northern", 
+               "Eastern", "North Western", "North Central", 
+               "Uva", "Sabaragamuwa"),
+  lon = c(79.95, 80.63, 80.22, 80.38, 81.05, 79.95, 80.65, 81.0, 80.35),
+  lat = c(6.90, 7.30, 6.05, 9.65, 7.85, 7.75, 8.35, 6.85, 6.75)
+)
+# 2. Define a bounding box outline (roughly Sri Lanka coordinates)
+outline <- data.frame(
+  x = c(79.6, 82.0, 82.0, 79.6),
+  y = c(5.8, 5.8, 10.0, 10.0)
+)
+# 3. Plot Voronoi diagram
+ggplot(province_points, aes(x = lon, y = lat)) +
+  geom_voronoi(aes(fill = Province), outline = outline) +
+  geom_point(color = "black", size = 2) +
+  geom_text(aes(label = Province), size = 3, vjust = -1) +
+  coord_equal() +
+  labs(title = "Voronoi Diagram of Sri Lanka Provinces") 
+
+
+```
 
 ## geom_violin{#violin}
 
