@@ -1,4 +1,4 @@
-# Geom Reference by Chart Type
+# Geom Reference by Chart Type {#sec-summary}
 
 
 
