@@ -6254,7 +6254,7 @@ Place point at mean of x and label.
 \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
 \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking)) }\SpecialCharTok{+}
   \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\AttributeTok{fill =} \StringTok{"\#1b9e77"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{geom\_x\_mean\_label}\NormalTok{(}\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }
+  \FunctionTok{geom\_x\_mean\_label}\NormalTok{(}\AttributeTok{color =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -7124,9 +7124,10 @@ The xside and yside variants of geom\_function.
 \begin{Highlighting}[]
 \FunctionTok{require}\NormalTok{(ggpp)}
 \FunctionTok{drop\_na}\NormalTok{(worldbankdata) }\SpecialCharTok{|\textgreater{}}
-\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{filter}\NormalTok{(Income }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"L"}\NormalTok{, }\StringTok{"H"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Cooking, }\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{colour =}\NormalTok{ Income, }\AttributeTok{fill=}\NormalTok{Income)) }\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_xsidedensity}\NormalTok{(}\AttributeTok{fill =} \StringTok{"\#d95f02"}\NormalTok{, }\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{3}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+  \FunctionTok{geom\_xsidedensity}\NormalTok{( }\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{3}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -7282,6 +7283,105 @@ ggplot2 (Wickham 2016)
 \bookmarksetup{startatroot}
 
 \chapter{Z}\label{sec-z}
+
+\bookmarksetup{startatroot}
+
+\chapter{Geom Reference by Chart
+Type}\label{geom-reference-by-chart-type}
+
+\section{Basic Charts}\label{basic-charts}
+
+\subsection{Bar Chart}\label{bar-chart}
+
+\subsection{Column Chart}\label{column-chart}
+
+\subsection{Line Chart}\label{line-chart}
+
+\subsection{Area Chart}\label{area-chart}
+
+\subsection{Scatterplot}\label{scatterplot}
+
+\subsection{Bubble Chart}\label{bubble-chart}
+
+\subsection{Pie Chart}\label{pie-chart}
+
+\subsection{Donut Chart}\label{donut-chart}
+
+\section{Distribution Charts}\label{distribution-charts}
+
+\subsection{Histogram}\label{histogram-1}
+
+\subsection{Density Plot}\label{density-plot}
+
+\subsection{Boxplot}\label{boxplot-1}
+
+\subsection{Violin Plot}\label{violin-plot}
+
+\subsection{Ridgeline Plot}\label{ridgeline-plot}
+
+\subsection{Average Shifted Histogram
+(ASH)}\label{average-shifted-histogram-ash}
+
+\section{Categorical / Flow Charts}\label{categorical-flow-charts}
+
+\subsection{Stacked Bar Chart}\label{stacked-bar-chart}
+
+\subsection{Grouped Bar Chart}\label{grouped-bar-chart}
+
+\subsection{Mosaic Plot}\label{mosaic-plot}
+
+\subsection{Sankey Diagram (or Alluvial
+Plot)}\label{sankey-diagram-or-alluvial-plot}
+
+\subsection{Parallel Sets Plot}\label{parallel-sets-plot}
+
+\section{Time Series Charts}\label{time-series-charts}
+
+\subsection{Time Series Line Chart}\label{time-series-line-chart}
+
+\subsection{Area Chart over Time}\label{area-chart-over-time}
+
+\subsection{Seasonal Subseries Plot}\label{seasonal-subseries-plot}
+
+\subsection{Autocorrelation Plot}\label{autocorrelation-plot}
+
+\section{Geospatial Charts}\label{geospatial-charts}
+
+\subsection{Choropleth Map}\label{choropleth-map}
+
+\subsection{Bubble Map}\label{bubble-map}
+
+\subsection{Heat Map}\label{heat-map}
+
+\subsection{Flow Map}\label{flow-map}
+
+\section{Network \& Relationship
+Charts}\label{network-relationship-charts}
+
+\subsection{Network Graph}\label{network-graph}
+
+\subsection{Tree Diagram}\label{tree-diagram}
+
+\subsection{Dendrogram}\label{dendrogram}
+
+\subsection{Circular Network Plot}\label{circular-network-plot}
+
+\section{Specialized / Advanced
+Charts}\label{specialized-advanced-charts}
+
+\subsection{Radar Chart (Spider Chart)}\label{radar-chart-spider-chart}
+
+\subsection{Waterfall Chart}\label{waterfall-chart}
+
+\subsection{Funnel Chart}\label{funnel-chart}
+
+\subsection{Sunburst Diagram}\label{sunburst-diagram}
+
+\subsection{Treemap}\label{treemap}
+
+\subsection{Arc Diagram}\label{arc-diagram}
+
+\subsection{Polar Chart}\label{polar-chart}
 
 \bookmarksetup{startatroot}
 

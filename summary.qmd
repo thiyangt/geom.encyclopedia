@@ -1,21 +1,94 @@
-# Guide to Select Geoms
+# Geom Reference by Chart Type
 
-```{r}
-#|wwarning: FALSE
-#|message: FALSE
-library(tidyverse)
-a <- c('geom_area',
-          'geom_abline',
-          'geom_alluvium',
-          'geom_arc',
-          'geom_arc_bar',
-          'geom_arrow',
-          'geom_ash')
-tribble(
-  ~geom,  ~cat1, ~cat2, ~cat3, ~flow, ~q1, ~q2, ~q3, ~c1q1, ~q2c1
-  "a", 1:3,
-  "b", 4:6
-)
 
-```
 
+
+## Basic Charts
+
+### Bar Chart
+
+### Column Chart
+
+### Line Chart
+
+### Area Chart
+
+### Scatterplot
+
+### Bubble Chart
+
+### Pie Chart
+
+### Donut Chart
+
+## Distribution Charts
+
+### Histogram
+
+### Density Plot
+
+### Boxplot
+
+### Violin Plot
+
+### Ridgeline Plot
+
+### Average Shifted Histogram (ASH)
+
+## Categorical / Flow Charts
+
+### Stacked Bar Chart
+
+### Grouped Bar Chart
+
+### Mosaic Plot
+
+### Sankey Diagram (or Alluvial Plot)
+
+### Parallel Sets Plot
+
+## Time Series Charts
+
+### Time Series Line Chart
+
+### Area Chart over Time
+
+### Seasonal Subseries Plot
+
+### Autocorrelation Plot
+
+## Geospatial Charts
+
+### Choropleth Map
+
+### Bubble Map
+
+### Heat Map
+
+### Flow Map
+
+## Network & Relationship Charts
+
+### Network Graph
+
+### Tree Diagram
+
+### Dendrogram
+
+### Circular Network Plot
+
+## Specialized / Advanced Charts
+
+### Radar Chart (Spider Chart)
+
+### Waterfall Chart
+
+### Funnel Chart
+
+### Sunburst Diagram
+
+### Treemap
+
+### Arc Diagram
+
+### Polar Chart

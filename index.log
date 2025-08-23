@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.15)  22 AUG 2025 12:31
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.15)  23 AUG 2025 14:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,17 +7,17 @@ entering extended mode
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
 (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrreprt.cls
-Document Class: scrreprt 2025/06/04 v3.45 KOMA-Script document class (report)
+Document Class: scrreprt 2025/08/19 v3.46 KOMA-Script document class (report)
 (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2025/06/04 v3.45 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+Package: scrkbase 2025/08/19 v3.46 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
 (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2025/06/04 v3.45 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+Package: scrbase 2025/08/19 v3.46 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
 (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2025/06/04 v3.45 KOMA-Script package (file load hooks)
+Package: scrlfile 2025/08/19 v3.46 KOMA-Script package (file load hooks)
 (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2025/06/04 v3.45 KOMA-Script package (using LaTeX hooks)
+Package: scrlfile-hook 2025/08/19 v3.46 KOMA-Script package (using LaTeX hooks)
 (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2025/06/04 v3.45 KOMA-Script package (logo)
+Package: scrlogo 2025/08/19 v3.46 KOMA-Script package (logo)
 ))) (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
@@ -25,19 +25,19 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
 )) (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2025/06/04 v3.45 KOMA-Script package (handling toc-files)
+Package: tocbasic 2025/08/19 v3.46 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip49
 \scr@dte@tocline@numbox=\box53
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 137.
+(tocbasic)             for `toc' on input line 143.
 Class scrreprt Info: File `scrsize11pt.clo' used instead of
-(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 2697.
+(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 2705.
 (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
-File: scrsize11pt.clo 2025/06/04 v3.45 KOMA-Script font size class option (11pt)
+File: scrsize11pt.clo 2025/08/19 v3.46 KOMA-Script font size class option (11pt)
 ) (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2025/06/04 v3.45 KOMA-Script package (type area)
+Package: typearea 2025/08/19 v3.46 KOMA-Script package (type area)
 \ta@bcor=\skip50
 \ta@div=\count271
 Package typearea Info: You've used standard option `letterpaper'.
@@ -66,7 +66,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 11.0pt
 (typearea)              \footskip       = 47.6pt
 (typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 1804.
+(typearea)              on input line 1805.
 )
 \c@part=\count272
 \c@chapter=\count273
@@ -77,49 +77,49 @@ Package typearea Info: These are the values describing the layout:
 \c@subparagraph=\count278
 \scr@dte@chapter@maxnumwidth=\skip55
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\chapter on input line 6036.
+(scrreprt)           for `\chapter on input line 6078.
 \scr@dte@section@maxnumwidth=\skip56
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\section on input line 6047.
+(scrreprt)           for `\section on input line 6089.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\section on input line 6047.
+(scrreprt)           for `\section on input line 6089.
 \scr@dte@part@maxnumwidth=\skip57
 Class scrreprt Info: using compatibility default `afterindent=true'
-(scrreprt)           for `\part on input line 6056.
+(scrreprt)           for `\part on input line 6098.
 \scr@dte@subsection@maxnumwidth=\skip58
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsection on input line 6066.
+(scrreprt)           for `\subsection on input line 6108.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsection on input line 6066.
+(scrreprt)           for `\subsection on input line 6108.
 \scr@dte@subsubsection@maxnumwidth=\skip59
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsubsection on input line 6076.
+(scrreprt)           for `\subsubsection on input line 6118.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsubsection on input line 6076.
+(scrreprt)           for `\subsubsection on input line 6118.
 \scr@dte@paragraph@maxnumwidth=\skip60
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\paragraph on input line 6087.
+(scrreprt)           for `\paragraph on input line 6129.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\paragraph on input line 6087.
+(scrreprt)           for `\paragraph on input line 6129.
 \scr@dte@subparagraph@maxnumwidth=\skip61
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subparagraph on input line 6097.
+(scrreprt)           for `\subparagraph on input line 6139.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subparagraph on input line 6097.
+(scrreprt)           for `\subparagraph on input line 6139.
 \abovecaptionskip=\skip62
 \belowcaptionskip=\skip63
 \c@pti@nb@sid@b@x=\box54
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 7300.
+(tocbasic)             for `lof' on input line 7346.
 \scr@dte@figure@maxnumwidth=\skip64
 \c@figure=\count279
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 7317.
+(tocbasic)             for `lot' on input line 7359.
 \scr@dte@table@maxnumwidth=\skip65
 \c@table=\count280
-Class scrreprt Info: Redefining `\numberline' on input line 7488.
+Class scrreprt Info: Redefining `\numberline' on input line 7530.
 \bibindent=\dimen148
 ) (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/06/16 v2.17y AMS math features
@@ -753,10 +753,15 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@indent=\dimen270
 \caption@parindent=\dimen271
 \caption@hangindent=\dimen272
-Package caption Info: KOMA-Script document class detected.
-(c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption-koma.sto
-File: caption-koma.sto 2023/09/08 v2.0e Adaption of the caption package to the KOMA-Script document classes (AR)
-))
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\@abovecaptionbreak \vskip \abovecaptionskip \@abovecaptionbreak \@@makecaption \@firstofone {#1}{#2}\@belowcaptionbreak \vskip \belowcaptionskip \@belowcaptionbreak  on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
 \c@caption@flags=\count355
 \c@continuedfloat=\count356
 Package caption Info: float package is loaded.
@@ -765,9 +770,6 @@ Package caption Info: longtable package is loaded.
 (c:/Users/DELL/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
-Package caption Info: KOMA-Script scrextend package detected.
-\caption@addmargin@hsize=\dimen273
-\caption@addmargin@linewidth=\dimen274
 Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
@@ -1040,8 +1042,8 @@ LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 256.
 Package microtype Info: Patching varwidth to enable character protrusion.
-\MT@vwid@leftmargin=\dimen275
-\MT@vwid@rightmargin=\dimen276
+\MT@vwid@leftmargin=\dimen273
+\MT@vwid@rightmargin=\dimen274
 LaTeX Info: Redefining \microtypecontext on input line 256.
 Package microtype Info: Applying patch `item' on input line 256.
 Package microtype Info: Applying patch `toc' on input line 256.
