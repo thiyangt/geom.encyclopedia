@@ -1,0 +1,112 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "",
+    "text": "Welcome\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics use in data visualisation. This encyclopedia is a curated collection of geom available in different R programming software packages. This book can also be considered as an “Encyclopedia of Plots”.\nThis book is a work in progress. The accompanying R package for drone is available on CRAN: https://github.com/thiyangt/drone",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
+    "href": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "text": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#why-choose-drone-as-the-package-name",
+    "href": "index.html#why-choose-drone-as-the-package-name",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "Why choose “drone” as the package name?",
+    "text": "Why choose “drone” as the package name?\nThis encyclopedia provides a comprehensive overview of geoms within the grammar of graphics framework, much like a drone offers a bird’s-eye view of a landscape.\nTo load this Data Visualisation Geom Encyclopedia via drone package use the following code.\ninstall.packages(drone)\nlibrary(drone)\nload_encyclopedia()",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "27  Geom Reference by Chart Type",
+    "section": "",
+    "text": "27.1 Basic Charts",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Geom Reference by Chart Type</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#basic-charts",
+    "href": "summary.html#basic-charts",
+    "title": "27  Geom Reference by Chart Type",
+    "section": "",
+    "text": "27.1.1 Bar Chart\n\n\n27.1.2 Column Chart\n\n\n27.1.3 Line Chart\n\n\n27.1.4 Area Chart\n\n\n27.1.5 Scatterplot\n\n\n27.1.6 Bubble Chart\n\n\n27.1.7 Pie Chart\n\n\n27.1.8 Donut Chart",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Geom Reference by Chart Type</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#distribution-charts",
+    "href": "summary.html#distribution-charts",
+    "title": "27  Geom Reference by Chart Type",
+    "section": "27.2 Distribution Charts",
+    "text": "27.2 Distribution Charts\n\n27.2.1 Histogram\n\n\n27.2.2 Density Plot\n\n\n27.2.3 Boxplot\n\n\n27.2.4 Violin Plot\n\n\n27.2.5 Ridgeline Plot\n\n\n27.2.6 Average Shifted Histogram (ASH)",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Geom Reference by Chart Type</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#categorical-flow-charts",
+    "href": "summary.html#categorical-flow-charts",
+    "title": "27  Geom Reference by Chart Type",
+    "section": "27.3 Categorical / Flow Charts",
+    "text": "27.3 Categorical / Flow Charts\n\n27.3.1 Stacked Bar Chart\n\n\n27.3.2 Grouped Bar Chart\n\n\n27.3.3 Mosaic Plot\n\n\n27.3.4 Sankey Diagram (or Alluvial Plot)\n\n\n27.3.5 Parallel Sets Plot",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Geom Reference by Chart Type</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#time-series-charts",
+    "href": "summary.html#time-series-charts",
+    "title": "27  Geom Reference by Chart Type",
+    "section": "27.4 Time Series Charts",
+    "text": "27.4 Time Series Charts\n\n27.4.1 Time Series Line Chart\n\n\n27.4.2 Area Chart over Time\n\n\n27.4.3 Seasonal Subseries Plot\n\n\n27.4.4 Autocorrelation Plot",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Geom Reference by Chart Type</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#geospatial-charts",
+    "href": "summary.html#geospatial-charts",
+    "title": "27  Geom Reference by Chart Type",
+    "section": "27.5 Geospatial Charts",
+    "text": "27.5 Geospatial Charts\n\n27.5.1 Choropleth Map\n\n\n27.5.2 Bubble Map\n\n\n27.5.3 Heat Map\n\n\n27.5.4 Flow Map",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Geom Reference by Chart Type</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#network-relationship-charts",
+    "href": "summary.html#network-relationship-charts",
+    "title": "27  Geom Reference by Chart Type",
+    "section": "27.6 Network & Relationship Charts",
+    "text": "27.6 Network & Relationship Charts\n\n27.6.1 Network Graph\n\n\n27.6.2 Tree Diagram\n\n\n27.6.3 Dendrogram\n\n\n27.6.4 Circular Network Plot",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Geom Reference by Chart Type</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#specialized-advanced-charts",
+    "href": "summary.html#specialized-advanced-charts",
+    "title": "27  Geom Reference by Chart Type",
+    "section": "27.7 Specialized / Advanced Charts",
+    "text": "27.7 Specialized / Advanced Charts\n\n27.7.1 Radar Chart (Spider Chart)\n\n\n27.7.2 Waterfall Chart\n\n\n27.7.3 Funnel Chart\n\n\n27.7.4 Sunburst Diagram\n\n\n27.7.5 Treemap\n\n\n27.7.6 Arc Diagram\n\n\n27.7.7 Polar Chart",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Geom Reference by Chart Type</span>"
+    ]
+  }
+]
