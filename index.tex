@@ -6155,7 +6155,10 @@ waffle (Rudis and Gandy 2023)
 
 \textbf{Description}
 
-Create waffle plots
+Create waffle plots. A waffle chart can be used as an alternative to pie
+charts or bar charts to display the composition of a sample. It divides
+the plotting area into a grid of small squares, making proportions
+easier to compare and count at a glance.
 
 \textbf{Understandable aesthetics}
 
@@ -6165,6 +6168,11 @@ Create waffle plots
 
 \texttt{values} (which column you're mapping the filling for the squares
 with)
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
 
 \textbf{See also}
 
@@ -6181,14 +6189,21 @@ with)
   \FunctionTok{group\_by}\NormalTok{(Region, Income) }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{tally}\NormalTok{() }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill=}\NormalTok{Income, }\AttributeTok{values=}\NormalTok{n)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_waffle}\NormalTok{(}\AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\AttributeTok{size=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_waffle}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =}\NormalTok{ income),}\AttributeTok{color=}\StringTok{"white"}\NormalTok{,}
+              \AttributeTok{n\_rows =} \DecValTok{4}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.3}\NormalTok{, }\AttributeTok{make\_proportional =} \ConstantTok{TRUE}\NormalTok{,}
+              \AttributeTok{height =} \FloatTok{0.9}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.9}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#d95f02"}\NormalTok{,}\StringTok{"\#1b9e77"}\NormalTok{,}\StringTok{"\#7570b3"}\NormalTok{,}\StringTok{"\#e7298a"}\NormalTok{))}\SpecialCharTok{+}
   \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Region, }\AttributeTok{ncol=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{expand=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{scale\_y\_discrete}\NormalTok{(}\AttributeTok{expand=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)) }
+  \FunctionTok{scale\_y\_discrete}\NormalTok{(}\AttributeTok{expand=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{coord\_equal}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"bottom"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \pandocbounded{\includegraphics[keepaspectratio]{w_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+
+geom\_weave
 
 \bookmarksetup{startatroot}
 

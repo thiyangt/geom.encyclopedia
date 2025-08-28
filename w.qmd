@@ -22,7 +22,7 @@ waffle [@waffle]
 
 **Description**
 
-Create waffle plots
+Create waffle plots. A waffle chart can be used as an alternative to pie charts or bar charts to display the composition of a sample. It divides the plotting area into a grid of small squares, making proportions easier to compare and count at a glance.
 
 **Understandable aesthetics**
 
@@ -31,6 +31,10 @@ Create waffle plots
 `fill` (so the geom knows which column to map the fills to)
 
 `values` (which column you're mapping the filling for the squares with)
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 
 **See also**
@@ -51,8 +55,15 @@ worldbankdata |>
   group_by(Region, Income) |>
   tally() |>
   ggplot(aes(fill=Income, values=n)) +
-  geom_waffle(color = "white", size=1) +
+  geom_waffle(aes(colour = income),color="white",
+              n_rows = 4, size = 0.3, make_proportional = TRUE,
+              height = 0.9, width = 0.9) +
+  scale_fill_manual(values = c("#d95f02","#1b9e77","#7570b3","#e7298a"))+
   facet_wrap(~Region, ncol=1) +
   scale_x_discrete(expand=c(0,0)) +
-  scale_y_discrete(expand=c(0,0)) 
+  scale_y_discrete(expand=c(0,0)) +
+  coord_equal()+
+  theme(legend.position = "bottom")
 ```
+
+geom_weave
