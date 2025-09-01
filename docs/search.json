@@ -1,22 +1,172 @@
 [
   {
-    "objectID": "w.html",
-    "href": "w.html",
-    "title": "23  W",
+    "objectID": "preface.html",
+    "href": "preface.html",
+    "title": "Preface",
     "section": "",
-    "text": "23.1 geom_waffle\nPackage\n#install.packages(\"remotes\")\n#remotes::install_github(\"hrbrmstr/waffle\")\nwaffle (Rudis and Gandy 2023)\nDescription\nCreate waffle plots. A waffle chart can be used as an alternative to pie charts or bar charts to display the composition of a sample. It divides the plotting area into a grid of small squares, making proportions easier to compare and count at a glance.\nUnderstandable aesthetics\nrequired aesthetics\nfill (so the geom knows which column to map the fills to)\nvalues (which column you’re mapping the filling for the squares with)\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_bar, geom_col\nExample\nlibrary(waffle)\nworldbankdata |&gt;\n  filter(Region == \"East Asia & Pacific\" | Region == \"Europe & Central Asia\") |&gt;\n  select(Region, Income, Year) |&gt;\n  group_by(Region, Income) |&gt;\n  tally() |&gt;\n  ggplot(aes(fill=Income, values=n)) +\n  geom_waffle(aes(colour = income),color=\"white\",\n              n_rows = 4, size = 0.3, make_proportional = TRUE,\n              height = 0.9, width = 0.9) +\n  scale_fill_manual(values = c(\"#d95f02\",\"#1b9e77\",\"#7570b3\",\"#e7298a\"))+\n  facet_wrap(~Region, ncol=1) +\n  scale_x_discrete(expand=c(0,0)) +\n  scale_y_discrete(expand=c(0,0)) +\n  coord_equal()+\n  theme(legend.position = \"bottom\")",
+    "text": "What can I find in this geom encyclopedia?\nLet’s begin by looking at what we mean by geom in data visualization. In this context, geoms (short for geometries in ggplot2 package) are the visual elements used to represent data in a plot. They define the type of chart such as point chart, line chart, bar chart, etc.\nTo illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows:\nVariable\nDescription\n\n\n\n\nCountry\nCountry name\n\n\nIncome\nIncome category in 2021: lower income (L), lower middle income (LM)\n\n\nElectricity\nPercentage of people access to electricity\nThe first eight rows of the dataset as well as the R code to load the dataset is given below:\nlibrary(drone)\nlibrary(tidyverse)\ndata(\"worldbankdata\")\nworldbankdata2021 &lt;- worldbankdata |&gt; filter(Year == 2021) |&gt;\n  filter( Income == \"LM\" | Income ==\"L\") |&gt; \n  select( Country, Income, Electricity)\nworldbankdata2021 |&gt; head(8)\n\n# A tibble: 8 × 3\n  Country      Income Electricity\n  &lt;fct&gt;        &lt;fct&gt;        &lt;dbl&gt;\n1 Afghanistan  L             97.7\n2 Angola       LM            48.2\n3 Burundi      L             10.2\n4 Benin        LM            42.0\n5 Burkina Faso L             19.0\n6 Bangladesh   LM            99.0\n7 Bolivia      LM            98.6\n8 Bhutan       LM           100\nNow, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in Figure @ref(fig:cartesian)\nFigure 1: Cartesian Coordinate Plane. Income level is mapped to x-axis and Electricity is mapped to y-axis.\nFigure 2 shows 6 plotting types that I created using the same dataset and same cartesian plane.\nFigure 2: Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM) in 2021\nIn all the charts shown in Figure 2, I used the same dataset, the same variables, and the same Cartesian plane. However, the chart types different.\nCould you list the differences you observe in the charts?\nWhen creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values. Table 2 summarizes the statistical operations performed on the data and the corresponding geometries used to visualize the computed statistics.\nlibrary(knitr)\n\ndata &lt;- data.frame(\n  Code = c(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\"),\n  `Statistical Operation` = c(\n    \"Use individual data points\",\n    \"Use individual data points\",\n    \"Use individual data points\",\n    \"Compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR\",\n    \"Use individual data points; compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR\",\n    \"Compute kernel density\",\n    \"Compute minimum and maximum of data\",\n    \"Compute minimum, mean, and maximum\"\n  ),\n  `Visualization Method` = c(\n    \"Point geometry\",\n    \"Quasirandom geometry\",\n    \"Jitter geometry\",\n    \"Box-and-whisker plot\",\n    \"Jitter geometry and box-and-whisker plot\",\n    \"Violin geometry\",\n    \"Line geometry\",\n    \"Line geometry (range) and point geometry (mean)\"\n  )\n)\n\ndata |&gt;    kbl(col.names = c(\"Plot\", \"Statistical Operation\", \"Visualisation Method\")) |&gt; \n  kable_paper(\"hover\", full_width = F)\n\n\n\n\nPlot\nStatistical Operation\nVisualisation Method\n\n\n\n\nA\nUse individual data points\nPoint geometry\n\n\nB\nUse individual data points\nQuasirandom geometry\n\n\nC\nUse individual data points\nJitter geometry\n\n\nD\nCompute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR\nBox-and-whisker plot\n\n\nE\nUse individual data points; compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR\nJitter geometry and box-and-whisker plot\n\n\nF\nCompute kernel density\nViolin geometry\n\n\nG\nCompute minimum and maximum of data\nLine geometry\n\n\nH\nCompute minimum, mean, and maximum\nLine geometry (range) and point geometry (mean)\nHere is a summary of geom and stat layers used in the charts shown in Figure @ref(fig:geom).\nPlot\ngeom layer\nstat layer\n\n\n\n\nA\npoint\ndata is plotted as-is\n\n\nB\nquasirandom\ndata is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting\n\n\nC\njitter\ndata is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible\n\n\nD\nboxplot\nFive statistical summary measures used in the boxplot\n\n\nE\njitter and boxplot\nIndividual points and summary measures corresponds to boxplot\n\n\nF\nviolin\ncalculate and plot the kernel density estimate(KDE) for continuous data\n\n\nG\nlinerange\nRange of data\n\n\nH\nlinerange and point\nRange and mean of data\nThis encyclopedia is a collection of geoms, in other words plot types that you can create using the ggplot2 or extensions of ggplot2 under the grammar of graphics framework. In other words Encyclopedia of Plots.",
     "crumbs": [
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>W</span>"
+      "Preface"
     ]
   },
   {
-    "objectID": "w.html#weave",
-    "href": "w.html#weave",
-    "title": "23  W",
-    "section": "23.2 geom_weave",
-    "text": "23.2 geom_weave\nPackage\nggdist(ggdist?)\nDescription\nCreates dot-weave plot. This ensures the plot fits within the available space.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, size\nSee also\ngeom_dotinterval, geom_point, geom_jitter\nExample\n\nlibrary(ggdist)\np1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Electricity, x = Income)) +\n  geom_weave(color=\"black\") + ggtitle(\"Without  scale_y_binned\")\np2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Electricity, x = Income)) +\n  geom_weave(color=\"black\") + \n  scale_y_binned(n.breaks = 10) + ggtitle(\"With scale_y_binned\")\np1|p2\n\nWarning: Removed 5693 rows containing missing values or values outside the scale range\n(`geom_dotsinterval()`).\nRemoved 5693 rows containing missing values or values outside the scale range\n(`geom_dotsinterval()`).\n\n\n\n\n\n\n\n\n\n\n\n\n\nRudis, Bob, and Dave Gandy. 2023. Waffle: Create Waffle Chart Visualizations.",
+    "objectID": "preface.html#what-can-i-find-in-this-geom-encyclopedia",
+    "href": "preface.html#what-can-i-find-in-this-geom-encyclopedia",
+    "title": "Preface",
+    "section": "",
+    "text": "The type of chart or shape used to depict data.\nThe statistics that we compute on the data to visualize on the chart.",
     "crumbs": [
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>W</span>"
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#motivation-to-write-this-book",
+    "href": "preface.html#motivation-to-write-this-book",
+    "title": "Preface",
+    "section": "Motivation to write this book",
+    "text": "Motivation to write this book\nThe motivation behind writing this encyclopedia is, there is no centralized resource where all geoms can be viewed in one place. Additionally, no comprehensive book exists that catalogs the different types of plots available for data visualization. Having them in one place help data visualizers to craft more effective analyses and create new geoms. Further, this also helps to avoid duplicate efforts.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#what-you-will-learn",
+    "href": "preface.html#what-you-will-learn",
+    "title": "Preface",
+    "section": "What you will learn?",
+    "text": "What you will learn?\nEach geom has a set of aesthetics that it understands. These aesthetics can be divided into two parts: i) required aesthetics and ii) optional aesthetics. Further, Every geom has a default stat; and every stat has a default geom.\nTo get an idea about the associated aesthetics and stat let look at plot shown in Figure 4. In this case x, y are required aesthetics and color size and alpha is optional aesthetics. The statistics layer is identity since the data points are plotted as it is.\nThe aesthetic mappings, defined with aes(), describe how variables in the dataset are mapped to visual properties or aesthetics. This aes(x=Income, y=Electricity, color=Income) is called mapping variables to the visual properties of the chart. This alpha=0.5, size=2 is called setting values to visual properties.\n\nggplot(worldbankdata2021, aes(x=Income, y=Electricity, color=Income)) + \n  geom_point(alpha=0.5, size=2) +\n  scale_color_brewer(palette = \"Dark2\")\n\n\n\n\nFigure 4: Distribution of Electricity by Income Category\n\n\n\n\nIn this geom encyclopedia, you will learn about the required and optional aesthetics that each geom supports, as well as the associated statistical layer for each geom. Additionally, an example is provided demonstrating the application of each geom with reproducible R code.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#what-you-wont-learn",
+    "href": "preface.html#what-you-wont-learn",
+    "title": "Preface",
+    "section": "What you won’t learn?",
+    "text": "What you won’t learn?\nThis book is not focused on teaching R programming fundamentals or providing a comprehensive guide to data visualization principles. It assumes you already have a basic understanding of R and ggplot2, and it will not cover how to start from scratch in these areas.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#how-this-geom-encyclopedia-is-organized",
+    "href": "preface.html#how-this-geom-encyclopedia-is-organized",
+    "title": "Preface",
+    "section": "How this geom encyclopedia is organized?",
+    "text": "How this geom encyclopedia is organized?\nAs this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a chapter geoms are not organized according to the alphabetical order. At the beginning of each chapter, I have tabulated the geoms listed under that letter.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#audience",
+    "href": "preface.html#audience",
+    "title": "Preface",
+    "section": "Audience",
+    "text": "Audience\nThe Figure 3 shows my target audience for the book. In general for all data enthusiasts, this can be considered as a Encyclopedia of Plots. For R, tidyverse, gggplot2 users this can be considered as a Data Visualisation Geometries Encyclopedia.\n\n\n\n\n\nFigure 4: Audience",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia",
+    "href": "preface.html#what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia",
+    "title": "Preface",
+    "section": "What prior knowledge is needed to use this geom encyclopedia?",
+    "text": "What prior knowledge is needed to use this geom encyclopedia?\nFor a complete newcomer to get an idea about the possible charts that can be drawn for a data set.\nNone\nTo get hands-on-experience with the examples provided you need to have following knowledge.\n\nR and RStudio Integrated Development Environment (IDE)\nBasics of R programming\ntidyverse (Wickham et al. 2019) style of coding\nData wrangling with tidyr(Wickham, Vaughan, and Girlich 2024) and dplyr(Wickham et al. 2023)\nKnowledge in using the pipe operator: |&gt;\nKnowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2(Wickham 2016)\n\nIf you want to learn more of them, following are the books recommended:\n\nR for Data Science (2e) written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.\nggplot2: Elegant Graphics for Data Analysis (3e) written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#acknowledgments",
+    "href": "preface.html#acknowledgments",
+    "title": "Preface",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nI would like to thank all the package authors and contributors who have developed and shared geoms as R packages.\nI would like to thank all the students who took my ASP 460 2.0/STA 492 2.0 Data Visualization course in 2024 for their valuable contributions in exploring geoms with me.\nThis book was built with Quarto.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#cite",
+    "href": "preface.html#cite",
+    "title": "Preface",
+    "section": "Cite",
+    "text": "Cite\nPlease use the below text and bibtex for citing the book.\nT. S. Talagala, Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots. [Online]. Available: https://thiyangt.github.io/geom.encyclopedia/. [Accessed: Jan. 18, 2025\n@online{talagala2024geoms,   author       = {Thiyanga S. Talagala},   title        = {Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots},   year         = {2024},   url          = {https://thiyangt.github.io/geom.encyclopedia/},   note         = {Accessed: 2025-01-18} }\nPlease use the below text and bibtex for citing the associated R package drone.\nTalagala T (2025).   drone: Data for Data   Visualisation Geometries   Encyclopedia. R package   version 1.0.0, commit   86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,   &lt;https://github.com/thiyangt/drone&gt;.\n@Manual{drone,     title = {drone: Data for Data Visualisation Geometries Encyclopedia},     author = {Thiyanga S. Talagala},     year = {2025},     note = {R package version 1.0.0, commit 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72},     url = {https://github.com/thiyangt/drone},   }",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#colophon",
+    "href": "preface.html#colophon",
+    "title": "Preface",
+    "section": "Colophon",
+    "text": "Colophon\nThe field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the tidyverse.” Journal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686.\n\n\nWickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis Vaughan. 2023. Dplyr: A Grammar of Data Manipulation. https://CRAN.R-project.org/package=dplyr.\n\n\nWickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024. Tidyr: Tidy Messy Data. https://CRAN.R-project.org/package=tidyr.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Data and setting up your workflow",
+    "section": "",
+    "text": "Installation of associated packages",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#installation-of-associated-packages",
+    "href": "intro.html#installation-of-associated-packages",
+    "title": "Data and setting up your workflow",
+    "section": "",
+    "text": "install.packages(drone)\ninstall.packages(tidyverse)",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-set-use-in-geom-encyclopedia",
+    "href": "intro.html#data-set-use-in-geom-encyclopedia",
+    "title": "Data and setting up your workflow",
+    "section": "Data set use in geom Encyclopedia",
+    "text": "Data set use in geom Encyclopedia\n\nlibrary(drone)\nlibrary(tibble)\ndata(worldbankdata)\nworldbankdata\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#worldbankdata-data-profiling",
+    "href": "intro.html#worldbankdata-data-profiling",
+    "title": "Data and setting up your workflow",
+    "section": "worldbankdata: Data Profiling",
+    "text": "worldbankdata: Data Profiling\n\nlibrary(skimr)\nworldbankdata |&gt; \n  skim()\n\n\nData summary\n\n\nName\nworldbankdata\n\n\nNumber of rows\n7937\n\n\nNumber of columns\n7\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nfactor\n4\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nCountry\n0\n1.00\nFALSE\n227\nAfg: 36, Alb: 36, Alg: 36, Ame: 36\n\n\nCode\n0\n1.00\nFALSE\n218\nCIV: 48, CUW: 47, CZE: 47, FRO: 47\n\n\nRegion\n199\n0.97\nFALSE\n7\nEur: 2038, Sub: 1693, Lat: 1512, Eas: 1343\n\n\nIncome\n559\n0.93\nFALSE\n4\nH: 2177, LM: 1978, L: 1704, UM: 1519\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nYear\n1\n1.00\n2004.59\n10.41\n1987.00\n1996.00\n2005.00\n2014\n2022\n▇▇▇▇▇\n\n\nCooking\n6047\n0.24\n65.48\n38.46\n0.00\n27.30\n84.75\n100\n100\n▃▁▁▁▇\n\n\nElectricity\n5693\n0.28\n84.40\n26.45\n2.11\n79.86\n99.80\n100\n100\n▁▁▁▁▇",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#worldbankdata-data-quality-analysis",
+    "href": "intro.html#worldbankdata-data-quality-analysis",
+    "title": "Data and setting up your workflow",
+    "section": "worldbankdata: Data Quality Analysis",
+    "text": "worldbankdata: Data Quality Analysis\n\nlibrary(tidyverse)\nlibrary(visdat)\nvis_dat(worldbankdata) + \n  scale_fill_brewer(palette = \"Dark2\")\n\n\n\n\n\n\n\n\n\nlibrary(naniar)\ngg_miss_upset(worldbankdata)",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#r-packages-with-geom-implementation",
+    "href": "intro.html#r-packages-with-geom-implementation",
+    "title": "Data and setting up your workflow",
+    "section": "R packages with geom implementation",
+    "text": "R packages with geom implementation\n\nggplot2 (Wickham 2016)\nggpattern (FC, Davis, and ggplot2 authors 2023)\nggforce (Pedersen 2022)\nggalluvial (ggalluvial?)\nggbump (Sjoberg 2020)\nggridges (Wilke 2023)\nggalt (Rudis, Bolker, and Schulz 2017)\n\nWIP - adding..\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra Coordinate Systems, ’Geoms’, Statistical Transformations, Scales and Fonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’. https://CRAN.R-project.org/package=ggridges.",
+    "crumbs": [
+      "Data and setting up your workflow"
     ]
   }
 ]

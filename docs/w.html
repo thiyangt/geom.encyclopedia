@@ -383,6 +383,7 @@ div.csl-indent {
   <ul>
   <li><a href="#waffle" id="toc-waffle" class="nav-link active" data-scroll-target="#waffle"><span class="header-section-number">23.1</span> geom_waffle</a></li>
   <li><a href="#weave" id="toc-weave" class="nav-link" data-scroll-target="#weave"><span class="header-section-number">23.2</span> geom_weave</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">23.3</span> </a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/w.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -415,7 +416,7 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("remotes")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#remotes::install_github("hrbrmstr/waffle")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>waffle <span class="citation" data-cites="waffle">(<a href="references.html#ref-waffle" role="doc-biblioref">Rudis and Gandy 2023</a>)</span></p>
+<p>waffle <span class="citation" data-cites="waffle">(<a href="#ref-waffle" role="doc-biblioref">Rudis and Gandy 2023</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Create waffle plots. A waffle chart can be used as an alternative to pie charts or bar charts to display the composition of a sample. It divides the plotting area into a grid of small squares, making proportions easier to compare and count at a glance.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -425,7 +426,7 @@ div.csl-indent {
 <p><em>optional aesthetics</em></p>
 <p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
 <p><strong>See also</strong></p>
-<p><a href="b.html#bar">geom_bar</a>, <a href="#col">geom_col</a></p>
+<p><a href="#bar">geom_bar</a>, <a href="#col">geom_col</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle)</span>
@@ -456,7 +457,7 @@ div.csl-indent {
 <section id="weave" class="level2" data-number="23.2">
 <h2 data-number="23.2" class="anchored" data-anchor-id="weave"><span class="header-section-number">23.2</span> geom_weave</h2>
 <p><strong>Package</strong></p>
-<p>ggdist<span class="citation" data-cites="ggdist">(<a href="references.html#ref-ggdist" role="doc-biblioref"><strong>ggdist?</strong></a>)</span></p>
+<p>ggdist<span class="citation" data-cites="ggdist">(<a href="#ref-ggdist" role="doc-biblioref"><strong>ggdist?</strong></a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Creates dot-weave plot. This ensures the plot fits within the available space.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -464,9 +465,9 @@ div.csl-indent {
 <p><code>x</code></p>
 <p><code>y</code></p>
 <p><em>optional aesthetics</em></p>
-<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>size</code></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>size</code>, <code>slab_alpha</code></p>
 <p><strong>See also</strong></p>
-<p><a href="#dotinterval">geom_dotinterval</a>, <a href="#point">geom_point</a>, <a href="j.html#jitter">geom_jitter</a></p>
+<p><a href="#dotinterval">geom_dotinterval</a>, <a href="#point">geom_point</a>, <a href="#jitter">geom_jitter</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdist)</span>
@@ -492,9 +493,246 @@ Removed 5693 rows containing missing values or values outside the scale range
 </div>
 </div>
 </div>
+<!--## geom_widerect{#widerect}
+
+**Package**
+
+animint2 [@animint2]
+
+**Description**
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+  
+**Example**
+
+
+
+
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(animint2)
+```
+
+::: {.cell-output .cell-output-stderr}
+
+```
+Registered S3 methods overwritten by 'animint2':
+  method                   from   
+  [.uneval                 ggplot2
+  drawDetails.zeroGrob     ggplot2
+  grid.draw.absoluteGrob   ggplot2
+  grobHeight.absoluteGrob  ggplot2
+  grobHeight.zeroGrob      ggplot2
+  grobWidth.absoluteGrob   ggplot2
+  grobWidth.zeroGrob       ggplot2
+  grobX.absoluteGrob       ggplot2
+  grobY.absoluteGrob       ggplot2
+  heightDetails.titleGrob  ggplot2
+  heightDetails.zeroGrob   ggplot2
+  makeContext.dotstackGrob ggplot2
+  print.element            ggplot2
+  print.ggplot2_bins       ggplot2
+  print.rel                ggplot2
+  print.theme              ggplot2
+  print.uneval             ggplot2
+  widthDetails.titleGrob   ggplot2
+  widthDetails.zeroGrob    ggplot2
+```
+
+
+:::
+
+::: {.cell-output .cell-output-stderr}
+
+```
+
+Attaching package: 'animint2'
+```
+
+
+:::
+
+::: {.cell-output .cell-output-stderr}
+
+```
+The following object is masked from 'package:ggdist':
+
+    waiver
+```
+
+
+:::
+
+::: {.cell-output .cell-output-stderr}
+
+```
+The following objects are masked from 'package:ggplot2':
+
+    %+%, %+replace%, aes, aes_, aes_all, aes_auto, aes_q, aes_string,
+    annotate, annotation_custom, annotation_logticks, annotation_map,
+    annotation_raster, as_labeller, autoplot, benchplot, borders,
+    calc_element, continuous_scale, Coord, coord_cartesian,
+    coord_equal, coord_fixed, coord_flip, coord_map, coord_munch,
+    coord_polar, coord_quickmap, coord_trans, CoordCartesian,
+    CoordFixed, CoordFlip, CoordMap, CoordPolar, CoordQuickmap,
+    CoordTrans, cut_interval, cut_number, cut_width, discrete_scale,
+    draw_key_abline, draw_key_blank, draw_key_crossbar,
+    draw_key_dotplot, draw_key_label, draw_key_path, draw_key_point,
+    draw_key_pointrange, draw_key_polygon, draw_key_rect,
+    draw_key_smooth, draw_key_text, draw_key_vline, draw_key_vpath,
+    economics, economics_long, element_blank, element_grob,
+    element_line, element_rect, element_text, expand_limits,
+    facet_grid, facet_null, facet_wrap, fortify, Geom, geom_abline,
+    geom_area, geom_bar, geom_bin2d, geom_blank, geom_contour,
+    geom_count, geom_crossbar, geom_curve, geom_density,
+    geom_density_2d, geom_density2d, geom_dotplot, geom_errorbar,
+    geom_errorbarh, geom_freqpoly, geom_hex, geom_histogram,
+    geom_hline, geom_jitter, geom_label, geom_line, geom_linerange,
+    geom_map, geom_path, geom_point, geom_pointrange, geom_polygon,
+    geom_qq, geom_raster, geom_rect, geom_ribbon, geom_rug,
+    geom_segment, geom_smooth, geom_spoke, geom_step, geom_text,
+    geom_tile, geom_violin, geom_vline, GeomAbline, GeomAnnotationMap,
+    GeomArea, GeomBar, GeomBlank, GeomContour, GeomCrossbar, GeomCurve,
+    GeomCustomAnn, GeomDensity, GeomDensity2d, GeomDotplot,
+    GeomErrorbar, GeomErrorbarh, GeomHex, GeomHline, GeomLabel,
+    GeomLine, GeomLinerange, GeomLogticks, GeomMap, GeomPath,
+    GeomPoint, GeomPointrange, GeomPolygon, GeomRaster, GeomRasterAnn,
+    GeomRect, GeomRibbon, GeomRug, GeomSegment, GeomSmooth, GeomSpoke,
+    GeomStep, GeomText, GeomTile, GeomViolin, GeomVline, gg_dep,
+    ggplot, ggplot_build, ggplot_gtable, ggplotGrob, ggsave, ggtitle,
+    guide_colorbar, guide_colourbar, guide_legend, guides, is.Coord,
+    is.facet, is.ggplot, is.theme, label_both, label_bquote,
+    label_context, label_parsed, label_value, label_wrap_gen, labeller,
+    labs, last_plot, layer, layer_data, layer_grob, layer_scales, lims,
+    map_data, margin, mean_cl_boot, mean_cl_normal, mean_sdl, mean_se,
+    median_hilow, Position, position_dodge, position_fill,
+    position_identity, position_jitter, position_jitterdodge,
+    position_nudge, position_stack, PositionDodge, PositionFill,
+    PositionIdentity, PositionJitter, PositionJitterdodge,
+    PositionNudge, PositionStack, presidential, qplot, quickplot, rel,
+    remove_missing, resolution, Scale, scale_alpha,
+    scale_alpha_continuous, scale_alpha_discrete, scale_alpha_identity,
+    scale_alpha_manual, scale_color_brewer, scale_color_continuous,
+    scale_color_discrete, scale_color_distiller, scale_color_gradient,
+    scale_color_gradient2, scale_color_gradientn, scale_color_grey,
+    scale_color_hue, scale_color_identity, scale_color_manual,
+    scale_colour_brewer, scale_colour_continuous, scale_colour_date,
+    scale_colour_datetime, scale_colour_discrete,
+    scale_colour_distiller, scale_colour_gradient,
+    scale_colour_gradient2, scale_colour_gradientn, scale_colour_grey,
+    scale_colour_hue, scale_colour_identity, scale_colour_manual,
+    scale_fill_brewer, scale_fill_continuous, scale_fill_date,
+    scale_fill_datetime, scale_fill_discrete, scale_fill_distiller,
+    scale_fill_gradient, scale_fill_gradient2, scale_fill_gradientn,
+    scale_fill_grey, scale_fill_hue, scale_fill_identity,
+    scale_fill_manual, scale_linetype, scale_linetype_continuous,
+    scale_linetype_discrete, scale_linetype_identity,
+    scale_linetype_manual, scale_radius, scale_shape,
+    scale_shape_continuous, scale_shape_discrete, scale_shape_identity,
+    scale_shape_manual, scale_size, scale_size_area,
+    scale_size_continuous, scale_size_date, scale_size_datetime,
+    scale_size_discrete, scale_size_identity, scale_size_manual,
+    scale_x_continuous, scale_x_date, scale_x_datetime,
+    scale_x_discrete, scale_x_log10, scale_x_reverse, scale_x_sqrt,
+    scale_y_continuous, scale_y_date, scale_y_datetime,
+    scale_y_discrete, scale_y_log10, scale_y_reverse, scale_y_sqrt,
+    ScaleContinuous, ScaleContinuousDate, ScaleContinuousDatetime,
+    ScaleContinuousIdentity, ScaleContinuousPosition, ScaleDiscrete,
+    ScaleDiscreteIdentity, ScaleDiscretePosition, should_stop, Stat,
+    stat_bin, stat_bin_2d, stat_bin_hex, stat_bin2d, stat_binhex,
+    stat_contour, stat_count, stat_density, stat_density_2d,
+    stat_density2d, stat_ecdf, stat_ellipse, stat_function,
+    stat_identity, stat_qq, stat_smooth, stat_spoke, stat_sum,
+    stat_summary, stat_summary_2d, stat_summary_bin, stat_summary_hex,
+    stat_summary2d, stat_unique, stat_ydensity, StatBin, StatBin2d,
+    StatBindot, StatBinhex, StatContour, StatCount, StatDensity,
+    StatDensity2d, StatEcdf, StatEllipse, StatFunction, StatIdentity,
+    StatQq, StatSmooth, StatSum, StatSummary, StatSummary2d,
+    StatSummaryBin, StatSummaryHex, StatUnique, StatYdensity, theme,
+    theme_bw, theme_classic, theme_dark, theme_get, theme_gray,
+    theme_grey, theme_light, theme_linedraw, theme_minimal,
+    theme_replace, theme_set, theme_update, theme_void,
+    transform_position, update_geom_defaults, update_labels,
+    update_stat_defaults, waiver, xlab, xlim, ylab, ylim, zeroGrob
+```
+
+
+:::
+
+```{.r .cell-code}
+library(ggplot2)
+library(drone)
+library(tidyverse)
+
+data("worldbankdata")
+worldbankdata |>
+  filter(Country == "Bangladesh") |> 
+  filter(Year >= 2011 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_point(colour="blue",size=4,fill="black") +
+  theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2011:2021)+
+  geom_widerect(aes(ymin=Electricity-1/2, ymax=Electricity+1/2),
+                        clickSelects="Electricity",
+                         alpha=1/2)
+```
+
+::: {.cell-output .cell-output-stderr}
+
+```
+Warning: Removed 2 rows containing missing values (geom_point).
+```
+
+
+:::
+
+::: {.cell-output .cell-output-stderr}
+
+```
+Warning: Removed 2 rows containing missing values (geom_wide_rect).
+```
+
+
+:::
+
+::: {.cell-output-display}
+![](w_files/figure-html/unnamed-chunk-5-1.png){width=672}
+:::
+:::
+
+
+
+
+
+
+
+-->
+</section>
+<section id="section" class="level2" data-number="23.3">
+<h2 data-number="23.3" class="anchored" data-anchor-id="section"><span class="header-section-number">23.3</span> </h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-waffle" class="csl-entry" role="listitem">
 Rudis, Bob, and Dave Gandy. 2023. <em>Waffle: Create Waffle Chart Visualizations</em>.
 </div>

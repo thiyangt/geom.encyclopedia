@@ -344,16 +344,10 @@ encyclopedia}?}
 
 \markright{What can I find in this {geom encyclopedia}?}
 
-Before answering this question let me briefly explain what is data
-visualisation? Data visualization is the graphical representation of
-data to understand the patterns, trends, relationships, outliers and
-complex structures hidden inside data more easily.
-
-Now let's look at what is \textbf{geom}?
-
-In data visualization, geometries (or geoms) refer to the visual
-elements that represent data in a plot. They define the type of chart or
-shape used to depict data points or relationships.
+Let's begin by looking at what we mean by geom in data visualization. In
+this context, geoms (short for geometries) are the visual elements used
+to represent data in a plot. They define the type of chart such as point
+chart, line chart, bar chart, etc.
 
 To illustrate the idea I use the following dataset which contains
 information related to 82 countires. The variable description is as
@@ -433,23 +427,18 @@ people access to electricity in lower incom (L), lower middle income
 
 \end{figure}%
 
-Even though, I used the same data set and same Cartesian coordinate
-plane the appearance of the plots are drastically different.
+In all the charts shown in Figure 2, I used the same dataset, the same
+variables, and the same Cartesian plane. However, the chart types
+different.
 
 Could you list the differences you observe in the charts?
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  The type of chart or shape used to depict data. In data visualization
-  grammar of graphics framework, this is reffered to as
-  \textbf{gemetries (or geoms)}, the visual elements that represent data
-  on a plot. In the \href{@ggplot2}{ggplot2} package, this is reffered
-  to as \textbf{geom layer}.
+  The type of chart or shape used to depict data.
 \item
-  The statistics that we compute on the data to visualise on the chart.
-  In the \href{@ggplot2}{ggplot2} this is referred to as \textbf{stat
-  layer}.
+  The statistics that we compute on the data to visualize on the chart.
 \end{enumerate}
 
 Here is a summary of geom and stat layers used in the charts shown in
@@ -481,8 +470,8 @@ H & linerange and point & Range and mean of data\\
 \end{table}
 
 This encyclopedia is a collection of geoms, in other words plot types
-that you can create using the ggplot2 or extensions of ggplot2
-framework. In other words {Encyclopedia of Plots}.
+that you can create using the ggplot2 or extensions of ggplot2 under the
+grammar of graphics framework. In other words {Encyclopedia of Plots}.
 
 \section*{Motivation to write this
 book}\label{motivation-to-write-this-book}
@@ -6140,7 +6129,7 @@ points.
 
 \chapter{W}\label{sec-w}
 
-\section{geom\_waffle}\label{geom_waffle}
+\section{geom\_waffle}\label{waffle}
 
 \textbf{Package}
 
@@ -6203,7 +6192,61 @@ with)
 
 \pandocbounded{\includegraphics[keepaspectratio]{w_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 
-geom\_weave
+\section{geom\_weave}\label{weave}
+
+\textbf{Package}
+
+ggdist(\textbf{ggdist?})
+
+\textbf{Description}
+
+Creates dot-weave plot. This ensures the plot fits within the available
+space.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{size},
+\texttt{slab\_alpha}
+
+\textbf{See also}
+
+\hyperref[dotinterval]{geom\_dotinterval},
+\hyperref[point]{geom\_point}, \hyperref[jitter]{geom\_jitter}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggdist)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{x =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_weave}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Without  scale\_y\_binned"}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Electricity, }\AttributeTok{x =}\NormalTok{ Income)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_weave}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_y\_binned}\NormalTok{(}\AttributeTok{n.breaks =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"With scale\_y\_binned"}\NormalTok{)}
+\NormalTok{p1}\SpecialCharTok{|}\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning: Removed 5693 rows containing missing values or values outside the scale range
+(`geom_dotsinterval()`).
+Removed 5693 rows containing missing values or values outside the scale range
+(`geom_dotsinterval()`).
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{w_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+
+\section{}\label{section}
 
 \bookmarksetup{startatroot}
 
@@ -7499,6 +7542,15 @@ ggplot2 (Wickham 2016)
 \bookmarksetup{startatroot}
 
 \chapter{Z}\label{sec-z}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{"BiocManager"}\NormalTok{, }\AttributeTok{quietly =} \ConstantTok{TRUE}\NormalTok{))}
+    \FunctionTok{install.packages}\NormalTok{(}\StringTok{"BiocManager"}\NormalTok{)}
+
+\NormalTok{BiocManager}\SpecialCharTok{::}\FunctionTok{install}\NormalTok{(}\StringTok{"ggtree"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \bookmarksetup{startatroot}
 

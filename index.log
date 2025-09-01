@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.15)  28 AUG 2025 16:31
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.15)  1 SEP 2025 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1245,7 +1245,7 @@ Overfull \vbox (37.21867pt too high) has occurred while \output is active []
 
 
 [7]
-Overfull \hbox (411.1802pt too wide) in paragraph at lines 460--481
+Overfull \hbox (411.1802pt too wide) in paragraph at lines 449--470
  [][] 
  []
 
@@ -1262,62 +1262,62 @@ File: audience.png Graphic file (type bmp)
 
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+Underfull \hbox (badness 10000) in paragraph at lines 646--647
 []\TU/lmtt/m/n/10.95 T. S. Talagala, Data Visualisation Geometries Encyclopedia: Geoms in the
  []
 
 
-Overfull \hbox (179.85358pt too wide) in paragraph at lines 657--658
+Overfull \hbox (179.85358pt too wide) in paragraph at lines 646--647
 \TU/lmtt/m/n/10.95 Grammar of Graphics - All Types of Plots. [Online]. Available: https://thiyangt.github.io/geom.encyclopedia/.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 659--660
+Underfull \hbox (badness 10000) in paragraph at lines 648--649
 []\TU/lmtt/m/n/10.95 @online{talagala2024geoms,   author       = {Thiyanga S. Talagala},   title
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 659--660
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 648--649
 \TU/lmtt/m/n/10.95 = {Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics
  []
 
 
-Overfull \hbox (202.84857pt too wide) in paragraph at lines 659--660
+Overfull \hbox (202.84857pt too wide) in paragraph at lines 648--649
 \TU/lmtt/m/n/10.95 - All Types of Plots},   year         = {2024},   url          = {https://thiyangt.github.io/geom.encyclopedia/},
  []
 
 
-Overfull \hbox (36.13486pt too wide) in paragraph at lines 664--665
+Overfull \hbox (36.13486pt too wide) in paragraph at lines 653--654
 []\TU/lmtt/m/n/10.95 Talagala T (2025).   drone: Data for Data   Visualisation Geometries   Encyclopedia.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 \TU/lmtt/m/n/10.95 R package   version 1.0.0, commit   86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,
  []
 
 
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
 []\TU/lmtt/m/n/10.95 @Manual{drone,     title = {drone: Data for Data Visualisation Geometries
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 666--667
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 655--656
 \TU/lmtt/m/n/10.95 Encyclopedia},     author = {Thiyanga S. Talagala},     year = {2025},     note
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
 \TU/lmtt/m/n/10.95 = {R package version 1.0.0, commit 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72},
  []
 
 
 
+[11]
+
 [12]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 733.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 722.
 
 
 [13
@@ -1325,105 +1325,105 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
 ]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 1 on input line 762.
+(longtable)                in table 1 on input line 751.
 
 
-Overfull \hbox (12.6554pt too wide) in paragraph at lines 775--776
+Overfull \hbox (12.6554pt too wide) in paragraph at lines 764--765
 []\TU/lmr/m/n/10.95 skim_variable  
  []
 
 
-Overfull \hbox (10.2506pt too wide) in paragraph at lines 777--778
+Overfull \hbox (10.2506pt too wide) in paragraph at lines 766--767
  []\TU/lmr/m/n/10.95 n_missing
  []
 
 
-Overfull \hbox (14.4074pt too wide) in paragraph at lines 779--780
+Overfull \hbox (14.4074pt too wide) in paragraph at lines 768--769
  []\TU/lmr/m/n/10.95 complete_rate
  []
 
 
-Overfull \hbox (4.39864pt too wide) in paragraph at lines 781--782
+Overfull \hbox (4.39864pt too wide) in paragraph at lines 770--771
 []\TU/lmr/m/n/10.95 ordered  
  []
 
 
-Overfull \hbox (10.74944pt too wide) in paragraph at lines 783--784
+Overfull \hbox (10.74944pt too wide) in paragraph at lines 772--773
  []\TU/lmr/m/n/10.95 n_unique
  []
 
 
-Overfull \hbox (2.97513pt too wide) in paragraph at lines 791--791
+Overfull \hbox (2.97513pt too wide) in paragraph at lines 780--780
 []|\TU/lmr/m/n/10.95 FALSE|  
  []
 
 
-Overfull \hbox (2.97513pt too wide) in paragraph at lines 792--792
+Overfull \hbox (2.97513pt too wide) in paragraph at lines 781--781
 []|\TU/lmr/m/n/10.95 FALSE|  
  []
 
 
-Overfull \hbox (2.97513pt too wide) in paragraph at lines 793--793
+Overfull \hbox (2.97513pt too wide) in paragraph at lines 782--782
 []|\TU/lmr/m/n/10.95 FALSE|  
  []
 
 
-Overfull \hbox (2.97513pt too wide) in paragraph at lines 795--795
+Overfull \hbox (2.97513pt too wide) in paragraph at lines 784--784
 []|\TU/lmr/m/n/10.95 FALSE|  
  []
 
 
-Overfull \hbox (18.18787pt too wide) in paragraph at lines 815--816
+Overfull \hbox (18.18787pt too wide) in paragraph at lines 804--805
 []\TU/lmr/m/n/10.95 skim_variable  
  []
 
 
-Overfull \hbox (14.18205pt too wide) in paragraph at lines 817--818
+Overfull \hbox (14.18205pt too wide) in paragraph at lines 806--807
  []\TU/lmr/m/n/10.95 n_missing
  []
 
 
-Overfull \hbox (19.93987pt too wide) in paragraph at lines 819--820
+Overfull \hbox (19.93987pt too wide) in paragraph at lines 808--809
  []\TU/lmr/m/n/10.95 complete_rate
  []
 
 
-Overfull \hbox (4.49443pt too wide) in paragraph at lines 833--834
+Overfull \hbox (4.49443pt too wide) in paragraph at lines 822--823
  []\TU/lmr/m/n/10.95 p100
  []
 
 
-Overfull \hbox (7.46414pt too wide) in paragraph at lines 841--841
+Overfull \hbox (7.46414pt too wide) in paragraph at lines 830--830
  []|\TU/lmr/m/n/10.95 2004.59|
  []
 
 
-Overfull \hbox (3.63908pt too wide) in paragraph at lines 841--841
+Overfull \hbox (3.63908pt too wide) in paragraph at lines 830--830
  []|\TU/lmr/m/n/10.95 10.41|
  []
 
 
-Overfull \hbox (7.46414pt too wide) in paragraph at lines 841--841
+Overfull \hbox (7.46414pt too wide) in paragraph at lines 830--830
  []|\TU/lmr/m/n/10.95 1987.00|
  []
 
 
-Overfull \hbox (7.46414pt too wide) in paragraph at lines 841--841
+Overfull \hbox (7.46414pt too wide) in paragraph at lines 830--830
  []|\TU/lmr/m/n/10.95 1996.00|
  []
 
 
-Overfull \hbox (7.46414pt too wide) in paragraph at lines 841--841
+Overfull \hbox (7.46414pt too wide) in paragraph at lines 830--830
  []|\TU/lmr/m/n/10.95 2005.00|
  []
 
 
-Overfull \hbox (4.15497pt too wide) in paragraph at lines 841--841
+Overfull \hbox (4.15497pt too wide) in paragraph at lines 830--830
  []|\TU/lmr/m/n/10.95 2014|
  []
 
 
-Overfull \hbox (4.15497pt too wide) in paragraph at lines 842--842
+Overfull \hbox (4.15497pt too wide) in paragraph at lines 831--831
  []|\TU/lmr/m/n/10.95 2022|
  []
 
@@ -1433,7 +1433,7 @@ Missing character: There is no ▇ (U+2587) in font [lmroman10-regular]:mapping=
 Missing character: There is no ▇ (U+2587) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ▇ (U+2587) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (3.63908pt too wide) in paragraph at lines 843--843
+Overfull \hbox (3.63908pt too wide) in paragraph at lines 832--832
  []|\TU/lmr/m/n/10.95 38.46|
  []
 
@@ -1443,7 +1443,7 @@ Missing character: There is no ▁ (U+2581) in font [lmroman10-regular]:mapping=
 Missing character: There is no ▁ (U+2581) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ▇ (U+2587) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (3.63908pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.63908pt too wide) in paragraph at lines 834--834
  []|\TU/lmr/m/n/10.95 26.45|
  []
 
@@ -1466,13 +1466,13 @@ File: intro_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 [16]
 chapter 1.
 
-LaTeX Warning: Hyper reference `point' on page 17 undefined on input line 926.
+LaTeX Warning: Hyper reference `point' on page 17 undefined on input line 915.
 
 
-LaTeX Warning: Hyper reference `vline' on page 17 undefined on input line 926.
+LaTeX Warning: Hyper reference `vline' on page 17 undefined on input line 915.
 
 
-LaTeX Warning: Hyper reference `hline' on page 17 undefined on input line 927.
+LaTeX Warning: Hyper reference `hline' on page 17 undefined on input line 916.
 
 File: a_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use a_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -1482,13 +1482,13 @@ File: a_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 ]
 
-LaTeX Warning: Hyper reference `stratum' on page 18 undefined on input line 975.
+LaTeX Warning: Hyper reference `stratum' on page 18 undefined on input line 964.
 
 
-LaTeX Warning: Hyper reference `flow' on page 18 undefined on input line 975.
+LaTeX Warning: Hyper reference `flow' on page 18 undefined on input line 964.
 
 
-LaTeX Warning: Hyper reference `lode' on page 18 undefined on input line 976.
+LaTeX Warning: Hyper reference `lode' on page 18 undefined on input line 965.
 
 
 
@@ -1496,7 +1496,7 @@ LaTeX Warning: Hyper reference `lode' on page 18 undefined on input line 976.
 File: a_files/figure-pdf/alluvial-1.pdf Graphic file (type pdf)
 <use a_files/figure-pdf/alluvial-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 1031--1032
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 1020--1021
 [][] 
  []
 
@@ -1506,10 +1506,10 @@ Overfull \hbox (10.94705pt too wide) in paragraph at lines 1031--1032
 
 [20]
 
-LaTeX Warning: Hyper reference `arc2' on page 21 undefined on input line 1062.
+LaTeX Warning: Hyper reference `arc2' on page 21 undefined on input line 1051.
 
 
-LaTeX Warning: Hyper reference `arcbar' on page 21 undefined on input line 1062.
+LaTeX Warning: Hyper reference `arcbar' on page 21 undefined on input line 1051.
 
 File: a_files/figure-pdf/arc-1.pdf Graphic file (type pdf)
 <use a_files/figure-pdf/arc-1.pdf>
@@ -1517,10 +1517,10 @@ File: a_files/figure-pdf/arc-1.pdf Graphic file (type pdf)
 
 [21]
 
-LaTeX Warning: Hyper reference `arc' on page 22 undefined on input line 1108.
+LaTeX Warning: Hyper reference `arc' on page 22 undefined on input line 1097.
 
 
-LaTeX Warning: Hyper reference `arcbar' on page 22 undefined on input line 1108.
+LaTeX Warning: Hyper reference `arcbar' on page 22 undefined on input line 1097.
 
 File: a_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use a_files/figure-pdf/unnamed-chunk-3-1.pdf>
@@ -1528,10 +1528,10 @@ File: a_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 
 [22]
 
-LaTeX Warning: Hyper reference `line' on page 23 undefined on input line 1161.
+LaTeX Warning: Hyper reference `line' on page 23 undefined on input line 1150.
 
 
-LaTeX Warning: Hyper reference `ribbon' on page 23 undefined on input line 1161.
+LaTeX Warning: Hyper reference `ribbon' on page 23 undefined on input line 1150.
 
 
 
@@ -1549,10 +1549,10 @@ File: a_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 
 [26]
 
-LaTeX Warning: Hyper reference `line' on page 27 undefined on input line 1288.
+LaTeX Warning: Hyper reference `line' on page 27 undefined on input line 1277.
 
 
-LaTeX Warning: Hyper reference `ribbon' on page 27 undefined on input line 1288.
+LaTeX Warning: Hyper reference `ribbon' on page 27 undefined on input line 1277.
 
 File: a_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use a_files/figure-pdf/unnamed-chunk-5-1.pdf>
@@ -1560,15 +1560,15 @@ File: a_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 
 [27]
 
-LaTeX Warning: Hyper reference `histogram' on page 28 undefined on input line 1337.
+LaTeX Warning: Hyper reference `histogram' on page 28 undefined on input line 1326.
 
 
-LaTeX Warning: Hyper reference `density' on page 28 undefined on input line 1337.
+LaTeX Warning: Hyper reference `density' on page 28 undefined on input line 1326.
 
 File: a_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use a_files/figure-pdf/unnamed-chunk-6-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 1357--1358
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 1346--1347
 [][] 
  []
 
@@ -1579,7 +1579,7 @@ Overfull \hbox (10.94705pt too wide) in paragraph at lines 1357--1358
 [29]
 chapter 2.
 
-LaTeX Warning: Hyper reference `col' on page 30 undefined on input line 1395.
+LaTeX Warning: Hyper reference `col' on page 30 undefined on input line 1384.
 
 File: b_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use b_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -1604,7 +1604,7 @@ File: b_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 
 [33]
 
-LaTeX Warning: Hyper reference `bar' on page 34 undefined on input line 1477.
+LaTeX Warning: Hyper reference `bar' on page 34 undefined on input line 1466.
 
 
 
@@ -1615,10 +1615,10 @@ File: b_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 
 [35]
 
-LaTeX Warning: Hyper reference `bin2d' on page 36 undefined on input line 1520.
+LaTeX Warning: Hyper reference `bin2d' on page 36 undefined on input line 1509.
 
 
-LaTeX Warning: Hyper reference `point' on page 36 undefined on input line 1520.
+LaTeX Warning: Hyper reference `point' on page 36 undefined on input line 1509.
 
 File: b_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use b_files/figure-pdf/unnamed-chunk-7-1.pdf>
@@ -1628,10 +1628,10 @@ File: b_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 
 [36]
 
-LaTeX Warning: Hyper reference `bin2d' on page 37 undefined on input line 1573.
+LaTeX Warning: Hyper reference `bin2d' on page 37 undefined on input line 1562.
 
 
-LaTeX Warning: Hyper reference `point' on page 37 undefined on input line 1573.
+LaTeX Warning: Hyper reference `point' on page 37 undefined on input line 1562.
 
 
 
@@ -1639,10 +1639,10 @@ LaTeX Warning: Hyper reference `point' on page 37 undefined on input line 1573.
 File: b_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use b_files/figure-pdf/unnamed-chunk-9-1.pdf>
 
-LaTeX Warning: Hyper reference `bin_2d' on page 38 undefined on input line 1608.
+LaTeX Warning: Hyper reference `bin_2d' on page 38 undefined on input line 1597.
 
 
-LaTeX Warning: Hyper reference `point' on page 38 undefined on input line 1608.
+LaTeX Warning: Hyper reference `point' on page 38 undefined on input line 1597.
 
 
 
@@ -1653,7 +1653,7 @@ File: b_files/figure-pdf/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 
 [39]
 
-LaTeX Warning: Hyper reference `col' on page 40 undefined on input line 1646.
+LaTeX Warning: Hyper reference `col' on page 40 undefined on input line 1635.
 
 File: b_files/figure-pdf/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 <use b_files/figure-pdf/unnamed-chunk-11-1.pdf>
@@ -1668,7 +1668,7 @@ File: b_files/figure-pdf/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 File: b_files/figure-pdf/geomboxparam-1.pdf Graphic file (type pdf)
 <use b_files/figure-pdf/geomboxparam-1.pdf>
 
-LaTeX Warning: Hyper reference `line' on page 42 undefined on input line 1724.
+LaTeX Warning: Hyper reference `line' on page 42 undefined on input line 1713.
 
 
 
@@ -1680,7 +1680,7 @@ File: b_files/figure-pdf/unnamed-chunk-13-1.pdf Graphic file (type pdf)
 [43]
 chapter 3.
 
-LaTeX Warning: Hyper reference `bar' on page 44 undefined on input line 1775.
+LaTeX Warning: Hyper reference `bar' on page 44 undefined on input line 1764.
 
 File: c_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use c_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -1690,10 +1690,10 @@ File: c_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 ]
 
-LaTeX Warning: Hyper reference `line' on page 45 undefined on input line 1814.
+LaTeX Warning: Hyper reference `line' on page 45 undefined on input line 1803.
 
 
-LaTeX Warning: Hyper reference `ribbon' on page 45 undefined on input line 1814.
+LaTeX Warning: Hyper reference `ribbon' on page 45 undefined on input line 1803.
 
 
 
@@ -1701,7 +1701,7 @@ LaTeX Warning: Hyper reference `ribbon' on page 45 undefined on input line 1814.
 File: c_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use c_files/figure-pdf/unnamed-chunk-3-1.pdf>
 
-LaTeX Warning: Hyper reference `point' on page 46 undefined on input line 1856.
+LaTeX Warning: Hyper reference `point' on page 46 undefined on input line 1845.
 
 
 
@@ -1712,7 +1712,7 @@ File: c_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 
 [47]
 
-LaTeX Warning: Hyper reference `mark_circle' on page 48 undefined on input line 1903.
+LaTeX Warning: Hyper reference `mark_circle' on page 48 undefined on input line 1892.
 
 File: c_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use c_files/figure-pdf/unnamed-chunk-5-1.pdf>
@@ -1720,13 +1720,13 @@ File: c_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 
 [48]
 
-LaTeX Warning: Hyper reference `contour_filled' on page 49 undefined on input line 1945.
+LaTeX Warning: Hyper reference `contour_filled' on page 49 undefined on input line 1934.
 
 
-LaTeX Warning: Hyper reference `tile' on page 49 undefined on input line 1946.
+LaTeX Warning: Hyper reference `tile' on page 49 undefined on input line 1935.
 
 
-LaTeX Warning: Hyper reference `density_2d' on page 49 undefined on input line 1946.
+LaTeX Warning: Hyper reference `density_2d' on page 49 undefined on input line 1935.
 
 File: c_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use c_files/figure-pdf/unnamed-chunk-6-1.pdf>
@@ -1734,13 +1734,13 @@ File: c_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 
 [49]
 
-LaTeX Warning: Hyper reference `contour' on page 50 undefined on input line 1982.
+LaTeX Warning: Hyper reference `contour' on page 50 undefined on input line 1971.
 
 
-LaTeX Warning: Hyper reference `tile' on page 50 undefined on input line 1982.
+LaTeX Warning: Hyper reference `tile' on page 50 undefined on input line 1971.
 
 
-LaTeX Warning: Hyper reference `density_2d' on page 50 undefined on input line 1983.
+LaTeX Warning: Hyper reference `density_2d' on page 50 undefined on input line 1972.
 
 File: c_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use c_files/figure-pdf/unnamed-chunk-7-1.pdf>
@@ -1750,7 +1750,7 @@ File: c_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 
 [51]
 
-LaTeX Warning: Hyper reference `segment' on page 52 undefined on input line 2031.
+LaTeX Warning: Hyper reference `segment' on page 52 undefined on input line 2020.
 
 File: c_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use c_files/figure-pdf/unnamed-chunk-8-1.pdf>
@@ -1760,7 +1760,7 @@ File: c_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 File: c_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use c_files/figure-pdf/unnamed-chunk-9-1.pdf>
 
-LaTeX Warning: Hyper reference `segment' on page 53 undefined on input line 2091.
+LaTeX Warning: Hyper reference `segment' on page 53 undefined on input line 2080.
 
 
 
@@ -1777,7 +1777,7 @@ File: c_files/figure-pdf/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 [55]
 chapter 4.
 
-LaTeX Warning: Hyper reference `hist' on page 56 undefined on input line 2174.
+LaTeX Warning: Hyper reference `hist' on page 56 undefined on input line 2163.
 
 File: d_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -1789,7 +1789,7 @@ File: d_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 [57]
 
-LaTeX Warning: Hyper reference `density' on page 58 undefined on input line 2213.
+LaTeX Warning: Hyper reference `density' on page 58 undefined on input line 2202.
 
 File: d_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-3-1.pdf>
@@ -1797,7 +1797,7 @@ File: d_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 
 [58]
 
-LaTeX Warning: Hyper reference `hist' on page 59 undefined on input line 2256.
+LaTeX Warning: Hyper reference `hist' on page 59 undefined on input line 2245.
 
 File: d_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-4-1.pdf>
@@ -1805,7 +1805,7 @@ File: d_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 
 [59]
 
-LaTeX Warning: Hyper reference `hist' on page 60 undefined on input line 2308.
+LaTeX Warning: Hyper reference `hist' on page 60 undefined on input line 2297.
 
 
 
@@ -1818,7 +1818,7 @@ File: d_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 
 [62]
 
-LaTeX Warning: Hyper reference `density_ridges_gradient' on page 63 undefined on input line 2363.
+LaTeX Warning: Hyper reference `density_ridges_gradient' on page 63 undefined on input line 2352.
 
 File: d_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-6-1.pdf>
@@ -1828,7 +1828,7 @@ File: d_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 
 [64]
 
-LaTeX Warning: Hyper reference `density_ridges' on page 65 undefined on input line 2402.
+LaTeX Warning: Hyper reference `density_ridges' on page 65 undefined on input line 2391.
 
 File: d_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-7-1.pdf>
@@ -1836,7 +1836,7 @@ File: d_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 
 [65]
 
-LaTeX Warning: Hyper reference `text' on page 66 undefined on input line 2434.
+LaTeX Warning: Hyper reference `text' on page 66 undefined on input line 2423.
 
 File: d_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-8-1.pdf>
@@ -1846,7 +1846,7 @@ File: d_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 
 [67]
 
-LaTeX Warning: Hyper reference `hist' on page 68 undefined on input line 2481.
+LaTeX Warning: Hyper reference `hist' on page 68 undefined on input line 2470.
 
 File: d_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-9-1.pdf>
@@ -1854,7 +1854,7 @@ File: d_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 
 [68]
 
-LaTeX Warning: Hyper reference `delaunay_segment' on page 69 undefined on input line 2519.
+LaTeX Warning: Hyper reference `delaunay_segment' on page 69 undefined on input line 2508.
 
 File: d_files/figure-pdf/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-10-1.pdf>
@@ -1862,7 +1862,7 @@ File: d_files/figure-pdf/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 
 [69]
 
-LaTeX Warning: Hyper reference `delaunay_tile' on page 70 undefined on input line 2570.
+LaTeX Warning: Hyper reference `delaunay_tile' on page 70 undefined on input line 2559.
 
 
 
@@ -1873,7 +1873,7 @@ File: d_files/figure-pdf/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 
 [71]
 
-LaTeX Warning: Hyper reference `delaunay_tile' on page 72 undefined on input line 2623.
+LaTeX Warning: Hyper reference `delaunay_tile' on page 72 undefined on input line 2612.
 
 File: d_files/figure-pdf/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 <use d_files/figure-pdf/unnamed-chunk-12-1.pdf>
@@ -1881,7 +1881,7 @@ File: d_files/figure-pdf/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 
 [72]
 
-LaTeX Warning: Hyper reference `segment' on page 73 undefined on input line 2676.
+LaTeX Warning: Hyper reference `segment' on page 73 undefined on input line 2665.
 
 
 
@@ -1895,10 +1895,10 @@ File: d_files/figure-pdf/unnamed-chunk-13-1.pdf Graphic file (type pdf)
 [75]
 chapter 5.
 
-LaTeX Warning: Hyper reference `crossbar' on page 76 undefined on input line 2754.
+LaTeX Warning: Hyper reference `crossbar' on page 76 undefined on input line 2743.
 
 
-LaTeX Warning: Hyper reference `dumbbell' on page 76 undefined on input line 2754.
+LaTeX Warning: Hyper reference `dumbbell' on page 76 undefined on input line 2743.
 
 
 
@@ -1913,10 +1913,10 @@ File: e_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 [78]
 
-LaTeX Warning: Hyper reference `crossbar' on page 79 undefined on input line 2827.
+LaTeX Warning: Hyper reference `crossbar' on page 79 undefined on input line 2816.
 
 
-LaTeX Warning: Hyper reference `dumbbell' on page 79 undefined on input line 2827.
+LaTeX Warning: Hyper reference `dumbbell' on page 79 undefined on input line 2816.
 
 
 
@@ -1927,7 +1927,7 @@ File: e_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 
 [80]
 
-LaTeX Warning: Hyper reference `circle' on page 81 undefined on input line 2895.
+LaTeX Warning: Hyper reference `circle' on page 81 undefined on input line 2884.
 
 
 
@@ -1938,7 +1938,7 @@ File: e_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 
 [82]
 
-LaTeX Warning: Hyper reference `point' on page 83 undefined on input line 2950.
+LaTeX Warning: Hyper reference `point' on page 83 undefined on input line 2939.
 
 File: e_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use e_files/figure-pdf/unnamed-chunk-5-1.pdf>
@@ -1949,7 +1949,7 @@ File: e_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 [84]
 chapter 6.
 
-LaTeX Warning: Hyper reference `density' on page 85 undefined on input line 3008.
+LaTeX Warning: Hyper reference `density' on page 85 undefined on input line 2997.
 
 
 
@@ -1962,7 +1962,7 @@ File: f_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 [86]
 
-LaTeX Warning: Hyper reference `density' on page 87 undefined on input line 3056.
+LaTeX Warning: Hyper reference `density' on page 87 undefined on input line 3045.
 
 File: f_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use f_files/figure-pdf/unnamed-chunk-3-1.pdf>
@@ -1984,13 +1984,13 @@ chapter 7.
 ]
 chapter 8.
 
-LaTeX Warning: Hyper reference `point' on page 91 undefined on input line 3121.
+LaTeX Warning: Hyper reference `point' on page 91 undefined on input line 3110.
 
 
-LaTeX Warning: Hyper reference `vline' on page 91 undefined on input line 3121.
+LaTeX Warning: Hyper reference `vline' on page 91 undefined on input line 3110.
 
 
-LaTeX Warning: Hyper reference `hline' on page 91 undefined on input line 3122.
+LaTeX Warning: Hyper reference `hline' on page 91 undefined on input line 3111.
 
 File: h_files/figure-pdf/hline2-1.pdf Graphic file (type pdf)
 <use h_files/figure-pdf/hline2-1.pdf>
@@ -2000,13 +2000,13 @@ File: h_files/figure-pdf/hline2-1.pdf Graphic file (type pdf)
 
 ]
 
-LaTeX Warning: Hyper reference `density' on page 92 undefined on input line 3171.
+LaTeX Warning: Hyper reference `density' on page 92 undefined on input line 3160.
 
 
-LaTeX Warning: Hyper reference `density_line' on page 92 undefined on input line 3172.
+LaTeX Warning: Hyper reference `density_line' on page 92 undefined on input line 3161.
 
 
-LaTeX Warning: Hyper reference `freqpoly' on page 92 undefined on input line 3173.
+LaTeX Warning: Hyper reference `freqpoly' on page 92 undefined on input line 3162.
 
 
 
@@ -2017,13 +2017,13 @@ File: h_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 [93]
 
-LaTeX Warning: Hyper reference `histogram' on page 94 undefined on input line 3211.
+LaTeX Warning: Hyper reference `histogram' on page 94 undefined on input line 3200.
 
 
-LaTeX Warning: Hyper reference `density' on page 94 undefined on input line 3212.
+LaTeX Warning: Hyper reference `density' on page 94 undefined on input line 3201.
 
 
-LaTeX Warning: Hyper reference `density_line' on page 94 undefined on input line 3213.
+LaTeX Warning: Hyper reference `density_line' on page 94 undefined on input line 3202.
 
 File: h_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use h_files/figure-pdf/unnamed-chunk-3-1.pdf>
@@ -2033,28 +2033,28 @@ File: h_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 
 [95]
 
-LaTeX Warning: Hyper reference `boxplot' on page 96 undefined on input line 3251.
+LaTeX Warning: Hyper reference `boxplot' on page 96 undefined on input line 3240.
 
 
-LaTeX Warning: Hyper reference `histogram' on page 96 undefined on input line 3252.
+LaTeX Warning: Hyper reference `histogram' on page 96 undefined on input line 3241.
 
 
-LaTeX Warning: Hyper reference `density' on page 96 undefined on input line 3253.
+LaTeX Warning: Hyper reference `density' on page 96 undefined on input line 3242.
 
 
-LaTeX Warning: Hyper reference `density_line' on page 96 undefined on input line 3254.
+LaTeX Warning: Hyper reference `density_line' on page 96 undefined on input line 3243.
 
 
-LaTeX Warning: Hyper reference `boxplot' on page 96 undefined on input line 3292.
+LaTeX Warning: Hyper reference `boxplot' on page 96 undefined on input line 3281.
 
 
-LaTeX Warning: Hyper reference `histogram' on page 96 undefined on input line 3293.
+LaTeX Warning: Hyper reference `histogram' on page 96 undefined on input line 3282.
 
 
-LaTeX Warning: Hyper reference `density' on page 96 undefined on input line 3294.
+LaTeX Warning: Hyper reference `density' on page 96 undefined on input line 3283.
 
 
-LaTeX Warning: Hyper reference `density_line' on page 96 undefined on input line 3295.
+LaTeX Warning: Hyper reference `density_line' on page 96 undefined on input line 3284.
 
 File: h_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use h_files/figure-pdf/unnamed-chunk-5-1.pdf>
@@ -2064,10 +2064,10 @@ File: h_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 
 [97]
 
-LaTeX Warning: Hyper reference `heat_circle' on page 98 undefined on input line 3337.
+LaTeX Warning: Hyper reference `heat_circle' on page 98 undefined on input line 3326.
 
 
-LaTeX Warning: Hyper reference `heat_tri' on page 98 undefined on input line 3338.
+LaTeX Warning: Hyper reference `heat_tri' on page 98 undefined on input line 3327.
 
 File: h_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use h_files/figure-pdf/unnamed-chunk-6-1.pdf>
@@ -2075,10 +2075,10 @@ File: h_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 
 [98]
 
-LaTeX Warning: Hyper reference `heat_grid' on page 99 undefined on input line 3378.
+LaTeX Warning: Hyper reference `heat_grid' on page 99 undefined on input line 3367.
 
 
-LaTeX Warning: Hyper reference `heat_tri' on page 99 undefined on input line 3379.
+LaTeX Warning: Hyper reference `heat_tri' on page 99 undefined on input line 3368.
 
 File: h_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use h_files/figure-pdf/unnamed-chunk-7-1.pdf>
@@ -2088,10 +2088,10 @@ File: h_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 
 [100]
 
-LaTeX Warning: Hyper reference `heat_grid' on page 101 undefined on input line 3419.
+LaTeX Warning: Hyper reference `heat_grid' on page 101 undefined on input line 3408.
 
 
-LaTeX Warning: Hyper reference `heat_tri' on page 101 undefined on input line 3420.
+LaTeX Warning: Hyper reference `heat_tri' on page 101 undefined on input line 3409.
 
 File: h_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use h_files/figure-pdf/unnamed-chunk-8-1.pdf>
@@ -2099,18 +2099,18 @@ File: h_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 
 [101]
 
-LaTeX Warning: Hyper reference `point' on page 102 undefined on input line 3453.
+LaTeX Warning: Hyper reference `point' on page 102 undefined on input line 3442.
 
 
-LaTeX Warning: Hyper reference `vline' on page 102 undefined on input line 3453.
+LaTeX Warning: Hyper reference `vline' on page 102 undefined on input line 3442.
 
 
-LaTeX Warning: Hyper reference `hline' on page 102 undefined on input line 3454.
+LaTeX Warning: Hyper reference `hline' on page 102 undefined on input line 3443.
 
 File: h_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use h_files/figure-pdf/unnamed-chunk-9-1.pdf>
 
-Overfull \hbox (10.94482pt too wide) in paragraph at lines 3473--3474
+Overfull \hbox (10.94482pt too wide) in paragraph at lines 3462--3463
 [][] 
  []
 
@@ -2121,7 +2121,7 @@ Overfull \hbox (10.94482pt too wide) in paragraph at lines 3473--3474
 [103]
 chapter 9.
 
-LaTeX Warning: Hyper reference `emoji' on page 104 undefined on input line 3495.
+LaTeX Warning: Hyper reference `emoji' on page 104 undefined on input line 3484.
 
 File: i_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use i_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -2133,17 +2133,17 @@ File: i_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 [105]
 
-LaTeX Warning: Hyper reference `point' on page 106 undefined on input line 3552.
+LaTeX Warning: Hyper reference `point' on page 106 undefined on input line 3541.
 
 
-LaTeX Warning: Hyper reference `jitter' on page 106 undefined on input line 3552.
+LaTeX Warning: Hyper reference `jitter' on page 106 undefined on input line 3541.
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 3569.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 3558.
 File: img/geom_jitter_interactive.png Graphic file (type bmp)
 <img/geom_jitter_interactive.png>
 
-Overfull \hbox (10.9677pt too wide) in paragraph at lines 3573--3574
+Overfull \hbox (10.9677pt too wide) in paragraph at lines 3562--3563
 [][] 
  []
 
@@ -2154,7 +2154,7 @@ Overfull \hbox (10.9677pt too wide) in paragraph at lines 3573--3574
 [107]
 chapter 10.
 
-LaTeX Warning: Hyper reference `point' on page 108 undefined on input line 3592.
+LaTeX Warning: Hyper reference `point' on page 108 undefined on input line 3581.
 
 File: j_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use j_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -2173,7 +2173,7 @@ chapter 11.
 ]
 chapter 12.
 
-LaTeX Warning: Hyper reference `text' on page 111 undefined on input line 3644.
+LaTeX Warning: Hyper reference `text' on page 111 undefined on input line 3633.
 
 File: l_files/figure-pdf/area-1.pdf Graphic file (type pdf)
 <use l_files/figure-pdf/area-1.pdf>
@@ -2183,7 +2183,7 @@ File: l_files/figure-pdf/area-1.pdf Graphic file (type pdf)
 
 ]
 
-LaTeX Warning: Hyper reference `path' on page 112 undefined on input line 3692.
+LaTeX Warning: Hyper reference `path' on page 112 undefined on input line 3681.
 
 
 
@@ -2194,16 +2194,16 @@ File: l_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 [113]
 
-LaTeX Warning: Hyper reference `line' on page 114 undefined on input line 3741.
+LaTeX Warning: Hyper reference `line' on page 114 undefined on input line 3730.
 
 
-LaTeX Warning: Hyper reference `crossbar' on page 114 undefined on input line 3741.
+LaTeX Warning: Hyper reference `crossbar' on page 114 undefined on input line 3730.
 
 
-LaTeX Warning: Hyper reference `errorbar' on page 114 undefined on input line 3742.
+LaTeX Warning: Hyper reference `errorbar' on page 114 undefined on input line 3731.
 
 
-LaTeX Warning: Hyper reference `pointrange' on page 114 undefined on input line 3743.
+LaTeX Warning: Hyper reference `pointrange' on page 114 undefined on input line 3732.
 
 File: l_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use l_files/figure-pdf/unnamed-chunk-3-1.pdf>
@@ -2214,24 +2214,24 @@ File: l_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 [115]
 chapter 13.
 
-Underfull \hbox (badness 7238) in paragraph at lines 3797--3801
+Underfull \hbox (badness 7238) in paragraph at lines 3786--3790
 []\TU/lmtt/m/n/10.95 x0 (used to anchor the label)\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 y0 (used to anchor the label)\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 filter\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 label\TU/lmr/m/n/10.95 ,
  []
 
 
-LaTeX Warning: Hyper reference `circle' on page 116 undefined on input line 3804.
+LaTeX Warning: Hyper reference `circle' on page 116 undefined on input line 3793.
 
 
-LaTeX Warning: Hyper reference `encircle' on page 116 undefined on input line 3804.
+LaTeX Warning: Hyper reference `encircle' on page 116 undefined on input line 3793.
 
 
-LaTeX Warning: Hyper reference `mark_ellipse' on page 116 undefined on input line 3805.
+LaTeX Warning: Hyper reference `mark_ellipse' on page 116 undefined on input line 3794.
 
 
-LaTeX Warning: Hyper reference `mark_hill' on page 116 undefined on input line 3806.
+LaTeX Warning: Hyper reference `mark_hill' on page 116 undefined on input line 3795.
 
 
-LaTeX Warning: Hyper reference `mark_rect' on page 116 undefined on input line 3807.
+LaTeX Warning: Hyper reference `mark_rect' on page 116 undefined on input line 3796.
 
 File: m_files/figure-pdf/markcircle-1.pdf Graphic file (type pdf)
 <use m_files/figure-pdf/markcircle-1.pdf>
@@ -2242,24 +2242,24 @@ File: m_files/figure-pdf/markcircle-1.pdf Graphic file (type pdf)
 ]
 
 [117]
-Underfull \hbox (badness 7238) in paragraph at lines 3845--3849
+Underfull \hbox (badness 7238) in paragraph at lines 3834--3838
 []\TU/lmtt/m/n/10.95 x0 (used to anchor the label)\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 y0 (used to anchor the label)\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 filter\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 label\TU/lmr/m/n/10.95 ,
  []
 
 
-LaTeX Warning: Hyper reference `circle' on page 118 undefined on input line 3852.
+LaTeX Warning: Hyper reference `circle' on page 118 undefined on input line 3841.
 
 
-LaTeX Warning: Hyper reference `encircle' on page 118 undefined on input line 3852.
+LaTeX Warning: Hyper reference `encircle' on page 118 undefined on input line 3841.
 
 
-LaTeX Warning: Hyper reference `mark_circle' on page 118 undefined on input line 3853.
+LaTeX Warning: Hyper reference `mark_circle' on page 118 undefined on input line 3842.
 
 
-LaTeX Warning: Hyper reference `mark_hill' on page 118 undefined on input line 3854.
+LaTeX Warning: Hyper reference `mark_hill' on page 118 undefined on input line 3843.
 
 
-LaTeX Warning: Hyper reference `mark_rect' on page 118 undefined on input line 3855.
+LaTeX Warning: Hyper reference `mark_rect' on page 118 undefined on input line 3844.
 
 File: m_files/figure-pdf/markellipse-1.pdf Graphic file (type pdf)
 <use m_files/figure-pdf/markellipse-1.pdf>
@@ -2268,24 +2268,24 @@ File: m_files/figure-pdf/markellipse-1.pdf Graphic file (type pdf)
 [118]
 
 [119]
-Underfull \hbox (badness 7238) in paragraph at lines 3893--3897
+Underfull \hbox (badness 7238) in paragraph at lines 3882--3886
 []\TU/lmtt/m/n/10.95 x0 (used to anchor the label)\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 y0 (used to anchor the label)\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 filter\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 label\TU/lmr/m/n/10.95 ,
  []
 
 
-LaTeX Warning: Hyper reference `circle' on page 120 undefined on input line 3900.
+LaTeX Warning: Hyper reference `circle' on page 120 undefined on input line 3889.
 
 
-LaTeX Warning: Hyper reference `encircle' on page 120 undefined on input line 3900.
+LaTeX Warning: Hyper reference `encircle' on page 120 undefined on input line 3889.
 
 
-LaTeX Warning: Hyper reference `mark_circle' on page 120 undefined on input line 3901.
+LaTeX Warning: Hyper reference `mark_circle' on page 120 undefined on input line 3890.
 
 
-LaTeX Warning: Hyper reference `mark_ellipse' on page 120 undefined on input line 3902.
+LaTeX Warning: Hyper reference `mark_ellipse' on page 120 undefined on input line 3891.
 
 
-LaTeX Warning: Hyper reference `mark_rect' on page 120 undefined on input line 3903.
+LaTeX Warning: Hyper reference `mark_rect' on page 120 undefined on input line 3892.
 
 File: m_files/figure-pdf/markhull-1.pdf Graphic file (type pdf)
 <use m_files/figure-pdf/markhull-1.pdf>
@@ -2294,24 +2294,24 @@ File: m_files/figure-pdf/markhull-1.pdf Graphic file (type pdf)
 [120]
 
 [121]
-Underfull \hbox (badness 7238) in paragraph at lines 3942--3946
+Underfull \hbox (badness 7238) in paragraph at lines 3931--3935
 []\TU/lmtt/m/n/10.95 x0 (used to anchor the label)\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 y0 (used to anchor the label)\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 filter\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 label\TU/lmr/m/n/10.95 ,
  []
 
 
-LaTeX Warning: Hyper reference `circle' on page 122 undefined on input line 3949.
+LaTeX Warning: Hyper reference `circle' on page 122 undefined on input line 3938.
 
 
-LaTeX Warning: Hyper reference `encircle' on page 122 undefined on input line 3949.
+LaTeX Warning: Hyper reference `encircle' on page 122 undefined on input line 3938.
 
 
-LaTeX Warning: Hyper reference `mark_circle' on page 122 undefined on input line 3950.
+LaTeX Warning: Hyper reference `mark_circle' on page 122 undefined on input line 3939.
 
 
-LaTeX Warning: Hyper reference `mark_ellipse' on page 122 undefined on input line 3951.
+LaTeX Warning: Hyper reference `mark_ellipse' on page 122 undefined on input line 3940.
 
 
-LaTeX Warning: Hyper reference `mark_hull' on page 122 undefined on input line 3952.
+LaTeX Warning: Hyper reference `mark_hull' on page 122 undefined on input line 3941.
 
 File: m_files/figure-pdf/markrect-1.pdf Graphic file (type pdf)
 <use m_files/figure-pdf/markrect-1.pdf>
@@ -2321,7 +2321,7 @@ File: m_files/figure-pdf/markrect-1.pdf Graphic file (type pdf)
 
 [123]
 
-LaTeX Warning: Hyper reference `polygon' on page 124 undefined on input line 3993.
+LaTeX Warning: Hyper reference `polygon' on page 124 undefined on input line 3982.
 
 File: m_files/figure-pdf/map-1.pdf Graphic file (type pdf)
 <use m_files/figure-pdf/map-1.pdf>
@@ -2329,13 +2329,13 @@ File: m_files/figure-pdf/map-1.pdf Graphic file (type pdf)
 
 [124]
 
-LaTeX Warning: Hyper reference `bar' on page 125 undefined on input line 4027.
+LaTeX Warning: Hyper reference `bar' on page 125 undefined on input line 4016.
 
 
-LaTeX Warning: Hyper reference `mosaic_jitter' on page 125 undefined on input line 4028.
+LaTeX Warning: Hyper reference `mosaic_jitter' on page 125 undefined on input line 4017.
 
 
-LaTeX Warning: Hyper reference `mosaic_text' on page 125 undefined on input line 4029.
+LaTeX Warning: Hyper reference `mosaic_text' on page 125 undefined on input line 4018.
 
 File: m_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use m_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -2343,13 +2343,13 @@ File: m_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 [125]
 
-LaTeX Warning: Hyper reference `bar' on page 126 undefined on input line 4066.
+LaTeX Warning: Hyper reference `bar' on page 126 undefined on input line 4055.
 
 
-LaTeX Warning: Hyper reference `mosaic' on page 126 undefined on input line 4066.
+LaTeX Warning: Hyper reference `mosaic' on page 126 undefined on input line 4055.
 
 
-LaTeX Warning: Hyper reference `mosaic_text' on page 126 undefined on input line 4067.
+LaTeX Warning: Hyper reference `mosaic_text' on page 126 undefined on input line 4056.
 
 File: m_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use m_files/figure-pdf/unnamed-chunk-3-1.pdf>
@@ -2364,16 +2364,16 @@ chapter 14.
 ]
 chapter 15.
 
-LaTeX Warning: Hyper reference `text' on page 128 undefined on input line 4122.
+LaTeX Warning: Hyper reference `text' on page 128 undefined on input line 4111.
 
 
-LaTeX Warning: Hyper reference `label' on page 128 undefined on input line 4122.
+LaTeX Warning: Hyper reference `label' on page 128 undefined on input line 4111.
 
 
-LaTeX Warning: Hyper reference `text_repel' on page 128 undefined on input line 4123.
+LaTeX Warning: Hyper reference `text_repel' on page 128 undefined on input line 4112.
 
 
-LaTeX Warning: Hyper reference `label_repel' on page 128 undefined on input line 4124.
+LaTeX Warning: Hyper reference `label_repel' on page 128 undefined on input line 4113.
 
 
 
@@ -2383,25 +2383,25 @@ LaTeX Warning: Hyper reference `label_repel' on page 128 undefined on input line
 File: o_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use o_files/figure-pdf/unnamed-chunk-2-1.pdf>
 
-LaTeX Warning: Hyper reference `line' on page 129 undefined on input line 4169.
+LaTeX Warning: Hyper reference `line' on page 129 undefined on input line 4158.
 
 
-LaTeX Warning: Hyper reference `ribbon' on page 129 undefined on input line 4169.
+LaTeX Warning: Hyper reference `ribbon' on page 129 undefined on input line 4158.
 
 
 
 [129]
 
-LaTeX Warning: Hyper reference `line' on page 130 undefined on input line 4196.
+LaTeX Warning: Hyper reference `line' on page 130 undefined on input line 4185.
 
 
-LaTeX Warning: Hyper reference `ribbon' on page 130 undefined on input line 4196.
+LaTeX Warning: Hyper reference `ribbon' on page 130 undefined on input line 4185.
 
 
-LaTeX Warning: Hyper reference `line' on page 130 undefined on input line 4223.
+LaTeX Warning: Hyper reference `line' on page 130 undefined on input line 4212.
 
 
-LaTeX Warning: Hyper reference `ribbon' on page 130 undefined on input line 4223.
+LaTeX Warning: Hyper reference `ribbon' on page 130 undefined on input line 4212.
 
 
 
@@ -2415,7 +2415,7 @@ File: o_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 [132]
 chapter 16.
 
-LaTeX Warning: Hyper reference `jitter' on page 133 undefined on input line 4291.
+LaTeX Warning: Hyper reference `jitter' on page 133 undefined on input line 4280.
 
 File: p_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use p_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -2425,7 +2425,7 @@ File: p_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 ]
 
-LaTeX Warning: Hyper reference `line' on page 134 undefined on input line 4335.
+LaTeX Warning: Hyper reference `line' on page 134 undefined on input line 4324.
 
 
 
@@ -2436,16 +2436,16 @@ File: p_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 
 [135]
 
-LaTeX Warning: Hyper reference `line' on page 136 undefined on input line 4386.
+LaTeX Warning: Hyper reference `line' on page 136 undefined on input line 4375.
 
 
-LaTeX Warning: Hyper reference `crossbar' on page 136 undefined on input line 4386.
+LaTeX Warning: Hyper reference `crossbar' on page 136 undefined on input line 4375.
 
 
-LaTeX Warning: Hyper reference `errorbar' on page 136 undefined on input line 4387.
+LaTeX Warning: Hyper reference `errorbar' on page 136 undefined on input line 4376.
 
 
-LaTeX Warning: Hyper reference `linerange' on page 136 undefined on input line 4388.
+LaTeX Warning: Hyper reference `linerange' on page 136 undefined on input line 4377.
 
 File: p_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use p_files/figure-pdf/unnamed-chunk-4-1.pdf>
@@ -2458,7 +2458,7 @@ File: p_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 
 [137]
 
-LaTeX Warning: Hyper reference `path' on page 138 undefined on input line 4458.
+LaTeX Warning: Hyper reference `path' on page 138 undefined on input line 4447.
 
 
 
@@ -2468,12 +2468,12 @@ File: p_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 
 
 [139]
-Overfull \hbox (37.41167pt too wide) in paragraph at lines 4499--4502
+Overfull \hbox (37.41167pt too wide) in paragraph at lines 4488--4491
 []\TU/lmtt/m/n/10.95 alpha\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 colour\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 fill\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 group\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 linetype\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 linewidth\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 subgroup\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 pattern_fill\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 pattern_fill_colour\TU/lmr/m/n/10.95 ,
  []
 
 
-LaTeX Warning: Hyper reference `polygon' on page 140 undefined on input line 4505.
+LaTeX Warning: Hyper reference `polygon' on page 140 undefined on input line 4494.
 
 File: p_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use p_files/figure-pdf/unnamed-chunk-7-1.pdf>
@@ -2484,7 +2484,7 @@ File: p_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 [141]
 chapter 17.
 
-LaTeX Warning: Hyper reference `qq_line' on page 142 undefined on input line 4555.
+LaTeX Warning: Hyper reference `qq_line' on page 142 undefined on input line 4544.
 
 File: q_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use q_files/figure-pdf/unnamed-chunk-2-1.pdf>
@@ -2494,7 +2494,7 @@ File: q_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 ]
 
-LaTeX Warning: Hyper reference `qq_line' on page 143 undefined on input line 4599.
+LaTeX Warning: Hyper reference `qq_line' on page 143 undefined on input line 4588.
 
 
 
@@ -2505,7 +2505,7 @@ File: q_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 
 [144]
 
-LaTeX Warning: Hyper reference `boxplot' on page 145 undefined on input line 4642.
+LaTeX Warning: Hyper reference `boxplot' on page 145 undefined on input line 4631.
 
 File: q_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use q_files/figure-pdf/unnamed-chunk-4-1.pdf>
@@ -2519,16 +2519,16 @@ File: q_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 [146]
 chapter 18.
 
-LaTeX Warning: Hyper reference `tile' on page 147 undefined on input line 4704.
+LaTeX Warning: Hyper reference `tile' on page 147 undefined on input line 4693.
 
 
-LaTeX Warning: Hyper reference `rect' on page 147 undefined on input line 4704.
+LaTeX Warning: Hyper reference `rect' on page 147 undefined on input line 4693.
 
 
-LaTeX Warning: Hyper reference `tile' on page 147 undefined on input line 4724.
+LaTeX Warning: Hyper reference `tile' on page 147 undefined on input line 4713.
 
 
-LaTeX Warning: Hyper reference `rect' on page 147 undefined on input line 4724.
+LaTeX Warning: Hyper reference `rect' on page 147 undefined on input line 4713.
 
 
 
@@ -2536,16 +2536,16 @@ LaTeX Warning: Hyper reference `rect' on page 147 undefined on input line 4724.
 
 ]
 
-LaTeX Warning: Hyper reference `tile' on page 148 undefined on input line 4768.
+LaTeX Warning: Hyper reference `tile' on page 148 undefined on input line 4757.
 
 
-LaTeX Warning: Hyper reference `raster' on page 148 undefined on input line 4768.
+LaTeX Warning: Hyper reference `raster' on page 148 undefined on input line 4757.
 
 
-LaTeX Warning: Hyper reference `rect' on page 148 undefined on input line 4774.
+LaTeX Warning: Hyper reference `rect' on page 148 undefined on input line 4763.
 
 
-LaTeX Warning: Hyper reference `tile' on page 148 undefined on input line 4774.
+LaTeX Warning: Hyper reference `tile' on page 148 undefined on input line 4763.
 
 
 
@@ -2554,7 +2554,7 @@ LaTeX Warning: Hyper reference `tile' on page 148 undefined on input line 4774.
 [149]
 chapter 19.
 
-LaTeX Warning: Hyper reference `point' on page 150 undefined on input line 4793.
+LaTeX Warning: Hyper reference `point' on page 150 undefined on input line 4782.
 
 
 
@@ -2564,7 +2564,7 @@ LaTeX Warning: Hyper reference `point' on page 150 undefined on input line 4793.
 File: s_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use s_files/figure-pdf/unnamed-chunk-3-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 4873--4874
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 4862--4863
 [][] 
  []
 
@@ -2576,7 +2576,7 @@ Overfull \hbox (10.94705pt too wide) in paragraph at lines 4873--4874
 File: s_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use s_files/figure-pdf/unnamed-chunk-4-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 4955--4956
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 4944--4945
 [][] 
  []
 
@@ -2605,7 +2605,7 @@ File: s_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 File: s_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use s_files/figure-pdf/unnamed-chunk-8-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 5163--5164
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 5152--5153
 [][] 
  []
 
@@ -2617,7 +2617,7 @@ Overfull \hbox (10.94705pt too wide) in paragraph at lines 5163--5164
 File: s_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use s_files/figure-pdf/unnamed-chunk-9-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 5241--5242
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 5230--5231
 [][] 
  []
 
@@ -2627,7 +2627,7 @@ Overfull \hbox (10.94705pt too wide) in paragraph at lines 5241--5242
 File: s_files/figure-pdf/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 <use s_files/figure-pdf/unnamed-chunk-10-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 5329--5330
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 5318--5319
 [][] 
  []
 
@@ -2639,7 +2639,7 @@ Overfull \hbox (10.94705pt too wide) in paragraph at lines 5329--5330
 File: s_files/figure-pdf/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 <use s_files/figure-pdf/unnamed-chunk-11-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 5417--5418
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 5406--5407
 [][] 
  []
 
@@ -2651,7 +2651,7 @@ Overfull \hbox (10.94705pt too wide) in paragraph at lines 5417--5418
 File: s_files/figure-pdf/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 <use s_files/figure-pdf/unnamed-chunk-12-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 5494--5495
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 5483--5484
 [][] 
  []
 
@@ -2662,7 +2662,7 @@ chapter 20.
 File: t_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use t_files/figure-pdf/unnamed-chunk-2-1.pdf>
 
-Overfull \hbox (10.94705pt too wide) in paragraph at lines 5536--5537
+Overfull \hbox (10.94705pt too wide) in paragraph at lines 5525--5526
 [][] 
  []
 
@@ -2670,3 +2670,6 @@ Overfull \hbox (10.94705pt too wide) in paragraph at lines 5536--5537
 
 [167
 
+]
+
+[168

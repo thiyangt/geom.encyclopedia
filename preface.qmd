@@ -3,7 +3,7 @@
 ## What can I find in this <span style='color:red;'>geom encyclopedia</span>?
 
 Let’s begin by looking at what we mean by geom in data visualization.
-In this context, geoms (short for geometries) are the visual elements used to represent data in a plot. They define the type of chart such as point chart, line chart, bar chart, etc.
+In this context, geoms (short for geometries in ggplot2 package) are the visual elements used to represent data in a plot. They define the type of chart such as point chart, line chart, bar chart, etc.
 
 To illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows:
 
@@ -71,13 +71,49 @@ p8 <- ggplot(lrdf) +
 (p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
-Even though, I used the same data set and same Cartesian coordinate plane the appearance of the plots are drastically different.
+In all the charts shown in Figure 2, I used the same dataset, the same variables, and the same Cartesian plane. However, the chart types different.
 
 Could you list the differences you observe in the charts?
 
-1. The type of chart or shape used to depict data. In data visualization grammar of graphics framework, this is reffered to as **gemetries (or geoms)**, the visual elements that represent data on a plot.  In the [ggplot2](@ggplot2) package, this is reffered to as **geom layer**.
+1. The type of chart or shape used to depict data.
 
-2. The statistics that we compute on the data to visualise on the chart. In the [ggplot2](@ggplot2) this is referred to as **stat layer**.
+2. The statistics that we compute on the data to visualize on the chart. 
+
+When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values. Table 2 summarizes the statistical operations performed on the data and the corresponding geometries used to visualize the computed statistics.
+
+```{r}
+library(knitr)
+
+data <- data.frame(
+  Code = c("A", "B", "C", "D", "E", "F", "G", "H"),
+  `Statistical Operation` = c(
+    "Use individual data points",
+    "Use individual data points",
+    "Use individual data points",
+    "Compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR",
+    "Use individual data points; compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR",
+    "Compute kernel density",
+    "Compute minimum and maximum of data",
+    "Compute minimum, mean, and maximum"
+  ),
+  `Visualization Method` = c(
+    "Point geometry",
+    "Quasirandom geometry",
+    "Jitter geometry",
+    "Box-and-whisker plot",
+    "Jitter geometry and box-and-whisker plot",
+    "Violin geometry",
+    "Line geometry",
+    "Line geometry (range) and point geometry (mean)"
+  )
+)
+
+data |>    kbl(col.names = c("Plot", "Statistical Operation", "Visualisation Method")) |> 
+  kable_paper("hover", full_width = F)
+
+```
+
+
 
 Here is a  summary of geom and stat layers used in the charts shown in Figure \@ref(fig:geom).
 
@@ -98,7 +134,7 @@ stat <- c("data is plotted as-is",
           "data is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible",
           "Five statistical summary measures used in the boxplot",
           "Individual points and summary measures corresponds to boxplot",
-          " calculate and plot the kernel density estimation (KDE) for continuous data",
+          " calculate and plot the kernel density estimate(KDE) for continuous data",
           "Range of data",
           "Range and mean of data")
 df2 <- data.frame(plot.name, geom, stat)
@@ -108,7 +144,7 @@ df2 |>    kbl(col.names = c("Plot", "geom layer", "stat layer")) |>
 ```
 
 
-This encyclopedia is a collection of geoms, in other words plot types that you can create using the ggplot2 or extensions of ggplot2 framework. In other words <span style='color:red;'>Encyclopedia of Plots</span>.
+This encyclopedia is a collection of geoms, in other words plot types that you can create using the ggplot2 or extensions of ggplot2 under the grammar of graphics framework. In other words <span style='color:red;'>Encyclopedia of Plots</span>.
 
 ## Motivation to write this book
 
