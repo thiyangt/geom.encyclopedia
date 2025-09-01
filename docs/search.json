@@ -1,0 +1,22 @@
+[
+  {
+    "objectID": "w.html",
+    "href": "w.html",
+    "title": "23  W",
+    "section": "",
+    "text": "23.1 geom_waffle\nPackage\n#install.packages(\"remotes\")\n#remotes::install_github(\"hrbrmstr/waffle\")\nwaffle (Rudis and Gandy 2023)\nDescription\nCreate waffle plots. A waffle chart can be used as an alternative to pie charts or bar charts to display the composition of a sample. It divides the plotting area into a grid of small squares, making proportions easier to compare and count at a glance.\nUnderstandable aesthetics\nrequired aesthetics\nfill (so the geom knows which column to map the fills to)\nvalues (which column you’re mapping the filling for the squares with)\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_bar, geom_col\nExample\nlibrary(waffle)\nworldbankdata |&gt;\n  filter(Region == \"East Asia & Pacific\" | Region == \"Europe & Central Asia\") |&gt;\n  select(Region, Income, Year) |&gt;\n  group_by(Region, Income) |&gt;\n  tally() |&gt;\n  ggplot(aes(fill=Income, values=n)) +\n  geom_waffle(aes(colour = income),color=\"white\",\n              n_rows = 4, size = 0.3, make_proportional = TRUE,\n              height = 0.9, width = 0.9) +\n  scale_fill_manual(values = c(\"#d95f02\",\"#1b9e77\",\"#7570b3\",\"#e7298a\"))+\n  facet_wrap(~Region, ncol=1) +\n  scale_x_discrete(expand=c(0,0)) +\n  scale_y_discrete(expand=c(0,0)) +\n  coord_equal()+\n  theme(legend.position = \"bottom\")",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>W</span>"
+    ]
+  },
+  {
+    "objectID": "w.html#weave",
+    "href": "w.html#weave",
+    "title": "23  W",
+    "section": "23.2 geom_weave",
+    "text": "23.2 geom_weave\nPackage\nggdist(ggdist?)\nDescription\nCreates dot-weave plot. This ensures the plot fits within the available space.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, size\nSee also\ngeom_dotinterval, geom_point, geom_jitter\nExample\n\nlibrary(ggdist)\np1 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Electricity, x = Income)) +\n  geom_weave(color=\"black\") + ggtitle(\"Without  scale_y_binned\")\np2 &lt;- worldbankdata |&gt;\n  ggplot(aes(y = Electricity, x = Income)) +\n  geom_weave(color=\"black\") + \n  scale_y_binned(n.breaks = 10) + ggtitle(\"With scale_y_binned\")\np1|p2\n\nWarning: Removed 5693 rows containing missing values or values outside the scale range\n(`geom_dotsinterval()`).\nRemoved 5693 rows containing missing values or values outside the scale range\n(`geom_dotsinterval()`).\n\n\n\n\n\n\n\n\n\n\n\n\n\nRudis, Bob, and Dave Gandy. 2023. Waffle: Create Waffle Chart Visualizations.",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>W</span>"
+    ]
+  }
+]

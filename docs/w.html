@@ -381,7 +381,8 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#geom_waffle" id="toc-geom_waffle" class="nav-link active" data-scroll-target="#geom_waffle"><span class="header-section-number">23.1</span> geom_waffle</a></li>
+  <li><a href="#waffle" id="toc-waffle" class="nav-link active" data-scroll-target="#waffle"><span class="header-section-number">23.1</span> geom_waffle</a></li>
+  <li><a href="#weave" id="toc-weave" class="nav-link" data-scroll-target="#weave"><span class="header-section-number">23.2</span> geom_weave</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/w.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -407,14 +408,14 @@ div.csl-indent {
 </header>
 
 
-<section id="geom_waffle" class="level2" data-number="23.1">
-<h2 data-number="23.1" class="anchored" data-anchor-id="geom_waffle"><span class="header-section-number">23.1</span> geom_waffle</h2>
+<section id="waffle" class="level2" data-number="23.1">
+<h2 data-number="23.1" class="anchored" data-anchor-id="waffle"><span class="header-section-number">23.1</span> geom_waffle</h2>
 <p><strong>Package</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("remotes")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#remotes::install_github("hrbrmstr/waffle")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>waffle <span class="citation" data-cites="waffle">(<a href="#ref-waffle" role="doc-biblioref">Rudis and Gandy 2023</a>)</span></p>
+<p>waffle <span class="citation" data-cites="waffle">(<a href="references.html#ref-waffle" role="doc-biblioref">Rudis and Gandy 2023</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Create waffle plots. A waffle chart can be used as an alternative to pie charts or bar charts to display the composition of a sample. It divides the plotting area into a grid of small squares, making proportions easier to compare and count at a glance.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -424,7 +425,7 @@ div.csl-indent {
 <p><em>optional aesthetics</em></p>
 <p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
 <p><strong>See also</strong></p>
-<p><a href="#bar">geom_bar</a>, <a href="#col">geom_col</a></p>
+<p><a href="b.html#bar">geom_bar</a>, <a href="#col">geom_col</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle)</span>
@@ -451,10 +452,49 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>geom_weave</p>
+</section>
+<section id="weave" class="level2" data-number="23.2">
+<h2 data-number="23.2" class="anchored" data-anchor-id="weave"><span class="header-section-number">23.2</span> geom_weave</h2>
+<p><strong>Package</strong></p>
+<p>ggdist<span class="citation" data-cites="ggdist">(<a href="references.html#ref-ggdist" role="doc-biblioref"><strong>ggdist?</strong></a>)</span></p>
+<p><strong>Description</strong></p>
+<p>Creates dot-weave plot. This ensures the plot fits within the available space.</p>
+<p><strong>Understandable aesthetics</strong></p>
+<p><em>required aesthetics</em></p>
+<p><code>x</code></p>
+<p><code>y</code></p>
+<p><em>optional aesthetics</em></p>
+<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>size</code></p>
+<p><strong>See also</strong></p>
+<p><a href="#dotinterval">geom_dotinterval</a>, <a href="#point">geom_point</a>, <a href="j.html#jitter">geom_jitter</a></p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdist)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Electricity, <span class="at">x =</span> Income)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_weave</span>(<span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Without  scale_y_binned"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Electricity, <span class="at">x =</span> Income)) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_weave</span>(<span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_binned</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"With scale_y_binned"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">|</span>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 5693 rows containing missing values or values outside the scale range
+(`geom_dotsinterval()`).
+Removed 5693 rows containing missing values or values outside the scale range
+(`geom_dotsinterval()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="w_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-waffle" class="csl-entry" role="listitem">
 Rudis, Bob, and Dave Gandy. 2023. <em>Waffle: Create Waffle Chart Visualizations</em>.
 </div>

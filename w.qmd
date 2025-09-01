@@ -8,7 +8,7 @@ data("worldbankdata")
 ```
 
 
-## geom_waffle
+## geom_waffle{#waffle}
 
 **Package**
 
@@ -66,4 +66,93 @@ worldbankdata |>
   theme(legend.position = "bottom")
 ```
 
-geom_weave
+## geom_weave{#weave}
+
+**Package**
+
+ggdist[@ggdist]
+
+**Description**
+
+Creates dot-weave plot. This ensures the plot fits within the available space.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+`x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `size`, `slab_alpha`
+
+
+**See also**
+
+[geom_dotinterval](#dotinterval), [geom_point](#point),
+[geom_jitter](#jitter)
+  
+**Example**
+
+```{r}
+library(ggdist)
+p1 <- worldbankdata |>
+  ggplot(aes(y = Electricity, x = Income)) +
+  geom_weave(color="black") + ggtitle("Without  scale_y_binned")
+p2 <- worldbankdata |>
+  ggplot(aes(y = Electricity, x = Income)) +
+  geom_weave(color="black") + 
+  scale_y_binned(n.breaks = 10) + ggtitle("With scale_y_binned")
+p1|p2
+```
+
+<!--## geom_widerect{#widerect}
+
+**Package**
+
+animint2 [@animint2]
+
+**Description**
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+  
+**Example**
+
+```{r}
+library(animint2)
+library(ggplot2)
+library(drone)
+library(tidyverse)
+
+data("worldbankdata")
+worldbankdata |>
+  filter(Country == "Bangladesh") |> 
+  filter(Year >= 2011 & Year <= 2021) |>
+  ggplot(aes(x=Year, y=Electricity)) + 
+  geom_point(colour="blue",size=4,fill="black") +
+  theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1)) + 
+  scale_x_continuous(breaks = 2011:2021)+
+  geom_widerect(aes(ymin=Electricity-1/2, ymax=Electricity+1/2),
+                        clickSelects="Electricity",
+                         alpha=1/2)
+```
+-->
+
+##

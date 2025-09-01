@@ -2,11 +2,8 @@
 
 ## What can I find in this <span style='color:red;'>geom encyclopedia</span>?
 
-Before answering this question let me briefly explain what is data visualisation? Data visualization is the graphical representation of data to understand the patterns, trends, relationships, outliers and complex structures hidden inside data more easily.
-
-Now let's look at what is **geom**?
-
-In data visualization, geometries (or geoms) refer to the visual elements that represent data in a plot. They define the type of chart or shape used to depict data points or relationships. 
+Let’s begin by looking at what we mean by geom in data visualization.
+In this context, geoms (short for geometries) are the visual elements used to represent data in a plot. They define the type of chart such as point chart, line chart, bar chart, etc.
 
 To illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows:
 
