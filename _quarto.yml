@@ -55,6 +55,9 @@ sidebar:
 
 bibliography: references.bib
 
+crossref:
+  fig-title: "Figure"
+
 format:
   html:
     theme: 

@@ -31,20 +31,30 @@ worldbankdata2021 |> head(8)
 ```
 
 
-Now, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in Figure \@ref(fig:cartesian)
+Now, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in @fig-cartesian
 
-```{r, fig.height=3, fig.width=3,echo=FALSE}
-#| fig.cap: "Figure 1: Cartesian Coordinate Plane. Income level is mapped to x-axis and Electricity is mapped to y-axis."
-#| fig.label: "fig:cartesian"
-p0 <- ggplot(worldbankdata2021, aes(x=Income, y=Electricity))
-p0
+```{r cartesian}
+#| label: fig-cartesian
+#| fig-cap: "Cartesian coordinate plane showing Income (x-axis) and Electricity (y-axis)."
+#| fig-width: 3
+#| fig-height: 3
+#| echo: false
+#| warning: false
+#| message: false
+ggplot(worldbankdata2021, aes(x = Income, y = Electricity)) +
+geom_point()
 ```
 
-Figure 2 shows 6 plotting types that I created using the same dataset and same cartesian plane. 
+@fig-geom shows 6 plotting types that I created using the same dataset and same cartesian plane. 
 
-```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=15, echo=FALSE}
-#| fig.cap: "Figure 2: Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM) in 2021"
-#| fig.label: "fig:geom"
+```{r}
+#| label: fig-geom
+#| fig.cap: "Six plot types used to visualize the relationship between income level (low income [L], lower-middle income [LM]) and the percentage of people with access to electricity in 2021."
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 8
+#| fig-height: 15
 library(patchwork)
 library(tidyverse)
 library(ggbeeswarm)
@@ -71,18 +81,20 @@ p8 <- ggplot(lrdf) +
 (p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
-In all the charts shown in Figure 2 a-h, I used the same dataset, the same variables, and the same Cartesian plane. However, the chart types different.
+In all panels of @fig-geom (a–h), the same dataset, variables, and Cartesian coordinate system are used. However, the chart types different.
 
 Could you list the differences you observe in the charts?
 
 1. The type of chart or shape used to depict data.
 
-2. The statistics that we compute on the data to visualize on the chart. 
+2. The statistics  computed on the data to visualize on the chart. 
 
-When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values. Table 2 summarizes the statistical operations performed on the data and the corresponding geometries used to visualize the computed statistics.
+When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values of the statistic. @tbl-summary-table summarizes the statistical operations (or statistical transformations) performed  on the data and the corresponding geometries used to visualize the computed statistics.
 
 ```{r}
+#| label: tbl-summary-table
 #| echo: false
+#| tbl-cap: "Statistical transformations and geom/stat layers are used in the plots."
 library(knitr)
 
 data <- data.frame(
@@ -230,13 +242,11 @@ Please use the below text and bibtex for citing the book.
 
 Please use the below text and bibtex for citing the associated R package drone.
 
-`Talagala T (2025).
-  drone: Data for Data
-  Visualisation Geometries
-  Encyclopedia. R package
-  version 1.0.0, commit
-  86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,
-  <https://github.com/thiyangt/drone>.`
+`Talagala T (2025). _drone: Data for
+  Data Visualisation Geometries
+  Encyclopedia_. R package version
+  2.0.0,
+  <https://github.com/thiyangt/geom.encyclopedia>..`
 
 
 `@Manual{drone,

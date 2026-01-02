@@ -345,9 +345,9 @@ encyclopedia}?}
 \markright{What can I find in this {geom encyclopedia}?}
 
 Let's begin by looking at what we mean by geom in data visualization. In
-this context, geoms (short for geometries) are the visual elements used
-to represent data in a plot. They define the type of chart such as point
-chart, line chart, bar chart, etc.
+this context, geoms (short for geometries in ggplot2 package) are the
+visual elements used to represent data in a plot. They define the type
+of chart such as point chart, line chart, bar chart, etc.
 
 To illustrate the idea I use the following dataset which contains
 information related to 82 countires. The variable description is as
@@ -399,16 +399,21 @@ dataset is given below:
 
 Now, I want to visualize the relationship between Electricity and Income
 variables on the cartesian coordinate plane shown in Figure
-@ref(fig:cartesian)
+\textbf{?@fig-cartesian}
+
+\begin{verbatim}
+Warning: Removed 4 rows containing missing values or values outside the scale range
+(`geom_point()`).
+\end{verbatim}
 
 \begin{figure}[H]
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/cartesian-1.pdf}}
 
 }
 
-\caption{Figure 1: Cartesian Coordinate Plane. Income level is mapped to
-x-axis and Electricity is mapped to y-axis.}
+\caption{Cartesian coordinate plane showing Income (x-axis) and
+Electricity (y-axis).}
 
 \end{figure}%
 
@@ -417,7 +422,7 @@ and same cartesian plane.
 
 \begin{figure}[H]
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 
 }
 
@@ -427,8 +432,8 @@ people access to electricity in lower incom (L), lower middle income
 
 \end{figure}%
 
-In all the charts shown in Figure 2, I used the same dataset, the same
-variables, and the same Cartesian plane. However, the chart types
+In all the charts shown in Figure 2 a-h, I used the same dataset, the
+same variables, and the same Cartesian plane. However, the chart types
 different.
 
 Could you list the differences you observe in the charts?
@@ -441,30 +446,33 @@ Could you list the differences you observe in the charts?
   The statistics that we compute on the data to visualize on the chart.
 \end{enumerate}
 
-Here is a summary of geom and stat layers used in the charts shown in
-Figure @ref(fig:geom).
+When creating a chart, we first decide on the statistic we want to
+visualize. Next, we compute this statistic from the data, and finally,
+we use a suitable geometry to display the computed values. Table 2
+summarizes the statistical operations performed on the data and the
+corresponding geometries used to visualize the computed statistics.
 
 \begin{table}
 \centering
-\begin{tabular}[t]{l|l|l}
+\begin{tabular}[t]{l|l|l|l|l}
 \hline
-Plot & geom layer & stat layer\\
+Plot & Statistical Operation & Visualisation Method & geom layer & stat layer\\
 \hline
-A & point & data is plotted as-is\\
+A & Use individual data points & Point geometry & point & data is plotted as-is\\
 \hline
-B & quasirandom & data is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting\\
+B & Use individual data points & Quasirandom geometry & quasirandom & data is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting\\
 \hline
-C & jitter & data is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible\\
+C & Use individual data points & Jitter geometry & jitter & data is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible\\
 \hline
-D & boxplot & Five statistical summary measures used in the boxplot\\
+D & Compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR & Box-and-whisker plot & boxplot & Five statistical summary measures used in the boxplot\\
 \hline
-E & jitter and boxplot & Individual points and summary measures corresponds to boxplot\\
+E & Use individual data points; compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR & Jitter geometry and box-and-whisker plot & jitter and boxplot & Individual points and summary measures corresponds to boxplot\\
 \hline
-F & violin & calculate and plot the kernel density estimation (KDE) for continuous data\\
+F & Compute kernel density & Violin geometry & violin & calculate and plot the kernel density estimate(KDE) for continuous data\\
 \hline
-G & linerange & Range of data\\
+G & Compute minimum and maximum of data & Line geometry & linerange & Range of data\\
 \hline
-H & linerange and point & Range and mean of data\\
+H & Compute minimum, mean, and maximum & Line geometry (range) and point geometry (mean) & linerange and point & Range and mean of data\\
 \hline
 \end{tabular}
 \end{table}
@@ -519,7 +527,7 @@ properties.
 
 \begin{figure}[H]
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/unnamed-chunk-6-1.pdf}}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/unnamed-chunk-5-1.pdf}}
 
 }
 
@@ -679,10 +687,13 @@ packages}\label{installation-of-associated-packages}
 
 \markright{Installation of associated packages}
 
+To run the examples in the book
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{install.packages}\NormalTok{(drone)}
 \FunctionTok{install.packages}\NormalTok{(tidyverse)}
+\FunctionTok{install.packages}\NormalTok{(patchwork)}
 \end{Highlighting}
 \end{Shaded}
 

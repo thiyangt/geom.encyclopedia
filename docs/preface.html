@@ -475,38 +475,52 @@ div.csl-indent {
 8 Bhutan       LM           100  </code></pre>
 </div>
 </div>
-<p>Now, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in Figure @ref(fig:cartesian)</p>
-<div class="cell" data-fig.label="fig:cartesian">
+<p>Now, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in <a href="#fig-cartesian" class="quarto-xref">Figure&nbsp;<span>1</span></a></p>
+<div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="preface_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="288"></p>
-<figcaption>Figure 1: Cartesian Coordinate Plane. Income level is mapped to x-axis and Electricity is mapped to y-axis.</figcaption>
+<div id="fig-cartesian" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cartesian-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preface_files/figure-html/fig-cartesian-1.png" class="img-fluid figure-img" width="288">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cartesian-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Cartesian coordinate plane showing Income (x-axis) and Electricity (y-axis).
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Figure 2 shows 6 plotting types that I created using the same dataset and same cartesian plane.</p>
-<div class="cell" data-fig.label="fig:geom">
+<p><a href="#fig-geom" class="quarto-xref">Figure&nbsp;<span>2</span></a> shows 6 plotting types that I created using the same dataset and same cartesian plane.</p>
+<div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="preface_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="768"></p>
-<figcaption>Figure 2: Relationship between income level and percentage of people access to electricity in lower incom (L), lower middle income (LM) in 2021</figcaption>
+<div id="fig-geom" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-geom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preface_files/figure-html/fig-geom-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Six plot types used to visualize the relationship between income level (low income [L], lower-middle income [LM]) and the percentage of people with access to electricity in 2021.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>In all the charts shown in Figure 2 a-h, I used the same dataset, the same variables, and the same Cartesian plane. However, the chart types different.</p>
+<p>In all panels of <a href="#fig-geom" class="quarto-xref">Figure&nbsp;<span>2</span></a> (a–h), the same dataset, variables, and Cartesian coordinate system are used. However, the chart types different.</p>
 <p>Could you list the differences you observe in the charts?</p>
 <ol type="1">
 <li><p>The type of chart or shape used to depict data.</p></li>
-<li><p>The statistics that we compute on the data to visualize on the chart.</p></li>
+<li><p>The statistics computed on the data to visualize on the chart.</p></li>
 </ol>
-<p>When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values. Table 2 summarizes the statistical operations performed on the data and the corresponding geometries used to visualize the computed statistics.</p>
+<p>When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values of the statistic. <a href="#tbl-summary-table" class="quarto-xref">Table&nbsp;<span>1</span></a> summarizes the statistical operations (or statistical transformations) performed on the data and the corresponding geometries used to visualize the computed statistics.</p>
 <div class="cell">
+<div id="tbl-summary-table" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Statistical transformations and geom/stat layers are used in the plots.
+</figcaption>
+<div aria-describedby="tbl-summary-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="lightable-paper lightable-hover caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="lightable-paper lightable-hover do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Plot</th>
@@ -579,6 +593,9 @@ div.csl-indent {
 
 </div>
 </div>
+</figure>
+</div>
+</div>
 <p>This encyclopedia is a collection of geoms, in other words plot types that you can create using the ggplot2 or extensions of ggplot2 under the grammar of graphics framework. In other words <span style="color:red;">Encyclopedia of Plots</span>.</p>
 </section>
 <section id="motivation-to-write-this-book" class="level2">
@@ -597,7 +614,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="preface_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="preface_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Figure 4: Distribution of Electricity by Income Category</figcaption>
 </figure>
 </div>
@@ -658,7 +675,7 @@ div.csl-indent {
 <p><code>T. S. Talagala, Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots. [Online]. Available: https://thiyangt.github.io/geom.encyclopedia/. [Accessed: Jan. 18, 2025</code></p>
 <p><code>@online{talagala2024geoms,   author       = {Thiyanga S. Talagala},   title        = {Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots},   year         = {2024},   url          = {https://thiyangt.github.io/geom.encyclopedia/},   note         = {Accessed: 2025-01-18} }</code></p>
 <p>Please use the below text and bibtex for citing the associated R package drone.</p>
-<p><code>Talagala T (2025).   drone: Data for Data   Visualisation Geometries   Encyclopedia. R package   version 1.0.0, commit   86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,   &lt;https://github.com/thiyangt/drone&gt;.</code></p>
+<p><code>Talagala T (2025). _drone: Data for   Data Visualisation Geometries   Encyclopedia_. R package version   2.0.0,   &lt;https://github.com/thiyangt/geom.encyclopedia&gt;..</code></p>
 <p><code>@Manual{drone,     title = {drone: Data for Data Visualisation Geometries Encyclopedia},     author = {Thiyanga S. Talagala},     year = {2025},     note = {R package version 1.0.0, commit 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72},     url = {https://github.com/thiyangt/drone},   }</code></p>
 </section>
 <section id="colophon" class="level2">
