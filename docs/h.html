@@ -450,13 +450,13 @@ window.Quarto = {
 <section id="hline" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="hline"><span class="header-section-number">8.1</span> geom_hline</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Draw a horizontal line (<span class="math inline">\(Y=c\)</span>) for a given value of <span class="math inline">\(c\)</span>, which is known as <code>yintercept</code>.</p>
 <p><strong>Understandable aesthetics</strong></p>
 <p>Unlike most other geoms, <code>geom_hline</code> does not depend on the x and y variables that we map for the main plot. <code>geom_hline</code> has its own independent characteristics: <code>yintercept</code>. The yintercept can be passed either as a arguments or aesthetic.</p>
 <p><strong>See also</strong></p>
-<p><a href="#point">geom_point</a>, <a href="#vline">geom_vline</a>, <a href="#hline">geom_hline</a></p>
+<p><a href="#point">geom_point</a>, <a href="v.html#vline">geom_vline</a>, <a href="#hline">geom_hline</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span> Electricity)) <span class="sc">+</span> <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">50</span>) <span class="sc">+</span> </span>
@@ -482,13 +482,13 @@ window.Quarto = {
 <section id="histogram" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="histogram"><span class="header-section-number">8.2</span> geom_histogram</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Visualise data using histogram.</p>
 <p><strong>Understandable aesthetics</strong></p>
 <p>Unlike most other geoms, <code>geom_hline</code> does not depend on the x and y variables that we map for the main plot. <code>geom_hline</code> has its own independent characteristics: <code>yintercept</code>. The yintercept can be passed either as a arguments or aesthetic.</p>
 <p><strong>See also</strong></p>
-<p><a href="#density">geom_density</a>, <a href="#density_line">geom_density_line</a>, <a href="#freqpoly">geom_freqpoly</a></p>
+<p><a href="d.html#density">geom_density</a>, <a href="d.html#density_line">geom_density_line</a>, <a href="f.html#freqpoly">geom_freqpoly</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span></span>
@@ -507,7 +507,7 @@ window.Quarto = {
 <section id="histogram_pattern" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="histogram_pattern"><span class="header-section-number">8.3</span> geom_histogram_pattern</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Visualize numeric data using histogram and filled with patterns.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -516,7 +516,7 @@ window.Quarto = {
 <p><em>optional aesthetics</em></p>
 <p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
 <p><strong>See also</strong></p>
-<p><a href="#histogram">geom_histogram</a>, <a href="#density">geom_density</a>, <a href="#density_line">geom_density_line</a></p>
+<p><a href="#histogram">geom_histogram</a>, <a href="d.html#density">geom_density</a>, <a href="d.html#density_line">geom_density_line</a></p>
 <section id="example" class="level3" data-number="8.3.1">
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="example"><span class="header-section-number">8.3.1</span> Example</h3>
 <div class="cell">
@@ -538,7 +538,7 @@ window.Quarto = {
 <section id="geom_hdr_boxplot" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="geom_hdr_boxplot"><span class="header-section-number">8.4</span> geom_hdr_boxplot</h2>
 <p><strong>Package</strong></p>
-<p>gghdr <span class="citation" data-cites="gghdr">(<a href="#ref-gghdr" role="doc-biblioref"><strong>gghdr?</strong></a>)</span></p>
+<p>gghdr <span class="citation" data-cites="gghdr">(<a href="references.html#ref-gghdr" role="doc-biblioref"><strong>gghdr?</strong></a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Calculates and plots the box plot of highest density regions.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -547,7 +547,7 @@ window.Quarto = {
 <p><em>optional aesthetics</em></p>
 <p><code>alpha</code>, <code>colour</code></p>
 <p><strong>See also</strong></p>
-<p><a href="#boxplot">geom_boxplot</a>, <a href="#histogram">geom_histogram</a>, <a href="#density">geom_density</a>, <a href="#density_line">geom_density_line</a></p>
+<p><a href="b.html#boxplot">geom_boxplot</a>, <a href="#histogram">geom_histogram</a>, <a href="d.html#density">geom_density</a>, <a href="d.html#density_line">geom_density_line</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gghdr)</span>
@@ -561,7 +561,7 @@ window.Quarto = {
 <section id="hex" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="hex"><span class="header-section-number">8.5</span> geom_hex</h2>
 <p><strong>Package</strong></p>
-<p>gghdr <span class="citation" data-cites="gghdr">(<a href="#ref-gghdr" role="doc-biblioref"><strong>gghdr?</strong></a>)</span></p>
+<p>gghdr <span class="citation" data-cites="gghdr">(<a href="references.html#ref-gghdr" role="doc-biblioref"><strong>gghdr?</strong></a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Calculates and plots the box plot of highest density regions.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -570,7 +570,7 @@ window.Quarto = {
 <p><em>optional aesthetics</em></p>
 <p><code>alpha</code>, <code>colour</code>, <code>fill</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
 <p><strong>See also</strong></p>
-<p><a href="#boxplot">geom_boxplot</a>, <a href="#histogram">geom_histogram</a>, <a href="#density">geom_density</a>, <a href="#density_line">geom_density_line</a></p>
+<p><a href="b.html#boxplot">geom_boxplot</a>, <a href="#histogram">geom_histogram</a>, <a href="d.html#density">geom_density</a>, <a href="d.html#density_line">geom_density_line</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hexbin)</span>
@@ -592,7 +592,7 @@ window.Quarto = {
 <section id="heat_grid" class="level2" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="heat_grid"><span class="header-section-number">8.6</span> geom_heat_grid</h2>
 <p><strong>Package</strong></p>
-<p>ggDoubleHeat <span class="citation" data-cites="ggDoubleHeat">(<a href="#ref-ggDoubleHeat" role="doc-biblioref">Yu and Buskirk 2023</a>)</span></p>
+<p>ggDoubleHeat <span class="citation" data-cites="ggDoubleHeat">(<a href="references.html#ref-ggDoubleHeat" role="doc-biblioref">Yu and Buskirk 2023</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Visualize two quantitative variables of information inside a heatmap cell using a grid.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -621,7 +621,7 @@ window.Quarto = {
 <section id="heat_tri" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="heat_tri"><span class="header-section-number">8.7</span> geom_heat_tri</h2>
 <p><strong>Package</strong></p>
-<p>ggDoubleHeat <span class="citation" data-cites="ggDoubleHeat">(<a href="#ref-ggDoubleHeat" role="doc-biblioref">Yu and Buskirk 2023</a>)</span></p>
+<p>ggDoubleHeat <span class="citation" data-cites="ggDoubleHeat">(<a href="references.html#ref-ggDoubleHeat" role="doc-biblioref">Yu and Buskirk 2023</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Visualize two quantitative variables of information inside a heatmap cell using triangles.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -650,7 +650,7 @@ window.Quarto = {
 <section id="heat_circle" class="level2" data-number="8.8">
 <h2 data-number="8.8" class="anchored" data-anchor-id="heat_circle"><span class="header-section-number">8.8</span> geom_heat_circle</h2>
 <p><strong>Package</strong></p>
-<p>ggDoubleHeat <span class="citation" data-cites="ggDoubleHeat">(<a href="#ref-ggDoubleHeat" role="doc-biblioref">Yu and Buskirk 2023</a>)</span></p>
+<p>ggDoubleHeat <span class="citation" data-cites="ggDoubleHeat">(<a href="references.html#ref-ggDoubleHeat" role="doc-biblioref">Yu and Buskirk 2023</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Visualize two quantitative variables of information inside a heatmap cell using triangles.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -679,13 +679,13 @@ window.Quarto = {
 <section id="hline" class="level2" data-number="8.9">
 <h2 data-number="8.9" class="anchored" data-anchor-id="hline"><span class="header-section-number">8.9</span> geom_hline</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Draw a horizontal line given intercept.</p>
 <p><strong>Understandable aesthetics</strong></p>
 <p>Unlike most other geoms, <code>geom_hline</code> does not depend on the x and y variables that we map for the main plot.</p>
 <p><strong>See also</strong></p>
-<p><a href="#point">geom_point</a>, <a href="#vline">geom_vline</a>, <a href="#hline">geom_abline</a></p>
+<p><a href="#point">geom_point</a>, <a href="v.html#vline">geom_vline</a>, <a href="#hline">geom_abline</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x=</span>Electricity)) <span class="sc">+</span> </span>
@@ -708,7 +708,7 @@ window.Quarto = {
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-ggplot2" class="csl-entry" role="listitem">
 Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>

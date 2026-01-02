@@ -497,7 +497,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>In all the charts shown in Figure 2, I used the same dataset, the same variables, and the same Cartesian plane. However, the chart types different.</p>
+<p>In all the charts shown in Figure 2 a-h, I used the same dataset, the same variables, and the same Cartesian plane. However, the chart types different.</p>
 <p>Could you list the differences you observe in the charts?</p>
 <ol type="1">
 <li><p>The type of chart or shape used to depict data.</p></li>
@@ -505,34 +505,6 @@ div.csl-indent {
 </ol>
 <p>When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values. Table 2 summarizes the statistical operations performed on the data and the corresponding geometries used to visualize the computed statistics.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Code =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>, <span class="st">"H"</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Statistical Operation</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Use individual data points"</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Use individual data points"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Use individual data points"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR"</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Use individual data points; compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR"</span>,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Compute kernel density"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Compute minimum and maximum of data"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Compute minimum, mean, and maximum"</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Visualization Method</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Point geometry"</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Quasirandom geometry"</span>,</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Jitter geometry"</span>,</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Box-and-whisker plot"</span>,</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Jitter geometry and box-and-whisker plot"</span>,</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Violin geometry"</span>,</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Line geometry"</span>,</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Line geometry (range) and point geometry (mean)"</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span>    <span class="fu">kbl</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Plot"</span>, <span class="st">"Statistical Operation"</span>, <span class="st">"Visualisation Method"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_paper</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="lightable-paper lightable-hover caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -540,62 +512,6 @@ div.csl-indent {
 <th style="text-align: left;" data-quarto-table-cell-role="th">Plot</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Statistical Operation</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Visualisation Method</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">Use individual data points</td>
-<td style="text-align: left;">Point geometry</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">Use individual data points</td>
-<td style="text-align: left;">Quasirandom geometry</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">Use individual data points</td>
-<td style="text-align: left;">Jitter geometry</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">D</td>
-<td style="text-align: left;">Compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR</td>
-<td style="text-align: left;">Box-and-whisker plot</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">E</td>
-<td style="text-align: left;">Use individual data points; compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR</td>
-<td style="text-align: left;">Jitter geometry and box-and-whisker plot</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">Compute kernel density</td>
-<td style="text-align: left;">Violin geometry</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">G</td>
-<td style="text-align: left;">Compute minimum and maximum of data</td>
-<td style="text-align: left;">Line geometry</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">H</td>
-<td style="text-align: left;">Compute minimum, mean, and maximum</td>
-<td style="text-align: left;">Line geometry (range) and point geometry (mean)</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<p>Here is a summary of geom and stat layers used in the charts shown in Figure @ref(fig:geom).</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="lightable-paper lightable-hover caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Plot</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">geom layer</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">stat layer</th>
 </tr>
@@ -603,41 +519,57 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">A</td>
+<td style="text-align: left;">Use individual data points</td>
+<td style="text-align: left;">Point geometry</td>
 <td style="text-align: left;">point</td>
 <td style="text-align: left;">data is plotted as-is</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">B</td>
+<td style="text-align: left;">Use individual data points</td>
+<td style="text-align: left;">Quasirandom geometry</td>
 <td style="text-align: left;">quasirandom</td>
 <td style="text-align: left;">data is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">C</td>
+<td style="text-align: left;">Use individual data points</td>
+<td style="text-align: left;">Jitter geometry</td>
 <td style="text-align: left;">jitter</td>
 <td style="text-align: left;">data is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">D</td>
+<td style="text-align: left;">Compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR</td>
+<td style="text-align: left;">Box-and-whisker plot</td>
 <td style="text-align: left;">boxplot</td>
 <td style="text-align: left;">Five statistical summary measures used in the boxplot</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">E</td>
+<td style="text-align: left;">Use individual data points; compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR</td>
+<td style="text-align: left;">Jitter geometry and box-and-whisker plot</td>
 <td style="text-align: left;">jitter and boxplot</td>
 <td style="text-align: left;">Individual points and summary measures corresponds to boxplot</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">F</td>
+<td style="text-align: left;">Compute kernel density</td>
+<td style="text-align: left;">Violin geometry</td>
 <td style="text-align: left;">violin</td>
 <td style="text-align: left;">calculate and plot the kernel density estimate(KDE) for continuous data</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">G</td>
+<td style="text-align: left;">Compute minimum and maximum of data</td>
+<td style="text-align: left;">Line geometry</td>
 <td style="text-align: left;">linerange</td>
 <td style="text-align: left;">Range of data</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">H</td>
+<td style="text-align: left;">Compute minimum, mean, and maximum</td>
+<td style="text-align: left;">Line geometry (range) and point geometry (mean)</td>
 <td style="text-align: left;">linerange and point</td>
 <td style="text-align: left;">Range and mean of data</td>
 </tr>
@@ -659,13 +591,13 @@ div.csl-indent {
 <p>To get an idea about the associated aesthetics and stat let look at plot shown in Figure 4. In this case <code>x</code>, <code>y</code> are required aesthetics and <code>color</code> <code>size</code> and <code>alpha</code> is optional aesthetics. The statistics layer is identity since the data points are plotted as it is.</p>
 <p>The aesthetic mappings, defined with <code>aes()</code>, describe how variables in the dataset are mapped to visual properties or aesthetics. This <code>aes(x=Income, y=Electricity, color=Income)</code> is called mapping variables to the visual properties of the chart. This <code>alpha=0.5, size=2</code> is called setting values to visual properties.</p>
 <div class="cell" data-fig.label="fig:example">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata2021, <span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">y=</span>Electricity, <span class="at">color=</span>Income)) <span class="sc">+</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata2021, <span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">y=</span>Electricity, <span class="at">color=</span>Income)) <span class="sc">+</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="preface_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="preface_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Figure 4: Distribution of Electricity by Income Category</figcaption>
 </figure>
 </div>

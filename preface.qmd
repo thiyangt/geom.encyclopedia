@@ -71,7 +71,7 @@ p8 <- ggplot(lrdf) +
 (p1 | p2) / ( p3 | p4) / (p5 | p6 ) / (p7 | p8)
 ```
 
-In all the charts shown in Figure 2, I used the same dataset, the same variables, and the same Cartesian plane. However, the chart types different.
+In all the charts shown in Figure 2 a-h, I used the same dataset, the same variables, and the same Cartesian plane. However, the chart types different.
 
 Could you list the differences you observe in the charts?
 
@@ -82,6 +82,7 @@ Could you list the differences you observe in the charts?
 When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values. Table 2 summarizes the statistical operations performed on the data and the corresponding geometries used to visualize the computed statistics.
 
 ```{r}
+#| echo: false
 library(knitr)
 
 data <- data.frame(
@@ -105,31 +106,16 @@ data <- data.frame(
     "Violin geometry",
     "Line geometry",
     "Line geometry (range) and point geometry (mean)"
-  )
-)
-
-data |>    kbl(col.names = c("Plot", "Statistical Operation", "Visualisation Method")) |> 
-  kable_paper("hover", full_width = F)
-
-```
-
-
-
-Here is a  summary of geom and stat layers used in the charts shown in Figure \@ref(fig:geom).
-
-
-```{r}
-#| echo: false
-plot.name <- c("A", "B", "C", "D", "E", "F", "G", "H")
-geom <- c("point",
+  ),
+  `geom layer` <- c("point",
           "quasirandom",
           "jitter",
           "boxplot",
           "jitter and boxplot",
           "violin",
           "linerange",
-          "linerange and point")
-stat <- c("data is plotted as-is", 
+          "linerange and point"),
+  `stat layer` <- c("data is plotted as-is", 
           "data is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting",
           "data is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible",
           "Five statistical summary measures used in the boxplot",
@@ -137,11 +123,14 @@ stat <- c("data is plotted as-is",
           " calculate and plot the kernel density estimate(KDE) for continuous data",
           "Range of data",
           "Range and mean of data")
-df2 <- data.frame(plot.name, geom, stat)
-df2 |>    kbl(col.names = c("Plot", "geom layer", "stat layer")) |> 
-  kable_paper("hover", full_width = F)
   
+)
+
+data |>    kbl(col.names = c("Plot", "Statistical Operation", "Visualisation Method", "geom layer", "stat layer")) |> 
+  kable_paper("hover", full_width = F)
+
 ```
+
 
 
 This encyclopedia is a collection of geoms, in other words plot types that you can create using the ggplot2 or extensions of ggplot2 under the grammar of graphics framework. In other words <span style='color:red;'>Encyclopedia of Plots</span>.

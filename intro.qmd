@@ -2,9 +2,12 @@
 
 ## Installation of associated packages
 
+To run the examples in the book 
+
 ```r
 install.packages(drone)
 install.packages(tidyverse)
+install.packages(patchwork)
 ```
 
 ## Data set use in geom Encyclopedia
