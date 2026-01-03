@@ -444,7 +444,7 @@ div.csl-indent {
 </section>
 <section id="worldhappinessscore-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="worldhappinessscore-dataset"><strong>WorldHappinessScore</strong> dataset</h2>
-<p>The dataset is obtained from World Population Review report (<span class="citation" data-cites="worldpopulationreview_happiest">World Population Review (<a href="#ref-worldpopulationreview_happiest" role="doc-biblioref">n.d.</a>)</span>). The World Happiness Score is reported on a 0–10 scale, with higher values indicating greater happiness. This dataset containes the world happiness score for 145 countries. The variable description is given in <a href="#tbl-WorldHappinessScore" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-WorldHappinessScore</span></a>.</p>
+<p>The dataset is obtained from World Population Review report (<span class="citation" data-cites="worldpopulationreview_happiest">World Population Review (<a href="references.html#ref-worldpopulationreview_happiest" role="doc-biblioref">n.d.</a>)</span>). The World Happiness Score is reported on a 0–10 scale, with higher values indicating greater happiness. This dataset containes the world happiness score for 145 countries. The variable description is given in <a href="#tbl-WorldHappinessScore" class="quarto-xref">Table&nbsp;<span>1</span></a>.</p>
 <div class="cell">
 <div id="tbl-WorldHappinessScore" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -513,11 +513,11 @@ Table&nbsp;1: Variable Description for WorldHappinessScore dataset
 </div>
 <section id="worldhappinessscore-data-profiling" class="level3">
 <h3 class="anchored" data-anchor-id="worldhappinessscore-data-profiling"><code>WorldHappinessScore</code>: Data Profiling</h3>
-<p><a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-hp</span></a> provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables,</p>
+<p><a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span>2</span></a> provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables,</p>
 <p><code>n_missing</code> tells how many values are missing for each variable.</p>
 <p><code>complete_rate</code> is the proportion of non-missing values.</p>
 <p><code>n_unique</code> is the number of unique values in the variable.</p>
-<p>For numeric variables <a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-hp</span></a> shows mean, sd (standard deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max), and a small histogram for each numeric variable.</p>
+<p>For numeric variables <a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span>2</span></a> shows mean, sd (standard deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max), and a small histogram for each numeric variable.</p>
 <div class="cell">
 <div id="tbl-hp" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -694,7 +694,7 @@ Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 </section>
 <section id="worldhappinessscore-data-quality-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="worldhappinessscore-data-quality-analysis"><code>WorldHappinessScore</code>: Data Quality Analysis</h3>
-<p><a href="#fig-happy2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-happy2</span></a> shows the types of variables we have in the dataset and missing value distribution.</p>
+<p><a href="#fig-happy2" class="quarto-xref">Figure&nbsp;<span>1</span></a> shows the types of variables we have in the dataset and missing value distribution.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
@@ -713,7 +713,7 @@ Figure&nbsp;1: Summary description of the WorldHappinessScore dataset
 </div>
 </div>
 </div>
-<p><a href="#fig-happy3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-happy3</span></a> shows combination-wise missing values in the dataset <code>WorldHappinessScore</code>. There are 6 observations where only <code>WorldHapinessScore_2023</code> missing and there are 3 observations where both <code>WorldHapinessScore_2023</code> and <code>WorldHapinessScore_2024</code> missing.</p>
+<p><a href="#fig-happy3" class="quarto-xref">Figure&nbsp;<span>2</span></a> shows combination-wise missing values in the dataset <code>WorldHappinessScore</code>. There are 6 observations where only <code>WorldHapinessScore_2023</code> missing and there are 3 observations where both <code>WorldHapinessScore_2023</code> and <code>WorldHapinessScore_2024</code> missing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(WorldHappinessScore) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -735,7 +735,7 @@ Figure&nbsp;2: Combinations of missingness across cases: WorldHappinessScore dat
 <section id="worldbankdata-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="worldbankdata-dataset"><strong>worldbankdata</strong> dataset</h2>
 <p>This dataset provides country-level development indicators compiled from the World Bank Data Catalogue. It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.</p>
-<p>The variable description is given in <a href="#tbl-worldbankdata" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdata</span></a>.</p>
+<p>The variable description is given in <a href="#tbl-worldbankdata" class="quarto-xref">Table&nbsp;<span>3</span></a>.</p>
 <div class="cell">
 <div id="tbl-worldbankdata" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -814,7 +814,7 @@ Table&nbsp;3: Variable Description for worldbankdata dataset
 </div>
 <section id="worldbankdata-data-profiling" class="level3">
 <h3 class="anchored" data-anchor-id="worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</h3>
-<p><a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdatasummary</span></a> provides a compact summary of the dataset. The dataset contains 7 variables. Among them, 4 variables are factor variables and 3 variables are numeric variables. In addtion, <a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdatasummary</span></a> shows a comprehensive overview of your dataset, showing both the distribution of categorical variables and the summary statistics for numeric variables, including missing values and frequency counts.</p>
+<p><a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span>4</span></a> provides a compact summary of the dataset. The dataset contains 7 variables. Among them, 4 variables are factor variables and 3 variables are numeric variables. In addtion, <a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span>4</span></a> shows a comprehensive overview of your dataset, showing both the distribution of categorical variables and the summary statistics for numeric variables, including missing values and frequency counts.</p>
 <div class="cell">
 <div id="tbl-worldbankdatasummary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -999,7 +999,7 @@ Table&nbsp;4: Summary description of the workldbank dataset
 </section>
 <section id="worldbankdata-data-quality-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</h3>
-<p><code>worldbankdata</code> dataset contains some missing values. <a href="#fig-miss" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-miss</span></a> shows the distribution of types of variables and missing value distribution.</p>
+<p><code>worldbankdata</code> dataset contains some missing values. <a href="#fig-miss" class="quarto-xref">Figure&nbsp;<span>3</span></a> shows the distribution of types of variables and missing value distribution.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
@@ -1018,7 +1018,7 @@ Figure&nbsp;3: Data types and missing values distribution
 </div>
 </div>
 </div>
-<p><a href="#fig-miss2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-miss2</span></a> shows combinations of missingness across cases. This is especially useful for understanding patterns of missingness across variables. For example, there are 5122 rows where both <code>Electricity</code> and <code>Cooking</code> variable missing.</p>
+<p><a href="#fig-miss2" class="quarto-xref">Figure&nbsp;<span>4</span></a> shows combinations of missingness across cases. This is especially useful for understanding patterns of missingness across variables. For example, there are 5122 rows where both <code>Electricity</code> and <code>Cooking</code> variable missing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1037,7 +1037,7 @@ Figure&nbsp;4: Combinations of missingness across cases: worldbankdata dataset
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-worldpopulationreview_happiest" class="csl-entry" role="listitem">
 World Population Review. n.d. <span>“Happiest Countries in the World.”</span> <a href="https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world">https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world</a>.
 </div>
