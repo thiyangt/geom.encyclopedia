@@ -5,10 +5,12 @@
 Let’s begin by looking at what we mean by geom in data visualization.
 In this context, geoms (short for geometries in ggplot2 package) are the visual elements used to represent data in a plot. They define the type of chart such as point chart, line chart, bar chart, etc.
 
-To illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows:
+To illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows (@tbl-des):
 
 ```{r}
+#| label: tbl-des
 #| echo: false
+#| tbl-cap: "Variable Description"
 library(knitr)
 library(kableExtra)
 Variable <- c("Country", "Income", "Electricity")
@@ -41,11 +43,10 @@ Now, I want to visualize the relationship between Electricity and Income variabl
 #| echo: false
 #| warning: false
 #| message: false
-ggplot(worldbankdata2021, aes(x = Income, y = Electricity)) +
-geom_point()
+ggplot(worldbankdata2021, aes(x = Income, y = Electricity)) 
 ```
 
-@fig-geom shows 6 plotting types that I created using the same dataset and same cartesian plane. 
+@fig-geom shows 6 plotting types that I created to visualise the relationship between the variables `Electricity` and `Income` on the Cartesian plane @fig-cartesian.
 
 ```{r}
 #| label: fig-geom
@@ -154,21 +155,46 @@ The motivation behind writing this encyclopedia is, there is no centralized reso
 ## What you will learn?
 
 
-Each geom has a set of aesthetics that it understands. These aesthetics can be divided into two parts: i) required aesthetics and ii) optional aesthetics. Further, Every geom has a default stat; and every stat has a default geom.
+In this <span style='color:red;'>geom encyclopedia</span> you will learn different types of geoms and their applications. Furthermore, each geom has a set of aesthetics that it understands. These aesthetics can be divided into two parts: i) required aesthetics and ii) optional aesthetics. Further, every geom has a default stat; and every stat has a default geom.
 
-To get an idea about the associated aesthetics and stat let look at plot shown in Figure 4. In this case `x`, `y` are required aesthetics and `color` `size` and `alpha` is optional aesthetics. The statistics layer is identity since the data points are plotted as it is. 
+To give you an idea about the associated aesthetics and stat, let's look at the plot shown in @fig-plot. In this case `x`, `y` are required aesthetics and `color` `size` and `alpha` is optional aesthetics. The statistics layer is identity since the data points are plotted as it is. 
 
-The aesthetic mappings, defined with `aes()`, describe how variables in the dataset are mapped to visual properties or aesthetics. This `aes(x=Income, y=Electricity, color=Income)` is called mapping variables to the visual properties of the chart. This `alpha=0.5, size=2` is called setting values to visual properties. 
+The aesthetic mappings, defined with `aes()`, describe how variables in the dataset are mapped to aesthetics (or visual properties of the plot). This `aes(x=Income, y=Electricity, color=Income)` is called mapping variables to the visual properties of the chart. This `alpha=0.5, size=2` is called setting values to visual properties. 
 
 ```{r, warning=FALSE, message=FALSE}
-#| fig.cap: "Figure 4: Distribution of Electricity by Income Category "
+#| label: fig-plot
+#| fig.cap: "Distribution of Electricity by Income Category "
 #| fig.label: "fig:example"
 ggplot(worldbankdata2021, aes(x=Income, y=Electricity, color=Income)) + 
   geom_point(alpha=0.5, size=2) +
   scale_color_brewer(palette = "Dark2")
 ```
 
-In this <span style='color:red;'>geom encyclopedia</span>, you will learn about the required and optional aesthetics that each geom supports, as well as the associated statistical layer for each geom. Additionally, an example is provided demonstrating the application of each geom with reproducible R code.
+In this <span style='color:red;'>geom encyclopedia</span>, you will also learn about the required and optional aesthetics that each geom supports. Additionally, an example is provided demonstrating the application of each geom with reproducible R code.
+
+In summary  you will learn:
+
+  i. What each geom does
+    The purpose of different geoms (e.g., points, lines, bars, boxes, tiles) and the types of data and questions they are best suited for.
+
+  ii. Required and optional aesthetics
+    Which aesthetics (such as x, y, colour, fill, size, group) are required for each geom and how optional aesthetics change the appearance and meaning of a plot.
+
+  iii. Typical use cases
+    When to use each geom—for example, comparing distributions, showing relationships, visualizing trends over time, or displaying uncertainty.
+
+  iv. Common variations and set parameters
+    Key arguments (such as stat, position, alpha, width, binwidth) and how they affect the visual output.
+
+  v. Strategies to improve clarity of plots
+    Strategies to overcome the frequent challenges such as overplapping, missing values, highlight trend, etc.
+
+
+  vi. Connections between geoms and statistics
+    How geoms interact with statistical transformations (e.g., geom_histogram() with binning, geom_smooth() with model fitting).
+    
+    vii. Connections between geom
+    Similar geoms and different combinations of geoms that can use to visualise data.
 
 ## What you won't learn?
 
@@ -180,38 +206,40 @@ As this is an encyclopedia, the chapters are organised according to the alphabet
 
 ## Audience
 
-The Figure 3 shows my target audience for the book. In general for all data enthusiasts, this can be considered as a <span style='color:green;'>Encyclopedia of Plots</span>. For R, tidyverse, gggplot2 users this can be considered as a <span style='color:red;'>Data Visualisation Geometries Encyclopedia</span>.
+The @fig-audience shows my target audience for the book. In general for all data enthusiasts, this can be considered as a <span style='color:green;'>Encyclopedia of Plots</span>. For R, tidyverse, gggplot2 users this can be considered as a <span style='color:red;'>Data Visualisation Geometries Encyclopedia</span>.
 
-```{r, echo=FALSE, fig.align="center"}
-#| fig.cap: "Figure 4: Audience"
-#| fig.label: "fig:audience"
+```{r}
+#| label: fig-audience
+#| fig.cap: "Target Audience"
+#| echo: FALSE
+#| fig.align: "center"
 knitr::include_graphics("audience.png")
 ```
 
 ## What prior knowledge is needed to use this <span style='color:red;'>geom encyclopedia</span>?
 
-**For a complete newcomer to get an idea about the possible charts that can be drawn for a data set.**
+1. **For a complete newcomer to get an idea about the possible charts that can be drawn for a data set.**
 
- None
+    None
 
 
-**To get hands-on-experience with the examples provided you need to have following knowledge.**
+2. **To get hands-on-experience with the examples provided you need to have following knowledge.**
 
-1. R and RStudio  Integrated Development Environment (IDE)
+    i. R and RStudio  Integrated Development Environment (IDE)
 
-2. Basics of R programming
+    ii. Basics of R programming
 
-3. [tidyverse](https://www.tidyverse.org/) [@tidyverse] style of coding
+    iii. [tidyverse](https://www.tidyverse.org/) [@tidyverse] style of coding
 
-4. Data wrangling with tidyr[@tidyr] and dplyr[@dplyr]
+    iv. Data wrangling with tidyr[@tidyr] and dplyr[@dplyr]
 
-5. Knowledge in using the pipe operator:  **|>**
+    v. Knowledge in using the pipe operator:  **|>**
 
-6. Knowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2[@ggplot2]
+    vi. Knowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2[@ggplot2]
 
-If you want to learn more of them, following are the books recommended:
+  If you want to learn more of them, following are the books recommended:
 
-- [R for Data Science (2e)](https://r4ds.hadley.nz/) written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
+  - [R for Data Science (2e)](https://r4ds.hadley.nz/) written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
 
 - [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/)  written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.
 
