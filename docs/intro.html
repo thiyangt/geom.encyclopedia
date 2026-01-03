@@ -424,6 +424,7 @@ div.csl-indent {
 </header>
 
 
+<p>The goal of this chapter is to provide readers with an overview of the datasets used in the book’s examples. Having an initial understanding of the data helps readers easily navigate between the examples.</p>
 <section id="installation-of-associated-packages" class="level2">
 <h2 class="anchored" data-anchor-id="installation-of-associated-packages">Installation of associated packages</h2>
 <p>To run the examples in the book you need to install the following packages. In addition, to this package list, the associated package corresponds to the geom should be installed. The <code>drone</code> package provides the datasets associated with this geom encyclopedia.</p>
@@ -513,13 +514,20 @@ Table&nbsp;1.1: Variable Description for WorldHappinessScore dataset
 </div>
 <section id="worldhappinessscore-data-profiling" class="level3">
 <h3 class="anchored" data-anchor-id="worldhappinessscore-data-profiling"><code>WorldHappinessScore</code>: Data Profiling</h3>
-<p>The following code provides a compact summary of the dataset.</p>
+<p><a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span>1.2</span></a> provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables,</p>
+<p><code>n_missing</code> tells how many values are missing for each variable.</p>
+<p><code>complete_rate</code> is the proportion of non-missing values.</p>
+<p><code>n_unique</code> is the number of unique values in the variable.</p>
+<p>For numeric variables <a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span>1.2</span></a> shows mean, sd (standard deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max), and a small histogram for each numeric variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>WorldHappinessScore <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-hp" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.2: Summary description of the WorldHappinessScore dataset
+</figcaption>
+<div aria-describedby="tbl-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Data summary</caption>
 <tbody>
 <tr class="odd">
@@ -561,7 +569,7 @@ Table&nbsp;1.1: Variable Description for WorldHappinessScore dataset
 </tbody>
 </table>
 <p><strong>Variable type: character</strong></p>
-<table class="caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 19%">
 <col style="width: 13%">
@@ -608,7 +616,7 @@ Table&nbsp;1.1: Variable Description for WorldHappinessScore dataset
 </tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
-<table class="caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 27%">
 <col style="width: 11%">
@@ -681,30 +689,44 @@ Table&nbsp;1.1: Variable Description for WorldHappinessScore dataset
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 </section>
 <section id="worldhappinessscore-data-quality-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="worldhappinessscore-data-quality-analysis"><code>WorldHappinessScore</code>: Data Quality Analysis</h3>
-<p>The following outputs were obtained to show the types of variables we have in the dataset and missing value distribution.</p>
+<p><a href="#fig-happy2" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> shows the types of variables we have in the dataset and missing value distribution.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(WorldHappinessScore) <span class="sc">+</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(WorldHappinessScore) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-happy2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-happy2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-happy2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-happy2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Summary description of the WorldHappinessScore dataset
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p><a href="#fig-happy3" class="quarto-xref">Figure&nbsp;<span>1.2</span></a> shows combination-wise missing values in the dataset <code>WorldHappinessScore</code>. There are 6 observations where only <code>WorldHapinessScore_2023</code> missing and there are 3 observations where both <code>WorldHapinessScore_2023</code> and <code>WorldHapinessScore_2024</code> missing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(WorldHappinessScore) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-happy3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-happy3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-happy3-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-happy3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Combinations of missingness across cases: WorldHappinessScore dataset
+</figcaption>
 </figure>
 </div>
 </div>
@@ -714,12 +736,12 @@ Table&nbsp;1.1: Variable Description for WorldHappinessScore dataset
 <section id="worldbankdata-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="worldbankdata-dataset"><strong>worldbankdata</strong> dataset</h2>
 <p>This dataset provides country-level development indicators compiled from the World Bank Data Catalogue. It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.</p>
-<p>The variable description is given in <a href="#tbl-worldbankdata" class="quarto-xref">Table&nbsp;<span>1.2</span></a>.</p>
+<p>The variable description is given in <a href="#tbl-worldbankdata" class="quarto-xref">Table&nbsp;<span>1.3</span></a>.</p>
 <div class="cell">
 <div id="tbl-worldbankdata" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-worldbankdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.2: Variable Description for worldbankdata dataset
+Table&nbsp;1.3: Variable Description for worldbankdata dataset
 </figcaption>
 <div aria-describedby="tbl-worldbankdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -770,10 +792,10 @@ Table&nbsp;1.2: Variable Description for worldbankdata dataset
 </div>
 <p>To view the dataset use the following code.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,937 × 7
    Country Code  Region                     Year Cooking Electricity Income
@@ -793,13 +815,16 @@ Table&nbsp;1.2: Variable Description for worldbankdata dataset
 </div>
 <section id="worldbankdata-data-profiling" class="level3">
 <h3 class="anchored" data-anchor-id="worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</h3>
-<p>The following code provides a compact summary of the dataset.</p>
+<p><a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span>1.4</span></a> provides a compact summary of the dataset. The dataset contains 7 variables. Among them, 4 variables are factor variables and 3 variables are numeric variables. In addtion, <a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span>1.4</span></a> shows a comprehensive overview of your dataset, showing both the distribution of categorical variables and the summary statistics for numeric variables, including missing values and frequency counts.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-worldbankdatasummary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-worldbankdatasummary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.4: Summary description of the workldbank dataset
+</figcaption>
+<div aria-describedby="tbl-worldbankdatasummary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Data summary</caption>
 <tbody>
 <tr class="odd">
@@ -841,7 +866,7 @@ Table&nbsp;1.2: Variable Description for worldbankdata dataset
 </tbody>
 </table>
 <p><strong>Variable type: factor</strong></p>
-<table class="caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 14%">
 <col style="width: 10%">
@@ -896,7 +921,7 @@ Table&nbsp;1.2: Variable Description for worldbankdata dataset
 </tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
-<table class="caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 15%">
 <col style="width: 10%">
@@ -969,31 +994,44 @@ Table&nbsp;1.2: Variable Description for worldbankdata dataset
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 </section>
 <section id="worldbankdata-data-quality-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</h3>
-<p>This dataset contains some missing values. The following outputs were obtained to show the types of variables we have in the dataset and missing value distribution.</p>
+<p><code>worldbankdata</code> dataset contains some missing values. <a href="#fig-miss" class="quarto-xref">Figure&nbsp;<span>1.3</span></a> shows the distribution of types of variables and missing value distribution.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-miss" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-miss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-miss-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-miss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: Data types and missing values distribution
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>This is especially useful for understanding patterns of missingness across variables.</p>
+<p><a href="#fig-miss2" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> shows combinations of missingness across cases. This is especially useful for understanding patterns of missingness across variables. For example there are 5122 rows where both <code>Electricity</code> and <code>Cooking</code> variable missing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-miss2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-miss2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-miss2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-miss2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: Combinations of missingness across cases: worldbankdata dataset
+</figcaption>
 </figure>
 </div>
 </div>

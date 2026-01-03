@@ -757,6 +757,10 @@ workflow}\label{data-and-setting-up-your-workflow}
 \markboth{Data and setting up your workflow}{Data and setting up your
 workflow}
 
+The goal of this chapter is to provide readers with an overview of the
+datasets used in the book's examples. Having an initial understanding of
+the data helps readers easily navigate between the examples.
+
 \section*{Installation of associated
 packages}\label{installation-of-associated-packages}
 \addcontentsline{toc}{section}{Installation of associated packages}
@@ -879,17 +883,28 @@ Profiling}{WorldHappinessScore: Data Profiling}}\label{worldhappinessscore-data-
 \addcontentsline{toc}{subsection}{\texttt{WorldHappinessScore}: Data
 Profiling}
 
-The following code provides a compact summary of the dataset.
+Table~\ref{tbl-hp} provides a compact summary of the dataset.There are 5
+variables. Among the 2 are character variables and 3 are numeric
+variables. Summary of both character variables and numeric variables are
+given in the output. For character variables,
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(skimr)}
-\NormalTok{WorldHappinessScore }\SpecialCharTok{|\textgreater{}} 
-  \FunctionTok{skim}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+\texttt{n\_missing} tells how many values are missing for each variable.
+
+\texttt{complete\_rate} is the proportion of non-missing values.
+
+\texttt{n\_unique} is the number of unique values in the variable.
+
+For numeric variables Table~\ref{tbl-hp} shows mean, sd (standard
+deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max),
+and a small histogram for each numeric variable.
 
 \begin{longtable}[]{@{}ll@{}}
+
+\caption{\label{tbl-hp}Summary description of the WorldHappinessScore
+dataset}
+
+\tabularnewline
+
 \caption{Data summary}\tabularnewline
 \toprule\noalign{}
 \endfirsthead
@@ -905,6 +920,7 @@ character & 2 \\
 numeric & 3 \\
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
 Group variables & None \\
+
 \end{longtable}
 
 \textbf{Variable type: character}
@@ -918,6 +934,12 @@ Group variables & None \\
   >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0833}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1528}}@{}}
+
+\caption{\label{tbl-hp}Summary description of the WorldHappinessScore
+dataset}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 skim\_variable
@@ -942,6 +964,7 @@ whitespace
 \endlastfoot
 flagCode & 1 & 0.99 & 2 & 2 & 0 & 144 & 0 \\
 country & 0 & 1.00 & 4 & 22 & 0 & 145 & 0 \\
+
 \end{longtable}
 
 \textbf{Variable type: numeric}
@@ -958,6 +981,12 @@ country & 0 & 1.00 & 4 & 22 & 0 & 145 & 0 \\
   >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
   >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0667}}@{}}
+
+\caption{\label{tbl-hp}Summary description of the WorldHappinessScore
+dataset}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 skim\_variable
@@ -992,6 +1021,7 @@ WorldHappinessScore\_2023 & 9 & 0.94 & 5.53 & 1.14 & 1.86 & 4.70 & 5.67
 & 6.33 & 7.80 & ▁▂▆▇▃ \\
 WorldHappinessScore\_2022 & 1 & 0.99 & 5.55 & 1.09 & 2.40 & 4.88 & 5.57
 & 6.30 & 7.82 & ▁▃▇▇▃ \\
+
 \end{longtable}
 
 \subsection*{\texorpdfstring{\texttt{WorldHappinessScore}: Data Quality
@@ -999,8 +1029,8 @@ Analysis}{WorldHappinessScore: Data Quality Analysis}}\label{worldhappinessscore
 \addcontentsline{toc}{subsection}{\texttt{WorldHappinessScore}: Data
 Quality Analysis}
 
-The following outputs were obtained to show the types of variables we
-have in the dataset and missing value distribution.
+Figure~\ref{fig-happy2} shows the types of variables we have in the
+dataset and missing value distribution.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1011,16 +1041,44 @@ have in the dataset and missing value distribution.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+\begin{figure}[H]
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/fig-happy2-1.pdf}}
+
+}
+
+\caption{\label{fig-happy2}Summary description of the
+WorldHappinessScore dataset}
+
+\end{figure}%
+
+Figure~\ref{fig-happy3} shows combination-wise missing values in the
+dataset \texttt{WorldHappinessScore}. There are 6 observations where
+only \texttt{WorldHapinessScore\_2023} missing and there are 3
+observations where both \texttt{WorldHapinessScore\_2023} and
+\texttt{WorldHapinessScore\_2024} missing.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(naniar)}
-\FunctionTok{gg\_miss\_upset}\NormalTok{(worldbankdata) }
+\FunctionTok{gg\_miss\_upset}\NormalTok{(WorldHappinessScore) }
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+\begin{figure}[H]
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/fig-happy3-1.pdf}}
+
+}
+
+\caption{\label{fig-happy3}Combinations of missingness across cases:
+WorldHappinessScore dataset}
+
+\end{figure}%
 
 \section*{\texorpdfstring{\textbf{worldbankdata}
 dataset}{worldbankdata dataset}}\label{worldbankdata-dataset}
@@ -1100,17 +1158,21 @@ Profiling}{worldbankdata: Data Profiling}}\label{worldbankdata-data-profiling}
 \addcontentsline{toc}{subsection}{\texttt{worldbankdata}: Data
 Profiling}
 
-The following code provides a compact summary of the dataset.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(skimr)}
-\NormalTok{worldbankdata }\SpecialCharTok{|\textgreater{}} 
-  \FunctionTok{skim}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+Table~\ref{tbl-worldbankdatasummary} provides a compact summary of the
+dataset. The dataset contains 7 variables. Among them, 4 variables are
+factor variables and 3 variables are numeric variables. In addtion,
+Table~\ref{tbl-worldbankdatasummary} shows a comprehensive overview of
+your dataset, showing both the distribution of categorical variables and
+the summary statistics for numeric variables, including missing values
+and frequency counts.
 
 \begin{longtable}[]{@{}ll@{}}
+
+\caption{\label{tbl-worldbankdatasummary}Summary description of the
+workldbank dataset}
+
+\tabularnewline
+
 \caption{Data summary}\tabularnewline
 \toprule\noalign{}
 \endfirsthead
@@ -1126,6 +1188,7 @@ factor & 4 \\
 numeric & 3 \\
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
 Group variables & None \\
+
 \end{longtable}
 
 \textbf{Variable type: factor}
@@ -1137,6 +1200,12 @@ Group variables & None \\
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0816}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0918}}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.4388}}@{}}
+
+\caption{\label{tbl-worldbankdatasummary}Summary description of the
+workldbank dataset}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 skim\_variable
@@ -1161,6 +1230,7 @@ Region & 199 & 0.97 & FALSE & 7 & Eur: 2038, Sub: 1693, Lat: 1512, Eas:
 1343 \\
 Income & 559 & 0.93 & FALSE & 4 & H: 2177, LM: 1978, L: 1704, UM:
 1519 \\
+
 \end{longtable}
 
 \textbf{Variable type: numeric}
@@ -1177,6 +1247,12 @@ Income & 559 & 0.93 & FALSE & 4 & H: 2177, LM: 1978, L: 1704, UM:
   >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0543}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0543}}
   >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0652}}@{}}
+
+\caption{\label{tbl-worldbankdatasummary}Summary description of the
+workldbank dataset}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 skim\_variable
@@ -1211,6 +1287,7 @@ Cooking & 6047 & 0.24 & 65.48 & 38.46 & 0.00 & 27.30 & 84.75 & 100 & 100
 & ▃▁▁▁▇ \\
 Electricity & 5693 & 0.28 & 84.40 & 26.45 & 2.11 & 79.86 & 99.80 & 100 &
 100 & ▁▁▁▁▇ \\
+
 \end{longtable}
 
 \subsection*{\texorpdfstring{\texttt{worldbankdata}: Data Quality
@@ -1218,8 +1295,8 @@ Analysis}{worldbankdata: Data Quality Analysis}}\label{worldbankdata-data-qualit
 \addcontentsline{toc}{subsection}{\texttt{worldbankdata}: Data Quality
 Analysis}
 
-This dataset contains some missing values. The following outputs were
-obtained to show the types of variables we have in the dataset and
+\texttt{worldbankdata} dataset contains some missing values.
+Figure~\ref{fig-miss} shows the distribution of types of variables and
 missing value distribution.
 
 \begin{Shaded}
@@ -1231,10 +1308,22 @@ missing value distribution.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-7-1.pdf}}
+\begin{figure}[H]
 
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/fig-miss-1.pdf}}
+
+}
+
+\caption{\label{fig-miss}Data types and missing values distribution}
+
+\end{figure}%
+
+Figure~\ref{fig-miss2} shows combinations of missingness across cases.
 This is especially useful for understanding patterns of missingness
-across variables.
+across variables. For example there are 5122 rows where both
+\texttt{Electricity} and \texttt{Cooking} variable missing.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1243,7 +1332,18 @@ across variables.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-8-1.pdf}}
+\begin{figure}[H]
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/fig-miss2-1.pdf}}
+
+}
+
+\caption{\label{fig-miss2}Combinations of missingness across cases:
+worldbankdata dataset}
+
+\end{figure}%
 
 \bookmarksetup{startatroot}
 

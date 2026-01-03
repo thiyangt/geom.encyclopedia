@@ -1,5 +1,7 @@
 # Data and setting up your workflow {.unnumbered}
 
+The goal of this chapter is to provide readers with an overview of the datasets used in the book’s examples. Having an initial understanding of the data helps readers easily navigate between the examples.
+
 ## Installation of associated packages
 
 To run the examples in the book you need to install the following packages. In addition, to this package list, the associated package corresponds to the geom should be installed. The `drone` package provides the datasets associated with this geom encyclopedia.
@@ -13,6 +15,8 @@ install.packages(patchwork)
 ```
 
 # Data set use in the geom Encyclopedia
+
+
 
 The datasets used in the book, main are from country-wise statistics obtained from public reliable websites. Only two datasets are used to explain all geoms so that readers can build intuition by seeing the same data represented in multiple ways. The reasons for using these datasets are:
 
@@ -51,9 +55,22 @@ head(WorldHappinessScore)
 
 ### `WorldHappinessScore`: Data Profiling
 
-The following code provides a compact summary of the dataset.
+@tbl-hp provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables, 
 
-```{r , message=FALSE, warning=FALSE}
+  `n_missing` tells how many values are missing for each variable.
+
+  `complete_rate` is the proportion of non-missing values.
+
+  `n_unique `  is the number of unique values in the variable.
+
+For numeric variables @tbl-hp shows mean, sd (standard deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max), and a small histogram for each numeric variable.
+
+```{r}
+#| label: tbl-hp
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Summary description of the WorldHappinessScore dataset"
 library(skimr)
 WorldHappinessScore |> 
   skim()
@@ -61,18 +78,30 @@ WorldHappinessScore |>
 
 ### `WorldHappinessScore`: Data Quality Analysis
 
-The following outputs were obtained to show the types of variables we have in the dataset and missing value distribution.
+@fig-happy2 shows the types of variables we have in the dataset and missing value distribution.
 
 ```{r, message=FALSE, warning=FALSE}
+#| label: fig-happy2
+#| message: false
+#| warning: false
+#| fig-cap: "Summary description of the WorldHappinessScore dataset"
 library(tidyverse)
 library(visdat)
 vis_dat(WorldHappinessScore) + 
   scale_fill_brewer(palette = "Dark2")
 ```
 
-```{r , message=FALSE, warning=FALSE}
+
+
+@fig-happy3 shows combination-wise missing values in the dataset `WorldHappinessScore`. There are 6 observations where only `WorldHapinessScore_2023` missing and there are 3 observations where both `WorldHapinessScore_2023` and `WorldHapinessScore_2024` missing.
+
+```{r}
+#| label: fig-happy3
+#| message: false
+#| warning: false
+#| fig-cap: "Combinations of missingness across cases: WorldHappinessScore dataset"
 library(naniar)
-gg_miss_upset(worldbankdata) 
+gg_miss_upset(WorldHappinessScore) 
 ```
 
 
@@ -109,9 +138,14 @@ worldbankdata
 
 ### `worldbankdata`: Data Profiling
 
-The following code provides a compact summary of the dataset.
+@tbl-worldbankdatasummary provides a compact summary of the dataset. The dataset contains 7 variables. Among them, 4 variables are factor variables and 3 variables are numeric variables. In addtion, @tbl-worldbankdatasummary  shows a comprehensive overview of your dataset, showing both the distribution of categorical variables and the summary statistics for numeric variables, including missing values and frequency counts.
 
-```{r , message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-worldbankdatasummary
+#| echo: false
+#| message: false
+#| warning: false
+#| tbl-cap: "Summary description of the workldbank dataset"
 library(skimr)
 worldbankdata |> 
   skim()
@@ -119,18 +153,26 @@ worldbankdata |>
 
 ### `worldbankdata`: Data Quality Analysis
 
-This dataset contains some missing values. The following outputs were obtained to show the types of variables we have in the dataset and missing value distribution.
+`worldbankdata` dataset contains some missing values. @fig-miss shows the distribution of types of variables and missing value distribution.
 
-```{r, message=FALSE, warning=FALSE}
+```{r}
+#| label: fig-miss
+#| message: false
+#| warning: false
+#| fig-cap: "Data types and missing values distribution"
 library(tidyverse)
 library(visdat)
 vis_dat(worldbankdata) + 
   scale_fill_brewer(palette = "Dark2")
 ```
-This is especially useful for understanding patterns of missingness across variables.
+@fig-miss2 shows  combinations of missingness across cases.   This is especially useful for understanding patterns of missingness across variables. For example there are 5122 rows where both `Electricity` and `Cooking` variable missing.
 
 
-```{r , message=FALSE, warning=FALSE}
+```{r}
+#| label: fig-miss2
+#| message: false
+#| warning: false
+#| fig-cap: "Combinations of missingness across cases: worldbankdata dataset"
 library(naniar)
 gg_miss_upset(worldbankdata) 
 ```

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.31)  3 JAN 2026 12:29
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.31)  3 JAN 2026 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1331,94 +1331,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 739--740
 [12] [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 804--807
+Underfull \hbox (badness 10000) in paragraph at lines 808--811
 []\TU/lmr/m/n/10.95 Ability to visualize relationships between qualitative–qualitative, qualitative–
  []
 
 
-LaTeX Warning: Reference `tbl-WorldHappinessScore' on page 14 undefined on input line 821.
+LaTeX Warning: Reference `tbl-WorldHappinessScore' on page 14 undefined on input line 825.
 
 [14
 
 ]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 878.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 882.
+
+LaTeX Warning: Reference `tbl-hp' on page 15 undefined on input line 886.
+
+
+LaTeX Warning: Reference `tbl-hp' on page 15 undefined on input line 897.
+
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4 on input line 908.
+(longtable)                in table 4 on input line 924.
 
-
-Overfull \hbox (0.90779pt too wide) in paragraph at lines 935--936
+ignored error: Infinite glue shrinkage found in box being split [15]
+Overfull \hbox (0.90779pt too wide) in paragraph at lines 957--958
  []\TU/lmr/m/n/10.95 n_unique
  []
 
-[15]
-Overfull \hbox (13.39926pt too wide) in paragraph at lines 965--966
+
+Overfull \hbox (13.39926pt too wide) in paragraph at lines 994--995
  []\TU/lmr/m/n/10.95 n_missing
  []
 
 
-Overfull \hbox (18.83298pt too wide) in paragraph at lines 967--968
+Overfull \hbox (18.83298pt too wide) in paragraph at lines 996--997
  []\TU/lmr/m/n/10.95 complete_rate
  []
 
 
-Overfull \hbox (7.3775pt too wide) in paragraph at lines 969--970
+Overfull \hbox (7.3775pt too wide) in paragraph at lines 998--999
  []\TU/lmr/m/n/10.95 mean
  []
 
 
-Overfull \hbox (4.07062pt too wide) in paragraph at lines 981--982
+Overfull \hbox (4.07062pt too wide) in paragraph at lines 1010--1011
  []\TU/lmr/m/n/10.95 p100
  []
 
 
-Overfull \hbox (0.13454pt too wide) in alignment at lines 960--986
+Overfull \hbox (0.13454pt too wide) in alignment at lines 983--1015
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (0.13454pt too wide) in alignment at lines 986--988
+Overfull \hbox (0.13454pt too wide) in alignment at lines 1015--1017
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (42.65129pt too wide) in paragraph at lines 989--989
+Overfull \hbox (42.65129pt too wide) in paragraph at lines 1018--1018
 []|\TU/lmr/m/n/10.95 WorldHappinessScore_2024|  
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 989--989
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1018--1018
  []|\TU/lmr/m/n/10.95 5.52|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 989--989
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1018--1018
  []|\TU/lmr/m/n/10.95 1.18|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 989--989
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1018--1018
  []|\TU/lmr/m/n/10.95 1.72|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 989--989
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1018--1018
  []|\TU/lmr/m/n/10.95 4.66|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 989--990
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1018--1019
  []|\TU/lmr/m/n/10.95 5.79|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 990--990
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1019--1019
  []|\TU/lmr/m/n/10.95 6.41|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 990--990
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1019--1019
  []|\TU/lmr/m/n/10.95 7.74|
  []
 
@@ -1428,42 +1434,42 @@ Missing character: There is no ▆ (U+2586) in font [lmroman10-regular]:mapping=
 Missing character: There is no ▇ (U+2587) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ▅ (U+2585) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (42.65129pt too wide) in paragraph at lines 991--991
+Overfull \hbox (42.65129pt too wide) in paragraph at lines 1020--1020
 []|\TU/lmr/m/n/10.95 WorldHappinessScore_2023|  
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 991--991
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1020--1020
  []|\TU/lmr/m/n/10.95 5.53|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 991--991
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1020--1020
  []|\TU/lmr/m/n/10.95 1.14|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 991--991
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1020--1020
  []|\TU/lmr/m/n/10.95 1.86|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 991--991
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1020--1020
  []|\TU/lmr/m/n/10.95 4.70|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 991--992
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1020--1021
  []|\TU/lmr/m/n/10.95 5.67|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 992--992
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1021--1021
  []|\TU/lmr/m/n/10.95 6.33|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 992--992
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1021--1021
  []|\TU/lmr/m/n/10.95 7.80|
  []
 
@@ -1473,42 +1479,42 @@ Missing character: There is no ▆ (U+2586) in font [lmroman10-regular]:mapping=
 Missing character: There is no ▇ (U+2587) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ▃ (U+2583) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (42.65129pt too wide) in paragraph at lines 993--993
+Overfull \hbox (42.65129pt too wide) in paragraph at lines 1022--1022
 []|\TU/lmr/m/n/10.95 WorldHappinessScore_2022|  
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1022--1022
  []|\TU/lmr/m/n/10.95 5.55|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1022--1022
  []|\TU/lmr/m/n/10.95 1.09|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1022--1022
  []|\TU/lmr/m/n/10.95 2.40|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1022--1022
  []|\TU/lmr/m/n/10.95 4.88|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 993--994
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1022--1023
  []|\TU/lmr/m/n/10.95 5.57|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 994--994
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1023--1023
  []|\TU/lmr/m/n/10.95 6.30|
  []
 
 
-Overfull \hbox (1.30026pt too wide) in paragraph at lines 994--994
+Overfull \hbox (1.30026pt too wide) in paragraph at lines 1023--1023
  []|\TU/lmr/m/n/10.95 7.82|
  []
 
@@ -1518,27 +1524,30 @@ Missing character: There is no ▇ (U+2587) in font [lmroman10-regular]:mapping=
 Missing character: There is no ▇ (U+2587) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ▃ (U+2583) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (0.13454pt too wide) in alignment at lines 988--995
+Overfull \hbox (0.13454pt too wide) in alignment at lines 1017--1025
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-LaTeX Warning: File `intro_files/figure-pdf/unnamed-chunk-3-1.pdf' not found on input line 1014.
+LaTeX Warning: Reference `fig-happy2' on page 16 undefined on input line 1032.
 
-! Unable to load picture or PDF file 'intro_files/figure-pdf/unnamed-chunk-3-1.pdf'.
+
+LaTeX Warning: File `intro_files/figure-pdf/fig-happy2-1.pdf' not found on input line 1048.
+
+! Unable to load picture or PDF file 'intro_files/figure-pdf/fig-happy2-1.pdf'.
 <to be read again> 
                    }
-l.1014 ...files/figure-pdf/unnamed-chunk-3-1.pdf}}
+l.1048 ...ntro_files/figure-pdf/fig-happy2-1.pdf}}
                                                   
 The requested image couldn't be read because
 it was not a recognized image format.
 
  
 Here is how much of TeX's memory you used:
- 25697 strings out of 470195
- 497780 string characters out of 5477276
+ 25699 strings out of 470195
+ 497555 string characters out of 5477276
  1214061 words of memory out of 5000000
- 53945 multiletter control sequences out of 15000+600000
+ 53947 multiletter control sequences out of 15000+600000
  634258 words of font info for 91 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,10n,114p,11208b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
