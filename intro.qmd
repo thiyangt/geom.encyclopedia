@@ -165,7 +165,7 @@ library(visdat)
 vis_dat(worldbankdata) + 
   scale_fill_brewer(palette = "Dark2")
 ```
-@fig-miss2 shows  combinations of missingness across cases.   This is especially useful for understanding patterns of missingness across variables. For example there are 5122 rows where both `Electricity` and `Cooking` variable missing.
+@fig-miss2 shows  combinations of missingness across cases.   This is especially useful for understanding patterns of missingness across variables. For example, there are 5122 rows where both `Electricity` and `Cooking` variable missing.
 
 
 ```{r}
