@@ -251,6 +251,10 @@ I would like to thank all the students who took my ASP 460 2.0/STA 492 2.0 Data 
 
 This book was built with <a href="https://quarto.org/">Quarto</a>. 
 
+## Declaration of generative AI in scientific writing
+
+During the preparation of this work the author used ChatGPT in order to improve readability and language. After using this tool/service, the author reviewed and edited the content as needed and take full responsibility for the content of the published article.
+
 ## Cite
 
 Please use the below text and bibtex for citing the book.

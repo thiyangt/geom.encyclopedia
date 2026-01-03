@@ -2,37 +2,71 @@
 
 ## Installation of associated packages
 
-To run the examples in the book 
+To run the examples in the book you need to install the following packages. In addition, to this package list, the associated package corresponds to the geom should be installed. The `drone` package provides the datasets associated with this geom encyclopedia.
 
 ```r
-install.packages(drone)
+#install.packages(drone)
+#install.packages("devtools")
+devtools::install_github("thiyangt/drone")
 install.packages(tidyverse)
 install.packages(patchwork)
 ```
 
-## Data set use in geom Encyclopedia
+# Data set use in the geom Encyclopedia
+
+The datasets used in the book, main are from country-wise statistics obtained from public reliable websites. Only two datasets are used to explain all geoms so that readers can build intuition by seeing the same data represented in multiple ways. The reasons for using these datasets are:
+
+- The dataset context is familiar and easily understood by individuals from diverse backgrounds.
+
+- Ability to create cross-sectional, time-series, spatial, and spatio-temporal visualizations.
+
+- Ability to visualize relationships between qualitative–qualitative, qualitative–quantitative, and quantitative–quantitative variables.
+
+- Experience addressing common data challenges such as missing values, overplotting, and large-scale datasets.
+
+
+## **WorldHappinessScore** dataset
+
+The dataset is obtained from World Population Review report (@worldpopulationreview_happiest).  The World Happiness Score is reported on a 0–10 scale, with higher values indicating greater happiness. This dataset containes the world happiness score for 145 countries. The variable description is given in @tbl-WorldHappinessScore.
+
+```{r}
+#| label: tbl-WorldHappinessScore
+#| echo: false
+#| tbl-cap: "Variable Description for WorldHappinessScore dataset"
+library(knitr)
+library(kableExtra)
+Variable <- c("flagCode", "country", "WorldHappinessScore_2024", "WorldHappinessScore_2023", "WorldHappinessScore_2022")
+description <- c("Country flag code", "Country name", "World happiness score for 2024", "World happiness score for 2023" , "World happiness score for 2022")
+df <- data.frame(Variable, Description = description)
+df |> kbl() |>
+  kable_paper("hover", full_width = F)
+```
+
+The first few rows of the dataset is shown below
 
 ```{r}
 library(drone)
-library(tibble)
-data(worldbankdata)
-worldbankdata
+head(WorldHappinessScore)
 ```
 
-## `worldbankdata`: Data Profiling
+### `WorldHappinessScore`: Data Profiling
+
+The following code provides a compact summary of the dataset.
 
 ```{r , message=FALSE, warning=FALSE}
 library(skimr)
-worldbankdata |> 
+WorldHappinessScore |> 
   skim()
 ```
 
-## `worldbankdata`: Data Quality Analysis
+### `WorldHappinessScore`: Data Quality Analysis
+
+The following outputs were obtained to show the types of variables we have in the dataset and missing value distribution.
 
 ```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(visdat)
-vis_dat(worldbankdata) + 
+vis_dat(WorldHappinessScore) + 
   scale_fill_brewer(palette = "Dark2")
 ```
 
@@ -43,20 +77,63 @@ gg_miss_upset(worldbankdata)
 
 
 
-## R packages with geom implementation
+## **worldbankdata** dataset
 
-1. ggplot2 [@ggplot2]
+This dataset provides country-level development indicators compiled from the World Bank Data Catalogue. It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.
 
-2. ggpattern [@ggpattern]
+The variable description is given in @tbl-worldbankdata.
 
-3. ggforce [@ggforce]
+```{r}
+#| label: tbl-worldbankdata
+#| echo: false
+#| tbl-cap: "Variable Description for worldbankdata dataset"
+library(knitr)
+library(kableExtra)
+Variable <- c("Country", "Code", "Region", "Year", "Cooking", "Electricity", "Income")
+description <- c("Country name", "ISO country code", "World Bank regional classification", "Year of observation" , "Access to clean fuels and technologies for cooking (percentage of population).", "Access to electricity (percentage of population).",
+"Income group classification: L = Low income, LM = Lower middle income, UM = Upper middle income, HI = High income.")
+df <- data.frame(Variable, Description = description)
+df |> kbl() |>
+  kable_paper("hover", full_width = F)
+```
 
-4. ggalluvial [@ggalluvial]
+To view the dataset use the following code.
 
-5. ggbump [@ggbump]
 
-6. ggridges [@ggridges]
+```{r}
+library(drone)
+library(tibble)
+data(worldbankdata)
+worldbankdata
+```
 
-7. ggalt [@ggalt]
+### `worldbankdata`: Data Profiling
 
-WIP - adding..
+The following code provides a compact summary of the dataset.
+
+```{r , message=FALSE, warning=FALSE}
+library(skimr)
+worldbankdata |> 
+  skim()
+```
+
+### `worldbankdata`: Data Quality Analysis
+
+This dataset contains some missing values. The following outputs were obtained to show the types of variables we have in the dataset and missing value distribution.
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(visdat)
+vis_dat(worldbankdata) + 
+  scale_fill_brewer(palette = "Dark2")
+```
+This is especially useful for understanding patterns of missingness across variables.
+
+
+```{r , message=FALSE, warning=FALSE}
+library(naniar)
+gg_miss_upset(worldbankdata) 
+```
+
+
+

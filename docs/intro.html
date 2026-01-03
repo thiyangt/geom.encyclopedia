@@ -122,6 +122,10 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
@@ -382,10 +386,19 @@ div.csl-indent {
    
   <ul>
   <li><a href="#installation-of-associated-packages" id="toc-installation-of-associated-packages" class="nav-link active" data-scroll-target="#installation-of-associated-packages">Installation of associated packages</a></li>
-  <li><a href="#data-set-use-in-geom-encyclopedia" id="toc-data-set-use-in-geom-encyclopedia" class="nav-link" data-scroll-target="#data-set-use-in-geom-encyclopedia">Data set use in geom Encyclopedia</a></li>
+  <li><a href="#data-set-use-in-the-geom-encyclopedia" id="toc-data-set-use-in-the-geom-encyclopedia" class="nav-link" data-scroll-target="#data-set-use-in-the-geom-encyclopedia">Data set use in the geom Encyclopedia</a>
+  <ul class="collapse">
+  <li><a href="#worldhappinessscore-dataset" id="toc-worldhappinessscore-dataset" class="nav-link" data-scroll-target="#worldhappinessscore-dataset"><strong>WorldHappinessScore</strong> dataset</a>
+  <ul class="collapse">
+  <li><a href="#worldhappinessscore-data-profiling" id="toc-worldhappinessscore-data-profiling" class="nav-link" data-scroll-target="#worldhappinessscore-data-profiling"><code>WorldHappinessScore</code>: Data Profiling</a></li>
+  <li><a href="#worldhappinessscore-data-quality-analysis" id="toc-worldhappinessscore-data-quality-analysis" class="nav-link" data-scroll-target="#worldhappinessscore-data-quality-analysis"><code>WorldHappinessScore</code>: Data Quality Analysis</a></li>
+  </ul></li>
+  <li><a href="#worldbankdata-dataset" id="toc-worldbankdata-dataset" class="nav-link" data-scroll-target="#worldbankdata-dataset"><strong>worldbankdata</strong> dataset</a>
+  <ul class="collapse">
   <li><a href="#worldbankdata-data-profiling" id="toc-worldbankdata-data-profiling" class="nav-link" data-scroll-target="#worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</a></li>
   <li><a href="#worldbankdata-data-quality-analysis" id="toc-worldbankdata-data-quality-analysis" class="nav-link" data-scroll-target="#worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</a></li>
-  <li><a href="#r-packages-with-geom-implementation" id="toc-r-packages-with-geom-implementation" class="nav-link" data-scroll-target="#r-packages-with-geom-implementation">R packages with geom implementation</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -413,18 +426,354 @@ div.csl-indent {
 
 <section id="installation-of-associated-packages" class="level2">
 <h2 class="anchored" data-anchor-id="installation-of-associated-packages">Installation of associated packages</h2>
-<p>To run the examples in the book</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(drone)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To run the examples in the book you need to install the following packages. In addition, to this package list, the associated package corresponds to the geom should be installed. The <code>drone</code> package provides the datasets associated with this geom encyclopedia.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(drone)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("devtools")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"thiyangt/drone"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="data-set-use-in-geom-encyclopedia" class="level2">
-<h2 class="anchored" data-anchor-id="data-set-use-in-geom-encyclopedia">Data set use in geom Encyclopedia</h2>
+<section id="data-set-use-in-the-geom-encyclopedia" class="level1">
+<h1>Data set use in the geom Encyclopedia</h1>
+<p>The datasets used in the book, main are from country-wise statistics obtained from public reliable websites. Only two datasets are used to explain all geoms so that readers can build intuition by seeing the same data represented in multiple ways. The reasons for using these datasets are:</p>
+<ul>
+<li><p>The dataset context is familiar and easily understood by individuals from diverse backgrounds.</p></li>
+<li><p>Ability to create cross-sectional, time-series, spatial, and spatio-temporal visualizations.</p></li>
+<li><p>Ability to visualize relationships between qualitative–qualitative, qualitative–quantitative, and quantitative–quantitative variables.</p></li>
+<li><p>Experience addressing common data challenges such as missing values, overplotting, and large-scale datasets.</p></li>
+</ul>
+<section id="worldhappinessscore-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="worldhappinessscore-dataset"><strong>WorldHappinessScore</strong> dataset</h2>
+<p>The dataset is obtained from World Population Review report (<span class="citation" data-cites="worldpopulationreview_happiest">World Population Review (<a href="references.html#ref-worldpopulationreview_happiest" role="doc-biblioref">n.d.</a>)</span>). The World Happiness Score is reported on a 0–10 scale, with higher values indicating greater happiness. This dataset containes the world happiness score for 145 countries. The variable description is given in <a href="#tbl-WorldHappinessScore" class="quarto-xref">Table&nbsp;<span>1.1</span></a>.</p>
+<div class="cell">
+<div id="tbl-WorldHappinessScore" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-WorldHappinessScore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.1: Variable Description for WorldHappinessScore dataset
+</figcaption>
+<div aria-describedby="tbl-WorldHappinessScore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-paper lightable-hover do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">flagCode</td>
+<td style="text-align: left;">Country flag code</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">country</td>
+<td style="text-align: left;">Country name</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WorldHappinessScore_2024</td>
+<td style="text-align: left;">World happiness score for 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WorldHappinessScore_2023</td>
+<td style="text-align: left;">World happiness score for 2023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WorldHappinessScore_2022</td>
+<td style="text-align: left;">World happiness score for 2022</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The first few rows of the dataset is shown below</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(WorldHappinessScore)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  flagCode     country WorldHappinessScore_2024 WorldHappinessScore_2023
+1       FI     Finland                     7.74                    7.804
+2       DK     Denmark                     7.58                    7.586
+3       IS     Iceland                     7.53                    7.530
+4       SE      Sweden                     7.34                    7.395
+5       IL      Israel                     7.34                    7.473
+6       NL Netherlands                     7.32                    7.403
+  WorldHappinessScore_2022
+1                    7.821
+2                    7.636
+3                    7.557
+4                    7.384
+5                    7.364
+6                    7.415</code></pre>
+</div>
+</div>
+<section id="worldhappinessscore-data-profiling" class="level3">
+<h3 class="anchored" data-anchor-id="worldhappinessscore-data-profiling"><code>WorldHappinessScore</code>: Data Profiling</h3>
+<p>The following code provides a compact summary of the dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>WorldHappinessScore <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">WorldHappinessScore</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">145</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 19%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">flagCode</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">country</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">145</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">WorldHappinessScore_2024</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">5.52</td>
+<td style="text-align: right;">1.18</td>
+<td style="text-align: right;">1.72</td>
+<td style="text-align: right;">4.66</td>
+<td style="text-align: right;">5.79</td>
+<td style="text-align: right;">6.41</td>
+<td style="text-align: right;">7.74</td>
+<td style="text-align: left;">▁▂▆▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WorldHappinessScore_2023</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: right;">5.53</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">1.86</td>
+<td style="text-align: right;">4.70</td>
+<td style="text-align: right;">5.67</td>
+<td style="text-align: right;">6.33</td>
+<td style="text-align: right;">7.80</td>
+<td style="text-align: left;">▁▂▆▇▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WorldHappinessScore_2022</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">5.55</td>
+<td style="text-align: right;">1.09</td>
+<td style="text-align: right;">2.40</td>
+<td style="text-align: right;">4.88</td>
+<td style="text-align: right;">5.57</td>
+<td style="text-align: right;">6.30</td>
+<td style="text-align: right;">7.82</td>
+<td style="text-align: left;">▁▃▇▇▃</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="worldhappinessscore-data-quality-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="worldhappinessscore-data-quality-analysis"><code>WorldHappinessScore</code>: Data Quality Analysis</h3>
+<p>The following outputs were obtained to show the types of variables we have in the dataset and missing value distribution.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(WorldHappinessScore) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="intro_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="intro_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="worldbankdata-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="worldbankdata-dataset"><strong>worldbankdata</strong> dataset</h2>
+<p>This dataset provides country-level development indicators compiled from the World Bank Data Catalogue. It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.</p>
+<p>The variable description is given in <a href="#tbl-worldbankdata" class="quarto-xref">Table&nbsp;<span>1.2</span></a>.</p>
+<div class="cell">
+<div id="tbl-worldbankdata" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-worldbankdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.2: Variable Description for worldbankdata dataset
+</figcaption>
+<div aria-describedby="tbl-worldbankdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-paper lightable-hover do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Country</td>
+<td style="text-align: left;">Country name</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Code</td>
+<td style="text-align: left;">ISO country code</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region</td>
+<td style="text-align: left;">World Bank regional classification</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Year</td>
+<td style="text-align: left;">Year of observation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cooking</td>
+<td style="text-align: left;">Access to clean fuels and technologies for cooking (percentage of population).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Electricity</td>
+<td style="text-align: left;">Access to electricity (percentage of population).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income</td>
+<td style="text-align: left;">Income group classification: L = Low income, LM = Lower middle income, UM = Upper middle income, HI = High income.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>To view the dataset use the following code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,937 × 7
    Country Code  Region                     Year Cooking Electricity Income
@@ -442,13 +791,13 @@ div.csl-indent {
 # ℹ 7,927 more rows</code></pre>
 </div>
 </div>
-</section>
-<section id="worldbankdata-data-profiling" class="level2">
-<h2 class="anchored" data-anchor-id="worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</h2>
+<section id="worldbankdata-data-profiling" class="level3">
+<h3 class="anchored" data-anchor-id="worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</h3>
+<p>The following code provides a compact summary of the dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>worldbankdata <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Data summary</caption>
@@ -621,67 +970,43 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="worldbankdata-data-quality-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</h2>
+<section id="worldbankdata-data-quality-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</h3>
+<p>This dataset contains some missing values. The following outputs were obtained to show the types of variables we have in the dataset and missing value distribution.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>This is especially useful for understanding patterns of missingness across variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-worldpopulationreview_happiest" class="csl-entry" role="listitem">
+World Population Review. n.d. <span>“Happiest Countries in the World.”</span> <a href="https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world">https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world</a>.
 </div>
 </div>
 </section>
-<section id="r-packages-with-geom-implementation" class="level2">
-<h2 class="anchored" data-anchor-id="r-packages-with-geom-implementation">R packages with geom implementation</h2>
-<ol type="1">
-<li><p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
-<li><p>ggpattern <span class="citation" data-cites="ggpattern">(<a href="#ref-ggpattern" role="doc-biblioref">FC, Davis, and ggplot2 authors 2023</a>)</span></p></li>
-<li><p>ggforce <span class="citation" data-cites="ggforce">(<a href="#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p></li>
-<li><p>ggalluvial <span class="citation" data-cites="ggalluvial">(<a href="#ref-ggalluvial" role="doc-biblioref"><strong>ggalluvial?</strong></a>)</span></p></li>
-<li><p>ggbump <span class="citation" data-cites="ggbump">(<a href="#ref-ggbump" role="doc-biblioref">Sjoberg 2020</a>)</span></p></li>
-<li><p>ggridges <span class="citation" data-cites="ggridges">(<a href="#ref-ggridges" role="doc-biblioref">Wilke 2023</a>)</span></p></li>
-<li><p>ggalt <span class="citation" data-cites="ggalt">(<a href="#ref-ggalt" role="doc-biblioref">Rudis, Bolker, and Schulz 2017</a>)</span></p></li>
-</ol>
-<p>WIP - adding..</p>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-ggpattern" class="csl-entry" role="listitem">
-FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. <em>Ggpattern: ’Ggplot2’ Pattern Geoms</em>.
-</div>
-<div id="ref-ggforce" class="csl-entry" role="listitem">
-Pedersen, Thomas Lin. 2022. <em>Ggforce: Accelerating ’Ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggforce">https://CRAN.R-project.org/package=ggforce</a>.
-</div>
-<div id="ref-ggalt" class="csl-entry" role="listitem">
-Rudis, Bob, Ben Bolker, and Jan Schulz. 2017. <em>Ggalt: Extra Coordinate Systems, ’Geoms’, Statistical Transformations, Scales and Fonts for ’Ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggalt">https://CRAN.R-project.org/package=ggalt</a>.
-</div>
-<div id="ref-ggbump" class="csl-entry" role="listitem">
-Sjoberg, David. 2020. <em>Ggbump: Bump Chart and Sigmoid Curves</em>. <a href="https://CRAN.R-project.org/package=ggbump">https://CRAN.R-project.org/package=ggbump</a>.
-</div>
-<div id="ref-ggplot2" class="csl-entry" role="listitem">
-Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
-</div>
-<div id="ref-ggridges" class="csl-entry" role="listitem">
-Wilke, Claus O. 2023. <em>Ggridges: Ridgeline Plots in ’Ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggridges">https://CRAN.R-project.org/package=ggridges</a>.
-</div>
-</div>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -351,9 +351,14 @@ of chart such as point chart, line chart, bar chart, etc.
 
 To illustrate the idea I use the following dataset which contains
 information related to 82 countires. The variable description is as
-follows:
+follows (Table~\ref{tbl-des}):
 
 \begin{table}
+
+\caption{\label{tbl-des}Variable Description}
+
+\centering{
+
 \centering
 \begin{tabular}[t]{l|l}
 \hline
@@ -366,7 +371,10 @@ Income & Income category in 2021: lower income (L), lower middle income (LM)\\
 Electricity & Percentage of people access to electricity\\
 \hline
 \end{tabular}
-\end{table}
+
+}
+
+\end{table}%
 
 The first eight rows of the dataset as well as the R code to load the
 dataset is given below:
@@ -398,43 +406,44 @@ dataset is given below:
 \end{verbatim}
 
 Now, I want to visualize the relationship between Electricity and Income
-variables on the cartesian coordinate plane shown in Figure
-\textbf{?@fig-cartesian}
+variables on the cartesian coordinate plane shown in
+Figure~\ref{fig-cartesian}
 
-\begin{verbatim}
-Warning: Removed 4 rows containing missing values or values outside the scale range
-(`geom_point()`).
-\end{verbatim}
+\begin{figure}
 
-\begin{figure}[H]
+\centering{
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/cartesian-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/fig-cartesian-1.pdf}}
 
 }
 
-\caption{Cartesian coordinate plane showing Income (x-axis) and
-Electricity (y-axis).}
+\caption{\label{fig-cartesian}Cartesian coordinate plane showing Income
+(x-axis) and Electricity (y-axis).}
 
 \end{figure}%
 
-Figure 2 shows 6 plotting types that I created using the same dataset
-and same cartesian plane.
+Figure~\ref{fig-geom} shows 6 plotting types that I created to visualise
+the relationship between the variables \texttt{Electricity} and
+\texttt{Income} on the Cartesian plane Figure~\ref{fig-cartesian}.
 
-\begin{figure}[H]
+\begin{figure}
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/fig-geom-1.pdf}}
 
 }
 
-\caption{Figure 2: Relationship between income level and percentage of
-people access to electricity in lower incom (L), lower middle income
-(LM) in 2021}
+\caption{\label{fig-geom}Six plot types used to visualize the
+relationship between income level (low income \hyperref[sec-l]{L},
+lower-middle income {[}LM{]}) and the percentage of people with access
+to electricity in 2021.}
 
 \end{figure}%
 
-In all the charts shown in Figure 2 a-h, I used the same dataset, the
-same variables, and the same Cartesian plane. However, the chart types
-different.
+In all panels of Figure~\ref{fig-geom} (a--h), the same dataset,
+variables, and Cartesian coordinate system are used. However, the chart
+types different.
 
 Could you list the differences you observe in the charts?
 
@@ -443,16 +452,23 @@ Could you list the differences you observe in the charts?
 \item
   The type of chart or shape used to depict data.
 \item
-  The statistics that we compute on the data to visualize on the chart.
+  The statistics computed on the data to visualize on the chart.
 \end{enumerate}
 
 When creating a chart, we first decide on the statistic we want to
 visualize. Next, we compute this statistic from the data, and finally,
-we use a suitable geometry to display the computed values. Table 2
-summarizes the statistical operations performed on the data and the
-corresponding geometries used to visualize the computed statistics.
+we use a suitable geometry to display the computed values of the
+statistic. Table~\ref{tbl-summary-table} summarizes the statistical
+operations (or statistical transformations) performed on the data and
+the corresponding geometries used to visualize the computed statistics.
 
 \begin{table}
+
+\caption{\label{tbl-summary-table}Statistical transformations and
+geom/stat layers are used in the plots.}
+
+\centering{
+
 \centering
 \begin{tabular}[t]{l|l|l|l|l}
 \hline
@@ -475,7 +491,10 @@ G & Compute minimum and maximum of data & Line geometry & linerange & Range of d
 H & Compute minimum, mean, and maximum & Line geometry (range) and point geometry (mean) & linerange and point & Range and mean of data\\
 \hline
 \end{tabular}
-\end{table}
+
+}
+
+\end{table}%
 
 This encyclopedia is a collection of geoms, in other words plot types
 that you can create using the ggplot2 or extensions of ggplot2 under the
@@ -499,21 +518,22 @@ new geoms. Further, this also helps to avoid duplicate efforts.
 
 \markright{What you will learn?}
 
-Each geom has a set of aesthetics that it understands. These aesthetics
-can be divided into two parts: i) required aesthetics and ii) optional
-aesthetics. Further, Every geom has a default stat; and every stat has a
-default geom.
+In this {geom encyclopedia} you will learn different types of geoms and
+their applications. Furthermore, each geom has a set of aesthetics that
+it understands. These aesthetics can be divided into two parts: i)
+required aesthetics and ii) optional aesthetics. Further, every geom has
+a default stat; and every stat has a default geom.
 
-To get an idea about the associated aesthetics and stat let look at plot
-shown in Figure 4. In this case \texttt{x}, \texttt{y} are required
-aesthetics and \texttt{color} \texttt{size} and \texttt{alpha} is
-optional aesthetics. The statistics layer is identity since the data
-points are plotted as it is.
+To give you an idea about the associated aesthetics and stat, let's look
+at the plot shown in Figure~\ref{fig-plot}. In this case \texttt{x},
+\texttt{y} are required aesthetics and \texttt{color} \texttt{size} and
+\texttt{alpha} is optional aesthetics. The statistics layer is identity
+since the data points are plotted as it is.
 
 The aesthetic mappings, defined with \texttt{aes()}, describe how
-variables in the dataset are mapped to visual properties or aesthetics.
-This \texttt{aes(x=Income,\ y=Electricity,\ color=Income)} is called
-mapping variables to the visual properties of the chart. This
+variables in the dataset are mapped to aesthetics (or visual properties
+of the plot). This \texttt{aes(x=Income,\ y=Electricity,\ color=Income)}
+is called mapping variables to the visual properties of the chart. This
 \texttt{alpha=0.5,\ size=2} is called setting values to visual
 properties.
 
@@ -527,18 +547,55 @@ properties.
 
 \begin{figure}[H]
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/unnamed-chunk-5-1.pdf}}
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{preface_files/figure-pdf/fig-plot-1.pdf}}
 
 }
 
-\caption{Figure 4: Distribution of Electricity by Income Category}
+\caption{\label{fig-plot}Distribution of Electricity by Income Category}
 
 \end{figure}%
 
-In this {geom encyclopedia}, you will learn about the required and
-optional aesthetics that each geom supports, as well as the associated
-statistical layer for each geom. Additionally, an example is provided
-demonstrating the application of each geom with reproducible R code.
+In this {geom encyclopedia}, you will also learn about the required and
+optional aesthetics that each geom supports. Additionally, an example is
+provided demonstrating the application of each geom with reproducible R
+code.
+
+In summary you will learn:
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\item
+  What each geom does The purpose of different geoms (e.g., points,
+  lines, bars, boxes, tiles) and the types of data and questions they
+  are best suited for.
+\item
+  Required and optional aesthetics Which aesthetics (such as x, y,
+  colour, fill, size, group) are required for each geom and how optional
+  aesthetics change the appearance and meaning of a plot.
+\item
+  Typical use cases When to use each geom---for example, comparing
+  distributions, showing relationships, visualizing trends over time, or
+  displaying uncertainty.
+\item
+  Common variations and set parameters Key arguments (such as stat,
+  position, alpha, width, binwidth) and how they affect the visual
+  output.
+\item
+  Strategies to improve clarity of plots Strategies to overcome the
+  frequent challenges such as overplapping, missing values, highlight
+  trend, etc.
+\item
+  Connections between geoms and statistics How geoms interact with
+  statistical transformations (e.g., geom\_histogram() with binning,
+  geom\_smooth() with model fitting).
+\end{enumerate}
+
+\begin{verbatim}
+vii. Connections between geom
+Similar geoms and different combinations of geoms that can use to visualise data.
+\end{verbatim}
 
 \section*{What you won't learn?}\label{what-you-wont-learn}
 \addcontentsline{toc}{section}{What you won't learn?}
@@ -567,18 +624,20 @@ have tabulated the geoms listed under that letter.
 
 \markright{Audience}
 
-The Figure 3 shows my target audience for the book. In general for all
-data enthusiasts, this can be considered as a {Encyclopedia of Plots}.
-For R, tidyverse, gggplot2 users this can be considered as a {Data
-Visualisation Geometries Encyclopedia}.
+The Figure~\ref{fig-audience} shows my target audience for the book. In
+general for all data enthusiasts, this can be considered as a
+{Encyclopedia of Plots}. For R, tidyverse, gggplot2 users this can be
+considered as a {Data Visualisation Geometries Encyclopedia}.
 
-\begin{figure}[H]
+\begin{figure}
 
-{\centering \includegraphics[width=2.87in,height=\textheight,keepaspectratio]{audience.png}
+\centering{
+
+\includegraphics[width=2.87in,height=\textheight,keepaspectratio]{audience.png}
 
 }
 
-\caption{Figure 4: Audience}
+\caption{\label{fig-audience}Target Audience}
 
 \end{figure}%
 
@@ -591,31 +650,36 @@ this {geom encyclopedia}?}
 \markright{What prior knowledge is needed to use this {geom
 encyclopedia}?}
 
-\textbf{For a complete newcomer to get an idea about the possible charts
-that can be drawn for a data set.}
-
-None
-
-\textbf{To get hands-on-experience with the examples provided you need
-to have following knowledge.}
-
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  R and RStudio Integrated Development Environment (IDE)
+  \textbf{For a complete newcomer to get an idea about the possible
+  charts that can be drawn for a data set.}
+
+  None
 \item
-  Basics of R programming
-\item
-  \href{https://www.tidyverse.org/}{tidyverse} (Wickham et al. 2019)
-  style of coding
-\item
-  Data wrangling with tidyr(Wickham, Vaughan, and Girlich 2024) and
-  dplyr(Wickham et al. 2023)
-\item
-  Knowledge in using the pipe operator: \textbf{\textbar\textgreater{}}
-\item
-  Knowledge in creating data visualisations using the grammar of
-  graphics frame work implemented in ggplot2(Wickham 2016)
+  \textbf{To get hands-on-experience with the examples provided you need
+  to have following knowledge.}
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    R and RStudio Integrated Development Environment (IDE)
+  \item
+    Basics of R programming
+  \item
+    \href{https://www.tidyverse.org/}{tidyverse} (Wickham et al. 2019)
+    style of coding
+  \item
+    Data wrangling with tidyr(Wickham, Vaughan, and Girlich 2024) and
+    dplyr(Wickham et al. 2023)
+  \item
+    Knowledge in using the pipe operator:
+    \textbf{\textbar\textgreater{}}
+  \item
+    Knowledge in creating data visualisations using the grammar of
+    graphics frame work implemented in ggplot2(Wickham 2016)
+  \end{enumerate}
 \end{enumerate}
 
 If you want to learn more of them, following are the books recommended:
@@ -644,6 +708,18 @@ in exploring geoms with me.
 
 This book was built with Quarto.
 
+\section*{Declaration of generative AI in scientific
+writing}\label{declaration-of-generative-ai-in-scientific-writing}
+\addcontentsline{toc}{section}{Declaration of generative AI in
+scientific writing}
+
+\markright{Declaration of generative AI in scientific writing}
+
+During the preparation of this work the author used ChatGPT in order to
+improve readability and language. After using this tool/service, the
+author reviewed and edited the content as needed and take full
+responsibility for the content of the published article.
+
 \section*{Cite}\label{cite}
 \addcontentsline{toc}{section}{Cite}
 
@@ -658,7 +734,7 @@ Please use the below text and bibtex for citing the book.
 Please use the below text and bibtex for citing the associated R package
 drone.
 
-\texttt{Talagala\ T\ (2025).\ \ \ drone:\ Data\ for\ Data\ \ \ Visualisation\ Geometries\ \ \ Encyclopedia.\ R\ package\ \ \ version\ 1.0.0,\ commit\ \ \ 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72,\ \ \ \textless{}https://github.com/thiyangt/drone\textgreater{}.}
+\texttt{Talagala\ T\ (2025).\ \_drone:\ Data\ for\ \ \ Data\ Visualisation\ Geometries\ \ \ Encyclopedia\_.\ R\ package\ version\ \ \ 2.0.0,\ \ \ \textless{}https://github.com/thiyangt/geom.encyclopedia\textgreater{}..}
 
 \texttt{@Manual\{drone,\ \ \ \ \ title\ =\ \{drone:\ Data\ for\ Data\ Visualisation\ Geometries\ Encyclopedia\},\ \ \ \ \ author\ =\ \{Thiyanga\ S.\ Talagala\},\ \ \ \ \ year\ =\ \{2025\},\ \ \ \ \ note\ =\ \{R\ package\ version\ 1.0.0,\ commit\ 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72\},\ \ \ \ \ url\ =\ \{https://github.com/thiyangt/drone\},\ \ \ \}}
 
@@ -687,21 +763,311 @@ packages}\label{installation-of-associated-packages}
 
 \markright{Installation of associated packages}
 
-To run the examples in the book
+To run the examples in the book you need to install the following
+packages. In addition, to this package list, the associated package
+corresponds to the geom should be installed. The \texttt{drone} package
+provides the datasets associated with this geom encyclopedia.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(drone)}
+\CommentTok{\#install.packages(drone)}
+\CommentTok{\#install.packages("devtools")}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"thiyangt/drone"}\NormalTok{)}
 \FunctionTok{install.packages}\NormalTok{(tidyverse)}
 \FunctionTok{install.packages}\NormalTok{(patchwork)}
 \end{Highlighting}
 \end{Shaded}
 
-\section*{Data set use in geom
-Encyclopedia}\label{data-set-use-in-geom-encyclopedia}
-\addcontentsline{toc}{section}{Data set use in geom Encyclopedia}
+\bookmarksetup{startatroot}
 
-\markright{Data set use in geom Encyclopedia}
+\chapter*{Data set use in the geom
+Encyclopedia}\label{data-set-use-in-the-geom-encyclopedia}
+\addcontentsline{toc}{chapter}{Data set use in the geom Encyclopedia}
+
+\markboth{Data set use in the geom Encyclopedia}{Data set use in the
+geom Encyclopedia}
+
+The datasets used in the book, main are from country-wise statistics
+obtained from public reliable websites. Only two datasets are used to
+explain all geoms so that readers can build intuition by seeing the same
+data represented in multiple ways. The reasons for using these datasets
+are:
+
+\begin{itemize}
+\item
+  The dataset context is familiar and easily understood by individuals
+  from diverse backgrounds.
+\item
+  Ability to create cross-sectional, time-series, spatial, and
+  spatio-temporal visualizations.
+\item
+  Ability to visualize relationships between qualitative--qualitative,
+  qualitative--quantitative, and quantitative--quantitative variables.
+\item
+  Experience addressing common data challenges such as missing values,
+  overplotting, and large-scale datasets.
+\end{itemize}
+
+\section*{\texorpdfstring{\textbf{WorldHappinessScore}
+dataset}{WorldHappinessScore dataset}}\label{worldhappinessscore-dataset}
+\addcontentsline{toc}{section}{\textbf{WorldHappinessScore} dataset}
+
+\markright{\textbf{WorldHappinessScore} dataset}
+
+The dataset is obtained from World Population Review report (World
+Population Review (n.d.)). The World Happiness Score is reported on a
+0--10 scale, with higher values indicating greater happiness. This
+dataset containes the world happiness score for 145 countries. The
+variable description is given in Table~\ref{tbl-WorldHappinessScore}.
+
+\begin{table}
+
+\caption{\label{tbl-WorldHappinessScore}Variable Description for
+WorldHappinessScore dataset}
+
+\centering{
+
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Variable & Description\\
+\hline
+flagCode & Country flag code\\
+\hline
+country & Country name\\
+\hline
+WorldHappinessScore\_2024 & World happiness score for 2024\\
+\hline
+WorldHappinessScore\_2023 & World happiness score for 2023\\
+\hline
+WorldHappinessScore\_2022 & World happiness score for 2022\\
+\hline
+\end{tabular}
+
+}
+
+\end{table}%
+
+The first few rows of the dataset is shown below
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(drone)}
+\FunctionTok{head}\NormalTok{(WorldHappinessScore)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  flagCode     country WorldHappinessScore_2024 WorldHappinessScore_2023
+1       FI     Finland                     7.74                    7.804
+2       DK     Denmark                     7.58                    7.586
+3       IS     Iceland                     7.53                    7.530
+4       SE      Sweden                     7.34                    7.395
+5       IL      Israel                     7.34                    7.473
+6       NL Netherlands                     7.32                    7.403
+  WorldHappinessScore_2022
+1                    7.821
+2                    7.636
+3                    7.557
+4                    7.384
+5                    7.364
+6                    7.415
+\end{verbatim}
+
+\subsection*{\texorpdfstring{\texttt{WorldHappinessScore}: Data
+Profiling}{WorldHappinessScore: Data Profiling}}\label{worldhappinessscore-data-profiling}
+\addcontentsline{toc}{subsection}{\texttt{WorldHappinessScore}: Data
+Profiling}
+
+The following code provides a compact summary of the dataset.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(skimr)}
+\NormalTok{WorldHappinessScore }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{skim}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{Data summary}\tabularnewline
+\toprule\noalign{}
+\endfirsthead
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Name & WorldHappinessScore \\
+Number of rows & 145 \\
+Number of columns & 5 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Column type frequency: & \\
+character & 2 \\
+numeric & 3 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Group variables & None \\
+\end{longtable}
+
+\textbf{Variable type: character}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1944}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1389}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1944}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0833}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1528}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+max
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+empty
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_unique
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+whitespace
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+flagCode & 1 & 0.99 & 2 & 2 & 0 & 144 & 0 \\
+country & 0 & 1.00 & 4 & 22 & 0 & 145 & 0 \\
+\end{longtable}
+
+\textbf{Variable type: numeric}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.2778}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+mean
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+sd
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p25
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p50
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p75
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p100
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+hist
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+WorldHappinessScore\_2024 & 4 & 0.97 & 5.52 & 1.18 & 1.72 & 4.66 & 5.79
+& 6.41 & 7.74 & ▁▂▆▇▅ \\
+WorldHappinessScore\_2023 & 9 & 0.94 & 5.53 & 1.14 & 1.86 & 4.70 & 5.67
+& 6.33 & 7.80 & ▁▂▆▇▃ \\
+WorldHappinessScore\_2022 & 1 & 0.99 & 5.55 & 1.09 & 2.40 & 4.88 & 5.57
+& 6.30 & 7.82 & ▁▃▇▇▃ \\
+\end{longtable}
+
+\subsection*{\texorpdfstring{\texttt{WorldHappinessScore}: Data Quality
+Analysis}{WorldHappinessScore: Data Quality Analysis}}\label{worldhappinessscore-data-quality-analysis}
+\addcontentsline{toc}{subsection}{\texttt{WorldHappinessScore}: Data
+Quality Analysis}
+
+The following outputs were obtained to show the types of variables we
+have in the dataset and missing value distribution.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(visdat)}
+\FunctionTok{vis\_dat}\NormalTok{(WorldHappinessScore) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(naniar)}
+\FunctionTok{gg\_miss\_upset}\NormalTok{(worldbankdata) }
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+
+\section*{\texorpdfstring{\textbf{worldbankdata}
+dataset}{worldbankdata dataset}}\label{worldbankdata-dataset}
+\addcontentsline{toc}{section}{\textbf{worldbankdata} dataset}
+
+\markright{\textbf{worldbankdata} dataset}
+
+This dataset provides country-level development indicators compiled from
+the World Bank Data Catalogue. It includes information on access to
+clean cooking fuels, access to electricity, income group classification,
+and regional grouping across multiple years.
+
+The variable description is given in Table~\ref{tbl-worldbankdata}.
+
+\begin{table}
+
+\caption{\label{tbl-worldbankdata}Variable Description for worldbankdata
+dataset}
+
+\centering{
+
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Variable & Description\\
+\hline
+Country & Country name\\
+\hline
+Code & ISO country code\\
+\hline
+Region & World Bank regional classification\\
+\hline
+Year & Year of observation\\
+\hline
+Cooking & Access to clean fuels and technologies for cooking (percentage of population).\\
+\hline
+Electricity & Access to electricity (percentage of population).\\
+\hline
+Income & Income group classification: L = Low income, LM = Lower middle income, UM = Upper middle income, HI = High income.\\
+\hline
+\end{tabular}
+
+}
+
+\end{table}%
+
+To view the dataset use the following code.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -729,11 +1095,12 @@ Encyclopedia}\label{data-set-use-in-geom-encyclopedia}
 # i 7,927 more rows
 \end{verbatim}
 
-\section*{\texorpdfstring{\texttt{worldbankdata}: Data
+\subsection*{\texorpdfstring{\texttt{worldbankdata}: Data
 Profiling}{worldbankdata: Data Profiling}}\label{worldbankdata-data-profiling}
-\addcontentsline{toc}{section}{\texttt{worldbankdata}: Data Profiling}
+\addcontentsline{toc}{subsection}{\texttt{worldbankdata}: Data
+Profiling}
 
-\markright{\texttt{worldbankdata}: Data Profiling}
+The following code provides a compact summary of the dataset.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -846,12 +1213,14 @@ Electricity & 5693 & 0.28 & 84.40 & 26.45 & 2.11 & 79.86 & 99.80 & 100 &
 100 & ▁▁▁▁▇ \\
 \end{longtable}
 
-\section*{\texorpdfstring{\texttt{worldbankdata}: Data Quality
+\subsection*{\texorpdfstring{\texttt{worldbankdata}: Data Quality
 Analysis}{worldbankdata: Data Quality Analysis}}\label{worldbankdata-data-quality-analysis}
-\addcontentsline{toc}{section}{\texttt{worldbankdata}: Data Quality
+\addcontentsline{toc}{subsection}{\texttt{worldbankdata}: Data Quality
 Analysis}
 
-\markright{\texttt{worldbankdata}: Data Quality Analysis}
+This dataset contains some missing values. The following outputs were
+obtained to show the types of variables we have in the dataset and
+missing value distribution.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -862,7 +1231,10 @@ Analysis}
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-7-1.pdf}}
+
+This is especially useful for understanding patterns of missingness
+across variables.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -871,33 +1243,7 @@ Analysis}
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-4-1.pdf}}
-
-\section*{R packages with geom
-implementation}\label{r-packages-with-geom-implementation}
-\addcontentsline{toc}{section}{R packages with geom implementation}
-
-\markright{R packages with geom implementation}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  ggplot2 (Wickham 2016)
-\item
-  ggpattern (FC, Davis, and ggplot2 authors 2023)
-\item
-  ggforce (Pedersen 2022)
-\item
-  ggalluvial (\textbf{ggalluvial?})
-\item
-  ggbump (Sjoberg 2020)
-\item
-  ggridges (Wilke 2023)
-\item
-  ggalt (Rudis, Bolker, and Schulz 2017)
-\end{enumerate}
-
-WIP - adding..
+\pandocbounded{\includegraphics[keepaspectratio]{intro_files/figure-pdf/unnamed-chunk-8-1.pdf}}
 
 \bookmarksetup{startatroot}
 
@@ -7776,6 +8122,10 @@ Wickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024.
 \bibitem[\citeproctext]{ref-ggridges}
 Wilke, Claus O. 2023. \emph{Ggridges: Ridgeline Plots in 'Ggplot2'}.
 \url{https://CRAN.R-project.org/package=ggridges}.
+
+\bibitem[\citeproctext]{ref-worldpopulationreview_happiest}
+World Population Review. n.d. {``Happiest Countries in the World.''}
+\url{https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world}.
 
 \bibitem[\citeproctext]{ref-ggimage}
 Yu, Guangchuang. 2023. \emph{Ggimage: Use Image in 'Ggplot2'}.
