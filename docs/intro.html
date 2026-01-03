@@ -386,8 +386,7 @@ div.csl-indent {
    
   <ul>
   <li><a href="#installation-of-associated-packages" id="toc-installation-of-associated-packages" class="nav-link active" data-scroll-target="#installation-of-associated-packages">Installation of associated packages</a></li>
-  <li><a href="#data-set-use-in-the-geom-encyclopedia" id="toc-data-set-use-in-the-geom-encyclopedia" class="nav-link" data-scroll-target="#data-set-use-in-the-geom-encyclopedia">Data set use in the geom Encyclopedia</a>
-  <ul class="collapse">
+  <li><a href="#data-set-use-in-the-geom-encyclopedia" id="toc-data-set-use-in-the-geom-encyclopedia" class="nav-link" data-scroll-target="#data-set-use-in-the-geom-encyclopedia">Data set use in the geom Encyclopedia</a></li>
   <li><a href="#worldhappinessscore-dataset" id="toc-worldhappinessscore-dataset" class="nav-link" data-scroll-target="#worldhappinessscore-dataset"><strong>WorldHappinessScore</strong> dataset</a>
   <ul class="collapse">
   <li><a href="#worldhappinessscore-data-profiling" id="toc-worldhappinessscore-data-profiling" class="nav-link" data-scroll-target="#worldhappinessscore-data-profiling"><code>WorldHappinessScore</code>: Data Profiling</a></li>
@@ -397,7 +396,6 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#worldbankdata-data-profiling" id="toc-worldbankdata-data-profiling" class="nav-link" data-scroll-target="#worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</a></li>
   <li><a href="#worldbankdata-data-quality-analysis" id="toc-worldbankdata-data-quality-analysis" class="nav-link" data-scroll-target="#worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</a></li>
-  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -434,8 +432,8 @@ div.csl-indent {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(tidyverse)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="data-set-use-in-the-geom-encyclopedia" class="level1">
-<h1>Data set use in the geom Encyclopedia</h1>
+<section id="data-set-use-in-the-geom-encyclopedia" class="level2">
+<h2 class="anchored" data-anchor-id="data-set-use-in-the-geom-encyclopedia">Data set use in the geom Encyclopedia</h2>
 <p>The datasets used in the book, main are from country-wise statistics obtained from public reliable websites. Only two datasets are used to explain all geoms so that readers can build intuition by seeing the same data represented in multiple ways. The reasons for using these datasets are:</p>
 <ul>
 <li><p>The dataset context is familiar and easily understood by individuals from diverse backgrounds.</p></li>
@@ -443,6 +441,7 @@ div.csl-indent {
 <li><p>Ability to visualize relationships between qualitative–qualitative, qualitative–quantitative, and quantitative–quantitative variables.</p></li>
 <li><p>Experience addressing common data challenges such as missing values, overplotting, and large-scale datasets.</p></li>
 </ul>
+</section>
 <section id="worldhappinessscore-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="worldhappinessscore-dataset"><strong>WorldHappinessScore</strong> dataset</h2>
 <p>The dataset is obtained from World Population Review report (<span class="citation" data-cites="worldpopulationreview_happiest">World Population Review (<a href="#ref-worldpopulationreview_happiest" role="doc-biblioref">n.d.</a>)</span>). The World Happiness Score is reported on a 0–10 scale, with higher values indicating greater happiness. This dataset containes the world happiness score for 145 countries. The variable description is given in <a href="#tbl-WorldHappinessScore" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-WorldHappinessScore</span></a>.</p>
@@ -450,7 +449,7 @@ div.csl-indent {
 <div id="tbl-WorldHappinessScore" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-WorldHappinessScore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.1: Variable Description for WorldHappinessScore dataset
+Table&nbsp;1: Variable Description for WorldHappinessScore dataset
 </figcaption>
 <div aria-describedby="tbl-WorldHappinessScore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -523,7 +522,7 @@ Table&nbsp;1.1: Variable Description for WorldHappinessScore dataset
 <div id="tbl-hp" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.2: Summary description of the WorldHappinessScore dataset
+Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 </figcaption>
 <div aria-describedby="tbl-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -708,7 +707,7 @@ Table&nbsp;1.2: Summary description of the WorldHappinessScore dataset
 <img src="intro_files/figure-html/fig-happy2-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-happy2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Summary description of the WorldHappinessScore dataset
+Figure&nbsp;1: Summary description of the WorldHappinessScore dataset
 </figcaption>
 </figure>
 </div>
@@ -725,7 +724,7 @@ Figure&nbsp;1.1: Summary description of the WorldHappinessScore dataset
 <img src="intro_files/figure-html/fig-happy3-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-happy3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: Combinations of missingness across cases: WorldHappinessScore dataset
+Figure&nbsp;2: Combinations of missingness across cases: WorldHappinessScore dataset
 </figcaption>
 </figure>
 </div>
@@ -741,7 +740,7 @@ Figure&nbsp;1.2: Combinations of missingness across cases: WorldHappinessScore d
 <div id="tbl-worldbankdata" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-worldbankdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.3: Variable Description for worldbankdata dataset
+Table&nbsp;3: Variable Description for worldbankdata dataset
 </figcaption>
 <div aria-describedby="tbl-worldbankdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -820,7 +819,7 @@ Table&nbsp;1.3: Variable Description for worldbankdata dataset
 <div id="tbl-worldbankdatasummary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-worldbankdatasummary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.4: Summary description of the workldbank dataset
+Table&nbsp;4: Summary description of the workldbank dataset
 </figcaption>
 <div aria-describedby="tbl-worldbankdatasummary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1013,7 +1012,7 @@ Table&nbsp;1.4: Summary description of the workldbank dataset
 <img src="intro_files/figure-html/fig-miss-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-miss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3: Data types and missing values distribution
+Figure&nbsp;3: Data types and missing values distribution
 </figcaption>
 </figure>
 </div>
@@ -1030,7 +1029,7 @@ Figure&nbsp;1.3: Data types and missing values distribution
 <img src="intro_files/figure-html/fig-miss2-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-miss2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4: Combinations of missingness across cases: worldbankdata dataset
+Figure&nbsp;4: Combinations of missingness across cases: worldbankdata dataset
 </figcaption>
 </figure>
 </div>
@@ -1043,7 +1042,6 @@ Figure&nbsp;1.4: Combinations of missingness across cases: worldbankdata dataset
 World Population Review. n.d. <span>“Happiest Countries in the World.”</span> <a href="https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world">https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world</a>.
 </div>
 </div>
-</section>
 </section>
 </section>
 
