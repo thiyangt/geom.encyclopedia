@@ -6,6 +6,7 @@ library(tidyverse)
 library(drone)
 library(patchwork)
 data("worldbankdata")
+data("WorldHappinessScore")
 ```
 
 
@@ -32,11 +33,11 @@ Unlike most other geoms, `geom_abline` does not depend on the x and y variables 
 **Example**
 
 ```{r, warning=FALSE, message=FALSE}
-a1 <- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +
+a1 <- ggplot(WorldHappinessScore, aes(y =WorldHappinessScore_2024, x = WorldHappinessScore_2023)) +
   geom_abline(intercept = 0, slope = 1) +
   labs(title = "a1: geom_abline only") +
   theme(aspect.ratio = 1)
-a2 <- ggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +
+a2 <- ggplot(WorldHappinessScore, aes(y =WorldHappinessScore_2024, x = WorldHappinessScore_2023)) +
   geom_abline(intercept = 0, slope = 1) +
   geom_point() +
   labs(title = "a2: geom_abline \n and geom_point") +
@@ -77,8 +78,8 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 library(ggalluvial)
 freq.table <- worldbankdata |>
   select(Country, Region, Year, Income) |>
-  filter(Year > 2019) |>
-  filter(Region %in% c("East Asia & Pacific", "North America")) |>
+  filter(Year > 2020) |>
+ # filter(Region %in% c("North America")) |>
   group_by(Region, Year, Income) |>
   summarise(n = n()) |>
   drop_na()

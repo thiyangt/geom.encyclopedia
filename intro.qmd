@@ -18,7 +18,7 @@ install.packages(patchwork)
 
 
 
-The datasets used in the book, main are from country-wise statistics obtained from public reliable websites. Only two datasets are used to explain all geoms so that readers can build intuition by seeing the same data represented in multiple ways. The reasons for using these datasets are:
+The datasets used in the book coming from country-wise statistics obtained from public reliable websites. Only two datasets are used to explain all geoms so that readers can build intuition by seeing the same data represented in multiple ways. The reasons for using these datasets are:
 
 - The dataset context is familiar and easily understood by individuals from diverse backgrounds.
 
@@ -29,7 +29,7 @@ The datasets used in the book, main are from country-wise statistics obtained fr
 - Experience addressing common data challenges such as missing values, overplotting, and large-scale datasets.
 
 
-## **WorldHappinessScore** dataset
+## Dataset 1: **WorldHappinessScore** 
 
 The dataset is obtained from World Population Review report (@worldpopulationreview_happiest).  The World Happiness Score is reported on a 0–10 scale, with higher values indicating greater happiness. This dataset containes the world happiness score for 145 countries. The variable description is given in @tbl-WorldHappinessScore.
 
@@ -106,7 +106,7 @@ gg_miss_upset(WorldHappinessScore)
 
 
 
-## **worldbankdata** dataset
+## Dataset 2: **worldbankdata** 
 
 This dataset provides country-level development indicators compiled from the World Bank Data Catalogue. It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.
 

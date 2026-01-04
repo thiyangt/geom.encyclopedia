@@ -462,11 +462,11 @@ window.Quarto = {
 <p><a href="#point">geom_point</a>, <a href="v.html#vline">geom_vline</a>, <a href="h.html#hline">geom_hline</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x =</span> Electricity)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(WorldHappinessScore, <span class="fu">aes</span>(<span class="at">y =</span>WorldHappinessScore_2024, <span class="at">x =</span> WorldHappinessScore_2023)) <span class="sc">+</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"a1: geom_abline only"</span>) <span class="sc">+</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Cooking, <span class="at">x =</span> Electricity)) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(WorldHappinessScore, <span class="fu">aes</span>(<span class="at">y =</span>WorldHappinessScore_2024, <span class="at">x =</span> WorldHappinessScore_2023)) <span class="sc">+</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"a2: geom_abline </span><span class="sc">\n</span><span class="st"> and geom_point"</span>) <span class="sc">+</span></span>
@@ -499,29 +499,28 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalluvial)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>freq.table <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Country, Region, Year, Income) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;</span> <span class="dv">2019</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"North America"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;</span> <span class="dv">2020</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> <span class="co"># filter(Region %in% c("North America")) |&gt;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region, Year, Income) <span class="sc">|&gt;</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>freq.table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 12 × 4
-# Groups:   Region, Year [6]
-   Region               Year Income     n
-   &lt;fct&gt;               &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;
- 1 East Asia &amp; Pacific  2020 LM        14
- 2 East Asia &amp; Pacific  2020 UM         8
- 3 East Asia &amp; Pacific  2020 H         15
- 4 East Asia &amp; Pacific  2021 LM        14
- 5 East Asia &amp; Pacific  2021 UM         9
- 6 East Asia &amp; Pacific  2021 H         14
- 7 East Asia &amp; Pacific  2022 LM        13
- 8 East Asia &amp; Pacific  2022 UM         9
- 9 East Asia &amp; Pacific  2022 H         15
-10 North America        2020 H          3
-11 North America        2021 H          3
-12 North America        2022 H          3</code></pre>
+<pre><code># A tibble: 42 × 4
+# Groups:   Region, Year [14]
+   Region                 Year Income     n
+   &lt;fct&gt;                 &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;
+ 1 East Asia &amp; Pacific    2021 LM        14
+ 2 East Asia &amp; Pacific    2021 UM         9
+ 3 East Asia &amp; Pacific    2021 H         14
+ 4 East Asia &amp; Pacific    2022 LM        13
+ 5 East Asia &amp; Pacific    2022 UM         9
+ 6 East Asia &amp; Pacific    2022 H         15
+ 7 Europe &amp; Central Asia  2021 LM         4
+ 8 Europe &amp; Central Asia  2021 UM        16
+ 9 Europe &amp; Central Asia  2021 H         36
+10 Europe &amp; Central Asia  2022 LM         4
+# ℹ 32 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> freq.table <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> n, <span class="at">axis1 =</span> Region, <span class="at">axis2 =</span> Year)) <span class="sc">+</span></span>
