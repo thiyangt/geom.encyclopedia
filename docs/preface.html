@@ -424,7 +424,7 @@ div.csl-indent {
 <section id="what-can-i-find-in-this-geom-encyclopedia" class="level2">
 <h2 class="anchored" data-anchor-id="what-can-i-find-in-this-geom-encyclopedia">What can I find in this <span style="color:red;">geom encyclopedia</span>?</h2>
 <p>Let’s begin by looking at what we mean by geom in data visualization. In this context, geoms (short for geometries in ggplot2 package) are the visual elements used to represent data in a plot. They define the type of chart such as point chart, line chart, bar chart, etc.</p>
-<p>To illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows (<a href="#tbl-des" class="quarto-xref">Table&nbsp;<span>1</span></a>):</p>
+<p>To illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows (<a href="#tbl-des" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-des</span></a>):</p>
 <div class="cell">
 <div id="tbl-des" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -485,7 +485,7 @@ Table&nbsp;1: Variable Description
 8 Bhutan       LM           100  </code></pre>
 </div>
 </div>
-<p>Now, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in <a href="#fig-cartesian" class="quarto-xref">Figure&nbsp;<span>1</span></a></p>
+<p>Now, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in <a href="#fig-cartesian" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-cartesian</span></a></p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-cartesian" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -500,7 +500,7 @@ Figure&nbsp;1: Cartesian coordinate plane showing Income (x-axis) and Electricit
 </div>
 </div>
 </div>
-<p><a href="#fig-geom" class="quarto-xref">Figure&nbsp;<span>2</span></a> shows 6 plotting types that I created to visualise the relationship between the variables <code>Electricity</code> and <code>Income</code> on the Cartesian plane <a href="#fig-cartesian" class="quarto-xref">Figure&nbsp;<span>1</span></a>.</p>
+<p><a href="#fig-geom" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-geom</span></a> shows 6 plotting types that I created to visualise the relationship between the variables <code>Electricity</code> and <code>Income</code> on the Cartesian plane <a href="#fig-cartesian" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-cartesian</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-geom" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -515,13 +515,13 @@ Figure&nbsp;2: Six plot types used to visualize the relationship between income 
 </div>
 </div>
 </div>
-<p>In all panels of <a href="#fig-geom" class="quarto-xref">Figure&nbsp;<span>2</span></a> (a–h), the same dataset, variables, and Cartesian coordinate system are used. However, the chart types different.</p>
+<p>In all panels of <a href="#fig-geom" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-geom</span></a> (a–h), the same dataset, variables, and Cartesian coordinate system are used. However, the chart types different.</p>
 <p>Could you list the differences you observe in the charts?</p>
 <ol type="1">
 <li><p>The type of chart or shape used to depict data.</p></li>
 <li><p>The statistics computed on the data to visualize on the chart.</p></li>
 </ol>
-<p>When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values of the statistic. <a href="#tbl-summary-table" class="quarto-xref">Table&nbsp;<span>2</span></a> summarizes the statistical operations (or statistical transformations) performed on the data and the corresponding geometries used to visualize the computed statistics.</p>
+<p>When creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values of the statistic. <a href="#tbl-summary-table" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-summary-table</span></a> summarizes the statistical operations (or statistical transformations) performed on the data and the corresponding geometries used to visualize the computed statistics.</p>
 <div class="cell">
 <div id="tbl-summary-table" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -615,7 +615,7 @@ Table&nbsp;2: Statistical transformations and geom/stat layers are used in the p
 <section id="what-you-will-learn" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-will-learn">What you will learn?</h2>
 <p>In this <span style="color:red;">geom encyclopedia</span> you will learn different types of geoms and their applications. Furthermore, each geom has a set of aesthetics that it understands. These aesthetics can be divided into two parts: i) required aesthetics and ii) optional aesthetics. Further, every geom has a default stat; and every stat has a default geom.</p>
-<p>To give you an idea about the associated aesthetics and stat, let’s look at the plot shown in <a href="#fig-plot" class="quarto-xref">Figure&nbsp;<span>3</span></a>. In this case <code>x</code>, <code>y</code> are required aesthetics and <code>color</code> <code>size</code> and <code>alpha</code> is optional aesthetics. The statistics layer is identity since the data points are plotted as it is.</p>
+<p>To give you an idea about the associated aesthetics and stat, let’s look at the plot shown in <a href="#fig-plot" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-plot</span></a>. In this case <code>x</code>, <code>y</code> are required aesthetics and <code>color</code> <code>size</code> and <code>alpha</code> is optional aesthetics. The statistics layer is identity since the data points are plotted as it is.</p>
 <p>The aesthetic mappings, defined with <code>aes()</code>, describe how variables in the dataset are mapped to aesthetics (or visual properties of the plot). This <code>aes(x=Income, y=Electricity, color=Income)</code> is called mapping variables to the visual properties of the chart. This <code>alpha=0.5, size=2</code> is called setting values to visual properties.</p>
 <div class="cell" data-fig.label="fig:example">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(worldbankdata2021, <span class="fu">aes</span>(<span class="at">x=</span>Income, <span class="at">y=</span>Electricity, <span class="at">color=</span>Income)) <span class="sc">+</span> </span>
@@ -657,7 +657,7 @@ Similar geoms and different combinations of geoms that can use to visualise data
 </section>
 <section id="audience" class="level2">
 <h2 class="anchored" data-anchor-id="audience">Audience</h2>
-<p>The <a href="#fig-audience" class="quarto-xref">Figure&nbsp;<span>4</span></a> shows my target audience for the book. In general for all data enthusiasts, this can be considered as a <span style="color:green;">Encyclopedia of Plots</span>. For R, tidyverse, gggplot2 users this can be considered as a <span style="color:red;">Data Visualisation Geometries Encyclopedia</span>.</p>
+<p>The <a href="#fig-audience" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-audience</span></a> shows my target audience for the book. In general for all data enthusiasts, this can be considered as a <span style="color:green;">Encyclopedia of Plots</span>. For R, tidyverse, gggplot2 users this can be considered as a <span style="color:red;">Data Visualisation Geometries Encyclopedia</span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-audience" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -682,10 +682,10 @@ Figure&nbsp;4: Target Audience
 <ol type="i">
 <li><p>R and RStudio Integrated Development Environment (IDE)</p></li>
 <li><p>Basics of R programming</p></li>
-<li><p><a href="https://www.tidyverse.org/">tidyverse</a> <span class="citation" data-cites="tidyverse">(<a href="references.html#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> style of coding</p></li>
-<li><p>Data wrangling with tidyr<span class="citation" data-cites="tidyr">(<a href="references.html#ref-tidyr" role="doc-biblioref">Wickham, Vaughan, and Girlich 2024</a>)</span> and dplyr<span class="citation" data-cites="dplyr">(<a href="references.html#ref-dplyr" role="doc-biblioref">Wickham et al. 2023</a>)</span></p></li>
+<li><p><a href="https://www.tidyverse.org/">tidyverse</a> <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> style of coding</p></li>
+<li><p>Data wrangling with tidyr<span class="citation" data-cites="tidyr">(<a href="#ref-tidyr" role="doc-biblioref">Wickham, Vaughan, and Girlich 2024</a>)</span> and dplyr<span class="citation" data-cites="dplyr">(<a href="#ref-dplyr" role="doc-biblioref">Wickham et al. 2023</a>)</span></p></li>
 <li><p>Knowledge in using the pipe operator: <strong>|&gt;</strong></p></li>
-<li><p>Knowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2<span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
+<li><p>Knowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2<span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
 </ol></li>
 </ol>
 <p>If you want to learn more of them, following are the books recommended:</p>
@@ -718,7 +718,7 @@ Figure&nbsp;4: Target Audience
 <p>The field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-ggplot2" class="csl-entry" role="listitem">
 Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>

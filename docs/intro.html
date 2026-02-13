@@ -387,10 +387,11 @@ div.csl-indent {
   <ul>
   <li><a href="#installation-of-associated-packages" id="toc-installation-of-associated-packages" class="nav-link active" data-scroll-target="#installation-of-associated-packages">Installation of associated packages</a></li>
   <li><a href="#data-set-use-in-the-geom-encyclopedia" id="toc-data-set-use-in-the-geom-encyclopedia" class="nav-link" data-scroll-target="#data-set-use-in-the-geom-encyclopedia">Data set use in the geom Encyclopedia</a></li>
-  <li><a href="#dataset-1-worldhappinessscore" id="toc-dataset-1-worldhappinessscore" class="nav-link" data-scroll-target="#dataset-1-worldhappinessscore">Dataset 1: <strong>WorldHappinessScore</strong></a>
+  <li><a href="#why-two-datasets" id="toc-why-two-datasets" class="nav-link" data-scroll-target="#why-two-datasets">Why two datasets?</a></li>
+  <li><a href="#dataset-1-happiness_gdp_income" id="toc-dataset-1-happiness_gdp_income" class="nav-link" data-scroll-target="#dataset-1-happiness_gdp_income">Dataset 1: <strong>happiness_gdp_income</strong></a>
   <ul class="collapse">
-  <li><a href="#worldhappinessscore-data-profiling" id="toc-worldhappinessscore-data-profiling" class="nav-link" data-scroll-target="#worldhappinessscore-data-profiling"><code>WorldHappinessScore</code>: Data Profiling</a></li>
-  <li><a href="#worldhappinessscore-data-quality-analysis" id="toc-worldhappinessscore-data-quality-analysis" class="nav-link" data-scroll-target="#worldhappinessscore-data-quality-analysis"><code>WorldHappinessScore</code>: Data Quality Analysis</a></li>
+  <li><a href="#happiness_gdp_income-data-profiling" id="toc-happiness_gdp_income-data-profiling" class="nav-link" data-scroll-target="#happiness_gdp_income-data-profiling"><code>happiness_gdp_income</code>: Data Profiling</a></li>
+  <li><a href="#happiness_gdp_income-data-quality-analysis" id="toc-happiness_gdp_income-data-quality-analysis" class="nav-link" data-scroll-target="#happiness_gdp_income-data-quality-analysis"><code>happiness_gdp_income</code>: Data Quality Analysis</a></li>
   </ul></li>
   <li><a href="#dataset-2-worldbankdata" id="toc-dataset-2-worldbankdata" class="nav-link" data-scroll-target="#dataset-2-worldbankdata">Dataset 2: <strong>worldbankdata</strong></a>
   <ul class="collapse">
@@ -442,14 +443,19 @@ div.csl-indent {
 <li><p>Experience addressing common data challenges such as missing values, overplotting, and large-scale datasets.</p></li>
 </ul>
 </section>
-<section id="dataset-1-worldhappinessscore" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-1-worldhappinessscore">Dataset 1: <strong>WorldHappinessScore</strong></h2>
-<p>The dataset is obtained from World Population Review report (<span class="citation" data-cites="worldpopulationreview_happiest">World Population Review (<a href="references.html#ref-worldpopulationreview_happiest" role="doc-biblioref">n.d.</a>)</span>). The World Happiness Score is reported on a 0–10 scale, with higher values indicating greater happiness. This dataset containes the world happiness score for 145 countries. The variable description is given in <a href="#tbl-WorldHappinessScore" class="quarto-xref">Table&nbsp;<span>1</span></a>.</p>
+<section id="why-two-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="why-two-datasets">Why two datasets?</h2>
+<p>Different visualizations often require datasets to be in specific formats depending on the purpose of analysis or presentation. In this context, one dataset is organized in the long (tidy) format, while another is arranged in the wide format. The <code>happiness_gdp_income dataset</code> has time values spread across multiple columns, making it suitable for wide-format representation. In contrast, the <code>worldbankdata</code> dataset stores time in a single column, following the long-format structure. It is important to note that these datasets are not simply the reverse of each other; each format serves a distinct analytical or visualization purpose.</p>
+</section>
+<section id="dataset-1-happiness_gdp_income" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-1-happiness_gdp_income">Dataset 1: <strong>happiness_gdp_income</strong></h2>
+<p>The dataset is obtained from World Population Review report (<span class="citation" data-cites="worldpopulationreview_happiest">World Population Review (<a href="#ref-worldpopulationreview_happiest" role="doc-biblioref">n.d.</a>)</span>). Happiness score and GDP per Capita are accessed <span class="citation" data-cites="chotchaeva2017world">Chotchaeva (<a href="#ref-chotchaeva2017world" role="doc-biblioref">2017</a>)</span> via the <a href="https://zenodo.org/records/1470906">link</a>. Income level data are accessed from the World Bank Data Catalogue <span class="citation" data-cites="worldbank_wdi_2026">World Bank (<a href="#ref-worldbank_wdi_2026" role="doc-biblioref">2026b</a>)</span> via the <a href="https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators">link</a> on 11 February 2026.</p>
+<p>The variable description is given in <a href="#tbl-WorldHappinessScore" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-WorldHappinessScore</span></a>.</p>
 <div class="cell">
 <div id="tbl-WorldHappinessScore" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-WorldHappinessScore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Variable Description for WorldHappinessScore dataset
+Table&nbsp;1: Variable Description for happiness_gdp_income dataset
 </figcaption>
 <div aria-describedby="tbl-WorldHappinessScore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -462,24 +468,48 @@ Table&nbsp;1: Variable Description for WorldHappinessScore dataset
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">flagCode</td>
-<td style="text-align: left;">Country flag code</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">country</td>
+<td style="text-align: left;">Country</td>
 <td style="text-align: left;">Country name</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">Region</td>
+<td style="text-align: left;">World Bank regional classification</td>
+</tr>
 <tr class="odd">
-<td style="text-align: left;">WorldHappinessScore_2024</td>
-<td style="text-align: left;">World happiness score for 2024</td>
+<td style="text-align: left;">HappinessScore2015</td>
+<td style="text-align: left;">Happiness Score 2015</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WorldHappinessScore_2023</td>
-<td style="text-align: left;">World happiness score for 2023</td>
+<td style="text-align: left;">GDPpercapita2015</td>
+<td style="text-align: left;">GDP per Capita 2015</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WorldHappinessScore_2022</td>
-<td style="text-align: left;">World happiness score for 2022</td>
+<td style="text-align: left;">HappinessScore2016</td>
+<td style="text-align: left;">Happiness Score 2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2016</td>
+<td style="text-align: left;">GDP per Capita 2016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HappinessScore2017</td>
+<td style="text-align: left;">Happiness Score 2017</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2017</td>
+<td style="text-align: left;">GDP per Capita 2017</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income2015</td>
+<td style="text-align: left;">Income level categorization in 2015</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Income2016</td>
+<td style="text-align: left;">Income level categorization in 2016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income2017</td>
+<td style="text-align: left;">Income level categorization in 2017</td>
 </tr>
 </tbody>
 </table>
@@ -493,36 +523,43 @@ Table&nbsp;1: Variable Description for WorldHappinessScore dataset
 <p>The first few rows of the dataset is shown below</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(WorldHappinessScore)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(happiness_gdp_income)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  flagCode     country WorldHappinessScore_2024 WorldHappinessScore_2023
-1       FI     Finland                     7.74                    7.804
-2       DK     Denmark                     7.58                    7.586
-3       IS     Iceland                     7.53                    7.530
-4       SE      Sweden                     7.34                    7.395
-5       IL      Israel                     7.34                    7.473
-6       NL Netherlands                     7.32                    7.403
-  WorldHappinessScore_2022
-1                    7.821
-2                    7.636
-3                    7.557
-4                    7.384
-5                    7.364
-6                    7.415</code></pre>
+<pre><code>      Country         Region HappinessScore2015 GDPpercapita2015
+1 Switzerland Western Europe              7.587          1.39651
+2     Iceland Western Europe              7.561          1.30232
+3     Denmark Western Europe              7.527          1.32548
+4      Norway Western Europe              7.522          1.45900
+5      Canada  North America              7.427          1.32629
+6     Finland Western Europe              7.406          1.29025
+  HappinessScore2016 GDPpercapita2016 HappinessScore2017 GDPpercapita2017
+1              7.509            7.590              7.494         1.564980
+2              7.501            7.669              7.504         1.480633
+3              7.526            7.592              7.522         1.482383
+4              7.498            7.575              7.537         1.616463
+5              7.404            7.473              7.316         1.479204
+6              7.413            7.475              7.469         1.443572
+   Income2015  Income2016  Income2017
+1 High income High income High income
+2 High income High income High income
+3 High income High income High income
+4 High income High income High income
+5 High income High income High income
+6 High income High income High income</code></pre>
 </div>
 </div>
-<section id="worldhappinessscore-data-profiling" class="level3">
-<h3 class="anchored" data-anchor-id="worldhappinessscore-data-profiling"><code>WorldHappinessScore</code>: Data Profiling</h3>
-<p><a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span>2</span></a> provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables,</p>
+<section id="happiness_gdp_income-data-profiling" class="level3">
+<h3 class="anchored" data-anchor-id="happiness_gdp_income-data-profiling"><code>happiness_gdp_income</code>: Data Profiling</h3>
+<p><a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-hp</span></a> provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables,</p>
 <p><code>n_missing</code> tells how many values are missing for each variable.</p>
 <p><code>complete_rate</code> is the proportion of non-missing values.</p>
 <p><code>n_unique</code> is the number of unique values in the variable.</p>
-<p>For numeric variables <a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span>2</span></a> shows mean, sd (standard deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max), and a small histogram for each numeric variable.</p>
+<p>For numeric variables <a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-hp</span></a> shows mean, sd (standard deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max), and a small histogram for each numeric variable.</p>
 <div class="cell">
 <div id="tbl-hp" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Summary description of the WorldHappinessScore dataset
+Table&nbsp;2: Summary description of the happiness_gdp_income dataset
 </figcaption>
 <div aria-describedby="tbl-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -531,15 +568,15 @@ Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Name</td>
-<td style="text-align: left;">WorldHappinessScore</td>
+<td style="text-align: left;">happiness_gdp_income</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">145</td>
+<td style="text-align: left;">158</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">5</td>
+<td style="text-align: left;">11</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">_______________________</td>
@@ -554,14 +591,18 @@ Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">factor</td>
 <td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">6</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">________________________</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Group variables</td>
 <td style="text-align: left;">None</td>
 </tr>
@@ -593,33 +634,80 @@ Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">flagCode</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: left;">Country</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">144</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">158</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">country</td>
+<td style="text-align: left;">Region</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Income2015</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">145</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: left;">Hig: 44, Upp: 36, Low: 31, Low: 24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Income2016</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Hig: 43, Upp: 36, Low: 32, Low: 24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income2017</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Hig: 42, Low: 35, Upp: 34, Low: 24</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 27%">
+<col style="width: 22%">
 <col style="width: 11%">
-<col style="width: 15%">
+<col style="width: 16%">
 <col style="width: 5%">
 <col style="width: 5%">
 <col style="width: 5%">
@@ -627,7 +715,7 @@ Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 <col style="width: 5%">
 <col style="width: 5%">
 <col style="width: 5%">
-<col style="width: 6%">
+<col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -646,43 +734,82 @@ Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">WorldHappinessScore_2024</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0.97</td>
-<td style="text-align: right;">5.52</td>
-<td style="text-align: right;">1.18</td>
-<td style="text-align: right;">1.72</td>
-<td style="text-align: right;">4.66</td>
-<td style="text-align: right;">5.79</td>
-<td style="text-align: right;">6.41</td>
-<td style="text-align: right;">7.74</td>
-<td style="text-align: left;">▁▂▆▇▅</td>
+<td style="text-align: left;">HappinessScore2015</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5.38</td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: right;">2.84</td>
+<td style="text-align: right;">4.53</td>
+<td style="text-align: right;">5.23</td>
+<td style="text-align: right;">6.24</td>
+<td style="text-align: right;">7.59</td>
+<td style="text-align: left;">▂▇▇▇▆</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WorldHappinessScore_2023</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0.94</td>
-<td style="text-align: right;">5.53</td>
-<td style="text-align: right;">1.14</td>
-<td style="text-align: right;">1.86</td>
-<td style="text-align: right;">4.70</td>
-<td style="text-align: right;">5.67</td>
-<td style="text-align: right;">6.33</td>
-<td style="text-align: right;">7.80</td>
-<td style="text-align: left;">▁▂▆▇▃</td>
+<td style="text-align: left;">GDPpercapita2015</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;">1.16</td>
+<td style="text-align: right;">1.69</td>
+<td style="text-align: left;">▃▅▆▇▂</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WorldHappinessScore_2022</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">5.55</td>
-<td style="text-align: right;">1.09</td>
-<td style="text-align: right;">2.40</td>
-<td style="text-align: right;">4.88</td>
-<td style="text-align: right;">5.57</td>
+<td style="text-align: left;">HappinessScore2016</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">5.38</td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: right;">2.90</td>
+<td style="text-align: right;">4.40</td>
+<td style="text-align: right;">5.31</td>
 <td style="text-align: right;">6.30</td>
-<td style="text-align: right;">7.82</td>
-<td style="text-align: left;">▁▃▇▇▃</td>
+<td style="text-align: right;">7.53</td>
+<td style="text-align: left;">▂▆▇▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2016</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">5.48</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">4.46</td>
+<td style="text-align: right;">5.42</td>
+<td style="text-align: right;">6.43</td>
+<td style="text-align: right;">7.67</td>
+<td style="text-align: left;">▃▆▇▇▅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HappinessScore2017</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: right;">5.36</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">2.69</td>
+<td style="text-align: right;">4.50</td>
+<td style="text-align: right;">5.28</td>
+<td style="text-align: right;">6.11</td>
+<td style="text-align: right;">7.54</td>
+<td style="text-align: left;">▂▆▇▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2017</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">1.07</td>
+<td style="text-align: right;">1.32</td>
+<td style="text-align: right;">1.87</td>
+<td style="text-align: left;">▂▅▆▇▂</td>
 </tr>
 </tbody>
 </table>
@@ -692,13 +819,13 @@ Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 </div>
 </div>
 </section>
-<section id="worldhappinessscore-data-quality-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="worldhappinessscore-data-quality-analysis"><code>WorldHappinessScore</code>: Data Quality Analysis</h3>
-<p><a href="#fig-happy2" class="quarto-xref">Figure&nbsp;<span>1</span></a> shows the types of variables we have in the dataset and missing value distribution.</p>
+<section id="happiness_gdp_income-data-quality-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="happiness_gdp_income-data-quality-analysis"><code>happiness_gdp_income</code>: Data Quality Analysis</h3>
+<p><a href="#fig-happy2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-happy2</span></a> shows the types of variables we have in the dataset and missing value distribution.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(WorldHappinessScore) <span class="sc">+</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(happiness_gdp_income) <span class="sc">+</span> </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-happy2" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -707,16 +834,16 @@ Table&nbsp;2: Summary description of the WorldHappinessScore dataset
 <img src="intro_files/figure-html/fig-happy2-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-happy2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Summary description of the WorldHappinessScore dataset
+Figure&nbsp;1: Summary description of the happiness_gdp_income dataset
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="#fig-happy3" class="quarto-xref">Figure&nbsp;<span>2</span></a> shows combination-wise missing values in the dataset <code>WorldHappinessScore</code>. There are 6 observations where only <code>WorldHapinessScore_2023</code> missing and there are 3 observations where both <code>WorldHapinessScore_2023</code> and <code>WorldHapinessScore_2024</code> missing.</p>
+<p><a href="#fig-happy3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-happy3</span></a> shows combination-wise missing values in the dataset <code>happiness_gdp_income</code>. There are 6 observations where only <code>WorldHapinessScore_2023</code> missing and there are 3 observations where both <code>WorldHapinessScore_2023</code> and <code>WorldHapinessScore_2024</code> missing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(WorldHappinessScore) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(happiness_gdp_income) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-happy3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -734,8 +861,8 @@ Figure&nbsp;2: Combinations of missingness across cases: WorldHappinessScore dat
 </section>
 <section id="dataset-2-worldbankdata" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-2-worldbankdata">Dataset 2: <strong>worldbankdata</strong></h2>
-<p>This dataset provides country-level development indicators compiled from the World Bank Data Catalogue. It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.</p>
-<p>The variable description is given in <a href="#tbl-worldbankdata" class="quarto-xref">Table&nbsp;<span>3</span></a>.</p>
+<p>This dataset provides country-level development indicators compiled from the World Bank Data Catalogue (<span class="citation" data-cites="worldbank_gni_2026">World Bank (<a href="#ref-worldbank_gni_2026" role="doc-biblioref">2026a</a>)</span>). It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.</p>
+<p>The variable description is given in <a href="#tbl-worldbankdata" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdata</span></a>.</p>
 <div class="cell">
 <div id="tbl-worldbankdata" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -814,7 +941,7 @@ Table&nbsp;3: Variable Description for worldbankdata dataset
 </div>
 <section id="worldbankdata-data-profiling" class="level3">
 <h3 class="anchored" data-anchor-id="worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</h3>
-<p><a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span>4</span></a> provides a compact summary of the dataset. The dataset contains 7 variables. Among them, 4 variables are factor variables and 3 variables are numeric variables. In addtion, <a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span>4</span></a> shows a comprehensive overview of your dataset, showing both the distribution of categorical variables and the summary statistics for numeric variables, including missing values and frequency counts.</p>
+<p><a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdatasummary</span></a> provides a compact summary of the dataset. The dataset contains 7 variables. Among them, 4 variables are factor variables and 3 variables are numeric variables. In addtion, <a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdatasummary</span></a> shows a comprehensive overview of your dataset, showing both the distribution of categorical variables and the summary statistics for numeric variables, including missing values and frequency counts.</p>
 <div class="cell">
 <div id="tbl-worldbankdatasummary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -999,7 +1126,7 @@ Table&nbsp;4: Summary description of the workldbank dataset
 </section>
 <section id="worldbankdata-data-quality-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</h3>
-<p><code>worldbankdata</code> dataset contains some missing values. <a href="#fig-miss" class="quarto-xref">Figure&nbsp;<span>3</span></a> shows the distribution of types of variables and missing value distribution.</p>
+<p><code>worldbankdata</code> dataset contains some missing values. <a href="#fig-miss" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-miss</span></a> shows the distribution of types of variables and missing value distribution.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
@@ -1018,7 +1145,7 @@ Figure&nbsp;3: Data types and missing values distribution
 </div>
 </div>
 </div>
-<p><a href="#fig-miss2" class="quarto-xref">Figure&nbsp;<span>4</span></a> shows combinations of missingness across cases. This is especially useful for understanding patterns of missingness across variables. For example, there are 5122 rows where both <code>Electricity</code> and <code>Cooking</code> variable missing.</p>
+<p><a href="#fig-miss2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-miss2</span></a> shows combinations of missingness across cases. This is especially useful for understanding patterns of missingness across variables. For example, there are 5122 rows where both <code>Electricity</code> and <code>Cooking</code> variable missing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1037,7 +1164,16 @@ Figure&nbsp;4: Combinations of missingness across cases: worldbankdata dataset
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-chotchaeva2017world" class="csl-entry" role="listitem">
+Chotchaeva, Karina. 2017. <span>“World Happiness Report.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.1470906">https://doi.org/10.5281/zenodo.1470906</a>.
+</div>
+<div id="ref-worldbank_gni_2026" class="csl-entry" role="listitem">
+World Bank. 2026a. <span>“GNI Per Capita: Operational Guidelines &amp; Analytical Classifications.”</span> <a href="https://datacatalog.worldbank.org/">https://datacatalog.worldbank.org/</a>.
+</div>
+<div id="ref-worldbank_wdi_2026" class="csl-entry" role="listitem">
+———. 2026b. <span>“World Development Indicators.”</span> <a href="https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators">https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators</a>.
+</div>
 <div id="ref-worldpopulationreview_happiest" class="csl-entry" role="listitem">
 World Population Review. n.d. <span>“Happiest Countries in the World.”</span> <a href="https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world">https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world</a>.
 </div>

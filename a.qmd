@@ -6,7 +6,7 @@ library(tidyverse)
 library(drone)
 library(patchwork)
 data("worldbankdata")
-data("WorldHappinessScore")
+data("happiness_gdp_income")
 ```
 
 
@@ -33,11 +33,11 @@ Unlike most other geoms, `geom_abline` does not depend on the x and y variables 
 **Example**
 
 ```{r, warning=FALSE, message=FALSE}
-a1 <- ggplot(WorldHappinessScore, aes(y =WorldHappinessScore_2024, x = WorldHappinessScore_2023)) +
+a1 <- ggplot() +
   geom_abline(intercept = 0, slope = 1) +
   labs(title = "a1: geom_abline only") +
   theme(aspect.ratio = 1)
-a2 <- ggplot(WorldHappinessScore, aes(y =WorldHappinessScore_2024, x = WorldHappinessScore_2023)) +
+a2 <- ggplot(happiness_gdp_income, aes(y =HappinessScore2016, x = HappinessScore2015)) +
   geom_abline(intercept = 0, slope = 1) +
   geom_point() +
   labs(title = "a2: geom_abline \n and geom_point") +
@@ -54,7 +54,7 @@ ggalluvial[@brunson2019package; @brunson2020ggalluvial]
 
 **Description**
 
-Create alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories
+Create alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories.
 
 **Understandable aesthetics**
 
@@ -74,12 +74,14 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 
 **Example**
 
+This example shows the distribution of income level categories in 2021 and 2022 in the regions `Sub-Saharan Africa` and `Latin America & Caribbean`.
+
 ```{r alluvial, fig.width=10,fig.height=10, warning=FALSE, message=FALSE}
 library(ggalluvial)
 freq.table <- worldbankdata |>
   select(Country, Region, Year, Income) |>
   filter(Year > 2020) |>
- # filter(Region %in% c("North America")) |>
+  filter(Region %in% c("Sub-Saharan Africa", "Latin America & Caribbean")) |>
   group_by(Region, Year, Income) |>
   summarise(n = n()) |>
   drop_na()

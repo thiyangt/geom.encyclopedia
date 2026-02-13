@@ -28,19 +28,45 @@ The datasets used in the book coming from country-wise statistics obtained from 
 
 - Experience addressing common data challenges such as missing values, overplotting, and large-scale datasets.
 
+## Why two datasets?
 
-## Dataset 1: **WorldHappinessScore** 
+Different visualizations often require datasets to be in specific formats depending on the purpose of analysis or presentation. In this context, one dataset is organized in the long (tidy) format, while another is arranged in the wide format. The `happiness_gdp_income dataset` has time values spread across multiple columns, making it suitable for wide-format representation. In contrast, the `worldbankdata` dataset stores time in a single column, following the long-format structure. It is important to note that these datasets are not simply the reverse of each other; each format serves a distinct analytical or visualization purpose.
 
-The dataset is obtained from World Population Review report (@worldpopulationreview_happiest).  The World Happiness Score is reported on a 0–10 scale, with higher values indicating greater happiness. This dataset containes the world happiness score for 145 countries. The variable description is given in @tbl-WorldHappinessScore.
+
+## Dataset 1: **happiness_gdp_income** 
+
+The dataset is obtained from World Population Review report (@worldpopulationreview_happiest). Happiness score and GDP per Capita are accessed @chotchaeva2017world via the [link](https://zenodo.org/records/1470906).  Income level data are accessed from the World Bank Data Catalogue @worldbank_wdi_2026 via the [link](https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators) on 11 February 2026. 
+
+The variable description is given in @tbl-WorldHappinessScore.
 
 ```{r}
 #| label: tbl-WorldHappinessScore
 #| echo: false
-#| tbl-cap: "Variable Description for WorldHappinessScore dataset"
+#| tbl-cap: "Variable Description for happiness_gdp_income dataset"
 library(knitr)
 library(kableExtra)
-Variable <- c("flagCode", "country", "WorldHappinessScore_2024", "WorldHappinessScore_2023", "WorldHappinessScore_2022")
-description <- c("Country flag code", "Country name", "World happiness score for 2024", "World happiness score for 2023" , "World happiness score for 2022")
+Variable <- c("Country",
+              "Region",
+              "HappinessScore2015",
+              "GDPpercapita2015",  
+              "HappinessScore2016",
+              "GDPpercapita2016",
+              "HappinessScore2017",
+              "GDPpercapita2017", 
+              "Income2015",
+              "Income2016",        
+              "Income2017" )
+description <- c("Country name", 
+                 "World Bank regional classification",
+                 "Happiness Score 2015", 
+                 "GDP per Capita 2015" ,
+                 "Happiness Score 2016",
+                 "GDP per Capita 2016",
+                 "Happiness Score 2017",
+                 "GDP per Capita 2017",
+                 "Income level categorization in 2015",
+                 "Income level categorization in 2016",
+                 "Income level categorization in 2017")
 df <- data.frame(Variable, Description = description)
 df |> kbl() |>
   kable_paper("hover", full_width = F)
@@ -50,10 +76,10 @@ The first few rows of the dataset is shown below
 
 ```{r}
 library(drone)
-head(WorldHappinessScore)
+head(happiness_gdp_income)
 ```
 
-### `WorldHappinessScore`: Data Profiling
+### `happiness_gdp_income`: Data Profiling
 
 @tbl-hp provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables, 
 
@@ -70,13 +96,13 @@ For numeric variables @tbl-hp shows mean, sd (standard deviation), p0 (min), per
 #| message: false
 #| warning: false
 #| echo: false
-#| tbl-cap: "Summary description of the WorldHappinessScore dataset"
+#| tbl-cap: "Summary description of the happiness_gdp_income dataset"
 library(skimr)
-WorldHappinessScore |> 
+happiness_gdp_income |> 
   skim()
 ```
 
-### `WorldHappinessScore`: Data Quality Analysis
+### `happiness_gdp_income`: Data Quality Analysis
 
 @fig-happy2 shows the types of variables we have in the dataset and missing value distribution.
 
@@ -84,16 +110,16 @@ WorldHappinessScore |>
 #| label: fig-happy2
 #| message: false
 #| warning: false
-#| fig-cap: "Summary description of the WorldHappinessScore dataset"
+#| fig-cap: "Summary description of the happiness_gdp_income dataset"
 library(tidyverse)
 library(visdat)
-vis_dat(WorldHappinessScore) + 
+vis_dat(happiness_gdp_income) + 
   scale_fill_brewer(palette = "Dark2")
 ```
 
 
 
-@fig-happy3 shows combination-wise missing values in the dataset `WorldHappinessScore`. There are 6 observations where only `WorldHapinessScore_2023` missing and there are 3 observations where both `WorldHapinessScore_2023` and `WorldHapinessScore_2024` missing.
+@fig-happy3 shows combination-wise missing values in the dataset `happiness_gdp_income`. There are 6 observations where only `WorldHapinessScore_2023` missing and there are 3 observations where both `WorldHapinessScore_2023` and `WorldHapinessScore_2024` missing.
 
 ```{r}
 #| label: fig-happy3
@@ -101,14 +127,14 @@ vis_dat(WorldHappinessScore) +
 #| warning: false
 #| fig-cap: "Combinations of missingness across cases: WorldHappinessScore dataset"
 library(naniar)
-gg_miss_upset(WorldHappinessScore) 
+gg_miss_upset(happiness_gdp_income) 
 ```
 
 
 
 ## Dataset 2: **worldbankdata** 
 
-This dataset provides country-level development indicators compiled from the World Bank Data Catalogue. It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.
+This dataset provides country-level development indicators compiled from the World Bank Data Catalogue (@worldbank_gni_2026). It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.
 
 The variable description is given in @tbl-worldbankdata.
 

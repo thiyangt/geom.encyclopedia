@@ -453,20 +453,20 @@ window.Quarto = {
 <section id="abline" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="abline"><span class="header-section-number">1.1</span> geom_abline</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Description Draw a straight line (<span class="math inline">\(Y=mX+c\)</span>) for a given slope (<span class="math inline">\(m\)</span>) and intercept (<span class="math inline">\(c\)</span>).</p>
 <p><strong>Understandable aesthetics</strong></p>
 <p>Unlike most other geoms, <code>geom_abline</code> does not depend on the x and y variables that we map for the main plot. <code>geom_abline</code> has its own independent characteristics: <code>intercept</code> and <code>slope</code>.</p>
 <p><strong>See also</strong></p>
-<p><a href="#point">geom_point</a>, <a href="v.html#vline">geom_vline</a>, <a href="h.html#hline">geom_hline</a></p>
+<p><a href="#point">geom_point</a>, <a href="#vline">geom_vline</a>, <a href="#hline">geom_hline</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(WorldHappinessScore, <span class="fu">aes</span>(<span class="at">y =</span>WorldHappinessScore_2024, <span class="at">x =</span> WorldHappinessScore_2023)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"a1: geom_abline only"</span>) <span class="sc">+</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">1</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(WorldHappinessScore, <span class="fu">aes</span>(<span class="at">y =</span>WorldHappinessScore_2024, <span class="at">x =</span> WorldHappinessScore_2023)) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(happiness_gdp_income, <span class="fu">aes</span>(<span class="at">y =</span>HappinessScore2016, <span class="at">x =</span> HappinessScore2015)) <span class="sc">+</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"a2: geom_abline </span><span class="sc">\n</span><span class="st"> and geom_point"</span>) <span class="sc">+</span></span>
@@ -484,9 +484,9 @@ window.Quarto = {
 <section id="alluvium" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="alluvium"><span class="header-section-number">1.2</span> geom_alluvium</h2>
 <p><strong>Package</strong></p>
-<p>ggalluvial<span class="citation" data-cites="brunson2019package brunson2020ggalluvial">(<a href="references.html#ref-brunson2019package" role="doc-biblioref">Brunson and Read 2019</a>; <a href="references.html#ref-brunson2020ggalluvial" role="doc-biblioref">Brunson 2020</a>)</span></p>
+<p>ggalluvial<span class="citation" data-cites="brunson2019package brunson2020ggalluvial">(<a href="#ref-brunson2019package" role="doc-biblioref">Brunson and Read 2019</a>; <a href="#ref-brunson2020ggalluvial" role="doc-biblioref">Brunson 2020</a>)</span></p>
 <p><strong>Description</strong></p>
-<p>Create alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories</p>
+<p>Create alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories.</p>
 <p><strong>Understandable aesthetics</strong></p>
 <p><em>required aesthetics</em></p>
 <p><code>x</code>, <code>y</code>, <code>ymin</code>, <code>ymax</code>,</p>
@@ -495,32 +495,36 @@ window.Quarto = {
 <p><strong>See also</strong></p>
 <p><a href="#stratum">geom_stratum</a>, <a href="#flow">geom_flow</a>, <a href="#lode">geom_lode</a></p>
 <p><strong>Example</strong></p>
+<p>This example shows the distribution of income level categories in 2021 and 2022 in the regions <code>Sub-Saharan Africa</code> and <code>Latin America &amp; Caribbean</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalluvial)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>freq.table <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Country, Region, Year, Income) <span class="sc">|&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;</span> <span class="dv">2020</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> <span class="co"># filter(Region %in% c("North America")) |&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sub-Saharan Africa"</span>, <span class="st">"Latin America &amp; Caribbean"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region, Year, Income) <span class="sc">|&gt;</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>freq.table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 42 × 4
-# Groups:   Region, Year [14]
-   Region                 Year Income     n
-   &lt;fct&gt;                 &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;
- 1 East Asia &amp; Pacific    2021 LM        14
- 2 East Asia &amp; Pacific    2021 UM         9
- 3 East Asia &amp; Pacific    2021 H         14
- 4 East Asia &amp; Pacific    2022 LM        13
- 5 East Asia &amp; Pacific    2022 UM         9
- 6 East Asia &amp; Pacific    2022 H         15
- 7 Europe &amp; Central Asia  2021 LM         4
- 8 Europe &amp; Central Asia  2021 UM        16
- 9 Europe &amp; Central Asia  2021 H         36
-10 Europe &amp; Central Asia  2022 LM         4
-# ℹ 32 more rows</code></pre>
+<pre><code># A tibble: 14 × 4
+# Groups:   Region, Year [4]
+   Region                     Year Income     n
+   &lt;fct&gt;                     &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;
+ 1 Latin America &amp; Caribbean  2021 LM         5
+ 2 Latin America &amp; Caribbean  2021 UM        19
+ 3 Latin America &amp; Caribbean  2021 H         17
+ 4 Latin America &amp; Caribbean  2022 LM         4
+ 5 Latin America &amp; Caribbean  2022 UM        19
+ 6 Latin America &amp; Caribbean  2022 H         18
+ 7 Sub-Saharan Africa         2021 L         24
+ 8 Sub-Saharan Africa         2021 LM        16
+ 9 Sub-Saharan Africa         2021 UM         6
+10 Sub-Saharan Africa         2021 H          1
+11 Sub-Saharan Africa         2022 L         22
+12 Sub-Saharan Africa         2022 LM        18
+13 Sub-Saharan Africa         2022 UM         6
+14 Sub-Saharan Africa         2022 H          1</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> freq.table <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> n, <span class="at">axis1 =</span> Region, <span class="at">axis2 =</span> Year)) <span class="sc">+</span></span>
@@ -547,7 +551,7 @@ window.Quarto = {
 <section id="geom_arc" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="geom_arc"><span class="header-section-number">1.3</span> geom_arc</h2>
 <p><strong>Package</strong></p>
-<p>ggforce<span class="citation" data-cites="ggforce">(<a href="references.html#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p>
+<p>ggforce<span class="citation" data-cites="ggforce">(<a href="#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Draw a circle or a segment of a circle.</p>
 <p><strong>Understandable aesthetic</strong></p>
@@ -578,7 +582,7 @@ window.Quarto = {
 <section id="arcbar" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="arcbar"><span class="header-section-number">1.4</span> geom_arc_bar</h2>
 <p><strong>Package</strong></p>
-<p>ggforce<span class="citation" data-cites="ggforce">(<a href="references.html#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p>
+<p>ggforce<span class="citation" data-cites="ggforce">(<a href="#ref-ggforce" role="doc-biblioref">Pedersen 2022</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>To draw pie chart and donut chart defining centre point, a radius and a start and end angle.</p>
 <p><strong>Understandable aesthetic</strong></p>
@@ -622,7 +626,7 @@ window.Quarto = {
 <section id="area" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="area"><span class="header-section-number">1.5</span> geom_area</h2>
 <p><strong>Package</strong></p>
-<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
+<p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Create an area plot. This cover the space between x-axis and line that connects the data points.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -631,7 +635,7 @@ window.Quarto = {
 <p><em>optional aesthetics</em></p>
 <p><code>alpha</code>, <code>colour</code>, <code>fill</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
 <p><strong>See also</strong></p>
-<p><a href="l.html#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
+<p><a href="#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> worldbankdata <span class="sc">|&gt;</span></span>
@@ -722,7 +726,7 @@ Caused by error in `dataframe2ts()`:
 <section id="arrow" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="arrow"><span class="header-section-number">1.7</span> geom_arrow</h2>
 <p><strong>Package</strong></p>
-<p>metR <span class="citation" data-cites="metR">(<a href="references.html#ref-metR" role="doc-biblioref">Campitelli 2021</a>)</span></p>
+<p>metR <span class="citation" data-cites="metR">(<a href="#ref-metR" role="doc-biblioref">Campitelli 2021</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Draws directional arrows (like vectors) on a plot, which can represent directions or flows — such as wind directions, movement, or gradients. The arrow from (x, y) and pointing in the direction (dx, dy) (vector components).</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -732,7 +736,7 @@ Caused by error in `dataframe2ts()`:
 <p><em>optional aesthetics</em></p>
 <p><code>arrow,type</code>, <code>arrow.angle</code>, <code>arrow.length</code>, <code>arrow.ends</code>, <code>arrow.type</code></p>
 <p><strong>See also</strong></p>
-<p><a href="l.html#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
+<p><a href="#line">geom_line</a>, <a href="#ribbon">geom_ribbon</a></p>
 <section id="example" class="level3" data-number="1.7.1">
 <h3 data-number="1.7.1" class="anchored" data-anchor-id="example"><span class="header-section-number">1.7.1</span> Example</h3>
 <div class="cell">
@@ -761,7 +765,7 @@ Caused by error in `dataframe2ts()`:
 <section id="ash" class="level2" data-number="1.8">
 <h2 data-number="1.8" class="anchored" data-anchor-id="ash"><span class="header-section-number">1.8</span> geom_ash</h2>
 <p><strong>Package</strong></p>
-<p>ggformula <span class="citation" data-cites="ggformula">(<a href="references.html#ref-ggformula" role="doc-biblioref">Kaplan and Pruim 2023</a>)</span></p>
+<p>ggformula <span class="citation" data-cites="ggformula">(<a href="#ref-ggformula" role="doc-biblioref">Kaplan and Pruim 2023</a>)</span></p>
 <p><strong>Description</strong></p>
 <p>Plot Average Shifted Histogram (ASH). The ASH is a nonparametric probability density estimator derived from a collection of histograms.</p>
 <p><strong>Understandable aesthetics</strong></p>
@@ -771,7 +775,7 @@ Caused by error in `dataframe2ts()`:
 <p><em>optional aesthetics</em></p>
 <p><code>color</code>, <code>fill</code>, <code>bins</code>, <code>alpha</code>, <code>size</code></p>
 <p><strong>See also</strong></p>
-<p><a href="h.html#histogram">geom_histogram</a>, <a href="d.html#density">geom_density</a></p>
+<p><a href="#histogram">geom_histogram</a>, <a href="#density">geom_density</a></p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula)</span>
@@ -807,7 +811,7 @@ Caused by error in `dataframe2ts()`:
 <h2 data-number="1.12" class="anchored" data-anchor-id="geom_axis_hive"><span class="header-section-number">1.12</span> geom_axis_hive</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-brunson2020ggalluvial" class="csl-entry" role="listitem">
 Brunson, Jason Cory. 2020. <span>“Ggalluvial: Layered Grammar for Alluvial Plots.”</span> <em>Journal of Open Source Software</em> 5 (49).
 </div>
