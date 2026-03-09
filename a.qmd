@@ -88,16 +88,16 @@ freq.table <- worldbankdata |>
 freq.table
 
 a1 <- freq.table |>
-  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +
-  geom_alluvium(aes(fill = Income), width = 1 / 12) +
+  ggplot(aes(y = n, axis1 = Income, axis2 = Region)) +
+  geom_alluvium(aes(fill = as.factor(Year)), width = 1 / 12) +
   scale_fill_brewer(palette = "Dark2") +
   labs(title = "a1: geom_alluvium only")
 
 a2 <- freq.table |>
-  ggplot(aes(y = n, axis1 = Region, axis2 = Year)) +
-  geom_alluvium(aes(fill = Income), width = 1 / 12) +
+  ggplot(aes(y = n, axis1 = Income, axis2 = Region)) +
+  geom_alluvium(aes(fill = as.factor(Year)), width = 1 / 12) +
   geom_stratum(width = 1 / 12, fill = "black", color = "grey") +
-  geom_label(stat = "stratum", aes(label = after_stat(stratum))) + scale_fill_brewer(palette = "Dark2") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +  scale_fill_brewer(palette = "Dark2") +
   labs(title = "a2: geom_alluvium, \n geom_stratum and geom_label")
 a1 / a2
 ```
@@ -176,24 +176,27 @@ To draw pie chart and donut chart defining centre point, a radius and a start an
 
 
 ```{r, warning=FALSE, message=FALSE, fig.height=4, fig.width=4}
-df <- data.frame(
-  state = c(
-    "A", "B", "C",
-    "D", "E"
-  ),
-  focus = c(0.2, 0, 0, 0, 0),
-  start = c(0, 1, 2, 3, 4),
-  end = c(1, 2, 3, 4, 2 * pi),
-  amount = c(4, 3, 1, 2, 5),
-  stringsAsFactors = FALSE
-)
+# Count observations in each Income category
+df <- worldbankdata |>
+  filter(!is.na(Region)) |>
+  count(Region, name = "count") |>
+  mutate(
+    Region = Region,
+    focus = 0
+  )
+df
+# Pie chart
 ggplot(df) +
   geom_arc_bar(aes(
-    x0 = 0, y0 = 0, r0 = 0, r = 1, amount = amount,
-    fill = state, explode = focus
+    x0 = 0, y0 = 0,
+    r0 = 0, r = 1,
+    amount = count,
+    fill = Region,
+    explode = focus
   ), stat = "pie") +
   scale_fill_brewer(palette = "Dark2") +
-  theme(aspect.ratio = 1)
+  theme(aspect.ratio = 1) +
+  labs(fill = "Regions")
 ```
 
 
@@ -256,7 +259,7 @@ ggdemetra
 
 **Example**
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(ggdemetra)
  worldbankdata |>
   filter(Country == "Bangladesh") |>
@@ -301,10 +304,10 @@ Draws directional arrows (like vectors) on a plot, which can represent direction
   
 ### Example
   
-```{r warning=FALSE, message=FALSE,}
+```{r warning=FALSE, message=FALSE}
 library(metR)
 data <- tibble::tibble(
-  x = c(10, 20, 30, 40, 50),           # Longitude or X-coordinates
+  x = c(10, 20, 30, 40, 50),      # Longitude or X-coordinates
   y = c(1, 2, 3, 4, 5),           # Latitude or Y-coordinates
   dx = c(1, 0, -1, 0, 1),         # Wind direction components (change in X)
   dy = c(1, -1, 0, 1, 0)          # Wind direction components (change in Y)
@@ -348,7 +351,7 @@ Plot Average Shifted Histogram (ASH). The ASH is a nonparametric probability den
 **Example**
 
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 #| warning: false
 #| message: false
 #| fig.width: 10
