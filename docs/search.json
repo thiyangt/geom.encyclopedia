@@ -84,7 +84,7 @@
     "href": "a.html#geom_autodensity",
     "title": "1  A",
     "section": "1.9 geom_autodensity",
-    "text": "1.9 geom_autodensity",
+    "text": "1.9 geom_autodensity\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "a.html#geom_autohistogram",
     "title": "1  A",
     "section": "1.10 geom_autohistogram",
-    "text": "1.10 geom_autohistogram",
+    "text": "1.10 geom_autohistogram\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
     ]
@@ -104,7 +104,7 @@
     "href": "a.html#geom_autopoint",
     "title": "1  A",
     "section": "1.11 geom_autopoint",
-    "text": "1.11 geom_autopoint",
+    "text": "1.11 geom_autopoint\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
     ]
@@ -114,7 +114,7 @@
     "href": "a.html#geom_axis_hive",
     "title": "1  A",
     "section": "1.12 geom_axis_hive",
-    "text": "1.12 geom_axis_hive\n\n\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for Alluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package ‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of Meteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula Interface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "text": "1.12 geom_axis_hive\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample\n\n\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for Alluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package ‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of Meteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula Interface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
     ]
@@ -1317,6 +1317,76 @@
     "text": "Aphalo, Pedro J. 2024. Ggpp: Grammar Extensions to ’Ggplot2’.\nhttps://CRAN.R-project.org/package=ggpp.\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for\nAlluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package\n‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of\nMeteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nChotchaeva, Karina. 2017. “World Happiness Report.” Zenodo.\nhttps://doi.org/10.5281/zenodo.1470906.\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern:\n’Ggplot2’ Pattern Geoms.\n\n\nGarrett, Robert C., Austin Nar, and Thomas J. Fisher. 2024.\nGgvoronoi: Voronoi Diagrams and Heatmaps with ’Ggplot2’. https://github.com/garretrc/ggvoronoi.\n\n\nHocking, Toby Dylan. 2023. Directlabels: Direct Labels for\nMulticolor Plots. https://CRAN.R-project.org/package=directlabels.\n\n\nJeppson, Haley, Heike Hofmann, and Di Cook. 2021. Ggmosaic: Mosaic\nPlots in the ’Ggplot2’ Framework. https://CRAN.R-project.org/package=ggmosaic.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula\nInterface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nLandis, Justin. 2024. Ggside: Side Grammar Graphics. https://CRAN.R-project.org/package=ggside.\n\n\nMiller, David L. 2023. emoGG: Use Emoji in Ggplot2.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nQuartier-la-Tente, Alain. 2024. Ggdemetra: ’Ggplot2’ Extension for\nSeasonal and Trading Day Adjustment with ’RJDemetra’. https://CRAN.R-project.org/package=ggdemetra.\n\n\nReynolds, Evangeline. 2024. Ggxmean: Statistical Geoms.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra\nCoordinate Systems, ’Geoms’, Statistical Transformations, Scales and\nFonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nRudis, Bob, and Dave Gandy. 2023. Waffle: Create Waffle Chart\nVisualizations.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nSlowikowski, Kamil. 2024. Ggrepel: Automatically Position\nNon-Overlapping Text Labels with ’Ggplot2’. https://CRAN.R-project.org/package=ggrepel.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data\nAnalysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy\nD’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.\n“Welcome to the tidyverse.”\nJournal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686.\n\n\nWickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis\nVaughan. 2023. Dplyr: A Grammar of Data Manipulation. https://CRAN.R-project.org/package=dplyr.\n\n\nWickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024. Tidyr:\nTidy Messy Data. https://CRAN.R-project.org/package=tidyr.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’.\nhttps://CRAN.R-project.org/package=ggridges.\n\n\nWorld Bank. 2026a. “GNI Per Capita: Operational Guidelines &\nAnalytical Classifications.” https://datacatalog.worldbank.org/.\n\n\n———. 2026b. “World Development Indicators.” https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators.\n\n\nWorld Population Review. n.d. “Happiest Countries in the\nWorld.” https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world.\n\n\nYu, Guangchuang. 2023. Ggimage: Use Image in ’Ggplot2’. https://CRAN.R-project.org/package=ggimage.\n\n\nYu, Youzhi, and Trent Buskirk. 2023. ggDoubleHeat: A Heatmap-Like\nVisualization Tool. https://CRAN.R-project.org/package=ggDoubleHeat.\n\n\nYutani, Hiroaki. 2024. Ggsflabel: Labels for ’Sf’ with\n’Ggplot2’. https://github.com/yutannihilation/ggsflabel.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "b.html",
+    "href": "b.html",
+    "title": "2  B",
+    "section": "",
+    "text": "2.1 geom_bar\nPackage\nggplot2 (Wickham 2016)\nDescription\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\nUnderstandable aesthetics\nrequired aesthetics\nx, y,\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\nSee also\ngeom_col\nExample\nExample 1: Given observations\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\")) |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(x = Income)) +\n  geom_bar()\nExample 2\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(x = Income, fill = Region)) +\n  geom_bar() +\n  scale_fill_brewer(palette = \"Paired\", na.value = \"grey50\")\nExample 3\nworldbankdata |&gt;\n  dplyr::select(c(\"Year\", \"Income\", \"Region\")) |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(x = Income, fill = Region)) +\n  geom_bar(position = \"dodge\") +\n  scale_fill_brewer(palette = \"Paired\", na.value = \"grey50\")\nExample 4: Given counts\ndfbar &lt;- data.frame(class = c(\"A\", \"B\"), income = c(100, 200))\nggplot(dfbar, aes(class, income)) +\n  geom_bar(stat = \"identity\")",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>B</span>"
+    ]
+  },
+  {
+    "objectID": "b.html#bar_pattern",
+    "href": "b.html#bar_pattern",
+    "title": "2  B",
+    "section": "2.2 geom_bar_pattern",
+    "text": "2.2 geom_bar_pattern\nPackage\nggpattern (FC, Davis, and ggplot2 authors 2023)\nDescription\nFill bars with patterns\nUnderstandable aesthetics\nrequired aesthetics\nx, y,\noptional aesthetics\npattern, pattern_angle\nSee also\ngeom_bar\nExample\n\nlibrary(ggpattern)\nworldbankdata |&gt;\n  tidyr::drop_na() |&gt; ## Missing values should be removed to see the different patterns for different levels\n  dplyr::select(c(\"Year\", \"Income\")) |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(x = Income)) +\n  geom_bar_pattern(aes(pattern = Income, pattern_angle = Income), fill = \"white\", colour = \"black\", pattern_spacing = 0.03, pattern_key_scale_factor = 1)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>B</span>"
+    ]
+  },
+  {
+    "objectID": "b.html#bin2d",
+    "href": "b.html#bin2d",
+    "title": "2  B",
+    "section": "2.5 geom_bin2d",
+    "text": "2.5 geom_bin2d\nPackage\nggplot2 (R-ggplot2?)\nDescription\nDivides the Cartesian plane created by x-variable and y-variable into rectangles, counts the number of observations in each rectangle. Only the observations with rectangles are filled according to the number of observations.\nUnderstandable aesthetics\nx, y, fill, group\nSee also\ngeom_bin_2d, geom_point\nExample\n\nggplot(worldbankdata, aes(y = Cooking, x = Electricity)) +\n  geom_bin2d() +\n  theme(aspect.ratio = 1) +\n  scale_fill_viridis(na.value = \"grey50\", limits = c(0, 30))",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>B</span>"
+    ]
+  },
+  {
+    "objectID": "b.html#bin2dpattern",
+    "href": "b.html#bin2dpattern",
+    "title": "2  B",
+    "section": "2.4 geom_bin2d_pattern",
+    "text": "2.4 geom_bin2d_pattern\nPackage\nggpattern(FC, Davis, and ggplot2 authors 2023)\nDescription\nDivides the Cartesian plane created by x-variable and y-variable into rectangles (2D-Histogram), counts the number of observations in each rectangle. Only the observations with rectangles are filled with a pattern.\nUnderstandable aesthetics\nRequired aesthetics\nx, y\nOptional aesthetics\npattern_fill (pattern_* - for mapping variables under aesthetics), pattern (to set a patten, for example pattern=‘stripe’), fill, colour\nSee also\ngeom_bin2d, geom_point\nExample\n\nworldbankdata |&gt;\n  drop_na() |&gt;\n  ggplot(aes(y = Cooking, x = Electricity)) +\n  geom_bin2d_pattern(aes(pattern_spacing = ..density..), fill = \"white\", colour = \"black\", bins = 20) +\n  theme(aspect.ratio = 1)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>B</span>"
+    ]
+  },
+  {
+    "objectID": "b.html#blank",
+    "href": "b.html#blank",
+    "title": "2  B",
+    "section": "2.6 geom_blank",
+    "text": "2.6 geom_blank\nPackage\nggplot2 (R-ggplot2?)\nDescription\nDraws nothing.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>B</span>"
+    ]
+  },
+  {
+    "objectID": "b.html#boxplot",
+    "href": "b.html#boxplot",
+    "title": "2  B",
+    "section": "2.7 geom_boxplot",
+    "text": "2.7 geom_boxplot\nPackage\nggplot2 (R-ggplot2?)\nDescription\nDraw a bar proportional to the specified number. For example, number of cases or user defined number.\nSee also\ngeom_col\nExample\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  dplyr::select(Cooking) |&gt;\n  ggplot(aes(y = Cooking, x = factor(0))) +\n  geom_boxplot() +\n  theme(\n    axis.title.x = element_blank(),\n    axis.text.x = element_blank(),\n    axis.ticks.x = element_blank()\n  )\n\n\n\n\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(y = Cooking, x = Region)) +\n  geom_boxplot() +\n  theme(\n    axis.title.x = element_blank(),\n    axis.text.x = element_blank(),\n    axis.ticks.x = element_blank()\n  )\n\n\n\n\n\n\n\n\n\nworldbankdata |&gt;\n  dplyr::filter(Year == 2021) |&gt;\n  ggplot(aes(y = Cooking, x = factor(0))) +\n  geom_boxplot(\n    outlier.colour = \"black\", outlier.shape = 16,\n    outlier.size = 2, notch = TRUE\n  ) +\n  theme(\n    axis.title.x = element_blank(),\n    axis.text.x = element_blank(),\n    axis.ticks.x = element_blank()\n  )",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>B</span>"
+    ]
+  },
+  {
+    "objectID": "b.html#bump",
+    "href": "b.html#bump",
+    "title": "2  B",
+    "section": "2.8 geom_bump",
+    "text": "2.8 geom_bump\nPackage\nggbump (Sjoberg 2020)\nDescription\nCreates a smooth rank over time.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\ncolour, alpha, size\nSee also\ngeom_line\nExample\n\nlibrary(ggbump)\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Afghanistan\") |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_bump() +\n  ggtitle(\"a1: geom_bump only\")\na2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Afghanistan\") |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_bump() +\n  geom_point() +\n  ggtitle(\"a2: geom_bump and geom_point\")\na1 | a2\n\n\n\n\n\n\n\n\n\n\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern: ’Ggplot2’ Pattern Geoms.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>B</span>"
     ]
   }
 ]
