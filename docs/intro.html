@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data and setting up your workflow – Data Visualisation Geometries Encyclopedia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./a.html" rel="next">
+<link href="./preface.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1d8022f9ec939ec9185e29e0da9a4dab.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Data and setting up your workflow</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Visualisation <span style="color:red;">Geom</span>etries Encyclopedia</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/thiyangt/geom.encyclopedia" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation--span-style=-color-red---Geom--span-etries-Encyclopedia.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Visualisation--span-style=-color-red---Geom--span-etries-Encyclopedia.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data and setting up your workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">A</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">B</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">C</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">D</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">E</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">F</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">G</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./h.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">H</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./i.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./j.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">J</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./k.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">K</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./l.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">L</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./m.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">M</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./n.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">N</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./o.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">O</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">P</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./q.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Q</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">S</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">T</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">U</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./v.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">V</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./w.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">W</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./x.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">X</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./y.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Y</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./z.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Z</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Geom Reference by Chart Type</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#installation-of-associated-packages" id="toc-installation-of-associated-packages" class="nav-link active" data-scroll-target="#installation-of-associated-packages">Installation of associated packages</a></li>
+  <li><a href="#data-set-use-in-the-geom-encyclopedia" id="toc-data-set-use-in-the-geom-encyclopedia" class="nav-link" data-scroll-target="#data-set-use-in-the-geom-encyclopedia">Data set use in the geom Encyclopedia</a></li>
+  <li><a href="#why-two-datasets" id="toc-why-two-datasets" class="nav-link" data-scroll-target="#why-two-datasets">Why two datasets?</a></li>
+  <li><a href="#dataset-1-happiness_gdp_income" id="toc-dataset-1-happiness_gdp_income" class="nav-link" data-scroll-target="#dataset-1-happiness_gdp_income">Dataset 1: <strong>happiness_gdp_income</strong></a>
+  <ul class="collapse">
+  <li><a href="#happiness_gdp_income-data-profiling" id="toc-happiness_gdp_income-data-profiling" class="nav-link" data-scroll-target="#happiness_gdp_income-data-profiling"><code>happiness_gdp_income</code>: Data Profiling</a></li>
+  <li><a href="#happiness_gdp_income-data-quality-analysis" id="toc-happiness_gdp_income-data-quality-analysis" class="nav-link" data-scroll-target="#happiness_gdp_income-data-quality-analysis"><code>happiness_gdp_income</code>: Data Quality Analysis</a></li>
+  </ul></li>
+  <li><a href="#dataset-2-worldbankdata" id="toc-dataset-2-worldbankdata" class="nav-link" data-scroll-target="#dataset-2-worldbankdata">Dataset 2: <strong>worldbankdata</strong></a>
+  <ul class="collapse">
+  <li><a href="#worldbankdata-data-profiling" id="toc-worldbankdata-data-profiling" class="nav-link" data-scroll-target="#worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</a></li>
+  <li><a href="#worldbankdata-data-quality-analysis" id="toc-worldbankdata-data-quality-analysis" class="nav-link" data-scroll-target="#worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data and setting up your workflow</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The goal of this chapter is to provide readers with an overview of the datasets used in the book’s examples. Having an initial understanding of the data helps readers easily navigate between the examples.</p>
+<section id="installation-of-associated-packages" class="level2">
+<h2 class="anchored" data-anchor-id="installation-of-associated-packages">Installation of associated packages</h2>
+<p>To run the examples in the book you need to install the following packages. In addition, to this package list, the associated package corresponds to the geom should be installed. The <code>drone</code> package provides the datasets associated with this geom encyclopedia.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(drone)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("devtools")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"thiyangt/drone"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="data-set-use-in-the-geom-encyclopedia" class="level2">
+<h2 class="anchored" data-anchor-id="data-set-use-in-the-geom-encyclopedia">Data set use in the geom Encyclopedia</h2>
+<p>The datasets used in the book coming from country-wise statistics obtained from public reliable websites. Only two datasets are used to explain all geoms so that readers can build intuition by seeing the same data represented in multiple ways. The reasons for using these datasets are:</p>
+<ul>
+<li><p>The dataset context is familiar and easily understood by individuals from diverse backgrounds.</p></li>
+<li><p>Ability to create cross-sectional, time-series, spatial, and spatio-temporal visualizations.</p></li>
+<li><p>Ability to visualize relationships between qualitative–qualitative, qualitative–quantitative, and quantitative–quantitative variables.</p></li>
+<li><p>Experience addressing common data challenges such as missing values, overplotting, and large-scale datasets.</p></li>
+</ul>
+</section>
+<section id="why-two-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="why-two-datasets">Why two datasets?</h2>
+<p>Different visualizations often require datasets to be in specific formats depending on the purpose of analysis or presentation. In this context, one dataset is organized in the long (tidy) format, while another is arranged in the wide format. The <code>happiness_gdp_income dataset</code> has time values spread across multiple columns, making it suitable for wide-format representation. In contrast, the <code>worldbankdata</code> dataset stores time in a single column, following the long-format structure. It is important to note that these datasets are not simply the reverse of each other; each format serves a distinct analytical or visualization purpose.</p>
+</section>
+<section id="dataset-1-happiness_gdp_income" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-1-happiness_gdp_income">Dataset 1: <strong>happiness_gdp_income</strong></h2>
+<p>The dataset is obtained from World Population Review report (<span class="citation" data-cites="worldpopulationreview_happiest">World Population Review (<a href="#ref-worldpopulationreview_happiest" role="doc-biblioref">n.d.</a>)</span>). Happiness score and GDP per Capita are accessed <span class="citation" data-cites="chotchaeva2017world">Chotchaeva (<a href="#ref-chotchaeva2017world" role="doc-biblioref">2017</a>)</span> via the <a href="https://zenodo.org/records/1470906">link</a>. Income level data are accessed from the World Bank Data Catalogue <span class="citation" data-cites="worldbank_wdi_2026">World Bank (<a href="#ref-worldbank_wdi_2026" role="doc-biblioref">2026b</a>)</span> via the <a href="https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators">link</a> on 11 February 2026.</p>
+<p>The variable description is given in <a href="#tbl-WorldHappinessScore" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-WorldHappinessScore</span></a>.</p>
+<div class="cell">
+<div id="tbl-WorldHappinessScore" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-WorldHappinessScore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Variable Description for happiness_gdp_income dataset
+</figcaption>
+<div aria-describedby="tbl-WorldHappinessScore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-paper lightable-hover do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Country</td>
+<td style="text-align: left;">Country name</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region</td>
+<td style="text-align: left;">World Bank regional classification</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HappinessScore2015</td>
+<td style="text-align: left;">Happiness Score 2015</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2015</td>
+<td style="text-align: left;">GDP per Capita 2015</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HappinessScore2016</td>
+<td style="text-align: left;">Happiness Score 2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2016</td>
+<td style="text-align: left;">GDP per Capita 2016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HappinessScore2017</td>
+<td style="text-align: left;">Happiness Score 2017</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2017</td>
+<td style="text-align: left;">GDP per Capita 2017</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income2015</td>
+<td style="text-align: left;">Income level categorization in 2015</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Income2016</td>
+<td style="text-align: left;">Income level categorization in 2016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income2017</td>
+<td style="text-align: left;">Income level categorization in 2017</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The first few rows of the dataset is shown below</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(happiness_gdp_income)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Country         Region HappinessScore2015 GDPpercapita2015
+1 Switzerland Western Europe              7.587          1.39651
+2     Iceland Western Europe              7.561          1.30232
+3     Denmark Western Europe              7.527          1.32548
+4      Norway Western Europe              7.522          1.45900
+5      Canada  North America              7.427          1.32629
+6     Finland Western Europe              7.406          1.29025
+  HappinessScore2016 GDPpercapita2016 HappinessScore2017 GDPpercapita2017
+1              7.509            7.590              7.494         1.564980
+2              7.501            7.669              7.504         1.480633
+3              7.526            7.592              7.522         1.482383
+4              7.498            7.575              7.537         1.616463
+5              7.404            7.473              7.316         1.479204
+6              7.413            7.475              7.469         1.443572
+   Income2015  Income2016  Income2017
+1 High income High income High income
+2 High income High income High income
+3 High income High income High income
+4 High income High income High income
+5 High income High income High income
+6 High income High income High income</code></pre>
+</div>
+</div>
+<section id="happiness_gdp_income-data-profiling" class="level3">
+<h3 class="anchored" data-anchor-id="happiness_gdp_income-data-profiling"><code>happiness_gdp_income</code>: Data Profiling</h3>
+<p><a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-hp</span></a> provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables,</p>
+<p><code>n_missing</code> tells how many values are missing for each variable.</p>
+<p><code>complete_rate</code> is the proportion of non-missing values.</p>
+<p><code>n_unique</code> is the number of unique values in the variable.</p>
+<p>For numeric variables <a href="#tbl-hp" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-hp</span></a> shows mean, sd (standard deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max), and a small histogram for each numeric variable.</p>
+<div class="cell">
+<div id="tbl-hp" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Summary description of the happiness_gdp_income dataset
+</figcaption>
+<div aria-describedby="tbl-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">happiness_gdp_income</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">158</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 19%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Country</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">158</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Income2015</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Hig: 44, Upp: 36, Low: 31, Low: 24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Income2016</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Hig: 43, Upp: 36, Low: 32, Low: 24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income2017</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Hig: 42, Low: 35, Upp: 34, Low: 24</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">HappinessScore2015</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5.38</td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: right;">2.84</td>
+<td style="text-align: right;">4.53</td>
+<td style="text-align: right;">5.23</td>
+<td style="text-align: right;">6.24</td>
+<td style="text-align: right;">7.59</td>
+<td style="text-align: left;">▂▇▇▇▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2015</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;">1.16</td>
+<td style="text-align: right;">1.69</td>
+<td style="text-align: left;">▃▅▆▇▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HappinessScore2016</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">5.38</td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: right;">2.90</td>
+<td style="text-align: right;">4.40</td>
+<td style="text-align: right;">5.31</td>
+<td style="text-align: right;">6.30</td>
+<td style="text-align: right;">7.53</td>
+<td style="text-align: left;">▂▆▇▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2016</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">5.48</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">4.46</td>
+<td style="text-align: right;">5.42</td>
+<td style="text-align: right;">6.43</td>
+<td style="text-align: right;">7.67</td>
+<td style="text-align: left;">▃▆▇▇▅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HappinessScore2017</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: right;">5.36</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">2.69</td>
+<td style="text-align: right;">4.50</td>
+<td style="text-align: right;">5.28</td>
+<td style="text-align: right;">6.11</td>
+<td style="text-align: right;">7.54</td>
+<td style="text-align: left;">▂▆▇▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GDPpercapita2017</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">1.07</td>
+<td style="text-align: right;">1.32</td>
+<td style="text-align: right;">1.87</td>
+<td style="text-align: left;">▂▅▆▇▂</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="happiness_gdp_income-data-quality-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="happiness_gdp_income-data-quality-analysis"><code>happiness_gdp_income</code>: Data Quality Analysis</h3>
+<p><a href="#fig-happy2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-happy2</span></a> shows the types of variables we have in the dataset and missing value distribution.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(happiness_gdp_income) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-happy2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-happy2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-happy2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-happy2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Summary description of the happiness_gdp_income dataset
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-happy3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-happy3</span></a> shows combination-wise missing values in the dataset <code>happiness_gdp_income</code>. There are 6 observations where only <code>WorldHapinessScore_2023</code> missing and there are 3 observations where both <code>WorldHapinessScore_2023</code> and <code>WorldHapinessScore_2024</code> missing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(happiness_gdp_income) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-happy3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-happy3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-happy3-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-happy3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Combinations of missingness across cases: WorldHappinessScore dataset
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dataset-2-worldbankdata" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-2-worldbankdata">Dataset 2: <strong>worldbankdata</strong></h2>
+<p>This dataset provides country-level development indicators compiled from the World Bank Data Catalogue (<span class="citation" data-cites="worldbank_gni_2026">World Bank (<a href="#ref-worldbank_gni_2026" role="doc-biblioref">2026a</a>)</span>). It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.</p>
+<p>The variable description is given in <a href="#tbl-worldbankdata" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdata</span></a>.</p>
+<div class="cell">
+<div id="tbl-worldbankdata" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-worldbankdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Variable Description for worldbankdata dataset
+</figcaption>
+<div aria-describedby="tbl-worldbankdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-paper lightable-hover do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Country</td>
+<td style="text-align: left;">Country name</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Code</td>
+<td style="text-align: left;">ISO country code</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region</td>
+<td style="text-align: left;">World Bank regional classification</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Year</td>
+<td style="text-align: left;">Year of observation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cooking</td>
+<td style="text-align: left;">Access to clean fuels and technologies for cooking (percentage of population).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Electricity</td>
+<td style="text-align: left;">Access to electricity (percentage of population).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Income</td>
+<td style="text-align: left;">Income group classification: L = Low income, LM = Lower middle income, UM = Upper middle income, HI = High income.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>To view the dataset use the following code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drone)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(worldbankdata)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>worldbankdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7,937 × 7
+   Country Code  Region                     Year Cooking Electricity Income
+   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; 
+ 1 Aruba   ABW   Latin America &amp; Caribbean  1990      NA       100   H     
+ 2 Aruba   ABW   Latin America &amp; Caribbean  2000      NA        91.7 H     
+ 3 Aruba   ABW   Latin America &amp; Caribbean  2013      NA       100   H     
+ 4 Aruba   ABW   Latin America &amp; Caribbean  2014      NA       100   H     
+ 5 Aruba   ABW   Latin America &amp; Caribbean  2015      NA       100   H     
+ 6 Aruba   ABW   Latin America &amp; Caribbean  2016      NA       100   H     
+ 7 Aruba   ABW   Latin America &amp; Caribbean  2017      NA       100   H     
+ 8 Aruba   ABW   Latin America &amp; Caribbean  2018      NA       100   H     
+ 9 Aruba   ABW   Latin America &amp; Caribbean  2019      NA       100   H     
+10 Aruba   ABW   Latin America &amp; Caribbean  2020      NA       100   H     
+# ℹ 7,927 more rows</code></pre>
+</div>
+</div>
+<section id="worldbankdata-data-profiling" class="level3">
+<h3 class="anchored" data-anchor-id="worldbankdata-data-profiling"><code>worldbankdata</code>: Data Profiling</h3>
+<p><a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdatasummary</span></a> provides a compact summary of the dataset. The dataset contains 7 variables. Among them, 4 variables are factor variables and 3 variables are numeric variables. In addtion, <a href="#tbl-worldbankdatasummary" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-worldbankdatasummary</span></a> shows a comprehensive overview of your dataset, showing both the distribution of categorical variables and the summary statistics for numeric variables, including missing values and frequency counts.</p>
+<div class="cell">
+<div id="tbl-worldbankdatasummary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-worldbankdatasummary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Summary description of the workldbank dataset
+</figcaption>
+<div aria-describedby="tbl-worldbankdatasummary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">worldbankdata</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">7937</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 10%">
+<col style="width: 14%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Country</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">227</td>
+<td style="text-align: left;">Afg: 36, Alb: 36, Alg: 36, Ame: 36</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Code</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">218</td>
+<td style="text-align: left;">CIV: 48, CUW: 47, CZE: 47, FRO: 47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region</td>
+<td style="text-align: right;">199</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Eur: 2038, Sub: 1693, Lat: 1512, Eas: 1343</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Income</td>
+<td style="text-align: right;">559</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">H: 2177, LM: 1978, L: 1704, UM: 1519</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Year</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2004.59</td>
+<td style="text-align: right;">10.41</td>
+<td style="text-align: right;">1987.00</td>
+<td style="text-align: right;">1996.00</td>
+<td style="text-align: right;">2005.00</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">▇▇▇▇▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cooking</td>
+<td style="text-align: right;">6047</td>
+<td style="text-align: right;">0.24</td>
+<td style="text-align: right;">65.48</td>
+<td style="text-align: right;">38.46</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">27.30</td>
+<td style="text-align: right;">84.75</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">▃▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Electricity</td>
+<td style="text-align: right;">5693</td>
+<td style="text-align: right;">0.28</td>
+<td style="text-align: right;">84.40</td>
+<td style="text-align: right;">26.45</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: right;">79.86</td>
+<td style="text-align: right;">99.80</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">▁▁▁▁▇</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="worldbankdata-data-quality-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="worldbankdata-data-quality-analysis"><code>worldbankdata</code>: Data Quality Analysis</h3>
+<p><code>worldbankdata</code> dataset contains some missing values. <a href="#fig-miss" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-miss</span></a> shows the distribution of types of variables and missing value distribution.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visdat)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vis_dat</span>(worldbankdata) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-miss" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-miss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-miss-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-miss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Data types and missing values distribution
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-miss2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-miss2</span></a> shows combinations of missingness across cases. This is especially useful for understanding patterns of missingness across variables. For example, there are 5122 rows where both <code>Electricity</code> and <code>Cooking</code> variable missing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(worldbankdata) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-miss2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-miss2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-miss2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-miss2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Combinations of missingness across cases: worldbankdata dataset
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-chotchaeva2017world" class="csl-entry" role="listitem">
+Chotchaeva, Karina. 2017. <span>“World Happiness Report.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.1470906">https://doi.org/10.5281/zenodo.1470906</a>.
+</div>
+<div id="ref-worldbank_gni_2026" class="csl-entry" role="listitem">
+World Bank. 2026a. <span>“GNI Per Capita: Operational Guidelines &amp; Analytical Classifications.”</span> <a href="https://datacatalog.worldbank.org/">https://datacatalog.worldbank.org/</a>.
+</div>
+<div id="ref-worldbank_wdi_2026" class="csl-entry" role="listitem">
+———. 2026b. <span>“World Development Indicators.”</span> <a href="https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators">https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators</a>.
+</div>
+<div id="ref-worldpopulationreview_happiest" class="csl-entry" role="listitem">
+World Population Review. n.d. <span>“Happiest Countries in the World.”</span> <a href="https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world">https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/thiyangt\.github\.io\/geom\.encyclopedia\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./preface.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./a.html" class="pagination-link" aria-label="A">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">A</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Data Visualisation Geometries Encyclopedia was written by Thiyanga S. Talagala.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>GEOM Encyclopedia (Encyclopedia of Plots)</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
