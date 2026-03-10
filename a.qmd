@@ -370,19 +370,22 @@ p1|p2
 ```
 
 ## geom_autodensity
+
 **Package**
 
-ggplot2 [@ggplot2]
+ggforce [@ggforce]
 
 **Description**
+
+A matrix-style (commonly from GGally package) visualizations to automatically display variable distributions on diagonal panels, handling both continuous and discrete data while simplifying the mapping of panel variables.
+
 
 **Understandable aesthetics**
 
 *required aesthetics*
   
-  `x`
+  `data`
 
-`y`
 
 *optional aesthetics*
   
@@ -391,15 +394,37 @@ ggplot2 [@ggplot2]
 
 **See also**
 
-[geom_line](#line), [geom_ribbon](#ribbon)
+[geom_density](#density), [geom_histogram](#histogram), [geom_autohistogram](#autohistogram), [geom_autopoint](#autopoint),
+
   
 **Example**
+
+```{r}
+library(ggplot2)
+library(GGally)
+
+# Select numeric variables
+df <- happiness_gdp_income |>
+  select("HappinessScore2015", "HappinessScore2016", "HappinessScore2017")
+
+
+ggplot(df) +
+  facet_matrix(
+    vars(
+      HappinessScore2015, 
+      HappinessScore2016, 
+      HappinessScore2017
+    ),
+    layer.diag = 1
+  ) +
+  geom_autodensity()
+```
 
 ## geom_autohistogram
 
 **Package**
 
-ggplot2 [@ggplot2]
+ggforce [@ggforce]
 
 **Description**
 
@@ -407,9 +432,8 @@ ggplot2 [@ggplot2]
 
 *required aesthetics*
   
-  `x`
+  `data`
 
-`y`
 
 *optional aesthetics*
   
@@ -418,10 +442,55 @@ ggplot2 [@ggplot2]
 
 **See also**
 
-[geom_line](#line), [geom_ribbon](#ribbon)
+[geom_histogram](#histogram), [geom_auotodensity](#autodensity), [geom_auotpoint](#autopoint)
   
 **Example**
 
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(GGally)
+
+# Prepare dataset
+df <- happiness_gdp_income %>%
+  select(HappinessScore2015, HappinessScore2016, HappinessScore2017,
+         GDPpercapita2015) %>%
+  rename(GDPpercapita = GDPpercapita2015) %>%
+  # Create income category
+  mutate(IncomeCategory = case_when(
+    GDPpercapita < 1.2 ~ "Low",
+    GDPpercapita >= 1.2 & GDPpercapita < 1.4 ~ "Medium",
+    GDPpercapita >= 1.4 ~ "High"
+  )) %>%
+  mutate(
+    IncomeCategory = factor(IncomeCategory, levels = c("Low", "Medium", "High")),
+    # Create discrete happiness scores by rounding
+    HappinessScore2015_discrete = factor(round(HappinessScore2015)),
+    HappinessScore2016_discrete = factor(round(HappinessScore2016)),
+    HappinessScore2017_discrete = factor(round(HappinessScore2017))
+  )
+
+# Plot facet matrix using discrete happiness scores
+ggplot(df, aes(x = .panel_x, fill = IncomeCategory)) +
+  facet_matrix(
+    vars(HappinessScore2015_discrete, HappinessScore2016_discrete, HappinessScore2017_discrete),
+    layer.diag = 1,
+    grid.y.diag = FALSE
+  ) +
+  geom_autohistogram(alpha = 0.7, position = "dodge") +  # diagonal histograms
+  geom_autopoint(alpha = 0.6, aes(color = IncomeCategory)) +  # off-diagonal scatterplots
+  scale_fill_brewer(palette = "Set2") +
+  scale_color_brewer(palette = "Set2") +
+  theme_minimal() +
+  labs(
+    fill = "Income Category",
+    color = "Income Category",
+    title = "Discrete Happiness Scores by Income Category",
+    x = "",
+    y = ""
+  )
+```
+  
 ## geom_autopoint
 
 **Package**
@@ -461,9 +530,8 @@ ggplot2 [@ggplot2]
 
 *required aesthetics*
   
-  `x`
+  `data`
 
-`y`
 
 *optional aesthetics*
   
@@ -475,3 +543,5 @@ ggplot2 [@ggplot2]
 [geom_line](#line), [geom_ribbon](#ribbon)
   
 **Example**
+
+

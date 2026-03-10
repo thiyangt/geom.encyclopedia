@@ -788,7 +788,7 @@ Encyclopedia}\label{data-set-use-in-the-geom-encyclopedia}
 
 \markright{Data set use in the geom Encyclopedia}
 
-The datasets used in the book, main are from country-wise statistics
+The datasets used in the book coming from country-wise statistics
 obtained from public reliable websites. Only two datasets are used to
 explain all geoms so that readers can build intuition by seeing the same
 data represented in multiple ways. The reasons for using these datasets
@@ -809,22 +809,44 @@ are:
   overplotting, and large-scale datasets.
 \end{itemize}
 
-\section*{\texorpdfstring{\textbf{WorldHappinessScore}
-dataset}{WorldHappinessScore dataset}}\label{worldhappinessscore-dataset}
-\addcontentsline{toc}{section}{\textbf{WorldHappinessScore} dataset}
+\section*{Why two datasets?}\label{why-two-datasets}
+\addcontentsline{toc}{section}{Why two datasets?}
 
-\markright{\textbf{WorldHappinessScore} dataset}
+\markright{Why two datasets?}
+
+Different visualizations often require datasets to be in specific
+formats depending on the purpose of analysis or presentation. In this
+context, one dataset is organized in the long (tidy) format, while
+another is arranged in the wide format. The
+\texttt{happiness\_gdp\_income\ dataset} has time values spread across
+multiple columns, making it suitable for wide-format representation. In
+contrast, the \texttt{worldbankdata} dataset stores time in a single
+column, following the long-format structure. It is important to note
+that these datasets are not simply the reverse of each other; each
+format serves a distinct analytical or visualization purpose.
+
+\section*{\texorpdfstring{Dataset 1:
+\textbf{happiness\_gdp\_income}}{Dataset 1: happiness\_gdp\_income}}\label{dataset-1-happiness_gdp_income}
+\addcontentsline{toc}{section}{Dataset 1:
+\textbf{happiness\_gdp\_income}}
+
+\markright{Dataset 1: \textbf{happiness\_gdp\_income}}
 
 The dataset is obtained from World Population Review report (World
-Population Review (n.d.)). The World Happiness Score is reported on a
-0--10 scale, with higher values indicating greater happiness. This
-dataset containes the world happiness score for 145 countries. The
-variable description is given in Table~\ref{tbl-WorldHappinessScore}.
+Population Review (n.d.)). Happiness score and GDP per Capita are
+accessed Chotchaeva (2017) via the
+\href{https://zenodo.org/records/1470906}{link}. Income level data are
+accessed from the World Bank Data Catalogue World Bank (2026b) via the
+\href{https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators}{link}
+on 11 February 2026.
+
+The variable description is given in
+Table~\ref{tbl-WorldHappinessScore}.
 
 \begin{table}
 
 \caption{\label{tbl-WorldHappinessScore}Variable Description for
-WorldHappinessScore dataset}
+happiness\_gdp\_income dataset}
 
 \centering{
 
@@ -833,15 +855,27 @@ WorldHappinessScore dataset}
 \hline
 Variable & Description\\
 \hline
-flagCode & Country flag code\\
+Country & Country name\\
 \hline
-country & Country name\\
+Region & World Bank regional classification\\
 \hline
-WorldHappinessScore\_2024 & World happiness score for 2024\\
+HappinessScore2015 & Happiness Score 2015\\
 \hline
-WorldHappinessScore\_2023 & World happiness score for 2023\\
+GDPpercapita2015 & GDP per Capita 2015\\
 \hline
-WorldHappinessScore\_2022 & World happiness score for 2022\\
+HappinessScore2016 & Happiness Score 2016\\
+\hline
+GDPpercapita2016 & GDP per Capita 2016\\
+\hline
+HappinessScore2017 & Happiness Score 2017\\
+\hline
+GDPpercapita2017 & GDP per Capita 2017\\
+\hline
+Income2015 & Income level categorization in 2015\\
+\hline
+Income2016 & Income level categorization in 2016\\
+\hline
+Income2017 & Income level categorization in 2017\\
 \hline
 \end{tabular}
 
@@ -854,30 +888,37 @@ The first few rows of the dataset is shown below
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(drone)}
-\FunctionTok{head}\NormalTok{(WorldHappinessScore)}
+\FunctionTok{head}\NormalTok{(happiness\_gdp\_income)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-  flagCode     country WorldHappinessScore_2024 WorldHappinessScore_2023
-1       FI     Finland                     7.74                    7.804
-2       DK     Denmark                     7.58                    7.586
-3       IS     Iceland                     7.53                    7.530
-4       SE      Sweden                     7.34                    7.395
-5       IL      Israel                     7.34                    7.473
-6       NL Netherlands                     7.32                    7.403
-  WorldHappinessScore_2022
-1                    7.821
-2                    7.636
-3                    7.557
-4                    7.384
-5                    7.364
-6                    7.415
+      Country         Region HappinessScore2015 GDPpercapita2015
+1 Switzerland Western Europe              7.587          1.39651
+2     Iceland Western Europe              7.561          1.30232
+3     Denmark Western Europe              7.527          1.32548
+4      Norway Western Europe              7.522          1.45900
+5      Canada  North America              7.427          1.32629
+6     Finland Western Europe              7.406          1.29025
+  HappinessScore2016 GDPpercapita2016 HappinessScore2017 GDPpercapita2017
+1              7.509            7.590              7.494         1.564980
+2              7.501            7.669              7.504         1.480633
+3              7.526            7.592              7.522         1.482383
+4              7.498            7.575              7.537         1.616463
+5              7.404            7.473              7.316         1.479204
+6              7.413            7.475              7.469         1.443572
+   Income2015  Income2016  Income2017
+1 High income High income High income
+2 High income High income High income
+3 High income High income High income
+4 High income High income High income
+5 High income High income High income
+6 High income High income High income
 \end{verbatim}
 
-\subsection*{\texorpdfstring{\texttt{WorldHappinessScore}: Data
-Profiling}{WorldHappinessScore: Data Profiling}}\label{worldhappinessscore-data-profiling}
-\addcontentsline{toc}{subsection}{\texttt{WorldHappinessScore}: Data
+\subsection*{\texorpdfstring{\texttt{happiness\_gdp\_income}: Data
+Profiling}{happiness\_gdp\_income: Data Profiling}}\label{happiness_gdp_income-data-profiling}
+\addcontentsline{toc}{subsection}{\texttt{happiness\_gdp\_income}: Data
 Profiling}
 
 Table~\ref{tbl-hp} provides a compact summary of the dataset.There are 5
@@ -897,7 +938,7 @@ and a small histogram for each numeric variable.
 
 \begin{longtable}[]{@{}ll@{}}
 
-\caption{\label{tbl-hp}Summary description of the WorldHappinessScore
+\caption{\label{tbl-hp}Summary description of the happiness\_gdp\_income
 dataset}
 
 \tabularnewline
@@ -908,13 +949,14 @@ dataset}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Name & WorldHappinessScore \\
-Number of rows & 145 \\
-Number of columns & 5 \\
+Name & happiness\_gdp\_income \\
+Number of rows & 158 \\
+Number of columns & 11 \\
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
 Column type frequency: & \\
 character & 2 \\
-numeric & 3 \\
+factor & 3 \\
+numeric & 6 \\
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
 Group variables & None \\
 
@@ -932,7 +974,7 @@ Group variables & None \\
   >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1528}}@{}}
 
-\caption{\label{tbl-hp}Summary description of the WorldHappinessScore
+\caption{\label{tbl-hp}Summary description of the happiness\_gdp\_income
 dataset}
 
 \tabularnewline
@@ -959,27 +1001,69 @@ whitespace
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-flagCode & 1 & 0.99 & 2 & 2 & 0 & 144 & 0 \\
-country & 0 & 1.00 & 4 & 22 & 0 & 145 & 0 \\
+Country & 0 & 1 & 4 & 24 & 0 & 158 & 0 \\
+Region & 0 & 1 & 12 & 31 & 0 & 10 & 0 \\
+
+\end{longtable}
+
+\textbf{Variable type: factor}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1556}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1556}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0889}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3889}}@{}}
+
+\caption{\label{tbl-hp}Summary description of the happiness\_gdp\_income
+dataset}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+ordered
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_unique
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+top\_counts
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Income2015 & 23 & 0.85 & FALSE & 4 & Hig: 44, Upp: 36, Low: 31, Low:
+24 \\
+Income2016 & 23 & 0.85 & FALSE & 4 & Hig: 43, Upp: 36, Low: 32, Low:
+24 \\
+Income2017 & 23 & 0.85 & FALSE & 4 & Hig: 42, Low: 35, Upp: 34, Low:
+24 \\
 
 \end{longtable}
 
 \textbf{Variable type: numeric}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.2778}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1111}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1556}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0556}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0667}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.2262}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1190}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0595}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0595}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0595}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0595}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0595}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0595}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0595}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0714}}@{}}
 
-\caption{\label{tbl-hp}Summary description of the WorldHappinessScore
+\caption{\label{tbl-hp}Summary description of the happiness\_gdp\_income
 dataset}
 
 \tabularnewline
@@ -1012,18 +1096,25 @@ hist
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-WorldHappinessScore\_2024 & 4 & 0.97 & 5.52 & 1.18 & 1.72 & 4.66 & 5.79
-& 6.41 & 7.74 & ▁▂▆▇▅ \\
-WorldHappinessScore\_2023 & 9 & 0.94 & 5.53 & 1.14 & 1.86 & 4.70 & 5.67
-& 6.33 & 7.80 & ▁▂▆▇▃ \\
-WorldHappinessScore\_2022 & 1 & 0.99 & 5.55 & 1.09 & 2.40 & 4.88 & 5.57
-& 6.30 & 7.82 & ▁▃▇▇▃ \\
+HappinessScore2015 & 0 & 1.00 & 5.38 & 1.15 & 2.84 & 4.53 & 5.23 & 6.24
+& 7.59 & ▂▇▇▇▆ \\
+GDPpercapita2015 & 0 & 1.00 & 0.85 & 0.40 & 0.00 & 0.55 & 0.91 & 1.16 &
+1.69 & ▃▅▆▇▂ \\
+HappinessScore2016 & 7 & 0.96 & 5.38 & 1.15 & 2.90 & 4.40 & 5.31 & 6.30
+& 7.53 & ▂▆▇▇▅ \\
+GDPpercapita2016 & 7 & 0.96 & 5.48 & 1.14 & 3.08 & 4.46 & 5.42 & 6.43 &
+7.67 & ▃▆▇▇▅ \\
+HappinessScore2017 & 9 & 0.94 & 5.36 & 1.14 & 2.69 & 4.50 & 5.28 & 6.11
+& 7.54 & ▂▆▇▇▅ \\
+GDPpercapita2017 & 9 & 0.94 & 0.99 & 0.41 & 0.00 & 0.67 & 1.07 & 1.32 &
+1.87 & ▂▅▆▇▂ \\
 
 \end{longtable}
 
-\subsection*{\texorpdfstring{\texttt{WorldHappinessScore}: Data Quality
-Analysis}{WorldHappinessScore: Data Quality Analysis}}\label{worldhappinessscore-data-quality-analysis}
-\addcontentsline{toc}{subsection}{\texttt{WorldHappinessScore}: Data
+\subsection*{\texorpdfstring{\texttt{happiness\_gdp\_income}: Data
+Quality
+Analysis}{happiness\_gdp\_income: Data Quality Analysis}}\label{happiness_gdp_income-data-quality-analysis}
+\addcontentsline{toc}{subsection}{\texttt{happiness\_gdp\_income}: Data
 Quality Analysis}
 
 Figure~\ref{fig-happy2} shows the types of variables we have in the
@@ -1033,7 +1124,7 @@ dataset and missing value distribution.
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(tidyverse)}
 \FunctionTok{library}\NormalTok{(visdat)}
-\FunctionTok{vis\_dat}\NormalTok{(WorldHappinessScore) }\SpecialCharTok{+} 
+\FunctionTok{vis\_dat}\NormalTok{(happiness\_gdp\_income) }\SpecialCharTok{+} 
   \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -1047,12 +1138,12 @@ dataset and missing value distribution.
 }
 
 \caption{\label{fig-happy2}Summary description of the
-WorldHappinessScore dataset}
+happiness\_gdp\_income dataset}
 
 \end{figure}%
 
 Figure~\ref{fig-happy3} shows combination-wise missing values in the
-dataset \texttt{WorldHappinessScore}. There are 6 observations where
+dataset \texttt{happiness\_gdp\_income}. There are 6 observations where
 only \texttt{WorldHapinessScore\_2023} missing and there are 3
 observations where both \texttt{WorldHapinessScore\_2023} and
 \texttt{WorldHapinessScore\_2024} missing.
@@ -1060,7 +1151,7 @@ observations where both \texttt{WorldHapinessScore\_2023} and
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(naniar)}
-\FunctionTok{gg\_miss\_upset}\NormalTok{(WorldHappinessScore) }
+\FunctionTok{gg\_miss\_upset}\NormalTok{(happiness\_gdp\_income) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -1077,16 +1168,17 @@ WorldHappinessScore dataset}
 
 \end{figure}%
 
-\section*{\texorpdfstring{\textbf{worldbankdata}
-dataset}{worldbankdata dataset}}\label{worldbankdata-dataset}
-\addcontentsline{toc}{section}{\textbf{worldbankdata} dataset}
+\section*{\texorpdfstring{Dataset 2:
+\textbf{worldbankdata}}{Dataset 2: worldbankdata}}\label{dataset-2-worldbankdata}
+\addcontentsline{toc}{section}{Dataset 2: \textbf{worldbankdata}}
 
-\markright{\textbf{worldbankdata} dataset}
+\markright{Dataset 2: \textbf{worldbankdata}}
 
 This dataset provides country-level development indicators compiled from
-the World Bank Data Catalogue. It includes information on access to
-clean cooking fuels, access to electricity, income group classification,
-and regional grouping across multiple years.
+the World Bank Data Catalogue (World Bank (2026a)). It includes
+information on access to clean cooking fuels, access to electricity,
+income group classification, and regional grouping across multiple
+years.
 
 The variable description is given in Table~\ref{tbl-worldbankdata}.
 
@@ -1373,11 +1465,11 @@ its own independent characteristics: \texttt{intercept} and
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(worldbankdata, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Cooking, }\AttributeTok{x =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+\NormalTok{a1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
   \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{intercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{slope =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"a1: geom\_abline only"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\NormalTok{)}
-\NormalTok{a2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(worldbankdata, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Cooking, }\AttributeTok{x =}\NormalTok{ Electricity)) }\SpecialCharTok{+}
+\NormalTok{a2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(happiness\_gdp\_income, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{HappinessScore2016, }\AttributeTok{x =}\NormalTok{ HappinessScore2015)) }\SpecialCharTok{+}
   \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{intercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{slope =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"a2: geom\_abline }\SpecialCharTok{\textbackslash{}n}\StringTok{ and geom\_point"}\NormalTok{) }\SpecialCharTok{+}
@@ -1399,7 +1491,7 @@ ggalluvial(Brunson and Read 2019; Brunson 2020)
 Create alluvial plot. An alluvial plot is a type of diagram that is
 particularly useful for visualizing categorical data and the flow or
 transition between different categorical variables over multiple stages
-or categories
+or categories.
 
 \textbf{Understandable aesthetics}
 
@@ -1420,13 +1512,17 @@ ignored)
 
 \textbf{Example}
 
+This example shows the distribution of income level categories in 2021
+and 2022 in the regions \texttt{Sub-Saharan\ Africa} and
+\texttt{Latin\ America\ \&\ Caribbean}.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(ggalluvial)}
 \NormalTok{freq.table }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{select}\NormalTok{(Country, Region, Year, Income) }\SpecialCharTok{|\textgreater{}}
-  \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{\textgreater{}} \DecValTok{2019}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
-  \FunctionTok{filter}\NormalTok{(Region }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"East Asia \& Pacific"}\NormalTok{, }\StringTok{"North America"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{\textgreater{}} \DecValTok{2020}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(Region }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Sub{-}Saharan Africa"}\NormalTok{, }\StringTok{"Latin America \& Caribbean"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{group\_by}\NormalTok{(Region, Year, Income) }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{summarise}\NormalTok{(}\AttributeTok{n =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{drop\_na}\NormalTok{()}
@@ -1435,37 +1531,39 @@ ignored)
 \end{Shaded}
 
 \begin{verbatim}
-# A tibble: 12 x 4
-# Groups:   Region, Year [6]
-   Region               Year Income     n
-   <fct>               <dbl> <fct>  <int>
- 1 East Asia & Pacific  2020 LM        14
- 2 East Asia & Pacific  2020 UM         8
- 3 East Asia & Pacific  2020 H         15
- 4 East Asia & Pacific  2021 LM        14
- 5 East Asia & Pacific  2021 UM         9
- 6 East Asia & Pacific  2021 H         14
- 7 East Asia & Pacific  2022 LM        13
- 8 East Asia & Pacific  2022 UM         9
- 9 East Asia & Pacific  2022 H         15
-10 North America        2020 H          3
-11 North America        2021 H          3
-12 North America        2022 H          3
+# A tibble: 14 x 4
+# Groups:   Region, Year [4]
+   Region                     Year Income     n
+   <fct>                     <dbl> <fct>  <int>
+ 1 Latin America & Caribbean  2021 LM         5
+ 2 Latin America & Caribbean  2021 UM        19
+ 3 Latin America & Caribbean  2021 H         17
+ 4 Latin America & Caribbean  2022 LM         4
+ 5 Latin America & Caribbean  2022 UM        19
+ 6 Latin America & Caribbean  2022 H         18
+ 7 Sub-Saharan Africa         2021 L         24
+ 8 Sub-Saharan Africa         2021 LM        16
+ 9 Sub-Saharan Africa         2021 UM         6
+10 Sub-Saharan Africa         2021 H          1
+11 Sub-Saharan Africa         2022 L         22
+12 Sub-Saharan Africa         2022 LM        18
+13 Sub-Saharan Africa         2022 UM         6
+14 Sub-Saharan Africa         2022 H          1
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{a1 }\OtherTok{\textless{}{-}}\NormalTok{ freq.table }\SpecialCharTok{|\textgreater{}}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ n, }\AttributeTok{axis1 =}\NormalTok{ Region, }\AttributeTok{axis2 =}\NormalTok{ Year)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_alluvium}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Income), }\AttributeTok{width =} \DecValTok{1} \SpecialCharTok{/} \DecValTok{12}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ n, }\AttributeTok{axis1 =}\NormalTok{ Income, }\AttributeTok{axis2 =}\NormalTok{ Region)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_alluvium}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =} \FunctionTok{as.factor}\NormalTok{(Year)), }\AttributeTok{width =} \DecValTok{1} \SpecialCharTok{/} \DecValTok{12}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"a1: geom\_alluvium only"}\NormalTok{)}
 
 \NormalTok{a2 }\OtherTok{\textless{}{-}}\NormalTok{ freq.table }\SpecialCharTok{|\textgreater{}}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ n, }\AttributeTok{axis1 =}\NormalTok{ Region, }\AttributeTok{axis2 =}\NormalTok{ Year)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_alluvium}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Income), }\AttributeTok{width =} \DecValTok{1} \SpecialCharTok{/} \DecValTok{12}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ n, }\AttributeTok{axis1 =}\NormalTok{ Income, }\AttributeTok{axis2 =}\NormalTok{ Region)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_alluvium}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =} \FunctionTok{as.factor}\NormalTok{(Year)), }\AttributeTok{width =} \DecValTok{1} \SpecialCharTok{/} \DecValTok{12}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{geom\_stratum}\NormalTok{(}\AttributeTok{width =} \DecValTok{1} \SpecialCharTok{/} \DecValTok{12}\NormalTok{, }\AttributeTok{fill =} \StringTok{"black"}\NormalTok{, }\AttributeTok{color =} \StringTok{"grey"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_label}\NormalTok{(}\AttributeTok{stat =} \StringTok{"stratum"}\NormalTok{, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =} \FunctionTok{after\_stat}\NormalTok{(stratum))) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_label}\NormalTok{(}\AttributeTok{stat =} \StringTok{"stratum"}\NormalTok{, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =} \FunctionTok{after\_stat}\NormalTok{(stratum))) }\SpecialCharTok{+}  \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"a2: geom\_alluvium, }\SpecialCharTok{\textbackslash{}n}\StringTok{ geom\_stratum and geom\_label"}\NormalTok{)}
 \NormalTok{a1 }\SpecialCharTok{/}\NormalTok{ a2}
 \end{Highlighting}
@@ -1554,24 +1652,45 @@ layer}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
-  \AttributeTok{state =} \FunctionTok{c}\NormalTok{(}
-    \StringTok{"A"}\NormalTok{, }\StringTok{"B"}\NormalTok{, }\StringTok{"C"}\NormalTok{,}
-    \StringTok{"D"}\NormalTok{, }\StringTok{"E"}
-\NormalTok{  ),}
-  \AttributeTok{focus =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{),}
-  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{),}
-  \AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2} \SpecialCharTok{*}\NormalTok{ pi),}
-  \AttributeTok{amount =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{),}
-  \AttributeTok{stringsAsFactors =} \ConstantTok{FALSE}
-\NormalTok{)}
+\CommentTok{\# Count observations in each Income category}
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(Region)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{count}\NormalTok{(Region, }\AttributeTok{name =} \StringTok{"count"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{Region =}\NormalTok{ Region,}
+    \AttributeTok{focus =} \DecValTok{0}
+\NormalTok{  )}
+\NormalTok{df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 7 x 3
+  Region                     count focus
+  <fct>                      <int> <dbl>
+1 East Asia & Pacific         1343     0
+2 Europe & Central Asia       2038     0
+3 Latin America & Caribbean   1512     0
+4 Middle East & North Africa   756     0
+5 North America                108     0
+6 South Asia                   288     0
+7 Sub-Saharan Africa          1693     0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Pie chart}
 \FunctionTok{ggplot}\NormalTok{(df) }\SpecialCharTok{+}
   \FunctionTok{geom\_arc\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}
-    \AttributeTok{x0 =} \DecValTok{0}\NormalTok{, }\AttributeTok{y0 =} \DecValTok{0}\NormalTok{, }\AttributeTok{r0 =} \DecValTok{0}\NormalTok{, }\AttributeTok{r =} \DecValTok{1}\NormalTok{, }\AttributeTok{amount =}\NormalTok{ amount,}
-    \AttributeTok{fill =}\NormalTok{ state, }\AttributeTok{explode =}\NormalTok{ focus}
+    \AttributeTok{x0 =} \DecValTok{0}\NormalTok{, }\AttributeTok{y0 =} \DecValTok{0}\NormalTok{,}
+    \AttributeTok{r0 =} \DecValTok{0}\NormalTok{, }\AttributeTok{r =} \DecValTok{1}\NormalTok{,}
+    \AttributeTok{amount =}\NormalTok{ count,}
+    \AttributeTok{fill =}\NormalTok{ Region,}
+    \AttributeTok{explode =}\NormalTok{ focus}
 \NormalTok{  ), }\AttributeTok{stat =} \StringTok{"pie"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\NormalTok{)}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{fill =} \StringTok{"Regions"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1642,43 +1761,6 @@ ggdemetra
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(ggdemetra)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Loading required package: RJDemetra
-\end{verbatim}
-
-\begin{verbatim}
-
-Attaching package: 'RJDemetra'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:dplyr':
-
-    compute, count
-\end{verbatim}
-
-\begin{verbatim}
-
-Attaching package: 'ggdemetra'
-\end{verbatim}
-
-\begin{verbatim}
-The following object is masked from 'package:RJDemetra':
-
-    ipi_c_eu
-\end{verbatim}
-
-\begin{verbatim}
-The following object is masked from 'package:base':
-
-    raw
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \NormalTok{ worldbankdata }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{filter}\NormalTok{(Country }\SpecialCharTok{==} \StringTok{"Bangladesh"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
   \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{\textgreater{}=} \DecValTok{2013} \SpecialCharTok{\&}\NormalTok{ Year }\SpecialCharTok{\textless{}=} \DecValTok{2021}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
@@ -1691,12 +1773,6 @@ The following object is masked from 'package:base':
                \AttributeTok{message =} \ConstantTok{FALSE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-Warning: Computation failed in `stat_arima()`.
-Caused by error in `dataframe2ts()`:
-! Error with the frequency: it must be equal to 12, 6, 4 or 2
-\end{verbatim}
 
 \pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/unnamed-chunk-4-1.pdf}}
 
@@ -1736,7 +1812,7 @@ components).
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(metR)}
 \NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ tibble}\SpecialCharTok{::}\FunctionTok{tibble}\NormalTok{(}
-  \AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{50}\NormalTok{),           }\CommentTok{\# Longitude or X{-}coordinates}
+  \AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{50}\NormalTok{),      }\CommentTok{\# Longitude or X{-}coordinates}
   \AttributeTok{y =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{),           }\CommentTok{\# Latitude or Y{-}coordinates}
   \AttributeTok{dx =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{),         }\CommentTok{\# Wind direction components (change in X)}
   \AttributeTok{dy =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)          }\CommentTok{\# Wind direction components (change in Y)}
@@ -1801,11 +1877,194 @@ probability density estimator derived from a collection of histograms.
 
 \section{geom\_autodensity}\label{geom_autodensity}
 
+\textbf{Package}
+
+ggforce (Pedersen 2022)
+
+\textbf{Description}
+
+A matrix-style (commonly from GGally package) visualizations to
+automatically display variable distributions on diagonal panels,
+handling both continuous and discrete data while simplifying the mapping
+of panel variables.
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{data}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[density]{geom\_density},
+\hyperref[histogram]{geom\_histogram},
+\hyperref[autohistogram]{geom\_autohistogram},
+\hyperref[autopoint]{geom\_autopoint},
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(GGally)}
+
+\CommentTok{\# Select numeric variables}
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ happiness\_gdp\_income }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{select}\NormalTok{(}\StringTok{"HappinessScore2015"}\NormalTok{, }\StringTok{"HappinessScore2016"}\NormalTok{, }\StringTok{"HappinessScore2017"}\NormalTok{)}
+
+
+\FunctionTok{ggplot}\NormalTok{(df) }\SpecialCharTok{+}
+  \FunctionTok{facet\_matrix}\NormalTok{(}
+    \FunctionTok{vars}\NormalTok{(}
+\NormalTok{      HappinessScore2015, }
+\NormalTok{      HappinessScore2016, }
+\NormalTok{      HappinessScore2017}
+\NormalTok{    ),}
+    \AttributeTok{layer.diag =} \DecValTok{1}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{geom\_autodensity}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning: Removed 16 rows containing non-finite outside the scale range
+(`stat_autodensity()`).
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/unnamed-chunk-7-1.pdf}}
+
 \section{geom\_autohistogram}\label{geom_autohistogram}
+
+\textbf{Package}
+
+ggforce (Pedersen 2022)
+
+\textbf{Description}
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{data}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[histogram]{geom\_histogram},
+\hyperref[autodensity]{geom\_auotodensity},
+\hyperref[autopoint]{geom\_auotpoint}
+
+\textbf{Example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(GGally)}
+
+\CommentTok{\# Prepare dataset}
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ happiness\_gdp\_income }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(HappinessScore2015, HappinessScore2016, HappinessScore2017,}
+\NormalTok{         GDPpercapita2015) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{GDPpercapita =}\NormalTok{ GDPpercapita2015) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# Create income category}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{IncomeCategory =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    GDPpercapita }\SpecialCharTok{\textless{}} \FloatTok{1.2} \SpecialCharTok{\textasciitilde{}} \StringTok{"Low"}\NormalTok{,}
+\NormalTok{    GDPpercapita }\SpecialCharTok{\textgreater{}=} \FloatTok{1.2} \SpecialCharTok{\&}\NormalTok{ GDPpercapita }\SpecialCharTok{\textless{}} \FloatTok{1.4} \SpecialCharTok{\textasciitilde{}} \StringTok{"Medium"}\NormalTok{,}
+\NormalTok{    GDPpercapita }\SpecialCharTok{\textgreater{}=} \FloatTok{1.4} \SpecialCharTok{\textasciitilde{}} \StringTok{"High"}
+\NormalTok{  )) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{IncomeCategory =} \FunctionTok{factor}\NormalTok{(IncomeCategory, }\AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Low"}\NormalTok{, }\StringTok{"Medium"}\NormalTok{, }\StringTok{"High"}\NormalTok{)),}
+    \CommentTok{\# Create discrete happiness scores by rounding}
+    \AttributeTok{HappinessScore2015\_discrete =} \FunctionTok{factor}\NormalTok{(}\FunctionTok{round}\NormalTok{(HappinessScore2015)),}
+    \AttributeTok{HappinessScore2016\_discrete =} \FunctionTok{factor}\NormalTok{(}\FunctionTok{round}\NormalTok{(HappinessScore2016)),}
+    \AttributeTok{HappinessScore2017\_discrete =} \FunctionTok{factor}\NormalTok{(}\FunctionTok{round}\NormalTok{(HappinessScore2017))}
+\NormalTok{  )}
+
+\CommentTok{\# Plot facet matrix using discrete happiness scores}
+\FunctionTok{ggplot}\NormalTok{(df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ .panel\_x, }\AttributeTok{fill =}\NormalTok{ IncomeCategory)) }\SpecialCharTok{+}
+  \FunctionTok{facet\_matrix}\NormalTok{(}
+    \FunctionTok{vars}\NormalTok{(HappinessScore2015\_discrete, HappinessScore2016\_discrete, HappinessScore2017\_discrete),}
+    \AttributeTok{layer.diag =} \DecValTok{1}\NormalTok{,}
+    \AttributeTok{grid.y.diag =} \ConstantTok{FALSE}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{geom\_autohistogram}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.7}\NormalTok{, }\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# diagonal histograms}
+  \FunctionTok{geom\_autopoint}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.6}\NormalTok{, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ IncomeCategory)) }\SpecialCharTok{+}  \CommentTok{\# off{-}diagonal scatterplots}
+  \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Set2"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Set2"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{fill =} \StringTok{"Income Category"}\NormalTok{,}
+    \AttributeTok{color =} \StringTok{"Income Category"}\NormalTok{,}
+    \AttributeTok{title =} \StringTok{"Discrete Happiness Scores by Income Category"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{""}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{""}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{a_files/figure-pdf/unnamed-chunk-8-1.pdf}}
 
 \section{geom\_autopoint}\label{geom_autopoint}
 
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{x}
+
+\texttt{y}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_line}, \hyperref[ribbon]{geom\_ribbon}
+
+\textbf{Example}
+
 \section{geom\_axis\_hive}\label{geom_axis_hive}
+
+\textbf{Package}
+
+ggplot2 (Wickham 2016)
+
+\textbf{Description}
+
+\textbf{Understandable aesthetics}
+
+\emph{required aesthetics}
+
+\texttt{data}
+
+\emph{optional aesthetics}
+
+\texttt{alpha}, \texttt{colour}, \texttt{group}, \texttt{linetype},
+\texttt{linewidth}
+
+\textbf{See also}
+
+\hyperref[line]{geom\_line}, \hyperref[ribbon]{geom\_ribbon}
+
+\textbf{Example}
 
 \bookmarksetup{startatroot}
 
@@ -8134,6 +8393,10 @@ Brunson, Jason Cory, and Quentin D Read. 2019. {``Package
 Campitelli, Elio. 2021. \emph{metR: Tools for Easier Analysis of
 Meteorological Fields}. \url{https://doi.org/10.5281/zenodo.2593516}.
 
+\bibitem[\citeproctext]{ref-chotchaeva2017world}
+Chotchaeva, Karina. 2017. {``World Happiness Report.''} Zenodo.
+\url{https://doi.org/10.5281/zenodo.1470906}.
+
 \bibitem[\citeproctext]{ref-ggpattern}
 FC, Mike, Trevor L Davis, and ggplot2 authors. 2023. \emph{Ggpattern:
 'Ggplot2' Pattern Geoms}.
@@ -8219,6 +8482,14 @@ Wickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024.
 \bibitem[\citeproctext]{ref-ggridges}
 Wilke, Claus O. 2023. \emph{Ggridges: Ridgeline Plots in 'Ggplot2'}.
 \url{https://CRAN.R-project.org/package=ggridges}.
+
+\bibitem[\citeproctext]{ref-worldbank_gni_2026}
+World Bank. 2026a. {``GNI Per Capita: Operational Guidelines \&
+Analytical Classifications.''} \url{https://datacatalog.worldbank.org/}.
+
+\bibitem[\citeproctext]{ref-worldbank_wdi_2026}
+---------. 2026b. {``World Development Indicators.''}
+\url{https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators}.
 
 \bibitem[\citeproctext]{ref-worldpopulationreview_happiest}
 World Population Review. n.d. {``Happiest Countries in the World.''}
