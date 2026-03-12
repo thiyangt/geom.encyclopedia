@@ -60,7 +60,22 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 
 *required aesthetics*
 
-`x`, `y`, `ymin`, `ymax`, 
+**Option 1 (See Example 1)**
+
+`axis1` - First axis
+
+`axis2` - Second axis
+
+`y` -  Counts to determines the height/weight of the alluvium
+
+**Option 2 (alluvium time-series plot, see Example 2)**
+
+`x` - Time variable determining the horizontal axis
+
+`y` - Determines the height/size of the flow
+
+`alluvium` - According to this variable it defines the flow across the years. In our Example 2, Bangladesh and Sri Lanka.
+ 
 
 
 *optional aesthetics*
@@ -70,9 +85,9 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 
 **See also**
 
-[geom_stratum](#stratum), [geom_flow](#flow), [geom_lode](#lode)
+[geom_stratum](#stratum), [geom_flow](#flow), [geom_line](#line) [geom_lode](#lode)
 
-**Example**
+**Example 1**
 
 This example shows the distribution of income level categories in 2021 and 2022 in the regions `Sub-Saharan Africa` and `Latin America & Caribbean`.
 
@@ -102,7 +117,44 @@ a2 <- freq.table |>
 a1 / a2
 ```
 
+**Example 2**
 
+
+```{r}
+p1 <- worldbankdata |>
+  filter(Country %in% c("Bangladesh", "Sri Lanka"),
+         Year >= 2013, Year <= 2021) |>
+  ggplot(aes(x = Year,
+             y = Electricity,
+             alluvium = Country,
+             stratum = Country,
+             fill = Country)) +
+  geom_alluvium(alpha = 0.6) +
+  #geom_stratum(width = 0.4, color = "black") +
+  scale_x_continuous(breaks = 2013:2021) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  labs(title = "a1: geom_alluvium only",
+       x = "Year",
+       y = "Electricity",
+       fill = "Country")
+p2 <-  worldbankdata |>
+  filter(Country %in% c("Bangladesh", "Sri Lanka"),
+         Year >= 2013, Year <= 2021) |>
+  ggplot(aes(x = Year,
+             y = Electricity,
+             alluvium = Country,
+             stratum = Country,
+             fill = Country)) +
+  geom_alluvium(alpha = 0.6) +
+  geom_stratum(width = 0.4, color = "black") +
+  scale_x_continuous(breaks = 2013:2021) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  labs(title = "a2: geom_alluvium and geom_stratum",
+       x = "Year",
+       y = "Electricity",
+       fill = "Country")
+p1/p2
+```
 
 ## geom_arc
 
@@ -118,7 +170,15 @@ Draw a circle or a segment of a circle.
 
 *required aesthetics*
 
-`x0` - starting coordinate of x-axis , `y0` - starting coordinate of x-axis, `r` - radius, `start`, `end`
+`x0` - x coordinate of the center of the circle
+
+`y0` - y coordinate of the center of the circle
+
+`r` - radius, 
+
+`start` -  starting point of the circumference
+
+`end` - end point of the circumference
 
 *optional aesthetics*
 
@@ -133,6 +193,8 @@ Draw a circle or a segment of a circle.
 [geom_arc2](#arc2), [geom_arc_bar](#arcbar)
 
 **Example**
+
+In the example below, geom_arc() is applied twice to show how the black arc forms the full circle, while the red arc highlights a specific portion of that circle. 
 
 ```{r arc, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -158,7 +220,19 @@ To draw pie chart and donut chart defining centre point, a radius and a start an
 
 *required aesthetics*
 
-`x0` - starting coordinate of x-axis , `y0` - starting coordinate of x-axis, `r` - radius, `start`, `end`
+`x0` - x-coordinate of the center of the pie chart
+
+`y0` - y coordinate of the center of the circle
+
+`r0` - Inner radius of the arc bar. If it is 0, the chart becomes a pie chart (no hole)
+
+`r` - Outer radius of the pie chart slices
+
+`amount` - Determines the size (angle) of each slice. Larger counts produce larger slices
+
+`fill` - Fill colour for each slice
+
+`exploid` - Moves selected slices slightly outward from the center to highlight them
 
 *optional aesthetics*
 
@@ -175,28 +249,42 @@ To draw pie chart and donut chart defining centre point, a radius and a start an
 **Example**
 
 
-```{r, warning=FALSE, message=FALSE, fig.height=4, fig.width=4}
+```{r, warning=FALSE, message=FALSE, fig.height=10, fig.width=5}
 # Count observations in each Income category
 df <- worldbankdata |>
   filter(!is.na(Region)) |>
   count(Region, name = "count") |>
   mutate(
     Region = Region,
-    focus = 0
+    focus1 = 0,
+    focus2 = c(0.2, 0, 0, 0, 0, 0, 0)
   )
 df
 # Pie chart
-ggplot(df) +
+a1 <- ggplot(df) +
   geom_arc_bar(aes(
     x0 = 0, y0 = 0,
-    r0 = 0, r = 1,
+    r0 = 0, r = 2,
     amount = count,
     fill = Region,
-    explode = focus
+    explode = focus1
   ), stat = "pie") +
   scale_fill_brewer(palette = "Dark2") +
-  theme(aspect.ratio = 1) +
-  labs(fill = "Regions")
+  theme(aspect.ratio = 1, legend.position = "bottom") +
+  labs(fill = "Regions", title = "a1: with exploid = 0")
+
+a2 <- ggplot(df) +
+  geom_arc_bar(aes(
+    x0 = 0, y0 = 0,
+    r0 = 0, r = 2,
+    amount = count,
+    fill = Region,
+    explode = focus2
+  ), stat = "pie") +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(aspect.ratio = 1, legend.position = "bottom") +
+  labs(fill = "Regions", title = "a2: with exploid = 0.2 for East Asia and Pacific")
+a1/a2
 ```
 
 
