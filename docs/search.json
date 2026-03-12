@@ -1388,5 +1388,215 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>B</span>"
     ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Data and setting up your workflow",
+    "section": "",
+    "text": "Installation of associated packages\nThe goal of this chapter is to provide readers with an overview of the datasets used in the book’s examples. Having an initial understanding of the data helps readers easily navigate between the examples.\nTo run the examples in the book you need to install the following packages. In addition, to this package list, the associated package corresponds to the geom should be installed. The drone package provides the datasets associated with this geom encyclopedia.",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#installation-of-associated-packages",
+    "href": "intro.html#installation-of-associated-packages",
+    "title": "Data and setting up your workflow",
+    "section": "",
+    "text": "#install.packages(drone)\n#install.packages(\"devtools\")\ndevtools::install_github(\"thiyangt/drone\")\ninstall.packages(tidyverse)\ninstall.packages(patchwork)",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-set-use-in-the-geom-encyclopedia",
+    "href": "intro.html#data-set-use-in-the-geom-encyclopedia",
+    "title": "Data and setting up your workflow",
+    "section": "Data set use in the geom Encyclopedia",
+    "text": "Data set use in the geom Encyclopedia\nThe datasets used in the book coming from country-wise statistics obtained from public reliable websites. Only two datasets are used to explain all geoms so that readers can build intuition by seeing the same data represented in multiple ways. The reasons for using these datasets are:\n\nThe dataset context is familiar and easily understood by individuals from diverse backgrounds.\nAbility to create cross-sectional, time-series, spatial, and spatio-temporal visualizations.\nAbility to visualize relationships between qualitative–qualitative, qualitative–quantitative, and quantitative–quantitative variables.\nExperience addressing common data challenges such as missing values, overplotting, and large-scale datasets.",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#why-two-datasets",
+    "href": "intro.html#why-two-datasets",
+    "title": "Data and setting up your workflow",
+    "section": "Why two datasets?",
+    "text": "Why two datasets?\nDifferent visualizations often require datasets to be in specific formats depending on the purpose of analysis or presentation. In this context, one dataset is organized in the long (tidy) format, while another is arranged in the wide format. The happiness_gdp_income dataset has time values spread across multiple columns, making it suitable for wide-format representation. In contrast, the worldbankdata dataset stores time in a single column, following the long-format structure. It is important to note that these datasets are not simply the reverse of each other; each format serves a distinct analytical or visualization purpose.",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#dataset-1-happiness_gdp_income",
+    "href": "intro.html#dataset-1-happiness_gdp_income",
+    "title": "Data and setting up your workflow",
+    "section": "Dataset 1: happiness_gdp_income",
+    "text": "Dataset 1: happiness_gdp_income\nThe dataset is obtained from World Population Review report (World Population Review (n.d.)). Happiness score and GDP per Capita are accessed Chotchaeva (2017) via the link. Income level data are accessed from the World Bank Data Catalogue World Bank (2026b) via the link on 11 February 2026.\nThe variable description is given in Table 1.\n\n\n\n\nTable 1: Variable Description for happiness_gdp_income dataset\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nCountry\nCountry name\n\n\nRegion\nWorld Bank regional classification\n\n\nHappinessScore2015\nHappiness Score 2015\n\n\nGDPpercapita2015\nGDP per Capita 2015\n\n\nHappinessScore2016\nHappiness Score 2016\n\n\nGDPpercapita2016\nGDP per Capita 2016\n\n\nHappinessScore2017\nHappiness Score 2017\n\n\nGDPpercapita2017\nGDP per Capita 2017\n\n\nIncome2015\nIncome level categorization in 2015\n\n\nIncome2016\nIncome level categorization in 2016\n\n\nIncome2017\nIncome level categorization in 2017\n\n\n\n\n\n\n\n\n\n\nThe first few rows of the dataset is shown below\n\nlibrary(drone)\nhead(happiness_gdp_income)\n\n      Country         Region HappinessScore2015 GDPpercapita2015\n1 Switzerland Western Europe              7.587          1.39651\n2     Iceland Western Europe              7.561          1.30232\n3     Denmark Western Europe              7.527          1.32548\n4      Norway Western Europe              7.522          1.45900\n5      Canada  North America              7.427          1.32629\n6     Finland Western Europe              7.406          1.29025\n  HappinessScore2016 GDPpercapita2016 HappinessScore2017 GDPpercapita2017\n1              7.509            7.590              7.494         1.564980\n2              7.501            7.669              7.504         1.480633\n3              7.526            7.592              7.522         1.482383\n4              7.498            7.575              7.537         1.616463\n5              7.404            7.473              7.316         1.479204\n6              7.413            7.475              7.469         1.443572\n   Income2015  Income2016  Income2017\n1 High income High income High income\n2 High income High income High income\n3 High income High income High income\n4 High income High income High income\n5 High income High income High income\n6 High income High income High income\n\n\n\nhappiness_gdp_income: Data Profiling\nTable 2 provides a compact summary of the dataset.There are 5 variables. Among the 2 are character variables and 3 are numeric variables. Summary of both character variables and numeric variables are given in the output. For character variables,\nn_missing tells how many values are missing for each variable.\ncomplete_rate is the proportion of non-missing values.\nn_unique is the number of unique values in the variable.\nFor numeric variables Table 2 shows mean, sd (standard deviation), p0 (min), percentiles: p25, p50 (median), p75, p100 (max), and a small histogram for each numeric variable.\n\n\n\n\nTable 2: Summary description of the happiness_gdp_income dataset\n\n\n\n\nData summary\n\n\nName\nhappiness_gdp_income\n\n\nNumber of rows\n158\n\n\nNumber of columns\n11\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n2\n\n\nfactor\n3\n\n\nnumeric\n6\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nCountry\n0\n1\n4\n24\n0\n158\n0\n\n\nRegion\n0\n1\n12\n31\n0\n10\n0\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nIncome2015\n23\n0.85\nFALSE\n4\nHig: 44, Upp: 36, Low: 31, Low: 24\n\n\nIncome2016\n23\n0.85\nFALSE\n4\nHig: 43, Upp: 36, Low: 32, Low: 24\n\n\nIncome2017\n23\n0.85\nFALSE\n4\nHig: 42, Low: 35, Upp: 34, Low: 24\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nHappinessScore2015\n0\n1.00\n5.38\n1.15\n2.84\n4.53\n5.23\n6.24\n7.59\n▂▇▇▇▆\n\n\nGDPpercapita2015\n0\n1.00\n0.85\n0.40\n0.00\n0.55\n0.91\n1.16\n1.69\n▃▅▆▇▂\n\n\nHappinessScore2016\n7\n0.96\n5.38\n1.15\n2.90\n4.40\n5.31\n6.30\n7.53\n▂▆▇▇▅\n\n\nGDPpercapita2016\n7\n0.96\n5.48\n1.14\n3.08\n4.46\n5.42\n6.43\n7.67\n▃▆▇▇▅\n\n\nHappinessScore2017\n9\n0.94\n5.36\n1.14\n2.69\n4.50\n5.28\n6.11\n7.54\n▂▆▇▇▅\n\n\nGDPpercapita2017\n9\n0.94\n0.99\n0.41\n0.00\n0.67\n1.07\n1.32\n1.87\n▂▅▆▇▂\n\n\n\n\n\n\n\n\n\n\nhappiness_gdp_income: Data Quality Analysis\nFigure 1 shows the types of variables we have in the dataset and missing value distribution.\n\nlibrary(tidyverse)\nlibrary(visdat)\nvis_dat(happiness_gdp_income) + \n  scale_fill_brewer(palette = \"Dark2\")\n\n\n\n\n\n\n\nFigure 1: Summary description of the happiness_gdp_income dataset\n\n\n\n\n\nFigure 2 shows combination-wise missing values in the dataset happiness_gdp_income. There are 6 observations where only WorldHapinessScore_2023 missing and there are 3 observations where both WorldHapinessScore_2023 and WorldHapinessScore_2024 missing.\n\nlibrary(naniar)\ngg_miss_upset(happiness_gdp_income) \n\n\n\n\n\n\n\nFigure 2: Combinations of missingness across cases: WorldHappinessScore dataset",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "intro.html#dataset-2-worldbankdata",
+    "href": "intro.html#dataset-2-worldbankdata",
+    "title": "Data and setting up your workflow",
+    "section": "Dataset 2: worldbankdata",
+    "text": "Dataset 2: worldbankdata\nThis dataset provides country-level development indicators compiled from the World Bank Data Catalogue (World Bank (2026a)). It includes information on access to clean cooking fuels, access to electricity, income group classification, and regional grouping across multiple years.\nThe variable description is given in Table 3.\n\n\n\n\nTable 3: Variable Description for worldbankdata dataset\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nCountry\nCountry name\n\n\nCode\nISO country code\n\n\nRegion\nWorld Bank regional classification\n\n\nYear\nYear of observation\n\n\nCooking\nAccess to clean fuels and technologies for cooking (percentage of population).\n\n\nElectricity\nAccess to electricity (percentage of population).\n\n\nIncome\nIncome group classification: L = Low income, LM = Lower middle income, UM = Upper middle income, HI = High income.\n\n\n\n\n\n\n\n\n\n\nTo view the dataset use the following code.\n\nlibrary(drone)\nlibrary(tibble)\ndata(worldbankdata)\nworldbankdata\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows\n\n\n\nworldbankdata: Data Profiling\nTable 4 provides a compact summary of the dataset. The dataset contains 7 variables. Among them, 4 variables are factor variables and 3 variables are numeric variables. In addtion, Table 4 shows a comprehensive overview of your dataset, showing both the distribution of categorical variables and the summary statistics for numeric variables, including missing values and frequency counts.\n\n\n\n\nTable 4: Summary description of the workldbank dataset\n\n\n\n\nData summary\n\n\nName\nworldbankdata\n\n\nNumber of rows\n7937\n\n\nNumber of columns\n7\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nfactor\n4\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nCountry\n0\n1.00\nFALSE\n227\nAfg: 36, Alb: 36, Alg: 36, Ame: 36\n\n\nCode\n0\n1.00\nFALSE\n218\nCIV: 48, CUW: 47, CZE: 47, FRO: 47\n\n\nRegion\n199\n0.97\nFALSE\n7\nEur: 2038, Sub: 1693, Lat: 1512, Eas: 1343\n\n\nIncome\n559\n0.93\nFALSE\n4\nH: 2177, LM: 1978, L: 1704, UM: 1519\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nYear\n1\n1.00\n2004.59\n10.41\n1987.00\n1996.00\n2005.00\n2014\n2022\n▇▇▇▇▇\n\n\nCooking\n6047\n0.24\n65.48\n38.46\n0.00\n27.30\n84.75\n100\n100\n▃▁▁▁▇\n\n\nElectricity\n5693\n0.28\n84.40\n26.45\n2.11\n79.86\n99.80\n100\n100\n▁▁▁▁▇\n\n\n\n\n\n\n\n\n\n\nworldbankdata: Data Quality Analysis\nworldbankdata dataset contains some missing values. Figure 3 shows the distribution of types of variables and missing value distribution.\n\nlibrary(tidyverse)\nlibrary(visdat)\nvis_dat(worldbankdata) + \n  scale_fill_brewer(palette = \"Dark2\")\n\n\n\n\n\n\n\nFigure 3: Data types and missing values distribution\n\n\n\n\n\nFigure 4 shows combinations of missingness across cases. This is especially useful for understanding patterns of missingness across variables. For example, there are 5122 rows where both Electricity and Cooking variable missing.\n\nlibrary(naniar)\ngg_miss_upset(worldbankdata) \n\n\n\n\n\n\n\nFigure 4: Combinations of missingness across cases: worldbankdata dataset\n\n\n\n\n\n\n\n\n\nChotchaeva, Karina. 2017. “World Happiness Report.” Zenodo. https://doi.org/10.5281/zenodo.1470906.\n\n\nWorld Bank. 2026a. “GNI Per Capita: Operational Guidelines & Analytical Classifications.” https://datacatalog.worldbank.org/.\n\n\n———. 2026b. “World Development Indicators.” https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators.\n\n\nWorld Population Review. n.d. “Happiest Countries in the World.” https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world.",
+    "crumbs": [
+      "Data and setting up your workflow"
+    ]
+  },
+  {
+    "objectID": "preface.html",
+    "href": "preface.html",
+    "title": "Preface",
+    "section": "",
+    "text": "What can I find in this geom encyclopedia?\nLet’s begin by looking at what we mean by geom in data visualization. In this context, geoms (short for geometries in ggplot2 package) are the visual elements used to represent data in a plot. They define the type of chart such as point chart, line chart, bar chart, etc.\nTo illustrate the idea I use the following dataset which contains information related to 82 countires. The variable description is as follows (Table 1):\nTable 1: Variable Description\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nCountry\nCountry name\n\n\nIncome\nIncome category in 2021: lower income (L), lower middle income (LM)\n\n\nElectricity\nPercentage of people access to electricity\nThe first eight rows of the dataset as well as the R code to load the dataset is given below:\nlibrary(drone)\nlibrary(tidyverse)\ndata(\"worldbankdata\")\nworldbankdata2021 &lt;- worldbankdata |&gt; filter(Year == 2021) |&gt;\n  filter( Income == \"LM\" | Income ==\"L\") |&gt; \n  select( Country, Income, Electricity)\nworldbankdata2021 |&gt; head(8)\n\n# A tibble: 8 × 3\n  Country      Income Electricity\n  &lt;fct&gt;        &lt;fct&gt;        &lt;dbl&gt;\n1 Afghanistan  L             97.7\n2 Angola       LM            48.2\n3 Burundi      L             10.2\n4 Benin        LM            42.0\n5 Burkina Faso L             19.0\n6 Bangladesh   LM            99.0\n7 Bolivia      LM            98.6\n8 Bhutan       LM           100\nNow, I want to visualize the relationship between Electricity and Income variables on the cartesian coordinate plane shown in Figure 1\nFigure 1: Cartesian coordinate plane showing Income (x-axis) and Electricity (y-axis).\nFigure 2 shows 6 plotting types that I created to visualise the relationship between the variables Electricity and Income on the Cartesian plane Figure 1.\nFigure 2: Six plot types used to visualize the relationship between income level (low income [L], lower-middle income [LM]) and the percentage of people with access to electricity in 2021.\nIn all panels of Figure 2 (a–h), the same dataset, variables, and Cartesian coordinate system are used. However, the chart types different.\nCould you list the differences you observe in the charts?\nWhen creating a chart, we first decide on the statistic we want to visualize. Next, we compute this statistic from the data, and finally, we use a suitable geometry to display the computed values of the statistic. Table 2 summarizes the statistical operations (or statistical transformations) performed on the data and the corresponding geometries used to visualize the computed statistics.\nTable 2: Statistical transformations and geom/stat layers are used in the plots.\n\n\n\n\n\n\nPlot\nStatistical Operation\nVisualisation Method\ngeom layer\nstat layer\n\n\n\n\nA\nUse individual data points\nPoint geometry\npoint\ndata is plotted as-is\n\n\nB\nUse individual data points\nQuasirandom geometry\nquasirandom\ndata is plotted as-is. But, generate quasirandom placement of points, helpful for avoiding overplotting\n\n\nC\nUse individual data points\nJitter geometry\njitter\ndata is plotted as-is. But, adds a small amount of random noise to the position of points to reduce overlap and make individual points more visible\n\n\nD\nCompute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR\nBox-and-whisker plot\nboxplot\nFive statistical summary measures used in the boxplot\n\n\nE\nUse individual data points; compute quartiles, Q1 − 3·IQR, and Q3 + 3·IQR\nJitter geometry and box-and-whisker plot\njitter and boxplot\nIndividual points and summary measures corresponds to boxplot\n\n\nF\nCompute kernel density\nViolin geometry\nviolin\ncalculate and plot the kernel density estimate(KDE) for continuous data\n\n\nG\nCompute minimum and maximum of data\nLine geometry\nlinerange\nRange of data\n\n\nH\nCompute minimum, mean, and maximum\nLine geometry (range) and point geometry (mean)\nlinerange and point\nRange and mean of data\nThis encyclopedia is a collection of geoms, in other words plot types that you can create using the ggplot2 or extensions of ggplot2 under the grammar of graphics framework. In other words Encyclopedia of Plots.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#what-can-i-find-in-this-geom-encyclopedia",
+    "href": "preface.html#what-can-i-find-in-this-geom-encyclopedia",
+    "title": "Preface",
+    "section": "",
+    "text": "The type of chart or shape used to depict data.\nThe statistics computed on the data to visualize on the chart.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#motivation-to-write-this-book",
+    "href": "preface.html#motivation-to-write-this-book",
+    "title": "Preface",
+    "section": "Motivation to write this book",
+    "text": "Motivation to write this book\nThe motivation behind writing this encyclopedia is, there is no centralized resource where all geoms can be viewed in one place. Additionally, no comprehensive book exists that catalogs the different types of plots available for data visualization. Having them in one place help data visualizers to craft more effective analyses and create new geoms. Further, this also helps to avoid duplicate efforts.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#what-you-will-learn",
+    "href": "preface.html#what-you-will-learn",
+    "title": "Preface",
+    "section": "What you will learn?",
+    "text": "What you will learn?\nIn this geom encyclopedia you will learn different types of geoms and their applications. Furthermore, each geom has a set of aesthetics that it understands. These aesthetics can be divided into two parts: i) required aesthetics and ii) optional aesthetics. Further, every geom has a default stat; and every stat has a default geom.\nTo give you an idea about the associated aesthetics and stat, let’s look at the plot shown in Figure 3. In this case x, y are required aesthetics and color size and alpha is optional aesthetics. The statistics layer is identity since the data points are plotted as it is.\nThe aesthetic mappings, defined with aes(), describe how variables in the dataset are mapped to aesthetics (or visual properties of the plot). This aes(x=Income, y=Electricity, color=Income) is called mapping variables to the visual properties of the chart. This alpha=0.5, size=2 is called setting values to visual properties.\n\nggplot(worldbankdata2021, aes(x=Income, y=Electricity, color=Income)) + \n  geom_point(alpha=0.5, size=2) +\n  scale_color_brewer(palette = \"Dark2\")\n\n\n\n\n\n\n\nFigure 3: Distribution of Electricity by Income Category\n\n\n\n\n\nIn this geom encyclopedia, you will also learn about the required and optional aesthetics that each geom supports. Additionally, an example is provided demonstrating the application of each geom with reproducible R code.\nIn summary you will learn:\n\nWhat each geom does The purpose of different geoms (e.g., points, lines, bars, boxes, tiles) and the types of data and questions they are best suited for.\nRequired and optional aesthetics Which aesthetics (such as x, y, colour, fill, size, group) are required for each geom and how optional aesthetics change the appearance and meaning of a plot.\nTypical use cases When to use each geom—for example, comparing distributions, showing relationships, visualizing trends over time, or displaying uncertainty.\nCommon variations and set parameters Key arguments (such as stat, position, alpha, width, binwidth) and how they affect the visual output.\nStrategies to improve clarity of plots Strategies to overcome the frequent challenges such as overplapping, missing values, highlight trend, etc.\nConnections between geoms and statistics How geoms interact with statistical transformations (e.g., geom_histogram() with binning, geom_smooth() with model fitting).\n\nvii. Connections between geom\nSimilar geoms and different combinations of geoms that can use to visualise data.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#what-you-wont-learn",
+    "href": "preface.html#what-you-wont-learn",
+    "title": "Preface",
+    "section": "What you won’t learn?",
+    "text": "What you won’t learn?\nThis book is not focused on teaching R programming fundamentals or providing a comprehensive guide to data visualization principles. It assumes you already have a basic understanding of R and ggplot2, and it will not cover how to start from scratch in these areas.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#how-this-geom-encyclopedia-is-organized",
+    "href": "preface.html#how-this-geom-encyclopedia-is-organized",
+    "title": "Preface",
+    "section": "How this geom encyclopedia is organized?",
+    "text": "How this geom encyclopedia is organized?\nAs this is an encyclopedia, the chapters are organised according to the alphabetical order. However, within a chapter geoms are not organized according to the alphabetical order. At the beginning of each chapter, I have tabulated the geoms listed under that letter.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#audience",
+    "href": "preface.html#audience",
+    "title": "Preface",
+    "section": "Audience",
+    "text": "Audience\nThe Figure 4 shows my target audience for the book. In general for all data enthusiasts, this can be considered as a Encyclopedia of Plots. For R, tidyverse, gggplot2 users this can be considered as a Data Visualisation Geometries Encyclopedia.\n\n\n\n\n\n\n\n\nFigure 4: Target Audience",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia",
+    "href": "preface.html#what-prior-knowledge-is-needed-to-use-this-geom-encyclopedia",
+    "title": "Preface",
+    "section": "What prior knowledge is needed to use this geom encyclopedia?",
+    "text": "What prior knowledge is needed to use this geom encyclopedia?\n\nFor a complete newcomer to get an idea about the possible charts that can be drawn for a data set.\nNone\nTo get hands-on-experience with the examples provided you need to have following knowledge.\n\nR and RStudio Integrated Development Environment (IDE)\nBasics of R programming\ntidyverse (Wickham et al. 2019) style of coding\nData wrangling with tidyr(Wickham, Vaughan, and Girlich 2024) and dplyr(Wickham et al. 2023)\nKnowledge in using the pipe operator: |&gt;\nKnowledge in creating data visualisations using the grammar of graphics frame work implemented in ggplot2(Wickham 2016)\n\n\nIf you want to learn more of them, following are the books recommended:\n\nR for Data Science (2e) written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.\nggplot2: Elegant Graphics for Data Analysis (3e) written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#acknowledgments",
+    "href": "preface.html#acknowledgments",
+    "title": "Preface",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nI would like to thank all the package authors and contributors who have developed and shared geoms as R packages.\nI would like to thank all the students who took my ASP 460 2.0/STA 492 2.0 Data Visualization course in 2024 for their valuable contributions in exploring geoms with me.\nThis book was built with Quarto.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#declaration-of-generative-ai-in-scientific-writing",
+    "href": "preface.html#declaration-of-generative-ai-in-scientific-writing",
+    "title": "Preface",
+    "section": "Declaration of generative AI in scientific writing",
+    "text": "Declaration of generative AI in scientific writing\nDuring the preparation of this work the author used ChatGPT in order to improve readability and language. After using this tool/service, the author reviewed and edited the content as needed and take full responsibility for the content of the published article.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#cite",
+    "href": "preface.html#cite",
+    "title": "Preface",
+    "section": "Cite",
+    "text": "Cite\nPlease use the below text and bibtex for citing the book.\nT. S. Talagala, Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots. [Online]. Available: https://thiyangt.github.io/geom.encyclopedia/. [Accessed: Jan. 18, 2025\n@online{talagala2024geoms,   author       = {Thiyanga S. Talagala},   title        = {Data Visualisation Geometries Encyclopedia: Geoms in the Grammar of Graphics - All Types of Plots},   year         = {2024},   url          = {https://thiyangt.github.io/geom.encyclopedia/},   note         = {Accessed: 2025-01-18} }\nPlease use the below text and bibtex for citing the associated R package drone.\nTalagala T (2025). _drone: Data for   Data Visualisation Geometries   Encyclopedia_. R package version   2.0.0,   &lt;https://github.com/thiyangt/geom.encyclopedia&gt;..\n@Manual{drone,     title = {drone: Data for Data Visualisation Geometries Encyclopedia},     author = {Thiyanga S. Talagala},     year = {2025},     note = {R package version 1.0.0, commit 86d4fc19bb3a03da3eeb8f6748cb0bfc21dfdf72},     url = {https://github.com/thiyangt/drone},   }",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#colophon",
+    "href": "preface.html#colophon",
+    "title": "Preface",
+    "section": "Colophon",
+    "text": "Colophon\nThe field of data visualization is dynamic, and new techniques and visualizations may emerge over time. Hence, I will be regularly updating this encyclopedia to ensure it remains a relevant and comprehensive resource for users.\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the tidyverse.” Journal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686.\n\n\nWickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis Vaughan. 2023. Dplyr: A Grammar of Data Manipulation. https://CRAN.R-project.org/package=dplyr.\n\n\nWickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024. Tidyr: Tidy Messy Data. https://CRAN.R-project.org/package=tidyr.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "",
+    "text": "Welcome\nWelcome to the “Data Visualisation geom Encyclopedia”, an encyclopedia of geometrics use in data visualisation. This encyclopedia is a curated collection of geom available in different R programming software packages. This book can also be considered as an “Encyclopedia of Plots”.\nThis book is a work in progress. The accompanying R package for drone is available on CRAN: https://github.com/thiyangt/drone",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
+    "href": "index.html#accompanying-r-package-drone-data-for-geom-encyclopaedia",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "text": "Accompanying R package: drone: Data foR geOm eNcyclopaEdia",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#why-choose-drone-as-the-package-name",
+    "href": "index.html#why-choose-drone-as-the-package-name",
+    "title": "Data Visualisation Geometries Encyclopedia",
+    "section": "Why choose “drone” as the package name?",
+    "text": "Why choose “drone” as the package name?\nThis encyclopedia provides a comprehensive overview of geoms within the grammar of graphics framework, much like a drone offers a bird’s-eye view of a landscape.\nTo load this Data Visualisation Geom Encyclopedia via drone package use the following code.\ninstall.packages(drone)\nlibrary(drone)\nload_encyclopedia()",
+    "crumbs": [
+      "Welcome"
+    ]
   }
 ]
