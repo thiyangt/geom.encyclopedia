@@ -37,3 +37,51 @@ a2 <- worldbankdata |>
 a1 | a2
 
 ```
+
+## geom_jitter_interactive
+
+**Package**
+
+ggiraph [@ggiraph]
+
+**Description**
+
+Adds interactive features like tooltips and hyperlinks, allowing for dynamic exploration of jittered data points in a plot.
+
+**Understandable aesthetics**
+
+*required aesthetics*
+  
+  `x`
+
+`y`
+
+*optional aesthetics*
+  
+  `alpha`, `colour`, `group`, `linetype`, `linewidth`
+
+
+**See also**
+
+[geom_point](#point), [geom_ribbon](#jitter)
+  
+
+**Example**
+
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
+library(ggiraph)
+p <- ggplot(worldbankdata, aes(y = Region, x = Electricity, color = Income)) +
+  geom_jitter_interactive(aes(tooltip = paste("Country:", Country, 
+                                              "<br>Year:", Year, 
+                                              "<br>Electricity:", Electricity)),
+                          size = 2, width = 0.3) + 
+  labs(title = "Electricity by region and income group",
+      y = "Region",
+       x = "Electricity",
+       color = "Income group") 
+x <- girafe(ggobj = p)
+if( interactive() ) print(x)
+
+```
+
+![](img/geom_jitter_interactive.png)

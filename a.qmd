@@ -1,6 +1,5 @@
 # A {#sec-a}
 
-
 ```{r, message=FALSE, warning=FALSE,echo=FALSE}
 library(tidyverse)
 library(drone)
@@ -9,9 +8,7 @@ data("worldbankdata")
 data("happiness_gdp_income")
 ```
 
-
-
-## geom_abline{#abline}
+## geom_abline {#abline}
 
 **Package**
 
@@ -19,16 +16,15 @@ ggplot2 [@ggplot2]
 
 **Description**
 
-Description Draw a straight line ($Y=mX+c$) for a given slope ($m$)  and intercept ($c$).
+Description Draw a straight line ($Y=mX+c$) for a given slope ($m$) and intercept ($c$).
 
 **Understandable aesthetics**
 
 Unlike most other geoms, `geom_abline` does not depend on the x and y variables that we map for the main plot. `geom_abline` has its own independent characteristics: `intercept` and `slope`.
 
-
 **See also**
 
- [geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+[geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
 
 **Example**
 
@@ -45,8 +41,7 @@ a2 <- ggplot(happiness_gdp_income, aes(y =HappinessScore2016, x = HappinessScore
 a1 | a2
 ```
 
-
-## geom_alluvium{#alluvium}
+## geom_alluvium {#alluvium}
 
 **Package**
 
@@ -66,7 +61,7 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 
 `axis2` - Second axis
 
-`y` -  Counts to determines the height/weight of the alluvium
+`y` - Counts to determines the height/weight of the alluvium
 
 **Option 2 (alluvium time-series plot, see Example 2)**
 
@@ -75,13 +70,10 @@ Create alluvial plot. An alluvial plot is a type of diagram that is particularly
 `y` - Determines the height/size of the flow
 
 `alluvium` - According to this variable it defines the flow across the years. In our Example 2, Bangladesh and Sri Lanka.
- 
-
 
 *optional aesthetics*
 
 `alpha`, `colour`, `fill`, `linetype`, `size`, `group` (group is used internally; arguments are ignored)
-
 
 **See also**
 
@@ -118,7 +110,6 @@ a1 / a2
 ```
 
 **Example 2**
-
 
 ```{r}
 p1 <- worldbankdata |>
@@ -174,9 +165,9 @@ Draw a circle or a segment of a circle.
 
 `y0` - y coordinate of the center of the circle
 
-`r` - radius, 
+`r` - radius,
 
-`start` -  starting point of the circumference
+`start` - starting point of the circumference
 
 `end` - end point of the circumference
 
@@ -194,7 +185,7 @@ Draw a circle or a segment of a circle.
 
 **Example**
 
-In the example below, geom_arc() is applied twice to show how the black arc forms the full circle, while the red arc highlights a specific portion of that circle. 
+In the example below, geom_arc() is applied twice to show how the black arc forms the full circle, while the red arc highlights a specific portion of that circle.
 
 ```{r arc, warning=FALSE, message=FALSE}
 library(ggforce)
@@ -204,9 +195,7 @@ ggplot() +
   theme(aspect.ratio = 1)
 ```
 
-
-
-## geom_arc_bar{#arcbar}
+## geom_arc_bar {#arcbar}
 
 **Package**
 
@@ -248,7 +237,6 @@ To draw pie chart and donut chart defining centre point, a radius and a start an
 
 **Example**
 
-
 ```{r, warning=FALSE, message=FALSE, fig.height=10, fig.width=5}
 # Count observations in each Income category
 df <- worldbankdata |>
@@ -287,10 +275,7 @@ a2 <- ggplot(df) +
 a1/a2
 ```
 
-
-
-
-## geom_area{#area}
+## geom_area {#area}
 
 **Package**
 
@@ -309,7 +294,6 @@ Create an area plot. This cover the space between x-axis and line that connects 
 *optional aesthetics*
 
 `alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
-
 
 **See also**
 
@@ -343,26 +327,28 @@ a1 | a2
 
 **Package**
 
-ggdemetra 
+ggdemetra[@ggdemetra]
+
+
+**Description**
+
+Adds the ARIMA model used for seasonal adjustment directly onto a ggplot.
+
+**Understandable aesthetics**
+
+
 
 **Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggdemetra)
- worldbankdata |>
-  filter(Country == "Bangladesh") |>
-  filter(Year >= 2013 & Year <= 2021) |>
-  ggplot(aes(x = Year, y = Electricity)) +
-  geom_line() + 
-  #geom_sa(color = "#155692", message = FALSE) +
-  geom_arima(geom = "label",
-               x_arima = - Inf, y_arima = -Inf, 
-               vjust = -1, hjust = -0.1,
-               message = FALSE)
+library(forecast)
+
+
   
 ```
 
-## geom_arrow{#arrow}
+## geom_arrow {#arrow}
 
 **Package**
 
@@ -372,26 +358,24 @@ metR [@metR]
 
 Draws directional arrows (like vectors) on a plot, which can represent directions or flows — such as wind directions, movement, or gradients. The arrow from (x, y) and pointing in the direction (dx, dy) (vector components).
 
-
 **Understandable aesthetics**
 
 *required aesthetics*
-  
-  `x`
+
+`x`
 
 `y`
 
 *optional aesthetics*
-  
- `arrow,type`, `arrow.angle`, `arrow.length`, `arrow.ends`, `arrow.type`
 
+`arrow,type`, `arrow.angle`, `arrow.length`, `arrow.ends`, `arrow.type`
 
 **See also**
 
 [geom_line](#line), [geom_ribbon](#ribbon)
-  
+
 ### Example
-  
+
 ```{r warning=FALSE, message=FALSE}
 library(metR)
 data <- tibble::tibble(
@@ -407,13 +391,11 @@ ggplot(data, aes(x = x, y = y)) +
   labs(title = "Wind Directions at Different Locations", x = "Longitude", y = "Latitude")
 ```
 
-## geom_ash{#ash}
+## geom_ash {#ash}
 
 **Package**
 
 ggformula [@ggformula]
-
-
 
 **Description**
 
@@ -422,22 +404,20 @@ Plot Average Shifted Histogram (ASH). The ASH is a nonparametric probability den
 **Understandable aesthetics**
 
 *required aesthetics*
-  
-  `x`
+
+`x`
 
 `y`
 
 *optional aesthetics*
-  
- `color`, `fill`, `bins`, `alpha`, `size`
 
+`color`, `fill`, `bins`, `alpha`, `size`
 
 **See also**
 
 [geom_histogram](#histogram), [geom_density](#density)
-  
-**Example**
 
+**Example**
 
 ```{r, warning=FALSE, message=FALSE}
 #| warning: false
@@ -467,24 +447,20 @@ ggforce [@ggforce]
 
 A matrix-style (commonly from GGally package) visualizations to automatically display variable distributions on diagonal panels, handling both continuous and discrete data while simplifying the mapping of panel variables.
 
-
 **Understandable aesthetics**
 
 *required aesthetics*
-  
-  `data`
 
+`data`
 
 *optional aesthetics*
-  
-  `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 **See also**
 
 [geom_density](#density), [geom_histogram](#histogram), [geom_autohistogram](#autohistogram), [geom_autopoint](#autopoint),
 
-  
 **Example**
 
 ```{r}
@@ -519,19 +495,17 @@ ggforce [@ggforce]
 **Understandable aesthetics**
 
 *required aesthetics*
-  
-  `data`
 
+`data`
 
 *optional aesthetics*
-  
-  `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 **See also**
 
 [geom_histogram](#histogram), [geom_auotodensity](#autodensity), [geom_auotpoint](#autopoint)
-  
+
 **Example**
 
 ```{r, warning=FALSE, message=FALSE}
@@ -578,7 +552,7 @@ ggplot(df, aes(x = .panel_x, fill = IncomeCategory)) +
     y = ""
   )
 ```
-  
+
 ## geom_autopoint
 
 **Package**
@@ -590,20 +564,19 @@ ggplot2 [@ggplot2]
 **Understandable aesthetics**
 
 *required aesthetics*
-  
-  `x`
+
+`x`
 
 `y`
 
 *optional aesthetics*
-  
-  `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 **See also**
 
 [geom_line](#line), [geom_ribbon](#ribbon)
-  
+
 **Example**
 
 ## geom_axis_hive
@@ -617,19 +590,15 @@ ggplot2 [@ggplot2]
 **Understandable aesthetics**
 
 *required aesthetics*
-  
-  `data`
 
+`data`
 
 *optional aesthetics*
-  
-  `alpha`, `colour`, `group`, `linetype`, `linewidth`
 
+`alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 **See also**
 
 [geom_line](#line), [geom_ribbon](#ribbon)
-  
+
 **Example**
-
-
