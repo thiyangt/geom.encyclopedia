@@ -16,15 +16,21 @@ ggplot2 [@ggplot2]
 
 **Description**
 
-Description Draw a straight line ($Y=mX+c$) for a given slope ($m$) and intercept ($c$).
+Draw a straight line ($Y=mX+c$) for a given slope ($m$) or/and intercept ($c$).
 
-**Understandable aesthetics**
+**Aesthetics**
 
-Unlike most other geoms, `geom_abline` does not depend on the x and y variables that we map for the main plot. `geom_abline` has its own independent characteristics: `intercept` and `slope`.
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Required | `intercept` and/or `slope` |
+| Other supported aesthetics | `colour`, `alpha`, `linetype`, `linewidth`      |
+
+
 
 **See also**
 
-[geom_point](#point), [geom_vline](#vline), [geom_hline](#hline)
+[geom_point](#point), [geom_vline](#vline), [geom_hline](#hline),
+[geom_smooth](#smooth),
 
 **Example**
 

@@ -388,7 +388,6 @@ div.csl-indent {
   <ul>
   <li><a href="#image" id="toc-image" class="nav-link active" data-scroll-target="#image"><span class="header-section-number">9.1</span> geom_image</a></li>
   <li><a href="#icon" id="toc-icon" class="nav-link" data-scroll-target="#icon"><span class="header-section-number">9.2</span> geom_icon</a></li>
-  <li><a href="#geom_jitter_interactive" id="toc-geom_jitter_interactive" class="nav-link" data-scroll-target="#geom_jitter_interactive"><span class="header-section-number">9.3</span> geom_jitter_interactive</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/thiyangt/geom.encyclopedia/edit/main/i.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/thiyangt/geom.encyclopedia/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -451,37 +450,6 @@ div.csl-indent {
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>icon <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'ios-power'</span>, <span class="st">'ios-wifi'</span>, <span class="st">'ios-pie'</span>), <span class="dv">10</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x, y)) <span class="sc">+</span> <span class="fu">geom_icon</span>(<span class="fu">aes</span>(<span class="at">image=</span>icon))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="geom_jitter_interactive" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="geom_jitter_interactive"><span class="header-section-number">9.3</span> geom_jitter_interactive</h2>
-<p><strong>Package</strong></p>
-<p>ggiraph <span class="citation" data-cites="ggiraph">(<a href="references.html#ref-ggiraph" role="doc-biblioref"><strong>ggiraph?</strong></a>)</span></p>
-<p><strong>Description</strong></p>
-<p>Adds interactive features like tooltips and hyperlinks, allowing for dynamic exploration of jittered data points in a plot.</p>
-<p><strong>Understandable aesthetics</strong></p>
-<p><em>required aesthetics</em></p>
-<p><code>x</code></p>
-<p><code>y</code></p>
-<p><em>optional aesthetics</em></p>
-<p><code>alpha</code>, <code>colour</code>, <code>group</code>, <code>linetype</code>, <code>linewidth</code></p>
-<p><strong>See also</strong></p>
-<p><a href="#point">geom_point</a>, <a href="j.html#jitter">geom_ribbon</a></p>
-<p><strong>Example</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggiraph)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(worldbankdata, <span class="fu">aes</span>(<span class="at">y =</span> Region, <span class="at">x =</span> Electricity, <span class="at">color =</span> Income)) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter_interactive</span>(<span class="fu">aes</span>(<span class="at">tooltip =</span> <span class="fu">paste</span>(<span class="st">"Country:"</span>, Country, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">"&lt;br&gt;Year:"</span>, Year, </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">"&lt;br&gt;Electricity:"</span>, Electricity)),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">size =</span> <span class="dv">2</span>, <span class="at">width =</span> <span class="fl">0.3</span>) <span class="sc">+</span> </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Electricity by region and income group"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Region"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Electricity"</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Income group"</span>) </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">girafe</span>(<span class="at">ggobj =</span> p)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>( <span class="fu">interactive</span>() ) <span class="fu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><img src="img/geom_jitter_interactive.png" class="img-fluid"></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

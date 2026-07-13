@@ -274,7 +274,7 @@
     "href": "i.html#icon",
     "title": "9  I",
     "section": "9.2 geom_icon",
-    "text": "9.2 geom_icon\nExample\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10))\ndf$icon = sample(c('ios-power', 'ios-wifi', 'ios-pie'), 10, replace=TRUE)\nggplot(df, aes(x, y)) + geom_icon(aes(image=icon))",
+    "text": "9.2 geom_icon\nExample\n\nlibrary(\"ggimage\")\ndf &lt;- data.frame(x = rnorm(10),\n                 y = rnorm(10))\ndf$icon = sample(c('ios-power', 'ios-wifi', 'ios-pie'), 10, replace=TRUE)\nggplot(df, aes(x, y)) + geom_icon(aes(image=icon))\n\n\n\n\n\nYu, Guangchuang. 2023. Ggimage: Use Image in ’Ggplot2’. https://CRAN.R-project.org/package=ggimage.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>I</span>"
     ]
@@ -1267,6 +1267,146 @@
     "text": "Aphalo, Pedro J. 2024. Ggpp: Grammar Extensions to ’Ggplot2’.\nhttps://CRAN.R-project.org/package=ggpp.\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for\nAlluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package\n‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of\nMeteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nChotchaeva, Karina. 2017. “World Happiness Report.” Zenodo.\nhttps://doi.org/10.5281/zenodo.1470906.\n\n\nFC, Mike, Trevor L Davis, and ggplot2 authors. 2023. Ggpattern:\n’Ggplot2’ Pattern Geoms.\n\n\nGarrett, Robert C., Austin Nar, and Thomas J. Fisher. 2024.\nGgvoronoi: Voronoi Diagrams and Heatmaps with ’Ggplot2’. https://github.com/garretrc/ggvoronoi.\n\n\nHocking, Toby Dylan. 2023. Directlabels: Direct Labels for\nMulticolor Plots. https://CRAN.R-project.org/package=directlabels.\n\n\nJeppson, Haley, Heike Hofmann, and Di Cook. 2021. Ggmosaic: Mosaic\nPlots in the ’Ggplot2’ Framework. https://CRAN.R-project.org/package=ggmosaic.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula\nInterface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nLandis, Justin. 2024. Ggside: Side Grammar Graphics. https://CRAN.R-project.org/package=ggside.\n\n\nMiller, David L. 2023. emoGG: Use Emoji in Ggplot2.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nQuartier-la-Tente, Alain. 2025. Ggdemetra: ’Ggplot2’ Extension for\nSeasonal and Trading Day Adjustment with ’RJDemetra’. https://doi.org/10.32614/CRAN.package.ggdemetra.\n\n\nReynolds, Evangeline. 2024. Ggxmean: Statistical Geoms.\n\n\nRudis, Bob, Ben Bolker, and Jan Schulz. 2017. Ggalt: Extra\nCoordinate Systems, ’Geoms’, Statistical Transformations, Scales and\nFonts for ’Ggplot2’. https://CRAN.R-project.org/package=ggalt.\n\n\nRudis, Bob, and Dave Gandy. 2023. Waffle: Create Waffle Chart\nVisualizations.\n\n\nSjoberg, David. 2020. Ggbump: Bump Chart and Sigmoid Curves. https://CRAN.R-project.org/package=ggbump.\n\n\nSlowikowski, Kamil. 2024. Ggrepel: Automatically Position\nNon-Overlapping Text Labels with ’Ggplot2’. https://CRAN.R-project.org/package=ggrepel.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data\nAnalysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.\n\n\nWickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy\nD’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.\n“Welcome to the tidyverse.”\nJournal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686.\n\n\nWickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis\nVaughan. 2023. Dplyr: A Grammar of Data Manipulation. https://CRAN.R-project.org/package=dplyr.\n\n\nWickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2024. Tidyr:\nTidy Messy Data. https://CRAN.R-project.org/package=tidyr.\n\n\nWilke, Claus O. 2023. Ggridges: Ridgeline Plots in ’Ggplot2’.\nhttps://CRAN.R-project.org/package=ggridges.\n\n\nWorld Bank. 2026a. “GNI Per Capita: Operational Guidelines &\nAnalytical Classifications.” https://datacatalog.worldbank.org/.\n\n\n———. 2026b. “World Development Indicators.” https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators.\n\n\nWorld Population Review. n.d. “Happiest Countries in the\nWorld.” https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world.\n\n\nYu, Guangchuang. 2023. Ggimage: Use Image in ’Ggplot2’. https://CRAN.R-project.org/package=ggimage.\n\n\nYu, Youzhi, and Trent Buskirk. 2023. ggDoubleHeat: A Heatmap-Like\nVisualization Tool. https://CRAN.R-project.org/package=ggDoubleHeat.\n\n\nYutani, Hiroaki. 2024. Ggsflabel: Labels for ’Sf’ with\n’Ggplot2’. https://github.com/yutannihilation/ggsflabel.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "a.html",
+    "href": "a.html",
+    "title": "1  A",
+    "section": "",
+    "text": "1.1 geom_abline\nPackage\nggplot2 (Wickham 2016)\nDescription\nDraw a straight line (\\(Y=mX+c\\)) for a given slope (\\(m\\)) or/and intercept (\\(c\\)).\nAesthetics\nSee also\ngeom_point, geom_vline, geom_hline, geom_smooth,\nExample\na1 &lt;- ggplot() +\n  geom_abline(intercept = 0, slope = 1) +\n  labs(title = \"a1: geom_abline only\") +\n  theme(aspect.ratio = 1)\na2 &lt;- ggplot(happiness_gdp_income, aes(y =HappinessScore2016, x = HappinessScore2015)) +\n  geom_abline(intercept = 0, slope = 1) +\n  geom_point() +\n  labs(title = \"a2: geom_abline \\n and geom_point\") +\n  theme(aspect.ratio = 1)\na1 | a2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#alluvium",
+    "href": "a.html#alluvium",
+    "title": "1  A",
+    "section": "1.2 geom_alluvium",
+    "text": "1.2 geom_alluvium\nPackage\nggalluvial(Brunson and Read 2019; Brunson 2020)\nDescription\nCreate alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories.\nUnderstandable aesthetics\nrequired aesthetics\nOption 1 (See Example 1)\naxis1 - First axis\naxis2 - Second axis\ny - Counts to determines the height/weight of the alluvium\nOption 2 (alluvium time-series plot, see Example 2)\nx - Time variable determining the horizontal axis\ny - Determines the height/size of the flow\nalluvium - According to this variable it defines the flow across the years. In our Example 2, Bangladesh and Sri Lanka.\noptional aesthetics\nalpha, colour, fill, linetype, size, group (group is used internally; arguments are ignored)\nSee also\ngeom_stratum, geom_flow, geom_line geom_lode\nExample 1\nThis example shows the distribution of income level categories in 2021 and 2022 in the regions Sub-Saharan Africa and Latin America & Caribbean.\n\nlibrary(ggalluvial)\nfreq.table &lt;- worldbankdata |&gt;\n  select(Country, Region, Year, Income) |&gt;\n  filter(Year &gt; 2020) |&gt;\n  filter(Region %in% c(\"Sub-Saharan Africa\", \"Latin America & Caribbean\")) |&gt;\n  group_by(Region, Year, Income) |&gt;\n  summarise(n = n()) |&gt;\n  drop_na()\nfreq.table\n\n# A tibble: 14 × 4\n# Groups:   Region, Year [4]\n   Region                     Year Income     n\n   &lt;fct&gt;                     &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n 1 Latin America & Caribbean  2021 LM         5\n 2 Latin America & Caribbean  2021 UM        19\n 3 Latin America & Caribbean  2021 H         17\n 4 Latin America & Caribbean  2022 LM         4\n 5 Latin America & Caribbean  2022 UM        19\n 6 Latin America & Caribbean  2022 H         18\n 7 Sub-Saharan Africa         2021 L         24\n 8 Sub-Saharan Africa         2021 LM        16\n 9 Sub-Saharan Africa         2021 UM         6\n10 Sub-Saharan Africa         2021 H          1\n11 Sub-Saharan Africa         2022 L         22\n12 Sub-Saharan Africa         2022 LM        18\n13 Sub-Saharan Africa         2022 UM         6\n14 Sub-Saharan Africa         2022 H          1\n\na1 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Income, axis2 = Region)) +\n  geom_alluvium(aes(fill = as.factor(Year)), width = 1 / 12) +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"a1: geom_alluvium only\")\n\na2 &lt;- freq.table |&gt;\n  ggplot(aes(y = n, axis1 = Income, axis2 = Region)) +\n  geom_alluvium(aes(fill = as.factor(Year)), width = 1 / 12) +\n  geom_stratum(width = 1 / 12, fill = \"black\", color = \"grey\") +\n  geom_label(stat = \"stratum\", aes(label = after_stat(stratum))) +  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"a2: geom_alluvium, \\n geom_stratum and geom_label\")\na1 / a2\n\n\n\n\n\n\n\n\nExample 2\n\np1 &lt;- worldbankdata |&gt;\n  filter(Country %in% c(\"Bangladesh\", \"Sri Lanka\"),\n         Year &gt;= 2013, Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year,\n             y = Electricity,\n             alluvium = Country,\n             stratum = Country,\n             fill = Country)) +\n  geom_alluvium(alpha = 0.6) +\n  #geom_stratum(width = 0.4, color = \"black\") +\n  scale_x_continuous(breaks = 2013:2021) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +\n  labs(title = \"a1: geom_alluvium only\",\n       x = \"Year\",\n       y = \"Electricity\",\n       fill = \"Country\")\np2 &lt;-  worldbankdata |&gt;\n  filter(Country %in% c(\"Bangladesh\", \"Sri Lanka\"),\n         Year &gt;= 2013, Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year,\n             y = Electricity,\n             alluvium = Country,\n             stratum = Country,\n             fill = Country)) +\n  geom_alluvium(alpha = 0.6) +\n  geom_stratum(width = 0.4, color = \"black\") +\n  scale_x_continuous(breaks = 2013:2021) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +\n  labs(title = \"a2: geom_alluvium and geom_stratum\",\n       x = \"Year\",\n       y = \"Electricity\",\n       fill = \"Country\")\np1/p2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_arc",
+    "href": "a.html#geom_arc",
+    "title": "1  A",
+    "section": "1.3 geom_arc",
+    "text": "1.3 geom_arc\nPackage\nggforce(Pedersen 2022)\nDescription\nDraw a circle or a segment of a circle.\nUnderstandable aesthetic\nrequired aesthetics\nx0 - x coordinate of the center of the circle\ny0 - y coordinate of the center of the circle\nr - radius,\nstart - starting point of the circumference\nend - end point of the circumference\noptional aesthetics\ncolor, linewidth, linetype, alpha, lineend\nThe statistical transformation to use on the data for this layer\nstat_arc\nSee also\ngeom_arc2, geom_arc_bar\nExample\nIn the example below, geom_arc() is applied twice to show how the black arc forms the full circle, while the red arc highlights a specific portion of that circle.\n\nlibrary(ggforce)\nggplot() +\n  geom_arc(aes(x0 = 0, y0 = 0, r = 8, start = 1, end = 8)) +\n  geom_arc(aes(x0 = 0, y0 = 0, r = 8, start = 1, end = 5), col = \"red\", size = 2) +\n  theme(aspect.ratio = 1)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#arcbar",
+    "href": "a.html#arcbar",
+    "title": "1  A",
+    "section": "1.4 geom_arc_bar",
+    "text": "1.4 geom_arc_bar\nPackage\nggforce(Pedersen 2022)\nDescription\nTo draw pie chart and donut chart defining centre point, a radius and a start and end angle.\nUnderstandable aesthetic\nrequired aesthetics\nx0 - x-coordinate of the center of the pie chart\ny0 - y coordinate of the center of the circle\nr0 - Inner radius of the arc bar. If it is 0, the chart becomes a pie chart (no hole)\nr - Outer radius of the pie chart slices\namount - Determines the size (angle) of each slice. Larger counts produce larger slices\nfill - Fill colour for each slice\nexploid - Moves selected slices slightly outward from the center to highlight them\noptional aesthetics\ncolor, linewidth, linetype, alpha, lineend\nThe statistical transformation to use on the data for this layer\nstat_arc\nSee also\ngeom_arc, geom_arc_bar\nExample\n\n# Count observations in each Income category\ndf &lt;- worldbankdata |&gt;\n  filter(!is.na(Region)) |&gt;\n  count(Region, name = \"count\") |&gt;\n  mutate(\n    Region = Region,\n    focus1 = 0,\n    focus2 = c(0.2, 0, 0, 0, 0, 0, 0)\n  )\ndf\n\n# A tibble: 7 × 4\n  Region                     count focus1 focus2\n  &lt;fct&gt;                      &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 East Asia & Pacific         1343      0    0.2\n2 Europe & Central Asia       2038      0    0  \n3 Latin America & Caribbean   1512      0    0  \n4 Middle East & North Africa   756      0    0  \n5 North America                108      0    0  \n6 South Asia                   288      0    0  \n7 Sub-Saharan Africa          1693      0    0  \n\n# Pie chart\na1 &lt;- ggplot(df) +\n  geom_arc_bar(aes(\n    x0 = 0, y0 = 0,\n    r0 = 0, r = 2,\n    amount = count,\n    fill = Region,\n    explode = focus1\n  ), stat = \"pie\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1, legend.position = \"bottom\") +\n  labs(fill = \"Regions\", title = \"a1: with exploid = 0\")\n\na2 &lt;- ggplot(df) +\n  geom_arc_bar(aes(\n    x0 = 0, y0 = 0,\n    r0 = 0, r = 2,\n    amount = count,\n    fill = Region,\n    explode = focus2\n  ), stat = \"pie\") +\n  scale_fill_brewer(palette = \"Dark2\") +\n  theme(aspect.ratio = 1, legend.position = \"bottom\") +\n  labs(fill = \"Regions\", title = \"a2: with exploid = 0.2 for East Asia and Pacific\")\na1/a2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#area",
+    "href": "a.html#area",
+    "title": "1  A",
+    "section": "1.5 geom_area",
+    "text": "1.5 geom_area\nPackage\nggplot2 (Wickham 2016)\nDescription\nCreate an area plot. This cover the space between x-axis and line that connects the data points.\nUnderstandable aesthetics\nrequired aesthetics\nx, y\noptional aesthetics\nalpha, colour, fill, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample\n\na1 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_area(alpha = 0.5) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +\n  scale_x_continuous(breaks = 2013:2021) +\n  labs(title = \"a1: geom_area only\")\n\na2 &lt;- worldbankdata |&gt;\n  filter(Country == \"Bangladesh\") |&gt;\n  filter(Year &gt;= 2013 & Year &lt;= 2021) |&gt;\n  ggplot(aes(x = Year, y = Electricity)) +\n  geom_area(alpha = 0.5) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +\n  scale_x_continuous(breaks = 2013:2021) +\n  geom_point(col = \"red\") +\n  labs(title = \"a2: geom_area \\n and geom_point\")\na1 | a2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_arima",
+    "href": "a.html#geom_arima",
+    "title": "1  A",
+    "section": "1.6 geom_arima",
+    "text": "1.6 geom_arima\nPackage\nggdemetra(Quartier-la-Tente 2025)\nDescription\nAdds the ARIMA model used for seasonal adjustment directly onto a ggplot.\nUnderstandable aesthetics\nExample\n\nlibrary(ggdemetra)\nlibrary(forecast)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#arrow",
+    "href": "a.html#arrow",
+    "title": "1  A",
+    "section": "1.7 geom_arrow",
+    "text": "1.7 geom_arrow\nPackage\nmetR (Campitelli 2021)\nDescription\nDraws directional arrows (like vectors) on a plot, which can represent directions or flows — such as wind directions, movement, or gradients. The arrow from (x, y) and pointing in the direction (dx, dy) (vector components).\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\narrow,type, arrow.angle, arrow.length, arrow.ends, arrow.type\nSee also\ngeom_line, geom_ribbon\n\n1.7.1 Example\n\nlibrary(metR)\ndata &lt;- tibble::tibble(\n  x = c(10, 20, 30, 40, 50),      # Longitude or X-coordinates\n  y = c(1, 2, 3, 4, 5),           # Latitude or Y-coordinates\n  dx = c(1, 0, -1, 0, 1),         # Wind direction components (change in X)\n  dy = c(1, -1, 0, 1, 0)          # Wind direction components (change in Y)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point(color = \"#1b9e77\", size = 3) +  \n  geom_arrow(aes(dx = dx, dy = dy), color = \"#d95f02\", size = 1, arrow.type = \"closed\") +\n  labs(title = \"Wind Directions at Different Locations\", x = \"Longitude\", y = \"Latitude\")",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#ash",
+    "href": "a.html#ash",
+    "title": "1  A",
+    "section": "1.8 geom_ash",
+    "text": "1.8 geom_ash\nPackage\nggformula (Kaplan and Pruim 2023)\nDescription\nPlot Average Shifted Histogram (ASH). The ASH is a nonparametric probability density estimator derived from a collection of histograms.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\ncolor, fill, bins, alpha, size\nSee also\ngeom_histogram, geom_density\nExample\n\nlibrary(ggformula)\np1 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n   geom_ash(bins = 20, color = \"#d95f02\") +   labs(title=\"Average Shifted Histogram\")\np2 &lt;- worldbankdata |&gt;\n  filter(Income == \"LM\") |&gt;\n  ggplot(aes(x = Electricity)) +\n  geom_histogram(aes(y = stat(density)), color = \"black\", fill = \"gray\") +\n   geom_ash(bins = 20, color = \"#d95f02\") + labs(title = \"Histogram and Average Shifted Histogram\")\np1|p2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_autodensity",
+    "href": "a.html#geom_autodensity",
+    "title": "1  A",
+    "section": "1.9 geom_autodensity",
+    "text": "1.9 geom_autodensity\nPackage\nggforce (Pedersen 2022)\nDescription\nA matrix-style (commonly from GGally package) visualizations to automatically display variable distributions on diagonal panels, handling both continuous and discrete data while simplifying the mapping of panel variables.\nUnderstandable aesthetics\nrequired aesthetics\ndata\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_density, geom_histogram, geom_autohistogram, geom_autopoint,\nExample\n\nlibrary(ggplot2)\nlibrary(GGally)\n\n# Select numeric variables\ndf &lt;- happiness_gdp_income |&gt;\n  select(\"HappinessScore2015\", \"HappinessScore2016\", \"HappinessScore2017\")\n\n\nggplot(df) +\n  facet_matrix(\n    vars(\n      HappinessScore2015, \n      HappinessScore2016, \n      HappinessScore2017\n    ),\n    layer.diag = 1\n  ) +\n  geom_autodensity()\n\nWarning: Removed 16 rows containing non-finite outside the scale range\n(`stat_autodensity()`).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_autohistogram",
+    "href": "a.html#geom_autohistogram",
+    "title": "1  A",
+    "section": "1.10 geom_autohistogram",
+    "text": "1.10 geom_autohistogram\nPackage\nggforce (Pedersen 2022)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\ndata\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_histogram, geom_auotodensity, geom_auotpoint\nExample\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(GGally)\n\n# Prepare dataset\ndf &lt;- happiness_gdp_income %&gt;%\n  select(HappinessScore2015, HappinessScore2016, HappinessScore2017,\n         GDPpercapita2015) %&gt;%\n  rename(GDPpercapita = GDPpercapita2015) %&gt;%\n  # Create income category\n  mutate(IncomeCategory = case_when(\n    GDPpercapita &lt; 1.2 ~ \"Low\",\n    GDPpercapita &gt;= 1.2 & GDPpercapita &lt; 1.4 ~ \"Medium\",\n    GDPpercapita &gt;= 1.4 ~ \"High\"\n  )) %&gt;%\n  mutate(\n    IncomeCategory = factor(IncomeCategory, levels = c(\"Low\", \"Medium\", \"High\")),\n    # Create discrete happiness scores by rounding\n    HappinessScore2015_discrete = factor(round(HappinessScore2015)),\n    HappinessScore2016_discrete = factor(round(HappinessScore2016)),\n    HappinessScore2017_discrete = factor(round(HappinessScore2017))\n  )\n\n# Plot facet matrix using discrete happiness scores\nggplot(df, aes(x = .panel_x, fill = IncomeCategory)) +\n  facet_matrix(\n    vars(HappinessScore2015_discrete, HappinessScore2016_discrete, HappinessScore2017_discrete),\n    layer.diag = 1,\n    grid.y.diag = FALSE\n  ) +\n  geom_autohistogram(alpha = 0.7, position = \"dodge\") +  # diagonal histograms\n  geom_autopoint(alpha = 0.6, aes(color = IncomeCategory)) +  # off-diagonal scatterplots\n  scale_fill_brewer(palette = \"Set2\") +\n  scale_color_brewer(palette = \"Set2\") +\n  theme_minimal() +\n  labs(\n    fill = \"Income Category\",\n    color = \"Income Category\",\n    title = \"Discrete Happiness Scores by Income Category\",\n    x = \"\",\n    y = \"\"\n  )",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_autopoint",
+    "href": "a.html#geom_autopoint",
+    "title": "1  A",
+    "section": "1.11 geom_autopoint",
+    "text": "1.11 geom_autopoint\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#geom_axis_hive",
+    "href": "a.html#geom_axis_hive",
+    "title": "1  A",
+    "section": "1.12 geom_axis_hive",
+    "text": "1.12 geom_axis_hive\nPackage\nggplot2 (Wickham 2016)\nDescription\nUnderstandable aesthetics\nrequired aesthetics\ndata\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_line, geom_ribbon\nExample\n\n\n\n\nBrunson, Jason Cory. 2020. “Ggalluvial: Layered Grammar for Alluvial Plots.” Journal of Open Source Software 5 (49).\n\n\nBrunson, Jason Cory, and Quentin D Read. 2019. “Package ‘Ggalluvial’.”\n\n\nCampitelli, Elio. 2021. metR: Tools for Easier Analysis of Meteorological Fields. https://doi.org/10.5281/zenodo.2593516.\n\n\nKaplan, Daniel, and Randall Pruim. 2023. Ggformula: Formula Interface to the Grammar of Graphics. https://CRAN.R-project.org/package=ggformula.\n\n\nPedersen, Thomas Lin. 2022. Ggforce: Accelerating ’Ggplot2’. https://CRAN.R-project.org/package=ggforce.\n\n\nQuartier-la-Tente, Alain. 2025. Ggdemetra: ’Ggplot2’ Extension for Seasonal and Trading Day Adjustment with ’RJDemetra’. https://doi.org/10.32614/CRAN.package.ggdemetra.\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
+    ]
+  },
+  {
+    "objectID": "j.html#geom_jitter_interactive",
+    "href": "j.html#geom_jitter_interactive",
+    "title": "10  J",
+    "section": "10.2 geom_jitter_interactive",
+    "text": "10.2 geom_jitter_interactive\nPackage\nggiraph (ggiraph?)\nDescription\nAdds interactive features like tooltips and hyperlinks, allowing for dynamic exploration of jittered data points in a plot.\nUnderstandable aesthetics\nrequired aesthetics\nx\ny\noptional aesthetics\nalpha, colour, group, linetype, linewidth\nSee also\ngeom_point, geom_ribbon\nExample\n\nlibrary(ggiraph)\np &lt;- ggplot(worldbankdata, aes(y = Region, x = Electricity, color = Income)) +\n  geom_jitter_interactive(aes(tooltip = paste(\"Country:\", Country, \n                                              \"&lt;br&gt;Year:\", Year, \n                                              \"&lt;br&gt;Electricity:\", Electricity)),\n                          size = 2, width = 0.3) + \n  labs(title = \"Electricity by region and income group\",\n      y = \"Region\",\n       x = \"Electricity\",\n       color = \"Income group\") \nx &lt;- girafe(ggobj = p)\nif( interactive() ) print(x)\n\n\n\n\n\n\nWickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>J</span>"
+    ]
+  },
+  {
+    "objectID": "a.html#abline",
+    "href": "a.html#abline",
+    "title": "1  A",
+    "section": "",
+    "text": "Type\nAesthetics\n\n\n\n\nRequired\nintercept and/or slope\n\n\nOther supported aesthetics\ncolour, alpha, linetype, linewidth",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A</span>"
     ]
   }
 ]
