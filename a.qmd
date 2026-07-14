@@ -55,31 +55,20 @@ ggalluvial[@brunson2019package; @brunson2020ggalluvial]
 
 **Description**
 
-Create alluvial plot. An alluvial plot is a type of diagram that is particularly useful for visualizing categorical data and the flow or transition between different categorical variables over multiple stages or categories.
+Create alluvial plot. There are two main use cases: i. An alluvial plot is particularly useful for visualizing composition of the sample with respect to the flow or transition between different categorical variables over multiple stages or categories. The flows show how observations move between categories. ii. For time-series data, an alluvial plot can be considered a "time(flow-based) extension of a stacked bar chart".
 
-**Understandable aesthetics**
 
-*required aesthetics*
+**Aesthetics**
 
-**Option 1 (See Example 1)**
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Case 1: With categorical variables |
+| Required | `axis1` - First categorical variable <br> `axis2` - Second categorical variable <br> `y` - Counts to determines the width of the alluvium |
+| Other supported aesthetics | `colour`, `alpha`, `linetype`, `linewidth` , `curvetype`    |
+| Case 2: With time series data |
+| Required | `x` - Time variable determining the horizontal axis  <br> `y` - Determines the height of the flow  <br> `alluvium` - Stacking variable. In our Example 2, Bangladesh and Sri Lanka. |
+| Other supported aesthetics | `colour`, `alpha`, `linetype`, `linewidth` <br> `curvetype`|
 
-`axis1` - First axis
-
-`axis2` - Second axis
-
-`y` - Counts to determines the height/weight of the alluvium
-
-**Option 2 (alluvium time-series plot, see Example 2)**
-
-`x` - Time variable determining the horizontal axis
-
-`y` - Determines the height/size of the flow
-
-`alluvium` - According to this variable it defines the flow across the years. In our Example 2, Bangladesh and Sri Lanka.
-
-*optional aesthetics*
-
-`alpha`, `colour`, `fill`, `linetype`, `size`, `group` (group is used internally; arguments are ignored)
 
 **See also**
 
@@ -91,22 +80,22 @@ This example shows the distribution of income level categories in 2021 and 2022 
 
 ```{r alluvial, fig.width=10,fig.height=10, warning=FALSE, message=FALSE}
 library(ggalluvial)
-freq.table <- worldbankdata |>
+e1data <- worldbankdata |>
   select(Country, Region, Year, Income) |>
   filter(Year > 2020) |>
   filter(Region %in% c("Sub-Saharan Africa", "Latin America & Caribbean")) |>
   group_by(Region, Year, Income) |>
   summarise(n = n()) |>
   drop_na()
-freq.table
+e1data
 
-a1 <- freq.table |>
+a1 <- e1data |>
   ggplot(aes(y = n, axis1 = Income, axis2 = Region)) +
   geom_alluvium(aes(fill = as.factor(Year)), width = 1 / 12) +
   scale_fill_brewer(palette = "Dark2") +
   labs(title = "a1: geom_alluvium only")
 
-a2 <- freq.table |>
+a2 <- e1data |>
   ggplot(aes(y = n, axis1 = Income, axis2 = Region)) +
   geom_alluvium(aes(fill = as.factor(Year)), width = 1 / 12) +
   geom_stratum(width = 1 / 12, fill = "black", color = "grey") +
@@ -118,26 +107,25 @@ a1 / a2
 **Example 2**
 
 ```{r}
-p1 <- worldbankdata |>
+e2data <- worldbankdata |>
   filter(Country %in% c("Bangladesh", "Sri Lanka"),
          Year >= 2013, Year <= 2021) |>
-  ggplot(aes(x = Year,
+  select(Country, Year, Electricity)
+e2data
+p1 <-  ggplot(e2data, aes(x = Year,
              y = Electricity,
              alluvium = Country,
              stratum = Country,
              fill = Country)) +
   geom_alluvium(alpha = 0.6) +
-  #geom_stratum(width = 0.4, color = "black") +
   scale_x_continuous(breaks = 2013:2021) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
   labs(title = "a1: geom_alluvium only",
        x = "Year",
        y = "Electricity",
        fill = "Country")
-p2 <-  worldbankdata |>
-  filter(Country %in% c("Bangladesh", "Sri Lanka"),
-         Year >= 2013, Year <= 2021) |>
-  ggplot(aes(x = Year,
+
+p2 <-  ggplot(e2data, aes(x = Year,
              y = Electricity,
              alluvium = Country,
              stratum = Country,
@@ -163,27 +151,18 @@ ggforce[@ggforce]
 
 Draw a circle or a segment of a circle.
 
-**Understandable aesthetic**
+**Aesthetic**
+
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Required | `x0` - x coordinate of the center of the circle <br> 
+`y0` - y coordinate of the center of the circle <br> `r` - radius <br> `start` - starting point of the circumference <br> 
+`end` - end point of the circumference |
+| Other supported aesthetics | `colour`, `alpha`, `linetype`, `linewidth` , `curvetype`    |
 
 *required aesthetics*
 
-`x0` - x coordinate of the center of the circle
 
-`y0` - y coordinate of the center of the circle
-
-`r` - radius,
-
-`start` - starting point of the circumference
-
-`end` - end point of the circumference
-
-*optional aesthetics*
-
-`color`, `linewidth`, `linetype`, `alpha`, `lineend`
-
-**The statistical transformation to use on the data for this layer**
-
-`stat_arc`
 
 **See also**
 
@@ -211,31 +190,14 @@ ggforce[@ggforce]
 
 To draw pie chart and donut chart defining centre point, a radius and a start and end angle.
 
-**Understandable aesthetic**
+**Aesthetic**
 
-*required aesthetics*
 
-`x0` - x-coordinate of the center of the pie chart
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Required | `x0` - x-coordinate of the center of the pie chart <br> `y0` - y coordinate of the center of the circle <br> `r0` - Inner radius of the arc bar. If it is 0, the chart becomes a pie chart (no hole) <br> `r` - Outer radius of the pie chart slices <br> `amount` - Determines the size (angle) of each slice. Larger counts produce larger slices <br> `fill` - Fill colour for each slice <br> `exploid` - Moves selected slices slightly outward from the center to highlight them |
+| Other supported aesthetics | `color`, `linewidth`, `linetype`, `alpha`, `lineend`  |
 
-`y0` - y coordinate of the center of the circle
-
-`r0` - Inner radius of the arc bar. If it is 0, the chart becomes a pie chart (no hole)
-
-`r` - Outer radius of the pie chart slices
-
-`amount` - Determines the size (angle) of each slice. Larger counts produce larger slices
-
-`fill` - Fill colour for each slice
-
-`exploid` - Moves selected slices slightly outward from the center to highlight them
-
-*optional aesthetics*
-
-`color`, `linewidth`, `linetype`, `alpha`, `lineend`
-
-**The statistical transformation to use on the data for this layer**
-
-`stat_arc`
 
 **See also**
 
@@ -243,7 +205,7 @@ To draw pie chart and donut chart defining centre point, a radius and a start an
 
 **Example**
 
-```{r, warning=FALSE, message=FALSE, fig.height=10, fig.width=5}
+```{r, warning=FALSE, message=FALSE, fig.height=16, fig.width=16}
 # Count observations in each Income category
 df <- worldbankdata |>
   filter(!is.na(Region)) |>
@@ -267,7 +229,20 @@ a1 <- ggplot(df) +
   theme(aspect.ratio = 1, legend.position = "bottom") +
   labs(fill = "Regions", title = "a1: with exploid = 0")
 
+# donut pie chart
 a2 <- ggplot(df) +
+  geom_arc_bar(aes(
+    x0 = 0, y0 = 0,
+    r0 = 0.5, r = 2,
+    amount = count,
+    fill = Region,
+    explode = focus1
+  ), stat = "pie") +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(aspect.ratio = 1, legend.position = "bottom") +
+  labs(fill = "Regions", title = "a2: with exploid = 0 and r0 = 0.5")
+# exploded pie chart is a pie chart where one or more slices are pulled away (separated)
+a3 <- ggplot(df) +
   geom_arc_bar(aes(
     x0 = 0, y0 = 0,
     r0 = 0, r = 2,
@@ -277,8 +252,19 @@ a2 <- ggplot(df) +
   ), stat = "pie") +
   scale_fill_brewer(palette = "Dark2") +
   theme(aspect.ratio = 1, legend.position = "bottom") +
-  labs(fill = "Regions", title = "a2: with exploid = 0.2 for East Asia and Pacific")
-a1/a2
+  labs(fill = "Regions", title = "a3: with exploid = 0.2 for East Asia and Pacific")
+a4 <- ggplot(df) +
+  geom_arc_bar(aes(
+    x0 = 0, y0 = 0,
+    r0 = 0, r = 2,
+    amount = count,
+    fill = Region,
+    explode = focus2
+  ), stat = "pie", linewidth=2) +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(aspect.ratio = 1, legend.position = "bottom") +
+  labs(fill = "Regions", title = "a4: with exploid = 0.2 and linewidth=2")
+(a1|a2)/(a3|a4)
 ```
 
 ## geom_area {#area}
@@ -291,15 +277,14 @@ ggplot2 [@ggplot2]
 
 Create an area plot. This cover the space between x-axis and line that connects the data points.
 
-**Understandable aesthetics**
+**Aesthetics**
 
-*required aesthetics*
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Required | 
+`x`, `y` |
+| Other supported aesthetics | `color`, `linewidth`, `linetype`, `alpha`, `lineend`  |
 
-`x`, `y`
-
-*optional aesthetics*
-
-`alpha`, `colour`, `fill`, `group`, `linetype`, `linewidth`
 
 **See also**
 
@@ -340,17 +325,32 @@ ggdemetra[@ggdemetra]
 
 Adds the ARIMA model used for seasonal adjustment directly onto a ggplot.
 
-**Understandable aesthetics**
+**Aesthetics**
 
+**Aesthetics**
 
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Required | 
+`x`, `y` |
+| Other supported aesthetics | `color`, `linewidth`, `linetype`, `alpha`, `lineend`  |
 
 **Example**
 
 ```{r, warning=FALSE, message=FALSE}
 library(ggdemetra)
 library(forecast)
+arimadata <- worldbankdata |>
+  filter(Country == "Sri Lanka",
+         Year >= 2013, Year <= 2021) |>
+  select(Country, Year, Electricity)
 
-
+ggplot(arimadata, aes(x = Year, y = Electricity, color = Country)) +
+  geom_line() + # Plots the raw data 
+ geom_arima(data = arimadata, method = "X13", geom = "label",
+               x_arima = - Inf, y_arima = -Inf, 
+               vjust = -1, hjust = -0.1,
+               message = FALSE)   # ARIMA specifications 
   
 ```
 
