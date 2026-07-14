@@ -314,47 +314,8 @@ a2 <- worldbankdata |>
 a1 | a2
 ```
 
-## geom_arima
 
-**Package**
-
-ggdemetra[@ggdemetra]
-
-
-**Description**
-
-Adds the ARIMA model used for seasonal adjustment directly onto a ggplot.
-
-**Aesthetics**
-
-**Aesthetics**
-
-| Type     | Aesthetics   |
-| -------- | ------------ |
-| Required | 
-`x`, `y` |
-| Other supported aesthetics | `color`, `linewidth`, `linetype`, `alpha`, `lineend`  |
-
-**Example**
-
-```{r, warning=FALSE, message=FALSE}
-library(ggdemetra)
-library(forecast)
-arimadata <- worldbankdata |>
-  filter(Country == "Sri Lanka",
-         Year >= 2013, Year <= 2021) |>
-  select(Country, Year, Electricity)
-
-ggplot(arimadata, aes(x = Year, y = Electricity, color = Country)) +
-  geom_line() + # Plots the raw data 
- geom_arima(data = arimadata, method = "X13", geom = "label",
-               x_arima = - Inf, y_arima = -Inf, 
-               vjust = -1, hjust = -0.1,
-               message = FALSE)   # ARIMA specifications 
-  
-```
-
-## geom_arrow {#arrow}
+## geom_arrow based on metR {#arrowmetR}
 
 **Package**
 
@@ -364,23 +325,22 @@ metR [@metR]
 
 Draws directional arrows (like vectors) on a plot, which can represent directions or flows — such as wind directions, movement, or gradients. The arrow from (x, y) and pointing in the direction (dx, dy) (vector components).
 
-**Understandable aesthetics**
 
-*required aesthetics*
+**Aesthetics**
 
-`x`
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Required | 
+`x`, `y`, <br>`dx` - change in x <br> `dy` - change in y |
+| Other supported aesthetics | `arrow,type`, `arrow.angle`, `arrow.length`, `arrow.ends`, `arrow.type`|
 
-`y`
 
-*optional aesthetics*
-
-`arrow,type`, `arrow.angle`, `arrow.length`, `arrow.ends`, `arrow.type`
 
 **See also**
 
 [geom_line](#line), [geom_ribbon](#ribbon)
 
-### Example
+**Example**
 
 ```{r warning=FALSE, message=FALSE}
 library(metR)
@@ -397,6 +357,111 @@ ggplot(data, aes(x = x, y = y)) +
   labs(title = "Wind Directions at Different Locations", x = "Longitude", y = "Latitude")
 ```
 
+## geom_arrow based on ggarrow {#arrow}
+
+**Package**
+
+ggarrow [@ggarrow]
+
+**Description**
+
+Draw arrows. Draws an arrowhead at the end of each path (the final point in the sequence)
+
+
+**Aesthetics**
+
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Required | `x`, `y` |
+| Other supported aesthetics | `arrow,type`, `arrow.angle`, `arrow.length`, `arrow.ends`, `arrow.type`|
+
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+
+**Example 1**
+
+```{r warning=FALSE, message=FALSE}
+library(ggarrow)
+a1 <- worldbankdata |>
+  filter(Country == "Bangladesh") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+ggplot(aes(x=Year, y=Electricity)) +
+  geom_arrow()
+
+a2 <- worldbankdata |>
+  filter(Country %in% c("Bangladesh", "Sri Lanka"),
+         Year >= 2013, Year <= 2021) |>
+  select(Country, Year, Electricity) |>
+  ggplot(aes(x=Year, y=Electricity, colour = Country)) +
+  geom_arrow()
+a1|a2
+
+
+```
+
+**Example 2**
+
+Draw a spiral based on a example dataset (`whirlpool(5)`) in the package.
+
+```{r}
+head(whirlpool(5))
+ggplot(whirlpool(5), aes(x, y, colour = group)) +
+  geom_arrow(
+    linewidth = 1,
+    arrow_head = arrow_head_wings()
+  ) +
+  scale_color_brewer(palette = "Set1") + 
+  coord_equal()
+```
+
+## geom_arrow_chain {#arrow_chain}
+
+**Package**
+
+ggarrow [@ggarrow]
+
+**Description**
+
+Draw arrows in between points.
+
+
+**Aesthetics**
+
+| Type     | Aesthetics   |
+| -------- | ------------ |
+| Required | `x`, `y` |
+| Other supported aesthetics | `arrow,type`, `arrow.angle`, `arrow.length`, `arrow.ends`, `arrow.type`|
+
+
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon)
+
+**Example 1**
+
+```{r warning=FALSE, message=FALSE}
+library(ggarrow)
+a1 <- worldbankdata |>
+  filter(Country == "Bangladesh") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+ggplot(aes(x=Year, y=Electricity)) +
+  geom_arrow_chain() + 
+  labs(title = "arrow_chain only")
+a2 <- worldbankdata |>
+  filter(Country == "Bangladesh") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+ggplot(aes(x=Year, y=Electricity)) +
+  geom_arrow_chain() + 
+  geom_point() + 
+  labs(title = "arrow_chain and point")
+a1|a2
+```
+
+
 ## geom_ash {#ash}
 
 **Package**
@@ -407,17 +472,15 @@ ggformula [@ggformula]
 
 Plot Average Shifted Histogram (ASH). The ASH is a nonparametric probability density estimator derived from a collection of histograms.
 
-**Understandable aesthetics**
+**Aesthetics**
 
-*required aesthetics*
-
-`x`
-
-`y`
-
-*optional aesthetics*
-
-`color`, `fill`, `bins`, `alpha`, `size`
+**Aesthetics**
+  
+  | Type     | Aesthetics   |
+  | -------- | ------------ |
+  | Required | `x`, `y` |
+  | Other supported aesthetics | `color`, `fill`, `bins`, `alpha`, `size`|
+  
 
 **See also**
 
@@ -443,7 +506,7 @@ p2 <- worldbankdata |>
 p1|p2
 ```
 
-## geom_autodensity
+## geom_autodensity{#autodensity}
 
 **Package**
 
@@ -453,15 +516,14 @@ ggforce [@ggforce]
 
 A matrix-style (commonly from GGally package) visualizations to automatically display variable distributions on diagonal panels, handling both continuous and discrete data while simplifying the mapping of panel variables.
 
-**Understandable aesthetics**
+**Aesthetics**
 
-*required aesthetics*
+  | Type     | Aesthetics   |
+  | -------- | ------------ |
+  | Required | `data` |
+  | Other supported aesthetics | `alpha`, `colour`, `group`, `linetype`, `linewidth`|
+  
 
-`data`
-
-*optional aesthetics*
-
-`alpha`, `colour`, `group`, `linetype`, `linewidth`
 
 **See also**
 
@@ -476,8 +538,6 @@ library(GGally)
 # Select numeric variables
 df <- happiness_gdp_income |>
   select("HappinessScore2015", "HappinessScore2016", "HappinessScore2017")
-
-
 ggplot(df) +
   facet_matrix(
     vars(
@@ -490,7 +550,7 @@ ggplot(df) +
   geom_autodensity()
 ```
 
-## geom_autohistogram
+## geom_autohistogram{#autohistogram}
 
 **Package**
 
@@ -498,15 +558,13 @@ ggforce [@ggforce]
 
 **Description**
 
-**Understandable aesthetics**
+**Aesthetics**
 
-*required aesthetics*
-
-`data`
-
-*optional aesthetics*
-
-`alpha`, `colour`, `group`, `linetype`, `linewidth`
+  | Type     | Aesthetics   |
+  | -------- | ------------ |
+  | Required | `data` |
+  | Other supported aesthetics | `alpha`, `colour`, `group`, `linetype`, `linewidth`|
+  
 
 **See also**
 
@@ -559,52 +617,123 @@ ggplot(df, aes(x = .panel_x, fill = IncomeCategory)) +
   )
 ```
 
-## geom_autopoint
+## geom_autopoint{#autopoint}
 
 **Package**
 
-ggplot2 [@ggplot2]
+ggforce [@ggforce]
 
 **Description**
 
-**Understandable aesthetics**
+geom_autopoint() is a modified version of ggplot2::geom_point() designed mainly for scatterplot matrices.  geom_point() plots points directly, while geom_autopoint() automatically applies suitable position adjustments, making it useful for exploring relationships in scatterplot matrices.
 
-*required aesthetics*
+**Aesthetics**
 
-`x`
 
-`y`
-
-*optional aesthetics*
-
-`alpha`, `colour`, `group`, `linetype`, `linewidth`
+  | Type     | Aesthetics   |
+  | -------- | ------------ |
+  | Required | `x`, `y`|
+  | Other supported aesthetics | `alpha`, `colour`, `group`, `linetype`, `linewidth`|
+  
 
 **See also**
 
-[geom_line](#line), [geom_ribbon](#ribbon)
+[geom_line](#line), [geom_point](#point)
 
 **Example**
+
+```{r}
+library(ggforce)
+ggplot(happiness_gdp_income,
+       aes(x=GDPpercapita2015,
+           y=HappinessScore2015,
+           colour = Income2015)) +
+  geom_point(size = 3) + labs(title = "geom_point")
+```
+
+
+```{r}
+ggplot(happiness_gdp_income) +
+  geom_autopoint(aes(colour = Income2015)) +
+  facet_matrix(vars(
+    HappinessScore2015,
+    GDPpercapita2015
+  )) + labs(title = "geom_autopoint")
+
+```
+
+```{r}
+ggplot(happiness_gdp_income) +  geom_autopoint(aes(colour = Income2015)) +
+  facet_matrix(vars(
+    HappinessScore2015: GDPpercapita2016
+  ))
+```
 
 ## geom_axis_hive
 
 **Package**
 
-ggplot2 [@ggplot2]
+ggraph [@ggraph]
 
 **Description**
 
-**Understandable aesthetics**
+Allows you to annotate the axes in a hive plot with labels and color coded bars.
 
-*required aesthetics*
+**Aesthetics**
 
-`data`
 
-*optional aesthetics*
-
-`alpha`, `colour`, `group`, `linetype`, `linewidth`
+  | Type     | Aesthetics   |
+  | -------- | ------------ |
+  | Required | `x`, `y`|
+  | Other supported aesthetics | `alpha`, `colour`, `group`, `linetype`, `linewidth`|
+  
 
 **See also**
 
 [geom_line](#line), [geom_ribbon](#ribbon)
 
 **Example**
+
+Suppose we want to visualise the following diagram 
+
+Asia                         Europe
+
+China  -------------------- Germany
+  |  \                       |
+  |   \                      |
+India  -------------------- France
+  |
+Japan  -------------------- Italy
+
+```{r}
+library(tidygraph)
+library(ggraph)
+
+nodes <- data.frame(
+  country = c("China", "India", "Japan",
+              "Germany", "France", "Italy"),
+  region = c("Asia", "Asia", "Asia",
+             "Europe", "Europe", "Europe")
+)
+
+edges <- data.frame(
+  from = c("China", "China", "India",
+           "Japan", "India"),
+  to = c("Germany", "France", "Germany",
+         "Italy", "France")
+)
+
+g <- tbl_graph(nodes = nodes, edges = edges, directed = FALSE)
+
+# Calculate node degree
+g <- g %>%
+  activate(nodes) %>%
+  mutate(degree = centrality_degree())
+
+ggraph(g, layout = "hive", axis = region, sort.by = degree) +
+  geom_edge_hive() +
+  geom_axis_hive(aes(colour = region), size = 3) +
+  geom_node_point(size = 5) +
+  geom_node_text(aes(label = country), repel = TRUE) +
+  coord_fixed()
+```
