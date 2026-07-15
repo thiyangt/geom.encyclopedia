@@ -288,7 +288,7 @@ Create an area plot. This cover the space between x-axis and line that connects 
 
 **See also**
 
-[geom_line](#line), [geom_ribbon](#ribbon)
+[geom_line](#line), [geom_ribbon](#ribbon), [geom_arrow_segement](#arrow_segement)
 
 **Example**
 
@@ -697,7 +697,7 @@ Allows you to annotate the axes in a hive plot with labels and color coded bars.
 Suppose we want to visualise the following diagram 
 
 ```{r, echo=FALSE}
-
+knitr::include_graphics("axis_hive.png")
 ```
 
 ```{r}
@@ -721,18 +721,78 @@ edges <- data.frame(
 g <- tbl_graph(nodes = nodes, edges = edges, directed = FALSE)
 
 # Calculate node degree
-g <- g %>%
-  activate(nodes) %>%
+g <- g |>
+  activate(nodes) |>
   mutate(degree = centrality_degree())
 
-ggraph(g, layout = "hive", axis = region, sort.by = degree) +
+a1 <- ggraph(g, layout = "hive", axis = region, sort.by = degree) +
   geom_edge_hive() +
   geom_axis_hive(aes(colour = region), size = 3) +
   geom_node_point(size = 5) +
   geom_node_text(aes(label = country), repel = TRUE) +
   coord_fixed()
+
+a2 <- ggraph(g, layout = "hive", axis = region, sort.by = degree, angle = pi/2) +
+  geom_edge_hive() +
+  geom_axis_hive(aes(colour = region), size = 3) +
+  geom_node_point(size = 5) +
+  geom_node_text(aes(label = country), repel = TRUE) +
+  coord_fixed()
+a1|a2
 ```
 
 ## geom_arrow_segement
 
+**Package**
 
+ggarrow [@ggarrow]
+
+**Description**
+
+Draws a straight arrow between points (x, y) and (xend, yend). 
+
+**Aesthetics**
+
+
+  | Type     | Aesthetics   |
+  | -------- | ------------ |
+  | Required | `x`, `y`, `xend` or `yend`|
+  | Other supported aesthetics | `alpha`, `arrow_fins`, `arrow_head`, `arrow_mid` <br> `linewidth_fins`, `linewidth_head`, `	resect_fins`, `resect_head`|
+  
+
+**See also**
+
+[geom_line](#line), [geom_ribbon](#ribbon), [geom_area](#area)
+
+**Example**
+
+
+```{r}
+library(ggarrow)
+worldbankdata |>
+  filter(Country == "Bangladesh") |>
+  filter(Year >= 2013 & Year <= 2021) |>
+  ggplot(aes(x = Year,y=0, yend = Electricity)) +
+  geom_arrow_segment() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  scale_x_continuous(breaks = 2013:2021)
+```
+
+## geom_arrow_curve
+
+
+**Example**
+
+```{r}
+data <- data.frame(x = 4, y = 10, xend = 8, yend = 15)
+ggplot(data) + 
+  geom_arrow_curve(aes(x = x, y = y, xend = xend, yend = yend))
+ggplot(data) + 
+  geom_arrow_curve(aes(x = x, y = y, xend = xend, yend = yend),
+              colour = "red",
+              linewidth = 5,
+              angle = 90, 
+              alpha = 0.2,
+              lineend = "butt",
+              curvature = -0.5)
+```
