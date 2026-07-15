@@ -63,7 +63,7 @@ format:
     theme: 
       - cosmo
       - r4ds.scss
-  pdf:
-    documentclass: scrreprt
+#  pdf:
+#    documentclass: scrreprt
 #  epub:
 #    cover-image: cover.png

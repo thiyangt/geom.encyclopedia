@@ -696,14 +696,9 @@ Allows you to annotate the axes in a hive plot with labels and color coded bars.
 
 Suppose we want to visualise the following diagram 
 
-Asia                         Europe
+```{r, echo=FALSE}
 
-China  -------------------- Germany
-  |  \                       |
-  |   \                      |
-India  -------------------- France
-  |
-Japan  -------------------- Italy
+```
 
 ```{r}
 library(tidygraph)
@@ -739,3 +734,5 @@ ggraph(g, layout = "hive", axis = region, sort.by = degree) +
 ```
 
 ## geom_arrow_segement
+
+
