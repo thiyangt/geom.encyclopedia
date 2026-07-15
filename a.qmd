@@ -737,3 +737,5 @@ ggraph(g, layout = "hive", axis = region, sort.by = degree) +
   geom_node_text(aes(label = country), repel = TRUE) +
   coord_fixed()
 ```
+
+## geom_arrow_segement

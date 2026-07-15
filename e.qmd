@@ -191,7 +191,7 @@ Plot emojis on the plot instead of points
 
 ### Example
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE , eval=FALSE}
 library(emoGG)
 a1 <- worldbankdata |>
   filter(Income == "LM") |>
